@@ -12,6 +12,8 @@ namespace PTClinic
 {
     public partial class Login : Form
     {
+
+
         public Login()
         {
             InitializeComponent();
@@ -71,6 +73,13 @@ namespace PTClinic
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            // Show Sign up form
+            Signup signupForm = new Signup(this);
+            signupForm.Show();
+
+            // Hide login form
+           // this.Hide();
+
 
         }
     }

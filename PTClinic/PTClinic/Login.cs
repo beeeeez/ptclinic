@@ -51,6 +51,7 @@ namespace PTClinic
 
             try
             {
+           
                 PTClinicDataTableAdapters.UsersTableAdapter user = new PTClinicDataTableAdapters.UsersTableAdapter();
                 PTClinicData.UsersDataTable dt = user.GetDataByUsernamePwd(tbUsername.Text, tbPassword.Text);
 

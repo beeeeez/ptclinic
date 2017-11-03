@@ -58,60 +58,70 @@ namespace PTClinic
             {
                 panelError.Visible = false;
                 lblError.Text = "";
-            }
 
 
 
-            OleDbConnection conn = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
-
-            try
-            {
-                conn.Open();
-
-                PTClinicDataTableAdapters.UsersTableAdapter user = new PTClinicDataTableAdapters.UsersTableAdapter();
-                PTClinicData.UsersDataTable dt = user.GetDataByUsername(tbUsername.Text.Trim());
-
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
-
-                /**
+                OleDbConnection conn = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
 
                 try
                 {
-                    PTClinicData.UsersDataTable dtNewUser = user.InsertNewUser(tbUsername, tbPassword);
-                    // INSERT NEW USER
+                    conn.Open();
 
+                    PTClinicDataTableAdapters.UsersTableAdapter user = new PTClinicDataTableAdapters.UsersTableAdapter();
+                    PTClinicData.UsersDataTable dt = user.GetDataByUsername(tbUsername.Text.Trim());
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                    /** TODO INSERT NEW USER -
+                     * 
+                     *  ONCE COMPLETE INSERT GO BACK TO LOGIN
+                     *  
+                     *  THEN JUMP TO ADMIN PAGE
+                     *  
+                     *  
+                     *  
+
+                    try
+                    {
+                        PTClinicData.UsersDataTable dtNewUser = user.InsertNewUser(tbUsername, tbPassword);
+                        // INSERT NEW USER
+
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+
+                    **/
+
+
+
+
+                    /** if (conn.State == ConnectionState.Open)
+                     {
+                         MessageBox.Show("CONNECTION OPENED!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }**/
 
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(e.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
                 }
 
 
-
-                **/
-
-
-
-
-                /** if (conn.State == ConnectionState.Open)
-                 {
-                     MessageBox.Show("CONNECTION OPENED!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 }**/
-
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
+
 
 
 

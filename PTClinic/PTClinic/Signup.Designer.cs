@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbPasswordConfirm = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +46,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panelError = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelError.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSignUp
@@ -56,7 +59,7 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(314, 553);
+            this.btnSignUp.Location = new System.Drawing.Point(302, 553);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(96, 45);
             this.btnSignUp.TabIndex = 6;
@@ -120,13 +123,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Confirm Password";
             // 
-            // textBox4
+            // tbEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(247, 363);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 26);
-            this.textBox4.TabIndex = 3;
+            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(247, 363);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(226, 26);
+            this.tbEmail.TabIndex = 3;
             // 
             // label4
             // 
@@ -210,23 +213,43 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(242, 85);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(188, 25);
+            this.label8.Size = new System.Drawing.Size(192, 25);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Create an account";
+            this.label8.Text = "Create An Account";
+            // 
+            // panelError
+            // 
+            this.panelError.BackColor = System.Drawing.Color.Red;
+            this.panelError.Controls.Add(this.lblError);
+            this.panelError.Location = new System.Drawing.Point(12, 85);
+            this.panelError.Name = "panelError";
+            this.panelError.Size = new System.Drawing.Size(206, 40);
+            this.panelError.TabIndex = 16;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.White;
+            this.lblError.Location = new System.Drawing.Point(20, 11);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 18);
+            this.lblError.TabIndex = 0;
             // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(689, 610);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(689, 633);
+            this.Controls.Add(this.panelError);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbPasswordConfirm);
             this.Controls.Add(this.label3);
@@ -240,6 +263,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelError.ResumeLayout(false);
+            this.panelError.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +279,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPasswordConfirm;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label label5;
@@ -264,5 +289,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panelError;
+        private System.Windows.Forms.Label lblError;
     }
 }

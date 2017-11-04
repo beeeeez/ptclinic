@@ -60,6 +60,10 @@ namespace PTClinic
                     MessageBox.Show("You have successfully logged in.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // GO TO ADMIN WINDOW 
+                    Admin adminForm = new Admin(this);
+                    adminForm.Show();
+                  
+
                 }
                 else
                 {

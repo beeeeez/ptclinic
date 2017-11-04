@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,14 @@
     <Content Include="PTClinic.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\AddNewPatient.png" />
+    <None Include="Resources\PatientVisit1.png" />
+    <None Include="Resources\AddNewPatient1.png" />
+    <Content Include="Resources\Appointments.png" />
+    <Content Include="Resources\FindPatient.png" />
+    <Content Include="Resources\ic_power_settings_new_white_18dp_1x.png" />
+    <Content Include="Resources\ic_power_settings_new_white_36dp_1x.png" />
+    <Content Include="Resources\PatientVisit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

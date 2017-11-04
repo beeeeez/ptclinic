@@ -66,6 +66,46 @@
             this.lblCaregiverCity = new System.Windows.Forms.Label();
             this.lblCaregiverState = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbProviderID = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbPhone2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbPhone1 = new System.Windows.Forms.TextBox();
+            this.tbOtherInsurance = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbMiddleInitial = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbStreet = new System.Windows.Forms.TextBox();
+            this.tbStreet2 = new System.Windows.Forms.TextBox();
+            this.tbCity = new System.Windows.Forms.TextBox();
+            this.tbZip = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbCGPhone2Ext = new System.Windows.Forms.TextBox();
+            this.tbCGPhone1Ext = new System.Windows.Forms.TextBox();
+            this.tbCGPhone1 = new System.Windows.Forms.TextBox();
+            this.tbCGPhone2 = new System.Windows.Forms.TextBox();
+            this.tbCGAddress = new System.Windows.Forms.TextBox();
+            this.tbCGCity = new System.Windows.Forms.TextBox();
+            this.tbCGZip = new System.Windows.Forms.TextBox();
+            this.cbCGState = new System.Windows.Forms.ComboBox();
+            this.cbCGPhone2Type = new System.Windows.Forms.ComboBox();
+            this.cbCGPhone1Type = new System.Windows.Forms.ComboBox();
+            this.cbPhone2Type = new System.Windows.Forms.ComboBox();
+            this.cbPhone1Type = new System.Windows.Forms.ComboBox();
+            this.cbState = new System.Windows.Forms.ComboBox();
+            this.cbInsurer = new System.Windows.Forms.ComboBox();
+            this.tbCGName = new System.Windows.Forms.TextBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.gbInsurance = new System.Windows.Forms.GroupBox();
+            this.rdbInsuranceYes = new System.Windows.Forms.RadioButton();
+            this.rdbInsuranceNo = new System.Windows.Forms.RadioButton();
+            this.gbMessage = new System.Windows.Forms.GroupBox();
+            this.rdbMessageYes = new System.Windows.Forms.RadioButton();
+            this.rdbMessageNo = new System.Windows.Forms.RadioButton();
+            this.gbInsurance.SuspendLayout();
+            this.gbMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbPTCLabel
@@ -414,11 +454,341 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Zip Code";
             // 
+            // tbProviderID
+            // 
+            this.tbProviderID.Location = new System.Drawing.Point(138, 93);
+            this.tbProviderID.Name = "tbProviderID";
+            this.tbProviderID.Size = new System.Drawing.Size(100, 20);
+            this.tbProviderID.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(356, 515);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(87, 20);
+            this.textBox2.TabIndex = 40;
+            // 
+            // tbPhone2
+            // 
+            this.tbPhone2.Location = new System.Drawing.Point(146, 515);
+            this.tbPhone2.Name = "tbPhone2";
+            this.tbPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone2.TabIndex = 41;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(356, 475);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(87, 20);
+            this.textBox4.TabIndex = 42;
+            // 
+            // tbPhone1
+            // 
+            this.tbPhone1.Location = new System.Drawing.Point(146, 475);
+            this.tbPhone1.Name = "tbPhone1";
+            this.tbPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone1.TabIndex = 43;
+            // 
+            // tbOtherInsurance
+            // 
+            this.tbOtherInsurance.Location = new System.Drawing.Point(111, 443);
+            this.tbOtherInsurance.Name = "tbOtherInsurance";
+            this.tbOtherInsurance.Size = new System.Drawing.Size(100, 20);
+            this.tbOtherInsurance.TabIndex = 44;
+            // 
+            // tbLastName
+            // 
+            this.tbLastName.Location = new System.Drawing.Point(517, 173);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbLastName.TabIndex = 45;
+            // 
+            // tbMiddleInitial
+            // 
+            this.tbMiddleInitial.Location = new System.Drawing.Point(366, 173);
+            this.tbMiddleInitial.Name = "tbMiddleInitial";
+            this.tbMiddleInitial.Size = new System.Drawing.Size(32, 20);
+            this.tbMiddleInitial.TabIndex = 46;
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.Location = new System.Drawing.Point(138, 173);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(100, 20);
+            this.tbFirstName.TabIndex = 47;
+            // 
+            // tbStreet
+            // 
+            this.tbStreet.Location = new System.Drawing.Point(133, 271);
+            this.tbStreet.Name = "tbStreet";
+            this.tbStreet.Size = new System.Drawing.Size(100, 20);
+            this.tbStreet.TabIndex = 48;
+            // 
+            // tbStreet2
+            // 
+            this.tbStreet2.Location = new System.Drawing.Point(133, 306);
+            this.tbStreet2.Name = "tbStreet2";
+            this.tbStreet2.Size = new System.Drawing.Size(100, 20);
+            this.tbStreet2.TabIndex = 49;
+            // 
+            // tbCity
+            // 
+            this.tbCity.Location = new System.Drawing.Point(102, 340);
+            this.tbCity.Name = "tbCity";
+            this.tbCity.Size = new System.Drawing.Size(136, 20);
+            this.tbCity.TabIndex = 50;
+            // 
+            // tbZip
+            // 
+            this.tbZip.Location = new System.Drawing.Point(517, 340);
+            this.tbZip.Name = "tbZip";
+            this.tbZip.Size = new System.Drawing.Size(100, 20);
+            this.tbZip.TabIndex = 51;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(146, 595);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(237, 20);
+            this.tbEmail.TabIndex = 52;
+            // 
+            // tbCGPhone2Ext
+            // 
+            this.tbCGPhone2Ext.Location = new System.Drawing.Point(356, 734);
+            this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
+            this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 20);
+            this.tbCGPhone2Ext.TabIndex = 54;
+            // 
+            // tbCGPhone1Ext
+            // 
+            this.tbCGPhone1Ext.Location = new System.Drawing.Point(356, 695);
+            this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
+            this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 20);
+            this.tbCGPhone1Ext.TabIndex = 55;
+            // 
+            // tbCGPhone1
+            // 
+            this.tbCGPhone1.Location = new System.Drawing.Point(194, 695);
+            this.tbCGPhone1.Name = "tbCGPhone1";
+            this.tbCGPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone1.TabIndex = 56;
+            // 
+            // tbCGPhone2
+            // 
+            this.tbCGPhone2.Location = new System.Drawing.Point(194, 734);
+            this.tbCGPhone2.Name = "tbCGPhone2";
+            this.tbCGPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone2.TabIndex = 57;
+            // 
+            // tbCGAddress
+            // 
+            this.tbCGAddress.Location = new System.Drawing.Point(146, 803);
+            this.tbCGAddress.Name = "tbCGAddress";
+            this.tbCGAddress.Size = new System.Drawing.Size(100, 20);
+            this.tbCGAddress.TabIndex = 58;
+            // 
+            // tbCGCity
+            // 
+            this.tbCGCity.Location = new System.Drawing.Point(146, 840);
+            this.tbCGCity.Name = "tbCGCity";
+            this.tbCGCity.Size = new System.Drawing.Size(100, 20);
+            this.tbCGCity.TabIndex = 59;
+            // 
+            // tbCGZip
+            // 
+            this.tbCGZip.Location = new System.Drawing.Point(532, 840);
+            this.tbCGZip.Name = "tbCGZip";
+            this.tbCGZip.Size = new System.Drawing.Size(100, 20);
+            this.tbCGZip.TabIndex = 60;
+            // 
+            // cbCGState
+            // 
+            this.cbCGState.FormattingEnabled = true;
+            this.cbCGState.Location = new System.Drawing.Point(333, 840);
+            this.cbCGState.Name = "cbCGState";
+            this.cbCGState.Size = new System.Drawing.Size(121, 21);
+            this.cbCGState.TabIndex = 61;
+            // 
+            // cbCGPhone2Type
+            // 
+            this.cbCGPhone2Type.FormattingEnabled = true;
+            this.cbCGPhone2Type.Location = new System.Drawing.Point(513, 734);
+            this.cbCGPhone2Type.Name = "cbCGPhone2Type";
+            this.cbCGPhone2Type.Size = new System.Drawing.Size(121, 21);
+            this.cbCGPhone2Type.TabIndex = 62;
+            // 
+            // cbCGPhone1Type
+            // 
+            this.cbCGPhone1Type.FormattingEnabled = true;
+            this.cbCGPhone1Type.Location = new System.Drawing.Point(513, 695);
+            this.cbCGPhone1Type.Name = "cbCGPhone1Type";
+            this.cbCGPhone1Type.Size = new System.Drawing.Size(121, 21);
+            this.cbCGPhone1Type.TabIndex = 63;
+            // 
+            // cbPhone2Type
+            // 
+            this.cbPhone2Type.FormattingEnabled = true;
+            this.cbPhone2Type.Location = new System.Drawing.Point(517, 515);
+            this.cbPhone2Type.Name = "cbPhone2Type";
+            this.cbPhone2Type.Size = new System.Drawing.Size(121, 21);
+            this.cbPhone2Type.TabIndex = 64;
+            // 
+            // cbPhone1Type
+            // 
+            this.cbPhone1Type.FormattingEnabled = true;
+            this.cbPhone1Type.Location = new System.Drawing.Point(517, 475);
+            this.cbPhone1Type.Name = "cbPhone1Type";
+            this.cbPhone1Type.Size = new System.Drawing.Size(121, 21);
+            this.cbPhone1Type.TabIndex = 65;
+            // 
+            // cbState
+            // 
+            this.cbState.FormattingEnabled = true;
+            this.cbState.Location = new System.Drawing.Point(299, 339);
+            this.cbState.Name = "cbState";
+            this.cbState.Size = new System.Drawing.Size(121, 21);
+            this.cbState.TabIndex = 66;
+            // 
+            // cbInsurer
+            // 
+            this.cbInsurer.FormattingEnabled = true;
+            this.cbInsurer.Location = new System.Drawing.Point(117, 407);
+            this.cbInsurer.Name = "cbInsurer";
+            this.cbInsurer.Size = new System.Drawing.Size(121, 21);
+            this.cbInsurer.TabIndex = 67;
+            // 
+            // tbCGName
+            // 
+            this.tbCGName.Location = new System.Drawing.Point(227, 658);
+            this.tbCGName.Name = "tbCGName";
+            this.tbCGName.Size = new System.Drawing.Size(203, 20);
+            this.tbCGName.TabIndex = 68;
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Location = new System.Drawing.Point(138, 208);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(121, 21);
+            this.cbGender.TabIndex = 69;
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(146, 236);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpDOB.TabIndex = 70;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Location = new System.Drawing.Point(133, 53);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.TabIndex = 0;
+            // 
+            // gbInsurance
+            // 
+            this.gbInsurance.Controls.Add(this.rdbInsuranceNo);
+            this.gbInsurance.Controls.Add(this.rdbInsuranceYes);
+            this.gbInsurance.Location = new System.Drawing.Point(172, 366);
+            this.gbInsurance.Name = "gbInsurance";
+            this.gbInsurance.Size = new System.Drawing.Size(133, 35);
+            this.gbInsurance.TabIndex = 72;
+            this.gbInsurance.TabStop = false;
+            // 
+            // rdbInsuranceYes
+            // 
+            this.rdbInsuranceYes.AutoSize = true;
+            this.rdbInsuranceYes.Location = new System.Drawing.Point(18, 12);
+            this.rdbInsuranceYes.Name = "rdbInsuranceYes";
+            this.rdbInsuranceYes.Size = new System.Drawing.Size(43, 17);
+            this.rdbInsuranceYes.TabIndex = 0;
+            this.rdbInsuranceYes.TabStop = true;
+            this.rdbInsuranceYes.Text = "Yes";
+            this.rdbInsuranceYes.UseVisualStyleBackColor = true;
+            // 
+            // rdbInsuranceNo
+            // 
+            this.rdbInsuranceNo.AutoSize = true;
+            this.rdbInsuranceNo.Location = new System.Drawing.Point(82, 12);
+            this.rdbInsuranceNo.Name = "rdbInsuranceNo";
+            this.rdbInsuranceNo.Size = new System.Drawing.Size(39, 17);
+            this.rdbInsuranceNo.TabIndex = 1;
+            this.rdbInsuranceNo.TabStop = true;
+            this.rdbInsuranceNo.Text = "No";
+            this.rdbInsuranceNo.UseVisualStyleBackColor = true;
+            // 
+            // gbMessage
+            // 
+            this.gbMessage.Controls.Add(this.rdbMessageNo);
+            this.gbMessage.Controls.Add(this.rdbMessageYes);
+            this.gbMessage.Location = new System.Drawing.Point(239, 541);
+            this.gbMessage.Name = "gbMessage";
+            this.gbMessage.Size = new System.Drawing.Size(136, 37);
+            this.gbMessage.TabIndex = 73;
+            this.gbMessage.TabStop = false;
+            // 
+            // rdbMessageYes
+            // 
+            this.rdbMessageYes.AutoSize = true;
+            this.rdbMessageYes.Location = new System.Drawing.Point(14, 13);
+            this.rdbMessageYes.Name = "rdbMessageYes";
+            this.rdbMessageYes.Size = new System.Drawing.Size(43, 17);
+            this.rdbMessageYes.TabIndex = 0;
+            this.rdbMessageYes.TabStop = true;
+            this.rdbMessageYes.Text = "Yes";
+            this.rdbMessageYes.UseVisualStyleBackColor = true;
+            // 
+            // rdbMessageNo
+            // 
+            this.rdbMessageNo.AutoSize = true;
+            this.rdbMessageNo.Location = new System.Drawing.Point(82, 13);
+            this.rdbMessageNo.Name = "rdbMessageNo";
+            this.rdbMessageNo.Size = new System.Drawing.Size(39, 17);
+            this.rdbMessageNo.TabIndex = 1;
+            this.rdbMessageNo.TabStop = true;
+            this.rdbMessageNo.Text = "No";
+            this.rdbMessageNo.UseVisualStyleBackColor = true;
+            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 963);
+            this.ClientSize = new System.Drawing.Size(712, 929);
+            this.Controls.Add(this.gbMessage);
+            this.Controls.Add(this.gbInsurance);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.dtpDOB);
+            this.Controls.Add(this.cbGender);
+            this.Controls.Add(this.tbCGName);
+            this.Controls.Add(this.cbInsurer);
+            this.Controls.Add(this.cbState);
+            this.Controls.Add(this.cbPhone1Type);
+            this.Controls.Add(this.cbPhone2Type);
+            this.Controls.Add(this.cbCGPhone1Type);
+            this.Controls.Add(this.cbCGPhone2Type);
+            this.Controls.Add(this.cbCGState);
+            this.Controls.Add(this.tbCGZip);
+            this.Controls.Add(this.tbCGCity);
+            this.Controls.Add(this.tbCGAddress);
+            this.Controls.Add(this.tbCGPhone2);
+            this.Controls.Add(this.tbCGPhone1);
+            this.Controls.Add(this.tbCGPhone1Ext);
+            this.Controls.Add(this.tbCGPhone2Ext);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.tbZip);
+            this.Controls.Add(this.tbCity);
+            this.Controls.Add(this.tbStreet2);
+            this.Controls.Add(this.tbStreet);
+            this.Controls.Add(this.tbFirstName);
+            this.Controls.Add(this.tbMiddleInitial);
+            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.tbOtherInsurance);
+            this.Controls.Add(this.tbPhone1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbPhone2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbProviderID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCaregiverState);
             this.Controls.Add(this.lblCaregiverCity);
@@ -459,6 +829,10 @@
             this.Controls.Add(this.lbPTCLabel);
             this.Name = "PatientInformation";
             this.Text = "Patient Information";
+            this.gbInsurance.ResumeLayout(false);
+            this.gbInsurance.PerformLayout();
+            this.gbMessage.ResumeLayout(false);
+            this.gbMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +878,43 @@
         private System.Windows.Forms.Label lblCaregiverCity;
         private System.Windows.Forms.Label lblCaregiverState;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbProviderID;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbPhone2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbPhone1;
+        private System.Windows.Forms.TextBox tbOtherInsurance;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbMiddleInitial;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbStreet;
+        private System.Windows.Forms.TextBox tbStreet2;
+        private System.Windows.Forms.TextBox tbCity;
+        private System.Windows.Forms.TextBox tbZip;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbCGPhone2Ext;
+        private System.Windows.Forms.TextBox tbCGPhone1Ext;
+        private System.Windows.Forms.TextBox tbCGPhone1;
+        private System.Windows.Forms.TextBox tbCGPhone2;
+        private System.Windows.Forms.TextBox tbCGAddress;
+        private System.Windows.Forms.TextBox tbCGCity;
+        private System.Windows.Forms.TextBox tbCGZip;
+        private System.Windows.Forms.ComboBox cbCGState;
+        private System.Windows.Forms.ComboBox cbCGPhone2Type;
+        private System.Windows.Forms.ComboBox cbCGPhone1Type;
+        private System.Windows.Forms.ComboBox cbPhone2Type;
+        private System.Windows.Forms.ComboBox cbPhone1Type;
+        private System.Windows.Forms.ComboBox cbState;
+        private System.Windows.Forms.ComboBox cbInsurer;
+        private System.Windows.Forms.TextBox tbCGName;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.GroupBox gbInsurance;
+        private System.Windows.Forms.RadioButton rdbInsuranceNo;
+        private System.Windows.Forms.RadioButton rdbInsuranceYes;
+        private System.Windows.Forms.GroupBox gbMessage;
+        private System.Windows.Forms.RadioButton rdbMessageNo;
+        private System.Windows.Forms.RadioButton rdbMessageYes;
     }
 }

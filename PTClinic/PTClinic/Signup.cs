@@ -22,6 +22,7 @@ namespace PTClinic
             this.Login = Login;
             Login.Hide();
 
+            panelError.BackColor = Color.Red;
             panelError.Visible = false;
             this.Update();
         }
@@ -36,11 +37,13 @@ namespace PTClinic
                 string.IsNullOrEmpty(tbPassword.Text) || string.IsNullOrEmpty(tbPasswordConfirm.Text) ||
                 string.IsNullOrEmpty(tbUsername.Text) || string.IsNullOrEmpty(tbEmail.Text))
             {
+                panelError.BackColor = Color.Red;
                 panelError.Visible = true;
                 lblError.Text = "Please fill out all fields";
             }
             else if (Validation.IsValidUserLength(tbUsername.Text.Trim()) == false)
             {
+                panelError.BackColor = Color.Red;
                 panelError.Visible = true;
                 lblError.Text = "Username must be longer";
             }
@@ -51,63 +54,93 @@ namespace PTClinic
             }
             else if (!tbPassword.Text.Trim().Equals(tbPasswordConfirm.Text.Trim()))
             {
+                panelError.BackColor = Color.Red;
                 panelError.Visible = true;
                 lblError.Text = "Passwords do not match";
             }
             else
             {
+                panelError.BackColor = Color.Red;
                 panelError.Visible = false;
                 lblError.Text = "";
 
 
 
-                OleDbConnection conn = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
+                //OleDbConnection connection = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
+
+                OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = PTClinic.accdb; Persist Security Info = False; ");
+
 
                 try
                 {
-                    conn.Open();
+                    connection.Open();
 
                     PTClinicDataTableAdapters.UsersTableAdapter user = new PTClinicDataTableAdapters.UsersTableAdapter();
                     PTClinicData.UsersDataTable dt = user.GetDataByUsername(tbUsername.Text.Trim());
+                   
 
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                       /** string username = dt[1].first_name.ToString();
+                        if (username.ToLower().Equals(tbUsername.Text.Trim().ToLower()))
+                        {
+                            MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-                    /** TODO INSERT NEW USER -
-                     * 
-                     *  ONCE COMPLETE INSERT GO BACK TO LOGIN
-                     *  
-                     *  THEN JUMP TO ADMIN PAGE
-                     *  
-                     *  
-                     *  
-
-                    try
-                    {
-                        PTClinicData.UsersDataTable dtNewUser = user.InsertNewUser(tbUsername, tbPassword);
-                        // INSERT NEW USER
-
-
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(e.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-
+                        }
 
                     **/
+                        MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      
+                    }
+                    else
+                    {
+                        string insertStatement = "INSERT INTO `Users` (`username`, `password`, `salt`, `first_name`, `last_name`, `email`, `date_created`) VALUES (@username, @password, @salt, @first_name, @last_name, @email, @date_created)";
 
 
+                        OleDbCommand comm = new OleDbCommand();
+                        comm.CommandText = insertStatement; // Commander knows what to say
+                        comm.Connection = connection; // Heres the connection
+
+                        // Get Current SHORT dATE
+                        DateTime date = DateTime.Now;
+                        string shortDateStr = date.ToShortDateString();
+                        DateTime shortDate = Convert.ToDateTime(shortDateStr);
+
+                        comm.Parameters.AddWithValue("@username", tbUsername.Text.Trim());
+                        comm.Parameters.AddWithValue("@password", tbPassword.Text.Trim());
+                        comm.Parameters.AddWithValue("@salt", "salt");
+                        comm.Parameters.AddWithValue("@first_name", tbFirstName.Text.Trim());
+                        comm.Parameters.AddWithValue("@last_name", tbLastName.Text.Trim());
+                        comm.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                        comm.Parameters.AddWithValue("@date_created", shortDate);
 
 
-                    /** if (conn.State == ConnectionState.Open)
-                     {
-                         MessageBox.Show("CONNECTION OPENED!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }**/
+                        try
+                        {
+                          //  connection.Open();
+                            // ADD NEW USER
+                            comm.ExecuteNonQuery();
+
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show(err.ToString(), "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        panelError.BackColor = Color.FromArgb(0, 192, 0);
+                        panelError.Visible = true;
+                        lblError.Text = "User successfully added";
+                        /**
+                        finally
+                        {
+                           // connection.Close();
+                            MessageBox.Show("Added statement", "Database!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        } **/
+
+                    }
+
+
 
                 }
                 catch (Exception ex)
@@ -116,9 +149,11 @@ namespace PTClinic
                 }
                 finally
                 {
-                    conn.Close();
-                }
+                    connection.Close();
+                    MessageBox.Show("Connection has been closed!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                }
 
             }
 

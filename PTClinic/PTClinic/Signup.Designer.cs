@@ -48,6 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panelError = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelError.SuspendLayout();
@@ -191,6 +192,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
@@ -235,6 +237,18 @@
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 18);
             this.lblError.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(578, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 34);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Back To Login";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Signup
             // 
@@ -291,5 +305,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelError;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button button1;
     }
 }

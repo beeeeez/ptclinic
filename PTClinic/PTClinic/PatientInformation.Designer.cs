@@ -140,7 +140,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(453, 176);
+            this.lblLastName.Location = new System.Drawing.Point(432, 176);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 3;
@@ -366,7 +366,7 @@
             // lblCaregiverExtension
             // 
             this.lblCaregiverExtension.AutoSize = true;
-            this.lblCaregiverExtension.Location = new System.Drawing.Point(325, 698);
+            this.lblCaregiverExtension.Location = new System.Drawing.Point(335, 698);
             this.lblCaregiverExtension.Name = "lblCaregiverExtension";
             this.lblCaregiverExtension.Size = new System.Drawing.Size(25, 13);
             this.lblCaregiverExtension.TabIndex = 28;
@@ -393,7 +393,7 @@
             // lblCGPhone2Ext
             // 
             this.lblCGPhone2Ext.AutoSize = true;
-            this.lblCGPhone2Ext.Location = new System.Drawing.Point(325, 737);
+            this.lblCGPhone2Ext.Location = new System.Drawing.Point(335, 737);
             this.lblCGPhone2Ext.Name = "lblCGPhone2Ext";
             this.lblCGPhone2Ext.Size = new System.Drawing.Size(25, 13);
             this.lblCGPhone2Ext.TabIndex = 31;
@@ -472,7 +472,7 @@
             // 
             this.tbPhone2.Location = new System.Drawing.Point(146, 515);
             this.tbPhone2.Name = "tbPhone2";
-            this.tbPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone2.Size = new System.Drawing.Size(147, 20);
             this.tbPhone2.TabIndex = 41;
             // 
             // textBox4
@@ -486,7 +486,7 @@
             // 
             this.tbPhone1.Location = new System.Drawing.Point(146, 475);
             this.tbPhone1.Name = "tbPhone1";
-            this.tbPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone1.Size = new System.Drawing.Size(147, 20);
             this.tbPhone1.TabIndex = 43;
             // 
             // tbOtherInsurance
@@ -498,9 +498,9 @@
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(517, 173);
+            this.tbLastName.Location = new System.Drawing.Point(496, 173);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbLastName.Size = new System.Drawing.Size(142, 20);
             this.tbLastName.TabIndex = 45;
             // 
             // tbMiddleInitial
@@ -514,21 +514,21 @@
             // 
             this.tbFirstName.Location = new System.Drawing.Point(138, 173);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(100, 20);
+            this.tbFirstName.Size = new System.Drawing.Size(125, 20);
             this.tbFirstName.TabIndex = 47;
             // 
             // tbStreet
             // 
             this.tbStreet.Location = new System.Drawing.Point(133, 271);
             this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(100, 20);
+            this.tbStreet.Size = new System.Drawing.Size(172, 20);
             this.tbStreet.TabIndex = 48;
             // 
             // tbStreet2
             // 
             this.tbStreet2.Location = new System.Drawing.Point(133, 306);
             this.tbStreet2.Name = "tbStreet2";
-            this.tbStreet2.Size = new System.Drawing.Size(100, 20);
+            this.tbStreet2.Size = new System.Drawing.Size(172, 20);
             this.tbStreet2.TabIndex = 49;
             // 
             // tbCity
@@ -554,14 +554,14 @@
             // 
             // tbCGPhone2Ext
             // 
-            this.tbCGPhone2Ext.Location = new System.Drawing.Point(356, 734);
+            this.tbCGPhone2Ext.Location = new System.Drawing.Point(366, 734);
             this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
             this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 20);
             this.tbCGPhone2Ext.TabIndex = 54;
             // 
             // tbCGPhone1Ext
             // 
-            this.tbCGPhone1Ext.Location = new System.Drawing.Point(356, 695);
+            this.tbCGPhone1Ext.Location = new System.Drawing.Point(366, 695);
             this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
             this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 20);
             this.tbCGPhone1Ext.TabIndex = 55;
@@ -570,28 +570,28 @@
             // 
             this.tbCGPhone1.Location = new System.Drawing.Point(194, 695);
             this.tbCGPhone1.Name = "tbCGPhone1";
-            this.tbCGPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone1.Size = new System.Drawing.Size(125, 20);
             this.tbCGPhone1.TabIndex = 56;
             // 
             // tbCGPhone2
             // 
             this.tbCGPhone2.Location = new System.Drawing.Point(194, 734);
             this.tbCGPhone2.Name = "tbCGPhone2";
-            this.tbCGPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone2.Size = new System.Drawing.Size(125, 20);
             this.tbCGPhone2.TabIndex = 57;
             // 
             // tbCGAddress
             // 
             this.tbCGAddress.Location = new System.Drawing.Point(146, 803);
             this.tbCGAddress.Name = "tbCGAddress";
-            this.tbCGAddress.Size = new System.Drawing.Size(100, 20);
+            this.tbCGAddress.Size = new System.Drawing.Size(159, 20);
             this.tbCGAddress.TabIndex = 58;
             // 
             // tbCGCity
             // 
             this.tbCGCity.Location = new System.Drawing.Point(146, 840);
             this.tbCGCity.Name = "tbCGCity";
-            this.tbCGCity.Size = new System.Drawing.Size(100, 20);
+            this.tbCGCity.Size = new System.Drawing.Size(117, 20);
             this.tbCGCity.TabIndex = 59;
             // 
             // tbCGZip
@@ -674,7 +674,7 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(146, 236);
+            this.dtpDOB.Location = new System.Drawing.Point(144, 236);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpDOB.TabIndex = 70;
@@ -754,7 +754,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 929);
+            this.ClientSize = new System.Drawing.Size(726, 905);
             this.Controls.Add(this.gbMessage);
             this.Controls.Add(this.gbInsurance);
             this.Controls.Add(this.dtpDate);

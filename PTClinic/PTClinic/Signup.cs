@@ -65,10 +65,10 @@ namespace PTClinic
                 lblError.Text = "";
 
 
+                AppDomain.CurrentDomain.SetData("DataDirectory", "C:\\Users\\iaars\\Documents\\PTClinic\\PTClinic\\PTClinic");
+                OleDbConnection connection = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
 
-                //OleDbConnection connection = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
-
-                OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = PTClinic.accdb; Persist Security Info = False; ");
+                //OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = PTClinic.accdb; Persist Security Info = False; ");
 
 
                 try

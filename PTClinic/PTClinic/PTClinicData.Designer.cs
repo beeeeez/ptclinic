@@ -1082,13 +1082,13 @@ namespace PTClinic.PTClinicDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::PTClinic.Properties.Settings.Default.PTClinicConnectionString;
+            this._connection.ConnectionString = global::PTClinic.Properties.Settings.Default.PTClinicConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT user_id, username, [password], salt, first_name, last_name, email, date_cr" +
@@ -1096,16 +1096,22 @@ namespace PTClinic.PTClinicDataTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT user_id, username FROM Users WHERE [username] = ?";
+            this._commandCollection[1].CommandText = "SELECT user_id, username, [password], salt, first_name, last_name, email, date_cr" +
+                "eated FROM Users";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "username", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT user_id, username, [password], salt, first_name, last_name, email, date_cr" +
-                "eated FROM Users WHERE [username] = ? AND [password] = ?";
+                "eated FROM Users WHERE [username] = ?";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "username", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT user_id, username, [password], salt, first_name, last_name, email, date_cr" +
+                "eated FROM Users WHERE [username] = ? AND [password] = ?";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "username", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1136,8 +1142,19 @@ namespace PTClinic.PTClinicDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PTClinicData.UsersDataTable GetDataByUsername(string username) {
+        public virtual PTClinicData.UsersDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            PTClinicData.UsersDataTable dataTable = new PTClinicData.UsersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PTClinicData.UsersDataTable GetDataByUsername(string username) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1154,7 +1171,7 @@ namespace PTClinic.PTClinicDataTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PTClinicData.UsersDataTable GetDataByUsernamePwd(string username, string password) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }

@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PTClinicConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PTClinicConnectionString1 (Settings)" PropertyReference="ApplicationSettings.PTClinic.Properties.Settings.GlobalReference.Default.PTClinicConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PTClinicConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PTClinicConnectionString3 (Settings)" PropertyReference="ApplicationSettings.PTClinic.Properties.Settings.GlobalReference.Default.PTClinicConnectionString1" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsersTableAdapter" GeneratorDataComponentClassName="UsersTableAdapter" Name="Users" UserDataComponentName="UsersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="PTClinicConnectionString1 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PTClinicConnectionString3 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Users` WHERE ((`user_id` = ?) AND ((? = 1 AND `username` IS NULL) OR (`username` = ?)) AND ((? = 1 AND `first_name` IS NULL) OR (`first_name` = ?)) AND ((? = 1 AND `last_name` IS NULL) OR (`last_name` = ?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)) AND ((? = 1 AND `date_created` IS NULL) OR (`date_created` = ?)))</CommandText>
@@ -86,17 +86,25 @@
               <Mapping SourceColumn="date_created" DataSetColumn="date_created" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PTClinicConnectionString1 (Settings)" DbObjectName="Users" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="GetDataByUsername">
+              <DbSource ConnectionRef="PTClinicConnectionString3 (Settings)" DbObjectName="Users" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetDataBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT user_id, username FROM Users WHERE [username] = ?</CommandText>
+                    <CommandText>SELECT user_id, username, [password], salt, first_name, last_name, email, date_created FROM Users</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PTClinicConnectionString3 (Settings)" DbObjectName="Users" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="GetDataByUsername">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT user_id, username, [password], salt, first_name, last_name, email, date_created FROM Users WHERE [username] = ?</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="username" DataSourceName="Users" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="username" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="username" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PTClinicConnectionString1 (Settings)" DbObjectName="Users" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsernamePwd" GetMethodModifier="Public" GetMethodName="GetDataByUsernamePwd" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsernamePwd" UserSourceName="GetDataByUsernamePwd">
+              <DbSource ConnectionRef="PTClinicConnectionString3 (Settings)" DbObjectName="Users" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsernamePwd" GetMethodModifier="Public" GetMethodName="GetDataByUsernamePwd" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsernamePwd" UserSourceName="GetDataByUsernamePwd">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT user_id, username, [password], salt, first_name, last_name, email, date_created FROM Users WHERE [username] = ? AND [password] = ?</CommandText>
@@ -117,7 +125,7 @@
   <xs:element name="PTClinicData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PTClinicData" msprop:Generator_UserDSName="PTClinicData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="user_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id" type="xs:int" />

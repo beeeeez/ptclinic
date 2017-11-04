@@ -55,9 +55,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PTClinicData.cs">
-      <DependentUpon>PTClinicData.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PTClinicData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

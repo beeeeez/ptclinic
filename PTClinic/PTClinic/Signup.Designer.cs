@@ -44,11 +44,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackToLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panelError = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelError.SuspendLayout();
@@ -192,13 +192,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnBackToLogin);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(691, 67);
             this.panel1.TabIndex = 14;
+            // 
+            // btnBackToLogin
+            // 
+            this.btnBackToLogin.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToLogin.ForeColor = System.Drawing.Color.White;
+            this.btnBackToLogin.Location = new System.Drawing.Point(578, 18);
+            this.btnBackToLogin.Name = "btnBackToLogin";
+            this.btnBackToLogin.Size = new System.Drawing.Size(92, 34);
+            this.btnBackToLogin.TabIndex = 15;
+            this.btnBackToLogin.Text = "Back To Login";
+            this.btnBackToLogin.UseVisualStyleBackColor = false;
+            this.btnBackToLogin.Click += new System.EventHandler(this.btnBackToLogin_Click);
             // 
             // pictureBox1
             // 
@@ -237,18 +250,6 @@
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 18);
             this.lblError.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(578, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 34);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Back To Login";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Signup
             // 
@@ -305,6 +306,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelError;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBackToLogin;
     }
 }

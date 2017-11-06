@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,12 @@ namespace PTClinic
 {
     public partial class Login : Form
     {
-
-
         public Login()
         {
             InitializeComponent();
+
+            panelError.Visible = false;
+            this.Update();
         }
 
         private void tbUsername_KeyPress(object sender, KeyPressEventArgs e)
@@ -42,12 +44,75 @@ namespace PTClinic
         {
             if (string.IsNullOrEmpty(tbUsername.Text) || string.IsNullOrEmpty(tbPassword.Text))
             {
-                MessageBox.Show("Please enter both username and password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Please enter both username and password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                panelError.Visible = true;
+                lblError.Text = "Please enter both username and password.";
                 tbUsername.Focus();
                 return;
             }
 
-            //MessageBox.Show("Login Button was clicked!!!");
+
+            // OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;");
+
+
+
+            using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+
+                string getUserSQL = "SELECT [user_id], [username], [first_name] FROM Users WHERE ([username] = @username AND [password] = @password)";
+                OleDbCommand comm = new OleDbCommand();
+                comm.CommandText = getUserSQL; // Commander knows what to say
+                comm.Connection = connection; // Heres the connection
+
+                comm.Parameters.AddWithValue("@username", tbUsername.Text);
+                comm.Parameters.AddWithValue("@password", tbPassword.Text);
+
+                try
+                {
+                    connection.Open();
+                    OleDbDataReader dr = comm.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        panelError.Visible = false;
+                        string username = dr["username"].ToString();
+                        string firstName = dr["first_name"].ToString();
+
+                        MessageBox.Show(" First Name = " + dr["first_name"].ToString(), "DB RETURNED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // GO TO ADMIN WINDOW 
+                        Admin adminForm = new Admin(this, username, firstName);
+                   
+                        adminForm.Show();
+
+                        tbUsername.Text = "";
+                        tbPassword.Text = "";
+                    }
+                    else
+                    {
+                        panelError.Visible = true;
+                        lblError.Text = "Sorry, the Username or Password you entered is invalid.";
+                    }
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Display DB Connection error to user 
+
+
+                }
+                finally
+                {
+                    connection.Close();
+                    //MessageBox.Show("Connection closed");
+                }
+            }
+
+
+            /**
 
             try
             {
@@ -74,20 +139,19 @@ namespace PTClinic
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+    **/
         }
+
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             // Show Sign up form
             Signup signupForm = new Signup(this);
             signupForm.Show();
-
-            // Hide login form
-           // this.Hide();
-
-
         }
 
- 
+
     }
 }

@@ -14,11 +14,13 @@ namespace PTClinic
 {
     public partial class Signup : Form
     {
-        private Form Login;
+        public Form Login;
 
         public Signup(Form Login)
         {
             InitializeComponent();
+
+            // Hide Login Form
             this.Login = Login;
             Login.Hide();
 
@@ -81,16 +83,10 @@ namespace PTClinic
 
                     if (dt.Rows.Count > 0)
                     {
-                       /** string username = dt[1].first_name.ToString();
-                        if (username.ToLower().Equals(tbUsername.Text.Trim().ToLower()))
-                        {
-                            MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-
-                    **/
-                        MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      
+                        panelError.BackColor = Color.Red;
+                        panelError.Visible = true;
+                        lblError.Text = "Username already exists";
+                        //MessageBox.Show("Sorry, That Username already exists.", "Username Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -117,7 +113,6 @@ namespace PTClinic
 
                         try
                         {
-                          //  connection.Open();
                             // ADD NEW USER
                             comm.ExecuteNonQuery();
 
@@ -127,16 +122,19 @@ namespace PTClinic
                             MessageBox.Show(err.ToString(), "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
+                        // Display success message
                         panelError.BackColor = Color.FromArgb(0, 192, 0);
                         panelError.Visible = true;
                         lblError.Text = "User successfully added";
-                        /**
-                        finally
-                        {
-                           // connection.Close();
-                            MessageBox.Show("Added statement", "Database!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        } **/
+                        // Clear form fields
+                        tbUsername.Text = "";
+                        tbPassword.Text = "";
+                        tbPasswordConfirm.Text = "";
+                        tbFirstName.Text = "";
+                        tbLastName.Text = "";
+                        tbEmail.Text = "";
+
 
                     }
 
@@ -150,7 +148,7 @@ namespace PTClinic
                 finally
                 {
                     connection.Close();
-                    MessageBox.Show("Connection has been closed!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Connection has been closed!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 }
@@ -162,5 +160,10 @@ namespace PTClinic
 
         }
 
+        private void btnBackToLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login.Show();
+        }
     }
 }

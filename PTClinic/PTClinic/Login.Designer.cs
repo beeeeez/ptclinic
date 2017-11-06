@@ -40,9 +40,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelError = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelError.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -116,9 +119,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(148, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(314, 25);
+            this.label3.Size = new System.Drawing.Size(320, 25);
             this.label3.TabIndex = 7;
-            this.label3.Text = "PT. Clinic Patient Management ";
+            this.label3.Text = "P.T. Clinic Patient Management ";
             // 
             // pictureBox2
             // 
@@ -159,12 +162,33 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // panelError
+            // 
+            this.panelError.BackColor = System.Drawing.Color.Red;
+            this.panelError.Controls.Add(this.lblError);
+            this.panelError.Location = new System.Drawing.Point(80, 91);
+            this.panelError.Name = "panelError";
+            this.panelError.Size = new System.Drawing.Size(439, 40);
+            this.panelError.TabIndex = 17;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.White;
+            this.lblError.Location = new System.Drawing.Point(20, 11);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(374, 18);
+            this.lblError.TabIndex = 0;
+            this.lblError.Text = "Sorry, the Username or Password you entered is invalid";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(582, 387);
+            this.Controls.Add(this.panelError);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
@@ -180,6 +204,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelError.ResumeLayout(false);
+            this.panelError.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +224,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelError;
+        private System.Windows.Forms.Label lblError;
     }
 }

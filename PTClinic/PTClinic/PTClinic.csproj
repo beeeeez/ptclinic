@@ -77,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PTClinicData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <Compile Include="VisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitForm.Designer.cs">
+      <DependentUpon>VisitForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,8 +110,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitForm.resx">
+      <DependentUpon>VisitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -133,7 +151,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\AddNewPatient.png" />
+    <Content Include="Resources\ic_home_white_24dp_1x.png" />
+    <Content Include="Resources\ic_home_white_36dp_1x.png" />
     <Content Include="Resources\ic_power_settings_new_white_18dp_1x.png" />
+    <Content Include="Resources\ic_power_settings_new_white_24dp_1x.png" />
     <Content Include="Resources\ic_power_settings_new_white_36dp_1x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

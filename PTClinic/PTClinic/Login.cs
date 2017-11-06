@@ -78,7 +78,7 @@ namespace PTClinic
                         string username = dr["username"].ToString();
                         string firstName = dr["first_name"].ToString();
 
-                        MessageBox.Show(" First Name = " + dr["first_name"].ToString(), "DB RETURNED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       // MessageBox.Show(" First Name = " + dr["first_name"].ToString(), "DB RETURNED", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // GO TO ADMIN WINDOW 
                         Admin adminForm = new Admin(this, username, firstName);

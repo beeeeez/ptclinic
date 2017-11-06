@@ -180,18 +180,18 @@ namespace PTClinic
             comm.Connection = conn;   //Getting the connection
 
             //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
-            comm.Parameters.AddWithValue(@"Fname", Fname);
-            comm.Parameters.AddWithValue(@"Mname", Mname);
-            comm.Parameters.AddWithValue(@"Lname", Lname);
-            comm.Parameters.AddWithValue(@"Street1", Street1);
-            comm.Parameters.AddWithValue(@"Street2", Street2);
-            comm.Parameters.AddWithValue(@"City", City);
-            comm.Parameters.AddWithValue(@"State", State);
-            comm.Parameters.AddWithValue(@"Zip", Zip);
-            comm.Parameters.AddWithValue(@"Phone", Phone);
-            comm.Parameters.AddWithValue(@"Email", Email);
-            comm.Parameters.AddWithValue(@"MyAge", MyAge);
-            comm.Parameters.AddWithValue(@"BirthDate", BDay).ToString();
+            //comm.Parameters.AddWithValue(@"Fname", Fname);
+            //comm.Parameters.AddWithValue(@"Mname", Mname);
+            //comm.Parameters.AddWithValue(@"Lname", Lname);
+            //comm.Parameters.AddWithValue(@"Street1", Street1);
+            //comm.Parameters.AddWithValue(@"Street2", Street2);
+            //comm.Parameters.AddWithValue(@"City", City);
+            //comm.Parameters.AddWithValue(@"State", State);
+            //comm.Parameters.AddWithValue(@"Zip", Zip);
+            //comm.Parameters.AddWithValue(@"Phone", Phone);
+            //comm.Parameters.AddWithValue(@"Email", Email);
+            //comm.Parameters.AddWithValue(@"MyAge", MyAge);
+            //comm.Parameters.AddWithValue(@"BirthDate", BDay).ToString();
 
 
             try

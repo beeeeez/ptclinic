@@ -54,16 +54,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 73);
+            this.panel1.Size = new System.Drawing.Size(859, 73);
             this.panel1.TabIndex = 16;
             // 
             // btnLogOut
             // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.BackColor = System.Drawing.Color.Navy;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(1046, 20);
+            this.btnLogOut.Location = new System.Drawing.Point(723, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(107, 34);
             this.btnLogOut.TabIndex = 18;
@@ -116,7 +117,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(211, 79);
+            this.panel2.Location = new System.Drawing.Point(49, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(313, 51);
             this.panel2.TabIndex = 19;
@@ -126,7 +127,7 @@
             this.pbBtnVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbBtnVisit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBtnVisit.Image = ((System.Drawing.Image)(resources.GetObject("pbBtnVisit.Image")));
-            this.pbBtnVisit.Location = new System.Drawing.Point(600, 136);
+            this.pbBtnVisit.Location = new System.Drawing.Point(438, 136);
             this.pbBtnVisit.Name = "pbBtnVisit";
             this.pbBtnVisit.Size = new System.Drawing.Size(322, 286);
             this.pbBtnVisit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -139,7 +140,7 @@
             this.pbBtnNewPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbBtnNewPatient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBtnNewPatient.Image = ((System.Drawing.Image)(resources.GetObject("pbBtnNewPatient.Image")));
-            this.pbBtnNewPatient.Location = new System.Drawing.Point(240, 136);
+            this.pbBtnNewPatient.Location = new System.Drawing.Point(78, 136);
             this.pbBtnNewPatient.Name = "pbBtnNewPatient";
             this.pbBtnNewPatient.Size = new System.Drawing.Size(321, 289);
             this.pbBtnNewPatient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -152,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1182, 465);
+            this.ClientSize = new System.Drawing.Size(859, 465);
             this.Controls.Add(this.pbBtnVisit);
             this.Controls.Add(this.pbBtnNewPatient);
             this.Controls.Add(this.panel2);

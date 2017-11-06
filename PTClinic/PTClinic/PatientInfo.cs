@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,6 @@ namespace PTClinic
         // Unsure if this should be string or boolean
         private Boolean hasInsurance;
         private string insurer;
-        private string otherInsurance;
         private string phone;
         private string phoneExtension;
         private string phoneType;
@@ -172,18 +172,6 @@ namespace PTClinic
             }
         }
 
-        // Public variable specifically for OtherInsurance
-        public string OtherInsurance
-        {
-            get { return otherInsurance; }
-            set
-            {
-                // TODO >> is validation needed here?
-                // Since they may have an insurance provided in the drop down.
-                otherInsurance = value;
-            }
-        }
-
         // Public variable specifically for Phone
         public string Phone
         {
@@ -271,6 +259,105 @@ namespace PTClinic
             }
         }
 
+        // Default Constructor
+        public PatientInfo()
+        {
+            //Start by giving feedback an empty string
+            //feedback = "";
+            fName = "";
+            mInitial = "";
+            lName = "";
+            phone = "";
+            phoneExtension = "";
+            phone2 = "";
+            phone2Extension = "";
+        }
+        
+        // Overloaded Constructor
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, bool hasInsurance, string insurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, bool leaveMessage, string email)
+        {
+            //this.Name = name;
+            Fname = fName;
+            MInitial = mInitial;
+            Lname = lName;
+            Gender = gender;
+            Birthdate = dob;
+            Address = address;
+            Address2 = address2;
+            City = city;
+            State = state;
+            Zip = zip;
+            HasInsurance = hasInsurance;
+            Insurer = insurer;
+            Phone = phone;
+            PhoneExtension = phoneExtension;
+            PhoneType = phoneType;
+            Phone2 = phone2;
+            Phone2Extension = phone2Extension;
+            Phone2Type = phone2Type;
+            LeaveMessage = leaveMessage;
+            Email = email;
+        }
 
+        // Adding a record
+        public virtual string AddRecord()
+        {
+            string strFeedback = "";
+
+            // SQL command to add a record to the Patients table
+            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email)" +
+                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email);";
+
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"Fname", Fname);
+            comm.Parameters.AddWithValue(@"MInitial", MInitial);
+            comm.Parameters.AddWithValue(@"Lname", Lname);
+            comm.Parameters.AddWithValue(@"Gender", Gender);
+            comm.Parameters.AddWithValue(@"BirthDate", Birthdate).ToString();
+            comm.Parameters.AddWithValue(@"Address", Address);
+            comm.Parameters.AddWithValue(@"Address2", Address2);
+            comm.Parameters.AddWithValue(@"City", City);
+            comm.Parameters.AddWithValue(@"State", State);
+            comm.Parameters.AddWithValue(@"Zip", Zip);
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
+            comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
+            comm.Parameters.AddWithValue(@"Phone2", Phone2);
+            comm.Parameters.AddWithValue(@"Phone2Extension", Phone2Extension);
+            comm.Parameters.AddWithValue(@"Phone2Type", Phone2Type);
+            comm.Parameters.AddWithValue(@"LeaveMessage", LeaveMessage);
+            comm.Parameters.AddWithValue(@"Email", Email);
+
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+            return strFeedback;
+        } // End of AddRecord
+        
     } // End of PatientInfo
 }

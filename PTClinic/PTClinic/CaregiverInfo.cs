@@ -155,54 +155,69 @@ namespace PTClinic
             phone2Extension = "";
         }
 
-        //Adding a record
+        // Overloaded Constructor
+        public CaregiverInfo(string name, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, string address, string city, string state, string zip)
+        {
+            //this.Name = name;
+            Name = name;
+            Phone = phone;
+            PhoneExtension = phoneExtension;
+            PhoneType = phoneType;
+            Phone2 = phone2;
+            Phone2Extension = phone2Extension;
+            Phone2Type = phone2Type;
+            Address = address;
+            City = city;
+            State = state;
+            Zip = zip;
+        }
+
+        // Adding a record
         public virtual string AddRecord()
         {
             string strFeedback = "";
 
             // TODO Figure out how to pass in the Patient ID?
 
-            // TODO -- FIX EVERYTHING IN HERE-- 
+            // SQL command to add a record to the Caregiver table
+            string strSQL = "INSERT INTO Caregiver (caregiver_name, caregiver_phone1, caregiver_phone1_extension, caregiver_phone1_type, caregiver_phone2, caregiver_phone2_extension, caregiver_phone2_type, caregiver_address, caregiver_city, caregiver_state, caregiver_zip)" +
+                " VALUES (@Name, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @Address, @City, @State, @Zip);";
 
-            // SQL command to add a record to the Persons database
-            string strSQL = "INSERT INTO Persons (Fname, Mname, Lname, Street1, Street2, City, State, Zip, Phone, Email, MyAge, NumOfPets, BirthDate) VALUES (@Fname, @Mname, @Lname, @Street1, @Street2, @City, @State, @Zip, @Phone, @Email, @MyAge, @NumOfPets, @BirthDate);";
-
-            //creating database connection 
+            // creating database connection 
             OleDbConnection conn = new OleDbConnection();
-            //Create the who what and where of the DB
-            string strConn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Contacts.accdb; Persist Security Info=False;";
-            //Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
             conn.ConnectionString = strConn;
 
-            //creating database command connection
+            // creating database command connection
             OleDbCommand comm = new OleDbCommand();
-            comm.CommandText = strSQL; //Commander knows what to say
-            comm.Connection = conn;   //Getting the connection
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
 
-            //Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
-            //comm.Parameters.AddWithValue(@"Fname", Fname);
-            //comm.Parameters.AddWithValue(@"Mname", Mname);
-            //comm.Parameters.AddWithValue(@"Lname", Lname);
-            //comm.Parameters.AddWithValue(@"Street1", Street1);
-            //comm.Parameters.AddWithValue(@"Street2", Street2);
-            //comm.Parameters.AddWithValue(@"City", City);
-            //comm.Parameters.AddWithValue(@"State", State);
-            //comm.Parameters.AddWithValue(@"Zip", Zip);
-            //comm.Parameters.AddWithValue(@"Phone", Phone);
-            //comm.Parameters.AddWithValue(@"Email", Email);
-            //comm.Parameters.AddWithValue(@"MyAge", MyAge);
-            //comm.Parameters.AddWithValue(@"BirthDate", BDay).ToString();
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"Name", Name);
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
+            comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
+            comm.Parameters.AddWithValue(@"Phone2", Phone2);
+            comm.Parameters.AddWithValue(@"Phone2Extension", Phone2Extension);
+            comm.Parameters.AddWithValue(@"Phone2Type", Phone2Type);
+            comm.Parameters.AddWithValue(@"Address", Address);
+            comm.Parameters.AddWithValue(@"City", City);
+            comm.Parameters.AddWithValue(@"State", State);
+            comm.Parameters.AddWithValue(@"Zip", Zip);
 
 
             try
             {
-                //open a connection to the database
+                // open a connection to the database
                 conn.Open();
 
-                //Here is where we will add a record in the future.....
+                // Giving strFeedback the number of records added
                 strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
 
-                //close the database
+                // close the database
                 conn.Close();
             }
             catch (Exception err)

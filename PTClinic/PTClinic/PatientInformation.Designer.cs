@@ -205,7 +205,7 @@
             this.tbProviderID.Location = new System.Drawing.Point(88, 113);
             this.tbProviderID.Name = "tbProviderID";
             this.tbProviderID.Size = new System.Drawing.Size(100, 20);
-            this.tbProviderID.TabIndex = 1;
+            this.tbProviderID.TabIndex = 0;
             // 
             // panel2
             // 
@@ -265,7 +265,7 @@
             this.gbMessage.Location = new System.Drawing.Point(203, 414);
             this.gbMessage.Name = "gbMessage";
             this.gbMessage.Size = new System.Drawing.Size(136, 37);
-            this.gbMessage.TabIndex = 116;
+            this.gbMessage.TabIndex = 20;
             this.gbMessage.TabStop = false;
             // 
             // rdbMessageNo
@@ -297,7 +297,7 @@
             this.gbInsurance.Location = new System.Drawing.Point(136, 239);
             this.gbInsurance.Name = "gbInsurance";
             this.gbInsurance.Size = new System.Drawing.Size(133, 35);
-            this.gbInsurance.TabIndex = 115;
+            this.gbInsurance.TabIndex = 11;
             this.gbInsurance.TabStop = false;
             // 
             // rdbInsuranceNo
@@ -327,7 +327,7 @@
             this.dtpDOB.Location = new System.Drawing.Point(108, 109);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtpDOB.TabIndex = 114;
+            this.dtpDOB.TabIndex = 5;
             // 
             // cbGender
             // 
@@ -335,7 +335,7 @@
             this.cbGender.Location = new System.Drawing.Point(102, 81);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(121, 21);
-            this.cbGender.TabIndex = 113;
+            this.cbGender.TabIndex = 4;
             // 
             // cbInsurer
             // 
@@ -343,7 +343,7 @@
             this.cbInsurer.Location = new System.Drawing.Point(81, 280);
             this.cbInsurer.Name = "cbInsurer";
             this.cbInsurer.Size = new System.Drawing.Size(121, 21);
-            this.cbInsurer.TabIndex = 112;
+            this.cbInsurer.TabIndex = 12;
             // 
             // cbState
             // 
@@ -351,7 +351,7 @@
             this.cbState.Location = new System.Drawing.Point(263, 212);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(121, 21);
-            this.cbState.TabIndex = 111;
+            this.cbState.TabIndex = 9;
             // 
             // cbPhone1Type
             // 
@@ -359,7 +359,7 @@
             this.cbPhone1Type.Location = new System.Drawing.Point(481, 348);
             this.cbPhone1Type.Name = "cbPhone1Type";
             this.cbPhone1Type.Size = new System.Drawing.Size(121, 21);
-            this.cbPhone1Type.TabIndex = 110;
+            this.cbPhone1Type.TabIndex = 16;
             // 
             // cbPhone2Type
             // 
@@ -367,14 +367,14 @@
             this.cbPhone2Type.Location = new System.Drawing.Point(481, 388);
             this.cbPhone2Type.Name = "cbPhone2Type";
             this.cbPhone2Type.Size = new System.Drawing.Size(121, 21);
-            this.cbPhone2Type.TabIndex = 109;
+            this.cbPhone2Type.TabIndex = 19;
             // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(111, 459);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 20);
-            this.tbEmail.TabIndex = 108;
+            this.tbEmail.TabIndex = 21;
             this.tbEmail.Text = "test@email.com";
             // 
             // tbZip
@@ -382,7 +382,7 @@
             this.tbZip.Location = new System.Drawing.Point(481, 213);
             this.tbZip.Name = "tbZip";
             this.tbZip.Size = new System.Drawing.Size(100, 20);
-            this.tbZip.TabIndex = 107;
+            this.tbZip.TabIndex = 10;
             this.tbZip.Text = "02906";
             // 
             // tbCity
@@ -390,7 +390,7 @@
             this.tbCity.Location = new System.Drawing.Point(66, 213);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(136, 20);
-            this.tbCity.TabIndex = 106;
+            this.tbCity.TabIndex = 8;
             this.tbCity.Text = "Providence";
             // 
             // tbAddress2
@@ -398,7 +398,7 @@
             this.tbAddress2.Location = new System.Drawing.Point(97, 179);
             this.tbAddress2.Name = "tbAddress2";
             this.tbAddress2.Size = new System.Drawing.Size(172, 20);
-            this.tbAddress2.TabIndex = 105;
+            this.tbAddress2.TabIndex = 7;
             this.tbAddress2.Text = "Apartment 4d";
             // 
             // tbAddress
@@ -406,7 +406,7 @@
             this.tbAddress.Location = new System.Drawing.Point(97, 144);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(172, 20);
-            this.tbAddress.TabIndex = 104;
+            this.tbAddress.TabIndex = 6;
             this.tbAddress.Text = "1234 Test Street";
             // 
             // tbFirstName
@@ -414,7 +414,7 @@
             this.tbFirstName.Location = new System.Drawing.Point(102, 46);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(125, 20);
-            this.tbFirstName.TabIndex = 103;
+            this.tbFirstName.TabIndex = 1;
             this.tbFirstName.Text = "Henry";
             // 
             // tbMiddleInitial
@@ -422,7 +422,7 @@
             this.tbMiddleInitial.Location = new System.Drawing.Point(330, 46);
             this.tbMiddleInitial.Name = "tbMiddleInitial";
             this.tbMiddleInitial.Size = new System.Drawing.Size(32, 20);
-            this.tbMiddleInitial.TabIndex = 102;
+            this.tbMiddleInitial.TabIndex = 2;
             this.tbMiddleInitial.Text = "B";
             // 
             // tbLastName
@@ -430,7 +430,7 @@
             this.tbLastName.Location = new System.Drawing.Point(460, 46);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(142, 20);
-            this.tbLastName.TabIndex = 101;
+            this.tbLastName.TabIndex = 3;
             this.tbLastName.Text = "Hernickson";
             // 
             // tbOtherInsurance
@@ -438,7 +438,7 @@
             this.tbOtherInsurance.Location = new System.Drawing.Point(75, 316);
             this.tbOtherInsurance.Name = "tbOtherInsurance";
             this.tbOtherInsurance.Size = new System.Drawing.Size(100, 20);
-            this.tbOtherInsurance.TabIndex = 100;
+            this.tbOtherInsurance.TabIndex = 13;
             this.tbOtherInsurance.Text = "Insurance Co";
             // 
             // tbPhone1
@@ -446,7 +446,7 @@
             this.tbPhone1.Location = new System.Drawing.Point(110, 348);
             this.tbPhone1.Name = "tbPhone1";
             this.tbPhone1.Size = new System.Drawing.Size(147, 20);
-            this.tbPhone1.TabIndex = 99;
+            this.tbPhone1.TabIndex = 14;
             this.tbPhone1.Text = "4015567986";
             // 
             // tbPhoneExt1
@@ -454,7 +454,7 @@
             this.tbPhoneExt1.Location = new System.Drawing.Point(320, 348);
             this.tbPhoneExt1.Name = "tbPhoneExt1";
             this.tbPhoneExt1.Size = new System.Drawing.Size(87, 20);
-            this.tbPhoneExt1.TabIndex = 98;
+            this.tbPhoneExt1.TabIndex = 15;
             this.tbPhoneExt1.Text = "1103";
             // 
             // tbPhone2
@@ -462,7 +462,7 @@
             this.tbPhone2.Location = new System.Drawing.Point(110, 388);
             this.tbPhone2.Name = "tbPhone2";
             this.tbPhone2.Size = new System.Drawing.Size(147, 20);
-            this.tbPhone2.TabIndex = 97;
+            this.tbPhone2.TabIndex = 17;
             this.tbPhone2.Text = "4018978890";
             // 
             // tbPhoneExt2
@@ -470,7 +470,7 @@
             this.tbPhoneExt2.Location = new System.Drawing.Point(320, 388);
             this.tbPhoneExt2.Name = "tbPhoneExt2";
             this.tbPhoneExt2.Size = new System.Drawing.Size(87, 20);
-            this.tbPhoneExt2.TabIndex = 96;
+            this.tbPhoneExt2.TabIndex = 18;
             this.tbPhoneExt2.Text = "1214";
             // 
             // lblMessage
@@ -729,7 +729,7 @@
             this.tbCGName.Location = new System.Drawing.Point(179, 80);
             this.tbCGName.Name = "tbCGName";
             this.tbCGName.Size = new System.Drawing.Size(203, 20);
-            this.tbCGName.TabIndex = 116;
+            this.tbCGName.TabIndex = 22;
             this.tbCGName.Text = "Joanne Teset";
             // 
             // cbCGPhone1Type
@@ -738,7 +738,7 @@
             this.cbCGPhone1Type.Location = new System.Drawing.Point(465, 117);
             this.cbCGPhone1Type.Name = "cbCGPhone1Type";
             this.cbCGPhone1Type.Size = new System.Drawing.Size(121, 21);
-            this.cbCGPhone1Type.TabIndex = 115;
+            this.cbCGPhone1Type.TabIndex = 25;
             // 
             // cbCGPhone2Type
             // 
@@ -746,7 +746,7 @@
             this.cbCGPhone2Type.Location = new System.Drawing.Point(465, 156);
             this.cbCGPhone2Type.Name = "cbCGPhone2Type";
             this.cbCGPhone2Type.Size = new System.Drawing.Size(121, 21);
-            this.cbCGPhone2Type.TabIndex = 114;
+            this.cbCGPhone2Type.TabIndex = 28;
             // 
             // cbCGState
             // 
@@ -754,14 +754,14 @@
             this.cbCGState.Location = new System.Drawing.Point(286, 260);
             this.cbCGState.Name = "cbCGState";
             this.cbCGState.Size = new System.Drawing.Size(121, 21);
-            this.cbCGState.TabIndex = 113;
+            this.cbCGState.TabIndex = 31;
             // 
             // tbCGZip
             // 
             this.tbCGZip.Location = new System.Drawing.Point(485, 260);
             this.tbCGZip.Name = "tbCGZip";
             this.tbCGZip.Size = new System.Drawing.Size(100, 20);
-            this.tbCGZip.TabIndex = 112;
+            this.tbCGZip.TabIndex = 32;
             this.tbCGZip.Text = "02554";
             // 
             // tbCGCity
@@ -769,7 +769,7 @@
             this.tbCGCity.Location = new System.Drawing.Point(99, 260);
             this.tbCGCity.Name = "tbCGCity";
             this.tbCGCity.Size = new System.Drawing.Size(117, 20);
-            this.tbCGCity.TabIndex = 111;
+            this.tbCGCity.TabIndex = 30;
             this.tbCGCity.Text = "Boston";
             // 
             // tbCGAddress
@@ -777,7 +777,7 @@
             this.tbCGAddress.Location = new System.Drawing.Point(99, 223);
             this.tbCGAddress.Name = "tbCGAddress";
             this.tbCGAddress.Size = new System.Drawing.Size(159, 20);
-            this.tbCGAddress.TabIndex = 110;
+            this.tbCGAddress.TabIndex = 29;
             this.tbCGAddress.Text = "12345 Caregiver Lane";
             // 
             // tbCGPhone2
@@ -785,7 +785,7 @@
             this.tbCGPhone2.Location = new System.Drawing.Point(146, 156);
             this.tbCGPhone2.Name = "tbCGPhone2";
             this.tbCGPhone2.Size = new System.Drawing.Size(125, 20);
-            this.tbCGPhone2.TabIndex = 109;
+            this.tbCGPhone2.TabIndex = 26;
             this.tbCGPhone2.Text = "4017698850";
             // 
             // tbCGPhone1
@@ -793,7 +793,7 @@
             this.tbCGPhone1.Location = new System.Drawing.Point(146, 117);
             this.tbCGPhone1.Name = "tbCGPhone1";
             this.tbCGPhone1.Size = new System.Drawing.Size(125, 20);
-            this.tbCGPhone1.TabIndex = 108;
+            this.tbCGPhone1.TabIndex = 23;
             this.tbCGPhone1.Text = "5085543009";
             // 
             // tbCGPhone1Ext
@@ -801,7 +801,7 @@
             this.tbCGPhone1Ext.Location = new System.Drawing.Point(318, 117);
             this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
             this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 20);
-            this.tbCGPhone1Ext.TabIndex = 107;
+            this.tbCGPhone1Ext.TabIndex = 24;
             this.tbCGPhone1Ext.Text = "10000";
             // 
             // tbCGPhone2Ext
@@ -809,7 +809,7 @@
             this.tbCGPhone2Ext.Location = new System.Drawing.Point(318, 156);
             this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
             this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 20);
-            this.tbCGPhone2Ext.TabIndex = 106;
+            this.tbCGPhone2Ext.TabIndex = 27;
             this.tbCGPhone2Ext.Text = "10000";
             // 
             // label1
@@ -951,7 +951,7 @@
             this.btnAddPatient.Location = new System.Drawing.Point(780, 614);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(117, 60);
-            this.btnAddPatient.TabIndex = 80;
+            this.btnAddPatient.TabIndex = 33;
             this.btnAddPatient.Text = "Add Patient";
             this.btnAddPatient.UseVisualStyleBackColor = false;
             this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);

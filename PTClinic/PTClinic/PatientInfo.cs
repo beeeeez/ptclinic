@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -379,6 +380,66 @@ namespace PTClinic
 
             return success;
         } // End of AddRecord
+
+
+
+        // Search Functionality 
+        public DataSet SearchPatients(string myFirst, string myLast)
+        {
+            // Create an empty dataset ( a copy of the DB or Table)
+            DataSet dataSet = new DataSet();
+
+            // conn - how and where to connect to a DB
+            OleDbConnection conn = new OleDbConnection();
+
+            // comm -- for what SQL command we want to use
+            OleDbCommand comm = new OleDbCommand();
+
+            // DataAdatper used as translator between the dataset and comm
+            OleDbDataAdapter da = new OleDbDataAdapter();
+
+            // SQL command to get record(s) from the Patient Info table
+            string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_dob FROM Patients WHERE 0=0";
+
+            // Create the connection string
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+
+            // Setting the connection string
+            conn.ConnectionString = strConn;
+
+            // Point comm towards which connection to use
+            comm.Connection = conn;
+
+            // If first name is filled in, use it as criteria for the search
+            if (myFirst.Length > 0)
+            {
+                strSQL += " AND patient_first_name LIKE @Fname";
+                comm.Parameters.AddWithValue("@Fname", "%" + myFirst + "%");
+            }
+
+            // If last name is filled in, use it as criteria for the search
+            if (myLast.Length > 0)
+            {
+                strSQL += " AND patient_last_name LIKE @Lname";
+                comm.Parameters.AddWithValue("@Lname", "%" + myLast + "%");
+            }
+
+            // Tell comm what to say
+            comm.CommandText = strSQL;
+
+            // DataAdapter which command object to translate for
+            da.SelectCommand = comm;
+
+            // Open the connection
+            conn.Open();
+
+            da.Fill(dataSet, "patientInfo");
+
+            //Close the connection
+            conn.Close();
+
+            return dataSet;
+        } // End of SearchPatients
         
     } // End of PatientInfo
 }

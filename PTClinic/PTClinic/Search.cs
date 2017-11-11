@@ -19,11 +19,17 @@ namespace PTClinic
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //Creating a DataSet to hold the DataSet we'll get from PatientInfo
+            // Creating a DataSet to hold the DataSet we'll get from PatientInfo
             DataSet myDataSet;
 
-            //Perform a search using the input(s)
+            // Perform a search using the input(s)
             PatientInfo temp = new PatientInfo();
+
+            myDataSet = temp.SearchPatients(txtFName.Text, txtLName.Text);
+
+            // Display search results in gridview
+            gvResults.DataSource = myDataSet;
+            gvResults.DataMember = "patientInfo";
         }
     }
 }

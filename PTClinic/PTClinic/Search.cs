@@ -31,5 +31,22 @@ namespace PTClinic
             gvResults.DataSource = myDataSet;
             gvResults.DataMember = "patientInfo";
         }
+
+        private void gvResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gvResults_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string strPID = gvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            MessageBox.Show(strPID);
+
+            int intPID = Convert.ToInt32(strPID);
+
+            PatientProfile temp = new PatientProfile(intPID);
+            temp.Show();
+        }
     }
 }

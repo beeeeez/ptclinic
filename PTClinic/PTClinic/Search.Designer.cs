@@ -117,6 +117,8 @@
             this.gvResults.Name = "gvResults";
             this.gvResults.Size = new System.Drawing.Size(932, 431);
             this.gvResults.TabIndex = 3;
+            this.gvResults.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResults_CellClick);
+            this.gvResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResults_CellContentClick);
             // 
             // Search
             // 

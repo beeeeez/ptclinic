@@ -52,16 +52,16 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbZip = new System.Windows.Forms.TextBox();
             this.tbCity = new System.Windows.Forms.TextBox();
-            this.tbStreet2 = new System.Windows.Forms.TextBox();
-            this.tbStreet = new System.Windows.Forms.TextBox();
+            this.tbAddress2 = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbMiddleInitial = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbOtherInsurance = new System.Windows.Forms.TextBox();
             this.tbPhone1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbPhoneExt1 = new System.Windows.Forms.TextBox();
             this.tbPhone2 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbPhoneExt2 = new System.Windows.Forms.TextBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblPhone2Type = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -112,8 +112,9 @@
             this.lblCaregiverName = new System.Windows.Forms.Label();
             this.lblCaregiverInfo = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddPatient = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblFeedback = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -220,16 +221,16 @@
             this.panel2.Controls.Add(this.tbEmail);
             this.panel2.Controls.Add(this.tbZip);
             this.panel2.Controls.Add(this.tbCity);
-            this.panel2.Controls.Add(this.tbStreet2);
-            this.panel2.Controls.Add(this.tbStreet);
+            this.panel2.Controls.Add(this.tbAddress2);
+            this.panel2.Controls.Add(this.tbAddress);
             this.panel2.Controls.Add(this.tbFirstName);
             this.panel2.Controls.Add(this.tbMiddleInitial);
             this.panel2.Controls.Add(this.tbLastName);
             this.panel2.Controls.Add(this.tbOtherInsurance);
             this.panel2.Controls.Add(this.tbPhone1);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.tbPhoneExt1);
             this.panel2.Controls.Add(this.tbPhone2);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.tbPhoneExt2);
             this.panel2.Controls.Add(this.lblMessage);
             this.panel2.Controls.Add(this.lblPhone2Type);
             this.panel2.Controls.Add(this.lblEmail);
@@ -373,6 +374,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 20);
             this.tbEmail.TabIndex = 108;
+            this.tbEmail.Text = "test@email.com";
             // 
             // tbZip
             // 
@@ -380,6 +382,7 @@
             this.tbZip.Name = "tbZip";
             this.tbZip.Size = new System.Drawing.Size(100, 20);
             this.tbZip.TabIndex = 107;
+            this.tbZip.Text = "02906";
             // 
             // tbCity
             // 
@@ -387,20 +390,23 @@
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(136, 20);
             this.tbCity.TabIndex = 106;
+            this.tbCity.Text = "Providence";
             // 
-            // tbStreet2
+            // tbAddress2
             // 
-            this.tbStreet2.Location = new System.Drawing.Point(97, 179);
-            this.tbStreet2.Name = "tbStreet2";
-            this.tbStreet2.Size = new System.Drawing.Size(172, 20);
-            this.tbStreet2.TabIndex = 105;
+            this.tbAddress2.Location = new System.Drawing.Point(97, 179);
+            this.tbAddress2.Name = "tbAddress2";
+            this.tbAddress2.Size = new System.Drawing.Size(172, 20);
+            this.tbAddress2.TabIndex = 105;
+            this.tbAddress2.Text = "Apartment 4d";
             // 
-            // tbStreet
+            // tbAddress
             // 
-            this.tbStreet.Location = new System.Drawing.Point(97, 144);
-            this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(172, 20);
-            this.tbStreet.TabIndex = 104;
+            this.tbAddress.Location = new System.Drawing.Point(97, 144);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(172, 20);
+            this.tbAddress.TabIndex = 104;
+            this.tbAddress.Text = "1234 Test Street";
             // 
             // tbFirstName
             // 
@@ -408,6 +414,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(125, 20);
             this.tbFirstName.TabIndex = 103;
+            this.tbFirstName.Text = "Henry";
             // 
             // tbMiddleInitial
             // 
@@ -415,6 +422,7 @@
             this.tbMiddleInitial.Name = "tbMiddleInitial";
             this.tbMiddleInitial.Size = new System.Drawing.Size(32, 20);
             this.tbMiddleInitial.TabIndex = 102;
+            this.tbMiddleInitial.Text = "B";
             // 
             // tbLastName
             // 
@@ -422,6 +430,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(142, 20);
             this.tbLastName.TabIndex = 101;
+            this.tbLastName.Text = "Hernickson";
             // 
             // tbOtherInsurance
             // 
@@ -429,6 +438,7 @@
             this.tbOtherInsurance.Name = "tbOtherInsurance";
             this.tbOtherInsurance.Size = new System.Drawing.Size(100, 20);
             this.tbOtherInsurance.TabIndex = 100;
+            this.tbOtherInsurance.Text = "Insurance Co";
             // 
             // tbPhone1
             // 
@@ -436,13 +446,15 @@
             this.tbPhone1.Name = "tbPhone1";
             this.tbPhone1.Size = new System.Drawing.Size(147, 20);
             this.tbPhone1.TabIndex = 99;
+            this.tbPhone1.Text = "4015567986";
             // 
-            // textBox4
+            // tbPhoneExt1
             // 
-            this.textBox4.Location = new System.Drawing.Point(320, 348);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(87, 20);
-            this.textBox4.TabIndex = 98;
+            this.tbPhoneExt1.Location = new System.Drawing.Point(320, 348);
+            this.tbPhoneExt1.Name = "tbPhoneExt1";
+            this.tbPhoneExt1.Size = new System.Drawing.Size(87, 20);
+            this.tbPhoneExt1.TabIndex = 98;
+            this.tbPhoneExt1.Text = "1103";
             // 
             // tbPhone2
             // 
@@ -450,13 +462,15 @@
             this.tbPhone2.Name = "tbPhone2";
             this.tbPhone2.Size = new System.Drawing.Size(147, 20);
             this.tbPhone2.TabIndex = 97;
+            this.tbPhone2.Text = "4018978890";
             // 
-            // textBox2
+            // tbPhoneExt2
             // 
-            this.textBox2.Location = new System.Drawing.Point(320, 388);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(87, 20);
-            this.textBox2.TabIndex = 96;
+            this.tbPhoneExt2.Location = new System.Drawing.Point(320, 388);
+            this.tbPhoneExt2.Name = "tbPhoneExt2";
+            this.tbPhoneExt2.Size = new System.Drawing.Size(87, 20);
+            this.tbPhoneExt2.TabIndex = 96;
+            this.tbPhoneExt2.Text = "1214";
             // 
             // lblMessage
             // 
@@ -918,19 +932,20 @@
             this.panel5.Size = new System.Drawing.Size(594, 50);
             this.panel5.TabIndex = 78;
             // 
-            // button1
+            // btnAddPatient
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(780, 614);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 60);
-            this.button1.TabIndex = 80;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPatient.ForeColor = System.Drawing.Color.White;
+            this.btnAddPatient.Location = new System.Drawing.Point(780, 614);
+            this.btnAddPatient.Name = "btnAddPatient";
+            this.btnAddPatient.Size = new System.Drawing.Size(117, 60);
+            this.btnAddPatient.TabIndex = 80;
+            this.btnAddPatient.Text = "Add Patient";
+            this.btnAddPatient.UseVisualStyleBackColor = false;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
             // button2
             // 
@@ -944,6 +959,17 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // lblFeedback
+            // 
+            this.lblFeedback.AutoSize = true;
+            this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedback.ForeColor = System.Drawing.Color.Red;
+            this.lblFeedback.Location = new System.Drawing.Point(786, 561);
+            this.lblFeedback.Name = "lblFeedback";
+            this.lblFeedback.Size = new System.Drawing.Size(96, 20);
+            this.lblFeedback.TabIndex = 82;
+            this.lblFeedback.Text = "FEEDBACK";
+            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,8 +977,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 749);
+            this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblTodaysDate);
@@ -1008,16 +1035,15 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbZip;
         private System.Windows.Forms.TextBox tbCity;
-        private System.Windows.Forms.TextBox tbStreet2;
-        private System.Windows.Forms.TextBox tbStreet;
+        private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbMiddleInitial;
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.TextBox tbOtherInsurance;
         private System.Windows.Forms.TextBox tbPhone1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbPhoneExt1;
         private System.Windows.Forms.TextBox tbPhone2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbPhoneExt2;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblPhone2Type;
         private System.Windows.Forms.Label lblEmail;
@@ -1068,7 +1094,9 @@
         private System.Windows.Forms.Label lblCaregiverName;
         private System.Windows.Forms.Label lblCaregiverInfo;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddPatient;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbAddress2;
+        private System.Windows.Forms.Label lblFeedback;
     }
 }

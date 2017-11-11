@@ -16,6 +16,7 @@ namespace PTClinic
         public string adminFirstName { get; set; }
         public string adminUsername { get; set; }
 
+       
         public Admin(Form Login, string username, string firstName)
         {
             InitializeComponent();

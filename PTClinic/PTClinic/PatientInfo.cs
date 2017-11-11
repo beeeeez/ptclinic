@@ -23,8 +23,9 @@ namespace PTClinic
         private string state;
         private string zip;
         // Unsure if this should be string or boolean
-        private Boolean hasInsurance;
+        private bool hasInsurance;
         private string insurer;
+        private string otherInsurer;
         private string phone;
         private string phoneExtension;
         private string phoneType;
@@ -32,7 +33,7 @@ namespace PTClinic
         private string phone2Extension;
         private string phone2Type;
         // Unsure if this should be string or boolean.
-        private Boolean leaveMessage;
+        private bool leaveMessage;
         private string email;
 
         /* 
@@ -151,7 +152,7 @@ namespace PTClinic
 
         // Public variable specifically for HasInsurance
         // May change?
-        public Boolean HasInsurance
+        public bool HasInsurance
         {
             get { return hasInsurance; }
             set
@@ -169,6 +170,17 @@ namespace PTClinic
                 // TODO >> is validation needed here?
                 // Can we make a "select one" in the dropdown disabled?
                 insurer = value;
+            }
+        }
+
+        // Public variable specifically for Other Insurers
+        public string OtherInsurer
+        {
+            get { return otherInsurer; }
+            set
+            {
+                // TODO >> is validation needed here?
+                otherInsurer = value;
             }
         }
 
@@ -239,7 +251,7 @@ namespace PTClinic
         }
         
         // Public variable for LeaveMessage
-        public Boolean LeaveMessage
+        public bool LeaveMessage
         {
             get { return leaveMessage; }
             set
@@ -274,7 +286,7 @@ namespace PTClinic
         }
         
         // Overloaded Constructor
-        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, bool hasInsurance, string insurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, bool leaveMessage, string email)
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, bool hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, bool leaveMessage, string email)
         {
             //this.Name = name;
             Fname = fName;
@@ -289,6 +301,7 @@ namespace PTClinic
             Zip = zip;
             HasInsurance = hasInsurance;
             Insurer = insurer;
+            OtherInsurer = otherInsurer;
             Phone = phone;
             PhoneExtension = phoneExtension;
             PhoneType = phoneType;
@@ -305,8 +318,17 @@ namespace PTClinic
             string strFeedback = "";
 
             // SQL command to add a record to the Patients table
-            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email)" +
-                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email);";
+            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance)" +
+                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance);";
+
+
+            //string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance)" +
+            //    " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurer);";
+
+
+            //string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance)" +
+            //    " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance);";
+
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -331,6 +353,10 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"City", City);
             comm.Parameters.AddWithValue(@"State", State);
             comm.Parameters.AddWithValue(@"Zip", Zip);
+
+            comm.Parameters.AddWithValue(@"HasInsurance", HasInsurance);
+            comm.Parameters.AddWithValue(@"Insurer", Insurer);
+
             comm.Parameters.AddWithValue(@"Phone", Phone);
             comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
             comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
@@ -339,6 +365,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Phone2Type", Phone2Type);
             comm.Parameters.AddWithValue(@"LeaveMessage", LeaveMessage);
             comm.Parameters.AddWithValue(@"Email", Email);
+            comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
 
 
             try
@@ -347,7 +374,7 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
+                strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
 
                 // close the database
                 conn.Close();
@@ -356,6 +383,7 @@ namespace PTClinic
             {
                 strFeedback = "ERROR: " + err.Message;
             }
+
             return strFeedback;
         } // End of AddRecord
         

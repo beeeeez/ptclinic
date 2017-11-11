@@ -139,6 +139,82 @@ namespace PTClinic
             cbGender.Items.Add("Prefer not to say");
             cbGender.SelectedIndex = 0;
         }
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
+        {
+            PatientInfo newPatient = new PatientInfo();
+
+            newPatient.Fname = tbFirstName.Text;
+            newPatient.MInitial = tbMiddleInitial.Text;
+            newPatient.Lname = tbLastName.Text;
+            newPatient.Gender = cbGender.Text;
+
+            // Get Current SHORT dATE
+            //DateTime birthDate = new DateTime(dtpDOB.Value);
+            string shortDateStr = dtpDOB.Value.ToShortDateString();
+            DateTime shortDateBirthday = Convert.ToDateTime(shortDateStr);
+
+
+            newPatient.Birthdate = shortDateBirthday;
+            newPatient.Address = tbAddress.Text;
+            newPatient.Address2 = tbAddress2.Text;
+            newPatient.City = tbCity.Text;
+            newPatient.State = cbState.Text;
+            newPatient.Zip = tbZip.Text;
+
+            bool hasInsurance = false;
+            if (rdbInsuranceYes.Checked == true)
+            {
+                hasInsurance = true;
+            }
+            else if (rdbInsuranceNo.Checked == true)
+            {
+                hasInsurance = false;
+            }
+            newPatient.HasInsurance = hasInsurance;
+            newPatient.Insurer = cbInsurer.Text;
+            newPatient.OtherInsurer = tbOtherInsurance.Text;
+
+            newPatient.Phone = tbPhone1.Text;
+            newPatient.PhoneExtension = tbPhoneExt1.Text;
+            newPatient.PhoneType = cbPhone1Type.Text;
+
+            newPatient.Phone2 = tbPhone2.Text;
+            newPatient.Phone2Extension = tbPhoneExt2.Text;
+            newPatient.Phone2Type = cbPhone2Type.Text;
+
+            bool canContact = false;
+            if (rdbMessageYes.Checked == true)
+            {
+                canContact = true;
+            }
+            else if (rdbMessageNo.Checked == false)
+            {
+
+                canContact = false;
+            }
+
+            newPatient.LeaveMessage = canContact;
+
+            newPatient.Email = tbEmail.Text;
+
+
+            // If statement to check if there are field erros
+
+            // Else display that new patient was added to DB
+
+            try
+            {
+                lblFeedback.Text = newPatient.AddRecord();
+            }
+            catch (Exception ex)
+            {
+                lblFeedback.Text = ex.ToString();
+            }
+
+        }
+
+
     }
 
     internal class ComboBoxItem

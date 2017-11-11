@@ -36,12 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pbBtnVisit = new System.Windows.Forms.PictureBox();
+            this.pbBtnSearchPatient = new System.Windows.Forms.PictureBox();
             this.pbBtnNewPatient = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBtnVisit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBtnSearchPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBtnNewPatient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,18 +122,18 @@
             this.panel2.Size = new System.Drawing.Size(313, 51);
             this.panel2.TabIndex = 19;
             // 
-            // pbBtnVisit
+            // pbBtnSearchPatient
             // 
-            this.pbBtnVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbBtnVisit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBtnVisit.Image = ((System.Drawing.Image)(resources.GetObject("pbBtnVisit.Image")));
-            this.pbBtnVisit.Location = new System.Drawing.Point(438, 136);
-            this.pbBtnVisit.Name = "pbBtnVisit";
-            this.pbBtnVisit.Size = new System.Drawing.Size(322, 286);
-            this.pbBtnVisit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbBtnVisit.TabIndex = 21;
-            this.pbBtnVisit.TabStop = false;
-            this.pbBtnVisit.Click += new System.EventHandler(this.pbBtnVisit_Click);
+            this.pbBtnSearchPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbBtnSearchPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBtnSearchPatient.Image = ((System.Drawing.Image)(resources.GetObject("pbBtnSearchPatient.Image")));
+            this.pbBtnSearchPatient.Location = new System.Drawing.Point(438, 136);
+            this.pbBtnSearchPatient.Name = "pbBtnSearchPatient";
+            this.pbBtnSearchPatient.Size = new System.Drawing.Size(322, 290);
+            this.pbBtnSearchPatient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbBtnSearchPatient.TabIndex = 21;
+            this.pbBtnSearchPatient.TabStop = false;
+            this.pbBtnSearchPatient.Click += new System.EventHandler(this.pbBtnSearchPatient_Click);
             // 
             // pbBtnNewPatient
             // 
@@ -154,7 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(859, 465);
-            this.Controls.Add(this.pbBtnVisit);
+            this.Controls.Add(this.pbBtnSearchPatient);
             this.Controls.Add(this.pbBtnNewPatient);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -165,7 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBtnVisit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBtnSearchPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBtnNewPatient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,6 +182,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbBtnNewPatient;
-        private System.Windows.Forms.PictureBox pbBtnVisit;
+        private System.Windows.Forms.PictureBox pbBtnSearchPatient;
     }
 }

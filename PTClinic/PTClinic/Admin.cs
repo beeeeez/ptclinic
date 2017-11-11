@@ -33,9 +33,9 @@ namespace PTClinic
 
             // Mouse Enter events for cards
             this.pbBtnNewPatient.MouseEnter += new EventHandler(pbBtnNewPatient_MouseEnter);
-            this.pbBtnVisit.MouseEnter += new EventHandler(pbBtnVisit_MouseEnter);
+            this.pbBtnSearchPatient.MouseEnter += new EventHandler(pbBtnVisit_MouseEnter);
             this.pbBtnNewPatient.MouseLeave += new EventHandler(pbBtnNewPatient_MouseLeave);
-            this.pbBtnVisit.MouseLeave += new EventHandler(pbBtnVisit_MouseLeave);
+            this.pbBtnSearchPatient.MouseLeave += new EventHandler(pbBtnVisit_MouseLeave);
 
             /*
              *   TODO WORK ON FORM CLOSING EVENT HANDLER
@@ -65,9 +65,10 @@ namespace PTClinic
 
         }
 
-        private void pbBtnVisit_Click(object sender, EventArgs e)
+        private void pbBtnSearchPatient_Click(object sender, EventArgs e)
         {
-            // ON CLICK GO TO PATIENT VISIT FORM
+            // GO TO SEARCH FORM
+
         }
 
 
@@ -81,7 +82,7 @@ namespace PTClinic
         private void pbBtnVisit_MouseEnter(object sender, EventArgs e)
         {
             // ADD BORDER
-            pbBtnVisit.BorderStyle = BorderStyle.FixedSingle;
+            pbBtnSearchPatient.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void pbBtnNewPatient_MouseLeave(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace PTClinic
         private void pbBtnVisit_MouseLeave(object sender, EventArgs e)
         {
             // REMOVE BORDER
-            pbBtnVisit.BorderStyle = BorderStyle.None;
+            pbBtnSearchPatient.BorderStyle = BorderStyle.None;
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventHandler e)
@@ -110,5 +111,6 @@ namespace PTClinic
             }
 
         }
+
     }
 }

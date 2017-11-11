@@ -292,6 +292,11 @@ namespace PTClinic
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Clear all fields
+        }
+
 
     }
 

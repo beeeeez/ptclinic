@@ -37,6 +37,7 @@
             this.lblProviderID = new System.Windows.Forms.Label();
             this.tbProviderID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbPhone1 = new System.Windows.Forms.MaskedTextBox();
             this.gbMessage = new System.Windows.Forms.GroupBox();
             this.rdbMessageNo = new System.Windows.Forms.RadioButton();
             this.rdbMessageYes = new System.Windows.Forms.RadioButton();
@@ -58,9 +59,7 @@
             this.tbMiddleInitial = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbOtherInsurance = new System.Windows.Forms.TextBox();
-            this.tbPhone1 = new System.Windows.Forms.TextBox();
             this.tbPhoneExt1 = new System.Windows.Forms.TextBox();
-            this.tbPhone2 = new System.Windows.Forms.TextBox();
             this.tbPhoneExt2 = new System.Windows.Forms.TextBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblPhone2Type = new System.Windows.Forms.Label();
@@ -94,8 +93,6 @@
             this.tbCGZip = new System.Windows.Forms.TextBox();
             this.tbCGCity = new System.Windows.Forms.TextBox();
             this.tbCGAddress = new System.Windows.Forms.TextBox();
-            this.tbCGPhone2 = new System.Windows.Forms.TextBox();
-            this.tbCGPhone1 = new System.Windows.Forms.TextBox();
             this.tbCGPhone1Ext = new System.Windows.Forms.TextBox();
             this.tbCGPhone2Ext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -113,9 +110,12 @@
             this.lblCaregiverInfo = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddPatient = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblCareFeedback = new System.Windows.Forms.Label();
+            this.tbPhone2 = new System.Windows.Forms.MaskedTextBox();
+            this.tbCGPhone1 = new System.Windows.Forms.MaskedTextBox();
+            this.tbCGPhone2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -211,6 +211,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.tbPhone2);
+            this.panel2.Controls.Add(this.tbPhone1);
             this.panel2.Controls.Add(this.gbMessage);
             this.panel2.Controls.Add(this.gbInsurance);
             this.panel2.Controls.Add(this.dtpDOB);
@@ -228,9 +230,7 @@
             this.panel2.Controls.Add(this.tbMiddleInitial);
             this.panel2.Controls.Add(this.tbLastName);
             this.panel2.Controls.Add(this.tbOtherInsurance);
-            this.panel2.Controls.Add(this.tbPhone1);
             this.panel2.Controls.Add(this.tbPhoneExt1);
-            this.panel2.Controls.Add(this.tbPhone2);
             this.panel2.Controls.Add(this.tbPhoneExt2);
             this.panel2.Controls.Add(this.lblMessage);
             this.panel2.Controls.Add(this.lblPhone2Type);
@@ -257,6 +257,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 487);
             this.panel2.TabIndex = 75;
+            // 
+            // tbPhone1
+            // 
+            this.tbPhone1.Location = new System.Drawing.Point(108, 349);
+            this.tbPhone1.Mask = "(999) 000-0000";
+            this.tbPhone1.Name = "tbPhone1";
+            this.tbPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone1.TabIndex = 106;
+            this.tbPhone1.Text = "5084423126";
             // 
             // gbMessage
             // 
@@ -441,14 +450,6 @@
             this.tbOtherInsurance.TabIndex = 13;
             this.tbOtherInsurance.Text = "Insurance Co";
             // 
-            // tbPhone1
-            // 
-            this.tbPhone1.Location = new System.Drawing.Point(110, 348);
-            this.tbPhone1.Name = "tbPhone1";
-            this.tbPhone1.Size = new System.Drawing.Size(147, 20);
-            this.tbPhone1.TabIndex = 14;
-            this.tbPhone1.Text = "4015567986";
-            // 
             // tbPhoneExt1
             // 
             this.tbPhoneExt1.Location = new System.Drawing.Point(320, 348);
@@ -456,14 +457,6 @@
             this.tbPhoneExt1.Size = new System.Drawing.Size(87, 20);
             this.tbPhoneExt1.TabIndex = 15;
             this.tbPhoneExt1.Text = "1103";
-            // 
-            // tbPhone2
-            // 
-            this.tbPhone2.Location = new System.Drawing.Point(110, 388);
-            this.tbPhone2.Name = "tbPhone2";
-            this.tbPhone2.Size = new System.Drawing.Size(147, 20);
-            this.tbPhone2.TabIndex = 17;
-            this.tbPhone2.Text = "4018978890";
             // 
             // tbPhoneExt2
             // 
@@ -696,6 +689,8 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.tbCGPhone2);
+            this.panel4.Controls.Add(this.tbCGPhone1);
             this.panel4.Controls.Add(this.tbCGName);
             this.panel4.Controls.Add(this.cbCGPhone1Type);
             this.panel4.Controls.Add(this.cbCGPhone2Type);
@@ -703,8 +698,6 @@
             this.panel4.Controls.Add(this.tbCGZip);
             this.panel4.Controls.Add(this.tbCGCity);
             this.panel4.Controls.Add(this.tbCGAddress);
-            this.panel4.Controls.Add(this.tbCGPhone2);
-            this.panel4.Controls.Add(this.tbCGPhone1);
             this.panel4.Controls.Add(this.tbCGPhone1Ext);
             this.panel4.Controls.Add(this.tbCGPhone2Ext);
             this.panel4.Controls.Add(this.label1);
@@ -779,22 +772,6 @@
             this.tbCGAddress.Size = new System.Drawing.Size(159, 20);
             this.tbCGAddress.TabIndex = 29;
             this.tbCGAddress.Text = "12345 Caregiver Lane";
-            // 
-            // tbCGPhone2
-            // 
-            this.tbCGPhone2.Location = new System.Drawing.Point(146, 156);
-            this.tbCGPhone2.Name = "tbCGPhone2";
-            this.tbCGPhone2.Size = new System.Drawing.Size(125, 20);
-            this.tbCGPhone2.TabIndex = 26;
-            this.tbCGPhone2.Text = "4017698850";
-            // 
-            // tbCGPhone1
-            // 
-            this.tbCGPhone1.Location = new System.Drawing.Point(146, 117);
-            this.tbCGPhone1.Name = "tbCGPhone1";
-            this.tbCGPhone1.Size = new System.Drawing.Size(125, 20);
-            this.tbCGPhone1.TabIndex = 23;
-            this.tbCGPhone1.Text = "5085543009";
             // 
             // tbCGPhone1Ext
             // 
@@ -956,24 +933,25 @@
             this.btnAddPatient.UseVisualStyleBackColor = false;
             this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(947, 614);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 60);
-            this.button2.TabIndex = 81;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(947, 614);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 60);
+            this.btnClear.TabIndex = 81;
+            this.btnClear.Text = "Clear Form";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblFeedback
             // 
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(786, 561);
+            this.lblFeedback.Location = new System.Drawing.Point(679, 561);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(166, 20);
             this.lblFeedback.TabIndex = 82;
@@ -984,11 +962,38 @@
             this.lblCareFeedback.AutoSize = true;
             this.lblCareFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCareFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblCareFeedback.Location = new System.Drawing.Point(786, 708);
+            this.lblCareFeedback.Location = new System.Drawing.Point(975, 561);
             this.lblCareFeedback.Name = "lblCareFeedback";
             this.lblCareFeedback.Size = new System.Drawing.Size(197, 20);
             this.lblCareFeedback.TabIndex = 83;
             this.lblCareFeedback.Text = "CAREGIVER FEEDBACK";
+            // 
+            // tbPhone2
+            // 
+            this.tbPhone2.Location = new System.Drawing.Point(111, 388);
+            this.tbPhone2.Mask = "(999) 000-0000";
+            this.tbPhone2.Name = "tbPhone2";
+            this.tbPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone2.TabIndex = 107;
+            this.tbPhone2.Text = "5084423126";
+            // 
+            // tbCGPhone1
+            // 
+            this.tbCGPhone1.Location = new System.Drawing.Point(146, 118);
+            this.tbCGPhone1.Mask = "(999) 000-0000";
+            this.tbCGPhone1.Name = "tbCGPhone1";
+            this.tbCGPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone1.TabIndex = 108;
+            this.tbCGPhone1.Text = "5084423126";
+            // 
+            // tbCGPhone2
+            // 
+            this.tbCGPhone2.Location = new System.Drawing.Point(146, 157);
+            this.tbCGPhone2.Mask = "(999) 000-0000";
+            this.tbCGPhone2.Name = "tbCGPhone2";
+            this.tbCGPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone2.TabIndex = 109;
+            this.tbCGPhone2.Text = "5084423126";
             // 
             // PatientInformation
             // 
@@ -999,7 +1004,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 749);
             this.Controls.Add(this.lblCareFeedback);
             this.Controls.Add(this.lblFeedback);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -1061,9 +1066,7 @@
         private System.Windows.Forms.TextBox tbMiddleInitial;
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.TextBox tbOtherInsurance;
-        private System.Windows.Forms.TextBox tbPhone1;
         private System.Windows.Forms.TextBox tbPhoneExt1;
-        private System.Windows.Forms.TextBox tbPhone2;
         private System.Windows.Forms.TextBox tbPhoneExt2;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Label lblPhone2Type;
@@ -1097,8 +1100,6 @@
         private System.Windows.Forms.TextBox tbCGZip;
         private System.Windows.Forms.TextBox tbCGCity;
         private System.Windows.Forms.TextBox tbCGAddress;
-        private System.Windows.Forms.TextBox tbCGPhone2;
-        private System.Windows.Forms.TextBox tbCGPhone1;
         private System.Windows.Forms.TextBox tbCGPhone1Ext;
         private System.Windows.Forms.TextBox tbCGPhone2Ext;
         private System.Windows.Forms.Label label1;
@@ -1116,9 +1117,13 @@
         private System.Windows.Forms.Label lblCaregiverInfo;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAddPatient;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox tbAddress2;
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Label lblCareFeedback;
+        private System.Windows.Forms.MaskedTextBox tbPhone1;
+        private System.Windows.Forms.MaskedTextBox tbPhone2;
+        private System.Windows.Forms.MaskedTextBox tbCGPhone1;
+        private System.Windows.Forms.MaskedTextBox tbCGPhone2;
     }
 }

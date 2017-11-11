@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -203,14 +204,91 @@ namespace PTClinic
 
             // Else display that new patient was added to DB
 
+            int patientID = 0;
+
             try
             {
-                lblFeedback.Text = newPatient.AddRecord();
+                //lblFeedback.Text = newPatient.AddRecord();
+                int dbSuccess = newPatient.AddRecord();
+
+                // If patient record was added successfully get patient id from that insert
+                if (dbSuccess == 1)
+                {
+                    lblFeedback.Text = "Patient Info has been saved";
+
+                    using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                    {
+
+                        string getUserSQL = "SELECT [patient_id] FROM Patients WHERE ([patient_id] = (SELECT MAX(patient_id) FROM Patients))";
+                        OleDbCommand comm = new OleDbCommand();
+                        comm.CommandText = getUserSQL; // Commander knows what to say
+                        comm.Connection = connection; // Heres the connection
+
+                        try
+                        {
+                            connection.Open();
+                            OleDbDataReader dr = comm.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                lblFeedback.Text = "Patient ID is " + dr.GetInt32(0).ToString();
+                                patientID = dr.GetInt32(0);
+                            }
+                            else
+                            {
+                                lblFeedback.Text = "NO PATIENT ID !";
+                            }
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblFeedback.Text = "Patient Info was not saved";
+                }
             }
             catch (Exception ex)
             {
                 lblFeedback.Text = ex.ToString();
             }
+
+
+            CaregiverInfo newCaregiver = new CaregiverInfo();
+
+            newCaregiver.PatientID = patientID;
+            newCaregiver.Name = tbCGName.Text;
+            newCaregiver.Address = tbCGAddress.Text;
+            newCaregiver.City = tbCGCity.Text;
+            newCaregiver.State = cbCGState.Text;
+            newCaregiver.Zip = tbCGZip.Text;
+            newCaregiver.Phone = tbCGPhone1.Text;
+            newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
+            newCaregiver.PhoneType = cbCGPhone1Type.Text;
+
+            newCaregiver.Phone2 = tbCGPhone2.Text;
+            newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
+            newCaregiver.Phone2Type = cbCGPhone2Type.Text;
+
+            try
+            {
+                lblCareFeedback.Text = newCaregiver.AddRecord();
+            }
+            catch (Exception exc)
+            {
+                lblCareFeedback.Text = exc.ToString();
+            }
+
 
         }
 

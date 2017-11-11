@@ -11,6 +11,7 @@ namespace PTClinic
     {
         // Private variables only the class can access.
         // Caregiver variables
+        private int patientID;
         private string name;
         private string address;
         private string city;
@@ -25,6 +26,12 @@ namespace PTClinic
 
 
         // Creating the public variables that are the front end to the private variables
+
+        public int PatientID
+        {
+            get { return patientID; }
+            set { patientID = value; }
+        }
 
         // Public variable specifically for Caregiver Name
         public string Name
@@ -156,9 +163,10 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public CaregiverInfo(string name, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, string address, string city, string state, string zip)
+        public CaregiverInfo(int patientID, string name, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, string address, string city, string state, string zip)
         {
             //this.Name = name;
+            PatientID = patientID;
             Name = name;
             Phone = phone;
             PhoneExtension = phoneExtension;
@@ -180,8 +188,8 @@ namespace PTClinic
             // TODO Figure out how to pass in the Patient ID?
 
             // SQL command to add a record to the Caregiver table
-            string strSQL = "INSERT INTO Caregiver (caregiver_name, caregiver_phone1, caregiver_phone1_extension, caregiver_phone1_type, caregiver_phone2, caregiver_phone2_extension, caregiver_phone2_type, caregiver_address, caregiver_city, caregiver_state, caregiver_zip)" +
-                " VALUES (@Name, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @Address, @City, @State, @Zip);";
+            string strSQL = "INSERT INTO Caregiver (patient_id, caregiver_name, caregiver_phone1, caregiver_phone1_extension, caregiver_phone1_type, caregiver_phone2, caregiver_phone2_extension, caregiver_phone2_type, caregiver_address, caregiver_city, caregiver_state, caregiver_zip)" +
+                " VALUES (@PatientID, @Name, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @Address, @City, @State, @Zip);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -196,6 +204,7 @@ namespace PTClinic
             comm.Connection = conn;   // Getting the connection
 
             // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
             comm.Parameters.AddWithValue(@"Name", Name);
             comm.Parameters.AddWithValue(@"Phone", Phone);
             comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
@@ -215,7 +224,7 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Records Added";
+                strFeedback = comm.ExecuteNonQuery().ToString() + " Caregiver Info Added";
 
                 // close the database
                 conn.Close();

@@ -313,22 +313,14 @@ namespace PTClinic
         }
 
         // Adding a record
-        public virtual string AddRecord()
+        public virtual int AddRecord()
         {
             string strFeedback = "";
+            int success = 0;
 
             // SQL command to add a record to the Patients table
             string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance)" +
                 " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance);";
-
-
-            //string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance)" +
-            //    " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurer);";
-
-
-            //string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance)" +
-            //    " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance);";
-
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -374,7 +366,8 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
+                success = comm.ExecuteNonQuery();
 
                 // close the database
                 conn.Close();
@@ -384,7 +377,7 @@ namespace PTClinic
                 strFeedback = "ERROR: " + err.Message;
             }
 
-            return strFeedback;
+            return success;
         } // End of AddRecord
         
     } // End of PatientInfo

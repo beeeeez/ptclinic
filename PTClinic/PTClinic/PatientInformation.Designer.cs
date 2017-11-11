@@ -115,6 +115,7 @@
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblFeedback = new System.Windows.Forms.Label();
+            this.lblCareFeedback = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -729,6 +730,7 @@
             this.tbCGName.Name = "tbCGName";
             this.tbCGName.Size = new System.Drawing.Size(203, 20);
             this.tbCGName.TabIndex = 116;
+            this.tbCGName.Text = "Joanne Teset";
             // 
             // cbCGPhone1Type
             // 
@@ -760,6 +762,7 @@
             this.tbCGZip.Name = "tbCGZip";
             this.tbCGZip.Size = new System.Drawing.Size(100, 20);
             this.tbCGZip.TabIndex = 112;
+            this.tbCGZip.Text = "02554";
             // 
             // tbCGCity
             // 
@@ -767,6 +770,7 @@
             this.tbCGCity.Name = "tbCGCity";
             this.tbCGCity.Size = new System.Drawing.Size(117, 20);
             this.tbCGCity.TabIndex = 111;
+            this.tbCGCity.Text = "Boston";
             // 
             // tbCGAddress
             // 
@@ -774,6 +778,7 @@
             this.tbCGAddress.Name = "tbCGAddress";
             this.tbCGAddress.Size = new System.Drawing.Size(159, 20);
             this.tbCGAddress.TabIndex = 110;
+            this.tbCGAddress.Text = "12345 Caregiver Lane";
             // 
             // tbCGPhone2
             // 
@@ -781,6 +786,7 @@
             this.tbCGPhone2.Name = "tbCGPhone2";
             this.tbCGPhone2.Size = new System.Drawing.Size(125, 20);
             this.tbCGPhone2.TabIndex = 109;
+            this.tbCGPhone2.Text = "4017698850";
             // 
             // tbCGPhone1
             // 
@@ -788,6 +794,7 @@
             this.tbCGPhone1.Name = "tbCGPhone1";
             this.tbCGPhone1.Size = new System.Drawing.Size(125, 20);
             this.tbCGPhone1.TabIndex = 108;
+            this.tbCGPhone1.Text = "5085543009";
             // 
             // tbCGPhone1Ext
             // 
@@ -795,6 +802,7 @@
             this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
             this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 20);
             this.tbCGPhone1Ext.TabIndex = 107;
+            this.tbCGPhone1Ext.Text = "10000";
             // 
             // tbCGPhone2Ext
             // 
@@ -802,6 +810,7 @@
             this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
             this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 20);
             this.tbCGPhone2Ext.TabIndex = 106;
+            this.tbCGPhone2Ext.Text = "10000";
             // 
             // label1
             // 
@@ -966,9 +975,20 @@
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
             this.lblFeedback.Location = new System.Drawing.Point(786, 561);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(96, 20);
+            this.lblFeedback.Size = new System.Drawing.Size(166, 20);
             this.lblFeedback.TabIndex = 82;
-            this.lblFeedback.Text = "FEEDBACK";
+            this.lblFeedback.Text = "PATIENT FEEDBACK";
+            // 
+            // lblCareFeedback
+            // 
+            this.lblCareFeedback.AutoSize = true;
+            this.lblCareFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCareFeedback.ForeColor = System.Drawing.Color.Red;
+            this.lblCareFeedback.Location = new System.Drawing.Point(786, 708);
+            this.lblCareFeedback.Name = "lblCareFeedback";
+            this.lblCareFeedback.Size = new System.Drawing.Size(197, 20);
+            this.lblCareFeedback.TabIndex = 83;
+            this.lblCareFeedback.Text = "CAREGIVER FEEDBACK";
             // 
             // PatientInformation
             // 
@@ -977,6 +997,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 749);
+            this.Controls.Add(this.lblCareFeedback);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAddPatient);
@@ -1098,5 +1119,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbAddress2;
         private System.Windows.Forms.Label lblFeedback;
+        private System.Windows.Forms.Label lblCareFeedback;
     }
 }

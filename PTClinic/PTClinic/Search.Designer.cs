@@ -111,6 +111,7 @@
             // 
             // gvResults
             // 
+            this.gvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResults.Location = new System.Drawing.Point(36, 133);
             this.gvResults.Name = "gvResults";

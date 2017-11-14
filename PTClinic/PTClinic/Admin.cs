@@ -68,9 +68,9 @@ namespace PTClinic
         private void pbBtnSearchPatient_Click(object sender, EventArgs e)
         {
             // GO TO SEARCH FORM
-            Search newSearch = new Search();
+            Search newSearch = new Search(this, Login);
 
-            newSearch.ShowDialog();
+            newSearch.Show();
 
         }
 

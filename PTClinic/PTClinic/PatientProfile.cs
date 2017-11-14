@@ -16,54 +16,91 @@ namespace PTClinic
         //Private variable to store the patient ID ?
         private string PatientID;
 
+        // Variables for the admin and login and Search forms
+        private Form Admin;
+        private Form Login;
+        private Form Search;
+
         public PatientProfile()
         {
             InitializeComponent();
         }
 
         // OVERLOADED CONSTRUCTOR --- used for pulling up existing data
-        public PatientProfile(int intPID)
+        public PatientProfile(int intPID, Form adminForm, Form Login, Form search)
         {
             InitializeComponent();
 
-            // Gather info about this patient and store it in a data reader
-            PatientInfo temp = new PatientInfo();
+            this.Login = Login;
+            this.Admin = adminForm;
+            this.Search = search;
+            Search.Hide();
+
+            // Create variable for PatientInfo
+            PatientInfo tempPatient = new PatientInfo();
+
+            // Create variable for CaregiverInfo
+            CaregiverInfo tempCG = new CaregiverInfo();
 
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
-                using (var dataReader = temp.FindOnePatient(connection, intPID))
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = tempPatient.FindOnePatient(connection, intPID))
                 {
-                    while (dataReader.Read())
+                    while (dataReaderPatient.Read())
                     {
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
                         // Name
-                        lblName.Text = dataReader["patient_first_name"].ToString() + " " + dataReader["patient_middle_initial"].ToString() + " " + dataReader["patient_last_name"].ToString();
+                        lblName.Text = dataReaderPatient["patient_first_name"].ToString() + " " + dataReaderPatient["patient_middle_initial"].ToString() + " " + dataReaderPatient["patient_last_name"].ToString();
                         // Gender
-                        lblGender.Text = dataReader["patient_gender"].ToString();
+                        lblGender.Text = dataReaderPatient["patient_gender"].ToString();
                         // DOB
-                        string shortDateStr = dataReader["patient_dob"].ToString();
+                        string shortDateStr = dataReaderPatient["patient_dob"].ToString();
                         DateTime shortDateBirthday = Convert.ToDateTime(shortDateStr);
                         lblDateOfBirth.Text = shortDateBirthday.ToShortDateString();
                         // Address
-                        lblAddress.Text = dataReader["patient_address"].ToString() + " " + dataReader["patient_address2"].ToString();
+                        lblAddress.Text = dataReaderPatient["patient_address"].ToString() + " " + dataReaderPatient["patient_address2"].ToString();
                         // City
-                        lblCity.Text = dataReader["patient_city"].ToString();
+                        lblCity.Text = dataReaderPatient["patient_city"].ToString();
                         // State
-                        lblState.Text = dataReader["patient_state"].ToString();
+                        lblState.Text = dataReaderPatient["patient_state"].ToString();
                         // Zip
-                        lblZip.Text = dataReader["patient_zip"].ToString();
+                        lblZip.Text = dataReaderPatient["patient_zip"].ToString();
                         // Phone
-                        lblPhone.Text = dataReader["patient_phone1"].ToString() + "  Ext: " + dataReader["patient_phone1_extension"].ToString() + "  Type: " + dataReader["patient_phone1_type"].ToString();
+                        lblPhone.Text = dataReaderPatient["patient_phone1"].ToString() + "  Ext: " + dataReaderPatient["patient_phone1_extension"].ToString() + "  Type: " + dataReaderPatient["patient_phone1_type"].ToString();
 
                         //Set the Patient ID = to the one from the DB
-                        PatientID = dataReader["patient_id"].ToString();
+                        PatientID = dataReaderPatient["patient_id"].ToString();
 
-                        MessageBox.Show(PatientID);
+                        //MessageBox.Show(PatientID);
                     }
                 }
-            }
+
+                // Gather info about this patient's caregiver via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+                {
+                    while (dataReaderCG.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        // Caregiver Name
+                        lblCGName.Text = dataReaderCG["caregiver_name"].ToString();
+                        // Caregiver Address
+                        lblCGAddress.Text = dataReaderCG["caregiver_address"].ToString();
+                        // Caregiver City
+                        lblCGCity.Text = dataReaderCG["caregiver_city"].ToString();
+                        // Caregiver State
+                        lblCGState.Text = dataReaderCG["caregiver_state"].ToString();
+                        // Caregiver Zip
+                        lblCGZip.Text = dataReaderCG["caregiver_zip"].ToString();
+                        // CaregiverPhone
+                        lblCGPhone.Text = dataReaderCG["caregiver_phone1"].ToString() + "  Ext: " + dataReaderCG["caregiver_phone1_extension"].ToString() + "  Type: " + dataReaderCG["caregiver_phone1_type"].ToString();
+                    }
+                } // End of -- using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+
+            } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
 
 
 
@@ -103,12 +140,14 @@ namespace PTClinic
 
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Admin.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Login.Show();
         }
     }
 }

@@ -54,9 +54,9 @@
             this.lblZip = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lblCGName = new System.Windows.Forms.Label();
             this.lblCGAddress = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblCGCity = new System.Windows.Forms.Label();
             this.lblCGState = new System.Windows.Forms.Label();
             this.lblCGZip = new System.Windows.Forms.Label();
             this.lblCGPhone = new System.Windows.Forms.Label();
@@ -355,15 +355,16 @@
             this.panel2.Size = new System.Drawing.Size(242, 548);
             this.panel2.TabIndex = 98;
             // 
-            // pictureBox2
+            // button3
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(181, 165);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 77;
-            this.pictureBox2.TabStop = false;
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(0, 356);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(242, 74);
+            this.button3.TabIndex = 79;
+            this.button3.Text = "Patient Visit";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -376,16 +377,15 @@
             this.button2.Text = "Update Information";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // pictureBox2
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(242, 74);
-            this.button3.TabIndex = 79;
-            this.button3.Text = "Patient Visit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(181, 165);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -497,16 +497,16 @@
             this.lblCGAddress.TabIndex = 108;
             this.lblCGAddress.Text = "Caregiver Address";
             // 
-            // label18
+            // lblCGCity
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(865, 256);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 20);
-            this.label18.TabIndex = 109;
-            this.label18.Text = "Caregiver City";
+            this.lblCGCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCGCity.AutoSize = true;
+            this.lblCGCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCGCity.Location = new System.Drawing.Point(865, 256);
+            this.lblCGCity.Name = "lblCGCity";
+            this.lblCGCity.Size = new System.Drawing.Size(106, 20);
+            this.lblCGCity.TabIndex = 109;
+            this.lblCGCity.Text = "Caregiver City";
             // 
             // lblCGState
             // 
@@ -550,7 +550,7 @@
             this.Controls.Add(this.lblCGPhone);
             this.Controls.Add(this.lblCGZip);
             this.Controls.Add(this.lblCGState);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.lblCGCity);
             this.Controls.Add(this.lblCGAddress);
             this.Controls.Add(this.lblCGName);
             this.Controls.Add(this.label15);
@@ -636,7 +636,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblCGName;
         private System.Windows.Forms.Label lblCGAddress;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblCGCity;
         private System.Windows.Forms.Label lblCGState;
         private System.Windows.Forms.Label lblCGZip;
         private System.Windows.Forms.Label lblCGPhone;

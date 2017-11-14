@@ -12,9 +12,18 @@ namespace PTClinic
 {
     public partial class Search : Form
     {
-        public Search()
+        // Variables for the admin and login forms
+        private Form Admin;
+        private Form Login;
+
+
+        public Search(Form adminForm, Form Login)
         {
             InitializeComponent();
+
+            this.Admin = adminForm;
+            this.Login = Login;
+            Admin.Hide();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -44,11 +53,11 @@ namespace PTClinic
         {
             string strPID = gvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            MessageBox.Show(strPID);
+            //MessageBox.Show(strPID);
 
             int intPID = Convert.ToInt32(strPID);
 
-            PatientProfile temp = new PatientProfile(intPID);
+            PatientProfile temp = new PatientProfile(intPID, Admin, Login, this);
             temp.Show();
         }
     }

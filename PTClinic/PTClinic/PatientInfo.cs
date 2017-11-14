@@ -458,8 +458,6 @@ namespace PTClinic
             string strFeedback = "";
             OleDbCommand comm = new OleDbCommand();
 
-            OleDbDataReader returnReader;
-
            // Connection string to be used
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 

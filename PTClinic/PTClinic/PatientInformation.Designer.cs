@@ -37,6 +37,7 @@
             this.lblProviderID = new System.Windows.Forms.Label();
             this.tbProviderID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbPhone2 = new System.Windows.Forms.MaskedTextBox();
             this.tbPhone1 = new System.Windows.Forms.MaskedTextBox();
             this.gbMessage = new System.Windows.Forms.GroupBox();
             this.rdbMessageNo = new System.Windows.Forms.RadioButton();
@@ -86,6 +87,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbCGPhone2 = new System.Windows.Forms.MaskedTextBox();
+            this.tbCGPhone1 = new System.Windows.Forms.MaskedTextBox();
             this.tbCGName = new System.Windows.Forms.TextBox();
             this.cbCGPhone1Type = new System.Windows.Forms.ComboBox();
             this.cbCGPhone2Type = new System.Windows.Forms.ComboBox();
@@ -113,9 +116,6 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblCareFeedback = new System.Windows.Forms.Label();
-            this.tbPhone2 = new System.Windows.Forms.MaskedTextBox();
-            this.tbCGPhone1 = new System.Windows.Forms.MaskedTextBox();
-            this.tbCGPhone2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -257,6 +257,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 487);
             this.panel2.TabIndex = 75;
+            // 
+            // tbPhone2
+            // 
+            this.tbPhone2.Location = new System.Drawing.Point(111, 388);
+            this.tbPhone2.Mask = "(999) 000-0000";
+            this.tbPhone2.Name = "tbPhone2";
+            this.tbPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbPhone2.TabIndex = 107;
+            this.tbPhone2.Text = "5084423126";
             // 
             // tbPhone1
             // 
@@ -717,6 +726,24 @@
             this.panel4.Size = new System.Drawing.Size(593, 333);
             this.panel4.TabIndex = 79;
             // 
+            // tbCGPhone2
+            // 
+            this.tbCGPhone2.Location = new System.Drawing.Point(146, 157);
+            this.tbCGPhone2.Mask = "(999) 000-0000";
+            this.tbCGPhone2.Name = "tbCGPhone2";
+            this.tbCGPhone2.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone2.TabIndex = 109;
+            this.tbCGPhone2.Text = "5084423126";
+            // 
+            // tbCGPhone1
+            // 
+            this.tbCGPhone1.Location = new System.Drawing.Point(146, 118);
+            this.tbCGPhone1.Mask = "(999) 000-0000";
+            this.tbCGPhone1.Name = "tbCGPhone1";
+            this.tbCGPhone1.Size = new System.Drawing.Size(100, 20);
+            this.tbCGPhone1.TabIndex = 108;
+            this.tbCGPhone1.Text = "4014541234";
+            // 
             // tbCGName
             // 
             this.tbCGName.Location = new System.Drawing.Point(179, 80);
@@ -967,33 +994,6 @@
             this.lblCareFeedback.Size = new System.Drawing.Size(197, 20);
             this.lblCareFeedback.TabIndex = 83;
             this.lblCareFeedback.Text = "CAREGIVER FEEDBACK";
-            // 
-            // tbPhone2
-            // 
-            this.tbPhone2.Location = new System.Drawing.Point(111, 388);
-            this.tbPhone2.Mask = "(999) 000-0000";
-            this.tbPhone2.Name = "tbPhone2";
-            this.tbPhone2.Size = new System.Drawing.Size(100, 20);
-            this.tbPhone2.TabIndex = 107;
-            this.tbPhone2.Text = "5084423126";
-            // 
-            // tbCGPhone1
-            // 
-            this.tbCGPhone1.Location = new System.Drawing.Point(146, 118);
-            this.tbCGPhone1.Mask = "(999) 000-0000";
-            this.tbCGPhone1.Name = "tbCGPhone1";
-            this.tbCGPhone1.Size = new System.Drawing.Size(100, 20);
-            this.tbCGPhone1.TabIndex = 108;
-            this.tbCGPhone1.Text = "5084423126";
-            // 
-            // tbCGPhone2
-            // 
-            this.tbCGPhone2.Location = new System.Drawing.Point(146, 157);
-            this.tbCGPhone2.Mask = "(999) 000-0000";
-            this.tbCGPhone2.Name = "tbCGPhone2";
-            this.tbCGPhone2.Size = new System.Drawing.Size(100, 20);
-            this.tbCGPhone2.TabIndex = 109;
-            this.tbCGPhone2.Text = "5084423126";
             // 
             // PatientInformation
             // 

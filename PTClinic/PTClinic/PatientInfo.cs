@@ -453,42 +453,43 @@ namespace PTClinic
 
         // Find one Patient method
         // Returns a data reader filled with all the data of one patient
-        public OleDbDataReader FindOnePatient(int intPID)
+        public OleDbDataReader FindOnePatient(OleDbConnection conn, int intPID)
         {
             string strFeedback = "";
-
-            // Create and initialize the DB tools we need
-            OleDbConnection conn = new OleDbConnection();
             OleDbCommand comm = new OleDbCommand();
 
             OleDbDataReader returnReader;
 
-            // Connection string to be used
-            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+           // Connection string to be used
+            //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
-            // SQL Command string to pull up one Patients Data
+            //SQL Command string to pull up one Patients Data
             string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_phone1, patient_phone1_extension, patient_phone1_type FROM Patients WHERE patient_id = @PID;";
 
-            // Set the connection string
-            conn.ConnectionString = strConn;
+           // Set the connection string
+            //conn.ConnectionString = strConn;
 
-            // Give command object info it needs
+           // Give command object info it needs
             comm.Connection = conn;
             comm.CommandText = strSQL;
             comm.Parameters.AddWithValue("@PID", intPID);
 
             try
             {
-                // open a connection to the database
+               // open a connection to the database
                 conn.Open();
+      
+               
             }
             catch (Exception err)
             {
                 strFeedback = "ERROR: " + err.Message;
+                return null;
             }
+     
 
-            // Return some form of feedback
-            return comm.ExecuteReader(CommandBehavior.CloseConnection); ; // Returning dataset to be used by the calling form.
+           // Return some form of feedback
+            return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
         } // End of FindOnePatient
 
     } // End of PatientInfo

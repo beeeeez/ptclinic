@@ -30,14 +30,17 @@ namespace PTClinic
             // Display search results in gridview
             gvResults.DataSource = myDataSet;
             gvResults.DataMember = "patientInfo";
+
+            // Setting the text for the headers
+            // Since we know we're only showing id/fname/middleinit/lastname/dob
+            gvResults.Columns[0].HeaderText = "Patient ID";
+            gvResults.Columns[1].HeaderText = "First Name";
+            gvResults.Columns[2].HeaderText = "Middle Initial";
+            gvResults.Columns[3].HeaderText = "Last Name";
+            gvResults.Columns[4].HeaderText = "Date of Birth";
         }
 
-        private void gvResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void gvResults_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gvResults_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string strPID = gvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
 

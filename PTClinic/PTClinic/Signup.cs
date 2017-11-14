@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using Scrypt;
 
 namespace PTClinic
 {
     public partial class Signup : Form
     {
         public Form Login;
+        public string hashedPassword;
+        public string salt;
 
         public Signup(Form Login)
         {
@@ -27,13 +30,16 @@ namespace PTClinic
             panelError.BackColor = Color.Red;
             panelError.Visible = false;
             this.Update();
+
         }
+
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             // If sign up is successful close signup form and pass back to login
             //Login.Show();
             //this.Close();
+
 
             if (string.IsNullOrEmpty(tbFirstName.Text) || string.IsNullOrEmpty(tbLastName.Text) ||
                 string.IsNullOrEmpty(tbPassword.Text) || string.IsNullOrEmpty(tbPasswordConfirm.Text) ||
@@ -66,6 +72,10 @@ namespace PTClinic
                 panelError.Visible = false;
                 lblError.Text = "";
 
+                ScryptEncoder encoder = new ScryptEncoder();
+                hashedPassword = encoder.Encode(tbPassword.Text.Trim());
+
+                //MessageBox.Show(hashedPassword.ToString());
 
                 //AppDomain.CurrentDomain.SetData("DataDirectory", "C:\\Users\\iaars\\Documents\\PTClinic\\PTClinic\\PTClinic");
                 //OleDbConnection connection = new OleDbConnection(ConfigurationManager.AppSettings["ConnectionString"]);
@@ -103,7 +113,7 @@ namespace PTClinic
                         DateTime shortDate = Convert.ToDateTime(shortDateStr);
 
                         comm.Parameters.AddWithValue("@username", tbUsername.Text.Trim());
-                        comm.Parameters.AddWithValue("@password", tbPassword.Text.Trim());
+                        comm.Parameters.AddWithValue("@password", hashedPassword);
                         comm.Parameters.AddWithValue("@salt", "salt");
                         comm.Parameters.AddWithValue("@first_name", tbFirstName.Text.Trim());
                         comm.Parameters.AddWithValue("@last_name", tbLastName.Text.Trim());
@@ -155,15 +165,23 @@ namespace PTClinic
 
             }
 
-
-
-
         }
+
 
         private void btnBackToLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login.Show();
         }
+
+
+        
+
+
+
+
+
+
+
     }
 }

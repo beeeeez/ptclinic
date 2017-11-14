@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Scrypt;
 
 namespace PTClinic
 {
@@ -52,20 +53,18 @@ namespace PTClinic
             }
 
 
-            // OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;");
-
-
-
             using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
 
-                string getUserSQL = "SELECT [user_id], [username], [first_name] FROM Users WHERE ([username] = @username AND [password] = @password)";
+                //string getUserSQL = "SELECT [user_id], [username], [first_name] FROM Users WHERE ([username] = @username AND [password] = @password)";
+                string getUserSQL = "SELECT [user_id], [username], [password], [first_name] FROM Users WHERE ([username] = @username)";
+
                 OleDbCommand comm = new OleDbCommand();
                 comm.CommandText = getUserSQL; // Commander knows what to say
                 comm.Connection = connection; // Heres the connection
 
                 comm.Parameters.AddWithValue("@username", tbUsername.Text);
-                comm.Parameters.AddWithValue("@password", tbPassword.Text);
+               // comm.Parameters.AddWithValue("@password", hashedPassword);
 
                 try
                 {
@@ -74,31 +73,45 @@ namespace PTClinic
 
                     if (dr.Read())
                     {
-                        panelError.Visible = false;
-                        string username = dr["username"].ToString();
-                        string firstName = dr["first_name"].ToString();
 
-                       // MessageBox.Show(" First Name = " + dr["first_name"].ToString(), "DB RETURNED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string dbPassword = dr["password"].ToString();
 
-                        // GO TO ADMIN WINDOW 
-                        Admin adminForm = new Admin(this, username, firstName);
-                   
-                        adminForm.Show();
+                        //bool areEquals = encoder.Compare(tbPassword.Text.Trim(), password);
 
-                        tbUsername.Text = "";
-                        tbPassword.Text = "";
+                        if (passwordEqual(tbPassword.Text.Trim(), dbPassword))
+                        {
+                            //MessageBox.Show("Passwords are equal");
+
+
+                            panelError.Visible = false;
+                            string username = dr["username"].ToString();
+                            string firstName = dr["first_name"].ToString();
+
+                            // GO TO ADMIN WINDOW 
+                            Admin adminForm = new Admin(this, username, firstName);
+
+                            adminForm.Show();
+
+                            tbUsername.Text = "";
+                            tbPassword.Text = "";
+
+
+                        }
+                        else
+                        {
+                            panelError.Visible = true;
+                            lblError.Text = "Sorry, the Username or Password you entered is invalid.";
+                        }
+
+
                     }
-                    else
-                    {
-                        panelError.Visible = true;
-                        lblError.Text = "Sorry, the Username or Password you entered is invalid.";
-                    }
+             
 
-                    
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ERROR " + ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     // Display DB Connection error to user 
 
@@ -152,6 +165,13 @@ namespace PTClinic
             signupForm.Show();
         }
 
+
+        public bool passwordEqual(string password, string dbPassword)
+        {
+            ScryptEncoder encoder = new ScryptEncoder();
+            return encoder.Compare(password, dbPassword);
+
+        }
 
     }
 }

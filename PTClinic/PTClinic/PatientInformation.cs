@@ -64,34 +64,26 @@ namespace PTClinic
 
         public void FillStateList()
         {
-            this.cbState.ValueMember = "Value";
-            this.cbState.DisplayMember = "Text";
-            this.cbState.Items.AddRange(new[]
-            {
-                new ComboBoxItem() { Selectable=false, Text="Select One", Value="None" },
-                new ComboBoxItem() { Selectable=true, Text="Massachusetts", Value="MA" },
-                new ComboBoxItem() { Selectable=true, Text="Rhode Island", Value="RI" },
-            });
-
-            cbState.SelectedIndex = 0;
-            
-
-            this.cbState.SelectedIndexChanged += (cbSender, cbe) =>
-            {
-                var cb = cbSender as ComboBox;
-
-                if (cb.SelectedItem != null && cb.SelectedItem is ComboBoxItem && ((ComboBoxItem) cb.SelectedItem).Selectable == false)
-                {
-                    cbState.SelectedIndex = -1;
-                }
-
-            };
             // Fills state list drop down list
-            //cbState.Items.Insert(0, "Select One"); // Index 0
-            //cbState.Items.Add("MA");
-            //cbState.Items.Add("RI");
-            //cbState.Items.Add("CT");
-            //cbState.SelectedIndex = 0;
+            cbState.Items.Insert(0, "Select One"); // Index 0
+            cbState.Items.Add("Connecticut");
+            cbState.Items.Add("Maine");
+            cbState.Items.Add("Massachusetts");
+            cbState.Items.Add("New Hampshire");
+            cbState.Items.Add("New York");
+            cbState.Items.Add("Rhode Island");
+            cbState.Items.Add("Vermont");
+            cbState.SelectedIndex = 0;
+
+            cbCGState.Items.Insert(0, "Select One"); // Index 0
+            cbCGState.Items.Add("Connecticut");
+            cbCGState.Items.Add("Maine");
+            cbCGState.Items.Add("Massachusetts");
+            cbCGState.Items.Add("New Hampshire");
+            cbCGState.Items.Add("New York");
+            cbCGState.Items.Add("Rhode Island");
+            cbCGState.Items.Add("Vermont");
+            cbCGState.SelectedIndex = 0;
         }
 
         public void FillMedicalInsurance()
@@ -145,36 +137,7 @@ namespace PTClinic
             cbGender.SelectedIndex = 0;
         }
 
-        private void btnAddPatient_Click(object sender, EventArgs e)
-        {
 
-            CaregiverInfo newCaregiver = new CaregiverInfo();
-
-            newCaregiver.PatientID = patientID;
-            newCaregiver.Name = tbCGName.Text;
-            newCaregiver.Address = tbCGAddress.Text;
-            newCaregiver.City = tbCGCity.Text;
-            newCaregiver.State = cbCGState.Text;
-            newCaregiver.Zip = tbCGZip.Text;
-            newCaregiver.Phone = tbCGPhone1.Text;
-            newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
-            newCaregiver.PhoneType = cbCGPhone1Type.Text;
-
-            newCaregiver.Phone2 = tbCGPhone2.Text;
-            newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
-            newCaregiver.Phone2Type = cbCGPhone2Type.Text;
-
-            try
-            {
-                lblCareFeedback.Text = newCaregiver.AddRecord();
-            }
-            catch (Exception exc)
-            {
-                lblCareFeedback.Text = exc.ToString();
-            }
-
-
-        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -250,7 +213,7 @@ namespace PTClinic
                 // Display the error message inside the form feedback label
                 lblFeedback.Text = newPatient.Feedback;
             }
-            else // If there are no errors, continue displaying data
+            else // If there are no errors, continue to Caregiver Form
             {
                 lblFeedback.Text = "";
 
@@ -300,6 +263,7 @@ namespace PTClinic
                             }
 
                         }
+
                     }
                     else
                     {
@@ -311,11 +275,55 @@ namespace PTClinic
                     lblFeedback.Text = ex.ToString();
                 }
 
+                panelPatientInfo.Visible = false;
+                panelCaregiverInfo.Visible = true;
+
 
             }
 
           
           
+        }
+
+        private void btnAddCaregiver_Click(object sender, EventArgs e)
+        {
+
+            CaregiverInfo newCaregiver = new CaregiverInfo();
+
+            newCaregiver.PatientID = patientID;
+            newCaregiver.Name = tbCGName.Text;
+            newCaregiver.Address = tbCGAddress.Text;
+            newCaregiver.City = tbCGCity.Text;
+            newCaregiver.State = cbCGState.Text;
+            newCaregiver.Zip = tbCGZip.Text;
+            newCaregiver.Phone = tbCGPhone1.Text;
+            newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
+            newCaregiver.PhoneType = cbCGPhone1Type.Text;
+
+            newCaregiver.Phone2 = tbCGPhone2.Text;
+            newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
+            newCaregiver.Phone2Type = cbCGPhone2Type.Text;
+
+
+            // If an error in the information occurs
+            if (newCaregiver.Feedback.Contains("Error:"))
+            {
+                // Display the error message inside the form feedback label
+                lblCareFeedback.Text = newCaregiver.Feedback;
+            }
+            else // If there are no errors, continue to Caregiver Form
+            {
+                lblCareFeedback.Text = "";
+
+                try
+                {
+                    lblCareFeedback.Text = newCaregiver.AddRecord();
+                }
+                catch (Exception exc)
+                {
+                    lblCareFeedback.Text = exc.ToString();
+                }
+            }
         }
     }
 

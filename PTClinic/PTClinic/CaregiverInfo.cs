@@ -24,9 +24,15 @@ namespace PTClinic
         private string phone2;
         private string phone2Extension;
         private string phone2Type;
+        protected string feedback;
 
 
         // Creating the public variables that are the front end to the private variables
+
+        public virtual string Feedback
+        {
+            get { return feedback; }
+        }
 
         public int PatientID
         {
@@ -47,8 +53,14 @@ namespace PTClinic
             get { return address; }
             set
             {
-                // TODO -- error handling goes here?
-                address = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an Address\n";
+                }
+                else
+                {
+                    address = value;
+                }
             }
         }
 
@@ -58,8 +70,15 @@ namespace PTClinic
             get { return city; }
             set
             {
-                // TODO -- error handling goes here?
-                city = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an City\n";
+                }
+                else
+                {
+                    city = value;
+                }
+               
             }
         }
 
@@ -69,8 +88,14 @@ namespace PTClinic
             get { return state; }
             set
             {
-                // TODO -- error handling goes here?
-                state = value;
+                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Select a State\n";
+                }
+                else
+                {
+                    state = value;
+                }
             }
         }
 
@@ -80,8 +105,14 @@ namespace PTClinic
             get { return zip; }
             set
             {
-                // TODO -- error handling goes here?
-                zip = value;
+                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 5))
+                {
+                    feedback += "Error: Enter a Zipcode\n";
+                }
+                else
+                {
+                    zip = value;
+                }
             }
         }
 
@@ -91,8 +122,14 @@ namespace PTClinic
             get { return phone; }
             set
             {
-                // TODO -- error handling goes here?
-                phone = value;
+                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
+                {
+                    feedback += "Error: Enter Telephone 1\n";
+                }
+                else
+                {
+                    phone = value;
+                }
             }
         }
 
@@ -161,12 +198,14 @@ namespace PTClinic
             phoneExtension = "";
             phone2 = "";
             phone2Extension = "";
+            feedback = "";
         }
 
         // Overloaded Constructor
         public CaregiverInfo(int patientID, string name, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, string address, string city, string state, string zip)
         {
             //this.Name = name;
+            feedback = "";
             PatientID = patientID;
             Name = name;
             Phone = phone;

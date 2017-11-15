@@ -231,7 +231,17 @@ namespace PTClinic
             {
                 // TODO >> is validation needed here?
                 // Can we make a "select one" in the dropdown disabled?
-                insurer = value;
+                if (value.Equals("Select One"))
+                {
+                    // Set insurer to blank string instead of "select one"
+                    // being passed to DB
+                    insurer = " ";
+                }
+                else
+                {
+                    insurer = value;
+                }
+                
             }
         }
 
@@ -241,7 +251,6 @@ namespace PTClinic
             get { return otherInsurer; }
             set
             {
-                // TODO >> is validation needed here?
                 otherInsurer = value;
             }
         }
@@ -298,7 +307,6 @@ namespace PTClinic
             get { return phone2; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2 = value;
             }
         }
@@ -309,7 +317,6 @@ namespace PTClinic
             get { return phone2Extension; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2Extension = value;
             }
         }
@@ -320,7 +327,6 @@ namespace PTClinic
             get { return phone2Type; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2Type = value;
             }
         }

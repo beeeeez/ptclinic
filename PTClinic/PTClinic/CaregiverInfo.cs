@@ -139,7 +139,6 @@ namespace PTClinic
             get { return phoneExtension; }
             set
             {
-                // TODO -- error handling goes here?
                 phoneExtension = value;
             }
         }
@@ -150,8 +149,15 @@ namespace PTClinic
             get { return phoneType; }
             set
             {
-                // TODO -- error handling goes here?
-                phoneType = value;
+                if (value.Equals("Select One"))
+                {
+                    feedback += "Error: Select Telephone 1 Type\n";
+                }
+                else
+                {
+                    phoneType = value;
+                }
+               
             }
         }
 
@@ -161,7 +167,6 @@ namespace PTClinic
             get { return phone2; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2 = value;
             }
         }
@@ -172,7 +177,6 @@ namespace PTClinic
             get { return phone2Extension; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2Extension = value;
             }
         }
@@ -183,7 +187,6 @@ namespace PTClinic
             get { return phone2Type; }
             set
             {
-                // TODO -- error handling goes here?
                 phone2Type = value;
             }
         }

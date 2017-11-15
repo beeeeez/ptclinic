@@ -278,11 +278,12 @@ namespace PTClinic
                 panelPatientInfo.Visible = false;
                 panelCaregiverInfo.Visible = true;
 
+                // Clear all fields
+                ClearPatientForm();
+
 
             }
 
-          
-          
         }
 
         private void btnAddCaregiver_Click(object sender, EventArgs e)
@@ -323,18 +324,51 @@ namespace PTClinic
                 {
                     lblCareFeedback.Text = exc.ToString();
                 }
+
+                // Clear all fields
+                ClearCaregiverForm();
             }
         }
-    }
 
-    internal class ComboBoxItem
-    {
-        public int Index { get; set; }
-        public string Value { get; set; }
-        public string Text { get; set; }
-        public bool Selectable { get; set; }
-        public ComboBoxItem()
+        public void ClearPatientForm()
         {
+            tbFirstName.Clear();
+            tbLastName.Clear();
+            cbGender.SelectedIndex = 0;
+            dtpDOB.Value = DateTime.Now;
+            tbAddress.Clear();
+            tbAddress2.Clear();
+            tbCity.Clear();
+            cbState.SelectedIndex = 0;
+            tbZip.Clear();
+            rdbInsuranceYes.Checked = false;
+            rdbInsuranceNo.Checked = false;
+            cbInsurer.SelectedIndex = 0;
+            tbOtherInsurance.Clear();
+            tbPhone1.Clear();
+            tbPhoneExt1.Clear();
+            cbPhone1Type.SelectedIndex = 0;
+            tbPhone2.Clear();
+            tbPhoneExt2.Clear();
+            cbPhone2Type.SelectedIndex = 0;
+            rdbMessageYes.Checked = false;
+            rdbMessageNo.Checked = false;
+            tbEmail.Clear();
+        }
+
+        public void ClearCaregiverForm()
+        {
+            tbCGName.Clear();
+            tbCGAddress.Clear();
+            tbCGCity.Clear();
+            cbCGState.SelectedIndex = 0;
+            tbCGZip.Clear();
+            tbCGPhone1.Clear();
+            tbCGPhone1Ext.Clear();
+            cbCGPhone1Type.SelectedIndex = 0;
+            tbCGPhone2.Clear();
+            tbCGPhone2Ext.Clear();
+            cbCGPhone2Type.SelectedIndex = 0;
         }
     }
 }

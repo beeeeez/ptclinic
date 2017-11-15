@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientInformation));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBackHome = new System.Windows.Forms.Button();
@@ -113,38 +112,12 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.epFName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epLName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epGender = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epDOB = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epStreet = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epCity = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epState = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epZip = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epHasInsurance = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epInsurer = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epOtherInsurance = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epTelephone1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epLeaveMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCaregiverInfo.SuspendLayout();
             this.panelPatientInfo.SuspendLayout();
             this.gbMessage.SuspendLayout();
             this.gbInsurance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epFName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epGender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epDOB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epStreet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epZip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epHasInsurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epInsurer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epOtherInsurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epTelephone1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLeaveMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -733,6 +706,8 @@
             // 
             // cbState
             // 
+            this.cbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.Location = new System.Drawing.Point(41, 469);
@@ -1058,71 +1033,6 @@
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
             // 
-            // epFName
-            // 
-            this.epFName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epFName.ContainerControl = this;
-            // 
-            // epLName
-            // 
-            this.epLName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epLName.ContainerControl = this;
-            // 
-            // epGender
-            // 
-            this.epGender.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epGender.ContainerControl = this;
-            // 
-            // epDOB
-            // 
-            this.epDOB.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epDOB.ContainerControl = this;
-            // 
-            // epStreet
-            // 
-            this.epStreet.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epStreet.ContainerControl = this;
-            // 
-            // epCity
-            // 
-            this.epCity.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epCity.ContainerControl = this;
-            // 
-            // epState
-            // 
-            this.epState.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epState.ContainerControl = this;
-            // 
-            // epZip
-            // 
-            this.epZip.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epZip.ContainerControl = this;
-            // 
-            // epHasInsurance
-            // 
-            this.epHasInsurance.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epHasInsurance.ContainerControl = this;
-            // 
-            // epInsurer
-            // 
-            this.epInsurer.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epInsurer.ContainerControl = this;
-            // 
-            // epOtherInsurance
-            // 
-            this.epOtherInsurance.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epOtherInsurance.ContainerControl = this;
-            // 
-            // epTelephone1
-            // 
-            this.epTelephone1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epTelephone1.ContainerControl = this;
-            // 
-            // epLeaveMessage
-            // 
-            this.epLeaveMessage.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epLeaveMessage.ContainerControl = this;
-            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1150,19 +1060,6 @@
             this.gbMessage.PerformLayout();
             this.gbInsurance.ResumeLayout(false);
             this.gbInsurance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epFName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epGender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epDOB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epStreet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epZip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epHasInsurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epInsurer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epOtherInsurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epTelephone1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epLeaveMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1252,18 +1149,5 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.ErrorProvider epFName;
-        private System.Windows.Forms.ErrorProvider epLName;
-        private System.Windows.Forms.ErrorProvider epGender;
-        private System.Windows.Forms.ErrorProvider epDOB;
-        private System.Windows.Forms.ErrorProvider epStreet;
-        private System.Windows.Forms.ErrorProvider epCity;
-        private System.Windows.Forms.ErrorProvider epState;
-        private System.Windows.Forms.ErrorProvider epZip;
-        private System.Windows.Forms.ErrorProvider epHasInsurance;
-        private System.Windows.Forms.ErrorProvider epInsurer;
-        private System.Windows.Forms.ErrorProvider epOtherInsurance;
-        private System.Windows.Forms.ErrorProvider epTelephone1;
-        private System.Windows.Forms.ErrorProvider epLeaveMessage;
     }
 }

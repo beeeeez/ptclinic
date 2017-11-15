@@ -161,6 +161,7 @@
             this.btnBackHome.Text = "Home";
             this.btnBackHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // btnLogOut
             // 
@@ -176,6 +177,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox1
             // 

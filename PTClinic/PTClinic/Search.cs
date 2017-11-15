@@ -60,5 +60,17 @@ namespace PTClinic
             PatientProfile temp = new PatientProfile(intPID, Admin, Login, this);
             temp.Show();
         }
+
+        private void btnBackHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login.Show();
+        }
     }
 }

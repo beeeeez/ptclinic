@@ -23,7 +23,7 @@ namespace PTClinic
         private string city;
         private string state;
         private string zip;
-        private bool hasInsurance;
+        private Nullable<bool> hasInsurance;
         private string insurer;
         private string otherInsurer;
         private string phone;
@@ -32,7 +32,7 @@ namespace PTClinic
         private string phone2;
         private string phone2Extension;
         private string phone2Type;
-        private bool leaveMessage;
+        private Nullable<bool> leaveMessage;
         private string email;
         protected string feedback;
 
@@ -206,17 +206,20 @@ namespace PTClinic
         }
 
         // Public variable specifically for HasInsurance
-        // May change?
-        public bool HasInsurance
+        public Nullable<bool> HasInsurance
         {
             get { return hasInsurance; }
             set
             {
-                if (value != true && value != false)
+                if (value.Equals(null))
                 {
-                    feedback += "Error: Select yes or no for insured\n";
+                    feedback += "Error: Select yes or no for Medical\n           Insurance\n";
                 }
-                hasInsurance = value;
+                else
+                {
+                    hasInsurance = value;
+                }
+                
             }
         }
 
@@ -249,8 +252,15 @@ namespace PTClinic
             get { return phone; }
             set
             {
-                // TODO -- error handling goes here?
-                phone = value;
+                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
+                {
+                    feedback += "Error: Enter Telephone 1\n";
+                }
+                else
+                {
+                    phone = value;
+                }
+               
             }
         }
 
@@ -260,7 +270,6 @@ namespace PTClinic
             get { return phoneExtension; }
             set
             {
-                // TODO -- error handling goes here?
                 phoneExtension = value;
             }
         }
@@ -271,8 +280,15 @@ namespace PTClinic
             get { return phoneType; }
             set
             {
-                // TODO -- error handling goes here?
-                phoneType = value;
+                if (value.Equals("Select One"))
+                {
+                    feedback += "Error: Select Telephone 1 Type\n";
+                }
+                else
+                {
+                    phoneType = value;
+                }
+                
             }
         }
 
@@ -310,12 +326,20 @@ namespace PTClinic
         }
         
         // Public variable for LeaveMessage
-        public bool LeaveMessage
+        public Nullable<bool> LeaveMessage
         {
             get { return leaveMessage; }
             set
             {
-                leaveMessage = value;
+                if (value.Equals(null))
+                {
+                    feedback += "Error: Select yes or no for Leave a\n            Message\n";
+                }
+                else
+                {
+                    leaveMessage = value;
+                }
+
             }
         }
 
@@ -346,7 +370,7 @@ namespace PTClinic
         }
         
         // Overloaded Constructor
-        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, bool hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, bool leaveMessage, string email)
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email)
         {
             feedback = "";
             //this.Name = name;

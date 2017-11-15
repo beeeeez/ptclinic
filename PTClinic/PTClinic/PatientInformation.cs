@@ -205,7 +205,7 @@ namespace PTClinic
             newPatient.State = cbState.Text;
             newPatient.Zip = tbZip.Text;
 
-            bool hasInsurance = false;
+            Nullable<bool> hasInsurance = null;
             if (rdbInsuranceYes.Checked == true)
             {
                 hasInsurance = true;
@@ -226,12 +226,12 @@ namespace PTClinic
             newPatient.Phone2Extension = tbPhoneExt2.Text;
             newPatient.Phone2Type = cbPhone2Type.Text;
 
-            bool canContact = false;
+            Nullable<bool> canContact = null;
             if (rdbMessageYes.Checked == true)
             {
                 canContact = true;
             }
-            else if (rdbMessageNo.Checked == false)
+            else if (rdbMessageNo.Checked == true)
             {
 
                 canContact = false;

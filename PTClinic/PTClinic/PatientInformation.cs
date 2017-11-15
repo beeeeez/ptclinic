@@ -15,12 +15,16 @@ namespace PTClinic
     {
         private Form Admin;
         private Form Login;
+        public int patientID;
+
 
         public PatientInformation(Form adminForm, Form Login)
         {
             InitializeComponent();
 
             setButtonIcon();
+
+            patientID = 0;
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -143,6 +147,44 @@ namespace PTClinic
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
+
+            CaregiverInfo newCaregiver = new CaregiverInfo();
+
+            newCaregiver.PatientID = patientID;
+            newCaregiver.Name = tbCGName.Text;
+            newCaregiver.Address = tbCGAddress.Text;
+            newCaregiver.City = tbCGCity.Text;
+            newCaregiver.State = cbCGState.Text;
+            newCaregiver.Zip = tbCGZip.Text;
+            newCaregiver.Phone = tbCGPhone1.Text;
+            newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
+            newCaregiver.PhoneType = cbCGPhone1Type.Text;
+
+            newCaregiver.Phone2 = tbCGPhone2.Text;
+            newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
+            newCaregiver.Phone2Type = cbCGPhone2Type.Text;
+
+            try
+            {
+                lblCareFeedback.Text = newCaregiver.AddRecord();
+            }
+            catch (Exception exc)
+            {
+                lblCareFeedback.Text = exc.ToString();
+            }
+
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Clear all fields
+        }
+
+        private void btnContinueToCaregiver_Click(object sender, EventArgs e)
+        {
+
+
             PatientInfo newPatient = new PatientInfo();
 
             newPatient.Fname = tbFirstName.Text;
@@ -202,102 +244,79 @@ namespace PTClinic
 
             // If statement to check if there are field erros
 
-            // Else display that new patient was added to DB
-
-            int patientID = 0;
-
-            try
+            // If an error in the information occurs
+            if (newPatient.Feedback.Contains("Error:"))
             {
-                //lblFeedback.Text = newPatient.AddRecord();
-                int dbSuccess = newPatient.AddRecord();
+                // Display the error message inside the form feedback label
+                lblFeedback.Text = newPatient.Feedback;
+            }
+            else // If there are no errors, continue displaying data
+            {
+                lblFeedback.Text = "";
 
-                // If patient record was added successfully get patient id from that insert
-                if (dbSuccess == 1)
+                try
                 {
-                    lblFeedback.Text = "Patient Info has been saved";
+                    //lblFeedback.Text = newPatient.AddRecord();
+                    int dbSuccess = newPatient.AddRecord();
 
-                    using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                    // If patient record was added successfully get patient id from that insert
+                    if (dbSuccess == 1)
                     {
+                        lblFeedback.Text = "Patient Info has been saved";
 
-                        string getUserSQL = "SELECT [patient_id] FROM Patients WHERE ([patient_id] = (SELECT MAX(patient_id) FROM Patients))";
-                        OleDbCommand comm = new OleDbCommand();
-                        comm.CommandText = getUserSQL; // Commander knows what to say
-                        comm.Connection = connection; // Heres the connection
-
-                        try
+                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                         {
-                            connection.Open();
-                            OleDbDataReader dr = comm.ExecuteReader();
 
-                            if (dr.Read())
+                            string getUserSQL = "SELECT [patient_id] FROM Patients WHERE ([patient_id] = (SELECT MAX(patient_id) FROM Patients))";
+                            OleDbCommand comm = new OleDbCommand();
+                            comm.CommandText = getUserSQL; // Commander knows what to say
+                            comm.Connection = connection; // Heres the connection
+
+                            try
                             {
-                                lblFeedback.Text = "Patient ID is " + dr.GetInt32(0).ToString();
-                                patientID = dr.GetInt32(0);
+                                connection.Open();
+                                OleDbDataReader dr = comm.ExecuteReader();
+
+                                if (dr.Read())
+                                {
+                                    lblFeedback.Text = "Patient ID is " + dr.GetInt32(0).ToString();
+                                    patientID = dr.GetInt32(0);
+                                }
+                                else
+                                {
+                                    lblFeedback.Text = "NO PATIENT ID !";
+                                }
+
+
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                lblFeedback.Text = "NO PATIENT ID !";
+                                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+                            finally
+                            {
+                                connection.Close();
                             }
 
-
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                        finally
-                        {
-                            connection.Close();
-                        }
-
+                    }
+                    else
+                    {
+                        lblFeedback.Text = "Patient Info was not saved";
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    lblFeedback.Text = "Patient Info was not saved";
+                    lblFeedback.Text = ex.ToString();
                 }
-            }
-            catch (Exception ex)
-            {
-                lblFeedback.Text = ex.ToString();
+
+
             }
 
-
-            CaregiverInfo newCaregiver = new CaregiverInfo();
-
-            newCaregiver.PatientID = patientID;
-            newCaregiver.Name = tbCGName.Text;
-            newCaregiver.Address = tbCGAddress.Text;
-            newCaregiver.City = tbCGCity.Text;
-            newCaregiver.State = cbCGState.Text;
-            newCaregiver.Zip = tbCGZip.Text;
-            newCaregiver.Phone = tbCGPhone1.Text;
-            newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
-            newCaregiver.PhoneType = cbCGPhone1Type.Text;
-
-            newCaregiver.Phone2 = tbCGPhone2.Text;
-            newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
-            newCaregiver.Phone2Type = cbCGPhone2Type.Text;
-
-            try
-            {
-                lblCareFeedback.Text = newCaregiver.AddRecord();
-            }
-            catch (Exception exc)
-            {
-                lblCareFeedback.Text = exc.ToString();
-            }
-
-
+          
+          
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            // Clear all fields
-        }
-
-
     }
 
     internal class ComboBoxItem

@@ -23,7 +23,6 @@ namespace PTClinic
         private string city;
         private string state;
         private string zip;
-        // Unsure if this should be string or boolean
         private bool hasInsurance;
         private string insurer;
         private string otherInsurer;
@@ -33,9 +32,9 @@ namespace PTClinic
         private string phone2;
         private string phone2Extension;
         private string phone2Type;
-        // Unsure if this should be string or boolean.
         private bool leaveMessage;
         private string email;
+        protected string feedback;
 
         /* 
          * Caregiver given own class
@@ -45,14 +44,28 @@ namespace PTClinic
 
         // Creating the public variables that are the front end to the private variables
 
+        public virtual string Feedback
+        {
+            get { return feedback; }
+
+        }
+
         // Public variable specifically for First Name
         public string Fname
         {
             get { return fName; }
             set
             {
-                // TODO -- error handling goes here?
-                fName = value;
+                
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter First Name\n";
+                }
+                else
+                {
+                    fName = value;
+                }
+                
             }
         }
 
@@ -73,8 +86,14 @@ namespace PTClinic
             get { return lName; }
             set
             {
-                // TODO -- error handling goes here~
-                lName = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Last Name\n";
+                }
+                else
+                {
+                    lName = value;
+                }
             }
         }
 
@@ -284,11 +303,13 @@ namespace PTClinic
             phoneExtension = "";
             phone2 = "";
             phone2Extension = "";
+            feedback = "";
         }
         
         // Overloaded Constructor
         public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, bool hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, bool leaveMessage, string email)
         {
+            feedback = "";
             //this.Name = name;
             Fname = fName;
             MInitial = mInitial;

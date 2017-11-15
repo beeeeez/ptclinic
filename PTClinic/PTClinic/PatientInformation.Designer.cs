@@ -708,15 +708,17 @@
             // 
             this.cbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.Location = new System.Drawing.Point(41, 469);
             this.cbState.Name = "cbState";
-            this.cbState.Size = new System.Drawing.Size(269, 32);
+            this.cbState.Size = new System.Drawing.Size(269, 28);
             this.cbState.TabIndex = 9;
             // 
             // cbPhone1Type
             // 
+            this.cbPhone1Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhone1Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPhone1Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPhone1Type.FormattingEnabled = true;
             this.cbPhone1Type.Location = new System.Drawing.Point(959, 247);
@@ -726,6 +728,8 @@
             // 
             // cbPhone2Type
             // 
+            this.cbPhone2Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhone2Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPhone2Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPhone2Type.FormattingEnabled = true;
             this.cbPhone2Type.Location = new System.Drawing.Point(959, 323);
@@ -744,10 +748,10 @@
             // 
             // tbCity
             // 
-            this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCity.Location = new System.Drawing.Point(41, 401);
+            this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCity.Location = new System.Drawing.Point(41, 407);
             this.tbCity.Name = "tbCity";
-            this.tbCity.Size = new System.Drawing.Size(264, 29);
+            this.tbCity.Size = new System.Drawing.Size(264, 26);
             this.tbCity.TabIndex = 8;
             this.tbCity.Text = "Providence";
             // 
@@ -967,7 +971,7 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(37, 374);
+            this.lblCity.Location = new System.Drawing.Point(37, 380);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(40, 24);
             this.lblCity.TabIndex = 81;

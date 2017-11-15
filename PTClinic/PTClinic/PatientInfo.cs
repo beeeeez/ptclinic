@@ -103,8 +103,15 @@ namespace PTClinic
             get { return gender; }
             set
             {
-                // TODO -- error handling goes here~
-                gender = value;
+                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Select a Gender\n";
+                }
+                else
+                {
+                    gender = value;
+                }
+                
             }
         }
 
@@ -121,8 +128,15 @@ namespace PTClinic
             get { return address; }
             set
             {
-                // TODO -- error handling goes here?
-                address = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a Address\n";
+                }
+                else
+                {
+                    address = value;
+                }
+               
             }
         }
 
@@ -132,7 +146,6 @@ namespace PTClinic
             get { return address2; }
             set
             {
-                // TODO -- error handling goes here?
                 address2 = value;
             }
         }
@@ -143,8 +156,15 @@ namespace PTClinic
             get { return city; }
             set
             {
-                // TODO -- error handling goes here?
-                city = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a City\n";
+                }
+                else
+                {
+                    city = value;
+                }
+                
             }
         }
 
@@ -154,8 +174,16 @@ namespace PTClinic
             get { return state; }
             set
             {
-                // TODO -- error handling goes here?
-                state = value;
+                
+                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Select a State\n";
+                }
+                else
+                {
+                    state = value;
+                }
+                
             }
         }
 
@@ -165,8 +193,15 @@ namespace PTClinic
             get { return zip; }
             set
             {
-                // TODO -- error handling goes here?
-                zip = value;
+                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 5))
+                {
+                    feedback += "Error: Enter a Zipcode\n";
+                }
+                else
+                {
+                    zip = value;
+                }
+              
             }
         }
 
@@ -177,6 +212,10 @@ namespace PTClinic
             get { return hasInsurance; }
             set
             {
+                if (value != true && value != false)
+                {
+                    feedback += "Error: Select yes or no for insured\n";
+                }
                 hasInsurance = value;
             }
         }

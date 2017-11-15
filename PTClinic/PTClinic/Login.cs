@@ -100,10 +100,15 @@ namespace PTClinic
                         else
                         {
                             panelError.Visible = true;
-                            lblError.Text = "Sorry, the Username or Password you entered is invalid.";
+                            lblError.Text = "Sorry, the Password you entered is invalid.";
                         }
 
 
+                    }
+                    else
+                    {
+                        panelError.Visible = true;
+                        lblError.Text = "Sorry, the Username you entered does not exist.";
                     }
              
 

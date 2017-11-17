@@ -187,7 +187,22 @@ namespace PTClinic
             get { return phone2Type; }
             set
             {
-                phone2Type = value;
+                if (!Validation.IsValidLength(Phone2, 14))
+                {
+                    if (value.Equals("Select One"))
+                    {
+                        feedback += "Error: Select Telephone 2 Type\n";
+                    }
+                    else
+                    {
+                        phone2Type = value;
+                    }
+                }
+                else
+                {
+                    phone2Type = " ";
+                }
+
             }
         }
 
@@ -267,7 +282,7 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Caregiver Info Added";
+                strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Record has been saved";
 
                 // close the database
                 conn.Close();

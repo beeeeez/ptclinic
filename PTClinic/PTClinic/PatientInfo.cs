@@ -213,7 +213,7 @@ namespace PTClinic
             {
                 if (value.Equals(null))
                 {
-                    feedback += "Error: Select yes or no for Medical\n           Insurance\n";
+                    feedback += "Error: Select Yes or No for Medical\n           Insurance\n";
                 }
                 else
                 {
@@ -229,17 +229,21 @@ namespace PTClinic
             get { return insurer; }
             set
             {
-                // TODO >> is validation needed here?
-                // Can we make a "select one" in the dropdown disabled?
-                if (value.Equals("Select One"))
+
+                if (HasInsurance.Equals(true))
                 {
-                    // Set insurer to blank string instead of "select one"
-                    // being passed to DB
-                    insurer = " ";
+                    if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                    {
+                        feedback += "Error: Enter type of Insurer\n";
+                    }
+                    else
+                    {
+                        insurer = value;
+                    }
                 }
-                else
+                else if (HasInsurance.Equals(false))
                 {
-                    insurer = value;
+                    insurer = " ";
                 }
                 
             }
@@ -307,7 +311,16 @@ namespace PTClinic
             get { return phone2; }
             set
             {
+                //if (value.Length > 1 && value.Length < 14)
+                //{
+                //    feedback += "Error: Enter Telephone 2\n";
+                //}
+                //else
+                //{
+                //    phone2 = value;
+                //}
                 phone2 = value;
+
             }
         }
 
@@ -327,7 +340,22 @@ namespace PTClinic
             get { return phone2Type; }
             set
             {
-                phone2Type = value;
+                if (!Validation.IsValidLength(Phone2, 14))
+                {
+                    if (value.Equals("Select One"))
+                    {
+                        feedback += "Error: Select Telephone 2 Type\n";
+                    }
+                    else
+                    {
+                        phone2Type = value;
+                    }
+                }
+                else
+                {
+                    phone2Type = " ";
+                }
+               
             }
         }
         
@@ -339,7 +367,7 @@ namespace PTClinic
             {
                 if (value.Equals(null))
                 {
-                    feedback += "Error: Select yes or no for Leave a\n            Message\n";
+                    feedback += "Error: Select Yes or No for Leave a\n            Message\n";
                 }
                 else
                 {
@@ -490,7 +518,7 @@ namespace PTClinic
             OleDbDataAdapter da = new OleDbDataAdapter();
 
             // SQL command to get record(s) from the Patient Info table
-            string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_dob FROM Patients WHERE 0=0";
+            string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_dob FROM Patients WHERE 0=0 ORDER BY patient_id";
 
             // Create the connection string
             string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";

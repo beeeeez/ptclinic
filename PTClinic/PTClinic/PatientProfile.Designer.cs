@@ -54,7 +54,7 @@
             this.lblZip = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPatientVist = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -345,7 +345,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnPatientVist);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.button1);
@@ -355,16 +355,17 @@
             this.panel2.Size = new System.Drawing.Size(242, 548);
             this.panel2.TabIndex = 98;
             // 
-            // button3
+            // btnPatientVist
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(242, 74);
-            this.button3.TabIndex = 79;
-            this.button3.Text = "Patient Visit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPatientVist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPatientVist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatientVist.Location = new System.Drawing.Point(0, 356);
+            this.btnPatientVist.Name = "btnPatientVist";
+            this.btnPatientVist.Size = new System.Drawing.Size(242, 74);
+            this.btnPatientVist.TabIndex = 79;
+            this.btnPatientVist.Text = "Patient Visit";
+            this.btnPatientVist.UseVisualStyleBackColor = true;
+            this.btnPatientVist.Click += new System.EventHandler(this.btnPatientVist_Click);
             // 
             // button2
             // 
@@ -583,6 +584,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PatientProfile";
             this.Text = "Patient Profile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -623,7 +625,7 @@
         private System.Windows.Forms.Label lblZip;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPatientVist;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;

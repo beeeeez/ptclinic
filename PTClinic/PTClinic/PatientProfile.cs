@@ -149,5 +149,10 @@ namespace PTClinic
             this.Hide();
             Login.Show();
         }
+
+        private void btnPatientVist_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -72,8 +72,8 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -147,13 +147,12 @@
             // 
             // tbDiagnosis
             // 
-            this.tbDiagnosis.Location = new System.Drawing.Point(149, 85);
+            this.tbDiagnosis.Location = new System.Drawing.Point(159, 85);
             this.tbDiagnosis.Multiline = true;
             this.tbDiagnosis.Name = "tbDiagnosis";
             this.tbDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDiagnosis.Size = new System.Drawing.Size(415, 30);
             this.tbDiagnosis.TabIndex = 1;
-            this.tbDiagnosis.Text = "Henry";
             // 
             // dtpDate
             // 
@@ -532,6 +531,15 @@
             this.panel4.Size = new System.Drawing.Size(593, 333);
             this.panel4.TabIndex = 92;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(200, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "???? Dropdown or Texbox????";
+            // 
             // tbPTDiagnosis
             // 
             this.tbPTDiagnosis.Location = new System.Drawing.Point(170, 86);
@@ -541,15 +549,6 @@
             this.tbPTDiagnosis.Size = new System.Drawing.Size(353, 34);
             this.tbPTDiagnosis.TabIndex = 99;
             this.tbPTDiagnosis.Text = "Joanne Teset";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 13);
-            this.label1.TabIndex = 100;
-            this.label1.Text = "???? Dropdown or Texbox????";
             // 
             // VisitForm
             // 
@@ -566,6 +565,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "VisitForm";
             this.Text = "VisitForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

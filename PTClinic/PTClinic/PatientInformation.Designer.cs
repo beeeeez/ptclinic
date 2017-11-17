@@ -36,6 +36,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.panelCaregiverInfo = new System.Windows.Forms.Panel();
+            this.tbCGZip = new System.Windows.Forms.MaskedTextBox();
             this.lblCareFeedback = new System.Windows.Forms.Label();
             this.btnAddCaregiver = new System.Windows.Forms.Button();
             this.tbCGPhone2 = new System.Windows.Forms.MaskedTextBox();
@@ -109,7 +110,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.tbCGZip = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCaregiverInfo.SuspendLayout();
@@ -225,6 +225,16 @@
             this.panelCaregiverInfo.TabIndex = 79;
             this.panelCaregiverInfo.Visible = false;
             // 
+            // tbCGZip
+            // 
+            this.tbCGZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCGZip.Location = new System.Drawing.Point(481, 455);
+            this.tbCGZip.Mask = "00000";
+            this.tbCGZip.Name = "tbCGZip";
+            this.tbCGZip.Size = new System.Drawing.Size(100, 26);
+            this.tbCGZip.TabIndex = 32;
+            this.tbCGZip.ValidatingType = typeof(int);
+            // 
             // lblCareFeedback
             // 
             this.lblCareFeedback.AutoSize = true;
@@ -232,9 +242,8 @@
             this.lblCareFeedback.ForeColor = System.Drawing.Color.Red;
             this.lblCareFeedback.Location = new System.Drawing.Point(656, 30);
             this.lblCareFeedback.Name = "lblCareFeedback";
-            this.lblCareFeedback.Size = new System.Drawing.Size(197, 20);
+            this.lblCareFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblCareFeedback.TabIndex = 110;
-            this.lblCareFeedback.Text = "CAREGIVER FEEDBACK";
             // 
             // btnAddCaregiver
             // 
@@ -278,7 +287,7 @@
             this.tbCGName.Name = "tbCGName";
             this.tbCGName.Size = new System.Drawing.Size(431, 26);
             this.tbCGName.TabIndex = 22;
-            this.tbCGName.Text = "Joanne Teset";
+            this.tbCGName.Text = "Caregiver Name";
             // 
             // cbCGPhone1Type
             // 
@@ -338,7 +347,6 @@
             this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
             this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 26);
             this.tbCGPhone1Ext.TabIndex = 24;
-            this.tbCGPhone1Ext.Text = "10000";
             // 
             // tbCGPhone2Ext
             // 
@@ -516,7 +524,7 @@
             this.panelPatientInfo.Controls.Add(this.lblGender);
             this.panelPatientInfo.Controls.Add(this.lblLastName);
             this.panelPatientInfo.Controls.Add(this.lblFirstName);
-            this.panelPatientInfo.Location = new System.Drawing.Point(49, 114);
+            this.panelPatientInfo.Location = new System.Drawing.Point(38, 114);
             this.panelPatientInfo.Name = "panelPatientInfo";
             this.panelPatientInfo.Size = new System.Drawing.Size(1203, 581);
             this.panelPatientInfo.TabIndex = 90;
@@ -564,7 +572,6 @@
             this.tbPhone2.Name = "tbPhone2";
             this.tbPhone2.Size = new System.Drawing.Size(131, 26);
             this.tbPhone2.TabIndex = 17;
-            this.tbPhone2.Text = "5084423126";
             // 
             // tbPhone1
             // 
@@ -663,6 +670,9 @@
             // 
             // cbInsurer
             // 
+            this.cbInsurer.BackColor = System.Drawing.Color.White;
+            this.cbInsurer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInsurer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbInsurer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbInsurer.FormattingEnabled = true;
             this.cbInsurer.Location = new System.Drawing.Point(651, 116);
@@ -710,7 +720,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 26);
             this.tbEmail.TabIndex = 21;
-            this.tbEmail.Text = "test@email.com";
+            this.tbEmail.Text = "ksmith23@gmail.com";
             // 
             // tbCity
             // 
@@ -728,7 +738,6 @@
             this.tbAddress2.Name = "tbAddress2";
             this.tbAddress2.Size = new System.Drawing.Size(266, 26);
             this.tbAddress2.TabIndex = 7;
-            this.tbAddress2.Text = "Apartment 4d";
             // 
             // tbAddress
             // 
@@ -737,7 +746,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(265, 26);
             this.tbAddress.TabIndex = 6;
-            this.tbAddress.Text = "1234 Test Street";
+            this.tbAddress.Text = "1500 North Main Street";
             // 
             // tbFirstName
             // 
@@ -746,7 +755,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(201, 26);
             this.tbFirstName.TabIndex = 1;
-            this.tbFirstName.Text = "Henry";
+            this.tbFirstName.Text = "Kyle";
             // 
             // tbMiddleInitial
             // 
@@ -755,7 +764,6 @@
             this.tbMiddleInitial.Name = "tbMiddleInitial";
             this.tbMiddleInitial.Size = new System.Drawing.Size(32, 26);
             this.tbMiddleInitial.TabIndex = 2;
-            this.tbMiddleInitial.Text = "B";
             // 
             // tbLastName
             // 
@@ -764,7 +772,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(266, 26);
             this.tbLastName.TabIndex = 3;
-            this.tbLastName.Text = "Hernickson";
+            this.tbLastName.Text = "Smith";
             // 
             // tbOtherInsurance
             // 
@@ -773,7 +781,6 @@
             this.tbOtherInsurance.Name = "tbOtherInsurance";
             this.tbOtherInsurance.Size = new System.Drawing.Size(244, 26);
             this.tbOtherInsurance.TabIndex = 13;
-            this.tbOtherInsurance.Text = "Insurance Co";
             // 
             // tbPhoneExt1
             // 
@@ -782,7 +789,6 @@
             this.tbPhoneExt1.Name = "tbPhoneExt1";
             this.tbPhoneExt1.Size = new System.Drawing.Size(87, 26);
             this.tbPhoneExt1.TabIndex = 15;
-            this.tbPhoneExt1.Text = "1103";
             // 
             // tbPhoneExt2
             // 
@@ -791,7 +797,6 @@
             this.tbPhoneExt2.Name = "tbPhoneExt2";
             this.tbPhoneExt2.Size = new System.Drawing.Size(87, 26);
             this.tbPhoneExt2.TabIndex = 18;
-            this.tbPhoneExt2.Text = "1214";
             // 
             // lblMessage
             // 
@@ -1002,16 +1007,6 @@
             this.lblFirstName.Size = new System.Drawing.Size(101, 24);
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
-            // 
-            // tbCGZip
-            // 
-            this.tbCGZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCGZip.Location = new System.Drawing.Point(481, 455);
-            this.tbCGZip.Mask = "00000";
-            this.tbCGZip.Name = "tbCGZip";
-            this.tbCGZip.Size = new System.Drawing.Size(100, 26);
-            this.tbCGZip.TabIndex = 32;
-            this.tbCGZip.ValidatingType = typeof(int);
             // 
             // PatientInformation
             // 

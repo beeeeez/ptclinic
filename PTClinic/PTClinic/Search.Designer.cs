@@ -215,6 +215,7 @@
             this.Controls.Add(this.lblFName);
             this.Name = "Search";
             this.Text = "Search For Patient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvResults)).EndInit();

@@ -47,6 +47,18 @@ namespace PTClinic
             return result;
         }
 
+        static public bool EmptyPhoneRange(string temp, int minLength, int maxLength)
+        {
+            bool result = false;
+
+            if (temp.Length >= minLength && temp.Length <= maxLength)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
         //Validating that the string length is between the minimum and maximum lengths allowed
         static public bool IsWithinRange(string temp, int minlength, int maxlength)
         {

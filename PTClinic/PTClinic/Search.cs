@@ -29,7 +29,7 @@ namespace PTClinic
         private void btnSearch_Click(object sender, EventArgs e)
         {
             // Creating a DataSet to hold the DataSet we'll get from PatientInfo
-            DataSet myDataSet;
+            DataSet myDataSet = new DataSet();
 
             // Perform a search using the input(s)
             PatientInfo temp = new PatientInfo();

@@ -1,12 +1,16 @@
 # PTClinic
 
 ### Project Todos
-- Patient Visit form
+- Patient Visit Form
+  - Patient Visit Class
+- Follow Up Visit Form
+  - Follow Up Visit Class
 - Appointment Form (Schedule Appointments)
 - Check tab indexes
 - Check validation
 - Add Update ability for patient information
 - Add print ability for Patient Record + Appointment Scheduling
+- Add Follow Up Table to Database
 
 
 ### Display (In Progress)

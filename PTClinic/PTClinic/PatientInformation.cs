@@ -125,6 +125,13 @@ namespace PTClinic
             cbCGPhone2Type.Items.Add("Cell");
             cbCGPhone2Type.Items.Add("Work");
             cbCGPhone2Type.SelectedIndex = 0;
+
+            cbECPhoneType.Items.Insert(0, "Select One");
+            cbECPhoneType.Items.Add("Home");
+            cbECPhoneType.Items.Add("Cell");
+            cbECPhoneType.Items.Add("Work");
+            cbECPhoneType.SelectedIndex = 0;
+
         }
 
         public void FillGender()
@@ -290,7 +297,12 @@ namespace PTClinic
         {
 
             EmergencyContact newEmergencyContact = new EmergencyContact();
-
+            newEmergencyContact.Fullname = tbECName.Text;
+            newEmergencyContact.Phone = tbECPhone.Text;
+            newEmergencyContact.PhoneExtension = tbECPhoneExt.Text;
+            newEmergencyContact.PhoneType = cbECPhoneType.Text;
+            newEmergencyContact.Relationship = tbECRelationship.Text;
+            newEmergencyContact.PatientID = patientID;
 
 
             CaregiverInfo newCaregiver = new CaregiverInfo();
@@ -310,28 +322,114 @@ namespace PTClinic
             newCaregiver.Phone2Type = cbCGPhone2Type.Text;
 
 
-            // If an error in the information occurs
-            if (newCaregiver.Feedback.Contains("Error:"))
+            if (newEmergencyContact.Feedback.Contains("Error:") || newCaregiver.Feedback.Contains("Error:"))
             {
-                // Display the error message inside the form feedback label
-                lblCareFeedback.Text = newCaregiver.Feedback;
+                lblCareFeedback.Text = "";
+                lblCareFeedback.Text += newEmergencyContact.Feedback;
+                lblCareFeedback.Text += newCaregiver.Feedback;
             }
-            else // If there are no errors, continue to Caregiver Form
+            else
             {
                 lblCareFeedback.Text = "";
 
                 try
                 {
-                    lblCareFeedback.Text = newCaregiver.AddRecord();
+
+                    int ECSuccess = newEmergencyContact.AddRecord();
+
+                    if (ECSuccess == 1)
+                    {
+                       
+                        lblCareFeedback.Text = "";
+
+                        try
+                        {
+                            lblCareFeedback.Text = newCaregiver.AddRecord();
+
+                            // If caregiver is successful go to patient profile page
+
+
+
+                        }
+                        catch (Exception exc)
+                        {
+                            lblCareFeedback.Text = exc.ToString();
+                        }
+
+                        // Clear all fields
+                        ClearCaregiverForm();
+                        // Clear all fields
+                        ClearEmergencyContactForm();
+
+
+                        // Add Caregiver Info
+
+
+
+
+                    }
+                    else
+                    {
+                        lblFeedback.Text += "Emergency Contact Info was not saved";
+                    }
+
+
+                    // lblCareFeedback.Text = newEmergencyContact.AddRecord();
                 }
-                catch (Exception exc)
+                catch (Exception exc) 
                 {
                     lblCareFeedback.Text = exc.ToString();
                 }
 
-                // Clear all fields
-                ClearCaregiverForm();
+         
             }
+
+
+
+
+            //CaregiverInfo newCaregiver = new CaregiverInfo();
+
+            //newCaregiver.PatientID = patientID;
+            //newCaregiver.Name = tbCGName.Text;
+            //newCaregiver.Address = tbCGAddress.Text;
+            //newCaregiver.City = tbCGCity.Text;
+            //newCaregiver.State = cbCGState.Text;
+            //newCaregiver.Zip = tbCGZip.Text;
+            //newCaregiver.Phone = tbCGPhone1.Text;
+            //newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
+            //newCaregiver.PhoneType = cbCGPhone1Type.Text;
+
+            //newCaregiver.Phone2 = tbCGPhone2.Text;
+            //newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
+            //newCaregiver.Phone2Type = cbCGPhone2Type.Text;
+
+
+            //// If an error in the information occurs
+            //if (newCaregiver.Feedback.Contains("Error:"))
+            //{
+            //    // Display the error message inside the form feedback label
+            //    lblCareFeedback.Text += newCaregiver.Feedback;
+            //}
+            //else // If there are no errors, continue to Caregiver Form
+            //{
+            //    lblCareFeedback.Text = "";
+
+            //    try
+            //    {
+            //        lblCareFeedback.Text = newCaregiver.AddRecord();
+            //    }
+            //    catch (Exception exc)
+            //    {
+            //        lblCareFeedback.Text = exc.ToString();
+            //    }
+
+                // Clear all fields
+                //ClearCaregiverForm();
+                //// Clear all fields
+                //ClearEmergencyContactForm();
+            //}
+
+
         }
 
         public void ClearPatientForm()

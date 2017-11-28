@@ -548,7 +548,7 @@
             this.panelPatientInfo.Controls.Add(this.lblGender);
             this.panelPatientInfo.Controls.Add(this.lblLastName);
             this.panelPatientInfo.Controls.Add(this.lblFirstName);
-            this.panelPatientInfo.Location = new System.Drawing.Point(38, 731);
+            this.panelPatientInfo.Location = new System.Drawing.Point(29, 114);
             this.panelPatientInfo.Name = "panelPatientInfo";
             this.panelPatientInfo.Size = new System.Drawing.Size(1203, 581);
             this.panelPatientInfo.TabIndex = 90;

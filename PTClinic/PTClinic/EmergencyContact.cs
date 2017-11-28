@@ -141,9 +141,10 @@ namespace PTClinic
 
 
         // Adding a record
-        public virtual string AddRecord()
+        public virtual int AddRecord()
         {
             string strFeedback = "";
+            int success = 0;
 
 
             // SQL command to add a record to the Caregiver table
@@ -177,7 +178,7 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString();
+                success = comm.ExecuteNonQuery();
 
                 // close the database
                 conn.Close();
@@ -187,7 +188,7 @@ namespace PTClinic
                 strFeedback = "ERROR: " + err.Message;
             }
 
-            return strFeedback;
+            return success;
         } // End of AddRecord
 
 

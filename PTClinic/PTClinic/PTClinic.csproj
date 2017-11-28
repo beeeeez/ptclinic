@@ -66,6 +66,7 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="CaregiverInfo.cs" />
+    <Compile Include="EmergencyContact.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -289,6 +289,10 @@ namespace PTClinic
         private void btnAddCaregiver_Click(object sender, EventArgs e)
         {
 
+            EmergencyContact newEmergencyContact = new EmergencyContact();
+
+
+
             CaregiverInfo newCaregiver = new CaregiverInfo();
 
             newCaregiver.PatientID = patientID;
@@ -354,6 +358,16 @@ namespace PTClinic
             rdbMessageYes.Checked = false;
             rdbMessageNo.Checked = false;
             tbEmail.Clear();
+        }
+
+        public void ClearEmergencyContactForm()
+        {
+            tbECName.Clear();
+            tbECPhoneExt.Clear();
+            tbECPhoneExt.Clear();
+            cbECPhoneType.SelectedIndex = 0;
+            tbECRelationship.Clear();
+
         }
 
         public void ClearCaregiverForm()

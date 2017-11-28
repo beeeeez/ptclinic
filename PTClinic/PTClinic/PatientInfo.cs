@@ -391,8 +391,6 @@ namespace PTClinic
         // Default Constructor
         public PatientInfo()
         {
-            //Start by giving feedback an empty string
-            //feedback = "";
             fName = "";
             mInitial = "";
             lName = "";
@@ -407,7 +405,6 @@ namespace PTClinic
         public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email)
         {
             feedback = "";
-            //this.Name = name;
             Fname = fName;
             MInitial = mInitial;
             Lname = lName;

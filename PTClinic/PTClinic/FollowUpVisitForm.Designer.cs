@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FollowUpVisitForm));
-            this.lblCareFeedback = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnAddPatient = new System.Windows.Forms.Button();
+            this.btnAddFollowUp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -41,10 +40,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblDate1 = new System.Windows.Forms.Label();
             this.lblDate2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDate1 = new System.Windows.Forms.Label();
             this.tbProviderName = new System.Windows.Forms.TextBox();
             this.tbStudentProvider = new System.Windows.Forms.TextBox();
             this.tbAssessment = new System.Windows.Forms.TextBox();
@@ -71,25 +68,19 @@
             this.tbProviderID = new System.Windows.Forms.TextBox();
             this.lblPtnID = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPatientName = new System.Windows.Forms.Label();
+            this.lblSupervisedCPT = new System.Windows.Forms.Label();
+            this.lblConstantCPT = new System.Windows.Forms.Label();
+            this.lblTheraputicCPT = new System.Windows.Forms.Label();
+            this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblCareFeedback
-            // 
-            this.lblCareFeedback.AutoSize = true;
-            this.lblCareFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCareFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblCareFeedback.Location = new System.Drawing.Point(960, 617);
-            this.lblCareFeedback.Name = "lblCareFeedback";
-            this.lblCareFeedback.Size = new System.Drawing.Size(197, 20);
-            this.lblCareFeedback.TabIndex = 103;
-            this.lblCareFeedback.Text = "CAREGIVER FEEDBACK";
             // 
             // btnClear
             // 
@@ -102,20 +93,22 @@
             this.btnClear.TabIndex = 101;
             this.btnClear.Text = "Clear Form";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnAddPatient
+            // btnAddFollowUp
             // 
-            this.btnAddPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPatient.ForeColor = System.Drawing.Color.White;
-            this.btnAddPatient.Location = new System.Drawing.Point(827, 673);
-            this.btnAddPatient.Name = "btnAddPatient";
-            this.btnAddPatient.Size = new System.Drawing.Size(117, 60);
-            this.btnAddPatient.TabIndex = 96;
-            this.btnAddPatient.Text = "Add Follow Up Info";
-            this.btnAddPatient.UseVisualStyleBackColor = false;
+            this.btnAddFollowUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddFollowUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
+            this.btnAddFollowUp.Location = new System.Drawing.Point(827, 673);
+            this.btnAddFollowUp.Name = "btnAddFollowUp";
+            this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
+            this.btnAddFollowUp.TabIndex = 96;
+            this.btnAddFollowUp.Text = "Add Follow Up Info";
+            this.btnAddFollowUp.UseVisualStyleBackColor = false;
+            this.btnAddFollowUp.Click += new System.EventHandler(this.btnAddFollowUp_Click);
             // 
             // panel1
             // 
@@ -143,6 +136,7 @@
             this.btnBackHome.Text = "Home";
             this.btnBackHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // btnLogOut
             // 
@@ -157,6 +151,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox1
             // 
@@ -183,11 +178,11 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(741, 620);
+            this.lblFeedback.Location = new System.Drawing.Point(878, 620);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(166, 20);
+            this.lblFeedback.Size = new System.Drawing.Size(193, 20);
             this.lblFeedback.TabIndex = 102;
-            this.lblFeedback.Text = "PATIENT FEEDBACK";
+            this.lblFeedback.Text = "FOLLOW UP FEEDBACK";
             // 
             // panel3
             // 
@@ -213,10 +208,8 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.lblDate1);
             this.panel4.Controls.Add(this.lblDate2);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblDate1);
             this.panel4.Controls.Add(this.tbProviderName);
             this.panel4.Controls.Add(this.tbStudentProvider);
             this.panel4.Controls.Add(this.tbAssessment);
@@ -228,47 +221,29 @@
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 100;
             // 
-            // lblDate1
-            // 
-            this.lblDate1.AutoSize = true;
-            this.lblDate1.Location = new System.Drawing.Point(477, 364);
-            this.lblDate1.Name = "lblDate1";
-            this.lblDate1.Size = new System.Drawing.Size(89, 13);
-            this.lblDate1.TabIndex = 104;
-            this.lblDate1.Text = "Date Placeholder";
-            // 
             // lblDate2
             // 
             this.lblDate2.AutoSize = true;
-            this.lblDate2.Location = new System.Drawing.Point(477, 402);
+            this.lblDate2.Location = new System.Drawing.Point(454, 402);
             this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(89, 13);
-            this.lblDate2.TabIndex = 103;
-            this.lblDate2.Text = "Date Placeholder";
+            this.lblDate2.Size = new System.Drawing.Size(85, 13);
+            this.lblDate2.TabIndex = 102;
+            this.lblDate2.Text = "TODAY\'S DATE";
             // 
-            // label3
+            // lblDate1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 402);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 102;
-            this.label3.Text = "TODAY\'S DATE";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 364);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "TODAY\'S DATE";
+            this.lblDate1.AutoSize = true;
+            this.lblDate1.Location = new System.Drawing.Point(454, 361);
+            this.lblDate1.Name = "lblDate1";
+            this.lblDate1.Size = new System.Drawing.Size(85, 13);
+            this.lblDate1.TabIndex = 101;
+            this.lblDate1.Text = "TODAY\'S DATE";
             // 
             // tbProviderName
             // 
             this.tbProviderName.Location = new System.Drawing.Point(173, 399);
             this.tbProviderName.Name = "tbProviderName";
-            this.tbProviderName.Size = new System.Drawing.Size(191, 20);
+            this.tbProviderName.Size = new System.Drawing.Size(252, 20);
             this.tbProviderName.TabIndex = 100;
             this.tbProviderName.Text = "Joanne Teset";
             // 
@@ -276,7 +251,7 @@
             // 
             this.tbStudentProvider.Location = new System.Drawing.Point(173, 361);
             this.tbStudentProvider.Name = "tbStudentProvider";
-            this.tbStudentProvider.Size = new System.Drawing.Size(191, 20);
+            this.tbStudentProvider.Size = new System.Drawing.Size(252, 20);
             this.tbStudentProvider.TabIndex = 99;
             this.tbStudentProvider.Text = "Joanne Teset";
             // 
@@ -323,9 +298,9 @@
             this.cbTheraputic2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTheraputic2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTheraputic2.FormattingEnabled = true;
-            this.cbTheraputic2.Location = new System.Drawing.Point(197, 552);
+            this.cbTheraputic2.Location = new System.Drawing.Point(267, 555);
             this.cbTheraputic2.Name = "cbTheraputic2";
-            this.cbTheraputic2.Size = new System.Drawing.Size(121, 21);
+            this.cbTheraputic2.Size = new System.Drawing.Size(197, 21);
             this.cbTheraputic2.TabIndex = 12;
             // 
             // cbSupervisedModalities
@@ -334,7 +309,7 @@
             this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSupervisedModalities.FormattingEnabled = true;
-            this.cbSupervisedModalities.Location = new System.Drawing.Point(149, 429);
+            this.cbSupervisedModalities.Location = new System.Drawing.Point(208, 432);
             this.cbSupervisedModalities.Name = "cbSupervisedModalities";
             this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 21);
             this.cbSupervisedModalities.TabIndex = 9;
@@ -345,7 +320,7 @@
             this.cbConstantAttendance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConstantAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbConstantAttendance.FormattingEnabled = true;
-            this.cbConstantAttendance.Location = new System.Drawing.Point(149, 471);
+            this.cbConstantAttendance.Location = new System.Drawing.Point(208, 474);
             this.cbConstantAttendance.Name = "cbConstantAttendance";
             this.cbConstantAttendance.Size = new System.Drawing.Size(256, 21);
             this.cbConstantAttendance.TabIndex = 16;
@@ -365,7 +340,7 @@
             this.cbTheraputicProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTheraputicProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTheraputicProcedures.FormattingEnabled = true;
-            this.cbTheraputicProcedures.Location = new System.Drawing.Point(149, 516);
+            this.cbTheraputicProcedures.Location = new System.Drawing.Point(208, 519);
             this.cbTheraputicProcedures.Name = "cbTheraputicProcedures";
             this.cbTheraputicProcedures.Size = new System.Drawing.Size(256, 21);
             this.cbTheraputicProcedures.TabIndex = 19;
@@ -508,20 +483,25 @@
             this.lblPID.TabIndex = 96;
             this.lblPID.Text = "PLACEHOLDER";
             // 
-            // label2
+            // lblPN
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(363, 13);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "LEAVING SPACE HERE FOR PATIENT NAME-- IF IT WILL BE NEEDED--";
+            this.lblPN.AutoSize = true;
+            this.lblPN.Location = new System.Drawing.Point(69, 84);
+            this.lblPN.Name = "lblPN";
+            this.lblPN.Size = new System.Drawing.Size(74, 13);
+            this.lblPN.TabIndex = 97;
+            this.lblPN.Text = "Patient Name:";
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblTheraputicCPT2);
+            this.panel2.Controls.Add(this.lblTheraputicCPT);
+            this.panel2.Controls.Add(this.lblConstantCPT);
+            this.panel2.Controls.Add(this.lblSupervisedCPT);
+            this.panel2.Controls.Add(this.lblPatientName);
+            this.panel2.Controls.Add(this.lblPN);
             this.panel2.Controls.Add(this.lblPID);
             this.panel2.Controls.Add(this.lblPtnID);
             this.panel2.Controls.Add(this.cbTheraputic2);
@@ -547,14 +527,58 @@
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 98;
             // 
+            // lblPatientName
+            // 
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Location = new System.Drawing.Point(151, 84);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(86, 13);
+            this.lblPatientName.TabIndex = 98;
+            this.lblPatientName.Text = "PLACEHOLDER";
+            // 
+            // lblSupervisedCPT
+            // 
+            this.lblSupervisedCPT.AutoSize = true;
+            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 435);
+            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
+            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblSupervisedCPT.TabIndex = 99;
+            this.lblSupervisedCPT.Text = "CPT";
+            // 
+            // lblConstantCPT
+            // 
+            this.lblConstantCPT.AutoSize = true;
+            this.lblConstantCPT.Location = new System.Drawing.Point(167, 477);
+            this.lblConstantCPT.Name = "lblConstantCPT";
+            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblConstantCPT.TabIndex = 100;
+            this.lblConstantCPT.Text = "CPT";
+            // 
+            // lblTheraputicCPT
+            // 
+            this.lblTheraputicCPT.AutoSize = true;
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(167, 522);
+            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
+            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblTheraputicCPT.TabIndex = 101;
+            this.lblTheraputicCPT.Text = "CPT";
+            // 
+            // lblTheraputicCPT2
+            // 
+            this.lblTheraputicCPT2.AutoSize = true;
+            this.lblTheraputicCPT2.Location = new System.Drawing.Point(200, 558);
+            this.lblTheraputicCPT2.Name = "lblTheraputicCPT2";
+            this.lblTheraputicCPT2.Size = new System.Drawing.Size(61, 13);
+            this.lblTheraputicCPT2.TabIndex = 102;
+            this.lblTheraputicCPT2.Text = "CPT 97319";
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 760);
-            this.Controls.Add(this.lblCareFeedback);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAddPatient);
+            this.Controls.Add(this.btnAddFollowUp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblFeedback);
@@ -577,10 +601,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCareFeedback;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnAddPatient;
+        private System.Windows.Forms.Button btnAddFollowUp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBackHome;
         private System.Windows.Forms.Button btnLogOut;
@@ -615,12 +637,15 @@
         private System.Windows.Forms.TextBox tbProviderID;
         private System.Windows.Forms.Label lblPtnID;
         private System.Windows.Forms.Label lblPID;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPN;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbProviderName;
-        private System.Windows.Forms.Label lblDate1;
         private System.Windows.Forms.Label lblDate2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDate1;
+        private System.Windows.Forms.Label lblPatientName;
+        private System.Windows.Forms.Label lblTheraputicCPT2;
+        private System.Windows.Forms.Label lblTheraputicCPT;
+        private System.Windows.Forms.Label lblConstantCPT;
+        private System.Windows.Forms.Label lblSupervisedCPT;
     }
 }

@@ -243,8 +243,7 @@ namespace PTClinic
         {
             string strFeedback = "";
 
-            // TODO Figure out how to pass in the Patient ID?
-
+         
             // SQL command to add a record to the Caregiver table
             string strSQL = "INSERT INTO Caregiver (patient_id, caregiver_name, caregiver_phone1, caregiver_phone1_extension, caregiver_phone1_type, caregiver_phone2, caregiver_phone2_extension, caregiver_phone2_type, caregiver_address, caregiver_city, caregiver_state, caregiver_zip)" +
                 " VALUES (@PatientID, @Name, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @Address, @City, @State, @Zip);";

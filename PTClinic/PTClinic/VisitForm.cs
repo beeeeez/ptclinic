@@ -22,9 +22,19 @@ namespace PTClinic
             InitializeComponent();
         }
 
-        private void btnAddPatient_Click(object sender, EventArgs e)
+        // Add Visit Button Click
+        // Add Visit Information to DB
+        private void btnAddVisit_Click(object sender, EventArgs e)
         {
-
+            // TODO -- functionality
         }
+
+        // Back Home Button Click
+        // Send to Homepage
+        private void btnBackHome_Click(object sender, EventArgs e)
+        {
+            // TODO -- functionality
+        }
+
     }
 }

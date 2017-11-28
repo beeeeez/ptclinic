@@ -72,8 +72,12 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.lblTheraputicCPT = new System.Windows.Forms.Label();
+            this.lblConstantCPT = new System.Windows.Forms.Label();
+            this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
+            this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
+            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -169,9 +173,9 @@
             this.cbTheraputic2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTheraputic2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTheraputic2.FormattingEnabled = true;
-            this.cbTheraputic2.Location = new System.Drawing.Point(280, 146);
+            this.cbTheraputic2.Location = new System.Drawing.Point(289, 146);
             this.cbTheraputic2.Name = "cbTheraputic2";
-            this.cbTheraputic2.Size = new System.Drawing.Size(121, 21);
+            this.cbTheraputic2.Size = new System.Drawing.Size(185, 21);
             this.cbTheraputic2.TabIndex = 12;
             // 
             // tbMedicalHistory
@@ -209,7 +213,7 @@
             this.btnAddVisit.TabIndex = 86;
             this.btnAddVisit.Text = "Add Visit";
             this.btnAddVisit.UseVisualStyleBackColor = false;
-            this.btnAddVisit.Click += new System.EventHandler(this.btnAddPatient_Click);
+            this.btnAddVisit.Click += new System.EventHandler(this.btnAddVisit_Click);
             // 
             // tbMedications
             // 
@@ -320,6 +324,7 @@
             this.btnBackHome.Text = "Home";
             this.btnBackHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // btnLogOut
             // 
@@ -526,6 +531,10 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblTheraputicCPT);
+            this.panel4.Controls.Add(this.lblConstantCPT);
+            this.panel4.Controls.Add(this.lblTheraputicCPT2);
+            this.panel4.Controls.Add(this.lblEvaluationCPT);
             this.panel4.Controls.Add(this.tbFollowUpTreatment);
             this.panel4.Controls.Add(this.tbPTDiagnosis);
             this.panel4.Controls.Add(this.tbFunctionalLimitations);
@@ -545,15 +554,41 @@
             this.panel4.Size = new System.Drawing.Size(593, 352);
             this.panel4.TabIndex = 92;
             // 
-            // tbPTDiagnosis
+            // lblTheraputicCPT
             // 
-            this.tbPTDiagnosis.Location = new System.Drawing.Point(169, 245);
-            this.tbPTDiagnosis.Multiline = true;
-            this.tbPTDiagnosis.Name = "tbPTDiagnosis";
-            this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbPTDiagnosis.Size = new System.Drawing.Size(353, 34);
-            this.tbPTDiagnosis.TabIndex = 99;
-            this.tbPTDiagnosis.Text = "Joanne Teset";
+            this.lblTheraputicCPT.AutoSize = true;
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(177, 110);
+            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
+            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblTheraputicCPT.TabIndex = 103;
+            this.lblTheraputicCPT.Text = "CPT";
+            // 
+            // lblConstantCPT
+            // 
+            this.lblConstantCPT.AutoSize = true;
+            this.lblConstantCPT.Location = new System.Drawing.Point(177, 65);
+            this.lblConstantCPT.Name = "lblConstantCPT";
+            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblConstantCPT.TabIndex = 102;
+            this.lblConstantCPT.Text = "CPT";
+            // 
+            // lblTheraputicCPT2
+            // 
+            this.lblTheraputicCPT2.AutoSize = true;
+            this.lblTheraputicCPT2.Location = new System.Drawing.Point(222, 149);
+            this.lblTheraputicCPT2.Name = "lblTheraputicCPT2";
+            this.lblTheraputicCPT2.Size = new System.Drawing.Size(61, 13);
+            this.lblTheraputicCPT2.TabIndex = 101;
+            this.lblTheraputicCPT2.Text = "CPT 97139";
+            // 
+            // lblEvaluationCPT
+            // 
+            this.lblEvaluationCPT.AutoSize = true;
+            this.lblEvaluationCPT.Location = new System.Drawing.Point(177, 23);
+            this.lblEvaluationCPT.Name = "lblEvaluationCPT";
+            this.lblEvaluationCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblEvaluationCPT.TabIndex = 97;
+            this.lblEvaluationCPT.Text = "CPT";
             // 
             // tbFollowUpTreatment
             // 
@@ -564,6 +599,16 @@
             this.tbFollowUpTreatment.Size = new System.Drawing.Size(353, 34);
             this.tbFollowUpTreatment.TabIndex = 100;
             this.tbFollowUpTreatment.Text = "Joanne Teset";
+            // 
+            // tbPTDiagnosis
+            // 
+            this.tbPTDiagnosis.Location = new System.Drawing.Point(169, 245);
+            this.tbPTDiagnosis.Multiline = true;
+            this.tbPTDiagnosis.Name = "tbPTDiagnosis";
+            this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbPTDiagnosis.Size = new System.Drawing.Size(353, 34);
+            this.tbPTDiagnosis.TabIndex = 99;
+            this.tbPTDiagnosis.Text = "Joanne Teset";
             // 
             // VisitForm
             // 
@@ -641,5 +686,9 @@
         private System.Windows.Forms.Label lblPID;
         private System.Windows.Forms.Label lblPtnID;
         private System.Windows.Forms.TextBox tbFollowUpTreatment;
+        private System.Windows.Forms.Label lblTheraputicCPT;
+        private System.Windows.Forms.Label lblConstantCPT;
+        private System.Windows.Forms.Label lblTheraputicCPT2;
+        private System.Windows.Forms.Label lblEvaluationCPT;
     }
 }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PTClinic
 {
-    public partial class VisitForm : Form
+    public partial class FollowUpVisitForm : Form
     {
-
-        private Form Admin;
-        private Form Login;
-        public int patientID;
-
-        public VisitForm()
+        public FollowUpVisitForm()
         {
             InitializeComponent();
-        }
-
-        private void btnAddPatient_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

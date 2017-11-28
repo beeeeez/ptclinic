@@ -71,6 +71,8 @@
             this.lblCGState = new System.Windows.Forms.Label();
             this.lblCGZip = new System.Windows.Forms.Label();
             this.lblCGPhone = new System.Windows.Forms.Label();
+            this.lbNewPatient = new System.Windows.Forms.Label();
+            this.panelMessage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -78,6 +80,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panelMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -542,12 +545,35 @@
             this.lblCGPhone.TabIndex = 112;
             this.lblCGPhone.Text = "Caregiver Phone";
             // 
+            // lbNewPatient
+            // 
+            this.lbNewPatient.AutoSize = true;
+            this.lbNewPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNewPatient.ForeColor = System.Drawing.Color.White;
+            this.lbNewPatient.Location = new System.Drawing.Point(31, 11);
+            this.lbNewPatient.Name = "lbNewPatient";
+            this.lbNewPatient.Size = new System.Drawing.Size(176, 18);
+            this.lbNewPatient.TabIndex = 113;
+            this.lbNewPatient.Text = "Patient Information Saved";
+            // 
+            // panelMessage
+            // 
+            this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelMessage.Controls.Add(this.lbNewPatient);
+            this.panelMessage.Location = new System.Drawing.Point(272, 73);
+            this.panelMessage.Name = "panelMessage";
+            this.panelMessage.Size = new System.Drawing.Size(236, 41);
+            this.panelMessage.TabIndex = 114;
+            this.panelMessage.Visible = false;
+            // 
             // PatientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1337, 621);
+            this.Controls.Add(this.panelMessage);
             this.Controls.Add(this.lblCGPhone);
             this.Controls.Add(this.lblCGZip);
             this.Controls.Add(this.lblCGState);
@@ -593,6 +619,8 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panelMessage.ResumeLayout(false);
+            this.panelMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +670,7 @@
         private System.Windows.Forms.Label lblCGState;
         private System.Windows.Forms.Label lblCGZip;
         private System.Windows.Forms.Label lblCGPhone;
+        private System.Windows.Forms.Label lbNewPatient;
+        private System.Windows.Forms.Panel panelMessage;
     }
 }

@@ -15,6 +15,7 @@ namespace PTClinic
     {
         private Form Admin;
         private Form Login;
+        private Form Search;
         public int patientID;
 
 
@@ -347,6 +348,10 @@ namespace PTClinic
                             lblCareFeedback.Text = newCaregiver.AddRecord();
 
                             // If caregiver is successful go to patient profile page
+                            bool isNewRecord = true;
+
+                            PatientProfile temp = new PatientProfile(patientID, Admin, Login, Search, this, isNewRecord);
+                            temp.Show();
 
 
 
@@ -360,11 +365,6 @@ namespace PTClinic
                         ClearCaregiverForm();
                         // Clear all fields
                         ClearEmergencyContactForm();
-
-
-                        // Add Caregiver Info
-
-
 
 
                     }

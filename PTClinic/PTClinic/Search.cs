@@ -15,6 +15,7 @@ namespace PTClinic
         // Variables for the admin and login forms
         private Form Admin;
         private Form Login;
+        private Form PatientInfo;
 
 
         public Search(Form adminForm, Form Login)
@@ -56,8 +57,9 @@ namespace PTClinic
             //MessageBox.Show(strPID);
 
             int intPID = Convert.ToInt32(strPID);
+            bool isNewRecord = false;
 
-            PatientProfile temp = new PatientProfile(intPID, Admin, Login, this);
+            PatientProfile temp = new PatientProfile(intPID, Admin, Login, this, PatientInfo, isNewRecord);
             temp.Show();
         }
 

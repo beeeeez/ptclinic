@@ -20,6 +20,7 @@ namespace PTClinic
         private Form Admin;
         private Form Login;
         private Form Search;
+        private Form PatientInfo;
 
         public PatientProfile()
         {
@@ -27,14 +28,28 @@ namespace PTClinic
         }
 
         // OVERLOADED CONSTRUCTOR --- used for pulling up existing data
-        public PatientProfile(int intPID, Form adminForm, Form Login, Form search)
+        public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord)
         {
             InitializeComponent();
+         
 
             this.Login = Login;
             this.Admin = adminForm;
             this.Search = search;
-            Search.Hide();
+            this.PatientInfo = PatientInfo;
+
+            // If isNewRecord == true display "Patient information has been saved!
+            if (isNewRecord == true)
+            {
+                // Display the Patient Saved Panel
+                panelMessage.Visible = true;
+                PatientInfo.Hide();
+            }
+            else
+            {
+                panelMessage.Visible = false;
+                Search.Hide();
+            }
 
             // Create variable for PatientInfo
             PatientInfo tempPatient = new PatientInfo();

@@ -57,6 +57,9 @@ namespace PTClinic
             // Create variable for CaregiverInfo
             CaregiverInfo tempCG = new CaregiverInfo();
 
+            // Create variable for EmergencyContact
+            EmergencyContact tempEC = new EmergencyContact();
+
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
@@ -102,18 +105,30 @@ namespace PTClinic
                         // and put them in proper labels
                         // Caregiver Name
                         lblCGName.Text = dataReaderCG["caregiver_name"].ToString();
-                        // Caregiver Address
-                        lblCGAddress.Text = dataReaderCG["caregiver_address"].ToString();
-                        // Caregiver City
-                        lblCGCity.Text = dataReaderCG["caregiver_city"].ToString();
-                        // Caregiver State
-                        lblCGState.Text = dataReaderCG["caregiver_state"].ToString();
-                        // Caregiver Zip
-                        lblCGZip.Text = dataReaderCG["caregiver_zip"].ToString();
                         // CaregiverPhone
                         lblCGPhone.Text = dataReaderCG["caregiver_phone1"].ToString() + "  Ext: " + dataReaderCG["caregiver_phone1_extension"].ToString() + "  Type: " + dataReaderCG["caregiver_phone1_type"].ToString();
                     }
                 } // End of -- using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+
+
+
+                // Gather info about this patient's emergency contact via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
+                {
+                    while (dataReaderEC.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+
+                        // Emergency Contact Fullname
+                        lblECFullname.Text = dataReaderEC["ec_fullname"].ToString();
+                        // Emergency Contact Phone Number 
+                        lblECPhone.Text = dataReaderEC["ec_telephone"].ToString() + "  Ext: " + dataReaderEC["ec_telephone_ext"].ToString() + "  Type: " + dataReaderEC["ec_telephone_type"].ToString();
+                        // Emergency Contact Relationship 
+                        lblECRelationship.Text = dataReaderEC["ec_relationship"].ToString();
+
+                    }
+                } // End of --  using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
 
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
 
@@ -165,9 +180,6 @@ namespace PTClinic
             Login.Show();
         }
 
-        private void btnPatientVist_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

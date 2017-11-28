@@ -255,7 +255,30 @@ namespace PTClinic
             get { return otherInsurer; }
             set
             {
-                otherInsurer = value;
+
+                if (HasInsurance.Equals(true))
+                {
+                    if (!string.IsNullOrEmpty(Insurer) && Insurer.Equals("Other"))
+                    {
+                        if (string.IsNullOrEmpty(value))
+                        {
+                            feedback += "Error: Enter 'Other' insurance\n";
+                        }
+
+                    }
+                    else
+                    {
+                        otherInsurer = value;
+                    }
+
+                }
+                else
+                {
+                    otherInsurer = "";
+                }
+
+              
+                
             }
         }
 

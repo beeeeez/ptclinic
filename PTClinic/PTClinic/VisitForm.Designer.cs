@@ -78,6 +78,8 @@
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.tbChiefComplaint = new System.Windows.Forms.TextBox();
+            this.lblChiefComplaint = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -109,7 +111,7 @@
             // 
             // tbSubjective
             // 
-            this.tbSubjective.Location = new System.Drawing.Point(149, 308);
+            this.tbSubjective.Location = new System.Drawing.Point(149, 327);
             this.tbSubjective.Multiline = true;
             this.tbSubjective.Name = "tbSubjective";
             this.tbSubjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -119,7 +121,7 @@
             // 
             // tbTreatmentPlan
             // 
-            this.tbTreatmentPlan.Location = new System.Drawing.Point(149, 516);
+            this.tbTreatmentPlan.Location = new System.Drawing.Point(149, 535);
             this.tbTreatmentPlan.Multiline = true;
             this.tbTreatmentPlan.Name = "tbTreatmentPlan";
             this.tbTreatmentPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -140,7 +142,7 @@
             // 
             // tbPTGoals
             // 
-            this.tbPTGoals.Location = new System.Drawing.Point(149, 443);
+            this.tbPTGoals.Location = new System.Drawing.Point(149, 462);
             this.tbPTGoals.Multiline = true;
             this.tbPTGoals.Name = "tbPTGoals";
             this.tbPTGoals.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -150,7 +152,7 @@
             // 
             // tbObjective
             // 
-            this.tbObjective.Location = new System.Drawing.Point(149, 369);
+            this.tbObjective.Location = new System.Drawing.Point(149, 388);
             this.tbObjective.Multiline = true;
             this.tbObjective.Name = "tbObjective";
             this.tbObjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -160,7 +162,7 @@
             // 
             // tbDiagnosis
             // 
-            this.tbDiagnosis.Location = new System.Drawing.Point(149, 124);
+            this.tbDiagnosis.Location = new System.Drawing.Point(149, 143);
             this.tbDiagnosis.Multiline = true;
             this.tbDiagnosis.Name = "tbDiagnosis";
             this.tbDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -180,7 +182,7 @@
             // 
             // tbMedicalHistory
             // 
-            this.tbMedicalHistory.Location = new System.Drawing.Point(149, 183);
+            this.tbMedicalHistory.Location = new System.Drawing.Point(149, 202);
             this.tbMedicalHistory.Multiline = true;
             this.tbMedicalHistory.Name = "tbMedicalHistory";
             this.tbMedicalHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -199,6 +201,7 @@
             this.btnClear.TabIndex = 93;
             this.btnClear.Text = "Clear Form";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAddVisit
             // 
@@ -217,7 +220,7 @@
             // 
             // tbMedications
             // 
-            this.tbMedications.Location = new System.Drawing.Point(149, 246);
+            this.tbMedications.Location = new System.Drawing.Point(149, 265);
             this.tbMedications.Multiline = true;
             this.tbMedications.Name = "tbMedications";
             this.tbMedications.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -274,7 +277,7 @@
             // lblMedicalHistory
             // 
             this.lblMedicalHistory.AutoSize = true;
-            this.lblMedicalHistory.Location = new System.Drawing.Point(64, 186);
+            this.lblMedicalHistory.Location = new System.Drawing.Point(64, 205);
             this.lblMedicalHistory.Name = "lblMedicalHistory";
             this.lblMedicalHistory.Size = new System.Drawing.Size(79, 13);
             this.lblMedicalHistory.TabIndex = 88;
@@ -339,6 +342,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox1
             // 
@@ -364,6 +368,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.tbChiefComplaint);
+            this.panel2.Controls.Add(this.lblChiefComplaint);
             this.panel2.Controls.Add(this.lblPID);
             this.panel2.Controls.Add(this.lblPtnID);
             this.panel2.Controls.Add(this.tbProviderID);
@@ -427,7 +433,7 @@
             // lblSubjective
             // 
             this.lblSubjective.AutoSize = true;
-            this.lblSubjective.Location = new System.Drawing.Point(86, 311);
+            this.lblSubjective.Location = new System.Drawing.Point(86, 330);
             this.lblSubjective.Name = "lblSubjective";
             this.lblSubjective.Size = new System.Drawing.Size(57, 13);
             this.lblSubjective.TabIndex = 83;
@@ -436,7 +442,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(64, 519);
+            this.lblCity.Location = new System.Drawing.Point(64, 538);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(79, 13);
             this.lblCity.TabIndex = 81;
@@ -445,7 +451,7 @@
             // lblPTGoals
             // 
             this.lblPTGoals.AutoSize = true;
-            this.lblPTGoals.Location = new System.Drawing.Point(92, 446);
+            this.lblPTGoals.Location = new System.Drawing.Point(92, 465);
             this.lblPTGoals.Name = "lblPTGoals";
             this.lblPTGoals.Size = new System.Drawing.Size(51, 13);
             this.lblPTGoals.TabIndex = 80;
@@ -454,7 +460,7 @@
             // lblObjective
             // 
             this.lblObjective.AutoSize = true;
-            this.lblObjective.Location = new System.Drawing.Point(91, 372);
+            this.lblObjective.Location = new System.Drawing.Point(91, 391);
             this.lblObjective.Name = "lblObjective";
             this.lblObjective.Size = new System.Drawing.Size(52, 13);
             this.lblObjective.TabIndex = 79;
@@ -472,7 +478,7 @@
             // lblMedications
             // 
             this.lblMedications.AutoSize = true;
-            this.lblMedications.Location = new System.Drawing.Point(79, 249);
+            this.lblMedications.Location = new System.Drawing.Point(79, 268);
             this.lblMedications.Name = "lblMedications";
             this.lblMedications.Size = new System.Drawing.Size(64, 13);
             this.lblMedications.TabIndex = 76;
@@ -481,7 +487,7 @@
             // lblDiagnosis
             // 
             this.lblDiagnosis.AutoSize = true;
-            this.lblDiagnosis.Location = new System.Drawing.Point(90, 127);
+            this.lblDiagnosis.Location = new System.Drawing.Point(90, 146);
             this.lblDiagnosis.Name = "lblDiagnosis";
             this.lblDiagnosis.Size = new System.Drawing.Size(53, 13);
             this.lblDiagnosis.TabIndex = 75;
@@ -610,6 +616,24 @@
             this.tbPTDiagnosis.TabIndex = 99;
             this.tbPTDiagnosis.Text = "Joanne Teset";
             // 
+            // tbChiefComplaint
+            // 
+            this.tbChiefComplaint.Location = new System.Drawing.Point(149, 84);
+            this.tbChiefComplaint.Multiline = true;
+            this.tbChiefComplaint.Name = "tbChiefComplaint";
+            this.tbChiefComplaint.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbChiefComplaint.Size = new System.Drawing.Size(415, 44);
+            this.tbChiefComplaint.TabIndex = 97;
+            // 
+            // lblChiefComplaint
+            // 
+            this.lblChiefComplaint.AutoSize = true;
+            this.lblChiefComplaint.Location = new System.Drawing.Point(63, 87);
+            this.lblChiefComplaint.Name = "lblChiefComplaint";
+            this.lblChiefComplaint.Size = new System.Drawing.Size(80, 13);
+            this.lblChiefComplaint.TabIndex = 98;
+            this.lblChiefComplaint.Text = "Cheif Complaint";
+            // 
             // VisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,5 +714,7 @@
         private System.Windows.Forms.Label lblConstantCPT;
         private System.Windows.Forms.Label lblTheraputicCPT2;
         private System.Windows.Forms.Label lblEvaluationCPT;
+        private System.Windows.Forms.TextBox tbChiefComplaint;
+        private System.Windows.Forms.Label lblChiefComplaint;
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="FollowUpVisitForm.Designer.cs">
       <DependentUpon>FollowUpVisitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FollowUpVisitInfo.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,7 @@
     <Compile Include="VisitForm.Designer.cs">
       <DependentUpon>VisitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisitInfo.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>

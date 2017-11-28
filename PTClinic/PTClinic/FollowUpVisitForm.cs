@@ -12,13 +12,17 @@ namespace PTClinic
 {
     public partial class FollowUpVisitForm : Form
     {
+        private Form Admin;
+        private Form Login;
+        public int patientID;
+
         public FollowUpVisitForm()
         {
             InitializeComponent();
         }
 
         // Home Button Click
-        // Send back to home page
+        // Send back to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
             // TODO -- functionality

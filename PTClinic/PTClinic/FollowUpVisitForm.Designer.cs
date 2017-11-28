@@ -75,6 +75,7 @@
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -208,6 +209,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.lblDate2);
             this.panel4.Controls.Add(this.lblDate1);
             this.panel4.Controls.Add(this.tbProviderName);
@@ -572,6 +574,15 @@
             this.lblTheraputicCPT2.TabIndex = 102;
             this.lblTheraputicCPT2.Text = "CPT 97319";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Plan goes here (maybe inside a panel?)";
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,5 +658,6 @@
         private System.Windows.Forms.Label lblTheraputicCPT;
         private System.Windows.Forms.Label lblConstantCPT;
         private System.Windows.Forms.Label lblSupervisedCPT;
+        private System.Windows.Forms.Label label1;
     }
 }

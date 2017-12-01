@@ -55,7 +55,7 @@
             this.lblPatientID = new System.Windows.Forms.Label();
             this.btnPrintAppCopy = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAppMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -63,7 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelAppMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -347,14 +347,15 @@
             this.pictureBox4.TabIndex = 149;
             this.pictureBox4.TabStop = false;
             // 
-            // panel2
+            // panelAppMessage
             // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Controls.Add(this.lblDBFeedback);
-            this.panel2.Location = new System.Drawing.Point(245, 231);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 46);
-            this.panel2.TabIndex = 150;
+            this.panelAppMessage.BackColor = System.Drawing.Color.Red;
+            this.panelAppMessage.Controls.Add(this.lblDBFeedback);
+            this.panelAppMessage.Location = new System.Drawing.Point(245, 231);
+            this.panelAppMessage.Name = "panelAppMessage";
+            this.panelAppMessage.Size = new System.Drawing.Size(261, 46);
+            this.panelAppMessage.TabIndex = 150;
+            this.panelAppMessage.Visible = false;
             // 
             // lblDBFeedback
             // 
@@ -374,9 +375,8 @@
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
             this.lblFeedback.Location = new System.Drawing.Point(29, 514);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(87, 18);
+            this.lblFeedback.Size = new System.Drawing.Size(0, 18);
             this.lblFeedback.TabIndex = 151;
-            this.lblFeedback.Text = "lblFeedback";
             // 
             // AppointmentForm
             // 
@@ -385,7 +385,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 629);
             this.Controls.Add(this.lblFeedback);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAppMessage);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnPrintAppCopy);
             this.Controls.Add(this.lblAppType);
@@ -417,8 +417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelAppMessage.ResumeLayout(false);
+            this.panelAppMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +451,7 @@
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.Button btnPrintAppCopy;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAppMessage;
         private System.Windows.Forms.Label lblDBFeedback;
         private System.Windows.Forms.Label lblFeedback;
     }

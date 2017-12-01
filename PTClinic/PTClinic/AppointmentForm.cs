@@ -15,6 +15,7 @@ namespace PTClinic
     {
         private Form PatientProfile;
         private int patientID;
+        System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         public AppointmentForm()
         {
@@ -26,13 +27,17 @@ namespace PTClinic
 
             InitializeComponent();
 
+            myTimer.Tick += new System.EventHandler(myTimer_Tick);
+            dtpAppDate.ValueChanged += new EventHandler(dtp_ValueChanged);
+            tpAppTime.ValueChanged += new EventHandler(tp_ValueChanged);
+
             this.PatientProfile = patientProfile;
             PatientProfile.Hide();
 
             this.patientID = patientID;
 
             lblPatientID.Text = patientID.ToString();
-            lblPatientName.Text = patientDetails.Fname;
+            lblPatientName.Text = patientDetails.Fname + " " + patientDetails.Lname;
 
             FillAppointmentType();
 
@@ -52,6 +57,29 @@ namespace PTClinic
             cbAppType.SelectedIndex = 0;
 
         }
+
+        private void dtp_ValueChanged(object sender, System.EventArgs e)
+        {
+            string shortDateStr = dtpAppDate.Value.ToString();
+            DateTime shortDate = Convert.ToDateTime(shortDateStr);
+            lblAppDate.Text = dtpAppDate.Value.ToString("ddd MMMM d, yyyy");
+        }
+
+        private void tp_ValueChanged(object sender, System.EventArgs e)
+        {
+            string timeStr = dtpAppDate.Value.ToString("hh:mm tt");
+            lblAppTime.Text = timeStr;
+        }
+
+
+
+        private void myTimer_Tick(object sender, System.EventArgs e)
+        {
+            panelAppMessage.Visible = false;
+            myTimer.Stop();
+        }
+
+
 
         private void btnScheduleAppointment_Click(object sender, EventArgs e)
         {
@@ -96,10 +124,19 @@ namespace PTClinic
 
                         if (success == 1)
                         {
+                            myTimer.Interval = 3000;
+                            myTimer.Start();
+                            panelAppMessage.BackColor = Color.FromArgb(0, 192, 0);
+                            panelAppMessage.Visible = true;
                             lblDBFeedback.Text = "Appointment Saved";
+
                         }
                         else
                         {
+                            myTimer.Interval = 3000;
+                            myTimer.Start();
+                            panelAppMessage.BackColor = Color.Red;
+                            panelAppMessage.Visible = true;
                             lblDBFeedback.Text = "Appointment Was NOT Saved";
                         }
                     }

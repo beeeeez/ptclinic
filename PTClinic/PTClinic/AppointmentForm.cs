@@ -61,21 +61,14 @@ namespace PTClinic
         private void dtp_ValueChanged(object sender, System.EventArgs e)
         {
             lblAppDate.Text = dtpAppDate.Value.ToString("ddd MMMM d, yyyy");
+            lblAppDate.Refresh();
         }
 
         private void tp_ValueChanged(object sender, System.EventArgs e)
         {
-            lblAppTime.Text = "";
-            lblAppTime.Text = dtpAppDate.Value.ToString("hh:mm tt");
+            lblAppTime.Text = tpAppTime.Value.ToString("hh:mm tt");
             lblAppTime.Refresh();    
         }
-
-        private string RefreshTime()
-        {
-            return dtpAppDate.Value.ToString("hh:mm tt");
-        }
-
-
 
         private void myTimer_Tick(object sender, System.EventArgs e)
         {

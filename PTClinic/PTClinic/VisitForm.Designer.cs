@@ -525,7 +525,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(854, 524);
+            this.lblFeedback.Location = new System.Drawing.Point(919, 554);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(145, 20);
             this.lblFeedback.TabIndex = 94;

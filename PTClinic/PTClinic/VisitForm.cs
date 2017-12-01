@@ -35,6 +35,11 @@ namespace PTClinic
             string shortDateStr = date.ToLongDateString();
             lblDate.Text = shortDateStr;
 
+            // Set the PatientID
+            lblPID.Text = PatientID;
+
+            // Set the Patient Name here~~~
+
             // Fill Drop Downs
             FillEvaluation();
             FillConstantAttendance();

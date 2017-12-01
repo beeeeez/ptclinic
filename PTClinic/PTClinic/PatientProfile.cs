@@ -28,12 +28,14 @@ namespace PTClinic
         public PatientProfile()
         {
             InitializeComponent();
+            setButtonIcon();
         }
 
         // OVERLOADED CONSTRUCTOR --- used for pulling up existing data
         public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord)
         {
             InitializeComponent();
+            setButtonIcon();
 
             pID = intPID;
 
@@ -186,6 +188,13 @@ namespace PTClinic
             //}
         }
 
+        // Setting the Icons for Logout and Home Buttons
+        private void setButtonIcon()
+        {
+            btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
+            btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
+        }
+
         private void btnBackHome_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -205,6 +214,13 @@ namespace PTClinic
 
             newAppointment.Show();
 
+        }
+
+        private void btnPatientVist_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VisitForm temp = new VisitForm(PatientID, Admin, Login, this);
+            temp.Show();
         }
     }
 }

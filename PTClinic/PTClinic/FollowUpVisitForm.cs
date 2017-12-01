@@ -19,6 +19,15 @@ namespace PTClinic
         public FollowUpVisitForm()
         {
             InitializeComponent();
+            // Set Button Icons
+            setButtonIcon();
+        }
+
+        // Setting the Icons for Logout and Home Buttons
+        private void setButtonIcon()
+        {
+            btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
+            btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
         }
 
         // Home Button Click

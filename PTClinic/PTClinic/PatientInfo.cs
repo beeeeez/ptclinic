@@ -36,12 +36,6 @@ namespace PTClinic
         private string email;
         protected string feedback;
 
-        /* 
-         * Caregiver given own class
-         * since it has its own table in the Database
-         * 
-         */
-
         // Creating the public variables that are the front end to the private variables
 
         public virtual string Feedback
@@ -406,7 +400,7 @@ namespace PTClinic
             get { return email; }
             set
             {
-                // TODO >> Email validation here--
+                // TODO ~~~ Email validation here--
                 email = value;
             }
         }

@@ -34,7 +34,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnScheduleAppointment = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lable1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPatientVist = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdateInformation = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,6 +72,10 @@
             this.lblECFullname = new System.Windows.Forms.Label();
             this.lblECPhone = new System.Windows.Forms.Label();
             this.lblECRelationship = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -145,16 +149,17 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Patient Profile";
             // 
-            // button1
+            // btnScheduleAppointment
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 74);
-            this.button1.TabIndex = 76;
-            this.button1.Text = "Schedule Appointment";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnScheduleAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnScheduleAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduleAppointment.Location = new System.Drawing.Point(0, 196);
+            this.btnScheduleAppointment.Name = "btnScheduleAppointment";
+            this.btnScheduleAppointment.Size = new System.Drawing.Size(242, 74);
+            this.btnScheduleAppointment.TabIndex = 76;
+            this.btnScheduleAppointment.Text = "Schedule Appointment";
+            this.btnScheduleAppointment.UseVisualStyleBackColor = true;
+            this.btnScheduleAppointment.Click += new System.EventHandler(this.btnScheduleAppointment_Click);
             // 
             // pictureBox3
             // 
@@ -348,9 +353,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnPatientVist);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnUpdateInformation);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnScheduleAppointment);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
@@ -368,16 +373,16 @@
             this.btnPatientVist.Text = "Patient Visit";
             this.btnPatientVist.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnUpdateInformation
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 74);
-            this.button2.TabIndex = 78;
-            this.button2.Text = "Update Information";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdateInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 276);
+            this.btnUpdateInformation.Name = "btnUpdateInformation";
+            this.btnUpdateInformation.Size = new System.Drawing.Size(242, 74);
+            this.btnUpdateInformation.TabIndex = 78;
+            this.btnUpdateInformation.Text = "Update Information";
+            this.btnUpdateInformation.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -554,12 +559,58 @@
             this.lblECRelationship.TabIndex = 121;
             this.lblECRelationship.Text = "EC  Relationship";
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(306, 522);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(438, 99);
+            this.textBox1.TabIndex = 122;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Location = new System.Drawing.Point(803, 522);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(438, 99);
+            this.textBox2.TabIndex = 123;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(302, 499);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(88, 20);
+            this.label16.TabIndex = 124;
+            this.label16.Text = "Diagnosis";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(799, 499);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 20);
+            this.label17.TabIndex = 125;
+            this.label17.Text = "PT Goals";
+            // 
             // PatientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1337, 621);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblECRelationship);
             this.Controls.Add(this.lblECPhone);
             this.Controls.Add(this.lblECFullname);
@@ -619,7 +670,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnScheduleAppointment;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lable1;
@@ -640,7 +691,7 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnPatientVist;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdateInformation;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
@@ -657,5 +708,9 @@
         private System.Windows.Forms.Label lblECFullname;
         private System.Windows.Forms.Label lblECPhone;
         private System.Windows.Forms.Label lblECRelationship;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

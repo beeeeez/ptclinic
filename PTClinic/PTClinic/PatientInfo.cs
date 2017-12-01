@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PTClinic
 {
-    class PatientInfo
+    public class PatientInfo
     {
         // Private variables only the class can access.
 

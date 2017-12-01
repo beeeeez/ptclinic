@@ -15,12 +15,15 @@ namespace PTClinic
     {
         //Private variable to store the patient ID ?
         private string PatientID;
+        public int pID; // patient ID to pass to Appointment or visit form
 
         // Variables for the admin and login and Search forms
         private Form Admin;
         private Form Login;
         private Form Search;
         private Form PatientInfo;
+        PatientInfo patientDetails;
+ 
 
         public PatientProfile()
         {
@@ -31,7 +34,10 @@ namespace PTClinic
         public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord)
         {
             InitializeComponent();
-         
+
+            pID = intPID;
+
+            patientDetails = new PatientInfo();
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -70,7 +76,19 @@ namespace PTClinic
                     {
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
-                        // Name
+                       
+                        patientDetails.Fname = dataReaderPatient["patient_first_name"].ToString();
+                        patientDetails.Lname = dataReaderPatient["patient_last_name"].ToString();
+                        patientDetails.Address = dataReaderPatient["patient_address"].ToString();
+                        patientDetails.Address2 = dataReaderPatient["patient_address2"].ToString();
+                        patientDetails.City = dataReaderPatient["patient_city"].ToString();
+                        patientDetails.State = dataReaderPatient["patient_state"].ToString();
+                        patientDetails.Zip = dataReaderPatient["patient_zip"].ToString();
+                        patientDetails.Phone = dataReaderPatient["patient_phone1"].ToString();
+                        patientDetails.PhoneExtension = dataReaderPatient["patient_phone1_extension"].ToString();
+                        patientDetails.PhoneType = dataReaderPatient["patient_phone1_type"].ToString();
+
+
                         lblName.Text = dataReaderPatient["patient_first_name"].ToString() + " " + dataReaderPatient["patient_middle_initial"].ToString() + " " + dataReaderPatient["patient_last_name"].ToString();
                         // Gender
                         lblGender.Text = dataReaderPatient["patient_gender"].ToString();
@@ -180,6 +198,13 @@ namespace PTClinic
             Login.Show();
         }
 
+        private void btnScheduleAppointment_Click(object sender, EventArgs e)
+        {
+           
+            AppointmentForm newAppointment = new AppointmentForm(this, pID, patientDetails);
 
+            newAppointment.Show();
+
+        }
     }
 }

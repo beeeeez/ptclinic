@@ -65,6 +65,12 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentForm.Designer.cs">
+      <DependentUpon>AppointmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaregiverInfo.cs" />
     <Compile Include="EmergencyContact.cs" />
     <Compile Include="FollowUpVisitForm.cs">
@@ -133,6 +139,9 @@
     <Compile Include="VisitInfo.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentForm.resx">
+      <DependentUpon>AppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FollowUpVisitForm.resx">
       <DependentUpon>FollowUpVisitForm.cs</DependentUpon>

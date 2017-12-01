@@ -41,7 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbAppType = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnScheduleAppointment = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblAppType = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,13 +53,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPatientID = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPrintAppCopy = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDBFeedback = new System.Windows.Forms.Label();
+            this.lblFeedback = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -147,8 +151,10 @@
             // tpAppTime
             // 
             this.tpAppTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpAppTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.tpAppTime.Location = new System.Drawing.Point(214, 382);
             this.tpAppTime.Name = "tpAppTime";
+            this.tpAppTime.ShowUpDown = true;
             this.tpAppTime.Size = new System.Drawing.Size(336, 29);
             this.tpAppTime.TabIndex = 131;
             // 
@@ -184,6 +190,8 @@
             // 
             // cbAppType
             // 
+            this.cbAppType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAppType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbAppType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAppType.FormattingEnabled = true;
             this.cbAppType.Location = new System.Drawing.Point(214, 454);
@@ -191,18 +199,19 @@
             this.cbAppType.Size = new System.Drawing.Size(336, 33);
             this.cbAppType.TabIndex = 135;
             // 
-            // button1
+            // btnScheduleAppointment
             // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(376, 537);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 62);
-            this.button1.TabIndex = 136;
-            this.button1.Text = "Schedule Appointment";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnScheduleAppointment.BackColor = System.Drawing.Color.Navy;
+            this.btnScheduleAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScheduleAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduleAppointment.ForeColor = System.Drawing.Color.White;
+            this.btnScheduleAppointment.Location = new System.Drawing.Point(376, 537);
+            this.btnScheduleAppointment.Name = "btnScheduleAppointment";
+            this.btnScheduleAppointment.Size = new System.Drawing.Size(174, 62);
+            this.btnScheduleAppointment.TabIndex = 136;
+            this.btnScheduleAppointment.Text = "Schedule Appointment";
+            this.btnScheduleAppointment.UseVisualStyleBackColor = false;
+            this.btnScheduleAppointment.Click += new System.EventHandler(this.btnScheduleAppointment_Click);
             // 
             // pictureBox3
             // 
@@ -314,18 +323,19 @@
             this.lblPatientID.TabIndex = 138;
             this.lblPatientID.Text = "NO ID PASSED";
             // 
-            // button2
+            // btnPrintAppCopy
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(987, 553);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 46);
-            this.button2.TabIndex = 148;
-            this.button2.Text = "Print A Copy";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPrintAppCopy.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnPrintAppCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintAppCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintAppCopy.ForeColor = System.Drawing.Color.White;
+            this.btnPrintAppCopy.Location = new System.Drawing.Point(987, 553);
+            this.btnPrintAppCopy.Name = "btnPrintAppCopy";
+            this.btnPrintAppCopy.Size = new System.Drawing.Size(135, 46);
+            this.btnPrintAppCopy.TabIndex = 148;
+            this.btnPrintAppCopy.Text = "Print A Copy";
+            this.btnPrintAppCopy.UseVisualStyleBackColor = false;
+            this.btnPrintAppCopy.Click += new System.EventHandler(this.btnPrintAppCopy_Click);
             // 
             // pictureBox4
             // 
@@ -337,14 +347,47 @@
             this.pictureBox4.TabIndex = 149;
             this.pictureBox4.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.lblDBFeedback);
+            this.panel2.Location = new System.Drawing.Point(245, 231);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 46);
+            this.panel2.TabIndex = 150;
+            // 
+            // lblDBFeedback
+            // 
+            this.lblDBFeedback.AutoSize = true;
+            this.lblDBFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDBFeedback.ForeColor = System.Drawing.Color.White;
+            this.lblDBFeedback.Location = new System.Drawing.Point(18, 12);
+            this.lblDBFeedback.Name = "lblDBFeedback";
+            this.lblDBFeedback.Size = new System.Drawing.Size(197, 20);
+            this.lblDBFeedback.TabIndex = 0;
+            this.lblDBFeedback.Text = "Appointment Did Not Save";
+            // 
+            // lblFeedback
+            // 
+            this.lblFeedback.AutoSize = true;
+            this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedback.ForeColor = System.Drawing.Color.Red;
+            this.lblFeedback.Location = new System.Drawing.Point(29, 514);
+            this.lblFeedback.Name = "lblFeedback";
+            this.lblFeedback.Size = new System.Drawing.Size(87, 18);
+            this.lblFeedback.TabIndex = 151;
+            this.lblFeedback.Text = "lblFeedback";
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 629);
+            this.Controls.Add(this.lblFeedback);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnPrintAppCopy);
             this.Controls.Add(this.lblAppType);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblAppTime);
@@ -356,7 +399,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnScheduleAppointment);
             this.Controls.Add(this.cbAppType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -374,6 +417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,7 +437,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbAppType;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnScheduleAppointment;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblAppType;
         private System.Windows.Forms.Label label9;
@@ -404,7 +449,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPatientID;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPrintAppCopy;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblDBFeedback;
+        private System.Windows.Forms.Label lblFeedback;
     }
 }

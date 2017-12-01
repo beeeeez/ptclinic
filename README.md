@@ -5,6 +5,8 @@
   - Patient Visit Class
 - Follow Up Visit Form
   - Follow Up Visit Class
+- Patient Specific Functional Scale (PSFS) Form
+  - PSFS Class
 - Appointment Form (Schedule Appointments)
 - Check tab indexes
 - Check validation

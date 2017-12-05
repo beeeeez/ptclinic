@@ -195,7 +195,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(947, 646);
+            this.btnClear.Location = new System.Drawing.Point(948, 677);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 93;
@@ -210,7 +210,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(780, 646);
+            this.btnAddVisit.Location = new System.Drawing.Point(779, 677);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 86;
@@ -386,7 +386,6 @@
             this.panel2.Controls.Add(this.lblCity);
             this.panel2.Controls.Add(this.lblPTGoals);
             this.panel2.Controls.Add(this.lblObjective);
-            this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
             this.panel2.Location = new System.Drawing.Point(12, 151);
@@ -487,7 +486,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(362, 17);
+            this.lblDate.Location = new System.Drawing.Point(532, 37);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(85, 13);
             this.lblDate.TabIndex = 78;
@@ -522,10 +521,11 @@
             // 
             // lblFeedback
             // 
+            this.lblFeedback.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(874, 543);
+            this.lblFeedback.Location = new System.Drawing.Point(884, 536);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(145, 20);
             this.lblFeedback.TabIndex = 94;
@@ -546,6 +546,7 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
+            this.panel3.Controls.Add(this.lblDate);
             this.panel3.Location = new System.Drawing.Point(12, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);

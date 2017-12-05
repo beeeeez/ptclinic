@@ -45,6 +45,16 @@ namespace PTClinic
             tpAppTime.Format = DateTimePickerFormat.Custom;
             tpAppTime.CustomFormat = "hh:mm tt";
 
+            setButtonIcon();
+
+        }
+
+        // Setting the Icons for Logout and Home Buttons
+        private void setButtonIcon()
+        {
+            btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
+            btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
+            btnPrintAppCopy.Image = Image.FromFile("..\\..\\Resources\\ic_print_white_24dp_1x.png");
         }
 
         public void FillAppointmentType()

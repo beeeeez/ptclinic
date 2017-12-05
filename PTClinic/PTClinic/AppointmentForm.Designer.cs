@@ -54,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.btnPrintAppCopy = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelAppMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelAppMessage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,7 +216,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(705, 79);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(456, 664);
+            this.pictureBox3.Size = new System.Drawing.Size(451, 707);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 137;
             this.pictureBox3.TabStop = false;
@@ -329,23 +327,14 @@
             this.btnPrintAppCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintAppCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintAppCopy.ForeColor = System.Drawing.Color.White;
-            this.btnPrintAppCopy.Location = new System.Drawing.Point(987, 553);
+            this.btnPrintAppCopy.Location = new System.Drawing.Point(938, 553);
             this.btnPrintAppCopy.Name = "btnPrintAppCopy";
-            this.btnPrintAppCopy.Size = new System.Drawing.Size(135, 46);
+            this.btnPrintAppCopy.Size = new System.Drawing.Size(184, 46);
             this.btnPrintAppCopy.TabIndex = 148;
             this.btnPrintAppCopy.Text = "Print A Copy";
+            this.btnPrintAppCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintAppCopy.UseVisualStyleBackColor = false;
             this.btnPrintAppCopy.Click += new System.EventHandler(this.btnPrintAppCopy_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(938, 563);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 149;
-            this.pictureBox4.TabStop = false;
             // 
             // panelAppMessage
             // 
@@ -386,7 +375,6 @@
             this.ClientSize = new System.Drawing.Size(1267, 629);
             this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.panelAppMessage);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnPrintAppCopy);
             this.Controls.Add(this.lblAppType);
             this.Controls.Add(this.label9);
@@ -416,7 +404,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelAppMessage.ResumeLayout(false);
             this.panelAppMessage.PerformLayout();
             this.ResumeLayout(false);
@@ -450,7 +437,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.Button btnPrintAppCopy;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panelAppMessage;
         private System.Windows.Forms.Label lblDBFeedback;
         private System.Windows.Forms.Label lblFeedback;

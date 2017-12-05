@@ -204,6 +204,7 @@
     <Content Include="PTClinic.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\ic_print_white_24dp_1x.png" />
     <None Include="Resources\AddNewPatient.png" />
     <Content Include="Resources\ic_home_white_24dp_1x.png" />
     <Content Include="Resources\ic_home_white_36dp_1x.png" />

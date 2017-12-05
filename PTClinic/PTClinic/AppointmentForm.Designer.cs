@@ -57,6 +57,7 @@
             this.panelAppMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
+            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,6 +68,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.btnBackToProfile);
             this.panel1.Controls.Add(this.btnBackHome);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -91,6 +93,7 @@
             this.btnBackHome.Text = "Home";
             this.btnBackHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // btnLogOut
             // 
@@ -106,6 +109,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pictureBox1
             // 
@@ -130,6 +134,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 79);
             this.pictureBox2.Name = "pictureBox2";
@@ -140,6 +145,7 @@
             // 
             // dtpAppDate
             // 
+            this.dtpAppDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpAppDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAppDate.Location = new System.Drawing.Point(214, 309);
             this.dtpAppDate.Name = "dtpAppDate";
@@ -148,6 +154,7 @@
             // 
             // tpAppTime
             // 
+            this.tpAppTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tpAppTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpAppTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.tpAppTime.Location = new System.Drawing.Point(214, 382);
@@ -158,6 +165,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(112, 309);
@@ -168,6 +176,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(112, 382);
@@ -178,6 +187,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(112, 457);
@@ -188,6 +198,7 @@
             // 
             // cbAppType
             // 
+            this.cbAppType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbAppType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAppType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbAppType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,6 +210,7 @@
             // 
             // btnScheduleAppointment
             // 
+            this.btnScheduleAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnScheduleAppointment.BackColor = System.Drawing.Color.Navy;
             this.btnScheduleAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScheduleAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +225,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(705, 79);
             this.pictureBox3.Name = "pictureBox3";
@@ -223,16 +236,19 @@
             // 
             // lblAppType
             // 
+            this.lblAppType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAppType.AutoSize = true;
             this.lblAppType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppType.ForeColor = System.Drawing.Color.Red;
             this.lblAppType.Location = new System.Drawing.Point(935, 466);
             this.lblAppType.Name = "lblAppType";
-            this.lblAppType.Size = new System.Drawing.Size(112, 20);
+            this.lblAppType.Size = new System.Drawing.Size(91, 20);
             this.lblAppType.TabIndex = 147;
-            this.lblAppType.Text = "NO TYPE YET";
+            this.lblAppType.Text = "Pick A Type";
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(775, 466);
@@ -243,16 +259,19 @@
             // 
             // lblAppTime
             // 
+            this.lblAppTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAppTime.AutoSize = true;
             this.lblAppTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppTime.ForeColor = System.Drawing.Color.Red;
             this.lblAppTime.Location = new System.Drawing.Point(934, 433);
             this.lblAppTime.Name = "lblAppTime";
-            this.lblAppTime.Size = new System.Drawing.Size(109, 20);
+            this.lblAppTime.Size = new System.Drawing.Size(91, 20);
             this.lblAppTime.TabIndex = 145;
-            this.lblAppTime.Text = "NO TIME YET";
+            this.lblAppTime.Text = "Pick A Time";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(774, 433);
@@ -263,6 +282,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(774, 399);
@@ -273,16 +293,19 @@
             // 
             // lblAppDate
             // 
+            this.lblAppDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAppDate.AutoSize = true;
             this.lblAppDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppDate.ForeColor = System.Drawing.Color.Red;
             this.lblAppDate.Location = new System.Drawing.Point(934, 399);
             this.lblAppDate.Name = "lblAppDate";
-            this.lblAppDate.Size = new System.Drawing.Size(114, 20);
+            this.lblAppDate.Size = new System.Drawing.Size(92, 20);
             this.lblAppDate.TabIndex = 142;
-            this.lblAppDate.Text = "NO DATE YET";
+            this.lblAppDate.Text = "Pick A Date";
             // 
             // lblPatientName
             // 
+            this.lblPatientName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientName.Location = new System.Drawing.Point(900, 367);
@@ -293,6 +316,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(774, 367);
@@ -303,6 +327,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(774, 333);
@@ -313,6 +338,7 @@
             // 
             // lblPatientID
             // 
+            this.lblPatientID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPatientID.AutoSize = true;
             this.lblPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientID.Location = new System.Drawing.Point(875, 333);
@@ -323,6 +349,7 @@
             // 
             // btnPrintAppCopy
             // 
+            this.btnPrintAppCopy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrintAppCopy.BackColor = System.Drawing.Color.MediumBlue;
             this.btnPrintAppCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintAppCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -338,6 +365,7 @@
             // 
             // panelAppMessage
             // 
+            this.panelAppMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAppMessage.BackColor = System.Drawing.Color.Red;
             this.panelAppMessage.Controls.Add(this.lblDBFeedback);
             this.panelAppMessage.Location = new System.Drawing.Point(245, 231);
@@ -359,6 +387,7 @@
             // 
             // lblFeedback
             // 
+            this.lblFeedback.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
@@ -366,6 +395,22 @@
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 18);
             this.lblFeedback.TabIndex = 151;
+            // 
+            // btnBackToProfile
+            // 
+            this.btnBackToProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToProfile.Location = new System.Drawing.Point(790, 20);
+            this.btnBackToProfile.Name = "btnBackToProfile";
+            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToProfile.TabIndex = 76;
+            this.btnBackToProfile.Text = "Back To Profile";
+            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToProfile.UseVisualStyleBackColor = false;
+            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
             // 
             // AppointmentForm
             // 
@@ -440,5 +485,6 @@
         private System.Windows.Forms.Panel panelAppMessage;
         private System.Windows.Forms.Label lblDBFeedback;
         private System.Windows.Forms.Label lblFeedback;
+        private System.Windows.Forms.Button btnBackToProfile;
     }
 }

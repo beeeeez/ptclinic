@@ -86,6 +86,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientGoalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientGoalsForm.Designer.cs">
+      <DependentUpon>PatientGoalsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientInfo.cs" />
     <Compile Include="PatientInformation.cs">
       <SubType>Form</SubType>
@@ -149,6 +155,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientGoalsForm.resx">
+      <DependentUpon>PatientGoalsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientInformation.resx">
       <DependentUpon>PatientInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,7 +213,13 @@
     <Content Include="PTClinic.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\ic_arrow_back_white_24dp_1x.png" />
+    <Content Include="Resources\ic_event_black_24dp_1x.png" />
+    <Content Include="Resources\ic_favorite_black_24dp_1x.png" />
+    <Content Include="Resources\ic_mode_edit_black_24dp_1x.png" />
+    <Content Include="Resources\ic_mode_edit_black_24dp_2x.png" />
     <Content Include="Resources\ic_print_white_24dp_1x.png" />
+    <Content Include="Resources\ic_trending_up_black_24dp_1x.png" />
     <None Include="Resources\AddNewPatient.png" />
     <Content Include="Resources\ic_home_white_24dp_1x.png" />
     <Content Include="Resources\ic_home_white_36dp_1x.png" />

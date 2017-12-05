@@ -15,6 +15,8 @@ namespace PTClinic
     {
         private Form PatientProfile;
         private int patientID;
+        private Form Admin;
+        private Form Login;
         System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         public AppointmentForm()
@@ -22,7 +24,7 @@ namespace PTClinic
             InitializeComponent();
         }
 
-        public AppointmentForm(Form patientProfile, int patientID, PatientInfo patientDetails)
+        public AppointmentForm(Form patientProfile, Form adminForm, Form Login, int patientID, PatientInfo patientDetails)
         {
 
             InitializeComponent();
@@ -30,9 +32,12 @@ namespace PTClinic
             myTimer.Tick += new System.EventHandler(myTimer_Tick);
             dtpAppDate.ValueChanged += new EventHandler(dtp_ValueChanged);
             tpAppTime.ValueChanged += new EventHandler(tp_ValueChanged);
+            cbAppType.SelectedValueChanged += new EventHandler(cb_ValueChanged);
 
             this.PatientProfile = patientProfile;
             PatientProfile.Hide();
+            this.Login = Login;
+            this.Admin = adminForm;
 
             this.patientID = patientID;
 
@@ -55,6 +60,7 @@ namespace PTClinic
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
             btnPrintAppCopy.Image = Image.FromFile("..\\..\\Resources\\ic_print_white_24dp_1x.png");
+            btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
         public void FillAppointmentType()
@@ -70,14 +76,46 @@ namespace PTClinic
 
         private void dtp_ValueChanged(object sender, System.EventArgs e)
         {
-            lblAppDate.Text = dtpAppDate.Value.ToString("ddd MMMM d, yyyy");
-            lblAppDate.Refresh();
+            DateTime checkDate;
+
+            bool valid = DateTime.TryParse(dtpAppDate.Text, out checkDate);
+            if (valid && checkDate == DateTime.Today || checkDate < DateTime.Now)
+            {
+                lblAppDate.ForeColor = Color.Red;
+                lblAppDate.Text = "Pick A Date";
+                lblAppDate.Refresh();
+            }
+            else
+            {
+                lblAppDate.ForeColor = Color.Black;
+                lblAppDate.Text = dtpAppDate.Value.ToString("ddd MMMM d, yyyy");
+                lblAppDate.Refresh();
+            }
+
         }
 
         private void tp_ValueChanged(object sender, System.EventArgs e)
         {
+            lblAppTime.ForeColor = Color.Black;
             lblAppTime.Text = tpAppTime.Value.ToString("hh:mm tt");
-            lblAppTime.Refresh();    
+            lblAppTime.Refresh();
+        }
+
+        private void cb_ValueChanged(object sender, System.EventArgs e)
+        {
+            if (cbAppType.Text.Equals("Select One"))
+            {
+                lblAppType.ForeColor = Color.Red;
+                lblAppType.Text = "Pick A Type ";
+                lblAppType.Refresh();
+            }
+            else
+            {
+                lblAppType.ForeColor = Color.Black;
+                lblAppType.Text = cbAppType.Text;
+                lblAppType.Refresh();
+            }
+
         }
 
         private void myTimer_Tick(object sender, System.EventArgs e)
@@ -92,8 +130,15 @@ namespace PTClinic
         {
             lblFeedback.Text = "";
             int success = 0;
-           
-            if (cbAppType.Text.Equals("Select One"))
+
+            DateTime checkDate;
+
+            bool valid = DateTime.TryParse(dtpAppDate.Text, out checkDate);
+            if (valid && checkDate == DateTime.Today || checkDate < DateTime.Now)
+            {
+                lblFeedback.Text += "Appointment dates cannot be before today\n";
+            }
+            else if (cbAppType.Text.Equals("Select One"))
             {
                 lblFeedback.Text += "Please select appointment type\n";
             }
@@ -113,8 +158,8 @@ namespace PTClinic
                     // Get Appointment Short Date for DB
                     string shortDateStr = dtpAppDate.Value.ToString();
                     DateTime shortDate = Convert.ToDateTime(shortDateStr);
-                    string timeStr = dtpAppDate.Value.ToString("hh:mm tt");
-             
+                    string timeStr = tpAppTime.Text;
+
                     comm.Parameters.AddWithValue("@patientID", patientID);
                     comm.Parameters.AddWithValue("@app_date", shortDate);
                     comm.Parameters.AddWithValue("@app_time", timeStr);
@@ -161,7 +206,7 @@ namespace PTClinic
 
             }
 
-           
+
 
 
         }
@@ -170,7 +215,26 @@ namespace PTClinic
 
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
+            // TODO Print Copy of Appointment Scheduled
 
+        }
+
+        private void btnBackHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login.Show();
+        }
+
+        private void btnBackToProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientProfile.Show();
         }
     }
 }

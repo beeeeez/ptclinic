@@ -54,7 +54,7 @@
             this.lblZip = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPatientVist = new System.Windows.Forms.Button();
+            this.btnPatientVisit = new System.Windows.Forms.Button();
             this.btnUpdateInformation = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -76,6 +76,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnPatientGoals = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -158,6 +159,7 @@
             this.btnScheduleAppointment.Size = new System.Drawing.Size(242, 74);
             this.btnScheduleAppointment.TabIndex = 76;
             this.btnScheduleAppointment.Text = "Schedule Appointment";
+            this.btnScheduleAppointment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScheduleAppointment.UseVisualStyleBackColor = true;
             this.btnScheduleAppointment.Click += new System.EventHandler(this.btnScheduleAppointment_Click);
             // 
@@ -352,7 +354,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnPatientVist);
+            this.panel2.Controls.Add(this.btnPatientGoals);
+            this.panel2.Controls.Add(this.btnPatientVisit);
             this.panel2.Controls.Add(this.btnUpdateInformation);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btnScheduleAppointment);
@@ -362,27 +365,29 @@
             this.panel2.Size = new System.Drawing.Size(242, 548);
             this.panel2.TabIndex = 98;
             // 
-            // btnPatientVist
+            // btnPatientVisit
             // 
-            this.btnPatientVist.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPatientVist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientVist.Location = new System.Drawing.Point(0, 356);
-            this.btnPatientVist.Name = "btnPatientVist";
-            this.btnPatientVist.Size = new System.Drawing.Size(242, 74);
-            this.btnPatientVist.TabIndex = 79;
-            this.btnPatientVist.Text = "Patient Visit";
-            this.btnPatientVist.UseVisualStyleBackColor = true;
-            this.btnPatientVist.Click += new System.EventHandler(this.btnPatientVist_Click);
+            this.btnPatientVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPatientVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatientVisit.Location = new System.Drawing.Point(0, 356);
+            this.btnPatientVisit.Name = "btnPatientVisit";
+            this.btnPatientVisit.Size = new System.Drawing.Size(242, 74);
+            this.btnPatientVisit.TabIndex = 79;
+            this.btnPatientVisit.Text = "Patient Visit";
+            this.btnPatientVisit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPatientVisit.UseVisualStyleBackColor = true;
+            this.btnPatientVisit.Click += new System.EventHandler(this.btnPatientVisit_Click);
             // 
             // btnUpdateInformation
             // 
             this.btnUpdateInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdateInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 276);
+            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 436);
             this.btnUpdateInformation.Name = "btnUpdateInformation";
             this.btnUpdateInformation.Size = new System.Drawing.Size(242, 74);
             this.btnUpdateInformation.TabIndex = 78;
             this.btnUpdateInformation.Text = "Update Information";
+            this.btnUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateInformation.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
@@ -602,6 +607,19 @@
             this.label17.TabIndex = 125;
             this.label17.Text = "PT Goals";
             // 
+            // btnPatientGoals
+            // 
+            this.btnPatientGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPatientGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatientGoals.Location = new System.Drawing.Point(0, 276);
+            this.btnPatientGoals.Name = "btnPatientGoals";
+            this.btnPatientGoals.Size = new System.Drawing.Size(242, 74);
+            this.btnPatientGoals.TabIndex = 80;
+            this.btnPatientGoals.Text = "Patient Goals";
+            this.btnPatientGoals.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPatientGoals.UseVisualStyleBackColor = true;
+            this.btnPatientGoals.Click += new System.EventHandler(this.btnPatientGoals_Click);
+            // 
             // PatientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -691,7 +709,7 @@
         private System.Windows.Forms.Label lblZip;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnPatientVist;
+        private System.Windows.Forms.Button btnPatientVisit;
         private System.Windows.Forms.Button btnUpdateInformation;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -713,5 +731,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnPatientGoals;
     }
 }

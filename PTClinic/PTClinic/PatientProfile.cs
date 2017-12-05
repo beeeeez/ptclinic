@@ -193,6 +193,10 @@ namespace PTClinic
         {
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
+            btnScheduleAppointment.Image = Image.FromFile("..\\..\\Resources\\ic_event_black_24dp_1x.png");
+            btnUpdateInformation.Image = Image.FromFile("..\\..\\Resources\\ic_mode_edit_black_24dp_1x.png");
+            btnPatientGoals.Image = Image.FromFile("..\\..\\Resources\\ic_trending_up_black_24dp_1x.png");
+            btnPatientVisit.Image = Image.FromFile("..\\..\\Resources\\ic_favorite_black_24dp_1x.png");
         }
 
         private void btnBackHome_Click(object sender, EventArgs e)
@@ -210,16 +214,23 @@ namespace PTClinic
         private void btnScheduleAppointment_Click(object sender, EventArgs e)
         {
            
-            AppointmentForm newAppointment = new AppointmentForm(this, pID, patientDetails);
+            AppointmentForm newAppointment = new AppointmentForm(this, Admin, Login, pID, patientDetails);
 
             newAppointment.Show();
 
         }
 
-        private void btnPatientVist_Click(object sender, EventArgs e)
+        private void btnPatientVisit_Click(object sender, EventArgs e)
         {
             this.Hide();
             VisitForm temp = new VisitForm(PatientID, Admin, Login, this);
+            temp.Show();
+        }
+
+        private void btnPatientGoals_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientGoalsForm temp = new PatientGoalsForm(pID);
             temp.Show();
         }
     }

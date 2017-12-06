@@ -230,7 +230,8 @@ namespace PTClinic
         private void btnPatientGoals_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientGoalsForm temp = new PatientGoalsForm(pID);
+            bool fromProfile = true;
+            PatientGoalsForm temp = new PatientGoalsForm(pID, fromProfile, Admin, Login, this);
             temp.Show();
         }
     }

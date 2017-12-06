@@ -21,6 +21,73 @@ namespace PTClinic
             InitializeComponent();
             // Set Button Icons
             setButtonIcon();
+
+            /*
+             * 
+             * Set Patient ID
+             * Patient Name
+             * Diagnosis
+             * And
+             * PT Goals
+             * 
+             * They should all be passed over from the patient info form
+             * 
+             * 
+             */
+
+            // Fill Drop Downs
+            FillSupervisedModalities();
+            FillConstantAttendance();
+            FillTheraputicProcedures();
+            FillTheraputicProcedures2();
+        }
+
+        // Fill SupervisedModalities Function
+        public void FillSupervisedModalities()
+        {
+            // Fills Evaluation list drop down list
+            cbSupervisedModalities.Items.Insert(0, "Select One"); // Index 0
+            cbSupervisedModalities.Items.Add("97010 hot/cold pack");
+            cbSupervisedModalities.Items.Add("97012 Traction-mechanical");
+            cbSupervisedModalities.Items.Add("GO 283 ES 97014 E Stim Unattended");
+            cbSupervisedModalities.SelectedIndex = 0; 
+        }
+
+        // FillConstantAttendance Function
+        public void FillConstantAttendance()
+        {
+            // Fills Constat Attendance list drop down list
+            cbConstantAttendance.Items.Insert(0, "Select One"); // Index 0
+            cbConstantAttendance.Items.Add("97032 E-Stim Manual - one or many areas");
+            cbConstantAttendance.Items.Add("97033 Iontophroesis");
+            cbConstantAttendance.Items.Add("97035 Ultrasound");
+            cbConstantAttendance.Items.Add("97039 Low Level Laser");
+            cbConstantAttendance.SelectedIndex = 0;
+        }
+
+        // FillTheraputicProcedures Function
+        public void FillTheraputicProcedures()
+        {
+            // Fills Theraputic Procedures list drop down list
+            cbTheraputicProcedures.Items.Insert(0, "Select One"); // Index 0
+            cbTheraputicProcedures.Items.Add("97110 Theraputic Ex");
+            cbTheraputicProcedures.Items.Add("97112 Neuromuscular Re-ed");
+            cbTheraputicProcedures.Items.Add("97116 Gait Training (includes stairs)");
+            cbTheraputicProcedures.Items.Add("97124 Massage");
+            cbTheraputicProcedures.Items.Add("97140 Manual Therapy one+regions");
+            cbTheraputicProcedures.Items.Add("97530 Theraputic Activities 1-1");
+            cbTheraputicProcedures.SelectedIndex = 0;
+        }
+
+        // FillTheraputicProcedures2 Function
+        public void FillTheraputicProcedures2()
+        {
+            // Fills Theraputic Procedures2 list drop down list
+            cbTheraputicProcedures2.Items.Insert(0, "Select One"); // Index 0
+            /*
+             * INFORMATION NEEDED ~~~~
+             * */
+            cbTheraputicProcedures2.SelectedIndex = 0;
         }
 
         // Setting the Icons for Logout and Home Buttons

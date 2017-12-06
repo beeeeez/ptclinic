@@ -66,9 +66,9 @@
             this.lblCity = new System.Windows.Forms.Label();
             this.lblPTGoals = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.lblMedications = new System.Windows.Forms.Label();
             this.lblDiagnosis = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblEvaluation = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
@@ -483,15 +483,6 @@
             this.lblObjective.TabIndex = 79;
             this.lblObjective.Text = "Objective";
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(532, 37);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(85, 13);
-            this.lblDate.TabIndex = 78;
-            this.lblDate.Text = "TODAY\'S DATE";
-            // 
             // lblMedications
             // 
             this.lblMedications.AutoSize = true;
@@ -509,6 +500,15 @@
             this.lblDiagnosis.Size = new System.Drawing.Size(53, 13);
             this.lblDiagnosis.TabIndex = 75;
             this.lblDiagnosis.Text = "Diagnosis";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(532, 37);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(85, 13);
+            this.lblDate.TabIndex = 78;
+            this.lblDate.Text = "TODAY\'S DATE";
             // 
             // lblEvaluation
             // 
@@ -639,6 +639,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1243, 749);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddVisit);

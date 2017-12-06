@@ -40,15 +40,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblDate2 = new System.Windows.Forms.Label();
-            this.lblDate1 = new System.Windows.Forms.Label();
+            this.lblProviderDate = new System.Windows.Forms.Label();
+            this.lblStudentDate = new System.Windows.Forms.Label();
             this.tbProviderName = new System.Windows.Forms.TextBox();
             this.tbStudentProvider = new System.Windows.Forms.TextBox();
             this.tbAssessment = new System.Windows.Forms.TextBox();
             this.lblProviderName = new System.Windows.Forms.Label();
             this.lblStudentProvider = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
-            this.cbTheraputic2 = new System.Windows.Forms.ComboBox();
+            this.cbTheraputicProcedures2 = new System.Windows.Forms.ComboBox();
             this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
             this.lblSupervisedModalities = new System.Windows.Forms.Label();
@@ -70,17 +70,31 @@
             this.lblPID = new System.Windows.Forms.Label();
             this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblPatientName = new System.Windows.Forms.Label();
-            this.lblSupervisedCPT = new System.Windows.Forms.Label();
-            this.lblConstantCPT = new System.Windows.Forms.Label();
-            this.lblTheraputicCPT = new System.Windows.Forms.Label();
+            this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTheraputicCPT = new System.Windows.Forms.Label();
+            this.lblConstantCPT = new System.Windows.Forms.Label();
+            this.lblSupervisedCPT = new System.Windows.Forms.Label();
+            this.lblPatientName = new System.Windows.Forms.Label();
+            this.lblPlan = new System.Windows.Forms.Label();
+            this.lblPatientPlan = new System.Windows.Forms.Label();
+            this.lblReAssessment = new System.Windows.Forms.Label();
+            this.lblDischarge = new System.Windows.Forms.Label();
+            this.lblPSFS = new System.Windows.Forms.Label();
+            this.tbPlan = new System.Windows.Forms.TextBox();
+            this.gbReassessment = new System.Windows.Forms.GroupBox();
+            this.gbDischarge = new System.Windows.Forms.GroupBox();
+            this.rbReassessmentYes = new System.Windows.Forms.RadioButton();
+            this.rbReassessmentNo = new System.Windows.Forms.RadioButton();
+            this.rbDischargeYes = new System.Windows.Forms.RadioButton();
+            this.rbDischargeNo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.gbReassessment.SuspendLayout();
+            this.gbDischarge.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClear
@@ -189,6 +203,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Location = new System.Drawing.Point(28, 107);
             this.panel3.Name = "panel3";
@@ -209,9 +224,16 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.lblDate2);
-            this.panel4.Controls.Add(this.lblDate1);
+            this.panel4.Controls.Add(this.gbDischarge);
+            this.panel4.Controls.Add(this.gbReassessment);
+            this.panel4.Controls.Add(this.tbPlan);
+            this.panel4.Controls.Add(this.lblPSFS);
+            this.panel4.Controls.Add(this.lblDischarge);
+            this.panel4.Controls.Add(this.lblReAssessment);
+            this.panel4.Controls.Add(this.lblPatientPlan);
+            this.panel4.Controls.Add(this.lblPlan);
+            this.panel4.Controls.Add(this.lblProviderDate);
+            this.panel4.Controls.Add(this.lblStudentDate);
             this.panel4.Controls.Add(this.tbProviderName);
             this.panel4.Controls.Add(this.tbStudentProvider);
             this.panel4.Controls.Add(this.tbAssessment);
@@ -223,23 +245,23 @@
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 100;
             // 
-            // lblDate2
+            // lblProviderDate
             // 
-            this.lblDate2.AutoSize = true;
-            this.lblDate2.Location = new System.Drawing.Point(454, 402);
-            this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(85, 13);
-            this.lblDate2.TabIndex = 102;
-            this.lblDate2.Text = "TODAY\'S DATE";
+            this.lblProviderDate.AutoSize = true;
+            this.lblProviderDate.Location = new System.Drawing.Point(454, 402);
+            this.lblProviderDate.Name = "lblProviderDate";
+            this.lblProviderDate.Size = new System.Drawing.Size(85, 13);
+            this.lblProviderDate.TabIndex = 102;
+            this.lblProviderDate.Text = "TODAY\'S DATE";
             // 
-            // lblDate1
+            // lblStudentDate
             // 
-            this.lblDate1.AutoSize = true;
-            this.lblDate1.Location = new System.Drawing.Point(454, 361);
-            this.lblDate1.Name = "lblDate1";
-            this.lblDate1.Size = new System.Drawing.Size(85, 13);
-            this.lblDate1.TabIndex = 101;
-            this.lblDate1.Text = "TODAY\'S DATE";
+            this.lblStudentDate.AutoSize = true;
+            this.lblStudentDate.Location = new System.Drawing.Point(454, 361);
+            this.lblStudentDate.Name = "lblStudentDate";
+            this.lblStudentDate.Size = new System.Drawing.Size(85, 13);
+            this.lblStudentDate.TabIndex = 101;
+            this.lblStudentDate.Text = "TODAY\'S DATE";
             // 
             // tbProviderName
             // 
@@ -263,7 +285,7 @@
             this.tbAssessment.Multiline = true;
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAssessment.Size = new System.Drawing.Size(387, 98);
+            this.tbAssessment.Size = new System.Drawing.Size(387, 83);
             this.tbAssessment.TabIndex = 22;
             this.tbAssessment.Text = "Joanne Teset";
             // 
@@ -294,16 +316,16 @@
             this.lblAssessment.TabIndex = 94;
             this.lblAssessment.Text = "Assessment";
             // 
-            // cbTheraputic2
+            // cbTheraputicProcedures2
             // 
-            this.cbTheraputic2.BackColor = System.Drawing.Color.White;
-            this.cbTheraputic2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTheraputic2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTheraputic2.FormattingEnabled = true;
-            this.cbTheraputic2.Location = new System.Drawing.Point(267, 555);
-            this.cbTheraputic2.Name = "cbTheraputic2";
-            this.cbTheraputic2.Size = new System.Drawing.Size(197, 21);
-            this.cbTheraputic2.TabIndex = 12;
+            this.cbTheraputicProcedures2.BackColor = System.Drawing.Color.White;
+            this.cbTheraputicProcedures2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTheraputicProcedures2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTheraputicProcedures2.FormattingEnabled = true;
+            this.cbTheraputicProcedures2.Location = new System.Drawing.Point(267, 555);
+            this.cbTheraputicProcedures2.Name = "cbTheraputicProcedures2";
+            this.cbTheraputicProcedures2.Size = new System.Drawing.Size(197, 21);
+            this.cbTheraputicProcedures2.TabIndex = 12;
             // 
             // cbSupervisedModalities
             // 
@@ -506,7 +528,7 @@
             this.panel2.Controls.Add(this.lblPN);
             this.panel2.Controls.Add(this.lblPID);
             this.panel2.Controls.Add(this.lblPtnID);
-            this.panel2.Controls.Add(this.cbTheraputic2);
+            this.panel2.Controls.Add(this.cbTheraputicProcedures2);
             this.panel2.Controls.Add(this.tbProviderID);
             this.panel2.Controls.Add(this.lblProviderID);
             this.panel2.Controls.Add(this.tbSubjective);
@@ -529,41 +551,14 @@
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 98;
             // 
-            // lblPatientName
+            // lblTodaysDate
             // 
-            this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Location = new System.Drawing.Point(151, 84);
-            this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(86, 13);
-            this.lblPatientName.TabIndex = 98;
-            this.lblPatientName.Text = "PLACEHOLDER";
-            // 
-            // lblSupervisedCPT
-            // 
-            this.lblSupervisedCPT.AutoSize = true;
-            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 435);
-            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
-            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblSupervisedCPT.TabIndex = 99;
-            this.lblSupervisedCPT.Text = "CPT";
-            // 
-            // lblConstantCPT
-            // 
-            this.lblConstantCPT.AutoSize = true;
-            this.lblConstantCPT.Location = new System.Drawing.Point(167, 477);
-            this.lblConstantCPT.Name = "lblConstantCPT";
-            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblConstantCPT.TabIndex = 100;
-            this.lblConstantCPT.Text = "CPT";
-            // 
-            // lblTheraputicCPT
-            // 
-            this.lblTheraputicCPT.AutoSize = true;
-            this.lblTheraputicCPT.Location = new System.Drawing.Point(167, 522);
-            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
-            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblTheraputicCPT.TabIndex = 101;
-            this.lblTheraputicCPT.Text = "CPT";
+            this.lblTodaysDate.AutoSize = true;
+            this.lblTodaysDate.Location = new System.Drawing.Point(532, 37);
+            this.lblTodaysDate.Name = "lblTodaysDate";
+            this.lblTodaysDate.Size = new System.Drawing.Size(85, 13);
+            this.lblTodaysDate.TabIndex = 103;
+            this.lblTodaysDate.Text = "TODAY\'S DATE";
             // 
             // lblTheraputicCPT2
             // 
@@ -574,19 +569,166 @@
             this.lblTheraputicCPT2.TabIndex = 102;
             this.lblTheraputicCPT2.Text = "CPT 97319";
             // 
-            // label1
+            // lblTheraputicCPT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 214);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 13);
-            this.label1.TabIndex = 103;
-            this.label1.Text = "Plan goes here (maybe inside a panel?)";
+            this.lblTheraputicCPT.AutoSize = true;
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(167, 522);
+            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
+            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblTheraputicCPT.TabIndex = 101;
+            this.lblTheraputicCPT.Text = "CPT";
+            // 
+            // lblConstantCPT
+            // 
+            this.lblConstantCPT.AutoSize = true;
+            this.lblConstantCPT.Location = new System.Drawing.Point(167, 477);
+            this.lblConstantCPT.Name = "lblConstantCPT";
+            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblConstantCPT.TabIndex = 100;
+            this.lblConstantCPT.Text = "CPT";
+            // 
+            // lblSupervisedCPT
+            // 
+            this.lblSupervisedCPT.AutoSize = true;
+            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 435);
+            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
+            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblSupervisedCPT.TabIndex = 99;
+            this.lblSupervisedCPT.Text = "CPT";
+            // 
+            // lblPatientName
+            // 
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Location = new System.Drawing.Point(151, 84);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(86, 13);
+            this.lblPatientName.TabIndex = 98;
+            this.lblPatientName.Text = "PLACEHOLDER";
+            // 
+            // lblPlan
+            // 
+            this.lblPlan.AutoSize = true;
+            this.lblPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlan.Location = new System.Drawing.Point(38, 104);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(40, 20);
+            this.lblPlan.TabIndex = 103;
+            this.lblPlan.Text = "Plan";
+            // 
+            // lblPatientPlan
+            // 
+            this.lblPatientPlan.AutoSize = true;
+            this.lblPatientPlan.Location = new System.Drawing.Point(51, 148);
+            this.lblPatientPlan.Name = "lblPatientPlan";
+            this.lblPatientPlan.Size = new System.Drawing.Size(93, 13);
+            this.lblPatientPlan.TabIndex = 104;
+            this.lblPatientPlan.Text = "Plan For Next Visit";
+            // 
+            // lblReAssessment
+            // 
+            this.lblReAssessment.AutoSize = true;
+            this.lblReAssessment.Location = new System.Drawing.Point(51, 224);
+            this.lblReAssessment.Name = "lblReAssessment";
+            this.lblReAssessment.Size = new System.Drawing.Size(169, 13);
+            this.lblReAssessment.TabIndex = 105;
+            this.lblReAssessment.Text = "Patient Re-Assessment Next Visit?";
+            // 
+            // lblDischarge
+            // 
+            this.lblDischarge.AutoSize = true;
+            this.lblDischarge.Location = new System.Drawing.Point(51, 276);
+            this.lblDischarge.Name = "lblDischarge";
+            this.lblDischarge.Size = new System.Drawing.Size(177, 13);
+            this.lblDischarge.TabIndex = 106;
+            this.lblDischarge.Text = "Refer Patient To PT For Discharge?";
+            // 
+            // lblPSFS
+            // 
+            this.lblPSFS.AutoSize = true;
+            this.lblPSFS.Location = new System.Drawing.Point(51, 322);
+            this.lblPSFS.Name = "lblPSFS";
+            this.lblPSFS.Size = new System.Drawing.Size(177, 13);
+            this.lblPSFS.TabIndex = 107;
+            this.lblPSFS.Text = "Need To Complete PSFS This Visit?";
+            // 
+            // tbPlan
+            // 
+            this.tbPlan.Location = new System.Drawing.Point(164, 145);
+            this.tbPlan.Multiline = true;
+            this.tbPlan.Name = "tbPlan";
+            this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbPlan.Size = new System.Drawing.Size(387, 53);
+            this.tbPlan.TabIndex = 108;
+            // 
+            // gbReassessment
+            // 
+            this.gbReassessment.Controls.Add(this.rbReassessmentNo);
+            this.gbReassessment.Controls.Add(this.rbReassessmentYes);
+            this.gbReassessment.Location = new System.Drawing.Point(234, 213);
+            this.gbReassessment.Name = "gbReassessment";
+            this.gbReassessment.Size = new System.Drawing.Size(170, 39);
+            this.gbReassessment.TabIndex = 109;
+            this.gbReassessment.TabStop = false;
+            // 
+            // gbDischarge
+            // 
+            this.gbDischarge.Controls.Add(this.rbDischargeNo);
+            this.gbDischarge.Controls.Add(this.rbDischargeYes);
+            this.gbDischarge.Location = new System.Drawing.Point(234, 267);
+            this.gbDischarge.Name = "gbDischarge";
+            this.gbDischarge.Size = new System.Drawing.Size(170, 39);
+            this.gbDischarge.TabIndex = 110;
+            this.gbDischarge.TabStop = false;
+            // 
+            // rbReassessmentYes
+            // 
+            this.rbReassessmentYes.AutoSize = true;
+            this.rbReassessmentYes.Location = new System.Drawing.Point(15, 11);
+            this.rbReassessmentYes.Name = "rbReassessmentYes";
+            this.rbReassessmentYes.Size = new System.Drawing.Size(43, 17);
+            this.rbReassessmentYes.TabIndex = 0;
+            this.rbReassessmentYes.TabStop = true;
+            this.rbReassessmentYes.Text = "Yes";
+            this.rbReassessmentYes.UseVisualStyleBackColor = true;
+            // 
+            // rbReassessmentNo
+            // 
+            this.rbReassessmentNo.AutoSize = true;
+            this.rbReassessmentNo.Location = new System.Drawing.Point(99, 11);
+            this.rbReassessmentNo.Name = "rbReassessmentNo";
+            this.rbReassessmentNo.Size = new System.Drawing.Size(39, 17);
+            this.rbReassessmentNo.TabIndex = 1;
+            this.rbReassessmentNo.TabStop = true;
+            this.rbReassessmentNo.Text = "No";
+            this.rbReassessmentNo.UseVisualStyleBackColor = true;
+            // 
+            // rbDischargeYes
+            // 
+            this.rbDischargeYes.AutoSize = true;
+            this.rbDischargeYes.Location = new System.Drawing.Point(15, 16);
+            this.rbDischargeYes.Name = "rbDischargeYes";
+            this.rbDischargeYes.Size = new System.Drawing.Size(43, 17);
+            this.rbDischargeYes.TabIndex = 0;
+            this.rbDischargeYes.TabStop = true;
+            this.rbDischargeYes.Text = "Yes";
+            this.rbDischargeYes.UseVisualStyleBackColor = true;
+            // 
+            // rbDischargeNo
+            // 
+            this.rbDischargeNo.AutoSize = true;
+            this.rbDischargeNo.Location = new System.Drawing.Point(99, 16);
+            this.rbDischargeNo.Name = "rbDischargeNo";
+            this.rbDischargeNo.Size = new System.Drawing.Size(39, 17);
+            this.rbDischargeNo.TabIndex = 1;
+            this.rbDischargeNo.TabStop = true;
+            this.rbDischargeNo.Text = "No";
+            this.rbDischargeNo.UseVisualStyleBackColor = true;
             // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1265, 760);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddFollowUp);
@@ -606,6 +748,10 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.gbReassessment.ResumeLayout(false);
+            this.gbReassessment.PerformLayout();
+            this.gbDischarge.ResumeLayout(false);
+            this.gbDischarge.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,7 +771,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbStudentProvider;
         private System.Windows.Forms.TextBox tbAssessment;
-        private System.Windows.Forms.ComboBox cbTheraputic2;
+        private System.Windows.Forms.ComboBox cbTheraputicProcedures2;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.Label lblStudentProvider;
         private System.Windows.Forms.ComboBox cbSupervisedModalities;
@@ -651,13 +797,25 @@
         private System.Windows.Forms.Label lblPN;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbProviderName;
-        private System.Windows.Forms.Label lblDate2;
-        private System.Windows.Forms.Label lblDate1;
+        private System.Windows.Forms.Label lblProviderDate;
+        private System.Windows.Forms.Label lblStudentDate;
         private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Label lblTheraputicCPT2;
         private System.Windows.Forms.Label lblTheraputicCPT;
         private System.Windows.Forms.Label lblConstantCPT;
         private System.Windows.Forms.Label lblSupervisedCPT;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTodaysDate;
+        private System.Windows.Forms.Label lblPlan;
+        private System.Windows.Forms.GroupBox gbDischarge;
+        private System.Windows.Forms.GroupBox gbReassessment;
+        private System.Windows.Forms.TextBox tbPlan;
+        private System.Windows.Forms.Label lblPSFS;
+        private System.Windows.Forms.Label lblDischarge;
+        private System.Windows.Forms.Label lblReAssessment;
+        private System.Windows.Forms.Label lblPatientPlan;
+        private System.Windows.Forms.RadioButton rbDischargeNo;
+        private System.Windows.Forms.RadioButton rbDischargeYes;
+        private System.Windows.Forms.RadioButton rbReassessmentNo;
+        private System.Windows.Forms.RadioButton rbReassessmentYes;
     }
 }

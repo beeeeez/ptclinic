@@ -13,6 +13,10 @@
 - Add Update ability for patient information
 - Add print ability for Patient Record + Appointment Scheduling
 - Add Follow Up Table to Database
+- Add Visit Type to Visit Form
+- Add Visit Type to Visit Table in Database
+- Add Follow Up Visit Button to Patient Profile
+- Add Update Ability for Evaluation (Visit Form)
 
 
 ### Display (In Progress)

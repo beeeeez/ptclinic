@@ -1,17 +1,36 @@
 # PTClinic
 
-### Project Todos
-- Patient Visit Form
-  - Patient Visit Class
-- Follow Up Visit Form
-  - Follow Up Visit Class
-- Patient Specific Functional Scale (PSFS) Form
-  - PSFS Class
-- Appointment Form (Schedule Appointments)
+## Project Todos
+
+### Intial Visit Form
+- Adds to the Patient Info table which visit it is
+- Set form window to scrollable for smaller size windows
+
+### Follow Up Visit Form
+- Adds to the Patient Info table which visit it is
+- Set form window to scrollable for smaller size windows
+- Follow Up Visit Class - Constructor + DB functionality
+
+### Patient Profile Form
+- Pull Diagnosis from Initial Visit DB Table - populate field
+- Pull Patient Goals from Patient_Goals Table - populate field
+- Print patient info capability
+
+### Patient Information Form
+- Get working functionality to Update for patient information
+
+### Patient Goals
+- DB functionality for goals
+
+
+### Schedule Appointment Form
+- Print Appointment Details capability
+- Email/Update outlook or google calendar
+
+### Finalization TODO's
 - Check tab indexes
 - Check validation
-- Add Update ability for patient information
-- Add print ability for Patient Record + Appointment Scheduling
+- Add print ability works
 - Add Follow Up Table to Database
 - Add Visit Type to Visit Form
 - Add Visit Type to Visit Table in Database
@@ -19,10 +38,6 @@
 - Add Update Ability for Evaluation (Visit Form)
 
 
-### Display (In Progress)
-- Display Most Recent Diagnosis and PT Goals - For easy history of patient
-
-
 #### Extras
 - Backup DB
-- Email alerts for appointments
+

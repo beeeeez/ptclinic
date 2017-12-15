@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace PTClinic
         private Form Login;
         private Form Admin;
         private Form PatientProfile;
+        PatientInfo patientName;
 
         public PatientGoalsForm()
         {
@@ -30,6 +32,8 @@ namespace PTClinic
             this.Login = Login;
             this.PatientProfile = PatientProfile;
 
+            patientName = new PatientInfo();
+
             // If PT Goals form was openedd from Visit hide "Back to profile" button
             if (!fromProfile)
             {
@@ -38,6 +42,27 @@ namespace PTClinic
             else
             {
                 btnBackToProfile.Visible = true;
+            }
+
+
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = patientName.FindOnePatient(connection, patientID))
+                {
+                    while (dataReaderPatient.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+
+                        patientName.Fname = dataReaderPatient["patient_first_name"].ToString();
+                        patientName.Lname = dataReaderPatient["patient_last_name"].ToString();
+
+
+                        lblPatientName.Text = "For " + patientName.Fname + " " + patientName.Lname;
+
+                    }
+                }
             }
         }
 

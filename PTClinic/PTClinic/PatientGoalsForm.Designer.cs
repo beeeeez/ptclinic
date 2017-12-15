@@ -95,6 +95,7 @@
             this.lblErrors = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.lblPatientName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -909,12 +910,24 @@
             this.label17.TabIndex = 180;
             this.label17.Text = "ABLE";
             // 
+            // lblPatientName
+            // 
+            this.lblPatientName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientName.Location = new System.Drawing.Point(266, 125);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(35, 18);
+            this.lblPatientName.TabIndex = 181;
+            this.lblPatientName.Text = "For ";
+            // 
             // PatientGoalsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1258, 670);
+            this.Controls.Add(this.lblPatientName);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lblErrors);
@@ -1030,5 +1043,6 @@
         private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblPatientName;
     }
 }

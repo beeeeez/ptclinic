@@ -39,6 +39,7 @@ namespace PTClinic
             lblPID.Text = PatientID;
 
             // Set the Patient Name here~~~
+            /* Get Patient Name Passing Over! */
 
             // Fill Drop Downs
             FillEvaluation();
@@ -104,6 +105,7 @@ namespace PTClinic
         {
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
+            btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
         // Add Visit Button Click
@@ -188,6 +190,14 @@ namespace PTClinic
         {
             this.Hide();
             Login.Show();
+        }
+
+        // Back to Profile button click
+        // Send back to Profile page
+        private void btnBackToProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientProfile.Show();
         }
 
         // Clear Form Button Click

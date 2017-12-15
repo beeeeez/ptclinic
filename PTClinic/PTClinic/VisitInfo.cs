@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -82,56 +83,136 @@ namespace PTClinic
         public string ChiefComplaint
         {
             get { return chiefComplaint; }
-            set { chiefComplaint = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Chief Complaint\n";
+                }
+                else
+                {
+                    chiefComplaint = value;
+                }
+            }
         }
 
         // Public variable for Diagnosis
         public string Diagnosis
         {
             get { return diagnosis; }
-            set { diagnosis = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a Diagnosis\n";
+                }
+                else
+                {
+                    diagnosis = value;
+                }
+            }
         }
 
         // Public variable for Medical History
         public string MedicalHistory
         {
             get { return medicalHistory; }
-            set { medicalHistory = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Medical History\n";
+                }
+                else
+                {
+                    medicalHistory = value;
+                }
+            }
         }
 
         // Public variable for Medications
         public string Medications
         {
             get { return medications; }
-            set { medications = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Medications\n";
+                }
+                else
+                {
+                    medications = value;
+                }
+            }
         }
 
         // Public variable for Subjective
         public string Subjective
         {
             get { return subjective; }
-            set { subjective = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a Subjective\n";
+                }
+                else
+                {
+                    subjective = value;
+                }
+            }
         }
 
         // Public variable for Objective
         public string Objective
         {
             get { return objective; }
-            set { objective = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an Objective\n";
+                }
+                else
+                {
+                    objective = value;
+                }
+            }
         }
 
         // Public variable for PT Goals
         public string PTGoals
         {
             get { return ptGoals; }
-            set { ptGoals = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter PT Goals\n";
+                }
+                else
+                {
+                    ptGoals = value;
+                }
+            }
         }
 
         // Public variable for Treatment Plan
         public string TreatmentPlan
         {
             get { return treatmentPlan; }
-            set { treatmentPlan = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Treatment Plan\n";
+                }
+                else
+                {
+                    treatmentPlan = value;
+                }
+            }
         }
 
         // Public variable for Evaluation
@@ -194,7 +275,8 @@ namespace PTClinic
             get { return theraputicProcedures2; }
             set
             {
-
+                theraputicProcedures2 = value;
+                /*   Commenting out until we find out actual information on what will be in it
                 if (value.Equals("Select One") || string.IsNullOrEmpty(value))
                 {
                     feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
@@ -202,7 +284,7 @@ namespace PTClinic
                 else
                 {
                     theraputicProcedures2 = value;
-                }
+                }*/
             }
         }
 
@@ -210,21 +292,51 @@ namespace PTClinic
         public string FunctionalLimitations
         {
             get { return functionalLimitations; }
-            set { functionalLimitations = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Functional Limitations\n";
+                }
+                else
+                {
+                    functionalLimitations = value;
+                }
+            }
         }
 
         // Public variable for Physical Therapy Diagnosis
         public string PhysicalTherapyDiagnosis
         {
             get { return physicalTherapyDiagnosis; }
-            set { physicalTherapyDiagnosis = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Physical Therapy Diagnosis\n";
+                }
+                else
+                {
+                    physicalTherapyDiagnosis = value;
+                }
+            }
         }
 
         // Public variable for Follow Up Treatment
         public string FollowUpTreatment
         {
             get { return followUpTreatment; }
-            set { followUpTreatment = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Follow Up Treatment\n";
+                }
+                else
+                {
+                    followUpTreatment = value;
+                }
+            }
         }
 
         // Public variable for Visit Date
@@ -339,6 +451,46 @@ namespace PTClinic
 
             return success;
         } // End of AddVisit
+
+
+        // Find Patient Visit Info  method
+        // Returns a data reader filled with all the data of the patients initial visit
+        public OleDbDataReader FindOnePatientVisit(OleDbConnection conn, int intPID)
+        {
+            string strFeedback = "";
+            OleDbCommand comm = new OleDbCommand();
+
+            // Connection string to be used
+            //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+
+            //SQL Command string to pull up one Patients Data
+            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, theraputic_procedures, theraputic_procedures2, functional_limitations, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
+
+            // Set the connection string
+            //conn.ConnectionString = strConn;
+
+            // Give command object info it needs
+            comm.Connection = conn;
+            comm.CommandText = strSQL;
+            comm.Parameters.AddWithValue("@PID", intPID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+                return null;
+            }
+
+
+            // Return some form of feedback
+            return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
+        } // End of FindOnePatientVisit
 
     } // End of Visit Info Class
 }

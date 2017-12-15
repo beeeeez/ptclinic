@@ -42,6 +42,8 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnAddNewPatient = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvResults)).BeginInit();
             this.panel3.SuspendLayout();
@@ -199,12 +201,40 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Search Patients";
             // 
+            // btnAddNewPatient
+            // 
+            this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewPatient.ForeColor = System.Drawing.Color.Black;
+            this.btnAddNewPatient.Location = new System.Drawing.Point(804, 626);
+            this.btnAddNewPatient.Name = "btnAddNewPatient";
+            this.btnAddNewPatient.Size = new System.Drawing.Size(164, 39);
+            this.btnAddNewPatient.TabIndex = 100;
+            this.btnAddNewPatient.Text = "Add New Patient";
+            this.btnAddNewPatient.UseVisualStyleBackColor = false;
+            this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(541, 632);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(234, 24);
+            this.label2.TabIndex = 101;
+            this.label2.Text = "Don\'t see the patient here?";
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1006, 688);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAddNewPatient);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.gvResults);
             this.Controls.Add(this.panel1);
@@ -242,5 +272,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnAddNewPatient;
+        private System.Windows.Forms.Label label2;
     }
 }

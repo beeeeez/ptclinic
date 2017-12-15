@@ -151,41 +151,7 @@ namespace PTClinic
                 } // End of --  using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
 
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-
-
-
-
-            //OleDbDataReader dataReader = temp.FindOnePatient(intPID);
-
-            //// Use this infor to fill out the form
-            //while (dataReader.Read())
-            //{
-            //    // Take the appropriate fields from the datareader
-            //    // and put them in proper labels
-            //    // Name
-            //    lblName.Text = dataReader["patient_first_name"].ToString() + " " + dataReader["patient_middle_initial"].ToString() + " " + dataReader["patient_last_name"].ToString();
-            //    // Gender
-            //    lblGender.Text = dataReader["patient_gender"].ToString();
-            //    // DOB
-            //    string shortDateStr = dataReader["patient_dob"].ToString();
-            //    DateTime shortDateBirthday = Convert.ToDateTime(shortDateStr);
-            //    lblDateOfBirth.Text = shortDateBirthday.ToShortDateString();
-            //    // Address
-            //    lblAddress.Text = dataReader["patient_address"].ToString() + " " + dataReader["patient_address2"].ToString();
-            //    // City
-            //    lblCity.Text = dataReader["patient_city"].ToString();
-            //    // State
-            //    lblState.Text = dataReader["patient_state"].ToString();
-            //    // Zip
-            //    lblZip.Text = dataReader["patient_zip"].ToString();
-            //    // Phone
-            //    lblPhone.Text = dataReader["patient_phone1"].ToString() + "  Ext: " + dataReader["patient_phone1_extension"].ToString() + "  Type: " + dataReader["patient_phone1_type"].ToString();
-
-            //    //Set the Patient ID = to the one from the DB
-            //    PatientID = dataReader["patient_id"].ToString();
-
-            //    MessageBox.Show(PatientID);
-            //}
+          
         }
 
         // Setting the Icons for Logout and Home Buttons
@@ -233,6 +199,15 @@ namespace PTClinic
             bool fromProfile = true;
             PatientGoalsForm temp = new PatientGoalsForm(pID, fromProfile, Admin, Login, this);
             temp.Show();
+        }
+
+        private void btnUpdateInformation_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Patient ID being passed back is " + pID);
+            PatientInformation updatePatientInfo = new PatientInformation(pID, Admin, Login);
+            updatePatientInfo.Show();
+            this.Hide();
+
         }
     }
 }

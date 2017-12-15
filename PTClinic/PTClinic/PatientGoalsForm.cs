@@ -91,5 +91,10 @@ namespace PTClinic
             this.Hide();
             Login.Show();
         }
+
+        private void btnSavePTGoals_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Button Clciked");
+        }
     }
 }

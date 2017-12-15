@@ -268,7 +268,6 @@
             this.tbECRelationship.Name = "tbECRelationship";
             this.tbECRelationship.Size = new System.Drawing.Size(431, 26);
             this.tbECRelationship.TabIndex = 132;
-            this.tbECRelationship.Text = "Emergency Contact Relationship";
             // 
             // label9
             // 
@@ -298,7 +297,6 @@
             this.tbECPhone.Name = "tbECPhone";
             this.tbECPhone.Size = new System.Drawing.Size(121, 26);
             this.tbECPhone.TabIndex = 124;
-            this.tbECPhone.Text = "4014541234";
             // 
             // tbECName
             // 
@@ -307,7 +305,6 @@
             this.tbECName.Name = "tbECName";
             this.tbECName.Size = new System.Drawing.Size(431, 26);
             this.tbECName.TabIndex = 123;
-            this.tbECName.Text = "EC Contact";
             // 
             // cbECPhoneType
             // 
@@ -327,7 +324,6 @@
             this.tbECPhoneExt.Name = "tbECPhoneExt";
             this.tbECPhoneExt.Size = new System.Drawing.Size(87, 26);
             this.tbECPhoneExt.TabIndex = 125;
-            this.tbECPhoneExt.Text = "1231";
             // 
             // label3
             // 
@@ -412,7 +408,6 @@
             this.tbCGPhone2.Name = "tbCGPhone2";
             this.tbCGPhone2.Size = new System.Drawing.Size(122, 26);
             this.tbCGPhone2.TabIndex = 26;
-            this.tbCGPhone2.Text = "5084423126";
             // 
             // tbCGPhone1
             // 
@@ -422,7 +417,6 @@
             this.tbCGPhone1.Name = "tbCGPhone1";
             this.tbCGPhone1.Size = new System.Drawing.Size(121, 26);
             this.tbCGPhone1.TabIndex = 23;
-            this.tbCGPhone1.Text = "4014541234";
             // 
             // tbCGName
             // 
@@ -431,7 +425,6 @@
             this.tbCGName.Name = "tbCGName";
             this.tbCGName.Size = new System.Drawing.Size(431, 26);
             this.tbCGName.TabIndex = 22;
-            this.tbCGName.Text = "Caregiver Name";
             // 
             // cbCGPhone1Type
             // 
@@ -473,7 +466,6 @@
             this.tbCGCity.Name = "tbCGCity";
             this.tbCGCity.Size = new System.Drawing.Size(134, 26);
             this.tbCGCity.TabIndex = 30;
-            this.tbCGCity.Text = "Boston";
             // 
             // tbCGAddress
             // 
@@ -482,7 +474,6 @@
             this.tbCGAddress.Name = "tbCGAddress";
             this.tbCGAddress.Size = new System.Drawing.Size(431, 26);
             this.tbCGAddress.TabIndex = 29;
-            this.tbCGAddress.Text = "12345 Caregiver Lane";
             // 
             // tbCGPhone1Ext
             // 
@@ -499,7 +490,6 @@
             this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
             this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 26);
             this.tbCGPhone2Ext.TabIndex = 27;
-            this.tbCGPhone2Ext.Text = "10000";
             // 
             // label1
             // 
@@ -725,7 +715,6 @@
             this.tbPhone1.Name = "tbPhone1";
             this.tbPhone1.Size = new System.Drawing.Size(131, 26);
             this.tbPhone1.TabIndex = 14;
-            this.tbPhone1.Text = "5084423126";
             // 
             // gbMessage
             // 
@@ -864,7 +853,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 26);
             this.tbEmail.TabIndex = 21;
-            this.tbEmail.Text = "ksmith23@gmail.com";
             // 
             // tbCity
             // 
@@ -873,7 +861,6 @@
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(264, 26);
             this.tbCity.TabIndex = 8;
-            this.tbCity.Text = "Providence";
             // 
             // tbAddress2
             // 
@@ -890,7 +877,6 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(265, 26);
             this.tbAddress.TabIndex = 6;
-            this.tbAddress.Text = "1500 North Main Street";
             // 
             // tbFirstName
             // 
@@ -899,7 +885,6 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(201, 26);
             this.tbFirstName.TabIndex = 1;
-            this.tbFirstName.Text = "Kyle";
             // 
             // tbMiddleInitial
             // 
@@ -916,7 +901,6 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(266, 26);
             this.tbLastName.TabIndex = 3;
-            this.tbLastName.Text = "Smith";
             // 
             // tbOtherInsurance
             // 

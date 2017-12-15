@@ -403,6 +403,7 @@
             this.btnUpdateInformation.Text = "Update Information";
             this.btnUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateInformation.UseVisualStyleBackColor = true;
+            this.btnUpdateInformation.Click += new System.EventHandler(this.btnUpdateInformation_Click);
             // 
             // pictureBox2
             // 

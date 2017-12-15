@@ -590,16 +590,18 @@ namespace PTClinic
             string strFeedback = "";
             OleDbCommand comm = new OleDbCommand();
 
-           // Connection string to be used
+            // Connection string to be used
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_phone1, patient_phone1_extension, patient_phone1_type FROM Patients WHERE patient_id = @PID;";
+            // string strSQL = "SELECT patient_id, patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_phone1, patient_phone1_extension, patient_phone1_type FROM Patients WHERE patient_id = @PID;";
+            string strSQL = "SELECT * FROM Patients WHERE patient_id = @PID;";
 
-           // Set the connection string
+
+            // Set the connection string
             //conn.ConnectionString = strConn;
 
-           // Give command object info it needs
+            // Give command object info it needs
             comm.Connection = conn;
             comm.CommandText = strSQL;
             comm.Parameters.AddWithValue("@PID", intPID);

@@ -59,7 +59,7 @@ namespace PTClinic
         private void pbBtnNewPatient_Click(object sender, EventArgs e)
         {
             // ON CLICK GO TO NEW PATIENT FORM
-            PatientInformation patientForm = new PatientInformation(this, Login);
+            PatientInformation patientForm = new PatientInformation(0, this, Login);
 
             patientForm.Show();
 

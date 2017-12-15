@@ -203,7 +203,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT ec_fullname, ec_telephone, ec_telephone_ext, ec_telephone_type, ec_relationship FROM Emergency_Contact WHERE patient_id = @PID;";
+            string strSQL = "SELECT * FROM Emergency_Contact WHERE patient_id = @PID;";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

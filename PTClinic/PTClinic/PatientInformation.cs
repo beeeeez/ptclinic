@@ -19,7 +19,7 @@ namespace PTClinic
         public int patientID;
 
 
-        public PatientInformation(Form adminForm, Form Login)
+        public PatientInformation(int pID, Form adminForm, Form Login)
         {
             InitializeComponent();
 
@@ -41,6 +41,144 @@ namespace PTClinic
             FillMedicalInsurance();
             FillPhoneType();
             FillGender();
+
+            // If theres a patient ID then pull back information to populate form fields for updating
+            if (pID > 0)
+            {
+                // MessageBox.Show("PATIENT ID PASSED IS " + pID);
+
+
+
+                // Create variable for PatientInfo
+                PatientInfo tempPatient = new PatientInfo();
+
+                // Create variable for CaregiverInfo
+                CaregiverInfo tempCG = new CaregiverInfo();
+
+                // Create variable for EmergencyContact
+                EmergencyContact tempEC = new EmergencyContact();
+
+
+                using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                {
+                    // Gather info about this patient via the patient ID (pID) passed from the search and store it in a data reader
+                    using (var dataReaderPatient = tempPatient.FindOnePatient(connection, pID))
+                    {
+                        while (dataReaderPatient.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper labels
+
+                            string patientDetails = "";
+
+
+                            tbFirstName.Text = dataReaderPatient["patient_first_name"].ToString();
+                            tbMiddleInitial.Text = dataReaderPatient["patient_middle_initial"].ToString();
+                            tbLastName.Text = dataReaderPatient["patient_last_name"].ToString();
+
+
+                            cbGender.SelectedItem = dataReaderPatient["patient_gender"].ToString();
+                            DateTime dob = Convert.ToDateTime(dataReaderPatient["patient_dob"].ToString());
+                            dtpDOB.Value = dob;
+
+                            tbAddress.Text = dataReaderPatient["patient_address"].ToString();
+                            tbAddress2.Text = dataReaderPatient["patient_address2"].ToString();
+                            tbCity.Text = dataReaderPatient["patient_city"].ToString();
+                            cbState.SelectedItem = dataReaderPatient["patient_state"].ToString();
+                            tbZip.Text = dataReaderPatient["patient_zip"].ToString();
+
+
+                            if (dataReaderPatient["patient_has_insurance"].ToString().Equals("True"))
+                            {
+                                rdbInsuranceYes.Checked = true;
+                            }
+                            else
+                            {
+                                rdbInsuranceNo.Checked = true;
+                            }
+
+                            var insurer = dataReaderPatient["patient_insurer"].ToString();
+
+                            if (String.IsNullOrEmpty(insurer) || insurer.Equals(""))
+                            {
+                                cbInsurer.SelectedItem = "Select One";
+                            }
+                            else
+                            {
+                                cbInsurer.SelectedItem = dataReaderPatient["patient_insurer"].ToString();
+                            }
+
+                            tbOtherInsurance.Text = dataReaderPatient["patient_other_insurance"].ToString();
+
+
+                            tbPhone1.Text = dataReaderPatient["patient_phone1"].ToString();
+                            tbPhoneExt1.Text = dataReaderPatient["patient_phone1_extension"].ToString();
+                            cbPhone1Type.SelectedItem = dataReaderPatient["patient_phone1_type"].ToString();
+
+                            tbPhone2.Text = dataReaderPatient["patient_phone2"].ToString();
+                            tbPhoneExt2.Text = dataReaderPatient["patient_phone2_extension"].ToString();
+                            cbPhone2Type.SelectedItem = dataReaderPatient["patient_phone2_type"].ToString();
+
+                            if (dataReaderPatient["contact_patient"].ToString().Equals("True"))
+                            {
+                                rdbMessageYes.Checked = true;
+                            }
+                            else
+                            {
+                                rdbMessageNo.Checked = true;
+                            }
+
+                            tbEmail.Text = dataReaderPatient["patient_email"].ToString();
+
+
+                        }
+                    }
+
+                    // Gather info about this patient's caregiver via the patient ID (pID) passed from the search and store it in a data reader
+                    using (var dataReaderCG = tempCG.FindOneCaregiver(connection, pID))
+                    {
+                        while (dataReaderCG.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+
+                            // and fill proper fields for updating 
+                            tbCGName.Text = dataReaderCG["caregiver_name"].ToString();
+                            tbCGAddress.Text = dataReaderCG["caregiver_address"].ToString();
+                            tbCGCity.Text = dataReaderCG["caregiver_city"].ToString();
+                            cbCGState.SelectedItem = dataReaderCG["caregiver_state"].ToString();
+                            tbCGZip.Text = dataReaderCG["caregiver_zip"].ToString();
+
+                            tbCGPhone1.Text = dataReaderCG["caregiver_phone1"].ToString();
+                            tbCGPhone1Ext.Text = dataReaderCG["caregiver_phone1_extension"].ToString();
+                            cbCGPhone1Type.SelectedItem = dataReaderCG["caregiver_phone1_type"].ToString();
+
+                            //MessageBox.Show(Convert.ToString(dataReaderCG["caregiver_phone2"].ToString().Length));
+                            tbCGPhone2.Text = dataReaderCG["caregiver_phone2"].ToString();
+                            tbCGPhone2Ext.Text = dataReaderCG["caregiver_phone2_extension"].ToString();
+                            cbCGPhone2Type.SelectedItem = dataReaderCG["caregiver_phone2_type"].ToString();
+                        }
+                    } // End of -- using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+
+
+
+                    // Gather info about this patient's emergency contact via the patient ID (pID) passed from the search and store it in a data reader
+                    using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, pID))
+                    {
+                        while (dataReaderEC.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper labels
+                            tbECName.Text = dataReaderEC["ec_fullname"].ToString();
+                            tbECPhone.Text = dataReaderEC["ec_telephone"].ToString();
+                            tbECPhoneExt.Text = dataReaderEC["ec_telephone_ext"].ToString();
+                            cbECPhoneType.SelectedItem = dataReaderEC["ec_telephone_type"].ToString();
+                            tbECRelationship.Text = dataReaderEC["ec_relationship"].ToString();
+                        }
+
+                    } // End of --  using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
+
+                } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            }
 
         }
 
@@ -340,7 +478,7 @@ namespace PTClinic
 
                     if (ECSuccess == 1)
                     {
-                       
+
                         lblCareFeedback.Text = "";
 
                         try
@@ -376,12 +514,12 @@ namespace PTClinic
 
                     // lblCareFeedback.Text = newEmergencyContact.AddRecord();
                 }
-                catch (Exception exc) 
+                catch (Exception exc)
                 {
                     lblCareFeedback.Text = exc.ToString();
                 }
 
-         
+
             }
 
 
@@ -423,10 +561,10 @@ namespace PTClinic
             //        lblCareFeedback.Text = exc.ToString();
             //    }
 
-                // Clear all fields
-                //ClearCaregiverForm();
-                //// Clear all fields
-                //ClearEmergencyContactForm();
+            // Clear all fields
+            //ClearCaregiverForm();
+            //// Clear all fields
+            //ClearEmergencyContactForm();
             //}
 
 

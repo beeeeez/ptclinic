@@ -82,5 +82,12 @@ namespace PTClinic
             this.Hide();
             Login.Show();
         }
+
+        private void btnAddNewPatient_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+            newPatientForm.Show();
+        }
     }
 }

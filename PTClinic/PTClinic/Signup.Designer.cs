@@ -202,6 +202,7 @@
             // 
             // btnBackToLogin
             // 
+            this.btnBackToLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBackToLogin.BackColor = System.Drawing.Color.Navy;
             this.btnBackToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToLogin.ForeColor = System.Drawing.Color.White;

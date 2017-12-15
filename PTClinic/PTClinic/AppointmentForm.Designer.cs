@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,7 +58,6 @@
             this.panelAppMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
-            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,9 +79,25 @@
             this.panel1.Size = new System.Drawing.Size(1267, 73);
             this.panel1.TabIndex = 119;
             // 
+            // btnBackToProfile
+            // 
+            this.btnBackToProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToProfile.Location = new System.Drawing.Point(790, 20);
+            this.btnBackToProfile.Name = "btnBackToProfile";
+            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToProfile.TabIndex = 76;
+            this.btnBackToProfile.Text = "Back To Profile";
+            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToProfile.UseVisualStyleBackColor = false;
+            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
+            // 
             // btnBackHome
             // 
-            this.btnBackHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBackHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBackHome.BackColor = System.Drawing.Color.Navy;
             this.btnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +113,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.BackColor = System.Drawing.Color.Navy;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -395,22 +411,6 @@
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 18);
             this.lblFeedback.TabIndex = 151;
-            // 
-            // btnBackToProfile
-            // 
-            this.btnBackToProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
-            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToProfile.Location = new System.Drawing.Point(790, 20);
-            this.btnBackToProfile.Name = "btnBackToProfile";
-            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
-            this.btnBackToProfile.TabIndex = 76;
-            this.btnBackToProfile.Text = "Back To Profile";
-            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackToProfile.UseVisualStyleBackColor = false;
-            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
             // 
             // AppointmentForm
             // 

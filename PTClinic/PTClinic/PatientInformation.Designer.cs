@@ -36,6 +36,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.panelCaregiverInfo = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbECRelationship = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbECPhone = new System.Windows.Forms.MaskedTextBox();
+            this.tbECName = new System.Windows.Forms.TextBox();
+            this.cbECPhoneType = new System.Windows.Forms.ComboBox();
+            this.tbECPhoneExt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tbCGZip = new System.Windows.Forms.MaskedTextBox();
             this.lblCareFeedback = new System.Windows.Forms.Label();
             this.btnAddCaregiver = new System.Windows.Forms.Button();
@@ -110,18 +122,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbECRelationship = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbECPhone = new System.Windows.Forms.MaskedTextBox();
-            this.tbECName = new System.Windows.Forms.TextBox();
-            this.cbECPhoneType = new System.Windows.Forms.ComboBox();
-            this.tbECPhoneExt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCaregiverInfo.SuspendLayout();
@@ -145,6 +145,7 @@
             // 
             // btnBackHome
             // 
+            this.btnBackHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBackHome.BackColor = System.Drawing.Color.Navy;
             this.btnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,6 +161,7 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.BackColor = System.Drawing.Color.Navy;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,6 +250,124 @@
             this.panelCaregiverInfo.Size = new System.Drawing.Size(1181, 645);
             this.panelCaregiverInfo.TabIndex = 79;
             this.panelCaregiverInfo.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(136, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 20);
+            this.label8.TabIndex = 134;
+            // 
+            // tbECRelationship
+            // 
+            this.tbECRelationship.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbECRelationship.Location = new System.Drawing.Point(121, 245);
+            this.tbECRelationship.Name = "tbECRelationship";
+            this.tbECRelationship.Size = new System.Drawing.Size(431, 26);
+            this.tbECRelationship.TabIndex = 132;
+            this.tbECRelationship.Text = "Emergency Contact Relationship";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(117, 209);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(194, 24);
+            this.label9.TabIndex = 133;
+            this.label9.Text = "Relationship to Patient";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(135, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.TabIndex = 131;
+            // 
+            // tbECPhone
+            // 
+            this.tbECPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbECPhone.Location = new System.Drawing.Point(120, 158);
+            this.tbECPhone.Mask = "(999) 000-0000";
+            this.tbECPhone.Name = "tbECPhone";
+            this.tbECPhone.Size = new System.Drawing.Size(121, 26);
+            this.tbECPhone.TabIndex = 124;
+            this.tbECPhone.Text = "4014541234";
+            // 
+            // tbECName
+            // 
+            this.tbECName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbECName.Location = new System.Drawing.Point(120, 72);
+            this.tbECName.Name = "tbECName";
+            this.tbECName.Size = new System.Drawing.Size(431, 26);
+            this.tbECName.TabIndex = 123;
+            this.tbECName.Text = "EC Contact";
+            // 
+            // cbECPhoneType
+            // 
+            this.cbECPhoneType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbECPhoneType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbECPhoneType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbECPhoneType.FormattingEnabled = true;
+            this.cbECPhoneType.Location = new System.Drawing.Point(430, 158);
+            this.cbECPhoneType.Name = "cbECPhoneType";
+            this.cbECPhoneType.Size = new System.Drawing.Size(121, 28);
+            this.cbECPhoneType.TabIndex = 126;
+            // 
+            // tbECPhoneExt
+            // 
+            this.tbECPhoneExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbECPhoneExt.Location = new System.Drawing.Point(292, 158);
+            this.tbECPhoneExt.Name = "tbECPhoneExt";
+            this.tbECPhoneExt.Size = new System.Drawing.Size(87, 26);
+            this.tbECPhoneExt.TabIndex = 125;
+            this.tbECPhoneExt.Text = "1231";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(385, 161);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 20);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "Type";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(252, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Ext.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(117, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(274, 24);
+            this.label5.TabIndex = 128;
+            this.label5.Text = "Emergency Contact Telephone";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(116, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(232, 24);
+            this.label6.TabIndex = 127;
+            this.label6.Text = "Emergency Contact Name";
             // 
             // tbCGZip
             // 
@@ -1031,124 +1151,6 @@
             this.lblFirstName.Size = new System.Drawing.Size(101, 24);
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(136, 213);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 20);
-            this.label8.TabIndex = 134;
-            // 
-            // tbECRelationship
-            // 
-            this.tbECRelationship.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbECRelationship.Location = new System.Drawing.Point(121, 245);
-            this.tbECRelationship.Name = "tbECRelationship";
-            this.tbECRelationship.Size = new System.Drawing.Size(431, 26);
-            this.tbECRelationship.TabIndex = 132;
-            this.tbECRelationship.Text = "Emergency Contact Relationship";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(117, 209);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 24);
-            this.label9.TabIndex = 133;
-            this.label9.Text = "Relationship to Patient";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(135, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
-            this.label2.TabIndex = 131;
-            // 
-            // tbECPhone
-            // 
-            this.tbECPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbECPhone.Location = new System.Drawing.Point(120, 158);
-            this.tbECPhone.Mask = "(999) 000-0000";
-            this.tbECPhone.Name = "tbECPhone";
-            this.tbECPhone.Size = new System.Drawing.Size(121, 26);
-            this.tbECPhone.TabIndex = 124;
-            this.tbECPhone.Text = "4014541234";
-            // 
-            // tbECName
-            // 
-            this.tbECName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbECName.Location = new System.Drawing.Point(120, 72);
-            this.tbECName.Name = "tbECName";
-            this.tbECName.Size = new System.Drawing.Size(431, 26);
-            this.tbECName.TabIndex = 123;
-            this.tbECName.Text = "EC Contact";
-            // 
-            // cbECPhoneType
-            // 
-            this.cbECPhoneType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbECPhoneType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbECPhoneType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbECPhoneType.FormattingEnabled = true;
-            this.cbECPhoneType.Location = new System.Drawing.Point(430, 158);
-            this.cbECPhoneType.Name = "cbECPhoneType";
-            this.cbECPhoneType.Size = new System.Drawing.Size(121, 28);
-            this.cbECPhoneType.TabIndex = 126;
-            // 
-            // tbECPhoneExt
-            // 
-            this.tbECPhoneExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbECPhoneExt.Location = new System.Drawing.Point(292, 158);
-            this.tbECPhoneExt.Name = "tbECPhoneExt";
-            this.tbECPhoneExt.Size = new System.Drawing.Size(87, 26);
-            this.tbECPhoneExt.TabIndex = 125;
-            this.tbECPhoneExt.Text = "1231";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(385, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
-            this.label3.TabIndex = 130;
-            this.label3.Text = "Type";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Ext.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(117, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(274, 24);
-            this.label5.TabIndex = 128;
-            this.label5.Text = "Emergency Contact Telephone";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(116, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(232, 24);
-            this.label6.TabIndex = 127;
-            this.label6.Text = "Emergency Contact Name";
             // 
             // PatientInformation
             // 

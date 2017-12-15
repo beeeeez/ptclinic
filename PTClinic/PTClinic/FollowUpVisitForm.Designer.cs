@@ -328,6 +328,7 @@
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPlan.Size = new System.Drawing.Size(387, 53);
             this.tbPlan.TabIndex = 108;
+            this.tbPlan.Text = "Plan";
             // 
             // lblPSFS
             // 
@@ -417,7 +418,7 @@
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbAssessment.Size = new System.Drawing.Size(387, 83);
             this.tbAssessment.TabIndex = 22;
-            this.tbAssessment.Text = "Joanne Teset";
+            this.tbAssessment.Text = "Assessment";
             // 
             // lblProviderName
             // 
@@ -504,9 +505,9 @@
             this.lblInsurer.AutoSize = true;
             this.lblInsurer.Location = new System.Drawing.Point(53, 558);
             this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(133, 13);
+            this.lblInsurer.Size = new System.Drawing.Size(139, 13);
             this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Second part of theraputic?";
+            this.lblInsurer.Text = "Second part of therapeutic?";
             // 
             // lblConstantAttendance
             // 
@@ -522,9 +523,9 @@
             this.lblTheraputicProcedures.AutoSize = true;
             this.lblTheraputicProcedures.Location = new System.Drawing.Point(28, 516);
             this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
-            this.lblTheraputicProcedures.Size = new System.Drawing.Size(115, 26);
+            this.lblTheraputicProcedures.Size = new System.Drawing.Size(121, 26);
             this.lblTheraputicProcedures.TabIndex = 94;
-            this.lblTheraputicProcedures.Text = "Theraputic Procedures\r\n(15 minutes each)";
+            this.lblTheraputicProcedures.Text = "Therapeutic Procedures\r\n(15 minutes each)";
             // 
             // lblDiagnosis
             // 
@@ -570,6 +571,7 @@
             this.tbDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDiagnosis.Size = new System.Drawing.Size(415, 44);
             this.tbDiagnosis.TabIndex = 1;
+            this.tbDiagnosis.Text = "diagnosis";
             // 
             // tbObjective
             // 
@@ -579,7 +581,7 @@
             this.tbObjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbObjective.Size = new System.Drawing.Size(415, 101);
             this.tbObjective.TabIndex = 6;
-            this.tbObjective.Text = "1234 Test Street";
+            this.tbObjective.Text = "objective";
             // 
             // tbPTGoals
             // 
@@ -589,7 +591,7 @@
             this.tbPTGoals.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPTGoals.Size = new System.Drawing.Size(415, 45);
             this.tbPTGoals.TabIndex = 7;
-            this.tbPTGoals.Text = "Apartment 4d";
+            this.tbPTGoals.Text = "pt goals";
             // 
             // tbSubjective
             // 
@@ -599,7 +601,7 @@
             this.tbSubjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbSubjective.Size = new System.Drawing.Size(415, 44);
             this.tbSubjective.TabIndex = 10;
-            this.tbSubjective.Text = "02906";
+            this.tbSubjective.Text = "subjective";
             // 
             // lblProviderID
             // 

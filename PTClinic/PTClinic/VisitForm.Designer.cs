@@ -245,9 +245,9 @@
             this.lblTheraputicProcedures.AutoSize = true;
             this.lblTheraputicProcedures.Location = new System.Drawing.Point(47, 107);
             this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
-            this.lblTheraputicProcedures.Size = new System.Drawing.Size(115, 26);
+            this.lblTheraputicProcedures.Size = new System.Drawing.Size(121, 26);
             this.lblTheraputicProcedures.TabIndex = 94;
-            this.lblTheraputicProcedures.Text = "Theraputic Procedures\r\n(15 minutes each)";
+            this.lblTheraputicProcedures.Text = "Therapeutic Procedures\r\n(15 minutes each)";
             // 
             // lblCGPhone2
             // 
@@ -299,9 +299,9 @@
             this.lblInsurer.AutoSize = true;
             this.lblInsurer.Location = new System.Drawing.Point(58, 149);
             this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(133, 13);
+            this.lblInsurer.Size = new System.Drawing.Size(139, 13);
             this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Second part of theraputic?";
+            this.lblInsurer.Text = "Second part of therapeutic?";
             // 
             // panel1
             // 

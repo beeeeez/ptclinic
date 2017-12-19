@@ -64,7 +64,53 @@ namespace PTClinic
                     }
                 }
             }
+
+
+            for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
+            {
+                RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
+                rb.CheckedChanged += new System.EventHandler(gbActivityOneScore_CheckChanged);
+            }
+            for (int i = 0; i < gbActivityTwoScore.Controls.Count; i++)
+            {
+                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[i];
+                rb.CheckedChanged += new System.EventHandler(gbActivityTwoScore_CheckChanged);
+            }
+            for (int i = 0; i < gbActivityThreeScore.Controls.Count; i++)
+            {
+                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[i];
+                rb.CheckedChanged += new System.EventHandler(gbActivityThreeScore_CheckChanged);
+            }
         }
+
+
+        private void gbActivityOneScore_CheckChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton)
+            {
+                RadioButton rb = (RadioButton)sender;
+                MessageBox.Show(rb.Text);
+            }
+        }
+
+        private void gbActivityTwoScore_CheckChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton)
+            {
+                RadioButton rb = (RadioButton)sender;
+                MessageBox.Show(rb.Text);
+            }
+        }
+
+        private void gbActivityThreeScore_CheckChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton)
+            {
+                RadioButton rb = (RadioButton)sender;
+                MessageBox.Show(rb.Text);
+            }
+        }
+
 
         // Setting the Icons for Logout and Home Buttons
         private void setButtonIcon()

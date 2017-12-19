@@ -181,6 +181,7 @@ namespace PTClinic
                             panelAppMessage.BackColor = Color.FromArgb(0, 192, 0);
                             panelAppMessage.Visible = true;
                             lblDBFeedback.Text = "Appointment Saved";
+                            btnPrintAppCopy.Visible = true;
 
                         }
                         else

@@ -102,7 +102,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(994, 673);
+            this.btnClear.Location = new System.Drawing.Point(994, 667);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 101;
@@ -117,7 +117,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(827, 673);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(827, 667);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 96;
@@ -207,7 +207,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(28, 107);
+            this.panel3.Location = new System.Drawing.Point(28, 101);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 99;
@@ -251,7 +251,7 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(660, 163);
+            this.panel4.Location = new System.Drawing.Point(660, 157);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 100;
@@ -678,7 +678,7 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(28, 163);
+            this.panel2.Location = new System.Drawing.Point(28, 157);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 98;
@@ -733,7 +733,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 760);
+            this.ClientSize = new System.Drawing.Size(1265, 749);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddFollowUp);
             this.Controls.Add(this.panel1);
@@ -743,6 +743,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "FollowUpVisitForm";
             this.Text = "Follow Up Visit Form";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

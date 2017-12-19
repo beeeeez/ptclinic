@@ -46,7 +46,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbActivityTwoScore = new System.Windows.Forms.GroupBox();
             this.radioButton23 = new System.Windows.Forms.RadioButton();
             this.radioButton24 = new System.Windows.Forms.RadioButton();
             this.radioButton25 = new System.Windows.Forms.RadioButton();
@@ -58,7 +58,7 @@
             this.radioButton31 = new System.Windows.Forms.RadioButton();
             this.radioButton32 = new System.Windows.Forms.RadioButton();
             this.radioButton33 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbActivtyOneScore = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -70,7 +70,7 @@
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbActivityThreeScore = new System.Windows.Forms.GroupBox();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
             this.radioButton13 = new System.Windows.Forms.RadioButton();
             this.radioButton14 = new System.Windows.Forms.RadioButton();
@@ -85,9 +85,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbActivityThree = new System.Windows.Forms.TextBox();
+            this.tbActivityTwo = new System.Windows.Forms.TextBox();
+            this.tbActivityOne = new System.Windows.Forms.TextBox();
             this.btnSavePTGoals = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -101,9 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbActivityTwoScore.SuspendLayout();
+            this.gbActivtyOneScore.SuspendLayout();
+            this.gbActivityThreeScore.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -263,7 +263,7 @@
             this.lblErrors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblErrors.AutoSize = true;
             this.lblErrors.ForeColor = System.Drawing.Color.Red;
-            this.lblErrors.Location = new System.Drawing.Point(760, 199);
+            this.lblErrors.Location = new System.Drawing.Point(772, 100);
             this.lblErrors.Name = "lblErrors";
             this.lblErrors.Size = new System.Drawing.Size(58, 13);
             this.lblErrors.TabIndex = 178;
@@ -286,15 +286,15 @@
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.groupBox3);
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Controls.Add(this.groupBox2);
+            this.panel4.Controls.Add(this.gbActivityTwoScore);
+            this.panel4.Controls.Add(this.gbActivtyOneScore);
+            this.panel4.Controls.Add(this.gbActivityThreeScore);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.tbActivityThree);
+            this.panel4.Controls.Add(this.tbActivityTwo);
+            this.panel4.Controls.Add(this.tbActivityOne);
             this.panel4.Controls.Add(this.btnSavePTGoals);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label11);
@@ -332,26 +332,26 @@
             this.label16.TabIndex = 198;
             this.label16.Text = "UNABLE";
             // 
-            // groupBox3
+            // gbActivityTwoScore
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.Controls.Add(this.radioButton23);
-            this.groupBox3.Controls.Add(this.radioButton24);
-            this.groupBox3.Controls.Add(this.radioButton25);
-            this.groupBox3.Controls.Add(this.radioButton26);
-            this.groupBox3.Controls.Add(this.radioButton27);
-            this.groupBox3.Controls.Add(this.radioButton28);
-            this.groupBox3.Controls.Add(this.radioButton29);
-            this.groupBox3.Controls.Add(this.radioButton30);
-            this.groupBox3.Controls.Add(this.radioButton31);
-            this.groupBox3.Controls.Add(this.radioButton32);
-            this.groupBox3.Controls.Add(this.radioButton33);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(642, 139);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(549, 40);
-            this.groupBox3.TabIndex = 197;
-            this.groupBox3.TabStop = false;
+            this.gbActivityTwoScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbActivityTwoScore.Controls.Add(this.radioButton23);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton24);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton25);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton26);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton27);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton28);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton29);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton30);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton31);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton32);
+            this.gbActivityTwoScore.Controls.Add(this.radioButton33);
+            this.gbActivityTwoScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbActivityTwoScore.Location = new System.Drawing.Point(642, 139);
+            this.gbActivityTwoScore.Name = "gbActivityTwoScore";
+            this.gbActivityTwoScore.Size = new System.Drawing.Size(549, 40);
+            this.gbActivityTwoScore.TabIndex = 197;
+            this.gbActivityTwoScore.TabStop = false;
             // 
             // radioButton23
             // 
@@ -485,26 +485,26 @@
             this.radioButton33.Text = "0";
             this.radioButton33.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gbActivtyOneScore
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton7);
-            this.groupBox1.Controls.Add(this.radioButton8);
-            this.groupBox1.Controls.Add(this.radioButton9);
-            this.groupBox1.Controls.Add(this.radioButton10);
-            this.groupBox1.Controls.Add(this.radioButton11);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(642, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(549, 40);
-            this.groupBox1.TabIndex = 196;
-            this.groupBox1.TabStop = false;
+            this.gbActivtyOneScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbActivtyOneScore.Controls.Add(this.radioButton1);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton2);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton3);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton4);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton5);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton6);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton7);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton8);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton9);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton10);
+            this.gbActivtyOneScore.Controls.Add(this.radioButton11);
+            this.gbActivtyOneScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbActivtyOneScore.Location = new System.Drawing.Point(642, 104);
+            this.gbActivtyOneScore.Name = "gbActivtyOneScore";
+            this.gbActivtyOneScore.Size = new System.Drawing.Size(549, 40);
+            this.gbActivtyOneScore.TabIndex = 196;
+            this.gbActivtyOneScore.TabStop = false;
             // 
             // radioButton1
             // 
@@ -638,26 +638,26 @@
             this.radioButton11.Text = "0";
             this.radioButton11.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // gbActivityThreeScore
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.radioButton12);
-            this.groupBox2.Controls.Add(this.radioButton13);
-            this.groupBox2.Controls.Add(this.radioButton14);
-            this.groupBox2.Controls.Add(this.radioButton15);
-            this.groupBox2.Controls.Add(this.radioButton16);
-            this.groupBox2.Controls.Add(this.radioButton17);
-            this.groupBox2.Controls.Add(this.radioButton18);
-            this.groupBox2.Controls.Add(this.radioButton19);
-            this.groupBox2.Controls.Add(this.radioButton20);
-            this.groupBox2.Controls.Add(this.radioButton21);
-            this.groupBox2.Controls.Add(this.radioButton22);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(642, 176);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(549, 40);
-            this.groupBox2.TabIndex = 195;
-            this.groupBox2.TabStop = false;
+            this.gbActivityThreeScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbActivityThreeScore.Controls.Add(this.radioButton12);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton13);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton14);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton15);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton16);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton17);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton18);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton19);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton20);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton21);
+            this.gbActivityThreeScore.Controls.Add(this.radioButton22);
+            this.gbActivityThreeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbActivityThreeScore.Location = new System.Drawing.Point(642, 176);
+            this.gbActivityThreeScore.Name = "gbActivityThreeScore";
+            this.gbActivityThreeScore.Size = new System.Drawing.Size(549, 40);
+            this.gbActivityThreeScore.TabIndex = 195;
+            this.gbActivityThreeScore.TabStop = false;
             // 
             // radioButton12
             // 
@@ -824,32 +824,32 @@
             this.label13.TabIndex = 192;
             this.label13.Text = "Score";
             // 
-            // textBox3
+            // tbActivityThree
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(159, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(396, 24);
-            this.textBox3.TabIndex = 191;
+            this.tbActivityThree.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbActivityThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbActivityThree.Location = new System.Drawing.Point(159, 185);
+            this.tbActivityThree.Name = "tbActivityThree";
+            this.tbActivityThree.Size = new System.Drawing.Size(396, 24);
+            this.tbActivityThree.TabIndex = 191;
             // 
-            // textBox2
+            // tbActivityTwo
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(159, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(396, 24);
-            this.textBox2.TabIndex = 190;
+            this.tbActivityTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbActivityTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbActivityTwo.Location = new System.Drawing.Point(159, 147);
+            this.tbActivityTwo.Name = "tbActivityTwo";
+            this.tbActivityTwo.Size = new System.Drawing.Size(396, 24);
+            this.tbActivityTwo.TabIndex = 190;
             // 
-            // textBox1
+            // tbActivityOne
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(159, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 24);
-            this.textBox1.TabIndex = 189;
+            this.tbActivityOne.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbActivityOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbActivityOne.Location = new System.Drawing.Point(159, 109);
+            this.tbActivityOne.Name = "tbActivityOne";
+            this.tbActivityOne.Size = new System.Drawing.Size(396, 24);
+            this.tbActivityOne.TabIndex = 189;
             // 
             // btnSavePTGoals
             // 
@@ -976,12 +976,12 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbActivityTwoScore.ResumeLayout(false);
+            this.gbActivityTwoScore.PerformLayout();
+            this.gbActivtyOneScore.ResumeLayout(false);
+            this.gbActivtyOneScore.PerformLayout();
+            this.gbActivityThreeScore.ResumeLayout(false);
+            this.gbActivityThreeScore.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -1008,7 +1008,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbActivityTwoScore;
         private System.Windows.Forms.RadioButton radioButton23;
         private System.Windows.Forms.RadioButton radioButton24;
         private System.Windows.Forms.RadioButton radioButton25;
@@ -1020,7 +1020,7 @@
         private System.Windows.Forms.RadioButton radioButton31;
         private System.Windows.Forms.RadioButton radioButton32;
         private System.Windows.Forms.RadioButton radioButton33;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbActivtyOneScore;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -1032,7 +1032,7 @@
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbActivityThreeScore;
         private System.Windows.Forms.RadioButton radioButton12;
         private System.Windows.Forms.RadioButton radioButton13;
         private System.Windows.Forms.RadioButton radioButton14;
@@ -1047,9 +1047,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbActivityThree;
+        private System.Windows.Forms.TextBox tbActivityTwo;
+        private System.Windows.Forms.TextBox tbActivityOne;
         private System.Windows.Forms.Button btnSavePTGoals;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;

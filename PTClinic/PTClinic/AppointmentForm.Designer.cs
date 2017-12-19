@@ -377,6 +377,7 @@
             this.btnPrintAppCopy.Text = "Print A Copy";
             this.btnPrintAppCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintAppCopy.UseVisualStyleBackColor = false;
+            this.btnPrintAppCopy.Visible = false;
             this.btnPrintAppCopy.Click += new System.EventHandler(this.btnPrintAppCopy_Click);
             // 
             // panelAppMessage

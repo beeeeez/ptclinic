@@ -20,7 +20,8 @@
 - Get working functionality to Update for patient information
 
 ### Patient Goals
-- DB functionality for goals
+- DB functionality for goals - IN PROGRESS
+- Validation (Allow empty entries - validate score for filled in acitivities) - IN PROGRESS
 
 
 ### Schedule Appointment Form

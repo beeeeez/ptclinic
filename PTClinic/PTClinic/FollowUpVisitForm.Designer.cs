@@ -61,7 +61,6 @@
             this.lblProviderName = new System.Windows.Forms.Label();
             this.lblStudentProvider = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
-            this.cbTheraputicProcedures2 = new System.Windows.Forms.ComboBox();
             this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
             this.lblSupervisedModalities = new System.Windows.Forms.Label();
@@ -88,6 +87,7 @@
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
+            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -447,17 +447,6 @@
             this.lblAssessment.TabIndex = 94;
             this.lblAssessment.Text = "Assessment";
             // 
-            // cbTheraputicProcedures2
-            // 
-            this.cbTheraputicProcedures2.BackColor = System.Drawing.Color.White;
-            this.cbTheraputicProcedures2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTheraputicProcedures2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTheraputicProcedures2.FormattingEnabled = true;
-            this.cbTheraputicProcedures2.Location = new System.Drawing.Point(267, 555);
-            this.cbTheraputicProcedures2.Name = "cbTheraputicProcedures2";
-            this.cbTheraputicProcedures2.Size = new System.Drawing.Size(197, 21);
-            this.cbTheraputicProcedures2.TabIndex = 12;
-            // 
             // cbSupervisedModalities
             // 
             this.cbSupervisedModalities.BackColor = System.Drawing.Color.White;
@@ -652,6 +641,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.tbTheraputicProcedures2);
             this.panel2.Controls.Add(this.lblTheraputicCPT2);
             this.panel2.Controls.Add(this.lblTheraputicCPT);
             this.panel2.Controls.Add(this.lblConstantCPT);
@@ -660,7 +650,6 @@
             this.panel2.Controls.Add(this.lblPN);
             this.panel2.Controls.Add(this.lblPID);
             this.panel2.Controls.Add(this.lblPtnID);
-            this.panel2.Controls.Add(this.cbTheraputicProcedures2);
             this.panel2.Controls.Add(this.tbProviderID);
             this.panel2.Controls.Add(this.lblProviderID);
             this.panel2.Controls.Add(this.tbSubjective);
@@ -728,6 +717,14 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
+            // tbTheraputicProcedures2
+            // 
+            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(267, 555);
+            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
+            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTheraputicProcedures2.TabIndex = 103;
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -776,7 +773,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbStudentProvider;
         private System.Windows.Forms.TextBox tbAssessment;
-        private System.Windows.Forms.ComboBox cbTheraputicProcedures2;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.Label lblStudentProvider;
         private System.Windows.Forms.ComboBox cbSupervisedModalities;
@@ -822,5 +818,6 @@
         private System.Windows.Forms.RadioButton rbDischargeYes;
         private System.Windows.Forms.RadioButton rbReassessmentNo;
         private System.Windows.Forms.RadioButton rbReassessmentYes;
+        private System.Windows.Forms.TextBox tbTheraputicProcedures2;
     }
 }

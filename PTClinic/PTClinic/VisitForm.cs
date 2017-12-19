@@ -45,7 +45,7 @@ namespace PTClinic
             FillEvaluation();
             FillConstantAttendance();
             FillTheraputicProcedures();
-            FillTheraputicProcedures2();
+           
         }
 
         // FillEvaluation Function
@@ -89,16 +89,6 @@ namespace PTClinic
             cbTheraputicProcedures.SelectedIndex = 0;
         }
 
-        // FillTheraputicProcedures2 Function
-        public void FillTheraputicProcedures2()
-        {
-            // Fills Theraputic Procedures2 list drop down list
-            cbTheraputicProcedures2.Items.Insert(0, "Select One"); // Index 0
-            /*
-             * INFORMATION NEEDED ~~~~
-             * */
-            cbTheraputicProcedures2.SelectedIndex = 0;
-        }
 
         // Setting the Icons for Logout and Home Buttons
         private void setButtonIcon()
@@ -136,7 +126,7 @@ namespace PTClinic
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
             newVisit.TheraputicProcedures = cbTheraputicProcedures.Text;
-            newVisit.TheraputicProcedures2 = cbTheraputicProcedures2.Text;
+            newVisit.TheraputicProcedures2 = tbTheraputicProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
@@ -222,7 +212,6 @@ namespace PTClinic
             cbConstantAttendance.SelectedIndex = 0;
             cbEvaluation.SelectedIndex = 0;
             cbTheraputicProcedures.SelectedIndex = 0;
-            cbTheraputicProcedures2.SelectedIndex = 0;
         }
     }
 }

@@ -17,6 +17,9 @@ namespace PTClinic
         private Form Admin;
         private Form PatientProfile;
         PatientInfo patientName;
+        private string activityOneScore;
+        private string activityTwoScore;
+        private string activityThreeScore;
 
         public PatientGoalsForm()
         {
@@ -89,7 +92,8 @@ namespace PTClinic
             if (sender is RadioButton)
             {
                 RadioButton rb = (RadioButton)sender;
-                MessageBox.Show(rb.Text);
+                activityOneScore = rb.Text;
+                //MessageBox.Show(activityOneScore);
             }
         }
 
@@ -98,7 +102,8 @@ namespace PTClinic
             if (sender is RadioButton)
             {
                 RadioButton rb = (RadioButton)sender;
-                MessageBox.Show(rb.Text);
+                activityTwoScore = rb.Text;
+                //MessageBox.Show(rb.Text);
             }
         }
 
@@ -107,7 +112,8 @@ namespace PTClinic
             if (sender is RadioButton)
             {
                 RadioButton rb = (RadioButton)sender;
-                MessageBox.Show(rb.Text);
+                activityThreeScore = rb.Text;
+                //MessageBox.Show(rb.Text);
             }
         }
 
@@ -140,7 +146,29 @@ namespace PTClinic
 
         private void btnSavePTGoals_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button Clciked");
+            // MessageBox.Show("Button Clciked");
+            PatientGoals newPatientGoals = new PatientGoals();
+            newPatientGoals.Activity_One = tbActivityOne.Text;
+            newPatientGoals.Activity_One_Score = activityOneScore;
+            newPatientGoals.Activity_Two = tbActivityTwo.Text;
+            newPatientGoals.Activity_Two_Score = activityTwoScore;
+            newPatientGoals.Activity_Three = tbActivityThree.Text;
+            newPatientGoals.Activity_Three_Score = activityThreeScore;
+            newPatientGoals.Patient_Goals = tbPatientTreatmentGoals.Text;
+
+            /** TODO
+             * 
+             * Add validation to patient goals class to check if activity two and three have
+            * any text in their respected textboxes to validate that the score for each one is also selected
+            * prior to saving to DB
+            * 
+            * 
+            */
+
+
+            //MessageBox.Show("Activity One Score: " + activityOneScore);
+            //MessageBox.Show("Activity Two Score: " + activityTwoScore);
+            //MessageBox.Show("Activity Three Score: " + activityThreeScore);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace PTClinic
             FillSupervisedModalities();
             FillConstantAttendance();
             FillTheraputicProcedures();
-            FillTheraputicProcedures2();
+   
         }
 
         // Fill SupervisedModalities Function
@@ -77,17 +77,6 @@ namespace PTClinic
             cbTheraputicProcedures.Items.Add("97140 Manual Therapy one+regions");
             cbTheraputicProcedures.Items.Add("97530 Theraputic Activities 1-1");
             cbTheraputicProcedures.SelectedIndex = 0;
-        }
-
-        // FillTheraputicProcedures2 Function
-        public void FillTheraputicProcedures2()
-        {
-            // Fills Theraputic Procedures2 list drop down list
-            cbTheraputicProcedures2.Items.Insert(0, "Select One"); // Index 0
-            /*
-             * INFORMATION NEEDED ~~~~
-             * */
-            cbTheraputicProcedures2.SelectedIndex = 0;
         }
 
         // Setting the Icons for Logout and Home Buttons

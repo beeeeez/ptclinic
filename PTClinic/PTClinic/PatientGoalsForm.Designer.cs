@@ -111,7 +111,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 98);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(588, 145);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -206,7 +206,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 227);
+            this.label1.Location = new System.Drawing.Point(54, 257);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(536, 20);
             this.label1.TabIndex = 155;
@@ -217,7 +217,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 261);
+            this.label2.Location = new System.Drawing.Point(54, 291);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 20);
             this.label2.TabIndex = 156;
@@ -229,7 +229,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Yellow;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(223, 261);
+            this.label3.Location = new System.Drawing.Point(223, 291);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 20);
             this.label3.TabIndex = 157;
@@ -241,7 +241,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(552, 261);
+            this.label4.Location = new System.Drawing.Point(552, 291);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(457, 20);
             this.label4.TabIndex = 159;
@@ -252,7 +252,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(510, 261);
+            this.label5.Location = new System.Drawing.Point(510, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 20);
             this.label5.TabIndex = 158;
@@ -263,7 +263,7 @@
             this.lblErrors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblErrors.AutoSize = true;
             this.lblErrors.ForeColor = System.Drawing.Color.Red;
-            this.lblErrors.Location = new System.Drawing.Point(772, 100);
+            this.lblErrors.Location = new System.Drawing.Point(772, 130);
             this.lblErrors.Name = "lblErrors";
             this.lblErrors.Size = new System.Drawing.Size(58, 13);
             this.lblErrors.TabIndex = 178;
@@ -274,7 +274,7 @@
             this.lblPatientName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientName.Location = new System.Drawing.Point(266, 125);
+            this.lblPatientName.Location = new System.Drawing.Point(266, 155);
             this.lblPatientName.Name = "lblPatientName";
             this.lblPatientName.Size = new System.Drawing.Size(35, 18);
             this.lblPatientName.TabIndex = 181;
@@ -303,7 +303,7 @@
             this.panel4.Controls.Add(this.tbPatientTreatmentGoals);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(12, 300);
+            this.panel4.Location = new System.Drawing.Point(12, 330);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1216, 386);
             this.panel4.TabIndex = 183;
@@ -864,6 +864,7 @@
             this.btnSavePTGoals.TabIndex = 188;
             this.btnSavePTGoals.Text = "Save Goals";
             this.btnSavePTGoals.UseVisualStyleBackColor = false;
+            this.btnSavePTGoals.Click += new System.EventHandler(this.btnSavePTGoals_Click);
             // 
             // panel2
             // 
@@ -956,7 +957,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1258, 670);
+            this.ClientSize = new System.Drawing.Size(1258, 730);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblPatientName);
             this.Controls.Add(this.lblErrors);

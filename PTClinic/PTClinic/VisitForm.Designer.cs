@@ -37,7 +37,6 @@
             this.tbPTGoals = new System.Windows.Forms.TextBox();
             this.tbObjective = new System.Windows.Forms.TextBox();
             this.tbDiagnosis = new System.Windows.Forms.TextBox();
-            this.cbTheraputicProcedures2 = new System.Windows.Forms.ComboBox();
             this.tbMedicalHistory = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddVisit = new System.Windows.Forms.Button();
@@ -81,6 +80,7 @@
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -170,17 +170,6 @@
             this.tbDiagnosis.Size = new System.Drawing.Size(415, 44);
             this.tbDiagnosis.TabIndex = 2;
             this.tbDiagnosis.Text = "Diagnosis";
-            // 
-            // cbTheraputicProcedures2
-            // 
-            this.cbTheraputicProcedures2.BackColor = System.Drawing.Color.White;
-            this.cbTheraputicProcedures2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTheraputicProcedures2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTheraputicProcedures2.FormattingEnabled = true;
-            this.cbTheraputicProcedures2.Location = new System.Drawing.Point(289, 146);
-            this.cbTheraputicProcedures2.Name = "cbTheraputicProcedures2";
-            this.cbTheraputicProcedures2.Size = new System.Drawing.Size(185, 21);
-            this.cbTheraputicProcedures2.TabIndex = 12;
             // 
             // tbMedicalHistory
             // 
@@ -578,6 +567,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.tbTheraputicProcedures2);
             this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.lblConstantCPT);
             this.panel4.Controls.Add(this.lblTheraputicCPT2);
@@ -585,7 +575,6 @@
             this.panel4.Controls.Add(this.tbFollowUpTreatment);
             this.panel4.Controls.Add(this.tbPTDiagnosis);
             this.panel4.Controls.Add(this.tbFunctionalLimitations);
-            this.panel4.Controls.Add(this.cbTheraputicProcedures2);
             this.panel4.Controls.Add(this.lblCGPhone2);
             this.panel4.Controls.Add(this.lblPhysicalTherapyDiagnosis);
             this.panel4.Controls.Add(this.cbEvaluation);
@@ -657,6 +646,14 @@
             this.tbPTDiagnosis.TabIndex = 14;
             this.tbPTDiagnosis.Text = "Physical Therapy Diagnosis";
             // 
+            // tbTheraputicProcedures2
+            // 
+            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(289, 146);
+            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
+            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTheraputicProcedures2.TabIndex = 99;
+            // 
             // VisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,7 +694,6 @@
         private System.Windows.Forms.TextBox tbPTGoals;
         private System.Windows.Forms.TextBox tbObjective;
         private System.Windows.Forms.TextBox tbDiagnosis;
-        private System.Windows.Forms.ComboBox cbTheraputicProcedures2;
         private System.Windows.Forms.TextBox tbMedicalHistory;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAddVisit;
@@ -741,5 +737,6 @@
         private System.Windows.Forms.TextBox tbChiefComplaint;
         private System.Windows.Forms.Label lblChiefComplaint;
         private System.Windows.Forms.Button btnBackToProfile;
+        private System.Windows.Forms.TextBox tbTheraputicProcedures2;
     }
 }

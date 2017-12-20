@@ -82,12 +82,12 @@
             this.lblPID = new System.Windows.Forms.Label();
             this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
-            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -492,11 +492,11 @@
             // lblInsurer
             // 
             this.lblInsurer.AutoSize = true;
-            this.lblInsurer.Location = new System.Drawing.Point(53, 558);
+            this.lblInsurer.Location = new System.Drawing.Point(22, 558);
             this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(139, 13);
+            this.lblInsurer.Size = new System.Drawing.Size(173, 13);
             this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Second part of therapeutic?";
+            this.lblInsurer.Text = "Unselected Therapeutic Procedure";
             // 
             // lblConstantAttendance
             // 
@@ -672,6 +672,14 @@
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 98;
             // 
+            // tbTheraputicProcedures2
+            // 
+            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(267, 555);
+            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
+            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTheraputicProcedures2.TabIndex = 103;
+            // 
             // lblTheraputicCPT2
             // 
             this.lblTheraputicCPT2.AutoSize = true;
@@ -716,14 +724,6 @@
             this.lblPatientName.Size = new System.Drawing.Size(86, 13);
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
-            // 
-            // tbTheraputicProcedures2
-            // 
-            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(267, 555);
-            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
-            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
-            this.tbTheraputicProcedures2.TabIndex = 103;
             // 
             // FollowUpVisitForm
             // 

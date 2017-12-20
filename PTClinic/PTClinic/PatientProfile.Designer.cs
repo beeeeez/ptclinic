@@ -107,7 +107,7 @@
             this.btnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackHome.ForeColor = System.Drawing.Color.White;
-            this.btnBackHome.Location = new System.Drawing.Point(998, 20);
+            this.btnBackHome.Location = new System.Drawing.Point(1061, 20);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(107, 34);
             this.btnBackHome.TabIndex = 75;
@@ -123,7 +123,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(1134, 20);
+            this.btnLogOut.Location = new System.Drawing.Point(1202, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(107, 34);
             this.btnLogOut.TabIndex = 75;

@@ -74,13 +74,13 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
-            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -183,7 +183,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(948, 677);
@@ -196,7 +196,7 @@
             // 
             // btnAddVisit
             // 
-            this.btnAddVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddVisit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddVisit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -286,11 +286,11 @@
             // lblInsurer
             // 
             this.lblInsurer.AutoSize = true;
-            this.lblInsurer.Location = new System.Drawing.Point(58, 149);
+            this.lblInsurer.Location = new System.Drawing.Point(32, 149);
             this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(139, 13);
+            this.lblInsurer.Size = new System.Drawing.Size(173, 13);
             this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Second part of therapeutic?";
+            this.lblInsurer.Text = "Unselected Therapeutic Procedure";
             // 
             // panel1
             // 
@@ -376,7 +376,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tbChiefComplaint);
             this.panel2.Controls.Add(this.lblChiefComplaint);
@@ -532,7 +532,7 @@
             // 
             // lblFeedback
             // 
-            this.lblFeedback.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFeedback.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
@@ -554,7 +554,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
@@ -565,7 +565,7 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.tbTheraputicProcedures2);
             this.panel4.Controls.Add(this.lblTheraputicCPT);
@@ -589,6 +589,14 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 352);
             this.panel4.TabIndex = 92;
+            // 
+            // tbTheraputicProcedures2
+            // 
+            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(289, 146);
+            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
+            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTheraputicProcedures2.TabIndex = 99;
             // 
             // lblTheraputicCPT
             // 
@@ -645,14 +653,6 @@
             this.tbPTDiagnosis.Size = new System.Drawing.Size(353, 34);
             this.tbPTDiagnosis.TabIndex = 14;
             this.tbPTDiagnosis.Text = "Physical Therapy Diagnosis";
-            // 
-            // tbTheraputicProcedures2
-            // 
-            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(289, 146);
-            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
-            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
-            this.tbTheraputicProcedures2.TabIndex = 99;
             // 
             // VisitForm
             // 

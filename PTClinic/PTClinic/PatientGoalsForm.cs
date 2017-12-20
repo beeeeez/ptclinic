@@ -20,6 +20,8 @@ namespace PTClinic
         private string activityOneScore;
         private string activityTwoScore;
         private string activityThreeScore;
+        private int pID;
+        System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         public PatientGoalsForm()
         {
@@ -30,6 +32,9 @@ namespace PTClinic
         {
             InitializeComponent();
             setButtonIcon();
+            myTimer.Tick += new System.EventHandler(myTimer_Tick);
+
+            pID = patientID;
 
             this.Admin = Admin;
             this.Login = Login;
@@ -47,26 +52,33 @@ namespace PTClinic
                 btnBackToProfile.Visible = true;
             }
 
+            PatientGoals goals = new PatientGoals();
 
-            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-            {
-                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
-                using (var dataReaderPatient = patientName.FindOnePatient(connection, patientID))
-                {
-                    while (dataReaderPatient.Read())
-                    {
-                        // Take the appropriate fields from the datareader
-                        // and put them in proper labels
+            //using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            //{
+            //    // Gather info about this patient via the patient ID (patientID) passed from the profile
+            //    using (var dataReaderGoals = goals.FindPatientGoals(connection, patientID))
+            //    {
+            //        if (dataReaderGoals.HasRows)
+            //        {
+            //            // read data ? with else to do something if there are no rows?
+            //        }
 
-                        patientName.Fname = dataReaderPatient["patient_first_name"].ToString();
-                        patientName.Lname = dataReaderPatient["patient_last_name"].ToString();
+            //        while (dataReaderGoals.Read())
+            //        {
+            //            // Take the appropriate fields from the datareader
+            //            // and put them in proper labels
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
+            //            goals.Activity_One = dataReaderGoals[""].ToString();
 
-
-                        lblPatientName.Text = "For " + patientName.Fname + " " + patientName.Lname;
-
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
 
 
             for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
@@ -84,6 +96,12 @@ namespace PTClinic
                 RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[i];
                 rb.CheckedChanged += new System.EventHandler(gbActivityThreeScore_CheckChanged);
             }
+        }
+
+        private void myTimer_Tick(object sender, System.EventArgs e)
+        {
+            panelDBMessage.Visible = false;
+            myTimer.Stop();
         }
 
 
@@ -144,10 +162,36 @@ namespace PTClinic
             Login.Show();
         }
 
+        private void clearFields()
+        {
+            tbActivityOne.Clear();
+            tbActivityTwo.Clear();
+            tbActivityThree.Clear();
+            tbPatientTreatmentGoals.Clear();
+
+
+            for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
+            {
+                RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
+                rb.Checked = false;
+            }
+            for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
+            {
+                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
+                rb.Checked = false;
+            }
+            for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
+            {
+                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
+                rb.Checked = false;
+            }
+        }
+
         private void btnSavePTGoals_Click(object sender, EventArgs e)
         {
             // MessageBox.Show("Button Clciked");
             PatientGoals newPatientGoals = new PatientGoals();
+            newPatientGoals.PatientID = pID;
             newPatientGoals.Activity_One = tbActivityOne.Text;
             newPatientGoals.Activity_One_Score = activityOneScore;
             newPatientGoals.Activity_Two = tbActivityTwo.Text;
@@ -156,19 +200,46 @@ namespace PTClinic
             newPatientGoals.Activity_Three_Score = activityThreeScore;
             newPatientGoals.Patient_Goals = tbPatientTreatmentGoals.Text;
 
-            /** TODO
-             * 
-             * Add validation to patient goals class to check if activity two and three have
-            * any text in their respected textboxes to validate that the score for each one is also selected
-            * prior to saving to DB
-            * 
-            * 
-            */
+            // If an error in the information occurs
+            if (newPatientGoals.Feedback.Contains("Error:"))
+            {
+                // Display the error message inside the form feedback label
+                lblFeedback.Text = newPatientGoals.Feedback;
+            }
+            else // If there are no errors, continue to Caregiver Form
+            {
+                lblFeedback.Text = "";
 
+                using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                {
+                    int dbSuccess = 0;
 
-            //MessageBox.Show("Activity One Score: " + activityOneScore);
-            //MessageBox.Show("Activity Two Score: " + activityTwoScore);
-            //MessageBox.Show("Activity Three Score: " + activityThreeScore);
+                    dbSuccess = int.Parse(newPatientGoals.AddRecord(connection));
+
+                    if (dbSuccess == 1)
+                    {
+                        lblFeedback.Text = "Patient Goals Saved";
+                        myTimer.Interval = 5000;
+                        myTimer.Start();
+                        panelDBMessage.Visible = true;
+                        lblDBFeedback.Text = "Patient Goals Saved!";
+                        // Clear all feilds
+                        clearFields();
+                    }
+                    else
+                    {
+                        lblFeedback.Text = "Oops! There was a problem saving Patient Goals\n Try again";
+                        myTimer.Interval = 5000;
+                        myTimer.Start();
+                        panelDBMessage.BackColor = Color.Red;
+                        panelDBMessage.Visible = true;
+                        lblDBFeedback.Text = "Patient Goals NOT Saved!";
+                    }
+
+                } // end using()
+
+            }
+
         }
     }
 }

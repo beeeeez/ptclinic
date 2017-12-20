@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblErrors = new System.Windows.Forms.Label();
+            this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -97,6 +97,8 @@
             this.tbPatientTreatmentGoals = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panelDBMessage = new System.Windows.Forms.Panel();
+            this.lblDBFeedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -105,6 +107,7 @@
             this.gbActivtyOneScore.SuspendLayout();
             this.gbActivityThreeScore.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelDBMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -258,16 +261,17 @@
             this.label5.TabIndex = 158;
             this.label5.Text = "and";
             // 
-            // lblErrors
+            // lblFeedback
             // 
-            this.lblErrors.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrors.AutoSize = true;
-            this.lblErrors.ForeColor = System.Drawing.Color.Red;
-            this.lblErrors.Location = new System.Drawing.Point(772, 130);
-            this.lblErrors.Name = "lblErrors";
-            this.lblErrors.Size = new System.Drawing.Size(58, 13);
-            this.lblErrors.TabIndex = 178;
-            this.lblErrors.Text = "Error Label";
+            this.lblFeedback.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFeedback.AutoSize = true;
+            this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedback.ForeColor = System.Drawing.Color.Red;
+            this.lblFeedback.Location = new System.Drawing.Point(688, 155);
+            this.lblFeedback.Name = "lblFeedback";
+            this.lblFeedback.Size = new System.Drawing.Size(81, 18);
+            this.lblFeedback.TabIndex = 178;
+            this.lblFeedback.Text = "Error Label";
             // 
             // lblPatientName
             // 
@@ -952,6 +956,28 @@
             this.label6.TabIndex = 181;
             this.label6.Text = "How would you score each activity?";
             // 
+            // panelDBMessage
+            // 
+            this.panelDBMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDBMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelDBMessage.Controls.Add(this.lblDBFeedback);
+            this.panelDBMessage.Location = new System.Drawing.Point(755, 79);
+            this.panelDBMessage.Name = "panelDBMessage";
+            this.panelDBMessage.Size = new System.Drawing.Size(355, 61);
+            this.panelDBMessage.TabIndex = 184;
+            this.panelDBMessage.Visible = false;
+            // 
+            // lblDBFeedback
+            // 
+            this.lblDBFeedback.AutoSize = true;
+            this.lblDBFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDBFeedback.ForeColor = System.Drawing.Color.White;
+            this.lblDBFeedback.Location = new System.Drawing.Point(86, 20);
+            this.lblDBFeedback.Name = "lblDBFeedback";
+            this.lblDBFeedback.Size = new System.Drawing.Size(158, 20);
+            this.lblDBFeedback.TabIndex = 0;
+            this.lblDBFeedback.Text = "Patient Goals Saved!";
+            // 
             // PatientGoalsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -959,9 +985,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1258, 730);
+            this.Controls.Add(this.panelDBMessage);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblPatientName);
-            this.Controls.Add(this.lblErrors);
+            this.Controls.Add(this.lblFeedback);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -986,6 +1013,8 @@
             this.gbActivityThreeScore.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelDBMessage.ResumeLayout(false);
+            this.panelDBMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1005,7 +1034,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label17;
@@ -1061,5 +1090,7 @@
         private System.Windows.Forms.TextBox tbPatientTreatmentGoals;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelDBMessage;
+        private System.Windows.Forms.Label lblDBFeedback;
     }
 }

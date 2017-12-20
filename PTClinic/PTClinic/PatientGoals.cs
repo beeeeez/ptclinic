@@ -38,7 +38,7 @@ namespace PTClinic
             set { patientID = value; }
         }
 
-        // Public variable specifically for activiy one
+        // Public variable for activiy one
         public string Activity_One
         {
             get { return activity_one; }
@@ -46,7 +46,7 @@ namespace PTClinic
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Enter an Activity One Description\n";
+                    feedback += "Error: Enter Activity-1 Description\n";
                 }
                 else
                 {
@@ -55,15 +55,15 @@ namespace PTClinic
             }
         }
 
-        // Public variable specifically for activiy one score
+        // Public variable for activiy one score
         public string Activity_One_Score
         {
             get { return activity_one_score; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(Activity_One) && string.IsNullOrEmpty(value) || string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Check a score for Activity One\n";
+                    feedback += "Error: Check A Score For Activity-1\n";
                 }
                 else
                 {
@@ -73,32 +73,27 @@ namespace PTClinic
         }
 
 
-        // Public variable specifically for activiy two
+        // Public variable for activiy two
         public string Activity_Two
         {
             get { return activity_two; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Activity Two Description\n";
-                }
-                else
-                {
+  
                     activity_two = value;
-                }
+                
             }
         }
 
-        // Public variable specifically for activiy two score
+        // Public variable for activiy two score
         public string Activity_Two_Score
         {
             get { return activity_two_score; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(Activity_Two) && string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Check a score for Activity Two\n";
+                    feedback += "Error: Check A Score For Activity-2\n";
                 }
                 else
                 {
@@ -108,32 +103,26 @@ namespace PTClinic
         }
 
 
-        // Public variable specifically for activiy three
+        // Public variable for activiy three
         public string Activity_Three
         {
             get { return activity_three; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Activity One Description\n";
-                }
-                else
-                {
                     activity_three = value;
-                }
+                
             }
         }
 
-        // Public variable specifically for activiy three score
+        // Public variable for activiy three score
         public string Activity_Three_Score
         {
             get { return activity_three_score; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(Activity_Three) && string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Check a score for Activity Three\n";
+                    feedback += "Error: Check A Score For Activity-3\n";
                 }
                 else
                 {
@@ -143,7 +132,7 @@ namespace PTClinic
         }
 
 
-        // Public variable specifically for patients goals for treatment
+        // Public variable for patients goals for treatment
         public string Patient_Goals
         {
             get { return patient_goals; }
@@ -151,7 +140,7 @@ namespace PTClinic
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Enter an patients goals from treatment\n";
+                    feedback += "Error: Enter the patients goal for receiving treatment\n";
                 }
                 else
                 {
@@ -193,7 +182,7 @@ namespace PTClinic
         }
 
         // Adding a record
-        public virtual string AddRecord()
+        public virtual string AddRecord(OleDbConnection conn)
         {
             string strFeedback = "";
 
@@ -202,8 +191,8 @@ namespace PTClinic
             string strSQL = "INSERT INTO Patient_Goals (patient_id, activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_goals)" +
                 " VALUES (@PatientID, @ActivityOne, @Activity1Score, @Activity2, @Activity2Score, @Activity3, @Activity3Score, @GoalDate, @PatientGoals);";
 
-            // creating database connection 
-            OleDbConnection conn = new OleDbConnection();
+            //// creating database connection 
+            //OleDbConnection conn = new OleDbConnection();
             // Create the who what and where of the DB
             string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
             // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website

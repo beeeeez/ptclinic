@@ -52,6 +52,24 @@ namespace PTClinic
                 btnBackToProfile.Visible = true;
             }
 
+
+            /** Event Handlers For Group Boxes **/
+            for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
+            {
+                RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
+                rb.CheckedChanged += new System.EventHandler(gbActivityOneScore_CheckChanged);
+            }
+            for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
+            {
+                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
+                rb.CheckedChanged += new System.EventHandler(gbActivityTwoScore_CheckChanged);
+            }
+            for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
+            {
+                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
+                rb.CheckedChanged += new System.EventHandler(gbActivityThreeScore_CheckChanged);
+            }
+
             PatientGoals goals = new PatientGoals();
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
@@ -78,10 +96,10 @@ namespace PTClinic
                 // Gather info about this patient via the patient ID (patientID) passed from the profile
                 using (var dataReaderGoals = goals.FindPatientGoals(connection, patientID))
                 {
-                    if (dataReaderGoals.HasRows)
-                    {
-                        // read data ? with else to do something if there are no rows?
-                    }
+                    //if (dataReaderGoals.HasRows)
+                    //{
+                    //    // read data ? with else to do something if there are no rows?
+                    //}
 
                     while (dataReaderGoals.Read())
                     {
@@ -133,22 +151,6 @@ namespace PTClinic
 
             } // end using()
 
-            /** Event Handlers For Group Boxes **/
-            for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
-            {
-                RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
-                rb.CheckedChanged += new System.EventHandler(gbActivityOneScore_CheckChanged);
-            }
-            for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
-            {
-                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
-                rb.CheckedChanged += new System.EventHandler(gbActivityTwoScore_CheckChanged);
-            }
-            for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
-            {
-                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
-                rb.CheckedChanged += new System.EventHandler(gbActivityThreeScore_CheckChanged);
-            }
         }
 
         private void myTimer_Tick(object sender, System.EventArgs e)
@@ -164,7 +166,6 @@ namespace PTClinic
             {
                 RadioButton rb = (RadioButton)sender;
                 activityOneScore = rb.Text;
-                //MessageBox.Show(activityOneScore);
             }
         }
 
@@ -174,7 +175,6 @@ namespace PTClinic
             {
                 RadioButton rb = (RadioButton)sender;
                 activityTwoScore = rb.Text;
-                //MessageBox.Show(rb.Text);
             }
         }
 
@@ -184,7 +184,6 @@ namespace PTClinic
             {
                 RadioButton rb = (RadioButton)sender;
                 activityThreeScore = rb.Text;
-                //MessageBox.Show(rb.Text);
             }
         }
 
@@ -242,19 +241,28 @@ namespace PTClinic
 
         private void btnSavePTGoals_Click(object sender, EventArgs e)
         {
-            // MessageBox.Show("Button Clciked");
             PatientGoals newPatientGoals = new PatientGoals();
             newPatientGoals.PatientID = pID;
             newPatientGoals.Activity_One = tbActivityOne.Text;
             newPatientGoals.Activity_One_Score = activityOneScore;
-            if (string.IsNullOrEmpty(tbActivityTwo.Text))
-            {
-
-            }
             newPatientGoals.Activity_Two = tbActivityTwo.Text;
-            newPatientGoals.Activity_Two_Score = activityTwoScore;
+            if (string.IsNullOrEmpty(activityTwoScore))
+            {
+                newPatientGoals.Activity_Two_Score = "";
+            }
+            else
+            {
+                newPatientGoals.Activity_Two_Score = activityTwoScore;
+            }
             newPatientGoals.Activity_Three = tbActivityThree.Text;
-            newPatientGoals.Activity_Three_Score = activityThreeScore;
+            if (string.IsNullOrEmpty(activityThreeScore))
+            {
+                newPatientGoals.Activity_Three_Score = "";
+            }
+            else
+            {
+                newPatientGoals.Activity_Three_Score = activityThreeScore;
+            }
             newPatientGoals.Patient_Goals = tbPatientTreatmentGoals.Text;
 
             // If an error in the information occurs
@@ -275,11 +283,10 @@ namespace PTClinic
 
                     if (dbSuccess == 1)
                     {
-                        lblFeedback.Text = "Patient Goals Saved";
                         myTimer.Interval = 5000;
                         myTimer.Start();
                         panelDBMessage.Visible = true;
-                        lblDBFeedback.Text = "Patient Goals Saved!";
+                        lblDBFeedback.Text = "Patient Goals Saved";
                         // Clear all feilds
                         clearFields();
                     }
@@ -290,7 +297,8 @@ namespace PTClinic
                         myTimer.Start();
                         panelDBMessage.BackColor = Color.Red;
                         panelDBMessage.Visible = true;
-                        lblDBFeedback.Text = "Patient Goals NOT Saved!";
+                        lblDBFeedback.Text = "Patient Goals NOT Saved";
+
                     }
 
                 } // end using()

@@ -140,7 +140,7 @@ namespace PTClinic
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    feedback += "Error: Enter the patients goal for receiving treatment\n";
+                    feedback += "Error: Enter The Patients Goal For Receiving Treatment\n";
                 }
                 else
                 {

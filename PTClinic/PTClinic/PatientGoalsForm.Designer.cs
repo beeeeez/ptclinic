@@ -269,9 +269,8 @@
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
             this.lblFeedback.Location = new System.Drawing.Point(688, 155);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(81, 18);
+            this.lblFeedback.Size = new System.Drawing.Size(0, 18);
             this.lblFeedback.TabIndex = 178;
-            this.lblFeedback.Text = "Error Label";
             // 
             // lblPatientName
             // 

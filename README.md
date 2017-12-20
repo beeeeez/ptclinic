@@ -3,26 +3,25 @@
 ## Project Todos
 
 ### Intial Visit Form
-- Adds to the Patient Info table which visit it is -- IN PROGRESS
+- Adds to the Patient Info table which visit it is -- **IN PROGRESS**
 - Set form window to scrollable for smaller size windows
 
 ### Follow Up Visit Form
-- Adds to the Patient Info table which visit it is  -- IN PROGRESS
+- Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
 - Set form window to scrollable for smaller size windows
-- Follow Up Visit Class - Constructor + DB functionality  -- IN PROGRESS
+- Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS**
 
 ### Patient Profile Form
 - Pull Diagnosis from Initial Visit DB Table - populate field
-- Pull Patient Goals from Patient_Goals Table - populate field
+- Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
 - Print patient info capability
+- Set Patient Visit button to go to correct Form based off patient status 
 
 ### Patient Information Form
 - Get working functionality to Update for patient information
 
 ### Patient Goals
-- DB functionality for goals - IN PROGRESS
-- Validation (Allow empty entries - validate score for filled in acitivities) - IN PROGRESS
-
+- Allow empty entries to DB - **IN PROGRESS**
 
 ### Schedule Appointment Form
 - Print Appointment Details capability
@@ -31,7 +30,6 @@
 ### Finalization TODO's
 - Check tab indexes
 - Check validation
-- Add print ability works
 - [x] Add Follow Up Table to Database
 - Add Visit Type to Visit Form
 - Add Visit Type to Visit Table in Database

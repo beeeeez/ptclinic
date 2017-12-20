@@ -19,6 +19,7 @@
 
 ### Patient Information Form
 - Get working functionality to Update for patient information -  **IN PROGRESS**
+- Add patient status when new patient is added 
 
 ### Patient Goals
 

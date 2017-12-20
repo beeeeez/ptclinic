@@ -68,6 +68,9 @@ namespace PTClinic
             // Create variable for EmergencyContact
             EmergencyContact tempEC = new EmergencyContact();
 
+            // Create variable for VisitInfo
+            VisitInfo tempVisit = new VisitInfo();
+
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
@@ -150,6 +153,18 @@ namespace PTClinic
                     }
                 } // End of --  using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
 
+                // Gather info about this patient's caregiver via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderVisitInfo = tempVisit.FindOnePatientVisit(connection, intPID))
+                {
+                    while (dataReaderVisitInfo.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        // Patient Diagnosis
+                        tbDiagnosis.Text = dataReaderVisitInfo["diagnosis"].ToString();
+                    }
+                } // End of -- using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
           
         }
@@ -163,20 +178,31 @@ namespace PTClinic
             btnUpdateInformation.Image = Image.FromFile("..\\..\\Resources\\ic_mode_edit_black_24dp_1x.png");
             btnPatientGoals.Image = Image.FromFile("..\\..\\Resources\\ic_trending_up_black_24dp_1x.png");
             btnPatientVisit.Image = Image.FromFile("..\\..\\Resources\\ic_favorite_black_24dp_1x.png");
+            btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
+        // Back to Home Button
         private void btnBackHome_Click(object sender, EventArgs e)
         {
             this.Hide();
             Admin.Show();
         }
 
+        // Logout Button
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login.Show();
         }
 
+        // Back to Search Button
+        private void btnBackToSearch_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Search.Show();
+        }
+
+        // Schedule Appointment Button
         private void btnScheduleAppointment_Click(object sender, EventArgs e)
         {
            
@@ -186,6 +212,7 @@ namespace PTClinic
 
         }
 
+        // Patient Visit Button
         private void btnPatientVisit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -193,6 +220,7 @@ namespace PTClinic
             temp.Show();
         }
 
+        // Patient Goals Button
         private void btnPatientGoals_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -201,6 +229,7 @@ namespace PTClinic
             temp.Show();
         }
 
+        // Update Info  Button
         private void btnUpdateInformation_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Patient ID being passed back is " + pID);

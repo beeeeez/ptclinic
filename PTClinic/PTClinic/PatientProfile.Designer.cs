@@ -73,10 +73,11 @@
             this.lblECFullname = new System.Windows.Forms.Label();
             this.lblECPhone = new System.Windows.Forms.Label();
             this.lblECRelationship = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDiagnosis = new System.Windows.Forms.TextBox();
+            this.tbPTGoals = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnBackToSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,6 +91,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.btnBackToSearch);
             this.panel1.Controls.Add(this.btnBackHome);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -580,25 +582,25 @@
             this.lblECRelationship.TabIndex = 121;
             this.lblECRelationship.Text = "EC  Relationship";
             // 
-            // textBox1
+            // tbDiagnosis
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(306, 555);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(438, 99);
-            this.textBox1.TabIndex = 122;
+            this.tbDiagnosis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDiagnosis.Location = new System.Drawing.Point(306, 555);
+            this.tbDiagnosis.Multiline = true;
+            this.tbDiagnosis.Name = "tbDiagnosis";
+            this.tbDiagnosis.ReadOnly = true;
+            this.tbDiagnosis.Size = new System.Drawing.Size(438, 99);
+            this.tbDiagnosis.TabIndex = 122;
             // 
-            // textBox2
+            // tbPTGoals
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(803, 555);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(438, 99);
-            this.textBox2.TabIndex = 123;
+            this.tbPTGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbPTGoals.Location = new System.Drawing.Point(803, 555);
+            this.tbPTGoals.Multiline = true;
+            this.tbPTGoals.Name = "tbPTGoals";
+            this.tbPTGoals.ReadOnly = true;
+            this.tbPTGoals.Size = new System.Drawing.Size(438, 99);
+            this.tbPTGoals.TabIndex = 123;
             // 
             // label16
             // 
@@ -622,6 +624,22 @@
             this.label17.TabIndex = 125;
             this.label17.Text = "PT Goals";
             // 
+            // btnBackToSearch
+            // 
+            this.btnBackToSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToSearch.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToSearch.ForeColor = System.Drawing.Color.White;
+            this.btnBackToSearch.Location = new System.Drawing.Point(864, 20);
+            this.btnBackToSearch.Name = "btnBackToSearch";
+            this.btnBackToSearch.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToSearch.TabIndex = 77;
+            this.btnBackToSearch.Text = "Back To Search";
+            this.btnBackToSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToSearch.UseVisualStyleBackColor = false;
+            this.btnBackToSearch.Click += new System.EventHandler(this.btnBackToSearch_Click);
+            // 
             // PatientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,8 +649,8 @@
             this.ClientSize = new System.Drawing.Size(1337, 686);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbPTGoals);
+            this.Controls.Add(this.tbDiagnosis);
             this.Controls.Add(this.lblECRelationship);
             this.Controls.Add(this.lblECPhone);
             this.Controls.Add(this.lblECFullname);
@@ -730,10 +748,11 @@
         private System.Windows.Forms.Label lblECFullname;
         private System.Windows.Forms.Label lblECPhone;
         private System.Windows.Forms.Label lblECRelationship;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbDiagnosis;
+        private System.Windows.Forms.TextBox tbPTGoals;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnPatientGoals;
+        private System.Windows.Forms.Button btnBackToSearch;
     }
 }

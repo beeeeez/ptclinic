@@ -3,13 +3,13 @@
 ## Project Todos
 
 ### Intial Visit Form
-- Adds to the Patient Info table which visit it is
+- Adds to the Patient Info table which visit it is -- IN PROGRESS
 - Set form window to scrollable for smaller size windows
 
 ### Follow Up Visit Form
-- Adds to the Patient Info table which visit it is
+- Adds to the Patient Info table which visit it is  -- IN PROGRESS
 - Set form window to scrollable for smaller size windows
-- Follow Up Visit Class - Constructor + DB functionality
+- Follow Up Visit Class - Constructor + DB functionality  -- IN PROGRESS
 
 ### Patient Profile Form
 - Pull Diagnosis from Initial Visit DB Table - populate field
@@ -32,7 +32,7 @@
 - Check tab indexes
 - Check validation
 - Add print ability works
-- Add Follow Up Table to Database
+- [x] Add Follow Up Table to Database
 - Add Visit Type to Visit Form
 - Add Visit Type to Visit Table in Database
 - Add Follow Up Visit Button to Patient Profile

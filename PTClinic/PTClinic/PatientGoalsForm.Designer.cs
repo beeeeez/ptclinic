@@ -961,7 +961,7 @@
             this.panelDBMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDBMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelDBMessage.Controls.Add(this.lblDBFeedback);
-            this.panelDBMessage.Location = new System.Drawing.Point(755, 79);
+            this.panelDBMessage.Location = new System.Drawing.Point(755, 91);
             this.panelDBMessage.Name = "panelDBMessage";
             this.panelDBMessage.Size = new System.Drawing.Size(355, 61);
             this.panelDBMessage.TabIndex = 184;

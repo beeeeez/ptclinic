@@ -237,7 +237,7 @@ namespace PTClinic
         } // End of AddRecord
 
 
-        // Find one patient goals method
+        // Find one patient goals method for most recently updated goals
         // Returns a data reader filled with all the data of one patient
         public OleDbDataReader FindPatientGoals(OleDbConnection conn, int patientID)
         {
@@ -248,7 +248,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_goals FROM Patient_Goals WHERE patient_id = @PID;";
+            string strSQL = "SELECT activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_goals FROM Patient_Goals WHERE patient_id = @PID AND goal_id = (SELECT MAX(goal_id) FROM Patient_Goals)";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

@@ -54,46 +54,99 @@ namespace PTClinic
 
             PatientGoals goals = new PatientGoals();
 
-            //using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-            //{
-            //    // Gather info about this patient via the patient ID (patientID) passed from the profile
-            //    using (var dataReaderGoals = goals.FindPatientGoals(connection, patientID))
-            //    {
-            //        if (dataReaderGoals.HasRows)
-            //        {
-            //            // read data ? with else to do something if there are no rows?
-            //        }
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
 
-            //        while (dataReaderGoals.Read())
-            //        {
-            //            // Take the appropriate fields from the datareader
-            //            // and put them in proper labels
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
-            //            goals.Activity_One = dataReaderGoals[""].ToString();
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = patientName.FindOnePatient(connection, patientID))
+                {
+                    while (dataReaderPatient.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
 
-            //        }
-            //    }
-            //}
+                        patientName.Fname = dataReaderPatient["patient_first_name"].ToString();
+                        patientName.Lname = dataReaderPatient["patient_last_name"].ToString();
 
 
+                        lblPatientName.Text = "For " + patientName.Fname + " " + patientName.Lname;
+
+                    }
+                }
+
+
+                // Gather info about this patient via the patient ID (patientID) passed from the profile
+                using (var dataReaderGoals = goals.FindPatientGoals(connection, patientID))
+                {
+                    if (dataReaderGoals.HasRows)
+                    {
+                        // read data ? with else to do something if there are no rows?
+                    }
+
+                    while (dataReaderGoals.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        goals.Activity_One = dataReaderGoals["activity1"].ToString();
+                        goals.Activity_One_Score = dataReaderGoals["activity1_score"].ToString();
+                        goals.Activity_Two = dataReaderGoals["activity2"].ToString();
+                        goals.Activity_Two_Score = dataReaderGoals["activity2_score"].ToString();
+                        goals.Activity_Three = dataReaderGoals["activity3"].ToString();
+                        goals.Activity_Three_Score = dataReaderGoals["activity3_score"].ToString();
+                        goals.Patient_Goals = dataReaderGoals["patient_goals"].ToString();
+
+                        tbActivityOne.Text = goals.Activity_One;
+                        tbActivityTwo.Text = goals.Activity_Two;
+                        tbActivityThree.Text = goals.Activity_Three;
+
+                        // Loop through group box radio buttons to check if rb value equals whats returning from Datareader column
+                        for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
+                        {
+                            RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
+                            if (rb.Text == goals.Activity_One_Score)
+                            {
+                                rb.Checked = true;
+                            }
+                        }
+                        for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
+                        {
+                            RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
+                            if (rb.Text == goals.Activity_Two_Score)
+                            {
+                                rb.Checked = true;
+                            }
+                        }
+                        for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
+                        {
+                            RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
+                            if (rb.Text == goals.Activity_Three_Score)
+                            {
+                                rb.Checked = true;
+                            }
+                        }
+
+                        tbPatientTreatmentGoals.Text = goals.Patient_Goals;
+                       // MessageBox.Show("Activity One Score: " + goals.Activity_One_Score + " Activity Two Score: " + goals.Activity_Two_Score + " Activity Three Score: " + goals.Activity_Three_Score);
+
+                    }
+                }
+
+            } // end using()
+
+            /** Event Handlers For Group Boxes **/
             for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
             {
                 RadioButton rb = (RadioButton)gbActivtyOneScore.Controls[i];
                 rb.CheckedChanged += new System.EventHandler(gbActivityOneScore_CheckChanged);
             }
-            for (int i = 0; i < gbActivityTwoScore.Controls.Count; i++)
+            for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
             {
-                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[i];
+                RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
                 rb.CheckedChanged += new System.EventHandler(gbActivityTwoScore_CheckChanged);
             }
-            for (int i = 0; i < gbActivityThreeScore.Controls.Count; i++)
+            for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
             {
-                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[i];
+                RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
                 rb.CheckedChanged += new System.EventHandler(gbActivityThreeScore_CheckChanged);
             }
         }
@@ -194,6 +247,10 @@ namespace PTClinic
             newPatientGoals.PatientID = pID;
             newPatientGoals.Activity_One = tbActivityOne.Text;
             newPatientGoals.Activity_One_Score = activityOneScore;
+            if (string.IsNullOrEmpty(tbActivityTwo.Text))
+            {
+
+            }
             newPatientGoals.Activity_Two = tbActivityTwo.Text;
             newPatientGoals.Activity_Two_Score = activityTwoScore;
             newPatientGoals.Activity_Three = tbActivityThree.Text;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,8 +39,8 @@ namespace PTClinic
         private string plan;
         private Nullable<bool> reassessment;
         private Nullable<bool> referForDischarge;
-        private string studentProvider;
-        private DateTime studentProviderDate;
+        private string studentProviderName;
+        private DateTime studentProviderNameDate;
         private string providerName;
         private DateTime providerNameDate;
         private DateTime visitDate;
@@ -173,15 +174,15 @@ namespace PTClinic
             get { return theraputicProcedures2; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
-                }
-                else
-                {
-                    theraputicProcedures2 = value;
-                }
+                theraputicProcedures2 = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    theraputicProcedures2 = value;
+                //}
             }
         }
 
@@ -235,10 +236,10 @@ namespace PTClinic
             }
         }
 
-        // Public variable for Student Provider
-        public string StudentProvider
+        // Public variable for Student Provider Name
+        public string StudentProviderName
         {
-            get { return studentProvider; }
+            get { return studentProviderName; }
             set
             {
 
@@ -248,7 +249,7 @@ namespace PTClinic
                 }
                 else
                 {
-                    studentProvider = value;
+                    studentProviderName = value;
                 }
 
             }
@@ -281,10 +282,10 @@ namespace PTClinic
         }
 
         // Public variable for Student Provider Date
-        public DateTime StudentProviderDate
+        public DateTime StudentProviderNameDate
         {
-            get { return studentProviderDate; }
-            set { studentProviderDate = value; }
+            get { return studentProviderNameDate; }
+            set { studentProviderNameDate = value; }
         }
 
         // Public variable for Provider Name Date
@@ -303,6 +304,107 @@ namespace PTClinic
          * Add to DB function needed
          * 
          * */
+
+        //private int patientID;
+        //private string providerID;
+        //private string patientName;
+        //private string diagnosis;
+        //private string ptGoals;
+        //private string subjective;
+        //private string objective;
+        //private string supervisedModalities;
+        //private string constantAttendance;
+        //private string theraputicProcedures;
+        //private string theraputicProcedures2;
+        //private string assessment;
+        //private string plan;
+        //private Nullable<bool> reassessment;
+        //private Nullable<bool> referForDischarge;
+        //private string studentProvider;
+        //private DateTime studentProviderDate;
+        //private string providerName;
+        //private DateTime providerNameDate;
+        //private DateTime visitDate;
+        //protected string feedback;
+
+        // Default Constructor
+        public FollowUpVisitInfo()
+        {
+            diagnosis = "";
+            ptGoals = "";
+            subjective = "";
+            objective = "";
+            assessment = "";
+            plan = "";
+            studentProviderName = "";
+            providerName = "";
+        }
+
+        // Adding the first visit to the DB
+        public virtual int AddFollowUpVisit()
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to add a record to the Patient_Visit table
+            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, theraputic_procedures, theraputic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
+                " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TheraputicProcedures, @TheraputicProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
+
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
+            comm.Parameters.AddWithValue(@"ProviderID", ProviderID);
+            comm.Parameters.AddWithValue(@"PatientName", PatientName);
+            comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
+            comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
+            comm.Parameters.AddWithValue(@"Subjective", Subjective);
+            comm.Parameters.AddWithValue(@"Objective", Objective);
+
+            comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
+            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+            comm.Parameters.AddWithValue(@"TheraputicProcedures", TheraputicProcedures);
+            comm.Parameters.AddWithValue(@"TheraputicProcedures2", TheraputicProcedures2);
+
+            comm.Parameters.AddWithValue(@"Assessment", Assessment);
+            comm.Parameters.AddWithValue(@"Plan", Plan);
+            comm.Parameters.AddWithValue(@"StudentProviderName", StudentProviderName);
+            comm.Parameters.AddWithValue(@"StudentProviderNameDate", StudentProviderNameDate).ToString();
+            comm.Parameters.AddWithValue(@"ProviderName", ProviderName);
+            comm.Parameters.AddWithValue(@"ProviderNameDate", ProviderNameDate).ToString();
+
+            comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
+
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of AddFollowUpVisit
 
     } // End of FollowUpVisitInfo Class
 }

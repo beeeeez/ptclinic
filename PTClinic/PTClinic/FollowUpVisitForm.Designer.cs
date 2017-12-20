@@ -88,6 +88,7 @@
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
+            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -128,6 +129,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.btnBackToProfile);
             this.panel1.Controls.Add(this.btnBackHome);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -725,6 +727,22 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
+            // btnBackToProfile
+            // 
+            this.btnBackToProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToProfile.Location = new System.Drawing.Point(767, 20);
+            this.btnBackToProfile.Name = "btnBackToProfile";
+            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToProfile.TabIndex = 76;
+            this.btnBackToProfile.Text = "Back To Profile";
+            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToProfile.UseVisualStyleBackColor = false;
+            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -819,5 +837,6 @@
         private System.Windows.Forms.RadioButton rbReassessmentNo;
         private System.Windows.Forms.RadioButton rbReassessmentYes;
         private System.Windows.Forms.TextBox tbTheraputicProcedures2;
+        private System.Windows.Forms.Button btnBackToProfile;
     }
 }

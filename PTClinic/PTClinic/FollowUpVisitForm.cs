@@ -14,6 +14,7 @@ namespace PTClinic
     {
         private Form Admin;
         private Form Login;
+        private Form PatientProfile;
         public int patientID;
 
         public FollowUpVisitForm()
@@ -21,6 +22,8 @@ namespace PTClinic
             InitializeComponent();
             // Set Button Icons
             setButtonIcon();
+
+            // Set Admin, Login, and PatientProfile forms to the ones passed in to FollowUpVisitForm
 
             /*
              * 
@@ -39,7 +42,6 @@ namespace PTClinic
             FillSupervisedModalities();
             FillConstantAttendance();
             FillTheraputicProcedures();
-   
         }
 
         // Fill SupervisedModalities Function
@@ -84,20 +86,31 @@ namespace PTClinic
         {
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
+            btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
         // Home Button Click
         // Send back to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-            // TODO -- functionality
+            this.Hide();
+            Admin.Show();
         }
 
         // Logout Button Click
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            // TODO -- functionality
+            this.Hide();
+            Login.Show();
+        }
+
+        // Back to Profile button click
+        // Send back to Profile page
+        private void btnBackToProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PatientProfile.Show();
         }
 
         // Add Follow Up Information to DB
@@ -109,7 +122,21 @@ namespace PTClinic
         // Reset form back
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // TODO -- functionality
+            tbProviderID.Clear();
+            tbSubjective.Clear();
+            tbObjective.Clear();
+            cbSupervisedModalities.SelectedIndex = 0;
+            cbConstantAttendance.SelectedIndex = 0;
+            cbTheraputicProcedures.SelectedIndex = 0;
+            tbTheraputicProcedures2.Clear();
+            tbAssessment.Clear();
+            tbPlan.Clear();
+            rbReassessmentYes.Checked = false;
+            rbReassessmentNo.Checked = false;
+            rbDischargeYes.Checked = false;
+            rbDischargeNo.Checked = false;
+            tbStudentProvider.Clear();
+            tbProviderName.Clear();
         }
     }
 }

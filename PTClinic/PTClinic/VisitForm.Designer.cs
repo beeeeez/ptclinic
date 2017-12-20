@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisitForm));
             this.cbEvaluation = new System.Windows.Forms.ComboBox();
-            this.cbTheraputicProcedures = new System.Windows.Forms.ComboBox();
+            this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
             this.tbSubjective = new System.Windows.Forms.TextBox();
             this.tbTreatmentPlan = new System.Windows.Forms.TextBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
@@ -74,7 +74,7 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbTheraputicProcedures2 = new System.Windows.Forms.TextBox();
+            this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
@@ -99,16 +99,16 @@
             this.cbEvaluation.Size = new System.Drawing.Size(256, 21);
             this.cbEvaluation.TabIndex = 9;
             // 
-            // cbTheraputicProcedures
+            // cbTherapeuticProcedures
             // 
-            this.cbTheraputicProcedures.BackColor = System.Drawing.Color.White;
-            this.cbTheraputicProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTheraputicProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTheraputicProcedures.FormattingEnabled = true;
-            this.cbTheraputicProcedures.Location = new System.Drawing.Point(218, 107);
-            this.cbTheraputicProcedures.Name = "cbTheraputicProcedures";
-            this.cbTheraputicProcedures.Size = new System.Drawing.Size(256, 21);
-            this.cbTheraputicProcedures.TabIndex = 11;
+            this.cbTherapeuticProcedures.BackColor = System.Drawing.Color.White;
+            this.cbTherapeuticProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTherapeuticProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTherapeuticProcedures.FormattingEnabled = true;
+            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(218, 107);
+            this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
+            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 21);
+            this.cbTherapeuticProcedures.TabIndex = 11;
             // 
             // tbSubjective
             // 
@@ -567,7 +567,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.tbTheraputicProcedures2);
+            this.panel4.Controls.Add(this.tbTherapeuticProcedures2);
             this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.lblConstantCPT);
             this.panel4.Controls.Add(this.lblTheraputicCPT2);
@@ -581,7 +581,7 @@
             this.panel4.Controls.Add(this.lblFunctionalLimitations);
             this.panel4.Controls.Add(this.cbConstantAttendance);
             this.panel4.Controls.Add(this.lblEvaluation);
-            this.panel4.Controls.Add(this.cbTheraputicProcedures);
+            this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
@@ -590,13 +590,13 @@
             this.panel4.Size = new System.Drawing.Size(593, 352);
             this.panel4.TabIndex = 92;
             // 
-            // tbTheraputicProcedures2
+            // tbTherapeuticProcedures2
             // 
-            this.tbTheraputicProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTheraputicProcedures2.Location = new System.Drawing.Point(289, 146);
-            this.tbTheraputicProcedures2.Name = "tbTheraputicProcedures2";
-            this.tbTheraputicProcedures2.Size = new System.Drawing.Size(233, 20);
-            this.tbTheraputicProcedures2.TabIndex = 99;
+            this.tbTherapeuticProcedures2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTherapeuticProcedures2.Location = new System.Drawing.Point(289, 146);
+            this.tbTherapeuticProcedures2.Name = "tbTherapeuticProcedures2";
+            this.tbTherapeuticProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTherapeuticProcedures2.TabIndex = 99;
             // 
             // lblTheraputicCPT
             // 
@@ -687,7 +687,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbEvaluation;
-        private System.Windows.Forms.ComboBox cbTheraputicProcedures;
+        private System.Windows.Forms.ComboBox cbTherapeuticProcedures;
         private System.Windows.Forms.TextBox tbSubjective;
         private System.Windows.Forms.TextBox tbTreatmentPlan;
         private System.Windows.Forms.ComboBox cbConstantAttendance;
@@ -737,6 +737,6 @@
         private System.Windows.Forms.TextBox tbChiefComplaint;
         private System.Windows.Forms.Label lblChiefComplaint;
         private System.Windows.Forms.Button btnBackToProfile;
-        private System.Windows.Forms.TextBox tbTheraputicProcedures2;
+        private System.Windows.Forms.TextBox tbTherapeuticProcedures2;
     }
 }

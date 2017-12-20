@@ -33,8 +33,8 @@ namespace PTClinic
         private string objective;
         private string supervisedModalities;
         private string constantAttendance;
-        private string theraputicProcedures;
-        private string theraputicProcedures2;
+        private string therapeuticProcedures;
+        private string therapeuticProcedures2;
         private string assessment;
         private string plan;
         private Nullable<bool> reassessment;
@@ -151,9 +151,9 @@ namespace PTClinic
         }
 
         // Public variable for Theraputic Procedures
-        public string TheraputicProcedures
+        public string TherapeuticProcedures
         {
-            get { return theraputicProcedures; }
+            get { return therapeuticProcedures; }
             set
             {
 
@@ -163,18 +163,18 @@ namespace PTClinic
                 }
                 else
                 {
-                    theraputicProcedures = value;
+                    therapeuticProcedures = value;
                 }
             }
         }
 
         // Public variable for Theraputic Procedures Second Portion
-        public string TheraputicProcedures2
+        public string TherapeuticProcedures2
         {
-            get { return theraputicProcedures2; }
+            get { return therapeuticProcedures2; }
             set
             {
-                theraputicProcedures2 = value;
+                therapeuticProcedures2 = value;
                 //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
                 //{
                 //    feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
@@ -347,8 +347,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, theraputic_procedures, theraputic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
-                " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TheraputicProcedures, @TheraputicProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
+            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, therapeutic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
+                " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -373,8 +373,8 @@ namespace PTClinic
 
             comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
-            comm.Parameters.AddWithValue(@"TheraputicProcedures", TheraputicProcedures);
-            comm.Parameters.AddWithValue(@"TheraputicProcedures2", TheraputicProcedures2);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
 
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"Plan", Plan);

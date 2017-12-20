@@ -44,7 +44,7 @@ namespace PTClinic
             // Fill Drop Downs
             FillEvaluation();
             FillConstantAttendance();
-            FillTheraputicProcedures();
+            FillTherapeuticProcedures();
            
         }
 
@@ -75,18 +75,18 @@ namespace PTClinic
         }
 
         // FillTheraputicProcedures Function
-        public void FillTheraputicProcedures()
+        public void FillTherapeuticProcedures()
         {
             // Fills Theraputic Procedures list drop down list
-            cbTheraputicProcedures.Items.Insert(0, "Select One"); // Index 0
-            cbTheraputicProcedures.Items.Add("97110 Theraputic Ex");
-            cbTheraputicProcedures.Items.Add("97112 Neuromuscular Re-ed");
-            cbTheraputicProcedures.Items.Add("97113 Aquatic Therapy w ther ex");
-            cbTheraputicProcedures.Items.Add("97116 Gait Training (includes stairs)");
-            cbTheraputicProcedures.Items.Add("97124 Massage");
-            cbTheraputicProcedures.Items.Add("97140 Manual Therapy one+regions");
-            cbTheraputicProcedures.Items.Add("97530 Theraputic Activities 1-1");
-            cbTheraputicProcedures.SelectedIndex = 0;
+            cbTherapeuticProcedures.Items.Insert(0, "Select One"); // Index 0
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed");
+            cbTherapeuticProcedures.Items.Add("97113 Aquatic Therapy w ther ex");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs)");
+            cbTherapeuticProcedures.Items.Add("97124 Massage");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1");
+            cbTherapeuticProcedures.SelectedIndex = 0;
         }
 
 
@@ -125,8 +125,8 @@ namespace PTClinic
             newVisit.Evaluation = cbEvaluation.Text;
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
-            newVisit.TheraputicProcedures = cbTheraputicProcedures.Text;
-            newVisit.TheraputicProcedures2 = tbTheraputicProcedures2.Text;
+            newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
@@ -211,7 +211,7 @@ namespace PTClinic
             // Set ComboBoxes to index 0 (Select One)
             cbConstantAttendance.SelectedIndex = 0;
             cbEvaluation.SelectedIndex = 0;
-            cbTheraputicProcedures.SelectedIndex = 0;
+            cbTherapeuticProcedures.SelectedIndex = 0;
         }
     }
 }

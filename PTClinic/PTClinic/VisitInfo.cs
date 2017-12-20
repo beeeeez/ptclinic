@@ -38,8 +38,8 @@ namespace PTClinic
         private string treatmentPlan;
         private string evaluation;
         private string constantAttendance;
-        private string theraputicProcedures;
-        private string theraputicProcedures2;
+        private string therapeuticProcedures;
+        private string therapeuticProcedures2;
         private string functionalLimitations;
         private string physicalTherapyDiagnosis;
         private string followUpTreatment;
@@ -252,9 +252,9 @@ namespace PTClinic
         }
 
         // Public variable for Theraputic Procedures
-        public string TheraputicProcedures
+        public string TherapeuticProcedures
         {
-            get { return theraputicProcedures; }
+            get { return therapeuticProcedures; }
             set
             {
 
@@ -264,18 +264,18 @@ namespace PTClinic
                 }
                 else
                 {
-                    theraputicProcedures = value;
+                    therapeuticProcedures = value;
                 }
             }
         }
 
         // Public variable for Theraputic Procedures Second Portion
-        public string TheraputicProcedures2
+        public string TherapeuticProcedures2
         {
-            get { return theraputicProcedures2; }
+            get { return therapeuticProcedures2; }
             set
             {
-                theraputicProcedures2 = value;
+                therapeuticProcedures2 = value;
                 /*   Commenting out until we find out actual information on what will be in it
                 if (value.Equals("Select One") || string.IsNullOrEmpty(value))
                 {
@@ -364,7 +364,7 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string diagnosis, string medicalHistory, string medications, string subjective, string objective, string ptGoals, string treatmentPlan, string evaluation, string constantAttendance, string theraputicProcedures, string theraputicProcedures2, string functionalLimitations, string physicalTherapyDiagnosis, string followUpTreatment)
+        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string diagnosis, string medicalHistory, string medications, string subjective, string objective, string ptGoals, string treatmentPlan, string evaluation, string constantAttendance, string therapeuticProcedures, string therapeuticProcedures2, string functionalLimitations, string physicalTherapyDiagnosis, string followUpTreatment)
         {
             feedback = "";
             PatientID = patientID;
@@ -380,8 +380,8 @@ namespace PTClinic
             TreatmentPlan = treatmentPlan;
             Evaluation = evaluation;
             ConstantAttendance = constantAttendance;
-            TheraputicProcedures = theraputicProcedures;
-            TheraputicProcedures2 = theraputicProcedures2;
+            TherapeuticProcedures = therapeuticProcedures;
+            TherapeuticProcedures2 = therapeuticProcedures2;
             FunctionalLimitations = functionalLimitations;
             PhysicalTherapyDiagnosis = physicalTherapyDiagnosis;
             FollowUpTreatment = followUpTreatment;
@@ -394,8 +394,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, theraputic_procedures, theraputic_procedures2, functional_limitations, pt_diagnosis, followup_treatment)" +
-                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @Diagnosis, @MedicalHistory, @Medications, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @Evaluation, @ConstantAttendance, @TheraputicProcedures, @TheraputicProcedures2, @FunctionalLimitations, @PhysicalTherapyDiagnosis, @FollowUpTreatment);";
+            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment)" +
+                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @Diagnosis, @MedicalHistory, @Medications, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @FunctionalLimitations, @PhysicalTherapyDiagnosis, @FollowUpTreatment);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -425,8 +425,8 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Evaluation", Evaluation);
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
-            comm.Parameters.AddWithValue(@"TheraputicProcedures", TheraputicProcedures);
-            comm.Parameters.AddWithValue(@"TheraputicProcedures2", TheraputicProcedures2);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
             comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
             comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
             comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
@@ -464,7 +464,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, theraputic_procedures, theraputic_procedures2, functional_limitations, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
+            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

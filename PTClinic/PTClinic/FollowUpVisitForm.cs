@@ -41,7 +41,7 @@ namespace PTClinic
             // Fill Drop Downs
             FillSupervisedModalities();
             FillConstantAttendance();
-            FillTheraputicProcedures();
+            FillTherapeuticProcedures();
         }
 
         // Fill SupervisedModalities Function
@@ -68,17 +68,17 @@ namespace PTClinic
         }
 
         // FillTheraputicProcedures Function
-        public void FillTheraputicProcedures()
+        public void FillTherapeuticProcedures()
         {
             // Fills Theraputic Procedures list drop down list
-            cbTheraputicProcedures.Items.Insert(0, "Select One"); // Index 0
-            cbTheraputicProcedures.Items.Add("97110 Theraputic Ex");
-            cbTheraputicProcedures.Items.Add("97112 Neuromuscular Re-ed");
-            cbTheraputicProcedures.Items.Add("97116 Gait Training (includes stairs)");
-            cbTheraputicProcedures.Items.Add("97124 Massage");
-            cbTheraputicProcedures.Items.Add("97140 Manual Therapy one+regions");
-            cbTheraputicProcedures.Items.Add("97530 Theraputic Activities 1-1");
-            cbTheraputicProcedures.SelectedIndex = 0;
+            cbTherapeuticProcedures.Items.Insert(0, "Select One"); // Index 0
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs)");
+            cbTherapeuticProcedures.Items.Add("97124 Massage");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1");
+            cbTherapeuticProcedures.SelectedIndex = 0;
         }
 
         // Setting the Icons for Logout and Home Buttons
@@ -127,8 +127,8 @@ namespace PTClinic
             tbObjective.Clear();
             cbSupervisedModalities.SelectedIndex = 0;
             cbConstantAttendance.SelectedIndex = 0;
-            cbTheraputicProcedures.SelectedIndex = 0;
-            tbTheraputicProcedures2.Clear();
+            cbTherapeuticProcedures.SelectedIndex = 0;
+            tbTherapeuticProcedures2.Clear();
             tbAssessment.Clear();
             tbPlan.Clear();
             rbReassessmentYes.Checked = false;

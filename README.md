@@ -16,6 +16,7 @@
 - Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
 - Print patient info capability
 - Set Patient Visit button to go to correct Form based off patient status 
+- **Patient Class** Update statement
 
 ### Patient Information Form
 - Get working functionality to Update for patient information -  **IN PROGRESS**

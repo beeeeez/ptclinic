@@ -18,10 +18,10 @@
 - Set Patient Visit button to go to correct Form based off patient status 
 
 ### Patient Information Form
-- Get working functionality to Update for patient information
+- Get working functionality to Update for patient information -  **IN PROGRESS**
 
 ### Patient Goals
-- Allow empty entries to DB - **IN PROGRESS**
+
 
 ### Schedule Appointment Form
 - Print Appointment Details capability

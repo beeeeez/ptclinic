@@ -12,7 +12,7 @@
 - Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS**
 
 ### Patient Profile Form
-- Pull Diagnosis from Initial Visit DB Table - populate field
+- [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
 - Print patient info capability
 - Set Patient Visit button to go to correct Form based off patient status 

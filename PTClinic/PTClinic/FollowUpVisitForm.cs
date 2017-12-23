@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,13 +18,17 @@ namespace PTClinic
         private Form PatientProfile;
         public int patientID;
 
-        public FollowUpVisitForm()
+        public FollowUpVisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
         {
             InitializeComponent();
             // Set Button Icons
             setButtonIcon();
 
             // Set Admin, Login, and PatientProfile forms to the ones passed in to FollowUpVisitForm
+
+            this.Login = Login;
+            this.Admin = adminForm;
+            this.PatientProfile = PatientProfile;
 
             /*
              * 
@@ -37,6 +42,28 @@ namespace PTClinic
              * 
              * 
              */
+            lblPID.Text = PatientID;
+            lblPatientName.Text = PatientName;
+
+            patientID = Convert.ToInt32(PatientID);
+
+            // Create variable for a Patients initial Visit Information
+            VisitInfo tempPatientVisit = new VisitInfo();
+
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
+                {
+                    while (dataReaderPatientVisit.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
+                        tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+                    }
+                }
+            } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
 
             // Fill Drop Downs
             FillSupervisedModalities();
@@ -116,7 +143,109 @@ namespace PTClinic
         // Add Follow Up Information to DB
         private void btnAddFollowUp_Click(object sender, EventArgs e)
         {
-            // TODO -- functionality
+            FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
+
+            newVisit.PatientID = Convert.ToInt32(lblPID.Text);
+            newVisit.ProviderID = tbProviderID.Text;
+            newVisit.PatientName = lblPatientName.Text;
+            newVisit.Diagnosis = tbDiagnosis.Text;
+            newVisit.PTGoals = tbPTGoals.Text;
+            newVisit.Subjective = tbSubjective.Text;
+            newVisit.Objective = tbObjective.Text;
+            
+            newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+            newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
+
+
+            newVisit.Assessment = tbAssessment.Text;
+            newVisit.Plan = tbPlan.Text;
+
+            Nullable<bool> reassessment = null;
+            if (rbReassessmentYes.Checked == true)
+            {
+                reassessment = true;
+            }
+            else if (rbReassessmentNo.Checked == true)
+            {
+                reassessment = false;
+            }
+            newVisit.Reassessment = reassessment;
+
+            Nullable<bool> discharge = null;
+            if (rbDischargeYes.Checked == true)
+            {
+                discharge = true;
+            }
+            else if (rbDischargeNo.Checked == true)
+            {
+                discharge = false;
+            }
+            newVisit.ReferForDischarge = discharge;
+
+            newVisit.StudentProviderName = tbStudentProvider.Text;
+
+            /* Student Signature Date */
+            // Get Current Date String (Set as a Short Date Time)
+            string shortStudentDateStr = lblStudentDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortStudentDate = Convert.ToDateTime(shortStudentDateStr);
+
+            newVisit.StudentProviderNameDate = shortStudentDate;
+
+
+
+            newVisit.ProviderName = tbProviderName.Text;
+
+            /* Provider Signature Date */
+            // Get Current Date String (Set as a Short Date Time)
+            string shortProviderDateStr = lblProviderDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortProviderDate = Convert.ToDateTime(shortProviderDateStr);
+
+            newVisit.VisitDate = shortProviderDate;
+
+            // Get Current Date String (Set as a Short Date Time)
+            string shortDateStr = lblTodaysDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
+
+            newVisit.VisitDate = shortDateVisit;
+
+            // If statement to check if there are field erros
+
+            // If an error in the information occurs
+            if (newVisit.Feedback.Contains("Error:"))
+            {
+                // Display the error message inside the form feedback label
+                lblFeedback.Text = newVisit.Feedback;
+            }
+            else // If there are no errors, continue to Caregiver Form
+            {
+                lblFeedback.Text = "";
+
+                try
+                {
+                    int dbSuccess = newVisit.AddFollowUpVisit();
+
+                    // If patient record was added successfully update the Patient Info table with their Visit Status
+                    if (dbSuccess == 1)
+                    {
+                        lblFeedback.Text = "Patient's Visit Information has been saved";
+
+                        /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY ARE DISCHARGED OR NEED REASSESSMENT */
+                    }
+                    else
+                    {
+                        lblFeedback.Text = "Patient's Visit Information was not saved";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblFeedback.Text = ex.ToString();
+                }
+            }
         }
 
         // Reset form back

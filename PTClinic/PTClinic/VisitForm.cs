@@ -152,10 +152,12 @@ namespace PTClinic
                     //lblFeedback.Text = newPatient.AddRecord();
                     int dbSuccess = newVisit.AddVisit();
 
-                    // If patient record was added successfully get patient id from that insert
+                    // If patient record was added successfully update Patient Info with their new Visit Status
                     if (dbSuccess == 1)
                     {
                         lblFeedback.Text = "Patient's Visit Information has been saved";
+
+                        /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
                     }
                     else
                     {

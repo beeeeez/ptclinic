@@ -9,13 +9,14 @@
 ### Follow Up Visit Form
 - Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
 - [x] Set form window to scrollable for smaller size windows
-- Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS**
+- Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS NEED TO TEST**
 
 ### Patient Profile Form
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
 - Print patient info capability
 - Set Patient Visit button to go to correct Form based off patient status 
+- Set Patient Visit Button Text based on what form it will send to
 - [x] **Patient Class** Update statement
 
 ### Patient Information Form

@@ -4,11 +4,11 @@
 
 ### Intial Visit Form
 - Adds to the Patient Info table which visit it is -- **IN PROGRESS**
-- Set form window to scrollable for smaller size windows
+- [x] Set form window to scrollable for smaller size windows
 
 ### Follow Up Visit Form
 - Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
-- Set form window to scrollable for smaller size windows
+- [x] Set form window to scrollable for smaller size windows
 - Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS**
 
 ### Patient Profile Form
@@ -16,13 +16,14 @@
 - Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
 - Print patient info capability
 - Set Patient Visit button to go to correct Form based off patient status 
-- **Patient Class** Update statement
+- [x] **Patient Class** Update statement
 
 ### Patient Information Form
-- Get working functionality to Update for patient information -  **IN PROGRESS**
-- Add patient status when new patient is added 
+- [x] Get working functionality to Update for patient information 
+- [x] Add patient status when new patient is added 
 
 ### Patient Goals
+- Look into statement for pulling latest PTGoals (Possible Issue)
 
 
 ### Schedule Appointment Form

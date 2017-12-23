@@ -81,6 +81,7 @@
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.lblPatientName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -378,6 +379,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblPatientName);
             this.panel2.Controls.Add(this.tbChiefComplaint);
             this.panel2.Controls.Add(this.lblChiefComplaint);
             this.panel2.Controls.Add(this.lblPID);
@@ -654,6 +656,14 @@
             this.tbPTDiagnosis.TabIndex = 14;
             this.tbPTDiagnosis.Text = "Physical Therapy Diagnosis";
             // 
+            // lblPatientName
+            // 
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Location = new System.Drawing.Point(250, 17);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(0, 13);
+            this.lblPatientName.TabIndex = 99;
+            // 
             // VisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,5 +748,6 @@
         private System.Windows.Forms.Label lblChiefComplaint;
         private System.Windows.Forms.Button btnBackToProfile;
         private System.Windows.Forms.TextBox tbTherapeuticProcedures2;
+        private System.Windows.Forms.Label lblPatientName;
     }
 }

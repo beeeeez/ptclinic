@@ -16,6 +16,7 @@ namespace PTClinic
         //Private variable to store the patient ID ?
         private string PatientID;
         public int pID; // patient ID to pass to Appointment or visit form
+        private string pName; // String to pass a Patients name to visit form
 
         // Variables for the admin and login and Search forms
         private Form Admin;
@@ -93,7 +94,10 @@ namespace PTClinic
                         patientDetails.PhoneExtension = dataReaderPatient["patient_phone1_extension"].ToString();
                         patientDetails.PhoneType = dataReaderPatient["patient_phone1_type"].ToString();
 
+                        //Grab the patients name to send over to visit forms / appointments etc.
+                        pName = dataReaderPatient["patient_first_name"].ToString() + " " + dataReaderPatient["patient_middle_initial"].ToString() + " " + dataReaderPatient["patient_last_name"].ToString();
 
+                        // Patient Name
                         lblName.Text = dataReaderPatient["patient_first_name"].ToString() + " " + dataReaderPatient["patient_middle_initial"].ToString() + " " + dataReaderPatient["patient_last_name"].ToString();
                         // Gender
                         lblGender.Text = dataReaderPatient["patient_gender"].ToString();
@@ -216,7 +220,7 @@ namespace PTClinic
         private void btnPatientVisit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VisitForm temp = new VisitForm(PatientID, Admin, Login, this);
+            VisitForm temp = new VisitForm(PatientID, pName, Admin, Login, this);
             temp.Show();
         }
 

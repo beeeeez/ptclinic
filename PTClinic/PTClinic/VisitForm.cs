@@ -19,7 +19,7 @@ namespace PTClinic
         public int patientID;
 
 
-        public VisitForm(string PatientID, Form adminForm, Form Login, Form PatientProfile)
+        public VisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
         {
             InitializeComponent();
 
@@ -37,6 +37,9 @@ namespace PTClinic
 
             // Set the PatientID
             lblPID.Text = PatientID;
+
+            // Set the Patient Name
+            lblPatientName.Text = "Patient Name: " + PatientName;
 
             // Set the Patient Name here~~~
             /* Get Patient Name Passing Over! */

@@ -233,6 +233,55 @@ namespace PTClinic
 
         } // End of FindOneEmergencyContact
 
+        // Updating Emergency Containct information
+        public virtual int UpdateOneRecord(int patientID)
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to Update a record in Emergency Contact table
+            string strSQL = "UPDATE Emergency_Contact SET ec_fullname = @Fullname, ec_telephone = @Phone, ec_telephone_ext = @PhoneExtension, ec_telephone_type = @PhoneType, ec_relationship = @Relationship WHERE patient_id = @PatientID;"; 
+          
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"Fullname", Fullname);
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
+            comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
+            comm.Parameters.AddWithValue(@"Relationship", Relationship);
+            comm.Parameters.AddWithValue(@"PatientID", patientID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Updated";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdateOneRecord
+
 
 
     }

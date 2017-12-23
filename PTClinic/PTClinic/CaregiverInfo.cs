@@ -239,9 +239,10 @@ namespace PTClinic
         }
 
         // Adding a record
-        public virtual string AddRecord()
+        public virtual int AddRecord()
         {
             string strFeedback = "";
+            int success = 0;
 
          
             // SQL command to add a record to the Caregiver table
@@ -281,7 +282,7 @@ namespace PTClinic
                 conn.Open();
 
                 // Giving strFeedback the number of records added
-                strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Record has been saved";
+                success = comm.ExecuteNonQuery();
 
                 // close the database
                 conn.Close();
@@ -290,7 +291,7 @@ namespace PTClinic
             {
                 strFeedback = "ERROR: " + err.Message;
             }
-            return strFeedback;
+            return success;
         } // End of AddRecord
 
 
@@ -331,7 +332,67 @@ namespace PTClinic
 
             // Return some form of feedback
             return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
-        } // End of FindOnePatient
+        } // End of FindOneCaregiver
+
+
+        // Updating Emergency Containct information
+        public virtual int UpdateOneRecord(int patientID)
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to update a record in the Caregiver table
+            string strSQL = "UPDATE Caregiver SET caregiver_name = @Name, caregiver_phone1 = @Phone, caregiver_phone1_extension = @PhoneExtension, caregiver_phone1_type = @PhoneType, caregiver_phone2 = @Phone2, caregiver_phone2_extension = @Phone2Extension, caregiver_phone2_type = @Phone2Type, caregiver_address = @Address, caregiver_city = @City, caregiver_state = @State, caregiver_zip = @Zip" +
+                " WHERE patient_id = @PatientID;";
+
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+           
+            comm.Parameters.AddWithValue(@"Name", Name);
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
+            comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
+            comm.Parameters.AddWithValue(@"Phone2", Phone2);
+            comm.Parameters.AddWithValue(@"Phone2Extension", Phone2Extension);
+            comm.Parameters.AddWithValue(@"Phone2Type", Phone2Type);
+            comm.Parameters.AddWithValue(@"Address", Address);
+            comm.Parameters.AddWithValue(@"City", City);
+            comm.Parameters.AddWithValue(@"State", State);
+            comm.Parameters.AddWithValue(@"Zip", Zip);
+            comm.Parameters.AddWithValue(@"PatientID", patientID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Updated";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdateOneRecord
+
+
 
 
     } // End of Class CaregiverInfo

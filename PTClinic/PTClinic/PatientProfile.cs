@@ -203,7 +203,8 @@ namespace PTClinic
         private void btnBackToSearch_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Search.Show();
+            Search newSearchForm = new Search(Admin, Login);
+            newSearchForm.Show();
         }
 
         // Schedule Appointment Button

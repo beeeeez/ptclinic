@@ -17,6 +17,8 @@ namespace PTClinic
         private Form Login;
         private Form Search;
         public int patientID;
+        private int existingPatientID; // Update ID of existing record
+
 
 
         public PatientInformation(int pID, Form adminForm, Form Login)
@@ -26,6 +28,7 @@ namespace PTClinic
             setButtonIcon();
 
             patientID = 0;
+            existingPatientID = pID;
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -284,12 +287,6 @@ namespace PTClinic
         }
 
 
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            // Clear all fields
-        }
-
         private void btnContinueToCaregiver_Click(object sender, EventArgs e)
         {
 
@@ -366,66 +363,99 @@ namespace PTClinic
                 try
                 {
                     //lblFeedback.Text = newPatient.AddRecord();
-                    int dbSuccess = newPatient.AddRecord();
+                    int dbSuccess;
 
-                    // If patient record was added successfully get patient id from that insert
-                    if (dbSuccess == 1)
+                    if (existingPatientID > 0)
                     {
-                        lblFeedback.Text = "Patient Info has been saved";
-
-                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                        dbSuccess = newPatient.UpdateOneRecord(existingPatientID);
+                        // If patient record was added successfully get patient id from that insert
+                        if (dbSuccess == 1)
                         {
+                            lblFeedback.Text = "Patient Info has been updated";
+                            panelPatientInfo.Visible = false;
+                            panelCaregiverInfo.Visible = true;
 
-                            string getUserSQL = "SELECT [patient_id] FROM Patients WHERE ([patient_id] = (SELECT MAX(patient_id) FROM Patients))";
-                            OleDbCommand comm = new OleDbCommand();
-                            comm.CommandText = getUserSQL; // Commander knows what to say
-                            comm.Connection = connection; // Heres the connection
-
-                            try
-                            {
-                                connection.Open();
-                                OleDbDataReader dr = comm.ExecuteReader();
-
-                                if (dr.Read())
-                                {
-                                    lblFeedback.Text = "Patient ID is " + dr.GetInt32(0).ToString();
-                                    patientID = dr.GetInt32(0);
-                                }
-                                else
-                                {
-                                    lblFeedback.Text = "NO PATIENT ID !";
-                                }
-
-
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            }
-                            finally
-                            {
-                                connection.Close();
-                            }
+                            // Clear all fields
+                            ClearPatientForm();
 
                         }
-
+                        else
+                        {
+                            lblFeedback.Text = "Patient Info was not updated";
+                        }
                     }
                     else
                     {
-                        lblFeedback.Text = "Patient Info was not saved";
+                        dbSuccess = newPatient.AddRecord();
+                        // If patient record was added successfully get patient id from that insert
+                        if (dbSuccess == 1)
+                        {
+                            lblFeedback.Text = "Patient Info has been saved";
+
+                            using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                            {
+
+                                string getUserSQL = "SELECT [patient_id] FROM Patients WHERE ([patient_id] = (SELECT MAX(patient_id) FROM Patients))";
+                                OleDbCommand comm = new OleDbCommand();
+                                comm.CommandText = getUserSQL; // Commander knows what to say
+                                comm.Connection = connection; // Heres the connection
+
+                                try
+                                {
+                                    connection.Open();
+                                    OleDbDataReader dr = comm.ExecuteReader();
+
+                                    if (dr.Read())
+                                    {
+                                        lblFeedback.Text = "Patient ID is " + dr.GetInt32(0).ToString();
+                                        patientID = dr.GetInt32(0);
+                                        panelPatientInfo.Visible = false;
+                                        panelCaregiverInfo.Visible = true;
+
+                                        // Clear all fields
+                                        ClearPatientForm();
+                                    }
+                                    else
+                                    {
+                                        lblFeedback.Text = "NO PATIENT ID !";
+                                    }
+
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                }
+                                finally
+                                {
+                                    connection.Close();
+                                }
+
+                            }
+
+                        }
+                        else
+                        {
+                            lblFeedback.Text = "Patient Info was not saved";
+                        }
                     }
+
+                  
+
+                  
+
                 }
                 catch (Exception ex)
                 {
                     lblFeedback.Text = ex.ToString();
                 }
 
-                panelPatientInfo.Visible = false;
-                panelCaregiverInfo.Visible = true;
+                //panelPatientInfo.Visible = false;
+                //panelCaregiverInfo.Visible = true;
 
-                // Clear all fields
-                ClearPatientForm();
+                //// Clear all fields
+                //ClearPatientForm();
 
 
             }
@@ -474,43 +504,107 @@ namespace PTClinic
                 try
                 {
 
-                    int ECSuccess = newEmergencyContact.AddRecord();
+                    int ECSuccess;
 
-                    if (ECSuccess == 1)
+                    if (existingPatientID > 0)
                     {
+                        ECSuccess = newEmergencyContact.UpdateOneRecord(existingPatientID);
 
-                        lblCareFeedback.Text = "";
-
-                        try
+                        if (ECSuccess == 1)
                         {
-                            lblCareFeedback.Text = newCaregiver.AddRecord();
 
-                            // If caregiver is successful go to patient profile page
-                            bool isNewRecord = true;
+                            lblCareFeedback.Text = "";
 
-                            PatientProfile temp = new PatientProfile(patientID, Admin, Login, Search, this, isNewRecord);
-                            temp.Show();
+                            try
+                            {
+                                int cgSuccess = newCaregiver.UpdateOneRecord(existingPatientID);
 
+                                if (cgSuccess == 1)
+                                {
+                                    lblCareFeedback.Text = "1 Patient Record has been updated";
+
+                                    // If caregiver is successfully updated go to patient profile page
+                                    bool isNewRecord = true;
+
+                                    PatientProfile temp = new PatientProfile(existingPatientID, Admin, Login, Search, this, isNewRecord);
+                                    temp.Show();
+                                }
+                                else
+                                {
+                                    lblCareFeedback.Text = "There was an issue saving Caregiver Information\n Try again!";
+                                }
+
+
+                            }
+                            catch (Exception exc)
+                            {
+                                lblCareFeedback.Text = exc.ToString();
+                            }
+
+                            // Clear all fields
+                            ClearCaregiverForm();
+                            // Clear all fields
+                            ClearEmergencyContactForm();
 
 
                         }
-                        catch (Exception exc)
+                        else
                         {
-                            lblCareFeedback.Text = exc.ToString();
+                            lblCareFeedback.Text += "Emergency Contact Info was not saved";
                         }
-
-                        // Clear all fields
-                        ClearCaregiverForm();
-                        // Clear all fields
-                        ClearEmergencyContactForm();
-
 
                     }
                     else
                     {
-                        lblFeedback.Text += "Emergency Contact Info was not saved";
-                    }
+                        ECSuccess = newEmergencyContact.AddRecord();
 
+
+                        if (ECSuccess == 1)
+                        {
+
+                            lblCareFeedback.Text = "";
+
+                            try
+                            {
+
+                                int CGSuccess = newCaregiver.AddRecord();
+                                
+                                if (CGSuccess == 1)
+                                {
+                                    lblCareFeedback.Text = "1 Patient Record has been saved";
+
+                                    // If caregiver is successfully updated go to patient profile page
+                                    bool isNewRecord = true;
+
+                                    PatientProfile temp = new PatientProfile(patientID, Admin, Login, Search, this, isNewRecord);
+                                    temp.Show();
+                                }
+                                else
+                                {
+                                    lblCareFeedback.Text = "There was an issue saving Caregiver Information\n Try again!";
+                                }
+
+
+
+                            }
+                            catch (Exception exc)
+                            {
+                                lblCareFeedback.Text = exc.ToString();
+                            }
+
+                            // Clear all fields
+                            ClearCaregiverForm();
+                            // Clear all fields
+                            ClearEmergencyContactForm();
+
+
+                        }
+                        else
+                        {
+                            lblCareFeedback.Text += "Emergency Contact Info was not saved";
+                        }
+
+                    }
 
                     // lblCareFeedback.Text = newEmergencyContact.AddRecord();
                 }
@@ -521,51 +615,6 @@ namespace PTClinic
 
 
             }
-
-
-
-
-            //CaregiverInfo newCaregiver = new CaregiverInfo();
-
-            //newCaregiver.PatientID = patientID;
-            //newCaregiver.Name = tbCGName.Text;
-            //newCaregiver.Address = tbCGAddress.Text;
-            //newCaregiver.City = tbCGCity.Text;
-            //newCaregiver.State = cbCGState.Text;
-            //newCaregiver.Zip = tbCGZip.Text;
-            //newCaregiver.Phone = tbCGPhone1.Text;
-            //newCaregiver.PhoneExtension = tbCGPhone1Ext.Text;
-            //newCaregiver.PhoneType = cbCGPhone1Type.Text;
-
-            //newCaregiver.Phone2 = tbCGPhone2.Text;
-            //newCaregiver.Phone2Extension = tbCGPhone2Ext.Text;
-            //newCaregiver.Phone2Type = cbCGPhone2Type.Text;
-
-
-            //// If an error in the information occurs
-            //if (newCaregiver.Feedback.Contains("Error:"))
-            //{
-            //    // Display the error message inside the form feedback label
-            //    lblCareFeedback.Text += newCaregiver.Feedback;
-            //}
-            //else // If there are no errors, continue to Caregiver Form
-            //{
-            //    lblCareFeedback.Text = "";
-
-            //    try
-            //    {
-            //        lblCareFeedback.Text = newCaregiver.AddRecord();
-            //    }
-            //    catch (Exception exc)
-            //    {
-            //        lblCareFeedback.Text = exc.ToString();
-            //    }
-
-            // Clear all fields
-            //ClearCaregiverForm();
-            //// Clear all fields
-            //ClearEmergencyContactForm();
-            //}
 
 
         }
@@ -599,7 +648,7 @@ namespace PTClinic
         public void ClearEmergencyContactForm()
         {
             tbECName.Clear();
-            tbECPhoneExt.Clear();
+            tbECPhone.Clear();
             tbECPhoneExt.Clear();
             cbECPhoneType.SelectedIndex = 0;
             tbECRelationship.Clear();

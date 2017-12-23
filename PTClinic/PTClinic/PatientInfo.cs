@@ -452,8 +452,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patients table
-            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance)" +
-                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance);";
+            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance, patient_status)" +
+                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance, @Status);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -491,6 +491,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"LeaveMessage", LeaveMessage);
             comm.Parameters.AddWithValue(@"Email", Email);
             comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
+            comm.Parameters.AddWithValue(@"Status", "initial"); // Sets the patient status to initial visit (for form population from profile)
 
 
             try
@@ -623,6 +624,75 @@ namespace PTClinic
            // Return some form of feedback
             return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
         } // End of FindOnePatient
+
+
+        // Updating patient information
+        public virtual int UpdateOneRecord(int patientID)
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to add a record to the Patients table
+            string strSQL = "UPDATE Patients SET patient_first_name = @Fname, patient_middle_initial = @MInitial, patient_last_name = @Lname, patient_gender = @Gender, patient_dob = @Birthdate, patient_address = @Address, patient_address2 = @Address2, patient_city = @City, patient_state = @State, patient_zip = @Zip, patient_has_insurance = @HasInsurance, patient_insurer = @Insurer, patient_phone1 = @Phone, patient_phone1_extension = @PhoneExtension, patient_phone1_type = @PhoneType, patient_phone2= @Phone2, patient_phone2_extension = @Phone2Extension, patient_phone2_type = @Phone2Type, contact_patient = @LeaveMessage, patient_email = @Email, patient_other_insurance = @OtherInsurance" +
+                " WHERE patient_id = @PatientID;";
+
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"Fname", Fname);
+            comm.Parameters.AddWithValue(@"MInitial", MInitial);
+            comm.Parameters.AddWithValue(@"Lname", Lname);
+            comm.Parameters.AddWithValue(@"Gender", Gender);
+            comm.Parameters.AddWithValue(@"BirthDate", Birthdate).ToString();
+            comm.Parameters.AddWithValue(@"Address", Address);
+            comm.Parameters.AddWithValue(@"Address2", Address2);
+            comm.Parameters.AddWithValue(@"City", City);
+            comm.Parameters.AddWithValue(@"State", State);
+            comm.Parameters.AddWithValue(@"Zip", Zip);
+
+            comm.Parameters.AddWithValue(@"HasInsurance", HasInsurance);
+            comm.Parameters.AddWithValue(@"Insurer", Insurer);
+
+            comm.Parameters.AddWithValue(@"Phone", Phone);
+            comm.Parameters.AddWithValue(@"PhoneExtension", PhoneExtension);
+            comm.Parameters.AddWithValue(@"PhoneType", PhoneType);
+            comm.Parameters.AddWithValue(@"Phone2", Phone2);
+            comm.Parameters.AddWithValue(@"Phone2Extension", Phone2Extension);
+            comm.Parameters.AddWithValue(@"Phone2Type", Phone2Type);
+            comm.Parameters.AddWithValue(@"LeaveMessage", LeaveMessage);
+            comm.Parameters.AddWithValue(@"Email", Email);
+            comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
+            comm.Parameters.AddWithValue(@"PatientID", patientID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Updated";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdateOneRecord
 
     } // End of PatientInfo
 }

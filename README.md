@@ -4,17 +4,20 @@
 
 ### Intial Visit Form
 - Adds to the Patient Info table which visit it is -- **IN PROGRESS**
+- Change Visit Type in Patient Information Table when Visit Form adds a record to DB
 - [x] Set form window to scrollable for smaller size windows
 
 ### Follow Up Visit Form
 - Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
 - [x] Set form window to scrollable for smaller size windows
+- Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS NEED TO TEST**
 
 ### Patient Profile Form
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
-- Pull Patient Goals from Patient_Goals Table - populate field - **IN PROGRESS**
+- Pull Patient Goals from Initial Visit DB Table - populate field - **IN PROGRESS**
 - Print patient info capability
+- Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days)
 - Set Patient Visit button to go to correct Form based off patient status 
 - Set Patient Visit Button Text based on what form it will send to
 - [x] **Patient Class** Update statement
@@ -30,15 +33,11 @@
 ### Schedule Appointment Form
 - Print Appointment Details capability
 - Email/Update outlook or google calendar
+- Validate Time Change
 
 ### Finalization TODO's
 - Check tab indexes
 - Check validation
-- [x] Add Follow Up Table to Database
-- Add Visit Type to Visit Form
-- Add Visit Type to Visit Table in Database
-- Add Follow Up Visit Button to Patient Profile
-- Add Update Ability for Evaluation (Visit Form)
 
 
 #### Extras

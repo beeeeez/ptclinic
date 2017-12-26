@@ -16,8 +16,8 @@
 ### Patient Profile Form
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - Pull Patient Goals from Initial Visit DB Table - populate field - **IN PROGRESS**
-- Print patient info capability
-- Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days)
+- Print patient info capability **In Progress**
+- Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days) **IN PROGRESS**
 - Set Patient Visit button to go to correct Form based off patient status 
 - Set Patient Visit Button Text based on what form it will send to
 - [x] **Patient Class** Update statement
@@ -32,8 +32,7 @@
 
 ### Schedule Appointment Form
 - Print Appointment Details capability
-- Email/Update outlook or google calendar
-- Validate Time Change
+- Make Appointment class to handle validation and calls
 
 ### Finalization TODO's
 - Check tab indexes

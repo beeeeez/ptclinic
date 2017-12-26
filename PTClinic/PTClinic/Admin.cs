@@ -71,6 +71,7 @@ namespace PTClinic
             Search newSearch = new Search(this, Login);
 
             newSearch.Show();
+            this.Hide();
 
         }
 

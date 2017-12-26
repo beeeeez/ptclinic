@@ -219,6 +219,7 @@
     <Content Include="Resources\ic_favorite_black_24dp_1x.png" />
     <Content Include="Resources\ic_mode_edit_black_24dp_1x.png" />
     <Content Include="Resources\ic_mode_edit_black_24dp_2x.png" />
+    <Content Include="Resources\ic_print_black_24dp_1x.png" />
     <Content Include="Resources\ic_print_white_24dp_1x.png" />
     <Content Include="Resources\ic_trending_up_black_24dp_1x.png" />
     <None Include="Resources\AddNewPatient.png" />

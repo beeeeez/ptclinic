@@ -22,6 +22,7 @@ namespace PTClinic
         private string activityThreeScore;
         private int pID;
         System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+        private bool updatedGoals;
 
         public PatientGoalsForm()
         {
@@ -30,6 +31,8 @@ namespace PTClinic
 
         public PatientGoalsForm(int patientID, bool fromProfile, Form Admin, Form Login, Form PatientProfile)
         {
+            updatedGoals = false;
+
             InitializeComponent();
             setButtonIcon();
             myTimer.Tick += new System.EventHandler(myTimer_Tick);
@@ -199,7 +202,20 @@ namespace PTClinic
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientProfile.Show();
+            // If patient goals were updated create new profile form
+            if (updatedGoals == true)
+            {
+                //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+                Search newSearchForm = new Search(Admin, Login);
+                PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+                PatientProfile refreshProfile = new PatientProfile(pID, Admin, Login, newSearchForm, newPatientForm, false);
+                refreshProfile.Show();
+            }
+            else
+            {
+                PatientProfile.Show();
+            }
+           
         }
 
         private void btnBackHome_Click(object sender, EventArgs e)
@@ -283,6 +299,7 @@ namespace PTClinic
 
                     if (dbSuccess == 1)
                     {
+                        updatedGoals = true;
                         myTimer.Interval = 5000;
                         myTimer.Start();
                         panelDBMessage.Visible = true;

@@ -25,7 +25,7 @@ namespace PTClinic
 
             this.Admin = adminForm;
             this.Login = Login;
-            Admin.Hide();
+         
         }
 
         // Setting the Icons for Logout and Home Buttons
@@ -61,8 +61,6 @@ namespace PTClinic
         private void gvResults_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string strPID = gvResults.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            //MessageBox.Show(strPID);
 
             int intPID = Convert.ToInt32(strPID);
             bool isNewRecord = false;

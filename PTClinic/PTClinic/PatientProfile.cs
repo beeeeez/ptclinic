@@ -24,7 +24,7 @@ namespace PTClinic
         private Form Search;
         private Form PatientInfo;
         PatientInfo patientDetails;
- 
+        private string lastUpdated; // PT Goals last update time
 
         public PatientProfile()
         {
@@ -71,6 +71,9 @@ namespace PTClinic
 
             // Create variable for VisitInfo
             VisitInfo tempVisit = new VisitInfo();
+
+            // Create variable for PT Goals Class
+            PatientGoals ptGoals = new PatientGoals();
 
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
@@ -157,20 +160,58 @@ namespace PTClinic
                     }
                 } // End of --  using (var dataReaderEC = tempEC.FindOneEmergencyContact(connection, intPID))
 
-                // Gather info about this patient's caregiver via the patient ID (intPID) passed from the search and store it in a data reader
+                // Gather info about the patients diagnosis
                 using (var dataReaderVisitInfo = tempVisit.FindOnePatientVisit(connection, intPID))
                 {
                     while (dataReaderVisitInfo.Read())
                     {
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
+
                         // Patient Diagnosis
                         tbDiagnosis.Text = dataReaderVisitInfo["diagnosis"].ToString();
                     }
-                } // End of -- using (var dataReaderCG = tempCG.FindOneCaregiver(connection, intPID))
+                } // End of -- using(var dataReaderVisitInfo = tempVisit.FindOnePatientVisit(connection, intPID)
+
+                // Gather the date for the last update PT Goals for patient
+                using (var dataReaderPTGoals = ptGoals.FindPatientGoals(connection, intPID))
+                {
+                    while (dataReaderPTGoals.Read())
+                    {
+                        lastUpdated  = dataReaderPTGoals["goal_date"].ToString();
+                    }
+                } // End of -- using(var dataReaderVisitInfo = tempVisit.FindOnePatientVisit(connection, intPID)
 
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+
+            // Checks pt goals last update time and alerts user to update goals if greater than 1 month
+            CalculateDateRange();
           
+        }
+
+        private void CalculateDateRange()
+        {
+            if (string.IsNullOrEmpty(lastUpdated) || lastUpdated.Equals(""))
+            {
+                panelPTGoalsMessage.Visible = false;
+            }
+            else
+            {
+                DateTime ptLastUpdate = Convert.ToDateTime(lastUpdated);
+                int daySincePTUpdated = (DateTime.Now.Date - ptLastUpdate.Date).Days;
+
+                if (daySincePTUpdated >= 30)
+                {
+                    //MessageBox.Show("Update Patient Goals \n Last Updated : " + daySincePTUpdated + " days ago" );
+                    panelPTGoalsMessage.Visible = true;
+                }
+                else
+                {
+                    panelPTGoalsMessage.Visible = false;
+                }
+
+            }
+         
         }
 
         // Setting the Icons for Logout and Home Buttons
@@ -183,6 +224,7 @@ namespace PTClinic
             btnPatientGoals.Image = Image.FromFile("..\\..\\Resources\\ic_trending_up_black_24dp_1x.png");
             btnPatientVisit.Image = Image.FromFile("..\\..\\Resources\\ic_favorite_black_24dp_1x.png");
             btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
+            btnPrintPatientInfo.Image = Image.FromFile("..\\..\\Resources\\ic_print_black_24dp_1x.png");
         }
 
         // Back to Home Button
@@ -242,6 +284,13 @@ namespace PTClinic
             updatePatientInfo.Show();
             this.Hide();
 
+        }
+
+        // Print Patient Information
+        private void btnPrintPatientInfo_Click(object sender, EventArgs e)
+        {
+            // TODO - Print Patient Demographic -- Emergency Contact - Caregiver Info + PT Goals Diagnosis if there are any
+            MessageBox.Show("Print Patient Info Here");
         }
     }
 }

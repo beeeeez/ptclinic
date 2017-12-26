@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientProfile));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackToSearch = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,7 +78,10 @@
             this.tbPTGoals = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnBackToSearch = new System.Windows.Forms.Button();
+            this.btnPrintPatientInfo = new System.Windows.Forms.Button();
+            this.panelPTGoalsMessage = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelMessage.SuspendLayout();
+            this.panelPTGoalsMessage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,6 +107,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1337, 73);
             this.panel1.TabIndex = 75;
+            // 
+            // btnBackToSearch
+            // 
+            this.btnBackToSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToSearch.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToSearch.ForeColor = System.Drawing.Color.White;
+            this.btnBackToSearch.Location = new System.Drawing.Point(864, 20);
+            this.btnBackToSearch.Name = "btnBackToSearch";
+            this.btnBackToSearch.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToSearch.TabIndex = 77;
+            this.btnBackToSearch.Text = "Back To Search";
+            this.btnBackToSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToSearch.UseVisualStyleBackColor = false;
+            this.btnBackToSearch.Click += new System.EventHandler(this.btnBackToSearch_Click);
             // 
             // btnBackHome
             // 
@@ -158,7 +180,7 @@
             // 
             this.btnScheduleAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnScheduleAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScheduleAppointment.Location = new System.Drawing.Point(0, 196);
+            this.btnScheduleAppointment.Location = new System.Drawing.Point(0, 190);
             this.btnScheduleAppointment.Name = "btnScheduleAppointment";
             this.btnScheduleAppointment.Size = new System.Drawing.Size(242, 74);
             this.btnScheduleAppointment.TabIndex = 76;
@@ -358,6 +380,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnPrintPatientInfo);
             this.panel2.Controls.Add(this.btnPatientGoals);
             this.panel2.Controls.Add(this.btnPatientVisit);
             this.panel2.Controls.Add(this.btnUpdateInformation);
@@ -365,14 +388,14 @@
             this.panel2.Controls.Add(this.btnScheduleAppointment);
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 548);
+            this.panel2.Size = new System.Drawing.Size(242, 601);
             this.panel2.TabIndex = 98;
             // 
             // btnPatientGoals
             // 
             this.btnPatientGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPatientGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientGoals.Location = new System.Drawing.Point(0, 276);
+            this.btnPatientGoals.Location = new System.Drawing.Point(0, 270);
             this.btnPatientGoals.Name = "btnPatientGoals";
             this.btnPatientGoals.Size = new System.Drawing.Size(242, 74);
             this.btnPatientGoals.TabIndex = 80;
@@ -385,7 +408,7 @@
             // 
             this.btnPatientVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPatientVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientVisit.Location = new System.Drawing.Point(0, 356);
+            this.btnPatientVisit.Location = new System.Drawing.Point(0, 350);
             this.btnPatientVisit.Name = "btnPatientVisit";
             this.btnPatientVisit.Size = new System.Drawing.Size(242, 74);
             this.btnPatientVisit.TabIndex = 79;
@@ -398,7 +421,7 @@
             // 
             this.btnUpdateInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdateInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 436);
+            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 430);
             this.btnUpdateInformation.Name = "btnUpdateInformation";
             this.btnUpdateInformation.Size = new System.Drawing.Size(242, 74);
             this.btnUpdateInformation.TabIndex = 78;
@@ -624,21 +647,50 @@
             this.label17.TabIndex = 125;
             this.label17.Text = "PT Goals";
             // 
-            // btnBackToSearch
+            // btnPrintPatientInfo
             // 
-            this.btnBackToSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBackToSearch.BackColor = System.Drawing.Color.Navy;
-            this.btnBackToSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToSearch.ForeColor = System.Drawing.Color.White;
-            this.btnBackToSearch.Location = new System.Drawing.Point(864, 20);
-            this.btnBackToSearch.Name = "btnBackToSearch";
-            this.btnBackToSearch.Size = new System.Drawing.Size(164, 34);
-            this.btnBackToSearch.TabIndex = 77;
-            this.btnBackToSearch.Text = "Back To Search";
-            this.btnBackToSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackToSearch.UseVisualStyleBackColor = false;
-            this.btnBackToSearch.Click += new System.EventHandler(this.btnBackToSearch_Click);
+            this.btnPrintPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrintPatientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPatientInfo.Location = new System.Drawing.Point(0, 510);
+            this.btnPrintPatientInfo.Name = "btnPrintPatientInfo";
+            this.btnPrintPatientInfo.Size = new System.Drawing.Size(242, 74);
+            this.btnPrintPatientInfo.TabIndex = 81;
+            this.btnPrintPatientInfo.Text = "Print Information";
+            this.btnPrintPatientInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintPatientInfo.UseVisualStyleBackColor = true;
+            this.btnPrintPatientInfo.Click += new System.EventHandler(this.btnPrintPatientInfo_Click);
+            // 
+            // panelPTGoalsMessage
+            // 
+            this.panelPTGoalsMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelPTGoalsMessage.BackColor = System.Drawing.Color.Red;
+            this.panelPTGoalsMessage.Controls.Add(this.pictureBox6);
+            this.panelPTGoalsMessage.Controls.Add(this.label18);
+            this.panelPTGoalsMessage.Location = new System.Drawing.Point(941, 79);
+            this.panelPTGoalsMessage.Name = "panelPTGoalsMessage";
+            this.panelPTGoalsMessage.Size = new System.Drawing.Size(316, 41);
+            this.panelPTGoalsMessage.TabIndex = 115;
+            this.panelPTGoalsMessage.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(78, 10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(184, 24);
+            this.label18.TabIndex = 113;
+            this.label18.Text = "Update Patient Goals";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(48, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 114;
+            this.pictureBox6.TabStop = false;
             // 
             // PatientProfile
             // 
@@ -647,6 +699,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1337, 686);
+            this.Controls.Add(this.panelPTGoalsMessage);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tbPTGoals);
@@ -698,6 +751,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelMessage.ResumeLayout(false);
             this.panelMessage.PerformLayout();
+            this.panelPTGoalsMessage.ResumeLayout(false);
+            this.panelPTGoalsMessage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,5 +810,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnPatientGoals;
         private System.Windows.Forms.Button btnBackToSearch;
+        private System.Windows.Forms.Button btnPrintPatientInfo;
+        private System.Windows.Forms.Panel panelPTGoalsMessage;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label18;
     }
 }

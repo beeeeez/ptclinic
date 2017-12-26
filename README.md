@@ -17,7 +17,7 @@
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - Pull Patient Goals from Initial Visit DB Table - populate field - **IN PROGRESS**
 - Print patient info capability **In Progress**
-- Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days) **IN PROGRESS**
+- [x] Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days)
 - Set Patient Visit button to go to correct Form based off patient status 
 - Set Patient Visit Button Text based on what form it will send to
 - [x] **Patient Class** Update statement
@@ -27,7 +27,7 @@
 - [x] Add patient status when new patient is added 
 
 ### Patient Goals
-- Look into statement for pulling latest PTGoals (Possible Issue)
+- [x] PT Goals pull last updated goals
 
 
 ### Schedule Appointment Form

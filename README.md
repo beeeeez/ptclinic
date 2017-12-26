@@ -18,8 +18,8 @@
 - Pull Patient Goals from Initial Visit DB Table - populate field - **IN PROGRESS**
 - Print patient info capability **In Progress**
 - [x] Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days)
-- Set Patient Visit button to go to correct Form based off patient status 
-- Set Patient Visit Button Text based on what form it will send to
+- Set Patient Visit button to go to correct Form based off patient status **IN PROGRESS**
+- Set Patient Visit Button Text based on what form it will send to **IN PROGRESS**
 - [x] **Patient Class** Update statement
 
 ### Patient Information Form

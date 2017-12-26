@@ -346,6 +346,7 @@ namespace PTClinic
             newPatient.LeaveMessage = canContact;
 
             newPatient.Email = tbEmail.Text;
+            newPatient.Status = "initial";
 
 
             // If statement to check if there are field erros

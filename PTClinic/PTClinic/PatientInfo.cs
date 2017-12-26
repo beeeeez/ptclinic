@@ -34,6 +34,7 @@ namespace PTClinic
         private string phone2Type;
         private Nullable<bool> leaveMessage;
         private string email;
+        private string status;
         protected string feedback;
 
         // Creating the public variables that are the front end to the private variables
@@ -50,7 +51,7 @@ namespace PTClinic
             get { return fName; }
             set
             {
-                
+
                 if (string.IsNullOrEmpty(value))
                 {
                     feedback += "Error: Enter First Name\n";
@@ -59,7 +60,7 @@ namespace PTClinic
                 {
                     fName = value;
                 }
-                
+
             }
         }
 
@@ -105,7 +106,7 @@ namespace PTClinic
                 {
                     gender = value;
                 }
-                
+
             }
         }
 
@@ -130,7 +131,7 @@ namespace PTClinic
                 {
                     address = value;
                 }
-               
+
             }
         }
 
@@ -158,7 +159,7 @@ namespace PTClinic
                 {
                     city = value;
                 }
-                
+
             }
         }
 
@@ -168,7 +169,7 @@ namespace PTClinic
             get { return state; }
             set
             {
-                
+
                 if (value.Equals("Select One") || string.IsNullOrEmpty(value))
                 {
                     feedback += "Error: Select a State\n";
@@ -177,7 +178,7 @@ namespace PTClinic
                 {
                     state = value;
                 }
-                
+
             }
         }
 
@@ -195,7 +196,7 @@ namespace PTClinic
                 {
                     zip = value;
                 }
-              
+
             }
         }
 
@@ -213,7 +214,7 @@ namespace PTClinic
                 {
                     hasInsurance = value;
                 }
-                
+
             }
         }
 
@@ -239,7 +240,7 @@ namespace PTClinic
                 {
                     insurer = " ";
                 }
-                
+
             }
         }
 
@@ -271,8 +272,8 @@ namespace PTClinic
                     otherInsurer = "";
                 }
 
-              
-                
+
+
             }
         }
 
@@ -290,7 +291,7 @@ namespace PTClinic
                 {
                     phone = value;
                 }
-               
+
             }
         }
 
@@ -318,7 +319,7 @@ namespace PTClinic
                 {
                     phoneType = value;
                 }
-                
+
             }
         }
 
@@ -372,10 +373,10 @@ namespace PTClinic
                 {
                     phone2Type = " ";
                 }
-               
+
             }
         }
-        
+
         // Public variable for LeaveMessage
         public Nullable<bool> LeaveMessage
         {
@@ -405,6 +406,13 @@ namespace PTClinic
             }
         }
 
+        // Public variable specifically for First Name
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
         // Default Constructor
         public PatientInfo()
         {
@@ -417,9 +425,9 @@ namespace PTClinic
             phone2Extension = "";
             feedback = "";
         }
-        
+
         // Overloaded Constructor
-        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email)
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email, string status)
         {
             feedback = "";
             Fname = fName;
@@ -443,6 +451,7 @@ namespace PTClinic
             Phone2Type = phone2Type;
             LeaveMessage = leaveMessage;
             Email = email;
+            Status = status;
         }
 
         // Adding a record
@@ -491,7 +500,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"LeaveMessage", LeaveMessage);
             comm.Parameters.AddWithValue(@"Email", Email);
             comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
-            comm.Parameters.AddWithValue(@"Status", "initial"); // Sets the patient status to initial visit (for form population from profile)
+            comm.Parameters.AddWithValue(@"Status", Status); // Sets the patient status to initial visit (for form population from profile)
 
 
             try
@@ -609,19 +618,19 @@ namespace PTClinic
 
             try
             {
-               // open a connection to the database
+                // open a connection to the database
                 conn.Open();
-      
-               
+
+
             }
             catch (Exception err)
             {
                 strFeedback = "ERROR: " + err.Message;
                 return null;
             }
-     
 
-           // Return some form of feedback
+
+            // Return some form of feedback
             return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
         } // End of FindOnePatient
 

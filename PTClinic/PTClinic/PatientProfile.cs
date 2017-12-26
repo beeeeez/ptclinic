@@ -25,6 +25,7 @@ namespace PTClinic
         private Form PatientInfo;
         PatientInfo patientDetails;
         private string lastUpdated; // PT Goals last update time
+        private string patientStatus;
 
         public PatientProfile()
         {
@@ -97,6 +98,9 @@ namespace PTClinic
                         patientDetails.PhoneExtension = dataReaderPatient["patient_phone1_extension"].ToString();
                         patientDetails.PhoneType = dataReaderPatient["patient_phone1_type"].ToString();
 
+                        // Get Patient Status
+                        patientStatus = dataReaderPatient["patient_status"].ToString();
+                        
                         //Grab the patients name to send over to visit forms / appointments etc.
                         pName = dataReaderPatient["patient_first_name"].ToString() + " " + dataReaderPatient["patient_middle_initial"].ToString() + " " + dataReaderPatient["patient_last_name"].ToString();
 
@@ -263,8 +267,21 @@ namespace PTClinic
         private void btnPatientVisit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VisitForm temp = new VisitForm(PatientID, pName, Admin, Login, this);
-            temp.Show();
+
+
+            // TODO Complete check for status and initialize forms accordingly
+        
+            if (patientStatus.ToLower().Equals("initial"))
+            {
+                VisitForm initialVisitForm = new VisitForm(PatientID, pName, Admin, Login, this);
+                initialVisitForm.Show();
+            }
+            else
+            {
+                FollowUpVisitForm followUpForm = new FollowUpVisitForm(PatientID, pName, Admin, Login, this);
+                followUpForm.Show();
+            }
+         
         }
 
         // Patient Goals Button

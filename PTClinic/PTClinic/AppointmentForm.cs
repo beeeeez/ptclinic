@@ -138,6 +138,10 @@ namespace PTClinic
             {
                 lblFeedback.Text += "Appointment dates cannot be before today\n";
             }
+            else if (DateTime.Now.ToString("hh:mm tt").Equals(tpAppTime.Text))
+            {
+                lblFeedback.Text += "Appointment time must be selected\n";
+            }
             else if (cbAppType.Text.Equals("Select One"))
             {
                 lblFeedback.Text += "Please select appointment type\n";

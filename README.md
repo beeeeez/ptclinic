@@ -31,7 +31,7 @@
 
 ### Schedule Appointment Form
 - Print Appointment Details capability
-- Make Appointment class to handle validation and calls
+- [x] Make Appointment class to handle validation and calls
 
 ### Finalization TODO's
 - Check tab indexes

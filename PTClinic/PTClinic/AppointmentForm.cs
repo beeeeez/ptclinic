@@ -129,24 +129,17 @@ namespace PTClinic
         private void btnScheduleAppointment_Click(object sender, EventArgs e)
         {
             lblFeedback.Text = "";
-            int success = 0;
 
             Appointment newAppointment = new Appointment();
 
-            DateTime checkDate;
+            newAppointment.PatientID = patientID;
+            newAppointment.AppointmentDate = dtpAppDate.Value;
+            newAppointment.AppointmentTime = tpAppTime.Text;
+            newAppointment.AppointmentType = cbAppType.Text;
 
-            bool valid = DateTime.TryParse(dtpAppDate.Text, out checkDate);
-            if (valid && checkDate == DateTime.Today || checkDate < DateTime.Now)
+            if (newAppointment.Feedback.Contains("Error:"))
             {
-                lblFeedback.Text += "Appointment dates cannot be before today\n";
-            }
-            else if (DateTime.Now.ToString("hh:mm tt").Equals(tpAppTime.Text))
-            {
-                lblFeedback.Text += "Appointment time must be selected\n";
-            }
-            else if (cbAppType.Text.Equals("Select One"))
-            {
-                lblFeedback.Text += "Please select appointment type\n";
+                lblFeedback.Text = newAppointment.Feedback;
             }
             else
             {
@@ -154,67 +147,33 @@ namespace PTClinic
 
                 using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                 {
-                    string appointmentSQL = "INSERT INTO Appointments ([patient_id], [appointment_date], [appointment_time], [appointment_type]) VALUES (@patientID, @app_date, @app_time, @app_type);";
 
+                    int dbSuccess = 0;
 
-                    OleDbCommand comm = new OleDbCommand();
-                    comm.CommandText = appointmentSQL; // Commander knows what to say
-                    comm.Connection = connection; // Heres the connection
+                    dbSuccess = newAppointment.AddRecord(connection);
 
-                    // Get Appointment Short Date for DB
-                    string shortDateStr = dtpAppDate.Value.ToString();
-                    DateTime shortDate = Convert.ToDateTime(shortDateStr);
-                    string timeStr = tpAppTime.Text;
-
-                    comm.Parameters.AddWithValue("@patientID", patientID);
-                    comm.Parameters.AddWithValue("@app_date", shortDate);
-                    comm.Parameters.AddWithValue("@app_time", timeStr);
-                    comm.Parameters.AddWithValue("@app_type", cbAppType.Text);
-
-                    try
+                    if (dbSuccess == 1)
                     {
-                        // open a connection to the database
-                        connection.Open();
+                        myTimer.Interval = 5000;
+                        myTimer.Start();
+                        panelAppMessage.BackColor = Color.FromArgb(0, 192, 0);
+                        panelAppMessage.Visible = true;
+                        lblDBFeedback.Text = "Appointment Saved";
+                        btnPrintAppCopy.Visible = true;
 
-                        // Giving strFeedback the number of records added
-                        //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
-                        success = comm.ExecuteNonQuery();
-
-                        if (success == 1)
-                        {
-                            myTimer.Interval = 3000;
-                            myTimer.Start();
-                            panelAppMessage.BackColor = Color.FromArgb(0, 192, 0);
-                            panelAppMessage.Visible = true;
-                            lblDBFeedback.Text = "Appointment Saved";
-                            btnPrintAppCopy.Visible = true;
-
-                        }
-                        else
-                        {
-                            myTimer.Interval = 3000;
-                            myTimer.Start();
-                            panelAppMessage.BackColor = Color.Red;
-                            panelAppMessage.Visible = true;
-                            lblDBFeedback.Text = "Appointment Was NOT Saved";
-                        }
                     }
-                    catch (Exception err)
+                    else
                     {
-                        lblFeedback.Text = "ERROR: " + err.Message;
+                        myTimer.Interval = 5000;
+                        myTimer.Start();
+                        panelAppMessage.BackColor = Color.Red;
+                        panelAppMessage.Visible = true;
+                        lblDBFeedback.Text = "Appointment Was NOT Saved";
                     }
-                    finally
-                    {
-                        connection.Close();
-                    }
-
 
                 }
 
             }
-
-
-
 
         }
 
@@ -223,6 +182,7 @@ namespace PTClinic
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
             // TODO Print Copy of Appointment Scheduled
+            MessageBox.Show("Print Appointment Copy");
 
         }
 

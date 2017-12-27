@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,24 +31,59 @@ namespace PTClinic
             get { return appointmentDate; }
             set
             {
-                appointmentDate = value;
+                DateTime checkDate;
+
+                bool valid = DateTime.TryParse(value.ToString(), out checkDate);
+                if (valid && checkDate == DateTime.Today || checkDate < DateTime.Now)
+                {
+                    feedback += "Error: Appointment dates cannot be before today\n";
+                }
+                else
+                {
+                    appointmentDate = value;
+                }
+              
             }
         }
 
         public string AppointmentTime
         {
             get { return appointmentTime; }
-            set { appointmentTime = value; }
+            set
+            {
+                if (DateTime.Now.ToString("hh:mm tt").Equals(value))
+                {
+                    feedback += "Error: Appointment time must be selected\n";
+                }
+                else
+                {
+                    appointmentTime = value;
+                }
+             
+            }
         }
 
         public string AppointmentType
         {
             get { return appointmentType; }
-            set { appointmentType = value; }
+            set
+            {
+                if (value.Equals("Select One"))
+                {
+                    feedback += "Error: Please select appointment type\n";
+                }
+                else
+                {
+                    appointmentType = value;
+                }
+            }
         }
 
         public Appointment()
         {
+            feedback = "";
+            appointmentTime = "";
+            appointmentType = "";
 
         }
 
@@ -60,9 +96,50 @@ namespace PTClinic
             AppointmentType = appointmentType;
         }
 
-        public virtual int AddRecord()
+        public virtual int AddRecord(OleDbConnection conn)
         {
-            return 0;
+            string strFeedback = "";
+            int success = 0;
+
+            string appointmentSQL = "INSERT INTO Appointments ([patient_id], [appointment_date], [appointment_time], [appointment_type]) VALUES (@patientID, @app_date, @app_time, @app_type);";
+
+
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = appointmentSQL; // Commander knows what to say
+            comm.Connection = conn; // Heres the connection
+
+            // Get Appointment Short Date for DB
+            string shortDateStr = AppointmentDate.ToShortDateString();
+            DateTime shortDate = Convert.ToDateTime(shortDateStr);
+        
+
+            comm.Parameters.AddWithValue("@patientID", PatientID);
+            comm.Parameters.AddWithValue("@app_date", shortDate);
+            comm.Parameters.AddWithValue("@app_time", AppointmentTime);
+            comm.Parameters.AddWithValue("@app_type", AppointmentType);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Appointment Added";
+                success = comm.ExecuteNonQuery();
+
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+            return success;
         }
     }
 }

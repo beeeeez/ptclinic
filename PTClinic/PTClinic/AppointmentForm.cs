@@ -131,6 +131,8 @@ namespace PTClinic
             lblFeedback.Text = "";
             int success = 0;
 
+            Appointment newAppointment = new Appointment();
+
             DateTime checkDate;
 
             bool valid = DateTime.TryParse(dtpAppDate.Text, out checkDate);

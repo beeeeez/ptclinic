@@ -34,6 +34,7 @@
 - [x] Make Appointment class to handle validation and calls
 
 ### Finalization TODO's
+- Get rid of the spaghetti code involving sending multiple forms over to other forms.
 - Backup DB
 - Check tab indexes
 - Check validation

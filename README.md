@@ -3,15 +3,14 @@
 ## Project Todos
 
 ### Intial Visit Form
-- Adds to the Patient Info table which visit it is -- **IN PROGRESS**
-- Change Visit Type in Patient Information Table when Visit Form adds a record to DB
+- [x] Adds to the Patient Info table which visit it is -- **IN PROGRESS**
 - [x] Set form window to scrollable for smaller size windows
 
 ### Follow Up Visit Form
-- Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
 - Set form window to scrollable for smaller size windows
 - Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
-- Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS NEED TO TEST**
+- [x] Adds to the Patient Info table which visit it is  -- **IN PROGRESS**
+- [x] Follow Up Visit Class - Constructor + DB functionality  -- **IN PROGRESS NEED TO TEST**
 
 ### Patient Profile Form
 - Print patient info capability **In Progress**

@@ -3,6 +3,7 @@
 ## Project Todos
 
 ### Intial Visit Form
+- Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
 - [x] Adds to the Patient Info table which visit it is
 - [x] Set form window to scrollable for smaller size windows
 

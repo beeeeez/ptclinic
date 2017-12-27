@@ -704,7 +704,7 @@ namespace PTClinic
         } // End of UpdateOneRecord
 
         // Updating patient status
-        public virtual int UpdatePatientStatus(int patientID, string Status)
+        public virtual int UpdatePatientStatuss(OleDbConnection conn, int patientID, string Status)
         {
             string strFeedback = "";
             int success = 0;
@@ -712,8 +712,6 @@ namespace PTClinic
             // SQL command to add a record to the Patients table
             string strSQL = "UPDATE Patients SET patient_status = @Status WHERE patient_id = @PatientID;";
 
-            // creating database connection 
-            OleDbConnection conn = new OleDbConnection();
             // Create the who what and where of the DB
             string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
             // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
@@ -746,7 +744,7 @@ namespace PTClinic
             }
 
             return success;
-        } // End of UpdateOneRecord
+        } // End of UpdatePatientStatus
 
     } // End of PatientInfo
 }

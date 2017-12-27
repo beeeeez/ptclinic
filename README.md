@@ -10,6 +10,7 @@
 ### Follow Up Visit Form
 - Set form window to scrollable for smaller size windows -- **IN PROGRESS**
 - Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
+- Fix the missing validation in FollowUpVisit class
 - [x] Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - [x] Follow Up Visit Class - Constructor + DB functionality 
 

@@ -187,7 +187,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(948, 677);
+            this.btnClear.Location = new System.Drawing.Point(939, 677);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -202,7 +202,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(779, 677);
+            this.btnAddVisit.Location = new System.Drawing.Point(770, 677);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -400,9 +400,9 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(12, 151);
+            this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(621, 586);
+            this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 88;
             // 
             // lblPatientName
@@ -452,7 +452,6 @@
             // 
             // tbProviderID
             // 
-            this.tbProviderID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbProviderID.Location = new System.Drawing.Point(149, 46);
             this.tbProviderID.Name = "tbProviderID";
             this.tbProviderID.Size = new System.Drawing.Size(100, 20);
@@ -460,7 +459,6 @@
             // 
             // lblProviderID
             // 
-            this.lblProviderID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProviderID.AutoSize = true;
             this.lblProviderID.Location = new System.Drawing.Point(83, 49);
             this.lblProviderID.Name = "lblProviderID";
@@ -546,7 +544,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(884, 536);
+            this.lblFeedback.Location = new System.Drawing.Point(875, 536);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(145, 20);
             this.lblFeedback.TabIndex = 94;
@@ -568,7 +566,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(12, 95);
+            this.panel3.Location = new System.Drawing.Point(3, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -595,7 +593,7 @@
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(639, 151);
+            this.panel4.Location = new System.Drawing.Point(630, 151);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 352);
             this.panel4.TabIndex = 92;

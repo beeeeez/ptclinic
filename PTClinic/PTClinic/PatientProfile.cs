@@ -174,6 +174,7 @@ namespace PTClinic
 
                         // Patient Diagnosis
                         tbDiagnosis.Text = dataReaderVisitInfo["diagnosis"].ToString();
+                        tbPTGoals.Text = dataReaderVisitInfo["pt_goals"].ToString();
                     }
                 } // End of -- using(var dataReaderVisitInfo = tempVisit.FindOnePatientVisit(connection, intPID)
 

@@ -17,6 +17,7 @@ namespace PTClinic
         private Form Login;
         private Form PatientProfile;
         public int patientID;
+        private string changeVisitType = "";
 
         public FollowUpVisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
         {
@@ -25,24 +26,14 @@ namespace PTClinic
             setButtonIcon();
 
             // Set Admin, Login, and PatientProfile forms to the ones passed in to FollowUpVisitForm
-
             this.Login = Login;
             this.Admin = adminForm;
             this.PatientProfile = PatientProfile;
 
-            /*
-             * 
-             * Set Patient ID
-             * Patient Name
-             * Diagnosis
-             * And
-             * PT Goals
-             * 
-             * They should all be passed over from the patient info form
-             * 
-             * 
-             */
+            // Setting Patient ID to the Patient ID Label
             lblPID.Text = PatientID;
+
+            // Set Patient Name to the patient name label
             lblPatientName.Text = PatientName;
 
             patientID = Convert.ToInt32(PatientID);
@@ -64,6 +55,15 @@ namespace PTClinic
                     }
                 }
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+
+            // Getting Todays date
+            // And setting the three date labels (todays, student, and provider) to it
+            DateTime date = DateTime.Now;
+            string shortDateStr = date.ToShortDateString();
+            lblTodaysDate.Text = shortDateStr;
+            lblStudentDate.Text = shortDateStr;
+            lblProviderDate.Text = shortDateStr;
+
 
             // Fill Drop Downs
             FillSupervisedModalities();
@@ -145,7 +145,7 @@ namespace PTClinic
         {
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
-            newVisit.PatientID = Convert.ToInt32(lblPID.Text);
+            newVisit.PatientID = patientID;
             newVisit.ProviderID = tbProviderID.Text;
             newVisit.PatientName = lblPatientName.Text;
             newVisit.Diagnosis = tbDiagnosis.Text;
@@ -235,6 +235,44 @@ namespace PTClinic
                         lblFeedback.Text = "Patient's Visit Information has been saved";
 
                         /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY ARE DISCHARGED OR NEED REASSESSMENT */
+
+                        if (reassessment == true)
+                        {
+                            changeVisitType = "re-assessment";
+                        }
+                        else if (discharge == true)
+                        {
+                            changeVisitType = "discharge";
+                        }
+                        else
+                        {
+                            changeVisitType = "follow up";
+                        }
+
+                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                        {
+                            PatientInfo changeVisitStatus = new PatientInfo();
+
+                            try
+                            {
+                                int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
+
+                                if (visitTypeSuccess == 1)
+                                {
+                                    lblFeedback.Text = "Patient's Visit Type has been saved";
+                                }
+                                else
+                                {
+                                    lblFeedback.Text = "Patient's Visit Information has NOT been saved";
+                                }
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                lblFeedback.Text = ex.ToString();
+                            }
+                        }
                     }
                     else
                     {

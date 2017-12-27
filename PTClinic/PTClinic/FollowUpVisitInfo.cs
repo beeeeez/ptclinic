@@ -295,38 +295,6 @@ namespace PTClinic
             set { providerNameDate = value; }
         }
 
-        /*
-         * 
-         * Constructors
-         * 
-         * and
-         * 
-         * Add to DB function needed
-         * 
-         * */
-
-        //private int patientID;
-        //private string providerID;
-        //private string patientName;
-        //private string diagnosis;
-        //private string ptGoals;
-        //private string subjective;
-        //private string objective;
-        //private string supervisedModalities;
-        //private string constantAttendance;
-        //private string theraputicProcedures;
-        //private string theraputicProcedures2;
-        //private string assessment;
-        //private string plan;
-        //private Nullable<bool> reassessment;
-        //private Nullable<bool> referForDischarge;
-        //private string studentProvider;
-        //private DateTime studentProviderDate;
-        //private string providerName;
-        //private DateTime providerNameDate;
-        //private DateTime visitDate;
-        //protected string feedback;
-
         // Default Constructor
         public FollowUpVisitInfo()
         {
@@ -338,6 +306,7 @@ namespace PTClinic
             plan = "";
             studentProviderName = "";
             providerName = "";
+            feedback = "";
         }
 
         // Adding the first visit to the DB

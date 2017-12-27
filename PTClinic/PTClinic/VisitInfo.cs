@@ -10,16 +10,6 @@ namespace PTClinic
 {
     class VisitInfo
     {
-        /* TODO'S ~~~
-         * 1- Private variables -- DONE
-         * 2- Public facing variables -- DONE
-         * 3- Default Constructor -- DONE
-         * 4- Overloaded Constructor -- DONE
-         * 5- Add Visit Information to DB -- UNDER CONSTRUCTION
-         * 6- Find Visit Infor ??
-         * 7- Update Visit Information to DB ??
-         * */
-
         // Private variables only the class can access.
         // Visit Info variables
         private int patientID;

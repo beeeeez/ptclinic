@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace PTClinic
         private Form Login;
         private Form PatientProfile;
         public int patientID;
+        private string changeVisitType = "follow up";
 
 
         public VisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
@@ -38,11 +40,11 @@ namespace PTClinic
             // Set the PatientID
             lblPID.Text = PatientID;
 
+            // set the private patientID int variable to the patients ID for use in the add patient section
+            patientID = Convert.ToInt32(PatientID);
+
             // Set the Patient Name
             lblPatientName.Text = "Patient Name: " + PatientName;
-
-            // Set the Patient Name here~~~
-            /* Get Patient Name Passing Over! */
 
             // Fill Drop Downs
             FillEvaluation();
@@ -107,7 +109,7 @@ namespace PTClinic
         {
             VisitInfo newVisit = new VisitInfo();
 
-            newVisit.PatientID = Convert.ToInt32(lblPID.Text);
+            newVisit.PatientID = patientID;
             newVisit.ProviderID = tbProviderID.Text;
 
             // Get Current Date String (Set as a Short Date Time)
@@ -158,6 +160,30 @@ namespace PTClinic
                         lblFeedback.Text = "Patient's Visit Information has been saved";
 
                         /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
+                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                        {
+                            PatientInfo changeVisitStatus = new PatientInfo();
+                            
+                            try
+                            {
+                                int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
+
+                                if (visitTypeSuccess == 1)
+                                {
+                                    lblFeedback.Text = "Patient's Visit Type has been saved";
+                                }
+                                else
+                                {
+                                    lblFeedback.Text = "Patient's Visit Information has NOT been saved";
+                                }
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                lblFeedback.Text = ex.ToString();
+                            }
+                        }
                     }
                     else
                     {

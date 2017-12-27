@@ -56,6 +56,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPatientName = new System.Windows.Forms.Label();
             this.tbChiefComplaint = new System.Windows.Forms.TextBox();
             this.lblChiefComplaint = new System.Windows.Forms.Label();
             this.lblPID = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
-            this.lblPatientName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -405,6 +405,14 @@
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 88;
             // 
+            // lblPatientName
+            // 
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Location = new System.Drawing.Point(250, 17);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(0, 13);
+            this.lblPatientName.TabIndex = 99;
+            // 
             // tbChiefComplaint
             // 
             this.tbChiefComplaint.Location = new System.Drawing.Point(149, 84);
@@ -656,20 +664,12 @@
             this.tbPTDiagnosis.TabIndex = 14;
             this.tbPTDiagnosis.Text = "Physical Therapy Diagnosis";
             // 
-            // lblPatientName
-            // 
-            this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Location = new System.Drawing.Point(250, 17);
-            this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(0, 13);
-            this.lblPatientName.TabIndex = 99;
-            // 
             // VisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1243, 749);
+            this.ClientSize = new System.Drawing.Size(1260, 733);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddVisit);
             this.Controls.Add(this.panel1);

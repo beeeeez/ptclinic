@@ -32,6 +32,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddFollowUp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -88,7 +89,6 @@
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
-            this.btnBackToProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -100,10 +100,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(994, 667);
+            this.btnClear.Location = new System.Drawing.Point(986, 660);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 101;
@@ -113,12 +113,12 @@
             // 
             // btnAddFollowUp
             // 
-            this.btnAddFollowUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddFollowUp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddFollowUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(827, 667);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(819, 660);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 96;
@@ -137,8 +137,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1265, 73);
+            this.panel1.Size = new System.Drawing.Size(1248, 73);
             this.panel1.TabIndex = 97;
+            // 
+            // btnBackToProfile
+            // 
+            this.btnBackToProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToProfile.Location = new System.Drawing.Point(750, 20);
+            this.btnBackToProfile.Name = "btnBackToProfile";
+            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToProfile.TabIndex = 76;
+            this.btnBackToProfile.Text = "Back To Profile";
+            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToProfile.UseVisualStyleBackColor = false;
+            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
             // 
             // btnBackHome
             // 
@@ -147,7 +163,7 @@
             this.btnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackHome.ForeColor = System.Drawing.Color.White;
-            this.btnBackHome.Location = new System.Drawing.Point(958, 20);
+            this.btnBackHome.Location = new System.Drawing.Point(941, 20);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(107, 34);
             this.btnBackHome.TabIndex = 75;
@@ -163,7 +179,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(1105, 20);
+            this.btnLogOut.Location = new System.Drawing.Point(1088, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(107, 34);
             this.btnLogOut.TabIndex = 75;
@@ -205,11 +221,11 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(28, 101);
+            this.panel3.Location = new System.Drawing.Point(20, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 99;
@@ -235,7 +251,7 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.gbDischarge);
             this.panel4.Controls.Add(this.gbReassessment);
@@ -253,7 +269,7 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(660, 157);
+            this.panel4.Location = new System.Drawing.Point(652, 150);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 100;
@@ -641,7 +657,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tbTherapeuticProcedures2);
             this.panel2.Controls.Add(this.lblTheraputicCPT2);
@@ -669,7 +685,7 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(28, 157);
+            this.panel2.Location = new System.Drawing.Point(20, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 586);
             this.panel2.TabIndex = 98;
@@ -727,28 +743,12 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
-            // btnBackToProfile
-            // 
-            this.btnBackToProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBackToProfile.BackColor = System.Drawing.Color.Navy;
-            this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToProfile.Location = new System.Drawing.Point(767, 20);
-            this.btnBackToProfile.Name = "btnBackToProfile";
-            this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
-            this.btnBackToProfile.TabIndex = 76;
-            this.btnBackToProfile.Text = "Back To Profile";
-            this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackToProfile.UseVisualStyleBackColor = false;
-            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
-            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 749);
+            this.ClientSize = new System.Drawing.Size(1265, 733);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddFollowUp);
             this.Controls.Add(this.panel1);

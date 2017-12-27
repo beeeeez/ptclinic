@@ -704,7 +704,7 @@ namespace PTClinic
         } // End of UpdateOneRecord
 
         // Updating patient status
-        public virtual int UpdatePatientStatuss(OleDbConnection conn, int patientID, string Status)
+        public virtual int UpdatePatientStatus(OleDbConnection conn, int patientID, string Status)
         {
             string strFeedback = "";
             int success = 0;

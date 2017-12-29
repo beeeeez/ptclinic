@@ -9,7 +9,8 @@
 
 ### Follow Up Visit Form
 - Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
-- Fix the missing validation in FollowUpVisit class
+- Add button to get to PSFS form (if it needs to be filled out) if it doesn't just have a NO label populate
+- [x] Fix the missing validation in FollowUpVisit class
 - [x] Set form window to scrollable for smaller size windows
 - [x] Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - [x] Follow Up Visit Class - Constructor + DB functionality 

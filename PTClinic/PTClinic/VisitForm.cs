@@ -157,7 +157,7 @@ namespace PTClinic
                     // If patient record was added successfully update Patient Info with their new Visit Status
                     if (dbSuccess == 1)
                     {
-                        lblFeedback.Text = "Patient's Visit Information has been saved";
+                        //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                         /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
                         using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
@@ -170,11 +170,11 @@ namespace PTClinic
 
                                 if (visitTypeSuccess == 1)
                                 {
-                                    lblFeedback.Text = "Patient's Visit Type has been saved";
+                                    lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information has NOT been saved";
+                                    lblFeedback.Text = "Patient's Visit Information was not saved";
                                 }
 
 

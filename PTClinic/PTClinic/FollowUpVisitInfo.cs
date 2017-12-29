@@ -90,28 +90,76 @@ namespace PTClinic
         public string Diagnosis
         {
             get { return diagnosis; }
-            set { diagnosis = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a Diagnosis\n";
+                }
+                else
+                {
+                    diagnosis = value;
+                }
+
+            }
         }
 
         // Public variable for PT Goals
         public string PTGoals
         {
             get { return ptGoals; }
-            set { ptGoals = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter PT Goals\n";
+                }
+                else
+                {
+                    ptGoals = value;
+                }
+
+            }
         }
 
         // Public variable for Subjective
         public string Subjective
         {
             get { return subjective; }
-            set { subjective = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an Objective\n";
+                }
+                else
+                {
+                    subjective = value;
+                }
+
+            }
         }
 
         // Public variable for Objective
         public string Objective
         {
             get { return objective; }
-            set { objective = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an Objective\n";
+                }
+                else
+                {
+                    objective = value;
+                }
+
+            }
         }
 
         // Public variable for Supervised Modalities
@@ -190,14 +238,38 @@ namespace PTClinic
         public string Assessment
         {
             get { return assessment; }
-            set { assessment = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter an Assessment\n";
+                }
+                else
+                {
+                    assessment = value;
+                }
+
+            }
         }
 
         // Public variable for Plan
         public string Plan
         {
             get { return plan; }
-            set { plan = value; }
+            set
+            {
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter a Plan\n";
+                }
+                else
+                {
+                    plan = value;
+                }
+
+            }
         }
 
         // Public variable specifically for Reassessment

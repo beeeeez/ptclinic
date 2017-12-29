@@ -232,7 +232,7 @@ namespace PTClinic
                     // If patient record was added successfully update the Patient Info table with their Visit Status
                     if (dbSuccess == 1)
                     {
-                        lblFeedback.Text = "Patient's Visit Information has been saved";
+                        //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                         /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY ARE DISCHARGED OR NEED REASSESSMENT */
 
@@ -259,11 +259,11 @@ namespace PTClinic
 
                                 if (visitTypeSuccess == 1)
                                 {
-                                    lblFeedback.Text = "Patient's Visit Type has been saved";
+                                    lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information has NOT been saved";
+                                    lblFeedback.Text = "Patient's Visit Information was not saved";
                                 }
 
 

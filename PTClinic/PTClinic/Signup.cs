@@ -31,6 +31,8 @@ namespace PTClinic
             panelError.Visible = false;
             this.Update();
 
+            btnBackToLogin.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
+
         }
 
 

@@ -206,11 +206,12 @@
             this.btnBackToLogin.BackColor = System.Drawing.Color.Navy;
             this.btnBackToLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToLogin.ForeColor = System.Drawing.Color.White;
-            this.btnBackToLogin.Location = new System.Drawing.Point(578, 18);
+            this.btnBackToLogin.Location = new System.Drawing.Point(546, 18);
             this.btnBackToLogin.Name = "btnBackToLogin";
-            this.btnBackToLogin.Size = new System.Drawing.Size(92, 34);
+            this.btnBackToLogin.Size = new System.Drawing.Size(124, 34);
             this.btnBackToLogin.TabIndex = 15;
             this.btnBackToLogin.Text = "Back To Login";
+            this.btnBackToLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackToLogin.UseVisualStyleBackColor = false;
             this.btnBackToLogin.Click += new System.EventHandler(this.btnBackToLogin_Click);
             // 
@@ -275,6 +276,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSignUp);
             this.Name = "Signup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signup";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

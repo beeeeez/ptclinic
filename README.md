@@ -32,7 +32,7 @@
 
 
 ### Schedule Appointment Form
-- Print Appointment Details capability
+- Print Appointment Details capability ** TESTING **
 - [x] Make Appointment class to handle validation and calls
 
 ### Finalization TODO's

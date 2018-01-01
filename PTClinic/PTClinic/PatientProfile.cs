@@ -308,7 +308,30 @@ namespace PTClinic
         private void btnPrintPatientInfo_Click(object sender, EventArgs e)
         {
             // TODO - Print Patient Demographic -- Emergency Contact - Caregiver Info + PT Goals Diagnosis if there are any
-            MessageBox.Show("Print Patient Info Here");
+            //MessageBox.Show("Print Patient Info Here");
+
+            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                printPatientInfo.Print();
+            }
+
+        }
+
+        private void printPatientInfo_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            using (Font font1 = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point))
+            {
+
+                Rectangle rect1 = new Rectangle(100, 100, 650, 25);
+                StringFormat SF = new StringFormat();
+                SF.Alignment = StringAlignment.Center;
+                SF.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Patient Information",font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawRectangle(Pens.Black, rect1);
+
+            }
+          //  e.Graphics.DrawString("Patient Information", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            e.Graphics.DrawString("Darrel Derkinonws", new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 130));
         }
     }
 }

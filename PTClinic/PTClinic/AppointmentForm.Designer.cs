@@ -58,6 +58,8 @@
             this.panelAppMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
+            this.printAppointment = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -413,6 +415,21 @@
             this.lblFeedback.Size = new System.Drawing.Size(0, 18);
             this.lblFeedback.TabIndex = 151;
             // 
+            // printAppointment
+            // 
+            this.printAppointment.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printAppointment_PrintPage);
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printAppointment;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,5 +505,7 @@
         private System.Windows.Forms.Label lblDBFeedback;
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Button btnBackToProfile;
+        private System.Drawing.Printing.PrintDocument printAppointment;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
     }
 }

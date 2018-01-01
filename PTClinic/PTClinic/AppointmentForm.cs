@@ -18,6 +18,8 @@ namespace PTClinic
         private Form Admin;
         private Form Login;
         System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+        StringBuilder appointmentString;
+        string patientName;
 
         public AppointmentForm()
         {
@@ -43,6 +45,7 @@ namespace PTClinic
 
             lblPatientID.Text = patientID.ToString();
             lblPatientName.Text = patientDetails.Fname + " " + patientDetails.Lname;
+            patientName = patientDetails.Fname + " " + patientDetails.Lname;
 
             FillAppointmentType();
 
@@ -161,6 +164,25 @@ namespace PTClinic
                         lblDBFeedback.Text = "Appointment Saved";
                         btnPrintAppCopy.Visible = true;
 
+                        // On Success build print string for appointments
+                        appointmentString = new StringBuilder();
+                        appointmentString.AppendLine("Access Point RI");
+                        appointmentString.AppendLine("111 Comstock Parkway");
+                        appointmentString.AppendLine("Cranston, RI 02920");
+                        appointmentString.AppendLine("Phone: 401-941-1112");
+                        appointmentString.AppendLine("Fax: 401-383-8751");
+                        appointmentString.AppendLine("---------------------------------------------------");
+                        appointmentString.AppendLine("\n\n");
+                        appointmentString.AppendLine("Appointment Details:");
+                        appointmentString.AppendLine();
+                        appointmentString.AppendLine("Patient ID: " + patientID);
+                        appointmentString.AppendLine(patientName);
+                        appointmentString.AppendLine();
+                        appointmentString.AppendLine("Date: " + newAppointment.AppointmentDate.ToLongDateString());
+                        appointmentString.AppendLine("Time: " + newAppointment.AppointmentTime);
+                        appointmentString.AppendLine("Visit Type: " + newAppointment.AppointmentType);
+
+
                     }
                     else
                     {
@@ -178,11 +200,22 @@ namespace PTClinic
         }
 
 
+        private void printAppointment_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(appointmentString.ToString(), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+
+        }
+
 
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
             // TODO Print Copy of Appointment Scheduled
-            MessageBox.Show("Print Appointment Copy");
+            //MessageBox.Show("Print Appointment Copy");
+
+            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                printAppointment.Print();
+            }
 
         }
 
@@ -203,5 +236,6 @@ namespace PTClinic
             this.Hide();
             PatientProfile.Show();
         }
+
     }
 }

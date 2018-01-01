@@ -55,6 +55,7 @@
             this.lblZip = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrintPatientInfo = new System.Windows.Forms.Button();
             this.btnPatientGoals = new System.Windows.Forms.Button();
             this.btnPatientVisit = new System.Windows.Forms.Button();
             this.btnUpdateInformation = new System.Windows.Forms.Button();
@@ -78,10 +79,12 @@
             this.tbPTGoals = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnPrintPatientInfo = new System.Windows.Forms.Button();
             this.panelPTGoalsMessage = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.printPatientInfo = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -391,6 +394,19 @@
             this.panel2.Size = new System.Drawing.Size(242, 601);
             this.panel2.TabIndex = 98;
             // 
+            // btnPrintPatientInfo
+            // 
+            this.btnPrintPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrintPatientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPatientInfo.Location = new System.Drawing.Point(0, 510);
+            this.btnPrintPatientInfo.Name = "btnPrintPatientInfo";
+            this.btnPrintPatientInfo.Size = new System.Drawing.Size(242, 74);
+            this.btnPrintPatientInfo.TabIndex = 81;
+            this.btnPrintPatientInfo.Text = "Print Information";
+            this.btnPrintPatientInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintPatientInfo.UseVisualStyleBackColor = true;
+            this.btnPrintPatientInfo.Click += new System.EventHandler(this.btnPrintPatientInfo_Click);
+            // 
             // btnPatientGoals
             // 
             this.btnPatientGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -647,19 +663,6 @@
             this.label17.TabIndex = 125;
             this.label17.Text = "PT Goals";
             // 
-            // btnPrintPatientInfo
-            // 
-            this.btnPrintPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrintPatientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintPatientInfo.Location = new System.Drawing.Point(0, 510);
-            this.btnPrintPatientInfo.Name = "btnPrintPatientInfo";
-            this.btnPrintPatientInfo.Size = new System.Drawing.Size(242, 74);
-            this.btnPrintPatientInfo.TabIndex = 81;
-            this.btnPrintPatientInfo.Text = "Print Information";
-            this.btnPrintPatientInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrintPatientInfo.UseVisualStyleBackColor = true;
-            this.btnPrintPatientInfo.Click += new System.EventHandler(this.btnPrintPatientInfo_Click);
-            // 
             // panelPTGoalsMessage
             // 
             this.panelPTGoalsMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -672,6 +675,15 @@
             this.panelPTGoalsMessage.TabIndex = 115;
             this.panelPTGoalsMessage.Visible = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(48, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 114;
+            this.pictureBox6.TabStop = false;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -683,14 +695,24 @@
             this.label18.TabIndex = 113;
             this.label18.Text = "Update Patient Goals";
             // 
-            // pictureBox6
+            // printPatientInfo
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(48, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.TabIndex = 114;
-            this.pictureBox6.TabStop = false;
+            this.printPatientInfo.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printPatientInfo_PrintPage);
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printPatientInfo;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // PatientProfile
             // 
@@ -814,5 +836,8 @@
         private System.Windows.Forms.Panel panelPTGoalsMessage;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label18;
+        private System.Drawing.Printing.PrintDocument printPatientInfo;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

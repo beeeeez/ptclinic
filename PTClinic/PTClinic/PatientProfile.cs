@@ -24,6 +24,9 @@ namespace PTClinic
         private Form Search;
         private Form PatientInfo;
         PatientInfo patientDetails;
+        CaregiverInfo caregiverDetails;
+        EmergencyContact emContactDetails;
+        StringBuilder printString;
         private string lastUpdated; // PT Goals last update time
         private string patientStatus;
 
@@ -41,7 +44,13 @@ namespace PTClinic
 
             pID = intPID;
 
+            // New instances to pass to printer string
             patientDetails = new PatientInfo();
+            caregiverDetails = new CaregiverInfo();
+            emContactDetails = new EmergencyContact();
+
+            // Print String
+            printString = new StringBuilder();
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -88,7 +97,10 @@ namespace PTClinic
                         // and put them in proper labels
                        
                         patientDetails.Fname = dataReaderPatient["patient_first_name"].ToString();
+                        patientDetails.MInitial = dataReaderPatient["patient_middle_initial"].ToString();
                         patientDetails.Lname = dataReaderPatient["patient_last_name"].ToString();
+                        patientDetails.Gender = dataReaderPatient["patient_gender"].ToString();
+                        patientDetails.Birthdate = Convert.ToDateTime(dataReaderPatient["patient_dob"].ToString());
                         patientDetails.Address = dataReaderPatient["patient_address"].ToString();
                         patientDetails.Address2 = dataReaderPatient["patient_address2"].ToString();
                         patientDetails.City = dataReaderPatient["patient_city"].ToString();
@@ -97,6 +109,74 @@ namespace PTClinic
                         patientDetails.Phone = dataReaderPatient["patient_phone1"].ToString();
                         patientDetails.PhoneExtension = dataReaderPatient["patient_phone1_extension"].ToString();
                         patientDetails.PhoneType = dataReaderPatient["patient_phone1_type"].ToString();
+                        patientDetails.Phone2 = dataReaderPatient["patient_phone2"].ToString();
+                        patientDetails.Phone2Extension = dataReaderPatient["patient_phone2_extension"].ToString();
+                        patientDetails.Phone2Type = dataReaderPatient["patient_phone2_type"].ToString();
+                        patientDetails.HasInsurance = Convert.ToBoolean(dataReaderPatient["patient_has_insurance"].ToString());
+                        patientDetails.Insurer = dataReaderPatient["patient_insurer"].ToString();
+                        patientDetails.OtherInsurer = dataReaderPatient["patient_other_insurance"].ToString();
+
+                        MessageBox.Show(patientDetails.Phone2Type);
+
+
+                        /****
+                        *  BEGINNING OF PRINT STRING WIP
+                        *  
+                        *  *************************/
+
+
+                        printString.AppendLine(patientDetails.Fname + " " + patientDetails.MInitial +  " " + patientDetails.Lname);
+                        printString.AppendLine(patientDetails.Gender);
+                        printString.AppendLine("dob:  " + patientDetails.Birthdate.ToShortDateString());
+                        printString.AppendLine(patientDetails.Address);
+                        if (!string.IsNullOrEmpty(patientDetails.Address2))
+                        {
+                            printString.AppendLine(patientDetails.Address2);
+                        }
+                        printString.AppendLine(patientDetails.City + " " + patientDetails.State + ", " + patientDetails.Zip);
+                        if (string.IsNullOrEmpty(patientDetails.PhoneExtension))
+                        {
+                            printString.AppendLine(patientDetails.Phone + " " + " (" + patientDetails.PhoneType + ")");
+                        }
+                        else
+                        {
+                            printString.AppendLine(patientDetails.Phone + " Ext: " + patientDetails.PhoneExtension + " (" + patientDetails.PhoneType + ")");
+                        }
+                        if (!patientDetails.Phone2.Equals("(   )    -"))
+                        {
+                            if (string.IsNullOrEmpty(patientDetails.Phone2Extension))
+                            {
+                                printString.AppendLine(patientDetails.Phone2 + "  " + " (" + patientDetails.Phone2Type + ")");
+                            }
+                            else
+                            {
+                                printString.AppendLine(patientDetails.Phone2 + "  Ext: " + patientDetails.Phone2Extension + " (" + patientDetails.Phone2Type + ")");
+                            }
+                        }
+
+                        if (Convert.ToString(patientDetails.HasInsurance).Equals("True"))
+                        {
+                            if (!string.IsNullOrEmpty(patientDetails.Insurer) && patientDetails.Insurer.Equals("Other"))
+                            {
+                                
+                                printString.AppendLine("Insurance: " + patientDetails.Insurer + " - " + patientDetails.OtherInsurer);
+                            }
+                            else
+                            {
+                                printString.AppendLine("Insurance: " + patientDetails.Insurer);
+                            }
+                        }
+                        else
+                        {
+                            printString.AppendLine("No Insurance");
+                        }
+
+                        /****
+                         *  END OF PRINT STRING WIP
+                         *  
+                         *  *************************/
+
+
 
                         // Get Patient Status
                         patientStatus = dataReaderPatient["patient_status"].ToString();
@@ -330,8 +410,8 @@ namespace PTClinic
                 e.Graphics.DrawRectangle(Pens.Black, rect1);
 
             }
-          //  e.Graphics.DrawString("Patient Information", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
-            e.Graphics.DrawString("Darrel Derkinonws", new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 130));
+            //  e.Graphics.DrawString("Patient Information", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            e.Graphics.DrawString(printString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 130));
         }
     }
 }

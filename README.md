@@ -16,7 +16,7 @@
 - [x] Follow Up Visit Class - Constructor + DB functionality 
 
 ### Patient Profile Form
-- Print patient info capability **In Progress**
+- [x] Print patient info capability
 - [x] Set Patient Visit button to go to correct Form based off patient status **IN PROGRESS NEED TESTING**
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - [x] Pull Patient Goals from Initial Visit DB Table - populate field
@@ -32,12 +32,12 @@
 
 
 ### Schedule Appointment Form
-- Print Appointment Details capability ** TESTING **
+- [x] Print Appointment Details capability
 - [x] Make Appointment class to handle validation and calls
 
 ### Finalization TODO's
 - Get rid of the spaghetti code involving sending multiple forms over to other forms.
-- Backup DB
+- Backup DB **In Progress**
 - Check tab indexes
 - Check validation
 

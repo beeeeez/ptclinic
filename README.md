@@ -17,7 +17,7 @@
 
 ### Patient Profile Form
 - [x] Print patient info capability
-- [x] Set Patient Visit button to go to correct Form based off patient status **IN PROGRESS NEED TESTING**
+- [x] Set Patient Visit button to go to correct Form based off patient status
 - [x] Pull Diagnosis from Initial Visit DB Table - populate field
 - [x] Pull Patient Goals from Initial Visit DB Table - populate field
 - [x] Add Panel Label to Display when PSFS needs to be updated (pull Patient Goals last update time and calculate 30 days)

@@ -121,11 +121,8 @@ namespace PTClinic
                         patientDetails.OtherInsurer = dataReaderPatient["patient_other_insurance"].ToString();
 
 
-                        /****
-                        *  BEGINNING OF PRINT STRING WIP
-                        *  
-                        *  *************************/
-
+                 
+                        /** Patient Details String for Print **/
                         patientString.AppendLine("Patient ID: " + dataReaderPatient["patient_id"].ToString());
                         patientString.AppendLine(patientDetails.Fname + " " + patientDetails.MInitial +  " " + patientDetails.Lname);
                         patientString.AppendLine(patientDetails.Gender);
@@ -172,12 +169,7 @@ namespace PTClinic
                         {
                             patientString.AppendLine("No Insurance");
                         }
-
-                        /****
-                         *  END OF PRINT STRING WIP
-                         *  
-                         *  *************************/
-
+                        /** END Patient Details String for Print **/
 
 
                         // Get Patient Status
@@ -217,10 +209,9 @@ namespace PTClinic
                 {
                     while (dataReaderCG.Read())
                     {
-                       
 
-                        // Append caregiver information to string for info print
-                       // caregiverString.AppendLine("___________________ Caregiver Information ____________________");
+
+                        /** Patient Caregiver String for Print **/
                         caregiverString.AppendLine(dataReaderCG["caregiver_name"].ToString());
                         caregiverString.AppendLine(dataReaderCG["caregiver_address"].ToString());
                         caregiverString.AppendLine(dataReaderCG["caregiver_city"].ToString() + " " + dataReaderCG["caregiver_state"].ToString() + " " + dataReaderCG["caregiver_zip"].ToString());
@@ -243,7 +234,7 @@ namespace PTClinic
                                 caregiverString.AppendLine(dataReaderCG["caregiver_phone2"].ToString() + "  Ext: " + dataReaderCG["caregiver_phone2_extension"].ToString() + "  (" + dataReaderCG["caregiver_phone2_type"].ToString() + ")");
                             }
                         }
-
+                        /** END  Patient Caregiver String for Print **/
 
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
@@ -261,8 +252,7 @@ namespace PTClinic
                 {
                     while (dataReaderEC.Read())
                     {
-
-                        //emContactString.AppendLine("_______________ Emergency Contact Information ________________");
+                        /** Patient Emergency Contact String for Print **/
                         emContactString.AppendLine(dataReaderEC["ec_fullname"].ToString());
                         if (string.IsNullOrEmpty(dataReaderEC["ec_telephone_ext"].ToString()))
                         {
@@ -273,8 +263,8 @@ namespace PTClinic
                             emContactString.AppendLine(dataReaderEC["ec_telephone"].ToString() + "  Ext: " + dataReaderEC["ec_telephone_ext"].ToString() + "  (" + dataReaderEC["ec_telephone_type"].ToString() + ")");
                         }
                         emContactString.AppendLine("Relationship: " + dataReaderEC["ec_relationship"].ToString());
-                      
 
+                        /** END Patient Emergency Contact String for Print **/
 
 
                         // Take the appropriate fields from the datareader
@@ -394,9 +384,6 @@ namespace PTClinic
         private void btnPatientVisit_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-
-            // TODO Complete check for status and initialize forms accordingly
         
             if (patientStatus.ToLower().Equals("initial"))
             {
@@ -423,7 +410,6 @@ namespace PTClinic
         // Update Info  Button
         private void btnUpdateInformation_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Patient ID being passed back is " + pID);
             PatientInformation updatePatientInfo = new PatientInformation(pID, Admin, Login);
             updatePatientInfo.Show();
             this.Hide();
@@ -433,9 +419,6 @@ namespace PTClinic
         // Print Patient Information
         private void btnPrintPatientInfo_Click(object sender, EventArgs e)
         {
-            // TODO - Print Patient Demographic -- Emergency Contact - Caregiver Info + PT Goals Diagnosis if there are any
-            //MessageBox.Show("Print Patient Info Here");
-
             if (printPreviewDialog.ShowDialog() == DialogResult.OK)
             {
                 printPatientInfo.Print();
@@ -471,7 +454,7 @@ namespace PTClinic
                 e.Graphics.DrawRectangle(Pens.Black, rect3);
 
             }
-            //  e.Graphics.DrawString("Patient Information", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+
             e.Graphics.DrawString(patientString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 150));
             e.Graphics.DrawString(caregiverString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 430));
             e.Graphics.DrawString(emContactString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 650));

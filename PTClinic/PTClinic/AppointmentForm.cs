@@ -171,9 +171,7 @@ namespace PTClinic
                         appointmentString.AppendLine("Cranston, RI 02920");
                         appointmentString.AppendLine("Phone: 401-941-1112");
                         appointmentString.AppendLine("Fax: 401-383-8751");
-                        appointmentString.AppendLine("---------------------------------------------------");
-                        appointmentString.AppendLine("\n");
-                        appointmentString.AppendLine("Appointment Details:");
+                        appointmentString.AppendLine("\n\n\n");
                         appointmentString.AppendLine();
                         appointmentString.AppendLine("Patient ID: " + patientID);
                         appointmentString.AppendLine(patientName);
@@ -209,22 +207,26 @@ namespace PTClinic
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
                 SF.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString("Appointment Information", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawString("Physical Therapy Appointment", font1, Brushes.Black, rect1, SF);
                 e.Graphics.DrawRectangle(Pens.Black, rect1);
+
+
+                Rectangle rect2 = new Rectangle(100, 320, 650, 25);
+                StringFormat SF2 = new StringFormat();
+                SF2.Alignment = StringAlignment.Center;
+                SF2.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Appointment Details", font1, Brushes.Black, rect2, SF2);
+                e.Graphics.DrawRectangle(Pens.Black, rect2);
 
             }
 
-            e.Graphics.DrawString(appointmentString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 150));
-          //  e.Graphics.DrawString(appointmentString.ToString(), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            e.Graphics.DrawString(appointmentString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
 
         }
 
 
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
-            // TODO Print Copy of Appointment Scheduled
-            //MessageBox.Show("Print Appointment Copy");
-
             if (printPreviewDialog.ShowDialog() == DialogResult.OK)
             {
                 printAppointment.Print();

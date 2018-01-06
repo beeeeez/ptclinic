@@ -172,7 +172,7 @@ namespace PTClinic
                         appointmentString.AppendLine("Phone: 401-941-1112");
                         appointmentString.AppendLine("Fax: 401-383-8751");
                         appointmentString.AppendLine("---------------------------------------------------");
-                        appointmentString.AppendLine("\n\n");
+                        appointmentString.AppendLine("\n");
                         appointmentString.AppendLine("Appointment Details:");
                         appointmentString.AppendLine();
                         appointmentString.AppendLine("Patient ID: " + patientID);
@@ -202,7 +202,20 @@ namespace PTClinic
 
         private void printAppointment_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(appointmentString.ToString(), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            using (Font font1 = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point))
+            {
+
+                Rectangle rect1 = new Rectangle(100, 100, 650, 25);
+                StringFormat SF = new StringFormat();
+                SF.Alignment = StringAlignment.Center;
+                SF.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Appointment Information", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawRectangle(Pens.Black, rect1);
+
+            }
+
+            e.Graphics.DrawString(appointmentString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 150));
+          //  e.Graphics.DrawString(appointmentString.ToString(), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
 
         }
 

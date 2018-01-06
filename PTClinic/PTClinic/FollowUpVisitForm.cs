@@ -18,10 +18,22 @@ namespace PTClinic
         private Form PatientProfile;
         public int patientID;
         private string changeVisitType = "";
+        private Boolean PSFS = false;
 
-        public FollowUpVisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
+        public FollowUpVisitForm(string PatientID, string PatientName, string PatientVisitStatus, Boolean needPSFS, Form adminForm, Form Login, Form PatientProfile)
         {
             InitializeComponent();
+            panelMessage.Visible = false;
+
+            if (PatientVisitStatus.Equals("re-assessment"))
+            {
+                this.Text = "Re-assessment Visit Form";
+                lblHeaderText.Text = "Patient Re-assessment Visit Information";
+                lblVisitInformation.Text = "Patient Re-assessment Visit Information";
+                btnAddFollowUp.Text = "Add Visit Info";
+            }
+
+
             // Set Button Icons
             setButtonIcon();
 
@@ -63,6 +75,18 @@ namespace PTClinic
             lblTodaysDate.Text = shortDateStr;
             lblStudentDate.Text = shortDateStr;
             lblProviderDate.Text = shortDateStr;
+
+            // Show PSFS button if they need to fill it out, else show No Label
+
+            if (needPSFS == true)
+            {
+                PSFS = true;
+                lblPSFSNeeded.Text = "Yes";
+            }
+            else
+            {
+                lblPSFSNeeded.Text = "No";
+            }
 
 
             // Fill Drop Downs
@@ -259,7 +283,17 @@ namespace PTClinic
 
                                 if (visitTypeSuccess == 1)
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information has been saved";
+                                    panelMessage.Visible = true;
+                                    //lblFeedback.Text = "Patient's Visit Information has been saved";
+
+                                    if (PSFS == true)
+                                    {
+                                        MessageBox.Show("Patient Information Saved.\n Please complete Patient Goals.");
+                                        this.Hide();
+                                        bool fromProfile = false;
+                                        PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, this);
+                                        temp.Show();
+                                    }
                                 }
                                 else
                                 {

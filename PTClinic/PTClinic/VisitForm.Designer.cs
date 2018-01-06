@@ -82,11 +82,14 @@
             this.lblEvaluationCPT = new System.Windows.Forms.Label();
             this.tbFollowUpTreatment = new System.Windows.Forms.TextBox();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.panelMessage = new System.Windows.Forms.Panel();
+            this.lbNewPatient = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbEvaluation
@@ -187,7 +190,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(930, 677);
+            this.btnClear.Location = new System.Drawing.Point(921, 677);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -202,7 +205,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(761, 677);
+            this.btnAddVisit.Location = new System.Drawing.Point(752, 677);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -400,10 +403,10 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(-6, 151);
+            this.panel2.Location = new System.Drawing.Point(-15, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
-            this.panel2.TabIndex = 88;
+            this.panel2.TabIndex = 0;
             // 
             // lblPatientName
             // 
@@ -544,11 +547,10 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(866, 536);
+            this.lblFeedback.Location = new System.Drawing.Point(857, 536);
             this.lblFeedback.Name = "lblFeedback";
-            this.lblFeedback.Size = new System.Drawing.Size(145, 20);
+            this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
-            this.lblFeedback.Text = "VISIT  FEEDBACK";
             // 
             // lblVisitInformation
             // 
@@ -566,7 +568,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(-6, 95);
+            this.panel3.Location = new System.Drawing.Point(-15, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -593,10 +595,10 @@
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(621, 151);
+            this.panel4.Location = new System.Drawing.Point(612, 151);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 352);
-            this.panel4.TabIndex = 92;
+            this.panel4.TabIndex = 1;
             // 
             // tbTherapeuticProcedures2
             // 
@@ -662,12 +664,35 @@
             this.tbPTDiagnosis.TabIndex = 14;
             this.tbPTDiagnosis.Text = "Physical Therapy Diagnosis";
             // 
+            // panelMessage
+            // 
+            this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelMessage.Controls.Add(this.lbNewPatient);
+            this.panelMessage.Location = new System.Drawing.Point(969, 89);
+            this.panelMessage.Name = "panelMessage";
+            this.panelMessage.Size = new System.Drawing.Size(236, 41);
+            this.panelMessage.TabIndex = 116;
+            this.panelMessage.Visible = false;
+            // 
+            // lbNewPatient
+            // 
+            this.lbNewPatient.AutoSize = true;
+            this.lbNewPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNewPatient.ForeColor = System.Drawing.Color.White;
+            this.lbNewPatient.Location = new System.Drawing.Point(31, 11);
+            this.lbNewPatient.Name = "lbNewPatient";
+            this.lbNewPatient.Size = new System.Drawing.Size(176, 18);
+            this.lbNewPatient.TabIndex = 113;
+            this.lbNewPatient.Text = "Patient Information Saved";
+            // 
             // VisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1260, 733);
+            this.Controls.Add(this.panelMessage);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddVisit);
             this.Controls.Add(this.panel1);
@@ -687,6 +712,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panelMessage.ResumeLayout(false);
+            this.panelMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,5 +774,7 @@
         private System.Windows.Forms.Button btnBackToProfile;
         private System.Windows.Forms.TextBox tbTherapeuticProcedures2;
         private System.Windows.Forms.Label lblPatientName;
+        private System.Windows.Forms.Panel panelMessage;
+        private System.Windows.Forms.Label lbNewPatient;
     }
 }

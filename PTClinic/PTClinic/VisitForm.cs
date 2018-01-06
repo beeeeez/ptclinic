@@ -26,6 +26,7 @@ namespace PTClinic
             InitializeComponent();
 
             setButtonIcon();
+            panelMessage.Visible = false;
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -170,7 +171,8 @@ namespace PTClinic
 
                                 if (visitTypeSuccess == 1)
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information has been saved";
+                                    panelMessage.Visible = true;
+                                    //lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
                                 {

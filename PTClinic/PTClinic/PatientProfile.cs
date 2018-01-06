@@ -17,6 +17,7 @@ namespace PTClinic
         private string PatientID;
         public int pID; // patient ID to pass to Appointment or visit form
         private string pName; // String to pass a Patients name to visit form
+        private Boolean needPSFS;  //Boolean to store if a patient needs their PSFS goals form done this visit and pass it over to the follow up form.
 
         // Variables for the admin and login and Search forms
         private Form Admin;
@@ -325,10 +326,14 @@ namespace PTClinic
                 {
                     //MessageBox.Show("Update Patient Goals \n Last Updated : " + daySincePTUpdated + " days ago" );
                     panelPTGoalsMessage.Visible = true;
+
+                    needPSFS = true;
                 }
                 else
                 {
                     panelPTGoalsMessage.Visible = false;
+
+                    needPSFS = false;
                 }
 
             }
@@ -392,7 +397,7 @@ namespace PTClinic
             }
             else
             {
-                FollowUpVisitForm followUpForm = new FollowUpVisitForm(PatientID, pName, Admin, Login, this);
+                FollowUpVisitForm followUpForm = new FollowUpVisitForm(PatientID, pName, patientStatus.ToLower(), needPSFS, Admin, Login, this);
                 followUpForm.Show();
             }
          

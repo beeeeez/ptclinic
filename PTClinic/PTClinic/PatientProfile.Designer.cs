@@ -84,7 +84,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.printPatientInfo = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -710,9 +710,10 @@
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
-            // printDialog1
+            // printDialog
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.printDialog.Document = this.printPatientInfo;
+            this.printDialog.UseEXDialog = true;
             // 
             // PatientProfile
             // 
@@ -838,6 +839,6 @@
         private System.Windows.Forms.Label label18;
         private System.Drawing.Printing.PrintDocument printPatientInfo;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
-        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintDialog printDialog;
     }
 }

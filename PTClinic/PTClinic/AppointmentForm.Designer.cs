@@ -60,6 +60,7 @@
             this.lblFeedback = new System.Windows.Forms.Label();
             this.printAppointment = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -430,6 +431,11 @@
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
+            // printDialog
+            // 
+            this.printDialog.Document = this.printAppointment;
+            this.printDialog.UseEXDialog = true;
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,5 +513,6 @@
         private System.Windows.Forms.Button btnBackToProfile;
         private System.Drawing.Printing.PrintDocument printAppointment;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.PrintDialog printDialog;
     }
 }

@@ -227,10 +227,18 @@ namespace PTClinic
 
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
-            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            printDialog.Document = printAppointment;
+            if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printAppointment.Print();
             }
+
+            // !!! To view print layout uncomment this
+
+            //if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printAppointment.Print();
+            //}
 
         }
 

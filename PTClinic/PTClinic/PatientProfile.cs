@@ -424,10 +424,18 @@ namespace PTClinic
         // Print Patient Information
         private void btnPrintPatientInfo_Click(object sender, EventArgs e)
         {
-            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            printDialog.Document = printPatientInfo;
+            if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printPatientInfo.Print();
             }
+
+            // !!! To view print layout uncomment this
+
+            //if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printPatientInfo.Print();
+            //}
 
         }
 

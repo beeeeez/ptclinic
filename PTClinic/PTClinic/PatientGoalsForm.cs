@@ -23,6 +23,7 @@ namespace PTClinic
         private int pID;
         System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
         private bool updatedGoals;
+        private bool refreshProfile;
 
         public PatientGoalsForm()
         {
@@ -32,6 +33,7 @@ namespace PTClinic
         public PatientGoalsForm(int patientID, bool fromProfile, Form Admin, Form Login, Form PatientProfile)
         {
             updatedGoals = false;
+            refreshProfile = false;
 
             InitializeComponent();
             setButtonIcon();
@@ -52,6 +54,7 @@ namespace PTClinic
             }
             else
             {
+                refreshProfile = true;
                 btnBackToProfile.Visible = true;
             }
 
@@ -201,9 +204,8 @@ namespace PTClinic
 
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
             // If patient goals were updated create new profile form
-            if (updatedGoals == true)
+            if (updatedGoals == true || refreshProfile == true)
             {
                 //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
                 Search newSearchForm = new Search(Admin, Login);
@@ -215,7 +217,8 @@ namespace PTClinic
             {
                 PatientProfile.Show();
             }
-           
+            this.Hide();
+
         }
 
         private void btnBackHome_Click(object sender, EventArgs e)

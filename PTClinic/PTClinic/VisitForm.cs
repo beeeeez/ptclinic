@@ -180,8 +180,8 @@ namespace PTClinic
 
                                     MessageBox.Show("Patient Information Saved.\n Please complete Patient Goals.");
                                     this.Hide();
-                                    bool fromProfile = false;
-                                    PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, this);
+                                    bool fromProfile = true;
+                                    PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
                                     temp.Show();
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }

@@ -286,6 +286,8 @@ namespace PTClinic
                                     panelMessage.Visible = true;
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
+                                    clearForm();
+
                                     if (PSFS == true)
                                     {
                                         MessageBox.Show("Patient Information Saved.\n Please complete Patient Goals.");
@@ -322,6 +324,11 @@ namespace PTClinic
 
         // Reset form back
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearForm();
+        }
+
+        private void clearForm()
         {
             tbProviderID.Clear();
             tbSubjective.Clear();

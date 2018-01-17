@@ -176,6 +176,13 @@ namespace PTClinic
                                 {
                                     panelMessage.Visible = true;
                                     visitSaved = true;
+                                    clearForm();
+
+                                    MessageBox.Show("Patient Information Saved.\n Please complete Patient Goals.");
+                                    this.Hide();
+                                    bool fromProfile = false;
+                                    PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, this);
+                                    temp.Show();
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
@@ -244,6 +251,11 @@ namespace PTClinic
         // Clear Form Button Click
         // Reset form to original selections / blank text boxes
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearForm();
+        }
+
+        private void clearForm()
         {
             // Clear Text Boxes
             tbChiefComplaint.Clear();

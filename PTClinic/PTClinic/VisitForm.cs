@@ -19,6 +19,7 @@ namespace PTClinic
         private Form PatientProfile;
         public int patientID;
         private string changeVisitType = "follow up";
+        bool visitSaved;
 
 
         public VisitForm(string PatientID, string PatientName, Form adminForm, Form Login, Form PatientProfile)
@@ -27,6 +28,8 @@ namespace PTClinic
 
             setButtonIcon();
             panelMessage.Visible = false;
+
+            visitSaved = false;
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -172,6 +175,7 @@ namespace PTClinic
                                 if (visitTypeSuccess == 1)
                                 {
                                     panelMessage.Visible = true;
+                                    visitSaved = true;
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
@@ -220,7 +224,21 @@ namespace PTClinic
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientProfile.Show();
+
+            // If patient goals were updated create new profile form
+            if (visitSaved == true)
+            {
+                //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+                Search newSearchForm = new Search(Admin, Login);
+                PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+                PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
+                refreshProfile.Show();
+            }
+            else
+            {
+                PatientProfile.Show();
+            }
+
         }
 
         // Clear Form Button Click

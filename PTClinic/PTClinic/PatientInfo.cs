@@ -259,12 +259,16 @@ namespace PTClinic
                         {
                             feedback += "Error: Enter 'Other' insurance\n";
                         }
+                        else
+                        {
+                            otherInsurer = value;
+                        }
 
                     }
-                    else
-                    {
-                        otherInsurer = value;
-                    }
+                    //else
+                    //{
+                    //    otherInsurer = value;
+                    //}
 
                 }
                 else

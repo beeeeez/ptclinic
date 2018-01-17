@@ -42,6 +42,7 @@
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPSFSNeeded = new System.Windows.Forms.Label();
             this.gbDischarge = new System.Windows.Forms.GroupBox();
             this.rbDischargeNo = new System.Windows.Forms.RadioButton();
             this.rbDischargeYes = new System.Windows.Forms.RadioButton();
@@ -89,7 +90,6 @@
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
-            this.lblPSFSNeeded = new System.Windows.Forms.Label();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(924, 673);
+            this.btnClear.Location = new System.Drawing.Point(916, 673);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -122,7 +122,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(757, 672);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(749, 672);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -228,7 +228,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(0, 93);
+            this.panel3.Location = new System.Drawing.Point(-8, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -273,10 +273,20 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(612, 150);
+            this.panel4.Location = new System.Drawing.Point(604, 150);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 1;
+            // 
+            // lblPSFSNeeded
+            // 
+            this.lblPSFSNeeded.AutoSize = true;
+            this.lblPSFSNeeded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPSFSNeeded.Location = new System.Drawing.Point(245, 320);
+            this.lblPSFSNeeded.Name = "lblPSFSNeeded";
+            this.lblPSFSNeeded.Size = new System.Drawing.Size(26, 16);
+            this.lblPSFSNeeded.TabIndex = 109;
+            this.lblPSFSNeeded.Text = "No";
             // 
             // gbDischarge
             // 
@@ -686,7 +696,7 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(0, 149);
+            this.panel2.Location = new System.Drawing.Point(-8, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -743,22 +753,12 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
-            // lblPSFSNeeded
-            // 
-            this.lblPSFSNeeded.AutoSize = true;
-            this.lblPSFSNeeded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPSFSNeeded.Location = new System.Drawing.Point(245, 320);
-            this.lblPSFSNeeded.Name = "lblPSFSNeeded";
-            this.lblPSFSNeeded.Size = new System.Drawing.Size(26, 16);
-            this.lblPSFSNeeded.TabIndex = 109;
-            this.lblPSFSNeeded.Text = "No";
-            // 
             // panelMessage
             // 
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(916, 93);
+            this.panelMessage.Location = new System.Drawing.Point(908, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;

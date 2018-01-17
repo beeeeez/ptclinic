@@ -290,11 +290,14 @@ namespace PTClinic
 
                                     if (PSFS == true)
                                     {
-                                        MessageBox.Show("Patient Information Saved.\n Please complete Patient Goals.");
-                                        this.Hide();
-                                        bool fromProfile = false;
-                                        PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, this);
-                                        temp.Show();
+                                        DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
+                                        if (dResult == DialogResult.OK)
+                                        {
+                                            this.Hide();
+                                            bool fromProfile = true;
+                                            PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
+                                            temp.Show();
+                                        }
                                     }
                                 }
                                 else

@@ -36,18 +36,20 @@
 ### Patient Information Form
 - [x] Get working functionality to Update for patient information 
 - [x] Add patient status when new patient is added 
-- Add button to make Caregiver name / 1st phone number the same as the Emergency Contact
+- [x] Add button to make Caregiver name / 1st phone number the same as the Emergency Contact
 
 ### Patient Goals
 - [x] PT Goals pull last updated goals
-- Change bottom box to 'Notes & Observations'
-- Add a drop down box after every score 'Score Interpreted By: '  -dropdown options 'Patient, Caregiver, Provider'
+- [x] Change bottom box to 'Notes & Observations'
+- [x] Add a drop down box after every score 'Score Interpreted By: '  -dropdown options 'Patient, Caregiver, Provider'
+- Add Score Interpreted to DB, and check that it's saving
+- Add error checking to Score Interpreted Field
 
 
 ### Schedule Appointment Form
 - [x] Print Appointment Details capability
 - [x] Make Appointment class to handle validation and calls
-- Add option to select which of the two clinics the appointment is at
+- [x] Add option to select which of the two clinics the appointment is at
 
 ### Finalization TODO's
 - Get rid of the spaghetti code involving sending multiple forms over to other forms.

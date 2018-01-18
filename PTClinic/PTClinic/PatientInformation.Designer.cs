@@ -36,6 +36,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.panelCaregiverInfo = new System.Windows.Forms.Panel();
+            this.chkBoxSame = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbECRelationship = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -208,6 +209,7 @@
             // panelCaregiverInfo
             // 
             this.panelCaregiverInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCaregiverInfo.Controls.Add(this.chkBoxSame);
             this.panelCaregiverInfo.Controls.Add(this.label8);
             this.panelCaregiverInfo.Controls.Add(this.tbECRelationship);
             this.panelCaregiverInfo.Controls.Add(this.label9);
@@ -250,6 +252,17 @@
             this.panelCaregiverInfo.Size = new System.Drawing.Size(1181, 645);
             this.panelCaregiverInfo.TabIndex = 79;
             this.panelCaregiverInfo.Visible = false;
+            // 
+            // chkBoxSame
+            // 
+            this.chkBoxSame.AutoSize = true;
+            this.chkBoxSame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBoxSame.Location = new System.Drawing.Point(168, 326);
+            this.chkBoxSame.Name = "chkBoxSame";
+            this.chkBoxSame.Size = new System.Drawing.Size(330, 24);
+            this.chkBoxSame.TabIndex = 135;
+            this.chkBoxSame.Text = "Use Emergency Contact for Caregiver";
+            this.chkBoxSame.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -380,7 +393,7 @@
             this.lblCareFeedback.AutoSize = true;
             this.lblCareFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCareFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblCareFeedback.Location = new System.Drawing.Point(64, 311);
+            this.lblCareFeedback.Location = new System.Drawing.Point(66, 362);
             this.lblCareFeedback.Name = "lblCareFeedback";
             this.lblCareFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblCareFeedback.TabIndex = 110;
@@ -668,7 +681,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(940, 21);
+            this.lblFeedback.Location = new System.Drawing.Point(955, 33);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 109;
@@ -1260,5 +1273,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox chkBoxSame;
     }
 }

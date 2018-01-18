@@ -45,6 +45,9 @@ namespace PTClinic
             FillPhoneType();
             FillGender();
 
+
+            chkBoxSame.CheckedChanged += new EventHandler(chkBoxSame_CheckedChanged);
+
             // If theres a patient ID then pull back information to populate form fields for updating
             if (pID > 0)
             {
@@ -388,6 +391,7 @@ namespace PTClinic
                     else
                     {
                         dbSuccess = newPatient.AddRecord();
+
                         // If patient record was added successfully get patient id from that insert
                         if (dbSuccess == 1)
                         {
@@ -669,6 +673,20 @@ namespace PTClinic
             tbCGPhone2.Clear();
             tbCGPhone2Ext.Clear();
             cbCGPhone2Type.SelectedIndex = 0;
+        }
+
+        public void chkBoxSame_CheckedChanged(Object sender, EventArgs e)
+        {
+            if (chkBoxSame.Checked == true)
+            {
+               // MessageBox.Show("Checkbox checked!");
+
+                tbCGName.Text = tbECName.Text;
+                tbCGPhone1.Text = tbECPhone.Text;
+                tbCGPhone1Ext.Text = tbECPhoneExt.Text;
+                cbCGPhone1Type.SelectedItem = cbECPhoneType.Text;
+
+            }
         }
     }
 }

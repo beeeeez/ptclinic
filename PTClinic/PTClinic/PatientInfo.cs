@@ -244,7 +244,8 @@ namespace PTClinic
             }
         }
 
-        // Public variable specifically for Other Insurers
+
+        //// Public variable specifically for Other Insurers
         public string OtherInsurer
         {
             get { return otherInsurer; }
@@ -265,7 +266,10 @@ namespace PTClinic
                         }
 
                     }
-
+                    else
+                    {
+                        otherInsurer = "";
+                    }
                 }
                 else
                 {
@@ -522,7 +526,6 @@ namespace PTClinic
 
             return success;
         } // End of AddRecord
-
 
 
         // Search Functionality 

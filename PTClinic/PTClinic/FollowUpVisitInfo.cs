@@ -38,7 +38,6 @@ namespace PTClinic
         private string assessment;
         private string plan;
         private Nullable<bool> reassessment;
-        private Nullable<bool> referForDischarge;
         private string studentProviderName;
         private DateTime studentProviderNameDate;
         private string providerName;
@@ -285,24 +284,6 @@ namespace PTClinic
                 else
                 {
                     reassessment = value;
-                }
-
-            }
-        }
-
-        // Public variable specifically for ReferForDischarge
-        public Nullable<bool> ReferForDischarge
-        {
-            get { return referForDischarge; }
-            set
-            {
-                if (value.Equals(null))
-                {
-                    feedback += "Error: Select Yes or No for Refer for discharge\n";
-                }
-                else
-                {
-                    referForDischarge = value;
                 }
 
             }

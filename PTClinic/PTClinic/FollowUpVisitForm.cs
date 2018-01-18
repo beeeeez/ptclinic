@@ -197,17 +197,6 @@ namespace PTClinic
             }
             newVisit.Reassessment = reassessment;
 
-            Nullable<bool> discharge = null;
-            if (rbDischargeYes.Checked == true)
-            {
-                discharge = true;
-            }
-            else if (rbDischargeNo.Checked == true)
-            {
-                discharge = false;
-            }
-            newVisit.ReferForDischarge = discharge;
-
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
             /* Student Signature Date */
@@ -263,10 +252,6 @@ namespace PTClinic
                         if (reassessment == true)
                         {
                             changeVisitType = "re-assessment";
-                        }
-                        else if (discharge == true)
-                        {
-                            changeVisitType = "discharge";
                         }
                         else
                         {
@@ -344,8 +329,6 @@ namespace PTClinic
             tbPlan.Clear();
             rbReassessmentYes.Checked = false;
             rbReassessmentNo.Checked = false;
-            rbDischargeYes.Checked = false;
-            rbDischargeNo.Checked = false;
             tbStudentProvider.Clear();
             tbProviderName.Clear();
         }

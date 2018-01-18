@@ -43,15 +43,11 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPSFSNeeded = new System.Windows.Forms.Label();
-            this.gbDischarge = new System.Windows.Forms.GroupBox();
-            this.rbDischargeNo = new System.Windows.Forms.RadioButton();
-            this.rbDischargeYes = new System.Windows.Forms.RadioButton();
             this.gbReassessment = new System.Windows.Forms.GroupBox();
             this.rbReassessmentNo = new System.Windows.Forms.RadioButton();
             this.rbReassessmentYes = new System.Windows.Forms.RadioButton();
             this.tbPlan = new System.Windows.Forms.TextBox();
             this.lblPSFS = new System.Windows.Forms.Label();
-            this.lblDischarge = new System.Windows.Forms.Label();
             this.lblReAssessment = new System.Windows.Forms.Label();
             this.lblPatientPlan = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
@@ -96,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.gbDischarge.SuspendLayout();
             this.gbReassessment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMessage.SuspendLayout();
@@ -107,7 +102,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(916, 673);
+            this.btnClear.Location = new System.Drawing.Point(900, 673);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -122,7 +117,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(749, 672);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(733, 672);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -228,7 +223,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(-8, 93);
+            this.panel3.Location = new System.Drawing.Point(-24, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -257,11 +252,9 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lblPSFSNeeded);
-            this.panel4.Controls.Add(this.gbDischarge);
             this.panel4.Controls.Add(this.gbReassessment);
             this.panel4.Controls.Add(this.tbPlan);
             this.panel4.Controls.Add(this.lblPSFS);
-            this.panel4.Controls.Add(this.lblDischarge);
             this.panel4.Controls.Add(this.lblReAssessment);
             this.panel4.Controls.Add(this.lblPatientPlan);
             this.panel4.Controls.Add(this.lblPlan);
@@ -273,7 +266,7 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(604, 150);
+            this.panel4.Location = new System.Drawing.Point(588, 150);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 1;
@@ -287,38 +280,6 @@
             this.lblPSFSNeeded.Size = new System.Drawing.Size(26, 16);
             this.lblPSFSNeeded.TabIndex = 109;
             this.lblPSFSNeeded.Text = "No";
-            // 
-            // gbDischarge
-            // 
-            this.gbDischarge.Controls.Add(this.rbDischargeNo);
-            this.gbDischarge.Controls.Add(this.rbDischargeYes);
-            this.gbDischarge.Location = new System.Drawing.Point(234, 267);
-            this.gbDischarge.Name = "gbDischarge";
-            this.gbDischarge.Size = new System.Drawing.Size(170, 39);
-            this.gbDischarge.TabIndex = 12;
-            this.gbDischarge.TabStop = false;
-            // 
-            // rbDischargeNo
-            // 
-            this.rbDischargeNo.AutoSize = true;
-            this.rbDischargeNo.Location = new System.Drawing.Point(99, 16);
-            this.rbDischargeNo.Name = "rbDischargeNo";
-            this.rbDischargeNo.Size = new System.Drawing.Size(39, 17);
-            this.rbDischargeNo.TabIndex = 1;
-            this.rbDischargeNo.TabStop = true;
-            this.rbDischargeNo.Text = "No";
-            this.rbDischargeNo.UseVisualStyleBackColor = true;
-            // 
-            // rbDischargeYes
-            // 
-            this.rbDischargeYes.AutoSize = true;
-            this.rbDischargeYes.Location = new System.Drawing.Point(15, 16);
-            this.rbDischargeYes.Name = "rbDischargeYes";
-            this.rbDischargeYes.Size = new System.Drawing.Size(43, 17);
-            this.rbDischargeYes.TabIndex = 0;
-            this.rbDischargeYes.TabStop = true;
-            this.rbDischargeYes.Text = "Yes";
-            this.rbDischargeYes.UseVisualStyleBackColor = true;
             // 
             // gbReassessment
             // 
@@ -370,15 +331,6 @@
             this.lblPSFS.Size = new System.Drawing.Size(177, 13);
             this.lblPSFS.TabIndex = 107;
             this.lblPSFS.Text = "Need To Complete PSFS This Visit?";
-            // 
-            // lblDischarge
-            // 
-            this.lblDischarge.AutoSize = true;
-            this.lblDischarge.Location = new System.Drawing.Point(51, 276);
-            this.lblDischarge.Name = "lblDischarge";
-            this.lblDischarge.Size = new System.Drawing.Size(177, 13);
-            this.lblDischarge.TabIndex = 106;
-            this.lblDischarge.Text = "Refer Patient To PT For Discharge?";
             // 
             // lblReAssessment
             // 
@@ -589,6 +541,7 @@
             this.tbDiagnosis.Location = new System.Drawing.Point(149, 117);
             this.tbDiagnosis.Multiline = true;
             this.tbDiagnosis.Name = "tbDiagnosis";
+            this.tbDiagnosis.ReadOnly = true;
             this.tbDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDiagnosis.Size = new System.Drawing.Size(415, 44);
             this.tbDiagnosis.TabIndex = 1;
@@ -608,6 +561,7 @@
             this.tbPTGoals.Location = new System.Drawing.Point(149, 182);
             this.tbPTGoals.Multiline = true;
             this.tbPTGoals.Name = "tbPTGoals";
+            this.tbPTGoals.ReadOnly = true;
             this.tbPTGoals.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPTGoals.Size = new System.Drawing.Size(415, 45);
             this.tbPTGoals.TabIndex = 2;
@@ -696,7 +650,7 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(-8, 149);
+            this.panel2.Location = new System.Drawing.Point(-24, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -758,7 +712,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(908, 93);
+            this.panelMessage.Location = new System.Drawing.Point(892, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -799,8 +753,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.gbDischarge.ResumeLayout(false);
-            this.gbDischarge.PerformLayout();
             this.gbReassessment.ResumeLayout(false);
             this.gbReassessment.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -860,15 +812,11 @@
         private System.Windows.Forms.Label lblSupervisedCPT;
         private System.Windows.Forms.Label lblTodaysDate;
         private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.GroupBox gbDischarge;
         private System.Windows.Forms.GroupBox gbReassessment;
         private System.Windows.Forms.TextBox tbPlan;
         private System.Windows.Forms.Label lblPSFS;
-        private System.Windows.Forms.Label lblDischarge;
         private System.Windows.Forms.Label lblReAssessment;
         private System.Windows.Forms.Label lblPatientPlan;
-        private System.Windows.Forms.RadioButton rbDischargeNo;
-        private System.Windows.Forms.RadioButton rbDischargeYes;
         private System.Windows.Forms.RadioButton rbReassessmentNo;
         private System.Windows.Forms.RadioButton rbReassessmentYes;
         private System.Windows.Forms.TextBox tbTherapeuticProcedures2;

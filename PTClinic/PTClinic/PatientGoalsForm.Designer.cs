@@ -44,6 +44,7 @@
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.gbActivityTwoScore = new System.Windows.Forms.GroupBox();
@@ -94,11 +95,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbPatientTreatmentGoals = new System.Windows.Forms.TextBox();
+            this.tbNotesObservations = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelDBMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
+            this.cbInterpBy1 = new System.Windows.Forms.ComboBox();
+            this.cbInterpBy2 = new System.Windows.Forms.ComboBox();
+            this.cbInterpBy3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -287,6 +291,10 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.cbInterpBy3);
+            this.panel4.Controls.Add(this.cbInterpBy2);
+            this.panel4.Controls.Add(this.cbInterpBy1);
+            this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.gbActivityTwoScore);
@@ -303,7 +311,7 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.tbPatientTreatmentGoals);
+            this.panel4.Controls.Add(this.tbNotesObservations);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(12, 330);
@@ -311,13 +319,25 @@
             this.panel4.Size = new System.Drawing.Size(1216, 386);
             this.panel4.TabIndex = 183;
             // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1092, 86);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(110, 20);
+            this.label18.TabIndex = 203;
+            this.label18.Text = "Interpreted By";
+            // 
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1129, 81);
+            this.label17.Location = new System.Drawing.Point(1016, 86);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(51, 20);
             this.label17.TabIndex = 199;
@@ -329,7 +349,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(638, 81);
+            this.label16.Location = new System.Drawing.Point(525, 86);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 20);
             this.label16.TabIndex = 198;
@@ -350,7 +370,7 @@
             this.gbActivityTwoScore.Controls.Add(this.radioButton32);
             this.gbActivityTwoScore.Controls.Add(this.radioButton33);
             this.gbActivityTwoScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbActivityTwoScore.Location = new System.Drawing.Point(642, 139);
+            this.gbActivityTwoScore.Location = new System.Drawing.Point(529, 144);
             this.gbActivityTwoScore.Name = "gbActivityTwoScore";
             this.gbActivityTwoScore.Size = new System.Drawing.Size(549, 40);
             this.gbActivityTwoScore.TabIndex = 197;
@@ -503,7 +523,7 @@
             this.gbActivtyOneScore.Controls.Add(this.radioButton10);
             this.gbActivtyOneScore.Controls.Add(this.radioButton11);
             this.gbActivtyOneScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbActivtyOneScore.Location = new System.Drawing.Point(642, 104);
+            this.gbActivtyOneScore.Location = new System.Drawing.Point(529, 109);
             this.gbActivtyOneScore.Name = "gbActivtyOneScore";
             this.gbActivtyOneScore.Size = new System.Drawing.Size(549, 40);
             this.gbActivtyOneScore.TabIndex = 196;
@@ -656,7 +676,7 @@
             this.gbActivityThreeScore.Controls.Add(this.radioButton21);
             this.gbActivityThreeScore.Controls.Add(this.radioButton22);
             this.gbActivityThreeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbActivityThreeScore.Location = new System.Drawing.Point(642, 176);
+            this.gbActivityThreeScore.Location = new System.Drawing.Point(529, 181);
             this.gbActivityThreeScore.Name = "gbActivityThreeScore";
             this.gbActivityThreeScore.Size = new System.Drawing.Size(549, 40);
             this.gbActivityThreeScore.TabIndex = 195;
@@ -799,7 +819,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(575, 187);
+            this.label15.Location = new System.Drawing.Point(462, 192);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(56, 20);
             this.label15.TabIndex = 194;
@@ -810,7 +830,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(575, 149);
+            this.label14.Location = new System.Drawing.Point(462, 154);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 20);
             this.label14.TabIndex = 193;
@@ -821,7 +841,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(575, 109);
+            this.label13.Location = new System.Drawing.Point(462, 114);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 20);
             this.label13.TabIndex = 192;
@@ -831,7 +851,7 @@
             // 
             this.tbActivityThree.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbActivityThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbActivityThree.Location = new System.Drawing.Point(159, 185);
+            this.tbActivityThree.Location = new System.Drawing.Point(46, 190);
             this.tbActivityThree.Name = "tbActivityThree";
             this.tbActivityThree.Size = new System.Drawing.Size(396, 24);
             this.tbActivityThree.TabIndex = 191;
@@ -840,7 +860,7 @@
             // 
             this.tbActivityTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbActivityTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbActivityTwo.Location = new System.Drawing.Point(159, 147);
+            this.tbActivityTwo.Location = new System.Drawing.Point(46, 152);
             this.tbActivityTwo.Name = "tbActivityTwo";
             this.tbActivityTwo.Size = new System.Drawing.Size(396, 24);
             this.tbActivityTwo.TabIndex = 190;
@@ -849,7 +869,7 @@
             // 
             this.tbActivityOne.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbActivityOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbActivityOne.Location = new System.Drawing.Point(159, 109);
+            this.tbActivityOne.Location = new System.Drawing.Point(46, 114);
             this.tbActivityOne.Name = "tbActivityOne";
             this.tbActivityOne.Size = new System.Drawing.Size(396, 24);
             this.tbActivityOne.TabIndex = 189;
@@ -874,7 +894,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(159, 62);
+            this.panel2.Location = new System.Drawing.Point(46, 67);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(396, 26);
             this.panel2.TabIndex = 187;
@@ -895,7 +915,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(128, 185);
+            this.label11.Location = new System.Drawing.Point(15, 190);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(25, 20);
             this.label11.TabIndex = 186;
@@ -906,7 +926,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(128, 147);
+            this.label10.Location = new System.Drawing.Point(15, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(25, 20);
             this.label10.TabIndex = 185;
@@ -917,32 +937,32 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(128, 109);
+            this.label9.Location = new System.Drawing.Point(15, 114);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 20);
             this.label9.TabIndex = 184;
             this.label9.Text = "1)";
             // 
-            // tbPatientTreatmentGoals
+            // tbNotesObservations
             // 
-            this.tbPatientTreatmentGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPatientTreatmentGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPatientTreatmentGoals.Location = new System.Drawing.Point(159, 298);
-            this.tbPatientTreatmentGoals.Multiline = true;
-            this.tbPatientTreatmentGoals.Name = "tbPatientTreatmentGoals";
-            this.tbPatientTreatmentGoals.Size = new System.Drawing.Size(533, 62);
-            this.tbPatientTreatmentGoals.TabIndex = 183;
+            this.tbNotesObservations.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNotesObservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNotesObservations.Location = new System.Drawing.Point(159, 298);
+            this.tbNotesObservations.Multiline = true;
+            this.tbNotesObservations.Name = "tbNotesObservations";
+            this.tbNotesObservations.Size = new System.Drawing.Size(533, 62);
+            this.tbNotesObservations.TabIndex = 183;
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 257);
+            this.label8.Location = new System.Drawing.Point(155, 262);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(404, 20);
+            this.label8.Size = new System.Drawing.Size(201, 20);
             this.label8.TabIndex = 182;
-            this.label8.Text = "What is your goal in receiving physical treatment?";
+            this.label8.Text = "Notes and Observations";
             // 
             // label6
             // 
@@ -976,6 +996,42 @@
             this.lblDBFeedback.Size = new System.Drawing.Size(158, 20);
             this.lblDBFeedback.TabIndex = 0;
             this.lblDBFeedback.Text = "Patient Goals Saved!";
+            // 
+            // cbInterpBy1
+            // 
+            this.cbInterpBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy1.FormattingEnabled = true;
+            this.cbInterpBy1.Location = new System.Drawing.Point(1084, 120);
+            this.cbInterpBy1.Name = "cbInterpBy1";
+            this.cbInterpBy1.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy1.TabIndex = 204;
+            // 
+            // cbInterpBy2
+            // 
+            this.cbInterpBy2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy2.FormattingEnabled = true;
+            this.cbInterpBy2.Location = new System.Drawing.Point(1084, 156);
+            this.cbInterpBy2.Name = "cbInterpBy2";
+            this.cbInterpBy2.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy2.TabIndex = 205;
+            // 
+            // cbInterpBy3
+            // 
+            this.cbInterpBy3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy3.FormattingEnabled = true;
+            this.cbInterpBy3.Location = new System.Drawing.Point(1084, 192);
+            this.cbInterpBy3.Name = "cbInterpBy3";
+            this.cbInterpBy3.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy3.TabIndex = 206;
             // 
             // PatientGoalsForm
             // 
@@ -1086,10 +1142,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbPatientTreatmentGoals;
+        private System.Windows.Forms.TextBox tbNotesObservations;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelDBMessage;
         private System.Windows.Forms.Label lblDBFeedback;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbInterpBy1;
+        private System.Windows.Forms.ComboBox cbInterpBy3;
+        private System.Windows.Forms.ComboBox cbInterpBy2;
     }
 }

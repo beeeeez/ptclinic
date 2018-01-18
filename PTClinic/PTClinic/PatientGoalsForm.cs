@@ -28,10 +28,12 @@ namespace PTClinic
         public PatientGoalsForm()
         {
             InitializeComponent();
+        
         }
 
         public PatientGoalsForm(int patientID, bool fromProfile, Form Admin, Form Login, Form PatientProfile)
         {
+
             updatedGoals = false;
             refreshProfile = false;
 
@@ -58,6 +60,7 @@ namespace PTClinic
                 btnBackToProfile.Visible = true;
             }
 
+            FillInterpretedBy();
 
             /** Event Handlers For Group Boxes **/
             for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
@@ -117,7 +120,7 @@ namespace PTClinic
                         goals.Activity_Two_Score = dataReaderGoals["activity2_score"].ToString();
                         goals.Activity_Three = dataReaderGoals["activity3"].ToString();
                         goals.Activity_Three_Score = dataReaderGoals["activity3_score"].ToString();
-                        goals.Patient_Goals = dataReaderGoals["patient_goals"].ToString();
+                        goals.Patient_Notes_Observations = dataReaderGoals["patient_notes_observations"].ToString();
 
                         tbActivityOne.Text = goals.Activity_One;
                         tbActivityTwo.Text = goals.Activity_Two;
@@ -149,7 +152,7 @@ namespace PTClinic
                             }
                         }
 
-                        tbPatientTreatmentGoals.Text = goals.Patient_Goals;
+                        tbNotesObservations.Text = goals.Patient_Notes_Observations;
                        // MessageBox.Show("Activity One Score: " + goals.Activity_One_Score + " Activity Two Score: " + goals.Activity_Two_Score + " Activity Three Score: " + goals.Activity_Three_Score);
 
                     }
@@ -238,7 +241,7 @@ namespace PTClinic
             tbActivityOne.Clear();
             tbActivityTwo.Clear();
             tbActivityThree.Clear();
-            tbPatientTreatmentGoals.Clear();
+            tbNotesObservations.Clear();
 
 
             for (int i = 0; i < gbActivtyOneScore.Controls.Count; i++)
@@ -256,6 +259,27 @@ namespace PTClinic
                 RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
                 rb.Checked = false;
             }
+        }
+
+        public void FillInterpretedBy()
+        {
+            cbInterpBy1.Items.Insert(0, "Choose");
+            cbInterpBy1.Items.Add("Patient");
+            cbInterpBy1.Items.Add("Caregiver");
+            cbInterpBy1.Items.Add("Provider");
+            cbInterpBy1.SelectedIndex = 0;
+
+            cbInterpBy2.Items.Insert(0, "Choose");
+            cbInterpBy2.Items.Add("Patient");
+            cbInterpBy2.Items.Add("Caregiver");
+            cbInterpBy2.Items.Add("Provider");
+            cbInterpBy2.SelectedIndex = 0;
+
+            cbInterpBy3.Items.Insert(0, "Choose");
+            cbInterpBy3.Items.Add("Patient");
+            cbInterpBy3.Items.Add("Caregiver");
+            cbInterpBy3.Items.Add("Provider");
+            cbInterpBy3.SelectedIndex = 0;
         }
 
         private void btnSavePTGoals_Click(object sender, EventArgs e)
@@ -282,7 +306,7 @@ namespace PTClinic
             {
                 newPatientGoals.Activity_Three_Score = activityThreeScore;
             }
-            newPatientGoals.Patient_Goals = tbPatientTreatmentGoals.Text;
+            newPatientGoals.Patient_Notes_Observations = tbNotesObservations.Text;
 
             // If an error in the information occurs
             if (newPatientGoals.Feedback.Contains("Error:"))

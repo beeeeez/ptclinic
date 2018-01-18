@@ -20,7 +20,7 @@ namespace PTClinic
         private string activity_one_score;
         private string activity_two_score;
         private string activity_three_score;
-        private string patient_goals;
+        private string patient_notes_observations;
   
         protected string feedback;
 
@@ -133,9 +133,9 @@ namespace PTClinic
 
 
         // Public variable for patients goals for treatment
-        public string Patient_Goals
+        public string Patient_Notes_Observations
         {
-            get { return patient_goals; }
+            get { return patient_notes_observations; }
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -144,7 +144,7 @@ namespace PTClinic
                 }
                 else
                 {
-                    patient_goals = value;
+                    patient_notes_observations = value;
                 }
             }
         }
@@ -162,12 +162,12 @@ namespace PTClinic
             activity_one_score = "";
             activity_two_score = "";
             activity_three_score = "";
-            patient_goals = "";
+            patient_notes_observations = "";
             feedback = "";
     }
 
         // Overloaded Constructor
-        public PatientGoals(int patientID, string activity_one, string activity_two, string activity_three, string activity_one_score, string activity_two_score, string activity_three_score, string patient_goals)
+        public PatientGoals(int patientID, string activity_one, string activity_two, string activity_three, string activity_one_score, string activity_two_score, string activity_three_score, string patient_notes_observations)
         {
             //this.Name = name;
             feedback = "";
@@ -178,7 +178,7 @@ namespace PTClinic
             Activity_One_Score = activity_one_score;
             Activity_Two_Score = activity_two_score;
             Activity_Three_Score = activity_three_score;
-            Patient_Goals = patient_goals;
+            Patient_Notes_Observations = patient_notes_observations;
         }
 
         // Adding a record
@@ -188,8 +188,8 @@ namespace PTClinic
 
 
             // SQL command to add a record to the Patient Goals table
-            string strSQL = "INSERT INTO Patient_Goals (patient_id, activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_goals)" +
-                " VALUES (@PatientID, @ActivityOne, @Activity1Score, @Activity2, @Activity2Score, @Activity3, @Activity3Score, @GoalDate, @PatientGoals);";
+            string strSQL = "INSERT INTO Patient_Goals (patient_id, activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_notes_observations)" +
+                " VALUES (@PatientID, @ActivityOne, @Activity1Score, @Activity2, @Activity2Score, @Activity3, @Activity3Score, @GoalDate, @PatientNotesObservations);";
 
             //// creating database connection 
             //OleDbConnection conn = new OleDbConnection();
@@ -215,7 +215,7 @@ namespace PTClinic
             string shortDateStr = date.ToShortDateString();
             DateTime shortDate = Convert.ToDateTime(shortDateStr);
             comm.Parameters.AddWithValue(@"GoalDate", shortDate);
-            comm.Parameters.AddWithValue(@"PatientGoals", Patient_Goals);
+            comm.Parameters.AddWithValue(@"PatientNotesObservations", Patient_Notes_Observations);
           
 
             try
@@ -248,7 +248,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_goals FROM Patient_Goals WHERE patient_id = @PID AND goal_id = (SELECT MAX(goal_id) FROM Patient_Goals)";
+            string strSQL = "SELECT activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_notes_observations FROM Patient_Goals WHERE patient_id = @PID AND goal_id = (SELECT MAX(goal_id) FROM Patient_Goals)";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

@@ -6,6 +6,9 @@
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
 - [x] Adds to the Patient Info table which visit it is
 - [x] Set form window to scrollable for smaller size windows
+- Seperate box for Assessment
+- Put new box for DME (Durable Medical Equipment) put under Medical History
+- Put new box for DME Needs under Treatment Plan
 
 ### Follow Up Visit Form
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
@@ -14,6 +17,7 @@
 - [x] Set form window to scrollable for smaller size windows
 - [x] Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - [x] Follow Up Visit Class - Constructor + DB functionality 
+- Get rid of discharge button
 
 ### Patient Profile Form
 - [x] Print patient info capability
@@ -26,6 +30,7 @@
 ### Patient Information Form
 - [x] Get working functionality to Update for patient information 
 - [x] Add patient status when new patient is added 
+- Add button to make Caregiver name / 1st phone number the same as the Emergency Contact
 
 ### Patient Goals
 - [x] PT Goals pull last updated goals

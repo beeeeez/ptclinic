@@ -9,6 +9,9 @@
 - Seperate box for Assessment
 - Put new box for DME (Durable Medical Equipment) put under Medical History
 - Put new box for DME Needs under Treatment Plan
+- Drop down menu under PT Diagnosis where they can select more than one option
+- Add save if they X out of form
+- Add save/update ability so they can save and come back to form later
 
 ### Follow Up Visit Form
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
@@ -18,6 +21,9 @@
 - [x] Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - [x] Follow Up Visit Class - Constructor + DB functionality 
 - Get rid of discharge button
+- Make what is pulled over from Initial Visit uneditable
+- Add save if they X out of form
+- Add save/update ability so they can save and come back to form later
 
 ### Patient Profile Form
 - [x] Print patient info capability
@@ -34,11 +40,14 @@
 
 ### Patient Goals
 - [x] PT Goals pull last updated goals
+- Change bottom box to 'Notes & Observations'
+- Add a drop down box after every score 'Score Interpreted By: '  -dropdown options 'Patient, Caregiver, Provider'
 
 
 ### Schedule Appointment Form
 - [x] Print Appointment Details capability
 - [x] Make Appointment class to handle validation and calls
+- Add option to select which of the two clinics the appointment is at
 
 ### Finalization TODO's
 - Get rid of the spaghetti code involving sending multiple forms over to other forms.

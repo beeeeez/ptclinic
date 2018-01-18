@@ -20,8 +20,9 @@
 - [x] Set form window to scrollable for smaller size windows
 - [x] Change Visit Type in Patient Information Table when Follow Up Form adds a record to DB
 - [x] Follow Up Visit Class - Constructor + DB functionality 
-- Get rid of discharge button
-- Make what is pulled over from Initial Visit uneditable
+- [x] Get rid of discharge button
+- [x] Make what is pulled over from Initial Visit uneditable
+- Section for displaying information selected in the new multi-select Drop Down Menu on the Initial Visit Form
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later
 

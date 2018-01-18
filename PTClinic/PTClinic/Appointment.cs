@@ -13,6 +13,7 @@ namespace PTClinic
         private DateTime appointmentDate;
         private string appointmentTime;
         private string appointmentType;
+        private string appointmentAddress;
         protected string feedback;
 
         public virtual string Feedback
@@ -79,6 +80,22 @@ namespace PTClinic
             }
         }
 
+        public string AppointmentAddress
+        {
+            get { return appointmentAddress; }
+            set
+            {
+                if (value.Equals("Select One"))
+                {
+                    feedback += "Error: Please select appointment address\n";
+                }
+                else
+                {
+                    appointmentAddress = value;
+                }
+            }
+        }
+
         public Appointment()
         {
             feedback = "";
@@ -87,13 +104,14 @@ namespace PTClinic
 
         }
 
-        public Appointment(int patientID, DateTime appointmentDate, string appointmentTime, string appointmentType)
+        public Appointment(int patientID, DateTime appointmentDate, string appointmentTime, string appointmentType, string appointmentAddress)
         {
             feedback = "";
             PatientID = patientID;
             AppointmentDate = appointmentDate;
             AppointmentTime = appointmentTime;
             AppointmentType = appointmentType;
+            AppointmentAddress = appointmentAddress;
         }
 
         public virtual int AddRecord(OleDbConnection conn)
@@ -101,7 +119,7 @@ namespace PTClinic
             string strFeedback = "";
             int success = 0;
 
-            string appointmentSQL = "INSERT INTO Appointments ([patient_id], [appointment_date], [appointment_time], [appointment_type]) VALUES (@patientID, @app_date, @app_time, @app_type);";
+            string appointmentSQL = "INSERT INTO Appointments ([patient_id], [appointment_date], [appointment_time], [appointment_type], [appointment_address]) VALUES (@patientID, @app_date, @app_time, @app_type, @app_address);";
 
 
             OleDbCommand comm = new OleDbCommand();
@@ -117,6 +135,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue("@app_date", shortDate);
             comm.Parameters.AddWithValue("@app_time", AppointmentTime);
             comm.Parameters.AddWithValue("@app_type", AppointmentType);
+            comm.Parameters.AddWithValue("@app_address", AppointmentAddress);
 
             try
             {

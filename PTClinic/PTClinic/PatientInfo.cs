@@ -265,10 +265,6 @@ namespace PTClinic
                         }
 
                     }
-                    //else
-                    //{
-                    //    otherInsurer = value;
-                    //}
 
                 }
                 else

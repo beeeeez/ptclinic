@@ -48,6 +48,7 @@ namespace PTClinic
             patientName = patientDetails.Fname + " " + patientDetails.Lname;
 
             FillAppointmentType();
+            FillAppointmentAddress();
 
             // Format time picker
             tpAppTime.Format = DateTimePickerFormat.Custom;
@@ -74,6 +75,16 @@ namespace PTClinic
             cbAppType.Items.Add("Follow-Up");
             cbAppType.Items.Add("Re-assessment");
             cbAppType.SelectedIndex = 0;
+
+        }
+
+        public void FillAppointmentAddress()
+        {
+
+            cbAppAddress.Items.Insert(0, "Select One");
+            cbAppAddress.Items.Add("60 Stamp Farm Rd, Cranston, RI 02921");
+            cbAppAddress.Items.Add("665 Dyer Ave, Cranston, RI 02920");
+            cbAppAddress.SelectedIndex = 0;
 
         }
 
@@ -139,6 +150,7 @@ namespace PTClinic
             newAppointment.AppointmentDate = dtpAppDate.Value;
             newAppointment.AppointmentTime = tpAppTime.Text;
             newAppointment.AppointmentType = cbAppType.Text;
+            newAppointment.AppointmentAddress = cbAppAddress.Text;
 
             if (newAppointment.Feedback.Contains("Error:"))
             {
@@ -166,11 +178,23 @@ namespace PTClinic
 
                         // On Success build print string for appointments
                         appointmentString = new StringBuilder();
-                        appointmentString.AppendLine("Access Point RI");
-                        appointmentString.AppendLine("111 Comstock Parkway");
-                        appointmentString.AppendLine("Cranston, RI 02920");
-                        appointmentString.AppendLine("Phone: 401-941-1112");
-                        appointmentString.AppendLine("Fax: 401-383-8751");
+
+                  
+                        if (cbAppAddress.Text.Equals("60 Stamp Farm Rd, Cranston, RI 02921"))
+                        {
+                            appointmentString.AppendLine("Access Point RI");
+                            appointmentString.AppendLine("60 Stamp Farm Rd");
+                            appointmentString.AppendLine(" Cranston, RI 02921");
+                            appointmentString.AppendLine("Phone: (401) 942 - 3445");
+                        }
+                        else
+                        {
+                            appointmentString.AppendLine("Cornerstone School");
+                            appointmentString.AppendLine("665 Dyer Ave");
+                            appointmentString.AppendLine("Cranston, RI 02920");
+                            appointmentString.AppendLine("Phone: (401) 942-2388");                      
+                        }
+                        
                         appointmentString.AppendLine("\n\n\n");
                         appointmentString.AppendLine();
                         appointmentString.AppendLine("Patient ID: " + patientID);

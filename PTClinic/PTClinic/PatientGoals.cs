@@ -21,7 +21,10 @@ namespace PTClinic
         private string activity_two_score;
         private string activity_three_score;
         private string patient_notes_observations;
-  
+        private string activity_one_interpretedby;
+        private string activity_two_interpretedby;
+        private string activity_three_interpretedby;
+
         protected string feedback;
 
 
@@ -72,6 +75,24 @@ namespace PTClinic
             }
         }
 
+        // Public variable for activiy one interpreted by
+        public string Activity_One_InterpretedBy
+        {
+            get { return activity_one_interpretedby; }
+            set
+            {
+                if (value.Equals("Choose"))
+                {
+                    feedback += "Error: Enter 'Interpreted By' for Activity-1\n";
+                }
+                else
+                {
+                    activity_one_interpretedby = value;
+                }
+              
+            }
+        }
+
 
         // Public variable for activiy two
         public string Activity_Two
@@ -98,6 +119,23 @@ namespace PTClinic
                 else
                 {
                     activity_two_score = value;
+                }
+            }
+        }
+
+        // Public variable for activiy twp interpreted by
+        public string Activity_Two_InterpretedBy
+        {
+            get { return activity_two_interpretedby; }
+            set
+            {
+                if (!string.IsNullOrEmpty(Activity_Two) && !string.IsNullOrEmpty(value) && value.Equals("Choose"))
+                {
+                    feedback += "Error: Enter 'Interpreted By' for Activity-2\n";
+                }
+                else
+                {
+                    activity_two_interpretedby = value;
                 }
             }
         }
@@ -131,6 +169,24 @@ namespace PTClinic
             }
         }
 
+        // Public variable for activiy three interpreted by
+        public string Activity_Three_InterpretedBy
+        {
+            get { return activity_three_interpretedby; }
+            set
+            {
+                if (!string.IsNullOrEmpty(Activity_Three) && !string.IsNullOrEmpty(value) && value.Equals("Choose"))
+                {
+                    feedback += "Error: Enter 'Interpreted By' for Activity-3\n";
+                }
+                else
+                {
+                    activity_three_interpretedby = value;
+                }
+
+            }
+        }
+
 
         // Public variable for patients goals for treatment
         public string Patient_Notes_Observations
@@ -138,14 +194,20 @@ namespace PTClinic
             get { return patient_notes_observations; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter The Patients Goal For Receiving Treatment\n";
-                }
-                else
-                {
-                    patient_notes_observations = value;
-                }
+
+                patient_notes_observations = value;
+
+                // Don't need to force user to input something when there are no notes 
+                // Revert back to below if otherwise
+
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Any Notes and Observations\n";
+                //}
+                //else
+                //{
+                //    patient_notes_observations = value;
+                //}
             }
         }
 
@@ -163,11 +225,15 @@ namespace PTClinic
             activity_two_score = "";
             activity_three_score = "";
             patient_notes_observations = "";
+            activity_one_interpretedby = "";
+            activity_two_interpretedby = "";
+            activity_three_interpretedby = "";
+
             feedback = "";
     }
 
         // Overloaded Constructor
-        public PatientGoals(int patientID, string activity_one, string activity_two, string activity_three, string activity_one_score, string activity_two_score, string activity_three_score, string patient_notes_observations)
+        public PatientGoals(int patientID, string activity_one, string activity_two, string activity_three, string activity_one_score, string activity_two_score, string activity_three_score, string patient_notes_observations, string activity_one_interpretedby, string activity_two_interpretedby, string activity_three_interpretedby)
         {
             //this.Name = name;
             feedback = "";
@@ -179,6 +245,10 @@ namespace PTClinic
             Activity_Two_Score = activity_two_score;
             Activity_Three_Score = activity_three_score;
             Patient_Notes_Observations = patient_notes_observations;
+            Activity_One_InterpretedBy = activity_one_interpretedby;
+            Activity_Two_InterpretedBy = activity_two_interpretedby;
+            Activity_Three_InterpretedBy = activity_three_interpretedby;
+
         }
 
         // Adding a record
@@ -188,8 +258,8 @@ namespace PTClinic
 
 
             // SQL command to add a record to the Patient Goals table
-            string strSQL = "INSERT INTO Patient_Goals (patient_id, activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_notes_observations)" +
-                " VALUES (@PatientID, @ActivityOne, @Activity1Score, @Activity2, @Activity2Score, @Activity3, @Activity3Score, @GoalDate, @PatientNotesObservations);";
+            string strSQL = "INSERT INTO Patient_Goals (patient_id, activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_notes_observations, activity1_interpretedby, activity2_interpretedby, activity3_interpretedby)" +
+                " VALUES (@PatientID, @ActivityOne, @Activity1Score, @Activity2, @Activity2Score, @Activity3, @Activity3Score, @GoalDate, @PatientNotesObservations, @Activity1Interpreted, @Activity2Interpreted, @Activity3Interpreted);";
 
             //// creating database connection 
             //OleDbConnection conn = new OleDbConnection();
@@ -216,7 +286,9 @@ namespace PTClinic
             DateTime shortDate = Convert.ToDateTime(shortDateStr);
             comm.Parameters.AddWithValue(@"GoalDate", shortDate);
             comm.Parameters.AddWithValue(@"PatientNotesObservations", Patient_Notes_Observations);
-          
+            comm.Parameters.AddWithValue(@"Activity1Interpreted", Activity_One_InterpretedBy);
+            comm.Parameters.AddWithValue(@"Activity2Interpreted", Activity_Two_InterpretedBy);
+            comm.Parameters.AddWithValue(@"Activity3Interpreted", Activity_Three_InterpretedBy);
 
             try
             {
@@ -248,7 +320,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT activity1, activity1_score, activity2, activity2_score, activity3, activity3_score, goal_date, patient_notes_observations FROM Patient_Goals WHERE patient_id = @PID AND goal_id = (SELECT MAX(goal_id) FROM Patient_Goals)";
+            string strSQL = "SELECT * FROM Patient_Goals WHERE patient_id = @PID AND goal_id = (SELECT MAX(goal_id) FROM Patient_Goals)";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

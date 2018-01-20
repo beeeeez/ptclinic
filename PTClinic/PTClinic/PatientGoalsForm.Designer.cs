@@ -44,6 +44,9 @@
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbInterpBy3 = new System.Windows.Forms.ComboBox();
+            this.cbInterpBy2 = new System.Windows.Forms.ComboBox();
+            this.cbInterpBy1 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -100,9 +103,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panelDBMessage = new System.Windows.Forms.Panel();
             this.lblDBFeedback = new System.Windows.Forms.Label();
-            this.cbInterpBy1 = new System.Windows.Forms.ComboBox();
-            this.cbInterpBy2 = new System.Windows.Forms.ComboBox();
-            this.cbInterpBy3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -319,6 +319,42 @@
             this.panel4.Size = new System.Drawing.Size(1216, 386);
             this.panel4.TabIndex = 183;
             // 
+            // cbInterpBy3
+            // 
+            this.cbInterpBy3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy3.FormattingEnabled = true;
+            this.cbInterpBy3.Location = new System.Drawing.Point(1084, 192);
+            this.cbInterpBy3.Name = "cbInterpBy3";
+            this.cbInterpBy3.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy3.TabIndex = 9;
+            // 
+            // cbInterpBy2
+            // 
+            this.cbInterpBy2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy2.FormattingEnabled = true;
+            this.cbInterpBy2.Location = new System.Drawing.Point(1084, 156);
+            this.cbInterpBy2.Name = "cbInterpBy2";
+            this.cbInterpBy2.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy2.TabIndex = 6;
+            // 
+            // cbInterpBy1
+            // 
+            this.cbInterpBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbInterpBy1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInterpBy1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbInterpBy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInterpBy1.FormattingEnabled = true;
+            this.cbInterpBy1.Location = new System.Drawing.Point(1084, 120);
+            this.cbInterpBy1.Name = "cbInterpBy1";
+            this.cbInterpBy1.Size = new System.Drawing.Size(129, 26);
+            this.cbInterpBy1.TabIndex = 3;
+            // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -503,7 +539,7 @@
             this.radioButton33.Location = new System.Drawing.Point(7, 11);
             this.radioButton33.Name = "radioButton33";
             this.radioButton33.Size = new System.Drawing.Size(33, 20);
-            this.radioButton33.TabIndex = 0;
+            this.radioButton33.TabIndex = 5;
             this.radioButton33.TabStop = true;
             this.radioButton33.Text = "0";
             this.radioButton33.UseVisualStyleBackColor = true;
@@ -656,7 +692,7 @@
             this.radioButton11.Location = new System.Drawing.Point(7, 11);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(33, 20);
-            this.radioButton11.TabIndex = 0;
+            this.radioButton11.TabIndex = 2;
             this.radioButton11.TabStop = true;
             this.radioButton11.Text = "0";
             this.radioButton11.UseVisualStyleBackColor = true;
@@ -809,7 +845,7 @@
             this.radioButton22.Location = new System.Drawing.Point(7, 11);
             this.radioButton22.Name = "radioButton22";
             this.radioButton22.Size = new System.Drawing.Size(33, 20);
-            this.radioButton22.TabIndex = 0;
+            this.radioButton22.TabIndex = 8;
             this.radioButton22.TabStop = true;
             this.radioButton22.Text = "0";
             this.radioButton22.UseVisualStyleBackColor = true;
@@ -854,7 +890,7 @@
             this.tbActivityThree.Location = new System.Drawing.Point(46, 190);
             this.tbActivityThree.Name = "tbActivityThree";
             this.tbActivityThree.Size = new System.Drawing.Size(396, 24);
-            this.tbActivityThree.TabIndex = 191;
+            this.tbActivityThree.TabIndex = 7;
             // 
             // tbActivityTwo
             // 
@@ -863,7 +899,7 @@
             this.tbActivityTwo.Location = new System.Drawing.Point(46, 152);
             this.tbActivityTwo.Name = "tbActivityTwo";
             this.tbActivityTwo.Size = new System.Drawing.Size(396, 24);
-            this.tbActivityTwo.TabIndex = 190;
+            this.tbActivityTwo.TabIndex = 4;
             // 
             // tbActivityOne
             // 
@@ -872,7 +908,7 @@
             this.tbActivityOne.Location = new System.Drawing.Point(46, 114);
             this.tbActivityOne.Name = "tbActivityOne";
             this.tbActivityOne.Size = new System.Drawing.Size(396, 24);
-            this.tbActivityOne.TabIndex = 189;
+            this.tbActivityOne.TabIndex = 1;
             // 
             // btnSavePTGoals
             // 
@@ -884,7 +920,7 @@
             this.btnSavePTGoals.Location = new System.Drawing.Point(900, 310);
             this.btnSavePTGoals.Name = "btnSavePTGoals";
             this.btnSavePTGoals.Size = new System.Drawing.Size(123, 50);
-            this.btnSavePTGoals.TabIndex = 188;
+            this.btnSavePTGoals.TabIndex = 11;
             this.btnSavePTGoals.Text = "Save Goals";
             this.btnSavePTGoals.UseVisualStyleBackColor = false;
             this.btnSavePTGoals.Click += new System.EventHandler(this.btnSavePTGoals_Click);
@@ -951,7 +987,7 @@
             this.tbNotesObservations.Multiline = true;
             this.tbNotesObservations.Name = "tbNotesObservations";
             this.tbNotesObservations.Size = new System.Drawing.Size(533, 62);
-            this.tbNotesObservations.TabIndex = 183;
+            this.tbNotesObservations.TabIndex = 10;
             // 
             // label8
             // 
@@ -996,42 +1032,6 @@
             this.lblDBFeedback.Size = new System.Drawing.Size(158, 20);
             this.lblDBFeedback.TabIndex = 0;
             this.lblDBFeedback.Text = "Patient Goals Saved!";
-            // 
-            // cbInterpBy1
-            // 
-            this.cbInterpBy1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbInterpBy1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbInterpBy1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbInterpBy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInterpBy1.FormattingEnabled = true;
-            this.cbInterpBy1.Location = new System.Drawing.Point(1084, 120);
-            this.cbInterpBy1.Name = "cbInterpBy1";
-            this.cbInterpBy1.Size = new System.Drawing.Size(129, 26);
-            this.cbInterpBy1.TabIndex = 204;
-            // 
-            // cbInterpBy2
-            // 
-            this.cbInterpBy2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbInterpBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbInterpBy2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbInterpBy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInterpBy2.FormattingEnabled = true;
-            this.cbInterpBy2.Location = new System.Drawing.Point(1084, 156);
-            this.cbInterpBy2.Name = "cbInterpBy2";
-            this.cbInterpBy2.Size = new System.Drawing.Size(129, 26);
-            this.cbInterpBy2.TabIndex = 205;
-            // 
-            // cbInterpBy3
-            // 
-            this.cbInterpBy3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbInterpBy3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbInterpBy3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbInterpBy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInterpBy3.FormattingEnabled = true;
-            this.cbInterpBy3.Location = new System.Drawing.Point(1084, 192);
-            this.cbInterpBy3.Name = "cbInterpBy3";
-            this.cbInterpBy3.Size = new System.Drawing.Size(129, 26);
-            this.cbInterpBy3.TabIndex = 206;
             // 
             // PatientGoalsForm
             // 

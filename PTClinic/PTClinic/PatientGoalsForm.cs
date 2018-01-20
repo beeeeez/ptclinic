@@ -121,6 +121,9 @@ namespace PTClinic
                         goals.Activity_Three = dataReaderGoals["activity3"].ToString();
                         goals.Activity_Three_Score = dataReaderGoals["activity3_score"].ToString();
                         goals.Patient_Notes_Observations = dataReaderGoals["patient_notes_observations"].ToString();
+                        goals.Activity_One_InterpretedBy = dataReaderGoals["activity1_interpretedby"].ToString();
+                        goals.Activity_Two_InterpretedBy = dataReaderGoals["activity2_interpretedby"].ToString();
+                        goals.Activity_Three_InterpretedBy = dataReaderGoals["activity3_interpretedby"].ToString();
 
                         tbActivityOne.Text = goals.Activity_One;
                         tbActivityTwo.Text = goals.Activity_Two;
@@ -135,6 +138,9 @@ namespace PTClinic
                                 rb.Checked = true;
                             }
                         }
+
+                        cbInterpBy1.SelectedItem = goals.Activity_One_InterpretedBy;
+
                         for (int j = 0; j < gbActivityTwoScore.Controls.Count; j++)
                         {
                             RadioButton rb = (RadioButton)gbActivityTwoScore.Controls[j];
@@ -143,6 +149,9 @@ namespace PTClinic
                                 rb.Checked = true;
                             }
                         }
+
+                        cbInterpBy2.SelectedItem = goals.Activity_Two_InterpretedBy;
+
                         for (int k = 0; k < gbActivityThreeScore.Controls.Count; k++)
                         {
                             RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
@@ -151,6 +160,8 @@ namespace PTClinic
                                 rb.Checked = true;
                             }
                         }
+
+                        cbInterpBy3.SelectedItem = goals.Activity_Three_InterpretedBy;
 
                         tbNotesObservations.Text = goals.Patient_Notes_Observations;
                        // MessageBox.Show("Activity One Score: " + goals.Activity_One_Score + " Activity Two Score: " + goals.Activity_Two_Score + " Activity Three Score: " + goals.Activity_Three_Score);
@@ -259,6 +270,11 @@ namespace PTClinic
                 RadioButton rb = (RadioButton)gbActivityThreeScore.Controls[k];
                 rb.Checked = false;
             }
+
+            cbInterpBy1.SelectedIndex = 0;
+            cbInterpBy2.SelectedIndex = 0;
+            cbInterpBy3.SelectedIndex = 0;
+
         }
 
         public void FillInterpretedBy()
@@ -307,6 +323,9 @@ namespace PTClinic
                 newPatientGoals.Activity_Three_Score = activityThreeScore;
             }
             newPatientGoals.Patient_Notes_Observations = tbNotesObservations.Text;
+            newPatientGoals.Activity_One_InterpretedBy = cbInterpBy1.Text;
+            newPatientGoals.Activity_Two_InterpretedBy = cbInterpBy2.Text;
+            newPatientGoals.Activity_Three_InterpretedBy = cbInterpBy3.Text;
 
             // If an error in the information occurs
             if (newPatientGoals.Feedback.Contains("Error:"))

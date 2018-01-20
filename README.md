@@ -43,8 +43,8 @@
 - [x] PT Goals pull last updated goals
 - [x] Change bottom box to 'Notes & Observations'
 - [x] Add a drop down box after every score 'Score Interpreted By: '  -dropdown options 'Patient, Caregiver, Provider'
-- Add Score Interpreted to DB, and check that it's saving
-- Add error checking to Score Interpreted Field
+- [x] Add Score Interpreted to DB, and check that it's saving
+- [x] Add error checking to Score Interpreted Field
 
 
 ### Schedule Appointment Form

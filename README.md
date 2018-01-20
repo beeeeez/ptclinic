@@ -7,8 +7,8 @@
 - [x] Adds to the Patient Info table which visit it is
 - [x] Set form window to scrollable for smaller size windows
 - Seperate box for Assessment
-- Put new box for DME (Durable Medical Equipment) put under Medical History
-- Put new box for DME Needs under Treatment Plan
+- [x] Put new box for DME (Durable Medical Equipment) put under Medical History
+- [x] Put new box for DME Needs under Treatment Plan
 - Drop down menu under PT Diagnosis where they can select more than one option
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later

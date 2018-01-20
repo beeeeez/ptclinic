@@ -12,6 +12,7 @@
 - Drop down menu under PT Diagnosis where they can select more than one option
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later
+- Update flow of forms - remove automatic PSFS form load after successful visit save
 
 ### Follow Up Visit Form
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
@@ -25,6 +26,7 @@
 - Section for displaying information selected in the new multi-select Drop Down Menu on the Initial Visit Form
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later
+- Update flow of forms - remove automatic PSFS form load after successful follow-visit save
 
 ### Patient Profile Form
 - [x] Print patient info capability

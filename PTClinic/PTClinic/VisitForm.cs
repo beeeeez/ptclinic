@@ -126,11 +126,13 @@ namespace PTClinic
             newVisit.Diagnosis = tbDiagnosis.Text;
 
             newVisit.MedicalHistory = tbMedicalHistory.Text;
+            newVisit.DurableMedicalEquipment = tbDME.Text;
             newVisit.Medications = tbMedications.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
             newVisit.PTGoals = tbPTGoals.Text;
             newVisit.TreatmentPlan = tbTreatmentPlan.Text;
+            newVisit.DMENeeds = tbDMENeeds.Text;
             newVisit.Evaluation = cbEvaluation.Text;
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
@@ -266,6 +268,7 @@ namespace PTClinic
             tbFollowUpTreatment.Clear();
             tbFunctionalLimitations.Clear();
             tbMedicalHistory.Clear();
+            tbDME.Clear();
             tbMedications.Clear();
             tbObjective.Clear();
             tbProviderID.Clear();
@@ -273,6 +276,7 @@ namespace PTClinic
             tbPTGoals.Clear();
             tbSubjective.Clear();
             tbTreatmentPlan.Clear();
+            tbDMENeeds.Clear();
 
             // Set ComboBoxes to index 0 (Select One)
             cbConstantAttendance.SelectedIndex = 0;

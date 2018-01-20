@@ -21,11 +21,13 @@ namespace PTClinic
         private string chiefComplaint;
         private string diagnosis;
         private string medicalHistory;
+        private string durableMedicalEquipment;
         private string medications;
         private string subjective;
         private string objective;
         private string ptGoals;
         private string treatmentPlan;
+        private string dmeNeeds;
         private string evaluation;
         private string constantAttendance;
         private string therapeuticProcedures;
@@ -120,6 +122,13 @@ namespace PTClinic
             }
         }
 
+        // Public variable for DurableMedicalEquipment
+        public string DurableMedicalEquipment
+        {
+            get { return durableMedicalEquipment; }
+            set { durableMedicalEquipment = value; }
+        }
+
         // Public variable for Medications
         public string Medications
         {
@@ -203,6 +212,13 @@ namespace PTClinic
                     treatmentPlan = value;
                 }
             }
+        }
+
+        // Public variable for DMENeeds
+        public string DMENeeds
+        {
+            get { return dmeNeeds; }
+            set { dmeNeeds = value; }
         }
 
         // Public variable for Evaluation
@@ -342,11 +358,13 @@ namespace PTClinic
             chiefComplaint = "";
             diagnosis = "";
             medicalHistory = "";
+            durableMedicalEquipment = "";
             medications = "";
             subjective = "";
             objective = "";
             ptGoals = "";
             treatmentPlan = "";
+            dmeNeeds = "";
             functionalLimitations = "";
             physicalTherapyDiagnosis = "";
             followUpTreatment = ""; // Will need to be fixed if this is not a text box
@@ -354,7 +372,7 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string diagnosis, string medicalHistory, string medications, string subjective, string objective, string ptGoals, string treatmentPlan, string evaluation, string constantAttendance, string therapeuticProcedures, string therapeuticProcedures2, string functionalLimitations, string physicalTherapyDiagnosis, string followUpTreatment)
+        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string diagnosis, string medicalHistory, string durableMedicalEquipment, string medications, string subjective, string objective, string ptGoals, string treatmentPlan, string dmeNeeds, string evaluation, string constantAttendance, string therapeuticProcedures, string therapeuticProcedures2, string functionalLimitations, string physicalTherapyDiagnosis, string followUpTreatment)
         {
             feedback = "";
             PatientID = patientID;
@@ -363,11 +381,13 @@ namespace PTClinic
             ChiefComplaint = chiefComplaint;
             Diagnosis = diagnosis;
             MedicalHistory = medicalHistory;
+            DurableMedicalEquipment = durableMedicalEquipment;
             Medications = medications;
             Subjective = subjective;
             Objective = objective;
             PTGoals = ptGoals;
             TreatmentPlan = treatmentPlan;
+            DMENeeds = dmeNeeds;
             Evaluation = evaluation;
             ConstantAttendance = constantAttendance;
             TherapeuticProcedures = therapeuticProcedures;
@@ -384,8 +404,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment)" +
-                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @Diagnosis, @MedicalHistory, @Medications, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @FunctionalLimitations, @PhysicalTherapyDiagnosis, @FollowUpTreatment);";
+            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment)" +
+                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @Diagnosis, @MedicalHistory, @DurableMedicalEquipment, @Medications, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @DMENeeds, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @FunctionalLimitations, @PhysicalTherapyDiagnosis, @FollowUpTreatment);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -406,12 +426,14 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"ChiefComplaint", ChiefComplaint);
             comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
             comm.Parameters.AddWithValue(@"MedicalHistory", MedicalHistory);
+            comm.Parameters.AddWithValue(@"DurableMedicalEquipment", DurableMedicalEquipment);
             comm.Parameters.AddWithValue(@"Medications", Medications);
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
             comm.Parameters.AddWithValue(@"Objective", Objective);
             comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
 
             comm.Parameters.AddWithValue(@"TreatmentPlan", TreatmentPlan);
+            comm.Parameters.AddWithValue(@"DMENeeds", DMENeeds);
             comm.Parameters.AddWithValue(@"Evaluation", Evaluation);
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
@@ -454,7 +476,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, medications, subjective, objective, pt_goals, treatment_plan, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
+            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

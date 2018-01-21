@@ -56,6 +56,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbDME = new System.Windows.Forms.TextBox();
+            this.lblDME = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.tbChiefComplaint = new System.Windows.Forms.TextBox();
             this.lblChiefComplaint = new System.Windows.Forms.Label();
@@ -64,17 +66,19 @@
             this.tbProviderID = new System.Windows.Forms.TextBox();
             this.lblProviderID = new System.Windows.Forms.Label();
             this.lblSubjective = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
             this.lblPTGoals = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblMedications = new System.Windows.Forms.Label();
             this.lblDiagnosis = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblEvaluation = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbDMENeeds = new System.Windows.Forms.TextBox();
+            this.lblDMENeeds = new System.Windows.Forms.Label();
             this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
@@ -84,10 +88,6 @@
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
-            this.tbDMENeeds = new System.Windows.Forms.TextBox();
-            this.lblDMENeeds = new System.Windows.Forms.Label();
-            this.tbDME = new System.Windows.Forms.TextBox();
-            this.lblDME = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -194,7 +194,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(925, 704);
+            this.btnClear.Location = new System.Drawing.Point(916, 704);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -209,7 +209,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(734, 704);
+            this.btnAddVisit.Location = new System.Drawing.Point(725, 704);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -407,10 +407,29 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(-42, 151);
+            this.panel2.Location = new System.Drawing.Point(-51, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 0;
+            // 
+            // tbDME
+            // 
+            this.tbDME.Location = new System.Drawing.Point(149, 270);
+            this.tbDME.Multiline = true;
+            this.tbDME.Name = "tbDME";
+            this.tbDME.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDME.Size = new System.Drawing.Size(415, 44);
+            this.tbDME.TabIndex = 100;
+            this.tbDME.Text = "Durable Medical Equipment";
+            // 
+            // lblDME
+            // 
+            this.lblDME.AutoSize = true;
+            this.lblDME.Location = new System.Drawing.Point(64, 273);
+            this.lblDME.Name = "lblDME";
+            this.lblDME.Size = new System.Drawing.Size(84, 26);
+            this.lblDME.TabIndex = 101;
+            this.lblDME.Text = "Durable Medical\r\nEquipment";
             // 
             // lblPatientName
             // 
@@ -482,15 +501,6 @@
             this.lblSubjective.TabIndex = 83;
             this.lblSubjective.Text = "Subjective";
             // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(63, 17);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(79, 13);
-            this.lblCity.TabIndex = 81;
-            this.lblCity.Text = "Treatment Plan";
-            // 
             // lblPTGoals
             // 
             this.lblPTGoals.AutoSize = true;
@@ -527,6 +537,15 @@
             this.lblDiagnosis.TabIndex = 75;
             this.lblDiagnosis.Text = "Diagnosis";
             // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(63, 17);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(79, 13);
+            this.lblCity.TabIndex = 81;
+            this.lblCity.Text = "Treatment Plan";
+            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
@@ -551,7 +570,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(869, 639);
+            this.lblFeedback.Location = new System.Drawing.Point(860, 639);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
@@ -572,7 +591,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(-42, 95);
+            this.panel3.Location = new System.Drawing.Point(-51, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -603,10 +622,29 @@
             this.panel4.Controls.Add(this.lblCity);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(585, 151);
+            this.panel4.Location = new System.Drawing.Point(576, 151);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 479);
             this.panel4.TabIndex = 1;
+            // 
+            // tbDMENeeds
+            // 
+            this.tbDMENeeds.Location = new System.Drawing.Point(148, 72);
+            this.tbDMENeeds.Multiline = true;
+            this.tbDMENeeds.Name = "tbDMENeeds";
+            this.tbDMENeeds.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDMENeeds.Size = new System.Drawing.Size(379, 38);
+            this.tbDMENeeds.TabIndex = 104;
+            this.tbDMENeeds.Text = "Durable Medical Equipment Needs";
+            // 
+            // lblDMENeeds
+            // 
+            this.lblDMENeeds.AutoSize = true;
+            this.lblDMENeeds.Location = new System.Drawing.Point(63, 75);
+            this.lblDMENeeds.Name = "lblDMENeeds";
+            this.lblDMENeeds.Size = new System.Drawing.Size(71, 13);
+            this.lblDMENeeds.TabIndex = 105;
+            this.lblDMENeeds.Text = "D.M.E Needs";
             // 
             // tbTherapeuticProcedures2
             // 
@@ -676,7 +714,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(942, 89);
+            this.panelMessage.Location = new System.Drawing.Point(933, 89);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 116;
@@ -692,44 +730,6 @@
             this.lbNewPatient.Size = new System.Drawing.Size(176, 18);
             this.lbNewPatient.TabIndex = 113;
             this.lbNewPatient.Text = "Patient Information Saved";
-            // 
-            // tbDMENeeds
-            // 
-            this.tbDMENeeds.Location = new System.Drawing.Point(148, 72);
-            this.tbDMENeeds.Multiline = true;
-            this.tbDMENeeds.Name = "tbDMENeeds";
-            this.tbDMENeeds.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDMENeeds.Size = new System.Drawing.Size(379, 38);
-            this.tbDMENeeds.TabIndex = 104;
-            this.tbDMENeeds.Text = "Durable Medical Equipment Needs";
-            // 
-            // lblDMENeeds
-            // 
-            this.lblDMENeeds.AutoSize = true;
-            this.lblDMENeeds.Location = new System.Drawing.Point(63, 75);
-            this.lblDMENeeds.Name = "lblDMENeeds";
-            this.lblDMENeeds.Size = new System.Drawing.Size(71, 13);
-            this.lblDMENeeds.TabIndex = 105;
-            this.lblDMENeeds.Text = "D.M.E Needs";
-            // 
-            // tbDME
-            // 
-            this.tbDME.Location = new System.Drawing.Point(149, 270);
-            this.tbDME.Multiline = true;
-            this.tbDME.Name = "tbDME";
-            this.tbDME.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDME.Size = new System.Drawing.Size(415, 44);
-            this.tbDME.TabIndex = 100;
-            this.tbDME.Text = "Durable Medical Equipment";
-            // 
-            // lblDME
-            // 
-            this.lblDME.AutoSize = true;
-            this.lblDME.Location = new System.Drawing.Point(64, 273);
-            this.lblDME.Name = "lblDME";
-            this.lblDME.Size = new System.Drawing.Size(84, 26);
-            this.lblDME.TabIndex = 101;
-            this.lblDME.Text = "Durable Medical\r\nEquipment";
             // 
             // VisitForm
             // 

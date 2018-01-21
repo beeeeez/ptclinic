@@ -116,5 +116,11 @@ namespace PTClinic
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TestDisplayForm testForm = new TestDisplayForm();
+            testForm.Show();
+        }
     }
 }

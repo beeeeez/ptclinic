@@ -9,7 +9,7 @@
 - Seperate box for Assessment
 - [x] Put new box for DME (Durable Medical Equipment) put under Medical History
 - [x] Put new box for DME Needs under Treatment Plan
-- Drop down menu under PT Diagnosis where they can select more than one option
+- Drop down menu under PT Diagnosis where they can select more than one option (**Currently testing using TESTDISPLAYFORM to collect multiple items**)
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later
 - Update flow of forms - remove automatic PSFS form load after successful visit save

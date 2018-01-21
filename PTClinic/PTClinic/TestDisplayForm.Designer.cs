@@ -37,7 +37,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.clbDiagnosis = new System.Windows.Forms.CheckedListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,14 +145,6 @@
             this.clbDiagnosis.Size = new System.Drawing.Size(228, 34);
             this.clbDiagnosis.TabIndex = 88;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(688, 240);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 89;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(411, 263);
@@ -171,7 +162,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1285, 749);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.clbDiagnosis);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddPatient);
@@ -194,7 +184,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox clbDiagnosis;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
     }
 }

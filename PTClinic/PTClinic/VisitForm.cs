@@ -139,6 +139,7 @@ namespace PTClinic
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
             newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
+            newVisit.Assessment = tbAssessment.Text;
             newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
             newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
@@ -179,15 +180,6 @@ namespace PTClinic
                                     panelMessage.Visible = true;
                                     visitSaved = true;
                                     clearForm();
-
-                                    DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
-                                    if (dResult == DialogResult.OK)
-                                    {
-                                        this.Hide();
-                                        bool fromProfile = true;
-                                        PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
-                                        temp.Show();
-                                    }
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
                                 }
                                 else
@@ -277,6 +269,7 @@ namespace PTClinic
             tbSubjective.Clear();
             tbTreatmentPlan.Clear();
             tbDMENeeds.Clear();
+            tbAssessment.Clear();
 
             // Set ComboBoxes to index 0 (Select One)
             cbConstantAttendance.SelectedIndex = 0;

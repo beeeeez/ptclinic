@@ -102,7 +102,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(892, 673);
+            this.btnClear.Location = new System.Drawing.Point(876, 673);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -117,7 +117,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(725, 672);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(709, 672);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -223,7 +223,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(-32, 93);
+            this.panel3.Location = new System.Drawing.Point(-48, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -266,7 +266,7 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(580, 150);
+            this.panel4.Location = new System.Drawing.Point(564, 150);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 436);
             this.panel4.TabIndex = 1;
@@ -285,7 +285,7 @@
             // 
             this.gbReassessment.Controls.Add(this.rbReassessmentNo);
             this.gbReassessment.Controls.Add(this.rbReassessmentYes);
-            this.gbReassessment.Location = new System.Drawing.Point(234, 213);
+            this.gbReassessment.Location = new System.Drawing.Point(233, 271);
             this.gbReassessment.Name = "gbReassessment";
             this.gbReassessment.Size = new System.Drawing.Size(170, 39);
             this.gbReassessment.TabIndex = 11;
@@ -315,7 +315,7 @@
             // 
             // tbPlan
             // 
-            this.tbPlan.Location = new System.Drawing.Point(164, 145);
+            this.tbPlan.Location = new System.Drawing.Point(163, 203);
             this.tbPlan.Multiline = true;
             this.tbPlan.Name = "tbPlan";
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -335,7 +335,7 @@
             // lblReAssessment
             // 
             this.lblReAssessment.AutoSize = true;
-            this.lblReAssessment.Location = new System.Drawing.Point(51, 224);
+            this.lblReAssessment.Location = new System.Drawing.Point(50, 282);
             this.lblReAssessment.Name = "lblReAssessment";
             this.lblReAssessment.Size = new System.Drawing.Size(169, 13);
             this.lblReAssessment.TabIndex = 105;
@@ -344,7 +344,7 @@
             // lblPatientPlan
             // 
             this.lblPatientPlan.AutoSize = true;
-            this.lblPatientPlan.Location = new System.Drawing.Point(51, 148);
+            this.lblPatientPlan.Location = new System.Drawing.Point(50, 206);
             this.lblPatientPlan.Name = "lblPatientPlan";
             this.lblPatientPlan.Size = new System.Drawing.Size(93, 13);
             this.lblPatientPlan.TabIndex = 104;
@@ -354,7 +354,7 @@
             // 
             this.lblPlan.AutoSize = true;
             this.lblPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlan.Location = new System.Drawing.Point(38, 104);
+            this.lblPlan.Location = new System.Drawing.Point(37, 162);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(40, 20);
             this.lblPlan.TabIndex = 103;
@@ -400,7 +400,7 @@
             this.tbAssessment.Multiline = true;
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAssessment.Size = new System.Drawing.Size(387, 83);
+            this.tbAssessment.Size = new System.Drawing.Size(387, 63);
             this.tbAssessment.TabIndex = 9;
             this.tbAssessment.Text = "Assessment";
             // 
@@ -650,7 +650,7 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(-32, 149);
+            this.panel2.Location = new System.Drawing.Point(-48, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -712,7 +712,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(884, 93);
+            this.panelMessage.Location = new System.Drawing.Point(868, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;

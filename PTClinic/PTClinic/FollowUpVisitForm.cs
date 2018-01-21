@@ -272,7 +272,7 @@ namespace PTClinic
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                                     clearForm();
-
+                                    /*
                                     if (PSFS == true)
                                     {
                                         DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
@@ -283,7 +283,7 @@ namespace PTClinic
                                             PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
                                             temp.Show();
                                         }
-                                    }
+                                    }*/
                                 }
                                 else
                                 {

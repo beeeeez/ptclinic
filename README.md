@@ -3,18 +3,22 @@
 ## Project Todos
 
 ### Intial Visit Form
-- [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
-- [x] Adds to the Patient Info table which visit it is
-- [x] Set form window to scrollable for smaller size windows
-- Seperate box for Assessment
-- [x] Put new box for DME (Durable Medical Equipment) put under Medical History
-- [x] Put new box for DME Needs under Treatment Plan
 - Drop down menu under PT Diagnosis where they can select more than one option (**Currently testing using TESTDISPLAYFORM to collect multiple items**)
 - Add save if they X out of form
 - Add save/update ability so they can save and come back to form later
-- Update flow of forms - remove automatic PSFS form load after successful visit save
+- [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
+- [x] Adds to the Patient Info table which visit it is
+- [x] Set form window to scrollable for smaller size windows
+- [x] Seperate box for Assessment
+- [x] Put new box for DME (Durable Medical Equipment) put under Medical History
+- [x] Put new box for DME Needs under Treatment Plan
+- [x] Get Assessment, DME, and DME needs adding to the DB
+- [x] Update flow of forms - remove automatic PSFS form load after successful visit save
 
 ### Follow Up Visit Form
+- Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form
+- Add save if they X out of form
+- Add save/update ability so they can save and come back to form later
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
 - [x] Add button to get to PSFS form (if it needs to be filled out) if it doesn't just have a NO label populate
 - [x] Fix the missing validation in FollowUpVisit class
@@ -23,10 +27,8 @@
 - [x] Follow Up Visit Class - Constructor + DB functionality 
 - [x] Get rid of discharge button
 - [x] Make what is pulled over from Initial Visit uneditable
-- Section for displaying information selected in the new multi-select Drop Down Menu on the Initial Visit Form
-- Add save if they X out of form
-- Add save/update ability so they can save and come back to form later
-- Update flow of forms - remove automatic PSFS form load after successful follow-visit save
+- [x] Add Section for displaying information selected in the new multi-select Drop Down Menu on the Initial Visit Form
+- [x] Update flow of forms - remove automatic PSFS form load after successful follow-visit save
 
 ### Patient Profile Form
 - [x] Print patient info capability

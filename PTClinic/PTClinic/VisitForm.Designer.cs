@@ -77,6 +77,8 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbAssessment = new System.Windows.Forms.TextBox();
+            this.lblAssessment = new System.Windows.Forms.Label();
             this.tbDMENeeds = new System.Windows.Forms.TextBox();
             this.lblDMENeeds = new System.Windows.Forms.Label();
             this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
@@ -88,8 +90,8 @@
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
-            this.tbAssessment = new System.Windows.Forms.TextBox();
-            this.lblAssessment = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cbCompletedForm = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -196,7 +198,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(898, 725);
+            this.btnClear.Location = new System.Drawing.Point(889, 725);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -211,7 +213,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(707, 725);
+            this.btnAddVisit.Location = new System.Drawing.Point(698, 725);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -411,7 +413,7 @@
             this.panel2.Controls.Add(this.lblCity);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(-69, 151);
+            this.panel2.Location = new System.Drawing.Point(-78, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 0;
@@ -574,7 +576,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(849, 725);
+            this.lblFeedback.Location = new System.Drawing.Point(840, 725);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
@@ -595,7 +597,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(-69, 95);
+            this.panel3.Location = new System.Drawing.Point(-78, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -604,6 +606,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.checkedListBox1);
             this.panel4.Controls.Add(this.tbAssessment);
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.tbDMENeeds);
@@ -626,10 +629,29 @@
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(558, 151);
+            this.panel4.Location = new System.Drawing.Point(549, 151);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 527);
             this.panel4.TabIndex = 1;
+            // 
+            // tbAssessment
+            // 
+            this.tbAssessment.Location = new System.Drawing.Point(175, 298);
+            this.tbAssessment.Multiline = true;
+            this.tbAssessment.Name = "tbAssessment";
+            this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbAssessment.Size = new System.Drawing.Size(354, 38);
+            this.tbAssessment.TabIndex = 106;
+            this.tbAssessment.Text = "Assessment";
+            // 
+            // lblAssessment
+            // 
+            this.lblAssessment.AutoSize = true;
+            this.lblAssessment.Location = new System.Drawing.Point(97, 301);
+            this.lblAssessment.Name = "lblAssessment";
+            this.lblAssessment.Size = new System.Drawing.Size(63, 13);
+            this.lblAssessment.TabIndex = 107;
+            this.lblAssessment.Text = "Assessment";
             // 
             // tbDMENeeds
             // 
@@ -718,7 +740,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(915, 89);
+            this.panelMessage.Location = new System.Drawing.Point(906, 89);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 116;
@@ -735,24 +757,30 @@
             this.lbNewPatient.TabIndex = 113;
             this.lbNewPatient.Text = "Patient Information Saved";
             // 
-            // tbAssessment
+            // checkedListBox1
             // 
-            this.tbAssessment.Location = new System.Drawing.Point(175, 298);
-            this.tbAssessment.Multiline = true;
-            this.tbAssessment.Name = "tbAssessment";
-            this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAssessment.Size = new System.Drawing.Size(354, 38);
-            this.tbAssessment.TabIndex = 106;
-            this.tbAssessment.Text = "Assessment";
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Diagnosis 1",
+            "Diagnosis 2",
+            "Diagnosis 3",
+            "Diagnosis 4",
+            "Diagnosis 5",
+            "Diagnosis 6"});
+            this.checkedListBox1.Location = new System.Drawing.Point(175, 408);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(353, 49);
+            this.checkedListBox1.TabIndex = 108;
             // 
-            // lblAssessment
+            // cbCompletedForm
             // 
-            this.lblAssessment.AutoSize = true;
-            this.lblAssessment.Location = new System.Drawing.Point(97, 301);
-            this.lblAssessment.Name = "lblAssessment";
-            this.lblAssessment.Size = new System.Drawing.Size(63, 13);
-            this.lblAssessment.TabIndex = 107;
-            this.lblAssessment.Text = "Assessment";
+            this.cbCompletedForm.AutoSize = true;
+            this.cbCompletedForm.Location = new System.Drawing.Point(698, 687);
+            this.cbCompletedForm.Name = "cbCompletedForm";
+            this.cbCompletedForm.Size = new System.Drawing.Size(76, 17);
+            this.cbCompletedForm.TabIndex = 117;
+            this.cbCompletedForm.Text = "Completed";
+            this.cbCompletedForm.UseVisualStyleBackColor = true;
             // 
             // VisitForm
             // 
@@ -760,6 +788,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1260, 733);
+            this.Controls.Add(this.cbCompletedForm);
             this.Controls.Add(this.panelMessage);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddVisit);
@@ -850,5 +879,7 @@
         private System.Windows.Forms.Label lblDME;
         private System.Windows.Forms.TextBox tbAssessment;
         private System.Windows.Forms.Label lblAssessment;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckBox cbCompletedForm;
     }
 }

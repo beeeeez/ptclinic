@@ -436,8 +436,8 @@ namespace PTClinic
             string strFeedback = "";
             int success = 0;
 
-            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, therapeutic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
-                " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
+            //string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, therapeutic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
+            //    " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
 
             // SQL command to add a record to the Patients table
             string strSQL = "UPDATE Patient_FollowUp_Visit SET provider_id = @ProviderID, patient_name = @PatientName, diagnosis = @Diagnosis, pt_goals = @PTGoals, subjective = @Subjective, objective = @Objective, supervised_modalities = @SupervisedModalities, constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, assessment = @Assessment, plan = @Plan, student_name = @StudentProviderName, student_date = @StudentProviderNameDate, provider_name = @ProviderName, provider_date = @ProviderNameDate, visit_date = @VisitDate" +

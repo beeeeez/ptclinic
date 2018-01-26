@@ -198,7 +198,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(871, 725);
+            this.btnClear.Location = new System.Drawing.Point(862, 725);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -213,7 +213,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(680, 725);
+            this.btnAddVisit.Location = new System.Drawing.Point(671, 725);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -413,7 +413,7 @@
             this.panel2.Controls.Add(this.lblCity);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(11, 154);
+            this.panel2.Location = new System.Drawing.Point(2, 154);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 0;
@@ -576,7 +576,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(822, 725);
+            this.lblFeedback.Location = new System.Drawing.Point(813, 725);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
@@ -597,7 +597,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(11, 98);
+            this.panel3.Location = new System.Drawing.Point(2, 98);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -629,7 +629,7 @@
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(638, 154);
+            this.panel4.Location = new System.Drawing.Point(629, 154);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 527);
             this.panel4.TabIndex = 1;
@@ -638,12 +638,14 @@
             // 
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Diagnosis 1",
-            "Diagnosis 2",
-            "Diagnosis 3",
-            "Diagnosis 4",
-            "Diagnosis 5",
-            "Diagnosis 6"});
+            "Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion " +
+                "Associated with Connective Tissue Dysfunction",
+            "Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion " +
+                "Associated with Localized Inflammation",
+            "Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion " +
+                "Associated with and Reflex Integrity associated with Spinal Disorders",
+            "Impaired Posture",
+            "Primary Prevention/Risk Reduction for Skeletal Demineralization"});
             this.checkedListBox1.Location = new System.Drawing.Point(175, 408);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(353, 49);
@@ -755,7 +757,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(995, 92);
+            this.panelMessage.Location = new System.Drawing.Point(986, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 116;

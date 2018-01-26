@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -427,6 +428,115 @@ namespace PTClinic
 
             return success;
         } // End of AddFollowUpVisit
+
+
+        // Updating patient's follow up visit information
+        public virtual int UpdateOneFUVisit(int patientID)
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, therapeutic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
+                " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
+
+            // SQL command to add a record to the Patients table
+            string strSQL = "UPDATE Patient_FollowUp_Visit SET provider_id = @ProviderID, patient_name = @PatientName, diagnosis = @Diagnosis, pt_goals = @PTGoals, subjective = @Subjective, objective = @Objective, supervised_modalities = @SupervisedModalities, constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, assessment = @Assessment, plan = @Plan, student_name = @StudentProviderName, student_date = @StudentProviderNameDate, provider_name = @ProviderName, provider_date = @ProviderNameDate, visit_date = @VisitDate" +
+                " WHERE patient_id = @PatientID;";
+
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"ProviderID", ProviderID);
+            comm.Parameters.AddWithValue(@"PatientName", PatientName);
+            comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
+            comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
+            comm.Parameters.AddWithValue(@"Subjective", Subjective);
+            comm.Parameters.AddWithValue(@"Objective", Objective);
+
+            comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
+            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
+
+            comm.Parameters.AddWithValue(@"Assessment", Assessment);
+            comm.Parameters.AddWithValue(@"Plan", Plan);
+            comm.Parameters.AddWithValue(@"StudentProviderName", StudentProviderName);
+            comm.Parameters.AddWithValue(@"StudentProviderNameDate", StudentProviderNameDate).ToString();
+            comm.Parameters.AddWithValue(@"ProviderName", ProviderName);
+            comm.Parameters.AddWithValue(@"ProviderNameDate", ProviderNameDate).ToString();
+
+            comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
+            comm.Parameters.AddWithValue(@"PatientID", patientID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Updated";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdateOneFollowUpVisit
+
+
+        // Find Patient Follow Up Visit Info  method
+        // Returns a data reader filled with all the data of the patients follow up / re-assessment visit
+        public OleDbDataReader FindOnePatientFUVisit(OleDbConnection conn, int intPID)
+        {
+            string strFeedback = "";
+            OleDbCommand comm = new OleDbCommand();
+
+            // Connection string to be used
+            //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+
+            //SQL Command string to pull up one Patients Data
+            string strSQL = "SELECT patient_id, provider_id, patient_name, diagnosis, pt_goals, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, therapeutic_procedures2, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date FROM Patient_FollowUp_Visit WHERE patient_id = @PID;";
+
+            // Set the connection string
+            //conn.ConnectionString = strConn;
+
+            // Give command object info it needs
+            comm.Connection = conn;
+            comm.CommandText = strSQL;
+            comm.Parameters.AddWithValue("@PID", intPID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+                return null;
+            }
+
+
+            // Return some form of feedback
+            return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
+        } // End of FindOnePatientFUVisit
 
     } // End of FollowUpVisitInfo Class
 }

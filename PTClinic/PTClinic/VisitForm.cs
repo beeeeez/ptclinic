@@ -19,6 +19,7 @@ namespace PTClinic
         private Form PatientProfile;
         public int patientID;
         private string changeVisitType = "follow up";
+        private string patientStatus;
         bool visitSaved;
 
 
@@ -30,6 +31,7 @@ namespace PTClinic
             panelMessage.Visible = false;
 
             visitSaved = false;
+            patientStatus = "";
 
             this.Login = Login;
             this.Admin = adminForm;
@@ -54,7 +56,25 @@ namespace PTClinic
             FillEvaluation();
             FillConstantAttendance();
             FillTherapeuticProcedures();
-           
+
+            PatientInfo tempPatient = new PatientInfo();
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = tempPatient.FindOnePatient(connection, patientID))
+                {
+                    while (dataReaderPatient.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+
+                        patientStatus = dataReaderPatient["patient_status"].ToString();
+                    }
+                }
+            }
+
+            MessageBox.Show(patientStatus);
+
         }
 
         // FillEvaluation Function
@@ -170,7 +190,7 @@ namespace PTClinic
                         using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                         {
                             PatientInfo changeVisitStatus = new PatientInfo();
-                            
+
                             try
                             {
                                 int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
@@ -276,5 +296,18 @@ namespace PTClinic
             cbEvaluation.SelectedIndex = 0;
             cbTherapeuticProcedures.SelectedIndex = 0;
         }
+
+        private void VisitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                }
+            }
+        }
+
     }
 }

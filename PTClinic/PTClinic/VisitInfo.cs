@@ -515,5 +515,81 @@ namespace PTClinic
             return comm.ExecuteReader(CommandBehavior.CloseConnection); // Returning dataset to be used by the calling form.
         } // End of FindOnePatientVisit
 
+
+        // Adding the first visit to the DB
+        public virtual int UpdateVisit()
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to add a record to the Patient_Visit 
+
+            string strSQL = "UPDATE Patient_Visit SET provider_id = @ProviderID, visit_date = @VisitDate, chief_complaint = @ChiefComplaint," +
+                 "diagnosis = @Diagnosis, medical_history = @MedicalHistory, durable_medical_equipment = @DurableMedicalEquipment, medications = @Medications, subjective = @Subjective," +
+                 "objective = @Objective, pt_goals = @PTGoals, treatment_plan = @TreatmentPlan, dme_needs = @, evaluation = @Evaluation," +
+                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, functional_limitations = @FunctionalLimitations," +
+                 "assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis, followup_treatment @FollowUpTreatment" + 
+                 " WHERE patient_id = @PatientID;";
+   
+ 
+            // creating database connection 
+            OleDbConnection conn = new OleDbConnection();
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+
+            comm.Parameters.AddWithValue(@"ProviderID", ProviderID);
+            comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
+            comm.Parameters.AddWithValue(@"ChiefComplaint", ChiefComplaint);
+            comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
+            comm.Parameters.AddWithValue(@"MedicalHistory", MedicalHistory);
+            comm.Parameters.AddWithValue(@"DurableMedicalEquipment", DurableMedicalEquipment);
+            comm.Parameters.AddWithValue(@"Medications", Medications);
+            comm.Parameters.AddWithValue(@"Subjective", Subjective);
+            comm.Parameters.AddWithValue(@"Objective", Objective);
+            comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
+
+            comm.Parameters.AddWithValue(@"TreatmentPlan", TreatmentPlan);
+            comm.Parameters.AddWithValue(@"DMENeeds", DMENeeds);
+            comm.Parameters.AddWithValue(@"Evaluation", Evaluation);
+
+            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
+            comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
+            comm.Parameters.AddWithValue(@"Assessment", Assessment);
+            comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
+            comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
+
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Added";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdateVisit
+
     } // End of Visit Info Class
 }

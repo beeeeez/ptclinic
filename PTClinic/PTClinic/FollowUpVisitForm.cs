@@ -18,6 +18,7 @@ namespace PTClinic
         private Form PatientProfile;
         public int patientID;
         private string changeVisitType = "";
+        private string patientVisitStatus;
         private Boolean PSFS = false;
 
         public FollowUpVisitForm(string PatientID, string PatientName, string PatientVisitStatus, Boolean needPSFS, Form adminForm, Form Login, Form PatientProfile)
@@ -32,6 +33,8 @@ namespace PTClinic
                 lblVisitInformation.Text = "Patient Re-assessment Visit Information";
                 btnAddFollowUp.Text = "Add Visit Info";
             }
+
+            patientVisitStatus = PatientVisitStatus;
 
 
             // Set Button Icons
@@ -167,6 +170,41 @@ namespace PTClinic
         // Add Follow Up Information to DB
         private void btnAddFollowUp_Click(object sender, EventArgs e)
         {
+            if(patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+            {
+                AddFollowUpVisit();
+            }
+            else
+            {
+                UpdateFollowUpVisit();
+            }
+        }
+
+        // Reset form back
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearForm();
+        }
+
+        private void clearForm()
+        {
+            tbProviderID.Clear();
+            tbSubjective.Clear();
+            tbObjective.Clear();
+            cbSupervisedModalities.SelectedIndex = 0;
+            cbConstantAttendance.SelectedIndex = 0;
+            cbTherapeuticProcedures.SelectedIndex = 0;
+            tbTherapeuticProcedures2.Clear();
+            tbAssessment.Clear();
+            tbPlan.Clear();
+            rbReassessmentYes.Checked = false;
+            rbReassessmentNo.Checked = false;
+            tbStudentProvider.Clear();
+            tbProviderName.Clear();
+        }
+
+        private void AddFollowUpVisit()
+        {
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
             newVisit.PatientID = patientID;
@@ -176,7 +214,7 @@ namespace PTClinic
             newVisit.PTGoals = tbPTGoals.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
-            
+
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
@@ -248,7 +286,7 @@ namespace PTClinic
                         //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                         /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY ARE DISCHARGED OR NEED REASSESSMENT */
-
+                        /*
                         if (reassessment == true)
                         {
                             changeVisitType = "re-assessment";
@@ -256,11 +294,28 @@ namespace PTClinic
                         else
                         {
                             changeVisitType = "follow up";
-                        }
+                        }*/
 
                         using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                         {
                             PatientInfo changeVisitStatus = new PatientInfo();
+
+                            /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY COMPLETED THE FORM AND ARE DISCHARGED OR NEED REASSESSMENT */
+                            if (cbCompleted.Checked == true)
+                            {
+                                if (reassessment == true)
+                                {
+                                    changeVisitType = "re-assessment";
+                                }
+                                else
+                                {
+                                    changeVisitType = "follow up";
+                                }
+                            }
+                            else
+                            {
+                                changeVisitType = "follow up pending";
+                            }
 
                             try
                             {
@@ -310,27 +365,156 @@ namespace PTClinic
             }
         }
 
-        // Reset form back
-        private void btnClear_Click(object sender, EventArgs e)
+
+        private void UpdateFollowUpVisit()
         {
-            clearForm();
+            FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
+
+            newVisit.PatientID = patientID;
+            newVisit.ProviderID = tbProviderID.Text;
+            newVisit.PatientName = lblPatientName.Text;
+            newVisit.Diagnosis = tbDiagnosis.Text;
+            newVisit.PTGoals = tbPTGoals.Text;
+            newVisit.Subjective = tbSubjective.Text;
+            newVisit.Objective = tbObjective.Text;
+
+            newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+            newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
+
+
+            newVisit.Assessment = tbAssessment.Text;
+            newVisit.Plan = tbPlan.Text;
+
+            Nullable<bool> reassessment = null;
+            if (rbReassessmentYes.Checked == true)
+            {
+                reassessment = true;
+            }
+            else if (rbReassessmentNo.Checked == true)
+            {
+                reassessment = false;
+            }
+            newVisit.Reassessment = reassessment;
+
+            newVisit.StudentProviderName = tbStudentProvider.Text;
+
+            /* Student Signature Date */
+            // Get Current Date String (Set as a Short Date Time)
+            string shortStudentDateStr = lblStudentDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortStudentDate = Convert.ToDateTime(shortStudentDateStr);
+
+            newVisit.StudentProviderNameDate = shortStudentDate;
+
+
+
+            newVisit.ProviderName = tbProviderName.Text;
+
+            /* Provider Signature Date */
+            // Get Current Date String (Set as a Short Date Time)
+            string shortProviderDateStr = lblProviderDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortProviderDate = Convert.ToDateTime(shortProviderDateStr);
+
+            newVisit.VisitDate = shortProviderDate;
+
+            // Get Current Date String (Set as a Short Date Time)
+            string shortDateStr = lblTodaysDate.Text;
+            // And convert it back into a Date Time 
+            DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
+
+            newVisit.VisitDate = shortDateVisit;
+
+            // If statement to check if there are field erros
+
+            // If an error in the information occurs
+            if (newVisit.Feedback.Contains("Error:"))
+            {
+                // Display the error message inside the form feedback label
+                lblFeedback.Text = newVisit.Feedback;
+            }
+            else // If there are no errors, continue to Caregiver Form
+            {
+                lblFeedback.Text = "";
+
+                try
+                {
+                    int dbSuccess = newVisit.UpdateOneFUVisit(patientID);
+
+                    // If patient follow up visit was updated successfully... update the Patient Info table with their Visit Status
+                    if (dbSuccess == 1)
+                    {
+                        //lblFeedback.Text = "Patient's Visit Information has been saved";
+
+                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                        {
+                            PatientInfo changeVisitStatus = new PatientInfo();
+
+                            if (cbCompleted.Checked == true)
+                            {
+                                if (reassessment == true)
+                                {
+                                    changeVisitType = "re-assessment";
+                                }
+                                else
+                                {
+                                    changeVisitType = "follow up";
+                                }
+                            }
+                            else
+                            {
+                                changeVisitType = "follow up pending";
+                            }
+
+                            try
+                            {
+                                int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
+
+                                if (visitTypeSuccess == 1)
+                                {
+                                    panelMessage.Visible = true;
+                                    //lblFeedback.Text = "Patient's Visit Information has been saved";
+
+                                    clearForm();
+                                    /*
+                                    if (PSFS == true)
+                                    {
+                                        DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
+                                        if (dResult == DialogResult.OK)
+                                        {
+                                            this.Hide();
+                                            bool fromProfile = true;
+                                            PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
+                                            temp.Show();
+                                        }
+                                    }*/
+                                }
+                                else
+                                {
+                                    lblFeedback.Text = "Patient's Visit Information was not saved";
+                                }
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                lblFeedback.Text = ex.ToString();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lblFeedback.Text = "Patient's Visit Information was not saved";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblFeedback.Text = ex.ToString();
+                }
+            }
         }
 
-        private void clearForm()
-        {
-            tbProviderID.Clear();
-            tbSubjective.Clear();
-            tbObjective.Clear();
-            cbSupervisedModalities.SelectedIndex = 0;
-            cbConstantAttendance.SelectedIndex = 0;
-            cbTherapeuticProcedures.SelectedIndex = 0;
-            tbTherapeuticProcedures2.Clear();
-            tbAssessment.Clear();
-            tbPlan.Clear();
-            rbReassessmentYes.Checked = false;
-            rbReassessmentNo.Checked = false;
-            tbStudentProvider.Clear();
-            tbProviderName.Clear();
-        }
     }
 }

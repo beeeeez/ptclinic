@@ -496,7 +496,7 @@ namespace PTClinic
             }
 
             return success;
-        } // End of UpdateOneFollowUpVisit
+        } // End of UpdateOneFUVisit
 
 
         // Find Patient Follow Up Visit Info  method

@@ -390,7 +390,7 @@ namespace PTClinic
         {
             this.Hide();
         
-            if (patientStatus.ToLower().Equals("initial") || patientStatus.ToLower().Equals("visitpending"))
+            if (patientStatus.ToLower().Equals("initial") || patientStatus.ToLower().Equals("visit pending"))
             {
                 VisitForm initialVisitForm = new VisitForm(PatientID, pName, Admin, Login, this);
                 initialVisitForm.Show();

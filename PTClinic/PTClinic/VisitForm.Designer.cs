@@ -795,11 +795,12 @@
             // cbCompletedForm
             // 
             this.cbCompletedForm.AutoSize = true;
+            this.cbCompletedForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCompletedForm.Location = new System.Drawing.Point(698, 687);
             this.cbCompletedForm.Name = "cbCompletedForm";
-            this.cbCompletedForm.Size = new System.Drawing.Size(76, 17);
+            this.cbCompletedForm.Size = new System.Drawing.Size(194, 24);
             this.cbCompletedForm.TabIndex = 117;
-            this.cbCompletedForm.Text = "Completed";
+            this.cbCompletedForm.Text = "Is The Form Complete?";
             this.cbCompletedForm.UseVisualStyleBackColor = true;
             // 
             // VisitForm

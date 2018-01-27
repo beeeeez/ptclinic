@@ -76,7 +76,7 @@ namespace PTClinic
 
                 MessageBox.Show(patientStatus);
 
-                if (patientStatus == "visit pending")
+                if (patientStatus.ToLower().Equals("visit pending"))
                 {
                     MessageBox.Show("POPULATE FORM FIELDS FOR UPDATE");
 
@@ -217,102 +217,105 @@ namespace PTClinic
         // Add Visit Information to DB
         private void btnAddVisit_Click(object sender, EventArgs e)
         {
-            VisitInfo newVisit = new VisitInfo();
 
-            newVisit.PatientID = patientID;
-            newVisit.ProviderID = tbProviderID.Text;
+            SaveVisitInfo();
 
-            // Get Current Date String (Set as a Short Date Time)
-            string shortDateStr = lblDate.Text;
-            // And convert it back into a Date Time 
-            DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
+            //VisitInfo newVisit = new VisitInfo();
 
-            newVisit.VisitDate = shortDateVisit;
-            newVisit.ChiefComplaint = tbChiefComplaint.Text;
-            newVisit.Diagnosis = tbDiagnosis.Text;
+            //newVisit.PatientID = patientID;
+            //newVisit.ProviderID = tbProviderID.Text;
 
-            newVisit.MedicalHistory = tbMedicalHistory.Text;
-            newVisit.DurableMedicalEquipment = tbDME.Text;
-            newVisit.Medications = tbMedications.Text;
-            newVisit.Subjective = tbSubjective.Text;
-            newVisit.Objective = tbObjective.Text;
-            newVisit.PTGoals = tbPTGoals.Text;
-            newVisit.TreatmentPlan = tbTreatmentPlan.Text;
-            newVisit.DMENeeds = tbDMENeeds.Text;
-            newVisit.Evaluation = cbEvaluation.Text;
-            newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            //// Get Current Date String (Set as a Short Date Time)
+            //string shortDateStr = lblDate.Text;
+            //// And convert it back into a Date Time 
+            //DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
 
-            newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
-            newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
-            newVisit.Assessment = tbAssessment.Text;
-            newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
+            //newVisit.VisitDate = shortDateVisit;
+            //newVisit.ChiefComplaint = tbChiefComplaint.Text;
+            //newVisit.Diagnosis = tbDiagnosis.Text;
 
-            newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
+            //newVisit.MedicalHistory = tbMedicalHistory.Text;
+            //newVisit.DurableMedicalEquipment = tbDME.Text;
+            //newVisit.Medications = tbMedications.Text;
+            //newVisit.Subjective = tbSubjective.Text;
+            //newVisit.Objective = tbObjective.Text;
+            //newVisit.PTGoals = tbPTGoals.Text;
+            //newVisit.TreatmentPlan = tbTreatmentPlan.Text;
+            //newVisit.DMENeeds = tbDMENeeds.Text;
+            //newVisit.Evaluation = cbEvaluation.Text;
+            //newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
-            // If statement to check if there are field erros
+            //newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+            //newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
+            //newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
+            //newVisit.Assessment = tbAssessment.Text;
+            //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
-            // If an error in the information occurs
-            if (newVisit.Feedback.Contains("Error:"))
-            {
-                // Display the error message inside the form feedback label
-                lblFeedback.Text = newVisit.Feedback;
-            }
-            else // If there are no errors, continue to Caregiver Form
-            {
-                lblFeedback.Text = "";
+            //newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
 
-                try
-                {
-                    //lblFeedback.Text = newPatient.AddRecord();
-                    int dbSuccess = newVisit.AddVisit();
+            //// If statement to check if there are field erros
 
-                    // If patient record was added successfully update Patient Info with their new Visit Status
-                    if (dbSuccess == 1)
-                    {
-                        //lblFeedback.Text = "Patient's Visit Information has been saved";
+            //// If an error in the information occurs
+            //if (newVisit.Feedback.Contains("Error:"))
+            //{
+            //    // Display the error message inside the form feedback label
+            //    lblFeedback.Text = newVisit.Feedback;
+            //}
+            //else // If there are no errors, continue to Caregiver Form
+            //{
+            //    lblFeedback.Text = "";
 
-                        /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
-                        using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-                        {
-                            PatientInfo changeVisitStatus = new PatientInfo();
+            //    try
+            //    {
+            //        //lblFeedback.Text = newPatient.AddRecord();
+            //        int dbSuccess = newVisit.AddVisit();
 
-                            changeVisitType = "follow up";
+            //        // If patient record was added successfully update Patient Info with their new Visit Status
+            //        if (dbSuccess == 1)
+            //        {
+            //            //lblFeedback.Text = "Patient's Visit Information has been saved";
 
-                            try
-                            {
-                                int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
+            //            /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
+            //            using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            //            {
+            //                PatientInfo changeVisitStatus = new PatientInfo();
 
-                                if (visitTypeSuccess == 1)
-                                {
-                                    panelMessage.Visible = true;
-                                    visitSaved = true;
-                                    clearForm();
-                                    //lblFeedback.Text = "Patient's Visit Information has been saved";
-                                }
-                                else
-                                {
-                                    lblFeedback.Text = "Patient's Visit Information was not saved";
-                                }
+            //                changeVisitType = "follow up";
+
+            //                try
+            //                {
+            //                    int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
+
+            //                    if (visitTypeSuccess == 1)
+            //                    {
+            //                        panelMessage.Visible = true;
+            //                        visitSaved = true;
+            //                        clearForm();
+            //                        //lblFeedback.Text = "Patient's Visit Information has been saved";
+            //                    }
+            //                    else
+            //                    {
+            //                        lblFeedback.Text = "Patient's Visit Information was not saved";
+            //                    }
 
 
-                            }
-                            catch (Exception ex)
-                            {
-                                lblFeedback.Text = ex.ToString();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        lblFeedback.Text = "Patient's Visit Information was not saved";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    lblFeedback.Text = ex.ToString();
-                }
-            }
+            //                }
+            //                catch (Exception ex)
+            //                {
+            //                    lblFeedback.Text = ex.ToString();
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            lblFeedback.Text = "Patient's Visit Information was not saved";
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        lblFeedback.Text = ex.ToString();
+            //    }
+            //}
         }
 
         // Back Home Button Click
@@ -392,7 +395,15 @@ namespace PTClinic
                 DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dResult == DialogResult.OK)
                 {
-                    MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                    if (patientStatus.ToLower().Equals("initial"))
+                    {
+                        MessageBox.Show("you are SAVING THE FORM FOR THE FIRST TIME");
+                    }
+                    else if (patientStatus.ToLower().Equals("visit pending"))
+                    {
+                        MessageBox.Show("you are UPDATING an existing record");
+                    }
+                    //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
                 }
             }
         }

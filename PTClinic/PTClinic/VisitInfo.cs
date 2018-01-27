@@ -537,11 +537,11 @@ namespace PTClinic
 
             // SQL command to add a record to the Patient_Visit 
 
-            string strSQL = "UPDATE Patient_Visit SET provider_id = @ProviderID, visit_date = @VisitDate, chief_complaint = @ChiefComplaint," +
-                 "diagnosis = @Diagnosis, medical_history = @MedicalHistory, durable_medical_equipment = @DurableMedicalEquipment, medications = @Medications, subjective = @Subjective," +
-                 "objective = @Objective, pt_goals = @PTGoals, treatment_plan = @TreatmentPlan, dme_needs = @, evaluation = @Evaluation," +
-                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, functional_limitations = @FunctionalLimitations," +
-                 "assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis, followup_treatment @FollowUpTreatment" + 
+            string strSQL = "UPDATE Patient_Visit SET provider_id = @ProviderID, visit_date = @VisitDate, chief_complaint = @ChiefComplaint, " +
+                 "diagnosis = @Diagnosis, medical_history = @MedicalHistory, durable_medical_equipment = @DurableMedicalEquipment, medications = @Medications, subjective = @Subjective, " +
+                 //"objective = @Objective, pt_goals = @PTGoals, treatment_plan = @TreatmentPlan, dme_needs = @DMENeeds, evaluation = @Evaluation, " +
+                 //"constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, functional_limitations = @FunctionalLimitations, " +
+                 //"assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis, followup_treatment @FollowUpTreatment" + 
                  " WHERE patient_id = @PatientID;";
    
  
@@ -567,20 +567,20 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"DurableMedicalEquipment", DurableMedicalEquipment);
             comm.Parameters.AddWithValue(@"Medications", Medications);
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
-            comm.Parameters.AddWithValue(@"Objective", Objective);
-            comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
+            //comm.Parameters.AddWithValue(@"Objective", Objective);
+            //comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
 
-            comm.Parameters.AddWithValue(@"TreatmentPlan", TreatmentPlan);
-            comm.Parameters.AddWithValue(@"DMENeeds", DMENeeds);
-            comm.Parameters.AddWithValue(@"Evaluation", Evaluation);
+            //comm.Parameters.AddWithValue(@"TreatmentPlan", TreatmentPlan);
+            //comm.Parameters.AddWithValue(@"DMENeeds", DMENeeds);
+            //comm.Parameters.AddWithValue(@"Evaluation", Evaluation);
 
-            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
-            comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
-            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
-            comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
-            comm.Parameters.AddWithValue(@"Assessment", Assessment);
-            comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
-            comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
+            //comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+            //comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            //comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
+            //comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
+            //comm.Parameters.AddWithValue(@"Assessment", Assessment);
+            //comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
+            //comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
             comm.Parameters.AddWithValue(@"PatientID", PatientID);
 
 

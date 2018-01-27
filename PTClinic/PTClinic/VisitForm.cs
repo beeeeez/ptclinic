@@ -218,7 +218,16 @@ namespace PTClinic
         private void btnAddVisit_Click(object sender, EventArgs e)
         {
 
-            SaveVisitInfo();
+            //cbCompletedForm.Checked == true && 
+            if (patientStatus.ToLower().Equals("initial"))
+            {
+                SaveVisitInfo();
+            }
+            else if (patientStatus.ToLower().Equals("visit pending"))
+            {
+                UpdateVisitInfo();
+            }
+
 
             //VisitInfo newVisit = new VisitInfo();
 

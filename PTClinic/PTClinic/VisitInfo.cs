@@ -59,15 +59,15 @@ namespace PTClinic
             get { return providerID; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter ProviderID\n";
-                }
-                else
-                {
-                    providerID = value;
-                }
+                providerID = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter ProviderID\n";
+                //}
+                //else
+                //{
+                //    providerID = value;
+                //}
 
             }
         }
@@ -78,14 +78,15 @@ namespace PTClinic
             get { return chiefComplaint; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Chief Complaint\n";
-                }
-                else
-                {
-                    chiefComplaint = value;
-                }
+                chiefComplaint = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Chief Complaint\n";
+                //}
+                //else
+                //{
+                //    chiefComplaint = value;
+                //}
             }
         }
 
@@ -95,14 +96,15 @@ namespace PTClinic
             get { return diagnosis; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter a Diagnosis\n";
-                }
-                else
-                {
-                    diagnosis = value;
-                }
+                diagnosis = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter a Diagnosis\n";
+                //}
+                //else
+                //{
+                //    diagnosis = value;
+                //}
             }
         }
 
@@ -112,14 +114,15 @@ namespace PTClinic
             get { return medicalHistory; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Medical History\n";
-                }
-                else
-                {
-                    medicalHistory = value;
-                }
+                medicalHistory = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Medical History\n";
+                //}
+                //else
+                //{
+                //    medicalHistory = value;
+                //}
             }
         }
 
@@ -136,14 +139,15 @@ namespace PTClinic
             get { return medications; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Medications\n";
-                }
-                else
-                {
-                    medications = value;
-                }
+                medications = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Medications\n";
+                //}
+                //else
+                //{
+                //    medications = value;
+                //}
             }
         }
 
@@ -153,14 +157,15 @@ namespace PTClinic
             get { return subjective; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter a Subjective\n";
-                }
-                else
-                {
-                    subjective = value;
-                }
+                subjective = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter a Subjective\n";
+                //}
+                //else
+                //{
+                //    subjective = value;
+                //}
             }
         }
 
@@ -170,14 +175,15 @@ namespace PTClinic
             get { return objective; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Objective\n";
-                }
-                else
-                {
-                    objective = value;
-                }
+                objective = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an Objective\n";
+                //}
+                //else
+                //{
+                //    objective = value;
+                //}
             }
         }
 
@@ -187,14 +193,15 @@ namespace PTClinic
             get { return ptGoals; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter PT Goals\n";
-                }
-                else
-                {
-                    ptGoals = value;
-                }
+                ptGoals = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter PT Goals\n";
+                //}
+                //else
+                //{
+                //    ptGoals = value;
+                //}
             }
         }
 
@@ -204,14 +211,15 @@ namespace PTClinic
             get { return treatmentPlan; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Treatment Plan\n";
-                }
-                else
-                {
-                    treatmentPlan = value;
-                }
+                treatmentPlan = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Treatment Plan\n";
+                //}
+                //else
+                //{
+                //    treatmentPlan = value;
+                //}
             }
         }
 
@@ -228,15 +236,15 @@ namespace PTClinic
             get { return evaluation; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select an Evaluation\n";
-                }
-                else
-                {
-                    evaluation = value;
-                }
+                evaluation = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select an Evaluation\n";
+                //}
+                //else
+                //{
+                //    evaluation = value;
+                //}
             }
         }
 
@@ -246,15 +254,15 @@ namespace PTClinic
             get { return constantAttendance; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a Constant Attendance\n";
-                }
-                else
-                {
-                    constantAttendance = value;
-                }
+                constantAttendance = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Constant Attendance\n";
+                //}
+                //else
+                //{
+                //    constantAttendance = value;
+                //}
             }
         }
 
@@ -264,15 +272,15 @@ namespace PTClinic
             get { return therapeuticProcedures; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a Theraputic Procedure\n";
-                }
-                else
-                {
-                    therapeuticProcedures = value;
-                }
+                therapeuticProcedures = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    therapeuticProcedures = value;
+                //}
             }
         }
 
@@ -301,14 +309,15 @@ namespace PTClinic
             get { return functionalLimitations; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Functional Limitations\n";
-                }
-                else
-                {
-                    functionalLimitations = value;
-                }
+                functionalLimitations = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Functional Limitations\n";
+                //}
+                //else
+                //{
+                //    functionalLimitations = value;
+                //}
             }
         }
 
@@ -325,14 +334,15 @@ namespace PTClinic
             get { return physicalTherapyDiagnosis; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Physical Therapy Diagnosis\n";
-                }
-                else
-                {
-                    physicalTherapyDiagnosis = value;
-                }
+                physicalTherapyDiagnosis = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Physical Therapy Diagnosis\n";
+                //}
+                //else
+                //{
+                //    physicalTherapyDiagnosis = value;
+                //}
             }
         }
 
@@ -342,14 +352,16 @@ namespace PTClinic
             get { return followUpTreatment; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Follow Up Treatment\n";
-                }
-                else
-                {
-                    followUpTreatment = value;
-                }
+                followUpTreatment = value;
+
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Follow Up Treatment\n";
+                //}
+                //else
+                //{
+                //    followUpTreatment = value;
+                //}
             }
         }
 
@@ -487,7 +499,8 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis, followup_treatment FROM Patient_Visit WHERE patient_id = @PID;";
+            // patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis, followup_treatment 
+            string strSQL = "SELECT * FROM Patient_Visit WHERE patient_id = @PID;";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

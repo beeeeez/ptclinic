@@ -58,6 +58,7 @@ namespace PTClinic
             FillTherapeuticProcedures();
 
             PatientInfo tempPatient = new PatientInfo();
+            VisitInfo tempVisitInfo = new VisitInfo();
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
                 // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
@@ -71,9 +72,94 @@ namespace PTClinic
                         patientStatus = dataReaderPatient["patient_status"].ToString();
                     }
                 }
+
+
+                MessageBox.Show(patientStatus);
+
+                if (patientStatus == "visit pending")
+                {
+                    MessageBox.Show("POPULATE FORM FIELDS FOR UPDATE");
+
+
+                    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                    using (var dataReaderVisit = tempVisitInfo.FindOnePatientVisit(connection, patientID))
+                    {
+                        while (dataReaderVisit.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper labels
+
+                            // patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, 
+                            // medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance,
+                            // therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis, followup_treatment 
+
+                            tbProviderID.Text = dataReaderVisit["provider_id"].ToString();
+
+
+                            tbChiefComplaint.Text = dataReaderVisit["chief_complaint"].ToString();
+                            tbDiagnosis.Text = dataReaderVisit["diagnosis"].ToString();
+                            tbMedicalHistory.Text = dataReaderVisit["medical_history"].ToString();
+                            tbDME.Text = dataReaderVisit["durable_medical_equipment"].ToString();
+
+                            tbMedications.Text = dataReaderVisit["medications"].ToString();
+                            tbSubjective.Text = dataReaderVisit["subjective"].ToString();
+                            tbObjective.Text = dataReaderVisit["objective"].ToString();
+                            tbPTGoals.Text = dataReaderVisit["pt_goals"].ToString();
+                            tbTreatmentPlan.Text = dataReaderVisit["treatment_plan"].ToString();
+                            tbDMENeeds.Text = dataReaderVisit["dme_needs"].ToString();
+
+                            var evaluation = dataReaderVisit["evaluation"].ToString();
+
+                            if (String.IsNullOrEmpty(evaluation) || evaluation.Equals(""))
+                            {
+                                cbEvaluation.SelectedItem = "Select One";
+                            }
+                            else
+                            {
+                                cbEvaluation.SelectedItem = dataReaderVisit["evaluation"].ToString();
+                            }
+
+                            var constAttendance = dataReaderVisit["constant_attendance"].ToString();
+
+                            if (String.IsNullOrEmpty(constAttendance) || constAttendance.Equals(""))
+                            {
+                                cbConstantAttendance.SelectedItem = "Select One";
+                            }
+                            else
+                            {
+                                cbConstantAttendance.SelectedItem = dataReaderVisit["constant_attendance"].ToString();
+                            }
+
+                            var therapeuticProcedures = dataReaderVisit["therapeutic_procedures"].ToString();
+
+                            if (String.IsNullOrEmpty(therapeuticProcedures) || therapeuticProcedures.Equals(""))
+                            {
+                                cbTherapeuticProcedures.SelectedItem = "Select One";
+                            }
+                            else
+                            {
+                                cbTherapeuticProcedures.SelectedItem = dataReaderVisit["therapeutic_procedures"].ToString();
+                            }
+
+                            tbTherapeuticProcedures2.Text = dataReaderVisit["therapeutic_procedures2"].ToString();
+                            tbFunctionalLimitations.Text = dataReaderVisit["functional_limitations"].ToString();
+                            tbAssessment.Text = dataReaderVisit["assessment"].ToString();
+
+                            // CHECKLISTBOX 
+                            tbPTDiagnosis.Text = dataReaderVisit["pt_diagnosis"].ToString();
+
+                            tbFollowUpTreatment.Text = dataReaderVisit["followup_treatment"].ToString();
+
+                        }
+                    }
+
+                } // END using (findOneVisit)
+
+
+               
             }
 
-            MessageBox.Show(patientStatus);
+         
 
         }
 

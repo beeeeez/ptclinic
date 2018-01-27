@@ -77,7 +77,7 @@
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clbPTDiagnosis = new System.Windows.Forms.CheckedListBox();
             this.tbAssessment = new System.Windows.Forms.TextBox();
             this.lblAssessment = new System.Windows.Forms.Label();
             this.tbDMENeeds = new System.Windows.Forms.TextBox();
@@ -606,7 +606,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.checkedListBox1);
+            this.panel4.Controls.Add(this.clbPTDiagnosis);
             this.panel4.Controls.Add(this.tbAssessment);
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.tbDMENeeds);
@@ -634,12 +634,12 @@
             this.panel4.Size = new System.Drawing.Size(593, 527);
             this.panel4.TabIndex = 1;
             // 
-            // checkedListBox1
+            // clbPTDiagnosis
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.HorizontalScrollbar = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.clbPTDiagnosis.CheckOnClick = true;
+            this.clbPTDiagnosis.FormattingEnabled = true;
+            this.clbPTDiagnosis.HorizontalScrollbar = true;
+            this.clbPTDiagnosis.Items.AddRange(new object[] {
             "Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion " +
                 "Associated with Connective Tissue Dysfunction",
             "Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion " +
@@ -664,10 +664,10 @@
             "Impaired Aerobic Capacity/Endurance Associated with Deconditioning",
             "Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfuncti" +
                 "on or Failure"});
-            this.checkedListBox1.Location = new System.Drawing.Point(41, 397);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(528, 64);
-            this.checkedListBox1.TabIndex = 108;
+            this.clbPTDiagnosis.Location = new System.Drawing.Point(41, 397);
+            this.clbPTDiagnosis.Name = "clbPTDiagnosis";
+            this.clbPTDiagnosis.Size = new System.Drawing.Size(528, 64);
+            this.clbPTDiagnosis.TabIndex = 108;
             // 
             // tbAssessment
             // 
@@ -901,7 +901,7 @@
         private System.Windows.Forms.Label lblDME;
         private System.Windows.Forms.TextBox tbAssessment;
         private System.Windows.Forms.Label lblAssessment;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clbPTDiagnosis;
         private System.Windows.Forms.CheckBox cbCompletedForm;
     }
 }

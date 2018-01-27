@@ -34,7 +34,7 @@ namespace PTClinic
             }
 
 
-            var result = string.Join(",", str.ToArray());
+            var result = string.Join(" + ", str.ToArray());
 
             MessageBox.Show(result);
         }

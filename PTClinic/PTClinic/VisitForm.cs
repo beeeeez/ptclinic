@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
@@ -448,7 +449,24 @@ namespace PTClinic
             newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.Assessment = tbAssessment.Text;
-            newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
+
+            StringBuilder sb = new StringBuilder();
+
+            StringCollection myCol = new StringCollection();
+
+            List<string> str = new List<string>();
+
+            foreach (var itemChecked in clbPTDiagnosis.CheckedItems)
+            {
+                str.Add(itemChecked.ToString());
+            }
+
+
+            var ptDiagnosisResult = string.Join(" + ", str.ToArray());
+
+            newVisit.PhysicalTherapyDiagnosis = ptDiagnosisResult;
+
+            //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
             newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
 

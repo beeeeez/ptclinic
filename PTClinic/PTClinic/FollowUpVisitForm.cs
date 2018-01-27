@@ -20,6 +20,7 @@ namespace PTClinic
         private string changeVisitType = "";
         private string patientVisitStatus;
         private Boolean PSFS = false;
+        bool visitSaved;
 
         public FollowUpVisitForm(string PatientID, string PatientName, string PatientVisitStatus, Boolean needPSFS, Form adminForm, Form Login, Form PatientProfile)
         {
@@ -35,6 +36,7 @@ namespace PTClinic
             }
 
             patientVisitStatus = PatientVisitStatus;
+            visitSaved = false;
 
 
             // Set Button Icons
@@ -164,7 +166,20 @@ namespace PTClinic
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientProfile.Show();
+
+            // If patient goals were updated create new profile form
+            if (visitSaved == true)
+            {
+                //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+                Search newSearchForm = new Search(Admin, Login);
+                PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+                PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
+                refreshProfile.Show();
+            }
+            else
+            {
+                PatientProfile.Show();
+            }
         }
 
         // Add Follow Up Information to DB
@@ -516,5 +531,16 @@ namespace PTClinic
             }
         }
 
+        private void FollowUpVisitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                }
+            }
+        }
     }
 }

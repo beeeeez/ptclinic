@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
@@ -147,7 +146,25 @@ namespace PTClinic
                             tbAssessment.Text = dataReaderVisit["assessment"].ToString();
 
                             // CHECKLISTBOX 
-                            tbPTDiagnosis.Text = dataReaderVisit["pt_diagnosis"].ToString();
+                            //tbPTDiagnosis.Text = dataReaderVisit["pt_diagnosis"].ToString();
+
+                            var ptDiagnosis = dataReaderVisit["pt_diagnosis"].ToString();
+
+                            char[] splitChar = { '+' };
+                            string[] diagnosisArray = null;
+
+                            diagnosisArray = ptDiagnosis.Split(splitChar);
+                            MessageBox.Show("Array Size: " + diagnosisArray.Length);
+
+                            for (int i = 0; i < diagnosisArray.Length; i++)
+                            {
+                                for (int j = 0; j < clbPTDiagnosis.Items.Count; j++)
+                                {
+                                    if (diagnosisArray[i].Equals((string)clbPTDiagnosis.Items[j])) {
+                                        clbPTDiagnosis.SetItemChecked(j, true);
+                                    }
+                                }
+                            }
 
                             tbFollowUpTreatment.Text = dataReaderVisit["followup_treatment"].ToString();
 
@@ -160,7 +177,9 @@ namespace PTClinic
                
             }
 
-         
+
+            //MessageBox.Show("Check list box has " + clbPTDiagnosis.Items.Count + " items to select");
+
 
         }
 
@@ -218,8 +237,6 @@ namespace PTClinic
         // Add Visit Information to DB
         private void btnAddVisit_Click(object sender, EventArgs e)
         {
-
-            //cbCompletedForm.Checked == true && 
             if (patientStatus.ToLower().Equals("initial"))
             {
                 SaveVisitInfo();
@@ -229,103 +246,6 @@ namespace PTClinic
                 UpdateVisitInfo();
             }
 
-
-            //VisitInfo newVisit = new VisitInfo();
-
-            //newVisit.PatientID = patientID;
-            //newVisit.ProviderID = tbProviderID.Text;
-
-            //// Get Current Date String (Set as a Short Date Time)
-            //string shortDateStr = lblDate.Text;
-            //// And convert it back into a Date Time 
-            //DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
-
-            //newVisit.VisitDate = shortDateVisit;
-            //newVisit.ChiefComplaint = tbChiefComplaint.Text;
-            //newVisit.Diagnosis = tbDiagnosis.Text;
-
-            //newVisit.MedicalHistory = tbMedicalHistory.Text;
-            //newVisit.DurableMedicalEquipment = tbDME.Text;
-            //newVisit.Medications = tbMedications.Text;
-            //newVisit.Subjective = tbSubjective.Text;
-            //newVisit.Objective = tbObjective.Text;
-            //newVisit.PTGoals = tbPTGoals.Text;
-            //newVisit.TreatmentPlan = tbTreatmentPlan.Text;
-            //newVisit.DMENeeds = tbDMENeeds.Text;
-            //newVisit.Evaluation = cbEvaluation.Text;
-            //newVisit.ConstantAttendance = cbConstantAttendance.Text;
-
-            //newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            //newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
-            //newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
-            //newVisit.Assessment = tbAssessment.Text;
-            //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
-
-            //newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
-
-            //// If statement to check if there are field erros
-
-            //// If an error in the information occurs
-            //if (newVisit.Feedback.Contains("Error:"))
-            //{
-            //    // Display the error message inside the form feedback label
-            //    lblFeedback.Text = newVisit.Feedback;
-            //}
-            //else // If there are no errors, continue to Caregiver Form
-            //{
-            //    lblFeedback.Text = "";
-
-            //    try
-            //    {
-            //        //lblFeedback.Text = newPatient.AddRecord();
-            //        int dbSuccess = newVisit.AddVisit();
-
-            //        // If patient record was added successfully update Patient Info with their new Visit Status
-            //        if (dbSuccess == 1)
-            //        {
-            //            //lblFeedback.Text = "Patient's Visit Information has been saved";
-
-            //            /* UPDATE PATIENTS VISIT TYPE INFO HERE*/
-            //            using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-            //            {
-            //                PatientInfo changeVisitStatus = new PatientInfo();
-
-            //                changeVisitType = "follow up";
-
-            //                try
-            //                {
-            //                    int visitTypeSuccess = changeVisitStatus.UpdatePatientStatus(connection, patientID, changeVisitType);
-
-            //                    if (visitTypeSuccess == 1)
-            //                    {
-            //                        panelMessage.Visible = true;
-            //                        visitSaved = true;
-            //                        clearForm();
-            //                        //lblFeedback.Text = "Patient's Visit Information has been saved";
-            //                    }
-            //                    else
-            //                    {
-            //                        lblFeedback.Text = "Patient's Visit Information was not saved";
-            //                    }
-
-
-            //                }
-            //                catch (Exception ex)
-            //                {
-            //                    lblFeedback.Text = ex.ToString();
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            lblFeedback.Text = "Patient's Visit Information was not saved";
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        lblFeedback.Text = ex.ToString();
-            //    }
-            //}
         }
 
         // Back Home Button Click
@@ -385,7 +305,11 @@ namespace PTClinic
             tbMedications.Clear();
             tbObjective.Clear();
             tbProviderID.Clear();
-            tbPTDiagnosis.Clear();
+            
+            for (int i = 0; i < clbPTDiagnosis.Items.Count; i++)
+            {
+                clbPTDiagnosis.SetItemChecked(i, false);
+            }
             tbPTGoals.Clear();
             tbSubjective.Clear();
             tbTreatmentPlan.Clear();
@@ -452,8 +376,6 @@ namespace PTClinic
 
             StringBuilder sb = new StringBuilder();
 
-            StringCollection myCol = new StringCollection();
-
             List<string> str = new List<string>();
 
             foreach (var itemChecked in clbPTDiagnosis.CheckedItems)
@@ -462,7 +384,7 @@ namespace PTClinic
             }
 
 
-            var ptDiagnosisResult = string.Join(" + ", str.ToArray());
+            var ptDiagnosisResult = string.Join("+", str.ToArray());
 
             newVisit.PhysicalTherapyDiagnosis = ptDiagnosisResult;
 
@@ -573,7 +495,21 @@ namespace PTClinic
             newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.Assessment = tbAssessment.Text;
-            newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
+
+            StringBuilder sb = new StringBuilder();
+
+            List<string> str = new List<string>();
+
+            foreach (var itemChecked in clbPTDiagnosis.CheckedItems)
+            {
+                str.Add(itemChecked.ToString());
+            }
+
+
+            var ptDiagnosisResult = string.Join("+", str.ToArray());
+            newVisit.PhysicalTherapyDiagnosis = ptDiagnosisResult;
+
+            //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
 
             newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
 

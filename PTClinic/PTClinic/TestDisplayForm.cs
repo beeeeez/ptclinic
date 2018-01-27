@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
-using System.Collections.Specialized;
+
 
 namespace PTClinic
 {
@@ -23,8 +23,6 @@ namespace PTClinic
         private void button1_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
-
-            StringCollection myCol = new StringCollection();
 
             List<string> str = new List<string>();
 

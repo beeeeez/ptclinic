@@ -10,22 +10,9 @@ namespace PTClinic
 {
     class FollowUpVisitInfo
     {
-        // TODO -- functionality
-        /* TODO'S ~~~
-         * 1- Private variables -- DONE
-         * 2- Public facing variables -- DONE
-         * 3- Default Constructor
-         * 4- Overloaded Constructor
-         * 5- Add Follow Up Information to DB
-         * */
-
         // Private variables only the class can access.
         // Follow Up Visit Info variables
         private int patientID;
-        /*
-         * Provider ID will just be a string correct?
-         * 
-         * */
         private string providerID;
         private string patientName;
         private string diagnosis;
@@ -66,15 +53,15 @@ namespace PTClinic
             get { return providerID; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter ProviderID\n";
-                }
-                else
-                {
-                    providerID = value;
-                }
+                providerID = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter ProviderID\n";
+                //}
+                //else
+                //{
+                //    providerID = value;
+                //}
 
             }
         }
@@ -92,15 +79,15 @@ namespace PTClinic
             get { return diagnosis; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter a Diagnosis\n";
-                }
-                else
-                {
-                    diagnosis = value;
-                }
+                diagnosis = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter a Diagnosis\n";
+                //}
+                //else
+                //{
+                //    diagnosis = value;
+                //}
 
             }
         }
@@ -111,15 +98,15 @@ namespace PTClinic
             get { return ptGoals; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter PT Goals\n";
-                }
-                else
-                {
-                    ptGoals = value;
-                }
+                ptGoals = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter PT Goals\n";
+                //}
+                //else
+                //{
+                //    ptGoals = value;
+                //}
 
             }
         }
@@ -130,15 +117,15 @@ namespace PTClinic
             get { return subjective; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Objective\n";
-                }
-                else
-                {
-                    subjective = value;
-                }
+                subjective = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an Objective\n";
+                //}
+                //else
+                //{
+                //    subjective = value;
+                //}
 
             }
         }
@@ -149,15 +136,15 @@ namespace PTClinic
             get { return objective; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Objective\n";
-                }
-                else
-                {
-                    objective = value;
-                }
+                objective = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an Objective\n";
+                //}
+                //else
+                //{
+                //    objective = value;
+                //}
 
             }
         }
@@ -168,15 +155,15 @@ namespace PTClinic
             get { return supervisedModalities; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a Supervised Modality\n";
-                }
-                else
-                {
-                    supervisedModalities = value;
-                }
+                supervisedModalities = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Supervised Modality\n";
+                //}
+                //else
+                //{
+                //    supervisedModalities = value;
+                //}
             }
         }
 
@@ -186,15 +173,15 @@ namespace PTClinic
             get { return constantAttendance; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a Constant Attendance\n";
-                }
-                else
-                {
-                    constantAttendance = value;
-                }
+                constantAttendance = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Constant Attendance\n";
+                //}
+                //else
+                //{
+                //    constantAttendance = value;
+                //}
             }
         }
 
@@ -204,15 +191,15 @@ namespace PTClinic
             get { return therapeuticProcedures; }
             set
             {
-
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a Theraputic Procedure\n";
-                }
-                else
-                {
-                    therapeuticProcedures = value;
-                }
+                therapeuticProcedures = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    therapeuticProcedures = value;
+                //}
             }
         }
 
@@ -223,14 +210,6 @@ namespace PTClinic
             set
             {
                 therapeuticProcedures2 = value;
-                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
-                //}
-                //else
-                //{
-                //    theraputicProcedures2 = value;
-                //}
             }
         }
 
@@ -240,15 +219,15 @@ namespace PTClinic
             get { return assessment; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Assessment\n";
-                }
-                else
-                {
-                    assessment = value;
-                }
+                assessment = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an Assessment\n";
+                //}
+                //else
+                //{
+                //    assessment = value;
+                //}
 
             }
         }
@@ -259,15 +238,15 @@ namespace PTClinic
             get { return plan; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter a Plan\n";
-                }
-                else
-                {
-                    plan = value;
-                }
+                plan = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter a Plan\n";
+                //}
+                //else
+                //{
+                //    plan = value;
+                //}
 
             }
         }
@@ -278,14 +257,15 @@ namespace PTClinic
             get { return reassessment; }
             set
             {
-                if (value.Equals(null))
-                {
-                    feedback += "Error: Select Yes or No for Patient Re-assessment\n";
-                }
-                else
-                {
-                    reassessment = value;
-                }
+                reassessment = value;
+                ////if (value.Equals(null))
+                ////{
+                ////    feedback += "Error: Select Yes or No for Patient Re-assessment\n";
+                ////}
+                ////else
+                ////{
+                ////    reassessment = value;
+                ////}
 
             }
         }
@@ -296,15 +276,15 @@ namespace PTClinic
             get { return studentProviderName; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Student Provider\n";
-                }
-                else
-                {
-                    studentProviderName = value;
-                }
+                studentProviderName = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Student Provider\n";
+                //}
+                //else
+                //{
+                //    studentProviderName = value;
+                //}
 
             }
         }
@@ -315,15 +295,15 @@ namespace PTClinic
             get { return providerName; }
             set
             {
-
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Provider Name\n";
-                }
-                else
-                {
-                    providerName = value;
-                }
+                providerName = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Provider Name\n";
+                //}
+                //else
+                //{
+                //    providerName = value;
+                //}
 
             }
         }

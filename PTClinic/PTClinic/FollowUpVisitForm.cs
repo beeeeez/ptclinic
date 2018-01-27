@@ -27,14 +27,6 @@ namespace PTClinic
             InitializeComponent();
             panelMessage.Visible = false;
 
-            if (PatientVisitStatus.Equals("re-assessment"))
-            {
-                this.Text = "Re-assessment Visit Form";
-                lblHeaderText.Text = "Patient Re-assessment Visit Information";
-                lblVisitInformation.Text = "Patient Re-assessment Visit Information";
-                btnAddFollowUp.Text = "Add Visit Info";
-            }
-
             patientVisitStatus = PatientVisitStatus;
             visitSaved = false;
 
@@ -55,23 +47,92 @@ namespace PTClinic
 
             patientID = Convert.ToInt32(PatientID);
 
-            // Create variable for a Patients initial Visit Information
-            VisitInfo tempPatientVisit = new VisitInfo();
+            // Fill Drop Downs
+            FillSupervisedModalities();
+            FillConstantAttendance();
+            FillTherapeuticProcedures();
 
-            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            if (PatientVisitStatus.Equals("re-assessment"))
             {
-                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
-                using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
+                this.Text = "Re-assessment Visit Form";
+                lblHeaderText.Text = "Patient Re-assessment Visit Information";
+                lblVisitInformation.Text = "Patient Re-assessment Visit Information";
+                btnAddFollowUp.Text = "Add Visit Info";
+            }
+
+            // Populate form with data, if Patients visit status shows the follow up pending completion
+            // Else just populate the three fields with data from the initial form
+            if (PatientVisitStatus.Equals("follow up pending"))
+            {
+                // Create variable for a Patients initial Visit Information
+                FollowUpVisitInfo tempPatientFUVisit = new FollowUpVisitInfo();
+
+                using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                 {
-                    while (dataReaderPatientVisit.Read())
+                    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                    using (var dataReaderPatientFUVisit = tempPatientFUVisit.FindOnePatientFUVisit(connection, patientID))
                     {
-                        // Take the appropriate fields from the datareader
-                        // and put them in proper labels
-                        tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
-                        tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+                        while (dataReaderPatientFUVisit.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper text boxes / selections
+                            tbProviderID.Text = dataReaderPatientFUVisit["provider_id"].ToString();
+                            tbDiagnosis.Text = dataReaderPatientFUVisit["diagnosis"].ToString();
+                            tbPTGoals.Text = dataReaderPatientFUVisit["pt_goals"].ToString();
+                            tbSubjective.Text = dataReaderPatientFUVisit["subjective"].ToString();
+                            tbObjective.Text = dataReaderPatientFUVisit["objective"].ToString();
+                            tbAssessment.Text = dataReaderPatientFUVisit["assessment"].ToString();
+                            tbPlan.Text = dataReaderPatientFUVisit["plan"].ToString();
+                            tbStudentProvider.Text = dataReaderPatientFUVisit["student_name"].ToString();
+                            tbProviderName.Text = dataReaderPatientFUVisit["provider_name"].ToString();
+                            tbTherapeuticProcedures2.Text = dataReaderPatientFUVisit["therapeutic_procedures2"].ToString();
+
+                            //Drop downs
+                            cbTherapeuticProcedures.SelectedItem = dataReaderPatientFUVisit["therapeutic_procedures"].ToString();
+                            cbSupervisedModalities.SelectedItem = dataReaderPatientFUVisit["supervised_modalities"].ToString();
+                            cbConstantAttendance.SelectedItem = dataReaderPatientFUVisit["constant_attendance"].ToString();
+                        }
                     }
-                }
-            } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            }
+            else
+            {
+                // Create variable for a Patients initial Visit Information
+                VisitInfo tempPatientVisit = new VisitInfo();
+
+                using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+                {
+                    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                    using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
+                    {
+                        while (dataReaderPatientVisit.Read())
+                        {
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper labels
+                            tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
+                            tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+                        }
+                    }
+                } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            }
+
+            //// Create variable for a Patients initial Visit Information
+            //VisitInfo tempPatientVisit = new VisitInfo();
+
+            //using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            //{
+            //    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+            //    using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
+            //    {
+            //        while (dataReaderPatientVisit.Read())
+            //        {
+            //            // Take the appropriate fields from the datareader
+            //            // and put them in proper labels
+            //            tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
+            //            tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+            //        }
+            //    }
+            //} // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
 
             // Getting Todays date
             // And setting the three date labels (todays, student, and provider) to it
@@ -92,12 +153,6 @@ namespace PTClinic
             {
                 lblPSFSNeeded.Text = "No";
             }
-
-
-            // Fill Drop Downs
-            FillSupervisedModalities();
-            FillConstantAttendance();
-            FillTherapeuticProcedures();
         }
 
         // Fill SupervisedModalities Function
@@ -167,7 +222,7 @@ namespace PTClinic
         {
             this.Hide();
 
-            // If patient goals were updated create new profile form
+            // If patient visit was added or updated create new profile form
             if (visitSaved == true)
             {
                 //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
@@ -201,19 +256,44 @@ namespace PTClinic
             clearForm();
         }
 
+        private void FollowUpVisitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    {
+                        AddFollowUpVisit();
+                    }
+                    else
+                    {
+                        UpdateFollowUpVisit();
+                    }
+                    //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                }
+            }
+        }
+
         private void clearForm()
         {
             tbProviderID.Clear();
+            //tbDiagnosis.Clear();
+            //tbPTGoals.Clear();
             tbSubjective.Clear();
             tbObjective.Clear();
-            cbSupervisedModalities.SelectedIndex = 0;
-            cbConstantAttendance.SelectedIndex = 0;
-            cbTherapeuticProcedures.SelectedIndex = 0;
             tbTherapeuticProcedures2.Clear();
             tbAssessment.Clear();
             tbPlan.Clear();
+
+            cbSupervisedModalities.SelectedIndex = 0;
+            cbConstantAttendance.SelectedIndex = 0;
+            cbTherapeuticProcedures.SelectedIndex = 0;
+
             rbReassessmentYes.Checked = false;
             rbReassessmentNo.Checked = false;
+
             tbStudentProvider.Clear();
             tbProviderName.Clear();
         }
@@ -339,6 +419,7 @@ namespace PTClinic
                                 if (visitTypeSuccess == 1)
                                 {
                                     panelMessage.Visible = true;
+                                    visitSaved = true;
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                                     clearForm();
@@ -490,6 +571,7 @@ namespace PTClinic
                                 if (visitTypeSuccess == 1)
                                 {
                                     panelMessage.Visible = true;
+                                    visitSaved = true;
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                                     clearForm();
@@ -527,18 +609,6 @@ namespace PTClinic
                 catch (Exception ex)
                 {
                     lblFeedback.Text = ex.ToString();
-                }
-            }
-        }
-
-        private void FollowUpVisitForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
-                {
-                    MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
                 }
             }
         }

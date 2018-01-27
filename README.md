@@ -3,7 +3,7 @@
 ## Project Todos
 
 ### Intial Visit Form
-- Drop down menu under PT Diagnosis where they can select more than one option (**Currently testing using TESTDISPLAYFORM to collect multiple items**)
+
 - Add save if they X out of form (**in progress**)
 - Add save/update ability so they can save and come back to form later (**in progress**)
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
@@ -14,6 +14,7 @@
 - [x] Put new box for DME Needs under Treatment Plan
 - [x] Get Assessment, DME, and DME needs adding to the DB
 - [x] Update flow of forms - remove automatic PSFS form load after successful visit save
+- [x] Drop down menu under PT Diagnosis where they can select more than one option
 
 ### Follow Up Visit Form
 - Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form (**in progress**)

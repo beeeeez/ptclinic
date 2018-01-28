@@ -204,6 +204,19 @@ namespace PTClinic
         // Send back to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
+            DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dResult == DialogResult.OK)
+            {
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                {
+                    AddFollowUpVisit();
+                }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+                //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+            }
             this.Hide();
             Admin.Show();
         }
@@ -212,6 +225,19 @@ namespace PTClinic
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dResult == DialogResult.OK)
+            {
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                {
+                    AddFollowUpVisit();
+                }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+                //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+            }
             this.Hide();
             Login.Show();
         }

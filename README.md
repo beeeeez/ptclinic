@@ -14,6 +14,7 @@
 - [x] Drop down menu under PT Diagnosis where they can select more than one option
 - [x] Add save if they X out of form
 - [x] Add save/update ability so they can save and come back to form later
+- [x] Add save/update ability when they click Home or Logout Buttons
 
 ### Follow Up Visit Form
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
@@ -29,6 +30,7 @@
 - [x] Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form
 - [x] Add save if they X out of form
 - [x] Add save/update ability so they can save and come back to form later 
+- [x] Add save/update ability when they click Home or Logout Buttons
 
 ### Patient Profile Form
 - [x] Print patient info capability

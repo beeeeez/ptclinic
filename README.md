@@ -3,9 +3,6 @@
 ## Project Todos
 
 ### Intial Visit Form
-
-- Add save if they X out of form (**in progress**)
-- Add save/update ability so they can save and come back to form later (**in progress**)
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
 - [x] Adds to the Patient Info table which visit it is
 - [x] Set form window to scrollable for smaller size windows
@@ -15,6 +12,8 @@
 - [x] Get Assessment, DME, and DME needs adding to the DB
 - [x] Update flow of forms - remove automatic PSFS form load after successful visit save
 - [x] Drop down menu under PT Diagnosis where they can select more than one option
+- [x] Add save if they X out of form
+- [x] Add save/update ability so they can save and come back to form later
 
 ### Follow Up Visit Form
 - Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form (**in progress**)

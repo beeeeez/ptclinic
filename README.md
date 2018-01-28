@@ -16,9 +16,6 @@
 - [x] Add save/update ability so they can save and come back to form later
 
 ### Follow Up Visit Form
-- Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form (**in progress**)
-- Add save if they X out of form (**in progress**)
-- Add save/update ability so they can save and come back to form later (**in progress**)
 - [x] Based on Visit Type change label of forms to their respective text ex: 'Re-assessment Visit' , 'Follow Up Visit'
 - [x] Add button to get to PSFS form (if it needs to be filled out) if it doesn't just have a NO label populate
 - [x] Fix the missing validation in FollowUpVisit class
@@ -29,6 +26,9 @@
 - [x] Make what is pulled over from Initial Visit uneditable
 - [x] Add Section for displaying information selected in the new multi-select Drop Down Menu on the Initial Visit Form
 - [x] Update flow of forms - remove automatic PSFS form load after successful follow-visit save
+- [x] Get Multi-Select Section displaying Information from the multi-select dropdown on the Initial Visit Form
+- [x] Add save if they X out of form
+- [x] Add save/update ability so they can save and come back to form later 
 
 ### Patient Profile Form
 - [x] Print patient info capability

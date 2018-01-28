@@ -52,7 +52,7 @@ namespace PTClinic
             FillConstantAttendance();
             FillTherapeuticProcedures();
 
-            if (PatientVisitStatus.Equals("re-assessment"))
+            if (PatientVisitStatus.Equals("re-assessment") || PatientVisitStatus.Equals("re-assessment pending"))
             {
                 this.Text = "Re-assessment Visit Form";
                 lblHeaderText.Text = "Patient Re-assessment Visit Information";
@@ -62,7 +62,7 @@ namespace PTClinic
 
             // Populate form with data, if Patients visit status shows the follow up pending completion
             // Else just populate the three fields with data from the initial form
-            if (PatientVisitStatus.Equals("follow up pending"))
+            if (PatientVisitStatus.Equals("follow up pending") || PatientVisitStatus.Equals("re-assessment pending"))
             {
                 // Create variable for a Patients initial Visit Information
                 FollowUpVisitInfo tempPatientFUVisit = new FollowUpVisitInfo();
@@ -409,7 +409,14 @@ namespace PTClinic
                             }
                             else
                             {
-                                changeVisitType = "follow up pending";
+                                if(patientVisitStatus.Equals("re-assessment"))
+                                {
+                                    changeVisitType = "re-assessment pending";
+                                }
+                                else
+                                {
+                                    changeVisitType = "follow up pending";
+                                }
                             }
 
                             try
@@ -438,7 +445,7 @@ namespace PTClinic
                                 }
                                 else
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information was not saved";
+                                    lblFeedback.Text = "Patient's Visit Status was not changed";
                                 }
 
 
@@ -492,6 +499,10 @@ namespace PTClinic
             {
                 reassessment = false;
             }
+            else
+            {
+                reassessment = false;
+            }
             newVisit.Reassessment = reassessment;
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
@@ -537,7 +548,7 @@ namespace PTClinic
 
                 try
                 {
-                    int dbSuccess = newVisit.UpdateOneFUVisit(patientID);
+                    int dbSuccess = newVisit.UpdateOneFUVisit();
 
                     // If patient follow up visit was updated successfully... update the Patient Info table with their Visit Status
                     if (dbSuccess == 1)
@@ -561,7 +572,14 @@ namespace PTClinic
                             }
                             else
                             {
-                                changeVisitType = "follow up pending";
+                                if (patientVisitStatus.Equals("re-assessment") || patientVisitStatus.Equals("re-assessment pending"))
+                                {
+                                    changeVisitType = "re-assessment pending";
+                                }
+                                else
+                                {
+                                    changeVisitType = "follow up pending";
+                                }
                             }
 
                             try
@@ -590,7 +608,7 @@ namespace PTClinic
                                 }
                                 else
                                 {
-                                    lblFeedback.Text = "Patient's Visit Information was not saved";
+                                    lblFeedback.Text = "Patient's Visit Status was not changed";
                                 }
 
 

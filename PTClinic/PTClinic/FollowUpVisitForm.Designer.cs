@@ -42,10 +42,13 @@
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
             this.lblPSFSNeeded = new System.Windows.Forms.Label();
+            this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
             this.gbReassessment = new System.Windows.Forms.GroupBox();
             this.rbReassessmentNo = new System.Windows.Forms.RadioButton();
             this.rbReassessmentYes = new System.Windows.Forms.RadioButton();
+            this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.tbPlan = new System.Windows.Forms.TextBox();
             this.lblPSFS = new System.Windows.Forms.Label();
             this.lblReAssessment = new System.Windows.Forms.Label();
@@ -59,13 +62,13 @@
             this.lblProviderName = new System.Windows.Forms.Label();
             this.lblStudentProvider = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
+            this.lblTheraputicProcedures = new System.Windows.Forms.Label();
+            this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
+            this.lblInsurer = new System.Windows.Forms.Label();
             this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
             this.lblSupervisedModalities = new System.Windows.Forms.Label();
-            this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
-            this.lblInsurer = new System.Windows.Forms.Label();
             this.lblConstantAttendance = new System.Windows.Forms.Label();
-            this.lblTheraputicProcedures = new System.Windows.Forms.Label();
             this.lblDiagnosis = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblPTGoals = new System.Windows.Forms.Label();
@@ -80,15 +83,14 @@
             this.lblPID = new System.Windows.Forms.Label();
             this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
-            this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
-            this.lblTheraputicCPT = new System.Windows.Forms.Label();
+            this.lblPatientName = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
-            this.lblPatientName = new System.Windows.Forms.Label();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
+            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -103,7 +105,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(909, 673);
+            this.btnClear.Location = new System.Drawing.Point(900, 695);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -118,7 +120,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(742, 672);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(737, 695);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -213,7 +215,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(920, 640);
+            this.lblFeedback.Location = new System.Drawing.Point(866, 657);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 102;
@@ -224,7 +226,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(22, 83);
+            this.panel3.Location = new System.Drawing.Point(19, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -252,8 +254,11 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.tbTherapeuticProcedures2);
             this.panel4.Controls.Add(this.lblPSFSNeeded);
+            this.panel4.Controls.Add(this.lblTheraputicCPT2);
             this.panel4.Controls.Add(this.gbReassessment);
+            this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.tbPlan);
             this.panel4.Controls.Add(this.lblPSFS);
             this.panel4.Controls.Add(this.lblReAssessment);
@@ -267,26 +272,45 @@
             this.panel4.Controls.Add(this.lblProviderName);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
-            this.panel4.Location = new System.Drawing.Point(634, 140);
+            this.panel4.Controls.Add(this.lblTheraputicProcedures);
+            this.panel4.Controls.Add(this.cbTherapeuticProcedures);
+            this.panel4.Controls.Add(this.lblInsurer);
+            this.panel4.Location = new System.Drawing.Point(631, 140);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(593, 436);
+            this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
+            // 
+            // tbTherapeuticProcedures2
+            // 
+            this.tbTherapeuticProcedures2.Location = new System.Drawing.Point(292, 85);
+            this.tbTherapeuticProcedures2.Name = "tbTherapeuticProcedures2";
+            this.tbTherapeuticProcedures2.Size = new System.Drawing.Size(233, 20);
+            this.tbTherapeuticProcedures2.TabIndex = 8;
             // 
             // lblPSFSNeeded
             // 
             this.lblPSFSNeeded.AutoSize = true;
             this.lblPSFSNeeded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPSFSNeeded.Location = new System.Drawing.Point(245, 320);
+            this.lblPSFSNeeded.Location = new System.Drawing.Point(247, 355);
             this.lblPSFSNeeded.Name = "lblPSFSNeeded";
             this.lblPSFSNeeded.Size = new System.Drawing.Size(26, 16);
             this.lblPSFSNeeded.TabIndex = 109;
             this.lblPSFSNeeded.Text = "No";
             // 
+            // lblTheraputicCPT2
+            // 
+            this.lblTheraputicCPT2.AutoSize = true;
+            this.lblTheraputicCPT2.Location = new System.Drawing.Point(225, 88);
+            this.lblTheraputicCPT2.Name = "lblTheraputicCPT2";
+            this.lblTheraputicCPT2.Size = new System.Drawing.Size(61, 13);
+            this.lblTheraputicCPT2.TabIndex = 102;
+            this.lblTheraputicCPT2.Text = "CPT 97319";
+            // 
             // gbReassessment
             // 
             this.gbReassessment.Controls.Add(this.rbReassessmentNo);
             this.gbReassessment.Controls.Add(this.rbReassessmentYes);
-            this.gbReassessment.Location = new System.Drawing.Point(233, 271);
+            this.gbReassessment.Location = new System.Drawing.Point(235, 306);
             this.gbReassessment.Name = "gbReassessment";
             this.gbReassessment.Size = new System.Drawing.Size(170, 39);
             this.gbReassessment.TabIndex = 11;
@@ -314,9 +338,18 @@
             this.rbReassessmentYes.Text = "Yes";
             this.rbReassessmentYes.UseVisualStyleBackColor = true;
             // 
+            // lblTheraputicCPT
+            // 
+            this.lblTheraputicCPT.AutoSize = true;
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(192, 52);
+            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
+            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblTheraputicCPT.TabIndex = 101;
+            this.lblTheraputicCPT.Text = "CPT";
+            // 
             // tbPlan
             // 
-            this.tbPlan.Location = new System.Drawing.Point(163, 203);
+            this.tbPlan.Location = new System.Drawing.Point(165, 238);
             this.tbPlan.Multiline = true;
             this.tbPlan.Name = "tbPlan";
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -327,7 +360,7 @@
             // lblPSFS
             // 
             this.lblPSFS.AutoSize = true;
-            this.lblPSFS.Location = new System.Drawing.Point(51, 322);
+            this.lblPSFS.Location = new System.Drawing.Point(53, 357);
             this.lblPSFS.Name = "lblPSFS";
             this.lblPSFS.Size = new System.Drawing.Size(177, 13);
             this.lblPSFS.TabIndex = 107;
@@ -336,7 +369,7 @@
             // lblReAssessment
             // 
             this.lblReAssessment.AutoSize = true;
-            this.lblReAssessment.Location = new System.Drawing.Point(50, 282);
+            this.lblReAssessment.Location = new System.Drawing.Point(52, 317);
             this.lblReAssessment.Name = "lblReAssessment";
             this.lblReAssessment.Size = new System.Drawing.Size(169, 13);
             this.lblReAssessment.TabIndex = 105;
@@ -345,7 +378,7 @@
             // lblPatientPlan
             // 
             this.lblPatientPlan.AutoSize = true;
-            this.lblPatientPlan.Location = new System.Drawing.Point(50, 206);
+            this.lblPatientPlan.Location = new System.Drawing.Point(52, 241);
             this.lblPatientPlan.Name = "lblPatientPlan";
             this.lblPatientPlan.Size = new System.Drawing.Size(93, 13);
             this.lblPatientPlan.TabIndex = 104;
@@ -355,7 +388,7 @@
             // 
             this.lblPlan.AutoSize = true;
             this.lblPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlan.Location = new System.Drawing.Point(37, 162);
+            this.lblPlan.Location = new System.Drawing.Point(39, 197);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(40, 20);
             this.lblPlan.TabIndex = 103;
@@ -364,7 +397,7 @@
             // lblProviderDate
             // 
             this.lblProviderDate.AutoSize = true;
-            this.lblProviderDate.Location = new System.Drawing.Point(454, 402);
+            this.lblProviderDate.Location = new System.Drawing.Point(456, 437);
             this.lblProviderDate.Name = "lblProviderDate";
             this.lblProviderDate.Size = new System.Drawing.Size(85, 13);
             this.lblProviderDate.TabIndex = 102;
@@ -373,7 +406,7 @@
             // lblStudentDate
             // 
             this.lblStudentDate.AutoSize = true;
-            this.lblStudentDate.Location = new System.Drawing.Point(454, 361);
+            this.lblStudentDate.Location = new System.Drawing.Point(456, 396);
             this.lblStudentDate.Name = "lblStudentDate";
             this.lblStudentDate.Size = new System.Drawing.Size(85, 13);
             this.lblStudentDate.TabIndex = 101;
@@ -381,7 +414,7 @@
             // 
             // tbProviderName
             // 
-            this.tbProviderName.Location = new System.Drawing.Point(173, 399);
+            this.tbProviderName.Location = new System.Drawing.Point(175, 434);
             this.tbProviderName.Name = "tbProviderName";
             this.tbProviderName.Size = new System.Drawing.Size(252, 20);
             this.tbProviderName.TabIndex = 15;
@@ -389,7 +422,7 @@
             // 
             // tbStudentProvider
             // 
-            this.tbStudentProvider.Location = new System.Drawing.Point(173, 361);
+            this.tbStudentProvider.Location = new System.Drawing.Point(175, 396);
             this.tbStudentProvider.Name = "tbStudentProvider";
             this.tbStudentProvider.Size = new System.Drawing.Size(252, 20);
             this.tbStudentProvider.TabIndex = 14;
@@ -397,7 +430,7 @@
             // 
             // tbAssessment
             // 
-            this.tbAssessment.Location = new System.Drawing.Point(164, 14);
+            this.tbAssessment.Location = new System.Drawing.Point(164, 121);
             this.tbAssessment.Multiline = true;
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -408,7 +441,7 @@
             // lblProviderName
             // 
             this.lblProviderName.AutoSize = true;
-            this.lblProviderName.Location = new System.Drawing.Point(90, 402);
+            this.lblProviderName.Location = new System.Drawing.Point(92, 437);
             this.lblProviderName.Name = "lblProviderName";
             this.lblProviderName.Size = new System.Drawing.Size(77, 13);
             this.lblProviderName.TabIndex = 98;
@@ -417,7 +450,7 @@
             // lblStudentProvider
             // 
             this.lblStudentProvider.AutoSize = true;
-            this.lblStudentProvider.Location = new System.Drawing.Point(81, 364);
+            this.lblStudentProvider.Location = new System.Drawing.Point(83, 399);
             this.lblStudentProvider.Name = "lblStudentProvider";
             this.lblStudentProvider.Size = new System.Drawing.Size(86, 13);
             this.lblStudentProvider.TabIndex = 95;
@@ -426,11 +459,40 @@
             // lblAssessment
             // 
             this.lblAssessment.AutoSize = true;
-            this.lblAssessment.Location = new System.Drawing.Point(81, 17);
+            this.lblAssessment.Location = new System.Drawing.Point(81, 124);
             this.lblAssessment.Name = "lblAssessment";
             this.lblAssessment.Size = new System.Drawing.Size(63, 13);
             this.lblAssessment.TabIndex = 94;
             this.lblAssessment.Text = "Assessment";
+            // 
+            // lblTheraputicProcedures
+            // 
+            this.lblTheraputicProcedures.AutoSize = true;
+            this.lblTheraputicProcedures.Location = new System.Drawing.Point(53, 46);
+            this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
+            this.lblTheraputicProcedures.Size = new System.Drawing.Size(121, 26);
+            this.lblTheraputicProcedures.TabIndex = 94;
+            this.lblTheraputicProcedures.Text = "Therapeutic Procedures\r\n(15 minutes each)";
+            // 
+            // cbTherapeuticProcedures
+            // 
+            this.cbTherapeuticProcedures.BackColor = System.Drawing.Color.White;
+            this.cbTherapeuticProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTherapeuticProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTherapeuticProcedures.FormattingEnabled = true;
+            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(233, 49);
+            this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
+            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 21);
+            this.cbTherapeuticProcedures.TabIndex = 7;
+            // 
+            // lblInsurer
+            // 
+            this.lblInsurer.AutoSize = true;
+            this.lblInsurer.Location = new System.Drawing.Point(47, 88);
+            this.lblInsurer.Name = "lblInsurer";
+            this.lblInsurer.Size = new System.Drawing.Size(173, 13);
+            this.lblInsurer.TabIndex = 85;
+            this.lblInsurer.Text = "Unselected Therapeutic Procedure";
             // 
             // cbSupervisedModalities
             // 
@@ -438,7 +500,7 @@
             this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSupervisedModalities.FormattingEnabled = true;
-            this.cbSupervisedModalities.Location = new System.Drawing.Point(208, 432);
+            this.cbSupervisedModalities.Location = new System.Drawing.Point(208, 522);
             this.cbSupervisedModalities.Name = "cbSupervisedModalities";
             this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 21);
             this.cbSupervisedModalities.TabIndex = 5;
@@ -449,7 +511,7 @@
             this.cbConstantAttendance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConstantAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbConstantAttendance.FormattingEnabled = true;
-            this.cbConstantAttendance.Location = new System.Drawing.Point(208, 474);
+            this.cbConstantAttendance.Location = new System.Drawing.Point(208, 564);
             this.cbConstantAttendance.Name = "cbConstantAttendance";
             this.cbConstantAttendance.Size = new System.Drawing.Size(256, 21);
             this.cbConstantAttendance.TabIndex = 6;
@@ -457,49 +519,20 @@
             // lblSupervisedModalities
             // 
             this.lblSupervisedModalities.AutoSize = true;
-            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 432);
+            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 522);
             this.lblSupervisedModalities.Name = "lblSupervisedModalities";
             this.lblSupervisedModalities.Size = new System.Drawing.Size(110, 26);
             this.lblSupervisedModalities.TabIndex = 82;
             this.lblSupervisedModalities.Text = "Supervised Modalities\r\nUNTIMED";
             // 
-            // cbTherapeuticProcedures
-            // 
-            this.cbTherapeuticProcedures.BackColor = System.Drawing.Color.White;
-            this.cbTherapeuticProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTherapeuticProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTherapeuticProcedures.FormattingEnabled = true;
-            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(208, 519);
-            this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
-            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 21);
-            this.cbTherapeuticProcedures.TabIndex = 7;
-            // 
-            // lblInsurer
-            // 
-            this.lblInsurer.AutoSize = true;
-            this.lblInsurer.Location = new System.Drawing.Point(22, 558);
-            this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(173, 13);
-            this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Unselected Therapeutic Procedure";
-            // 
             // lblConstantAttendance
             // 
             this.lblConstantAttendance.AutoSize = true;
-            this.lblConstantAttendance.Location = new System.Drawing.Point(36, 471);
+            this.lblConstantAttendance.Location = new System.Drawing.Point(36, 561);
             this.lblConstantAttendance.Name = "lblConstantAttendance";
             this.lblConstantAttendance.Size = new System.Drawing.Size(107, 26);
             this.lblConstantAttendance.TabIndex = 91;
             this.lblConstantAttendance.Text = "Constant Attendance\r\n(15 minutes each)";
-            // 
-            // lblTheraputicProcedures
-            // 
-            this.lblTheraputicProcedures.AutoSize = true;
-            this.lblTheraputicProcedures.Location = new System.Drawing.Point(28, 516);
-            this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
-            this.lblTheraputicProcedures.Size = new System.Drawing.Size(121, 26);
-            this.lblTheraputicProcedures.TabIndex = 94;
-            this.lblTheraputicProcedures.Text = "Therapeutic Procedures\r\n(15 minutes each)";
             // 
             // lblDiagnosis
             // 
@@ -513,7 +546,7 @@
             // lblObjective
             // 
             this.lblObjective.AutoSize = true;
-            this.lblObjective.Location = new System.Drawing.Point(91, 309);
+            this.lblObjective.Location = new System.Drawing.Point(88, 394);
             this.lblObjective.Name = "lblObjective";
             this.lblObjective.Size = new System.Drawing.Size(52, 13);
             this.lblObjective.TabIndex = 79;
@@ -531,7 +564,7 @@
             // lblSubjective
             // 
             this.lblSubjective.AutoSize = true;
-            this.lblSubjective.Location = new System.Drawing.Point(86, 248);
+            this.lblSubjective.Location = new System.Drawing.Point(83, 333);
             this.lblSubjective.Name = "lblSubjective";
             this.lblSubjective.Size = new System.Drawing.Size(57, 13);
             this.lblSubjective.TabIndex = 83;
@@ -549,7 +582,7 @@
             // 
             // tbObjective
             // 
-            this.tbObjective.Location = new System.Drawing.Point(149, 306);
+            this.tbObjective.Location = new System.Drawing.Point(146, 391);
             this.tbObjective.Multiline = true;
             this.tbObjective.Name = "tbObjective";
             this.tbObjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -569,7 +602,7 @@
             // 
             // tbSubjective
             // 
-            this.tbSubjective.Location = new System.Drawing.Point(149, 245);
+            this.tbSubjective.Location = new System.Drawing.Point(146, 330);
             this.tbSubjective.Multiline = true;
             this.tbSubjective.Name = "tbSubjective";
             this.tbSubjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -624,79 +657,32 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.tbTherapeuticProcedures2);
-            this.panel2.Controls.Add(this.lblTheraputicCPT2);
-            this.panel2.Controls.Add(this.lblTheraputicCPT);
-            this.panel2.Controls.Add(this.lblConstantCPT);
-            this.panel2.Controls.Add(this.lblSupervisedCPT);
+            this.panel2.Controls.Add(this.tbPTDiagnosis);
+            this.panel2.Controls.Add(this.lblPTDiagnosis);
             this.panel2.Controls.Add(this.lblPatientName);
             this.panel2.Controls.Add(this.lblPN);
             this.panel2.Controls.Add(this.lblPID);
             this.panel2.Controls.Add(this.lblPtnID);
             this.panel2.Controls.Add(this.tbProviderID);
             this.panel2.Controls.Add(this.lblProviderID);
+            this.panel2.Controls.Add(this.lblConstantCPT);
             this.panel2.Controls.Add(this.tbSubjective);
-            this.panel2.Controls.Add(this.cbSupervisedModalities);
             this.panel2.Controls.Add(this.tbPTGoals);
+            this.panel2.Controls.Add(this.lblSupervisedCPT);
             this.panel2.Controls.Add(this.tbObjective);
-            this.panel2.Controls.Add(this.cbConstantAttendance);
             this.panel2.Controls.Add(this.tbDiagnosis);
-            this.panel2.Controls.Add(this.lblSupervisedModalities);
-            this.panel2.Controls.Add(this.cbTherapeuticProcedures);
             this.panel2.Controls.Add(this.lblSubjective);
-            this.panel2.Controls.Add(this.lblInsurer);
             this.panel2.Controls.Add(this.lblPTGoals);
-            this.panel2.Controls.Add(this.lblConstantAttendance);
             this.panel2.Controls.Add(this.lblObjective);
-            this.panel2.Controls.Add(this.lblTheraputicProcedures);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(22, 139);
+            this.panel2.Controls.Add(this.lblSupervisedModalities);
+            this.panel2.Controls.Add(this.lblConstantAttendance);
+            this.panel2.Controls.Add(this.cbConstantAttendance);
+            this.panel2.Controls.Add(this.cbSupervisedModalities);
+            this.panel2.Location = new System.Drawing.Point(19, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
-            // 
-            // tbTherapeuticProcedures2
-            // 
-            this.tbTherapeuticProcedures2.Location = new System.Drawing.Point(267, 555);
-            this.tbTherapeuticProcedures2.Name = "tbTherapeuticProcedures2";
-            this.tbTherapeuticProcedures2.Size = new System.Drawing.Size(233, 20);
-            this.tbTherapeuticProcedures2.TabIndex = 8;
-            // 
-            // lblTheraputicCPT2
-            // 
-            this.lblTheraputicCPT2.AutoSize = true;
-            this.lblTheraputicCPT2.Location = new System.Drawing.Point(200, 558);
-            this.lblTheraputicCPT2.Name = "lblTheraputicCPT2";
-            this.lblTheraputicCPT2.Size = new System.Drawing.Size(61, 13);
-            this.lblTheraputicCPT2.TabIndex = 102;
-            this.lblTheraputicCPT2.Text = "CPT 97319";
-            // 
-            // lblTheraputicCPT
-            // 
-            this.lblTheraputicCPT.AutoSize = true;
-            this.lblTheraputicCPT.Location = new System.Drawing.Point(167, 522);
-            this.lblTheraputicCPT.Name = "lblTheraputicCPT";
-            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblTheraputicCPT.TabIndex = 101;
-            this.lblTheraputicCPT.Text = "CPT";
-            // 
-            // lblConstantCPT
-            // 
-            this.lblConstantCPT.AutoSize = true;
-            this.lblConstantCPT.Location = new System.Drawing.Point(167, 477);
-            this.lblConstantCPT.Name = "lblConstantCPT";
-            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblConstantCPT.TabIndex = 100;
-            this.lblConstantCPT.Text = "CPT";
-            // 
-            // lblSupervisedCPT
-            // 
-            this.lblSupervisedCPT.AutoSize = true;
-            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 435);
-            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
-            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
-            this.lblSupervisedCPT.TabIndex = 99;
-            this.lblSupervisedCPT.Text = "CPT";
             // 
             // lblPatientName
             // 
@@ -707,12 +693,30 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
+            // lblConstantCPT
+            // 
+            this.lblConstantCPT.AutoSize = true;
+            this.lblConstantCPT.Location = new System.Drawing.Point(167, 567);
+            this.lblConstantCPT.Name = "lblConstantCPT";
+            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblConstantCPT.TabIndex = 100;
+            this.lblConstantCPT.Text = "CPT";
+            // 
+            // lblSupervisedCPT
+            // 
+            this.lblSupervisedCPT.AutoSize = true;
+            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 525);
+            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
+            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblSupervisedCPT.TabIndex = 99;
+            this.lblSupervisedCPT.Text = "CPT";
+            // 
             // panelMessage
             // 
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(809, 93);
+            this.panelMessage.Location = new System.Drawing.Point(800, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -732,12 +736,31 @@
             // cbCompleted
             // 
             this.cbCompleted.AutoSize = true;
-            this.cbCompleted.Location = new System.Drawing.Point(870, 596);
+            this.cbCompleted.Location = new System.Drawing.Point(870, 620);
             this.cbCompleted.Name = "cbCompleted";
             this.cbCompleted.Size = new System.Drawing.Size(76, 17);
             this.cbCompleted.TabIndex = 116;
             this.cbCompleted.Text = "Completed";
             this.cbCompleted.UseVisualStyleBackColor = true;
+            // 
+            // tbPTDiagnosis
+            // 
+            this.tbPTDiagnosis.Location = new System.Drawing.Point(149, 248);
+            this.tbPTDiagnosis.Multiline = true;
+            this.tbPTDiagnosis.Name = "tbPTDiagnosis";
+            this.tbPTDiagnosis.ReadOnly = true;
+            this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbPTDiagnosis.Size = new System.Drawing.Size(415, 62);
+            this.tbPTDiagnosis.TabIndex = 101;
+            // 
+            // lblPTDiagnosis
+            // 
+            this.lblPTDiagnosis.AutoSize = true;
+            this.lblPTDiagnosis.Location = new System.Drawing.Point(73, 251);
+            this.lblPTDiagnosis.Name = "lblPTDiagnosis";
+            this.lblPTDiagnosis.Size = new System.Drawing.Size(70, 13);
+            this.lblPTDiagnosis.TabIndex = 102;
+            this.lblPTDiagnosis.Text = "PT Diagnosis";
             // 
             // FollowUpVisitForm
             // 
@@ -837,5 +860,7 @@
         private System.Windows.Forms.Panel panelMessage;
         private System.Windows.Forms.Label lbNewPatient;
         private System.Windows.Forms.CheckBox cbCompleted;
+        private System.Windows.Forms.TextBox tbPTDiagnosis;
+        private System.Windows.Forms.Label lblPTDiagnosis;
     }
 }

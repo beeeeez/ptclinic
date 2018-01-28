@@ -411,7 +411,7 @@ namespace PTClinic
 
 
         // Updating patient's follow up visit information
-        public virtual int UpdateOneFUVisit(int patientID)
+        public virtual int UpdateOneFUVisit()
         {
             string strFeedback = "";
             int success = 0;
@@ -421,7 +421,7 @@ namespace PTClinic
 
             // SQL command to add a record to the Patients table
             string strSQL = "UPDATE Patient_FollowUp_Visit SET provider_id = @ProviderID, patient_name = @PatientName, diagnosis = @Diagnosis, pt_goals = @PTGoals, subjective = @Subjective, objective = @Objective, supervised_modalities = @SupervisedModalities, constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, assessment = @Assessment, plan = @Plan, student_name = @StudentProviderName, student_date = @StudentProviderNameDate, provider_name = @ProviderName, provider_date = @ProviderNameDate, visit_date = @VisitDate" +
-                " WHERE patient_id = @PatientID;";
+                " WHERE patient_id = @PatientID AND followup_visit_id = (SELECT MAX(followup_visit_id) FROM Patient_FollowUp_Visit);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -456,7 +456,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"ProviderNameDate", ProviderNameDate).ToString();
 
             comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
-            comm.Parameters.AddWithValue(@"PatientID", patientID);
+            comm.Parameters.AddWithValue(@"PatientID", PatientID);
 
             try
             {

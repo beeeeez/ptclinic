@@ -74,13 +74,11 @@ namespace PTClinic
                 }
 
 
-                MessageBox.Show(patientStatus);
+               // MessageBox.Show(patientStatus);
 
                 if (patientStatus.ToLower().Equals("visit pending"))
                 {
-                    MessageBox.Show("POPULATE FORM FIELDS FOR UPDATE");
-
-
+                    
                     // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
                     using (var dataReaderVisit = tempVisitInfo.FindOnePatientVisit(connection, patientID))
                     {
@@ -89,18 +87,11 @@ namespace PTClinic
                             // Take the appropriate fields from the datareader
                             // and put them in proper labels
 
-                            // patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, 
-                            // medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance,
-                            // therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis, followup_treatment 
-
                             tbProviderID.Text = dataReaderVisit["provider_id"].ToString();
-
-
                             tbChiefComplaint.Text = dataReaderVisit["chief_complaint"].ToString();
                             tbDiagnosis.Text = dataReaderVisit["diagnosis"].ToString();
                             tbMedicalHistory.Text = dataReaderVisit["medical_history"].ToString();
                             tbDME.Text = dataReaderVisit["durable_medical_equipment"].ToString();
-
                             tbMedications.Text = dataReaderVisit["medications"].ToString();
                             tbSubjective.Text = dataReaderVisit["subjective"].ToString();
                             tbObjective.Text = dataReaderVisit["objective"].ToString();
@@ -145,16 +136,13 @@ namespace PTClinic
                             tbFunctionalLimitations.Text = dataReaderVisit["functional_limitations"].ToString();
                             tbAssessment.Text = dataReaderVisit["assessment"].ToString();
 
-                            // CHECKLISTBOX 
-                            //tbPTDiagnosis.Text = dataReaderVisit["pt_diagnosis"].ToString();
-
                             var ptDiagnosis = dataReaderVisit["pt_diagnosis"].ToString();
 
                             char[] splitChar = { '+' };
                             string[] diagnosisArray = null;
 
                             diagnosisArray = ptDiagnosis.Split(splitChar);
-                            MessageBox.Show("Array Size: " + diagnosisArray.Length);
+                            //MessageBox.Show("Array Size: " + diagnosisArray.Length);
 
                             for (int i = 0; i < diagnosisArray.Length; i++)
                             {
@@ -176,10 +164,6 @@ namespace PTClinic
 
                
             }
-
-
-            //MessageBox.Show("Check list box has " + clbPTDiagnosis.Items.Count + " items to select");
-
 
         }
 
@@ -252,6 +236,20 @@ namespace PTClinic
         // Send to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
+            DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dResult == DialogResult.OK)
+            {
+                if (patientStatus.ToLower().Equals("initial"))
+                {
+                    SaveVisitInfo();
+                }
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
+                }
+
+            }
+
             this.Hide();
             Admin.Show();
         }
@@ -260,6 +258,20 @@ namespace PTClinic
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dResult == DialogResult.OK)
+            {
+                if (patientStatus.ToLower().Equals("initial"))
+                {
+                    SaveVisitInfo();
+                }
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
+                }
+
+            }
+
             this.Hide();
             Login.Show();
         }
@@ -326,18 +338,18 @@ namespace PTClinic
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dResult == DialogResult.OK)
                 {
                     if (patientStatus.ToLower().Equals("initial"))
                     {
-                        MessageBox.Show("you are SAVING THE FORM FOR THE FIRST TIME");
+                        SaveVisitInfo();
                     }
                     else if (patientStatus.ToLower().Equals("visit pending"))
                     {
-                        MessageBox.Show("you are UPDATING an existing record");
+                        UpdateVisitInfo();
                     }
-                    //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                    
                 }
             }
         }

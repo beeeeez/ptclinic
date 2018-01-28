@@ -60,6 +60,39 @@ namespace PTClinic
                 btnAddFollowUp.Text = "Add Visit Info";
             }
 
+            // Create variable for a Patients initial Visit Information
+            VisitInfo tempPatientVisit = new VisitInfo();
+
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
+                {
+                    while (dataReaderPatientVisit.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
+                        tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+
+                        var ptDiagnosis = dataReaderPatientVisit["pt_diagnosis"].ToString();
+
+                        char[] splitChar = { '+' };
+                        string[] diagnosisArray = null;
+                        StringBuilder sb = new StringBuilder();
+
+                        diagnosisArray = ptDiagnosis.Split(splitChar);
+
+                        for (int i = 0; i < diagnosisArray.Length; i++)
+                        {
+                            sb.AppendLine("- " + diagnosisArray[i]);
+                        }
+
+                        tbPTDiagnosis.Text = sb.ToString();
+                    }
+                }
+            } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+
             // Populate form with data, if Patients visit status shows the follow up pending completion
             // Else just populate the three fields with data from the initial form
             if (PatientVisitStatus.Equals("follow up pending") || PatientVisitStatus.Equals("re-assessment pending"))
@@ -77,8 +110,6 @@ namespace PTClinic
                             // Take the appropriate fields from the datareader
                             // and put them in proper text boxes / selections
                             tbProviderID.Text = dataReaderPatientFUVisit["provider_id"].ToString();
-                            tbDiagnosis.Text = dataReaderPatientFUVisit["diagnosis"].ToString();
-                            tbPTGoals.Text = dataReaderPatientFUVisit["pt_goals"].ToString();
                             tbSubjective.Text = dataReaderPatientFUVisit["subjective"].ToString();
                             tbObjective.Text = dataReaderPatientFUVisit["objective"].ToString();
                             tbAssessment.Text = dataReaderPatientFUVisit["assessment"].ToString();
@@ -95,44 +126,6 @@ namespace PTClinic
                     }
                 } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             }
-            else
-            {
-                // Create variable for a Patients initial Visit Information
-                VisitInfo tempPatientVisit = new VisitInfo();
-
-                using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-                {
-                    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
-                    using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
-                    {
-                        while (dataReaderPatientVisit.Read())
-                        {
-                            // Take the appropriate fields from the datareader
-                            // and put them in proper labels
-                            tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
-                            tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
-                        }
-                    }
-                } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-            }
-
-            //// Create variable for a Patients initial Visit Information
-            //VisitInfo tempPatientVisit = new VisitInfo();
-
-            //using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
-            //{
-            //    // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
-            //    using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientID))
-            //    {
-            //        while (dataReaderPatientVisit.Read())
-            //        {
-            //            // Take the appropriate fields from the datareader
-            //            // and put them in proper labels
-            //            tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
-            //            tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
-            //        }
-            //    }
-            //} // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
 
             // Getting Todays date
             // And setting the three date labels (todays, student, and provider) to it
@@ -204,7 +197,7 @@ namespace PTClinic
         // Send back to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dResult == DialogResult.OK)
             {
                 if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
@@ -225,7 +218,7 @@ namespace PTClinic
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dResult == DialogResult.OK)
             {
                 if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
@@ -286,7 +279,7 @@ namespace PTClinic
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult dResult = MessageBox.Show("Would you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dResult == DialogResult.OK)
                 {
                     if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
@@ -331,8 +324,8 @@ namespace PTClinic
             newVisit.PatientID = patientID;
             newVisit.ProviderID = tbProviderID.Text;
             newVisit.PatientName = lblPatientName.Text;
-            newVisit.Diagnosis = tbDiagnosis.Text;
-            newVisit.PTGoals = tbPTGoals.Text;
+            //newVisit.Diagnosis = tbDiagnosis.Text;
+            //newVisit.PTGoals = tbPTGoals.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
 
@@ -502,8 +495,8 @@ namespace PTClinic
             newVisit.PatientID = patientID;
             newVisit.ProviderID = tbProviderID.Text;
             newVisit.PatientName = lblPatientName.Text;
-            newVisit.Diagnosis = tbDiagnosis.Text;
-            newVisit.PTGoals = tbPTGoals.Text;
+            //newVisit.Diagnosis = tbDiagnosis.Text;
+            //newVisit.PTGoals = tbPTGoals.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
 

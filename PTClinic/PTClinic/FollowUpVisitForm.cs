@@ -268,21 +268,6 @@ namespace PTClinic
                 PatientProfile.Show();
             }
 
-            //this.Hide();
-
-            //// If patient visit was added or updated create new profile form
-            //if (visitSaved == true)
-            //{
-            //    //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
-            //    Search newSearchForm = new Search(Admin, Login);
-            //    PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
-            //    PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
-            //    refreshProfile.Show();
-            //}
-            //else
-            //{
-            //    PatientProfile.Show();
-            //}
         }
 
         // Add Follow Up Information to DB

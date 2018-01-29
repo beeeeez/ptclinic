@@ -191,7 +191,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1112, 728);
+            this.btnClear.Location = new System.Drawing.Point(1096, 728);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 21;
@@ -206,7 +206,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(921, 728);
+            this.btnAddVisit.Location = new System.Drawing.Point(905, 728);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 20;
@@ -404,7 +404,7 @@
             this.panel2.Controls.Add(this.lblCity);
             this.panel2.Controls.Add(this.lblMedications);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Location = new System.Drawing.Point(26, 148);
+            this.panel2.Location = new System.Drawing.Point(10, 148);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 0;
@@ -565,7 +565,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(649, 694);
+            this.lblFeedback.Location = new System.Drawing.Point(633, 694);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
@@ -586,7 +586,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(26, 92);
+            this.panel3.Location = new System.Drawing.Point(10, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -617,7 +617,7 @@
             this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(653, 148);
+            this.panel4.Location = new System.Drawing.Point(637, 148);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 527);
             this.panel4.TabIndex = 1;
@@ -750,7 +750,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(974, 92);
+            this.panelMessage.Location = new System.Drawing.Point(958, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 116;

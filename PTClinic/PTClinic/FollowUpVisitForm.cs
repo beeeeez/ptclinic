@@ -239,11 +239,10 @@ namespace PTClinic
         // Send back to Profile page
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            // If patient visit was added or updated create new profile form
+            // If patient goals were updated create new profile form
             if (visitSaved == true)
             {
+                this.Hide();
                 //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
                 Search newSearchForm = new Search(Admin, Login);
                 PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
@@ -252,21 +251,62 @@ namespace PTClinic
             }
             else
             {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    {
+                        AddFollowUpVisit();
+                    }
+                    else
+                    {
+                        UpdateFollowUpVisit();
+                    }
+
+                }
+                this.Hide();
                 PatientProfile.Show();
             }
+
+            //this.Hide();
+
+            //// If patient visit was added or updated create new profile form
+            //if (visitSaved == true)
+            //{
+            //    //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+            //    Search newSearchForm = new Search(Admin, Login);
+            //    PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+            //    PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
+            //    refreshProfile.Show();
+            //}
+            //else
+            //{
+            //    PatientProfile.Show();
+            //}
         }
 
         // Add Follow Up Information to DB
         private void btnAddFollowUp_Click(object sender, EventArgs e)
         {
-            if(patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+
+            if (cbCompleted.Checked == true)
             {
-                AddFollowUpVisit();
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                {
+                    AddFollowUpVisit();
+                }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+
             }
             else
             {
-                UpdateFollowUpVisit();
+                MessageBox.Show("To finalize form make sure you check off:\n\n - 'Is the form Complete' checkbox", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+           
         }
 
         // Reset form back

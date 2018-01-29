@@ -221,15 +221,23 @@ namespace PTClinic
         // Add Visit Information to DB
         private void btnAddVisit_Click(object sender, EventArgs e)
         {
-            if (patientStatus.ToLower().Equals("initial"))
+            if (cbCompletedForm.Checked == true)
             {
-                SaveVisitInfo();
-            }
-            else if (patientStatus.ToLower().Equals("visit pending"))
-            {
-                UpdateVisitInfo();
-            }
+                if (patientStatus.ToLower().Equals("initial"))
+                {
+                    SaveVisitInfo();
+                }
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("To finalize form make sure you check off:\n\n - 'Is the form Complete' checkbox", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+       
         }
 
         // Back Home Button Click
@@ -280,11 +288,11 @@ namespace PTClinic
         // Send back to Profile page
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
 
             // If patient goals were updated create new profile form
             if (visitSaved == true)
             {
+                this.Hide();
                 //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
                 Search newSearchForm = new Search(Admin, Login);
                 PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
@@ -293,6 +301,20 @@ namespace PTClinic
             }
             else
             {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientStatus.ToLower().Equals("initial"))
+                    {
+                        SaveVisitInfo();
+                    }
+                    else if (patientStatus.ToLower().Equals("visit pending"))
+                    {
+                        UpdateVisitInfo();
+                    }
+
+                }
+                this.Hide();
                 PatientProfile.Show();
             }
 

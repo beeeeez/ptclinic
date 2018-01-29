@@ -83,14 +83,14 @@
             this.lblPID = new System.Windows.Forms.Label();
             this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
+            this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
-            this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
-            this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -105,7 +105,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(900, 695);
+            this.btnClear.Location = new System.Drawing.Point(1068, 682);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -120,9 +120,9 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(737, 695);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(825, 682);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
-            this.btnAddFollowUp.Size = new System.Drawing.Size(117, 60);
+            this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 16;
             this.btnAddFollowUp.Text = "Add Follow Up Info";
             this.btnAddFollowUp.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(866, 657);
+            this.lblFeedback.Location = new System.Drawing.Point(648, 617);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 102;
@@ -226,7 +226,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(19, 83);
+            this.panel3.Location = new System.Drawing.Point(10, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -275,7 +275,7 @@
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.lblInsurer);
-            this.panel4.Location = new System.Drawing.Point(631, 140);
+            this.panel4.Location = new System.Drawing.Point(622, 140);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -673,10 +673,29 @@
             this.panel2.Controls.Add(this.lblConstantAttendance);
             this.panel2.Controls.Add(this.cbConstantAttendance);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(19, 139);
+            this.panel2.Location = new System.Drawing.Point(10, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
+            // 
+            // tbPTDiagnosis
+            // 
+            this.tbPTDiagnosis.Location = new System.Drawing.Point(149, 248);
+            this.tbPTDiagnosis.Multiline = true;
+            this.tbPTDiagnosis.Name = "tbPTDiagnosis";
+            this.tbPTDiagnosis.ReadOnly = true;
+            this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbPTDiagnosis.Size = new System.Drawing.Size(415, 62);
+            this.tbPTDiagnosis.TabIndex = 3;
+            // 
+            // lblPTDiagnosis
+            // 
+            this.lblPTDiagnosis.AutoSize = true;
+            this.lblPTDiagnosis.Location = new System.Drawing.Point(73, 251);
+            this.lblPTDiagnosis.Name = "lblPTDiagnosis";
+            this.lblPTDiagnosis.Size = new System.Drawing.Size(70, 13);
+            this.lblPTDiagnosis.TabIndex = 102;
+            this.lblPTDiagnosis.Text = "PT Diagnosis";
             // 
             // lblPatientName
             // 
@@ -710,7 +729,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(800, 93);
+            this.panelMessage.Location = new System.Drawing.Point(791, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -730,31 +749,13 @@
             // cbCompleted
             // 
             this.cbCompleted.AutoSize = true;
-            this.cbCompleted.Location = new System.Drawing.Point(870, 620);
+            this.cbCompleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCompleted.Location = new System.Drawing.Point(792, 644);
             this.cbCompleted.Name = "cbCompleted";
-            this.cbCompleted.Size = new System.Drawing.Size(76, 17);
+            this.cbCompleted.Size = new System.Drawing.Size(206, 24);
             this.cbCompleted.TabIndex = 15;
-            this.cbCompleted.Text = "Completed";
+            this.cbCompleted.Text = "Is the form Complete?";
             this.cbCompleted.UseVisualStyleBackColor = true;
-            // 
-            // tbPTDiagnosis
-            // 
-            this.tbPTDiagnosis.Location = new System.Drawing.Point(149, 248);
-            this.tbPTDiagnosis.Multiline = true;
-            this.tbPTDiagnosis.Name = "tbPTDiagnosis";
-            this.tbPTDiagnosis.ReadOnly = true;
-            this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbPTDiagnosis.Size = new System.Drawing.Size(415, 62);
-            this.tbPTDiagnosis.TabIndex = 3;
-            // 
-            // lblPTDiagnosis
-            // 
-            this.lblPTDiagnosis.AutoSize = true;
-            this.lblPTDiagnosis.Location = new System.Drawing.Point(73, 251);
-            this.lblPTDiagnosis.Name = "lblPTDiagnosis";
-            this.lblPTDiagnosis.Size = new System.Drawing.Size(70, 13);
-            this.lblPTDiagnosis.TabIndex = 102;
-            this.lblPTDiagnosis.Text = "PT Diagnosis";
             // 
             // FollowUpVisitForm
             // 

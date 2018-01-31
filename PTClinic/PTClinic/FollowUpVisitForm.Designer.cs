@@ -91,6 +91,7 @@
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
+            this.btnBackToSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -105,7 +106,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1068, 682);
+            this.btnClear.Location = new System.Drawing.Point(1059, 682);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -120,7 +121,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(825, 682);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(816, 682);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -131,6 +132,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.btnBackToSearch);
             this.panel1.Controls.Add(this.btnBackToProfile);
             this.panel1.Controls.Add(this.btnBackHome);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -149,7 +151,7 @@
             this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToProfile.Location = new System.Drawing.Point(750, 20);
+            this.btnBackToProfile.Location = new System.Drawing.Point(594, 20);
             this.btnBackToProfile.Name = "btnBackToProfile";
             this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
             this.btnBackToProfile.TabIndex = 18;
@@ -165,7 +167,7 @@
             this.btnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackHome.ForeColor = System.Drawing.Color.White;
-            this.btnBackHome.Location = new System.Drawing.Point(941, 20);
+            this.btnBackHome.Location = new System.Drawing.Point(969, 20);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(107, 34);
             this.btnBackHome.TabIndex = 19;
@@ -181,7 +183,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(1088, 20);
+            this.btnLogOut.Location = new System.Drawing.Point(1099, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(107, 34);
             this.btnLogOut.TabIndex = 20;
@@ -226,7 +228,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(10, 83);
+            this.panel3.Location = new System.Drawing.Point(1, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -275,7 +277,7 @@
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.lblInsurer);
-            this.panel4.Location = new System.Drawing.Point(622, 140);
+            this.panel4.Location = new System.Drawing.Point(613, 140);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -673,7 +675,7 @@
             this.panel2.Controls.Add(this.lblConstantAttendance);
             this.panel2.Controls.Add(this.cbConstantAttendance);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(10, 139);
+            this.panel2.Location = new System.Drawing.Point(1, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -729,7 +731,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(791, 93);
+            this.panelMessage.Location = new System.Drawing.Point(782, 93);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -756,6 +758,22 @@
             this.cbCompleted.TabIndex = 15;
             this.cbCompleted.Text = "Is the form Complete?";
             this.cbCompleted.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToSearch
+            // 
+            this.btnBackToSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToSearch.BackColor = System.Drawing.Color.Navy;
+            this.btnBackToSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToSearch.ForeColor = System.Drawing.Color.White;
+            this.btnBackToSearch.Location = new System.Drawing.Point(778, 20);
+            this.btnBackToSearch.Name = "btnBackToSearch";
+            this.btnBackToSearch.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToSearch.TabIndex = 21;
+            this.btnBackToSearch.Text = "Back To Search";
+            this.btnBackToSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackToSearch.UseVisualStyleBackColor = false;
+            this.btnBackToSearch.Click += new System.EventHandler(this.btnBackToSearch_Click);
             // 
             // FollowUpVisitForm
             // 
@@ -857,5 +875,6 @@
         private System.Windows.Forms.CheckBox cbCompleted;
         private System.Windows.Forms.TextBox tbPTDiagnosis;
         private System.Windows.Forms.Label lblPTDiagnosis;
+        private System.Windows.Forms.Button btnBackToSearch;
     }
 }

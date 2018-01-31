@@ -191,6 +191,7 @@ namespace PTClinic
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
             btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
+            btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
         // Home Button Click
@@ -673,6 +674,11 @@ namespace PTClinic
                     lblFeedback.Text = ex.ToString();
                 }
             }
+        }
+
+        private void btnBackToSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

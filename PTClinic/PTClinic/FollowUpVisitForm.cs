@@ -678,7 +678,30 @@ namespace PTClinic
 
         private void btnBackToSearch_Click(object sender, EventArgs e)
         {
-
+            Search search = new Search(Admin, Login);
+            // If patient goals were updated create new profile form
+            if (visitSaved == true)
+            {
+                this.Hide();
+                search.Show();
+            }
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    {
+                        AddFollowUpVisit();
+                    }
+                    else
+                    {
+                        UpdateFollowUpVisit();
+                    }
+                }
+                this.Hide();
+                search.Show();
+            }
         }
     }
 }

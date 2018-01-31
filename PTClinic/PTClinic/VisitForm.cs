@@ -215,6 +215,7 @@ namespace PTClinic
             btnLogOut.Image = Image.FromFile("..\\..\\Resources\\ic_power_settings_new_white_24dp_1x.png");
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
             btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
+            btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
         }
 
         // Add Visit Button Click
@@ -244,44 +245,61 @@ namespace PTClinic
         // Send to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dResult == DialogResult.OK)
+            if (visitSaved == true)
             {
-                if (patientStatus.ToLower().Equals("initial"))
-                {
-                    SaveVisitInfo();
-                }
-                else if (patientStatus.ToLower().Equals("visit pending"))
-                {
-                    UpdateVisitInfo();
-                }
-
+                this.Hide();
+                Admin.Show();
             }
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientStatus.ToLower().Equals("initial"))
+                    {
+                        SaveVisitInfo();
+                    }
+                    else if (patientStatus.ToLower().Equals("visit pending"))
+                    {
+                        UpdateVisitInfo();
+                    }
 
-            this.Hide();
-            Admin.Show();
+                }
+
+                this.Hide();
+                Admin.Show();
+            }
         }
 
         // Logout Button Click
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dResult == DialogResult.OK)
+            if (visitSaved == true)
             {
-                if (patientStatus.ToLower().Equals("initial"))
+                this.Hide();
+                Login.Show();
+            }
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
                 {
-                    SaveVisitInfo();
-                }
-                else if (patientStatus.ToLower().Equals("visit pending"))
-                {
-                    UpdateVisitInfo();
+                    if (patientStatus.ToLower().Equals("initial"))
+                    {
+                        SaveVisitInfo();
+                    }
+                    else if (patientStatus.ToLower().Equals("visit pending"))
+                    {
+                        UpdateVisitInfo();
+                    }
+
                 }
 
+                this.Hide();
+                Login.Show();
             }
 
-            this.Hide();
-            Login.Show();
         }
 
         // Back to Profile button click
@@ -360,19 +378,23 @@ namespace PTClinic
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (visitSaved == false)
                 {
-                    if (patientStatus.ToLower().Equals("initial"))
+                    DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dResult == DialogResult.OK)
                     {
-                        SaveVisitInfo();
+                        if (patientStatus.ToLower().Equals("initial"))
+                        {
+                            SaveVisitInfo();
+                        }
+                        else if (patientStatus.ToLower().Equals("visit pending"))
+                        {
+                            UpdateVisitInfo();
+                        }
+
                     }
-                    else if (patientStatus.ToLower().Equals("visit pending"))
-                    {
-                        UpdateVisitInfo();
-                    }
-                    
                 }
+
             }
         }
 
@@ -617,6 +639,36 @@ namespace PTClinic
                     lblFeedback.Text = ex.ToString();
                 }
             }
+        }
+
+        private void btnBackToSearch_Click(object sender, EventArgs e)
+        {
+               Search search = new Search(Admin, Login);
+            // If patient goals were updated create new profile form
+            if (visitSaved == true)
+            {
+                this.Hide();
+                search.Show();
+            }
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientStatus.ToLower().Equals("initial"))
+                    {
+                        SaveVisitInfo();
+                    }
+                    else if (patientStatus.ToLower().Equals("visit pending"))
+                    {
+                        UpdateVisitInfo();
+                    }
+
+                }
+                this.Hide();
+                search.Show();
+            }
+           
         }
     }
 }

@@ -123,12 +123,19 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbPatientMedications = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbPatientMedHistDiagnosis = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCaregiverInfo.SuspendLayout();
             this.panelPatientInfo.SuspendLayout();
             this.gbMessage.SuspendLayout();
             this.gbInsurance.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -627,6 +634,7 @@
             // panelPatientInfo
             // 
             this.panelPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelPatientInfo.Controls.Add(this.panel2);
             this.panelPatientInfo.Controls.Add(this.lblFeedback);
             this.panelPatientInfo.Controls.Add(this.btnContinueToCaregiver);
             this.panelPatientInfo.Controls.Add(this.tbZip);
@@ -1149,6 +1157,70 @@
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.tbPatientMedications);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.tbPatientMedHistDiagnosis);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Location = new System.Drawing.Point(164, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(872, 552);
+            this.panel2.TabIndex = 91;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(486, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(254, 60);
+            this.button1.TabIndex = 80;
+            this.button1.Text = "Save Patient Information";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // tbPatientMedications
+            // 
+            this.tbPatientMedications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPatientMedications.Location = new System.Drawing.Point(215, 289);
+            this.tbPatientMedications.Multiline = true;
+            this.tbPatientMedications.Name = "tbPatientMedications";
+            this.tbPatientMedications.Size = new System.Drawing.Size(406, 83);
+            this.tbPatientMedications.TabIndex = 78;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(212, 264);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 24);
+            this.label12.TabIndex = 79;
+            this.label12.Text = "Medications";
+            // 
+            // tbPatientMedHistDiagnosis
+            // 
+            this.tbPatientMedHistDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPatientMedHistDiagnosis.Location = new System.Drawing.Point(215, 154);
+            this.tbPatientMedHistDiagnosis.Multiline = true;
+            this.tbPatientMedHistDiagnosis.Name = "tbPatientMedHistDiagnosis";
+            this.tbPatientMedHistDiagnosis.Size = new System.Drawing.Size(406, 83);
+            this.tbPatientMedHistDiagnosis.TabIndex = 76;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(212, 129);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(235, 24);
+            this.label11.TabIndex = 77;
+            this.label11.Text = "Medical History / Diagnosis";
+            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1174,6 +1246,8 @@
             this.gbMessage.PerformLayout();
             this.gbInsurance.ResumeLayout(false);
             this.gbInsurance.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1274,5 +1348,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkBoxSame;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbPatientMedications;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tbPatientMedHistDiagnosis;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -165,7 +165,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1006, 728);
+            this.btnClear.Location = new System.Drawing.Point(997, 728);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -180,7 +180,7 @@
             this.btnAddVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVisit.ForeColor = System.Drawing.Color.White;
-            this.btnAddVisit.Location = new System.Drawing.Point(815, 728);
+            this.btnAddVisit.Location = new System.Drawing.Point(806, 728);
             this.btnAddVisit.Name = "btnAddVisit";
             this.btnAddVisit.Size = new System.Drawing.Size(117, 60);
             this.btnAddVisit.TabIndex = 16;
@@ -357,7 +357,7 @@
             this.panel2.Controls.Add(this.lblPTGoals);
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblCity);
-            this.panel2.Location = new System.Drawing.Point(-1, 139);
+            this.panel2.Location = new System.Drawing.Point(-10, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 650);
             this.panel2.TabIndex = 0;
@@ -534,7 +534,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(543, 694);
+            this.lblFeedback.Location = new System.Drawing.Point(534, 694);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 94;
@@ -555,7 +555,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(-1, 83);
+            this.panel3.Location = new System.Drawing.Point(-10, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 50);
             this.panel3.TabIndex = 89;
@@ -579,7 +579,7 @@
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.lblType);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
-            this.panel4.Location = new System.Drawing.Point(626, 139);
+            this.panel4.Location = new System.Drawing.Point(617, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 497);
             this.panel4.TabIndex = 1;
@@ -669,7 +669,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(888, 92);
+            this.panelMessage.Location = new System.Drawing.Point(879, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 116;

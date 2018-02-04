@@ -263,20 +263,14 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientStatus.ToLower().Equals("initial"))
                 {
-                    if (patientStatus.ToLower().Equals("initial"))
-                    {
-                        SaveVisitInfo();
-                    }
-                    else if (patientStatus.ToLower().Equals("visit pending"))
-                    {
-                        UpdateVisitInfo();
-                    }
-
+                    SaveVisitInfo();
                 }
-
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
+                }
                 this.Hide();
                 Admin.Show();
             }
@@ -293,18 +287,13 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientStatus.ToLower().Equals("initial"))
                 {
-                    if (patientStatus.ToLower().Equals("initial"))
-                    {
-                        SaveVisitInfo();
-                    }
-                    else if (patientStatus.ToLower().Equals("visit pending"))
-                    {
-                        UpdateVisitInfo();
-                    }
-
+                    SaveVisitInfo();
+                }
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
                 }
 
                 this.Hide();
@@ -330,21 +319,23 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientStatus.ToLower().Equals("initial"))
                 {
-                    if (patientStatus.ToLower().Equals("initial"))
-                    {
-                        SaveVisitInfo();
-                    }
-                    else if (patientStatus.ToLower().Equals("visit pending"))
-                    {
-                        UpdateVisitInfo();
-                    }
-
+                    SaveVisitInfo();
+                    this.Hide();
+                    //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+                    Search newSearchForm = new Search(Admin, Login);
+                    PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+                    PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
+                    refreshProfile.Show();
                 }
-                this.Hide();
-                PatientProfile.Show();
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
+                    this.Hide();
+                    PatientProfile.Show();
+                }
+                
             }
 
         }
@@ -645,18 +636,13 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientStatus.ToLower().Equals("initial"))
                 {
-                    if (patientStatus.ToLower().Equals("initial"))
-                    {
-                        SaveVisitInfo();
-                    }
-                    else if (patientStatus.ToLower().Equals("visit pending"))
-                    {
-                        UpdateVisitInfo();
-                    }
-
+                    SaveVisitInfo();
+                }
+                else if (patientStatus.ToLower().Equals("visit pending"))
+                {
+                    UpdateVisitInfo();
                 }
                 this.Hide();
                 search.Show();

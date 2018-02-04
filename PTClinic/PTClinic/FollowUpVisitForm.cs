@@ -246,18 +246,7 @@ namespace PTClinic
                     UpdateFollowUpVisit();
                 }
 
-                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                //if (dResult == DialogResult.OK)
-                //{
-                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                //    {
-                //        AddFollowUpVisit();
-                //    }
-                //    else
-                //    {
-                //        UpdateFollowUpVisit();
-                //    }
-                //}
+          
                 this.Hide();
                 Admin.Show();
             }
@@ -284,18 +273,6 @@ namespace PTClinic
                     UpdateFollowUpVisit();
                 }
 
-                //DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                //if (dResult == DialogResult.OK)
-                //{
-                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                //    {
-                //        AddFollowUpVisit();
-                //    }
-                //    else
-                //    {
-                //        UpdateFollowUpVisit();
-                //    }
-                //}
                 this.Hide();
                 Login.Show();
             }
@@ -317,23 +294,16 @@ namespace PTClinic
             }
             else
             {
-                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                //if (dResult == DialogResult.OK)
-                //{
-                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                //    {
-                //        AddFollowUpVisit();
-                //    }
-                //    else
-                //    {
-                //        UpdateFollowUpVisit();
-                //    }
-
-                //}
-
+        
                 if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
+                    this.Hide();
+                    //  public PatientProfile(int intPID, Form adminForm, Form Login, Form search, Form PatientInfo, bool isNewRecord
+                    Search newSearchForm = new Search(Admin, Login);
+                    PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+                    PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
+                    refreshProfile.Show();
                 }
                 else
                 {
@@ -487,18 +457,7 @@ namespace PTClinic
                     // If patient record was added successfully update the Patient Info table with their Visit Status
                     if (dbSuccess == 1)
                     {
-                        //lblFeedback.Text = "Patient's Visit Information has been saved";
-
-                        /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY ARE DISCHARGED OR NEED REASSESSMENT */
-                        /*
-                        if (reassessment == true)
-                        {
-                            changeVisitType = "re-assessment";
-                        }
-                        else
-                        {
-                            changeVisitType = "follow up";
-                        }*/
+                       
 
                         using (OleDbConnection connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
                         {
@@ -525,18 +484,7 @@ namespace PTClinic
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                                     clearForm();
-                                    /*
-                                    if (PSFS == true)
-                                    {
-                                        DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
-                                        if (dResult == DialogResult.OK)
-                                        {
-                                            this.Hide();
-                                            bool fromProfile = true;
-                                            PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
-                                            temp.Show();
-                                        }
-                                    }*/
+                           
                                 }
                                 else
                                 {
@@ -708,18 +656,6 @@ namespace PTClinic
             }
             else
             {
-                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                //if (dResult == DialogResult.OK)
-                //{
-                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                //    {
-                //        AddFollowUpVisit();
-                //    }
-                //    else
-                //    {
-                //        UpdateFollowUpVisit();
-                //    }
-                //}
 
                 if (patientVisitStatus.Equals("follow up"))
                 {

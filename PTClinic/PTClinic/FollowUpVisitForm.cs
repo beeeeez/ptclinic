@@ -176,12 +176,34 @@ namespace PTClinic
         {
             // Fills Theraputic Procedures list drop down list
             cbTherapeuticProcedures.Items.Insert(0, "Select One"); // Index 0
-            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex");
-            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed");
-            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs)");
-            cbTherapeuticProcedures.Items.Add("97124 Massage");
-            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions");
-            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1");
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 1");
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 2");
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 3");
+            cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 4");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed Units - 1");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed Units - 2");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed Units - 3");
+            cbTherapeuticProcedures.Items.Add("97112 Neuromuscular Re-ed Units - 4");
+            cbTherapeuticProcedures.Items.Add("97113 Aquatic Therapy w ther ex Units - 1");
+            cbTherapeuticProcedures.Items.Add("97113 Aquatic Therapy w ther ex Units - 2");
+            cbTherapeuticProcedures.Items.Add("97113 Aquatic Therapy w ther ex Units - 3");
+            cbTherapeuticProcedures.Items.Add("97113 Aquatic Therapy w ther ex Units - 4");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs) Units - 1");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs) Units - 2");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs) Units - 3");
+            cbTherapeuticProcedures.Items.Add("97116 Gait Training (includes stairs) Units - 4");
+            cbTherapeuticProcedures.Items.Add("97124 Massage Units - 1");
+            cbTherapeuticProcedures.Items.Add("97124 Massage Units - 2");
+            cbTherapeuticProcedures.Items.Add("97124 Massage Units - 3");
+            cbTherapeuticProcedures.Items.Add("97124 Massage Units - 4");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions Units - 1");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions Units - 2");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions Units - 3");
+            cbTherapeuticProcedures.Items.Add("97140 Manual Therapy one+regions Units - 4");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 1");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 2");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
+            cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
             cbTherapeuticProcedures.SelectedIndex = 0;
         }
 

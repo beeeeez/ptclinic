@@ -92,6 +92,8 @@
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpDateOfService = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -669,6 +671,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dtpDateOfService);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tbPTDiagnosis);
             this.panel2.Controls.Add(this.lblPTDiagnosis);
             this.panel2.Controls.Add(this.lblPatientName);
@@ -775,6 +779,22 @@
             this.cbCompleted.Text = "Is the form Complete?";
             this.cbCompleted.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Date of Service";
+            // 
+            // dtpDateOfService
+            // 
+            this.dtpDateOfService.Location = new System.Drawing.Point(364, 11);
+            this.dtpDateOfService.Name = "dtpDateOfService";
+            this.dtpDateOfService.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateOfService.TabIndex = 132;
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,5 +896,7 @@
         private System.Windows.Forms.TextBox tbTherapeuticProcedures2;
         private System.Windows.Forms.Label lblTheraputicCPT2;
         private System.Windows.Forms.Label lblInsurer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpDateOfService;
     }
 }

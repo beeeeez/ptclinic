@@ -129,6 +129,9 @@ namespace PTClinic
                             // Take the appropriate fields from the datareader
                             // and put them in proper text boxes / selections
                             tbProviderID.Text = dataReaderPatientFUVisit["provider_id"].ToString();
+                            DateTime dos = Convert.ToDateTime(dataReaderPatientFUVisit["visit_date"].ToString());
+                            dtpDateOfService.Value = dos;
+                          
                             tbSubjective.Text = dataReaderPatientFUVisit["subjective"].ToString();
                             tbObjective.Text = dataReaderPatientFUVisit["objective"].ToString();
                             tbAssessment.Text = dataReaderPatientFUVisit["assessment"].ToString();
@@ -487,7 +490,7 @@ namespace PTClinic
             newVisit.VisitDate = shortProviderDate;
 
             // Get Current Date String (Set as a Short Date Time)
-            string shortDateStr = lblTodaysDate.Text;
+            string shortDateStr = dtpDateOfService.Value.ToShortDateString();
             // And convert it back into a Date Time 
             DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
 
@@ -643,11 +646,13 @@ namespace PTClinic
 
             /* Student Signature Date */
             // Get Current Date String (Set as a Short Date Time)
-            string shortStudentDateStr = lblStudentDate.Text;
+            string shortDateOfServiceStr = dtpDateOfService.Text;
             // And convert it back into a Date Time 
-            DateTime shortStudentDate = Convert.ToDateTime(shortStudentDateStr);
+            DateTime shortDate = Convert.ToDateTime(shortDateOfServiceStr);
 
-            newVisit.StudentProviderNameDate = shortStudentDate;
+            newVisit.StudentProviderNameDate = shortDate;
+
+           // MessageBox.Show(shortDate.ToShortDateString());
 
 
 
@@ -662,7 +667,7 @@ namespace PTClinic
             newVisit.VisitDate = shortProviderDate;
 
             // Get Current Date String (Set as a Short Date Time)
-            string shortDateStr = lblTodaysDate.Text;
+            string shortDateStr = dtpDateOfService.Value.ToShortDateString();
             // And convert it back into a Date Time 
             DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
 

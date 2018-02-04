@@ -14,7 +14,6 @@
                                                           vii.      Evaluation CPT
                                                         viii.      Constant Attendance CPT
 
-The idea is that they could pick each choice and indicate how many “units” of 15 minutes each they did on the patient.
 - Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - Please make the Evaluation Visit printable.
 - For the Patient Follow Up Visit information:

@@ -3,8 +3,6 @@
 ## Project Todos
 
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
-- For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
-- For the Evaluation Form
 - Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 - The fields listed below will remain the same in the “PT Evaluation” form:
                                                                i.      Chief complaint
@@ -56,6 +54,7 @@ Number of Participants identified as candidates for a full PT Evaluation: (allow
 - [x] Add the fields a) Medical History/Diagnosis, and b) Medications to be entered after the Demographics information. Maybe it would be to add another screen after the Emergency Contact and Caregiver Name info.  The goal is to get someone to enter that info from the agency’s records when they create a new patient record.
 - [x] The second request related to this is to make these 2 fields above appear on the “Patient Profile” screen, under Diagnosis and PT Goals. See the attachment for clarification.
 - [x] On the Emergency Contact and Caregiver name, make the address and information optional. Not everyone has all the info and the agency thinks the Caregiver in this situation is the nurse from APRI, so no need to track all of the info.
+- [x] For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
 
 
 ### Intial Visit Form

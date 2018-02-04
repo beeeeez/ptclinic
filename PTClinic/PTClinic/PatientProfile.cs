@@ -197,7 +197,10 @@ namespace PTClinic
                         lblZip.Text = dataReaderPatient["patient_zip"].ToString();
                         // Phone
                         lblPhone.Text = dataReaderPatient["patient_phone1"].ToString() + "  Ext: " + dataReaderPatient["patient_phone1_extension"].ToString() + "  Type: " + dataReaderPatient["patient_phone1_type"].ToString();
-
+                        // Medical History - Diagnosis
+                        tbMedHistDiagnosis.Text = dataReaderPatient["medicalhistory_diagnosis"].ToString();
+                        // Medications
+                        tbMedications.Text = dataReaderPatient["medications"].ToString();
                         //Set the Patient ID = to the one from the DB
                         PatientID = dataReaderPatient["patient_id"].ToString();
 

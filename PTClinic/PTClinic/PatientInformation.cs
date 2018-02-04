@@ -45,7 +45,7 @@ namespace PTClinic
             FillMedicalInsurance();
             FillPhoneType();
             FillGender();
-
+            FillSiteAddress();
 
             chkBoxSame.CheckedChanged += new EventHandler(chkBoxSame_CheckedChanged);
 
@@ -93,7 +93,7 @@ namespace PTClinic
                             tbCity.Text = dataReaderPatient["patient_city"].ToString();
                             cbState.SelectedItem = dataReaderPatient["patient_state"].ToString();
                             tbZip.Text = dataReaderPatient["patient_zip"].ToString();
-
+                            cbPatientSite.SelectedItem = dataReaderPatient["patient_site"].ToString();
 
                             if (dataReaderPatient["patient_has_insurance"].ToString().Equals("True"))
                             {
@@ -316,6 +316,7 @@ namespace PTClinic
             newPatient.City = tbCity.Text;
             newPatient.State = cbState.Text;
             newPatient.Zip = tbZip.Text;
+            newPatient.Site = cbPatientSite.Text;
 
             Nullable<bool> hasInsurance = null;
             if (rdbInsuranceYes.Checked == true)
@@ -703,7 +704,18 @@ namespace PTClinic
             }
         }
 
-  
+
+        public void FillSiteAddress()
+        {
+
+            cbPatientSite.Items.Insert(0, "Select One");
+            cbPatientSite.Items.Add("60 Stamp Farm Rd Cranston, RI 02921");
+            cbPatientSite.Items.Add("665 Dyer Ave Cranston, RI 02920");
+            cbPatientSite.Items.Add("1240 Park Avenue Cranston RI 02910");
+            cbPatientSite.SelectedIndex = 0;
+
+        }
+
 
     }
 }

@@ -37,6 +37,7 @@ namespace PTClinic
         private string status;
         private string medicalHistoryDiagnosis;
         private string medications;
+        private string site;
         protected string feedback;
 
         // Creating the public variables that are the front end to the private variables
@@ -199,6 +200,22 @@ namespace PTClinic
                     zip = value;
                 }
 
+            }
+        }
+
+        public string Site
+        {
+            get { return site; }
+            set {
+                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                {
+                    feedback += "Error: Enter Patient Site\n";
+                }
+                else
+                {
+                    site = value;
+                }
+               
             }
         }
 
@@ -451,7 +468,7 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email, string status, string medicalHistoryDiagnosis, string medications)
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email, string status, string medicalHistoryDiagnosis, string medications, string site)
         {
             feedback = "";
             Fname = fName;
@@ -478,6 +495,7 @@ namespace PTClinic
             Status = status;
             MedicalHistoryDiagnosis = medicalHistoryDiagnosis;
             Medications = medications;
+            Site = site;
         }
 
         // Adding a record
@@ -487,8 +505,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patients table
-            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance, patient_status, medicalhistory_diagnosis, medications)" +
-                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance, @Status, @MedHistDiagnosis, @Medications);";
+            string strSQL = "INSERT INTO Patients (patient_first_name, patient_middle_initial, patient_last_name, patient_gender, patient_dob, patient_address, patient_address2, patient_city, patient_state, patient_zip, patient_has_insurance, patient_insurer, patient_phone1, patient_phone1_extension, patient_phone1_type, patient_phone2, patient_phone2_extension, patient_phone2_type, contact_patient, patient_email, patient_other_insurance, patient_status, medicalhistory_diagnosis, medications, patient_site)" +
+                " VALUES (@Fname, @MInitial, @Lname, @Gender, @Birthdate, @Address, @Address2, @City, @State, @Zip, @HasInsurance, @Insurer, @Phone, @PhoneExtension, @PhoneType, @Phone2, @Phone2Extension, @Phone2Type, @LeaveMessage, @Email, @OtherInsurance, @Status, @MedHistDiagnosis, @Medications, @Site);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -529,6 +547,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Status", Status); // Sets the patient status to initial visit (for form population from profile)
             comm.Parameters.AddWithValue(@"MedHistDiagnosis", MedicalHistoryDiagnosis);
             comm.Parameters.AddWithValue(@"Medications", Medications);
+            comm.Parameters.AddWithValue(@"Site", Site);
 
 
             try
@@ -669,7 +688,7 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patients table
-            string strSQL = "UPDATE Patients SET patient_first_name = @Fname, patient_middle_initial = @MInitial, patient_last_name = @Lname, patient_gender = @Gender, patient_dob = @Birthdate, patient_address = @Address, patient_address2 = @Address2, patient_city = @City, patient_state = @State, patient_zip = @Zip, patient_has_insurance = @HasInsurance, patient_insurer = @Insurer, patient_phone1 = @Phone, patient_phone1_extension = @PhoneExtension, patient_phone1_type = @PhoneType, patient_phone2= @Phone2, patient_phone2_extension = @Phone2Extension, patient_phone2_type = @Phone2Type, contact_patient = @LeaveMessage, patient_email = @Email, patient_other_insurance = @OtherInsurance, medicalhistory_diagnosis = @MedHistDiagnosis, medications = @Medications" +
+            string strSQL = "UPDATE Patients SET patient_first_name = @Fname, patient_middle_initial = @MInitial, patient_last_name = @Lname, patient_gender = @Gender, patient_dob = @Birthdate, patient_address = @Address, patient_address2 = @Address2, patient_city = @City, patient_state = @State, patient_zip = @Zip, patient_has_insurance = @HasInsurance, patient_insurer = @Insurer, patient_phone1 = @Phone, patient_phone1_extension = @PhoneExtension, patient_phone1_type = @PhoneType, patient_phone2= @Phone2, patient_phone2_extension = @Phone2Extension, patient_phone2_type = @Phone2Type, contact_patient = @LeaveMessage, patient_email = @Email, patient_other_insurance = @OtherInsurance, medicalhistory_diagnosis = @MedHistDiagnosis, medications = @Medications, patient_site = @Site" +
                 " WHERE patient_id = @PatientID;";
 
             // creating database connection 
@@ -710,6 +729,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
             comm.Parameters.AddWithValue(@"MedHistDiagnosis", MedicalHistoryDiagnosis);
             comm.Parameters.AddWithValue(@"Medications", Medications);
+            comm.Parameters.AddWithValue(@"Site", Site);
             comm.Parameters.AddWithValue(@"PatientID", patientID);
 
             try

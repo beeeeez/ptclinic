@@ -3,7 +3,6 @@
 ## Project Todos
 
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
-- Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 - Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - Please make the Evaluation Visit printable.
 - For the Patient Follow Up Visit information:
@@ -45,6 +44,7 @@ Number of Participants identified as candidates for a full PT Evaluation: (allow
 ____  97110 Therapeutic Ex                        Units:    1           2          3             4
 ____ 97112 Neuromuscular Re-ed            Units:    1           2          3             4
 - [x] Repeat the “Therapeutic Procedures” changes detailed in literal e) above.
+- [x] Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

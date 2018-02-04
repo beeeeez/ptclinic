@@ -75,6 +75,8 @@
             this.lblPID = new System.Windows.Forms.Label();
             this.lblPN = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpDateOfService = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
@@ -83,8 +85,6 @@
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpDateOfService = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -98,7 +98,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1078, 678);
+            this.btnClear.Location = new System.Drawing.Point(1069, 678);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -113,7 +113,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(826, 678);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(817, 678);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -236,7 +236,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(17, 79);
+            this.panel3.Location = new System.Drawing.Point(33, 79);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -278,7 +278,7 @@
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
-            this.panel4.Location = new System.Drawing.Point(629, 136);
+            this.panel4.Location = new System.Drawing.Point(645, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -535,7 +535,8 @@
             // 
             this.tbProviderID.Location = new System.Drawing.Point(149, 82);
             this.tbProviderID.Name = "tbProviderID";
-            this.tbProviderID.Size = new System.Drawing.Size(100, 20);
+            this.tbProviderID.ReadOnly = true;
+            this.tbProviderID.Size = new System.Drawing.Size(139, 20);
             this.tbProviderID.TabIndex = 0;
             // 
             // lblPtnID
@@ -593,10 +594,26 @@
             this.panel2.Controls.Add(this.lblConstantAttendance);
             this.panel2.Controls.Add(this.cbConstantAttendance);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(17, 135);
+            this.panel2.Location = new System.Drawing.Point(33, 135);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
+            // 
+            // dtpDateOfService
+            // 
+            this.dtpDateOfService.Location = new System.Drawing.Point(364, 11);
+            this.dtpDateOfService.Name = "dtpDateOfService";
+            this.dtpDateOfService.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateOfService.TabIndex = 132;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Date of Service";
             // 
             // tbPTDiagnosis
             // 
@@ -649,7 +666,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(801, 89);
+            this.panelMessage.Location = new System.Drawing.Point(792, 89);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -676,22 +693,6 @@
             this.cbCompleted.TabIndex = 15;
             this.cbCompleted.Text = "Is the form Complete?";
             this.cbCompleted.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 103;
-            this.label1.Text = "Date of Service";
-            // 
-            // dtpDateOfService
-            // 
-            this.dtpDateOfService.Location = new System.Drawing.Point(364, 11);
-            this.dtpDateOfService.Name = "dtpDateOfService";
-            this.dtpDateOfService.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateOfService.TabIndex = 132;
             // 
             // FollowUpVisitForm
             // 

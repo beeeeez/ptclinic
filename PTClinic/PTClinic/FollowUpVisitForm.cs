@@ -92,6 +92,8 @@ namespace PTClinic
                     {
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
+                        tbProviderID.Text = dataReaderPatientVisit["provider_id"].ToString();
+
                         tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
 
                         var ptDiagnosis = dataReaderPatientVisit["pt_diagnosis"].ToString();
@@ -241,7 +243,7 @@ namespace PTClinic
                 {
                     AddFollowUpVisit();
                 }
-                else
+                else if (patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
                 }
@@ -268,7 +270,7 @@ namespace PTClinic
                 {
                     AddFollowUpVisit();
                 }
-                else
+                else if (patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
                 }
@@ -305,13 +307,12 @@ namespace PTClinic
                     PatientProfile refreshProfile = new PatientProfile(patientID, Admin, Login, newSearchForm, newPatientForm, false);
                     refreshProfile.Show();
                 }
-                else
+                else if(patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
+                    this.Hide();
+                    PatientProfile.Show();
                 }
-
-                this.Hide();
-                PatientProfile.Show();
             }
 
         }
@@ -326,7 +327,7 @@ namespace PTClinic
                 {
                     AddFollowUpVisit();
                 }
-                else
+                else if (patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
                 }
@@ -535,7 +536,7 @@ namespace PTClinic
 
             /* Student Signature Date */
             // Get Current Date String (Set as a Short Date Time)
-            string shortDateOfServiceStr = dtpDateOfService.Text;
+            string shortDateOfServiceStr = lblStudentDate.Text;
             // And convert it back into a Date Time 
             DateTime shortDate = Convert.ToDateTime(shortDateOfServiceStr);
 

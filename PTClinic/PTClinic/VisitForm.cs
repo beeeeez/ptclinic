@@ -89,10 +89,7 @@ namespace PTClinic
 
                             tbProviderID.Text = dataReaderVisit["provider_id"].ToString();
                             tbChiefComplaint.Text = dataReaderVisit["chief_complaint"].ToString();
-                            tbDiagnosis.Text = dataReaderVisit["diagnosis"].ToString();
-                            tbMedicalHistory.Text = dataReaderVisit["medical_history"].ToString();
                             tbDME.Text = dataReaderVisit["durable_medical_equipment"].ToString();
-                            tbMedications.Text = dataReaderVisit["medications"].ToString();
                             tbSubjective.Text = dataReaderVisit["subjective"].ToString();
                             tbObjective.Text = dataReaderVisit["objective"].ToString();
                             tbPTGoals.Text = dataReaderVisit["pt_goals"].ToString();
@@ -132,7 +129,6 @@ namespace PTClinic
                                 cbTherapeuticProcedures.SelectedItem = dataReaderVisit["therapeutic_procedures"].ToString();
                             }
 
-                            tbTherapeuticProcedures2.Text = dataReaderVisit["therapeutic_procedures2"].ToString();
                             tbFunctionalLimitations.Text = dataReaderVisit["functional_limitations"].ToString();
                             tbAssessment.Text = dataReaderVisit["assessment"].ToString();
 
@@ -153,18 +149,11 @@ namespace PTClinic
                                     }
                                 }
                             }
-
-                            tbFollowUpTreatment.Text = dataReaderVisit["followup_treatment"].ToString();
-
                         }
                     }
 
-                } // END using (findOneVisit)
-
-
-               
+                } // END using (findOneVisit)  
             }
-
         }
 
         // FillEvaluation Function
@@ -188,7 +177,6 @@ namespace PTClinic
             cbConstantAttendance.Items.Add("97033 Iontophroesis");
             cbConstantAttendance.Items.Add("97034 Contrastbath");
             cbConstantAttendance.Items.Add("97035 Ultrasound");
-            cbConstantAttendance.Items.Add("97036 Hubbard tank");
             cbConstantAttendance.Items.Add("97039 Low Level Laser");
             cbConstantAttendance.SelectedIndex = 0;
         }
@@ -349,12 +337,8 @@ namespace PTClinic
         {
             // Clear Text Boxes
             tbChiefComplaint.Clear();
-            tbDiagnosis.Clear();
-            tbFollowUpTreatment.Clear();
             tbFunctionalLimitations.Clear();
-            tbMedicalHistory.Clear();
             tbDME.Clear();
-            tbMedications.Clear();
             tbObjective.Clear();
             tbProviderID.Clear();
             
@@ -412,11 +396,7 @@ namespace PTClinic
 
             newVisit.VisitDate = shortDateVisit;
             newVisit.ChiefComplaint = tbChiefComplaint.Text;
-            newVisit.Diagnosis = tbDiagnosis.Text;
-
-            newVisit.MedicalHistory = tbMedicalHistory.Text;
             newVisit.DurableMedicalEquipment = tbDME.Text;
-            newVisit.Medications = tbMedications.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
             newVisit.PTGoals = tbPTGoals.Text;
@@ -426,7 +406,6 @@ namespace PTClinic
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.Assessment = tbAssessment.Text;
 
@@ -445,8 +424,6 @@ namespace PTClinic
             newVisit.PhysicalTherapyDiagnosis = ptDiagnosisResult;
 
             //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
-
-            newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
 
             // If statement to check if there are field erros
 
@@ -534,11 +511,7 @@ namespace PTClinic
 
             newVisit.VisitDate = shortDateVisit;
             newVisit.ChiefComplaint = tbChiefComplaint.Text;
-            newVisit.Diagnosis = tbDiagnosis.Text;
-
-            newVisit.MedicalHistory = tbMedicalHistory.Text;
             newVisit.DurableMedicalEquipment = tbDME.Text;
-            newVisit.Medications = tbMedications.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
             newVisit.PTGoals = tbPTGoals.Text;
@@ -548,7 +521,6 @@ namespace PTClinic
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
 
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.Assessment = tbAssessment.Text;
 
@@ -566,8 +538,6 @@ namespace PTClinic
             newVisit.PhysicalTherapyDiagnosis = ptDiagnosisResult;
 
             //newVisit.PhysicalTherapyDiagnosis = tbPTDiagnosis.Text;
-
-            newVisit.FollowUpTreatment = tbFollowUpTreatment.Text;
 
             // If statement to check if there are field erros
 

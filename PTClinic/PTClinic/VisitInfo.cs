@@ -19,10 +19,7 @@ namespace PTClinic
          * */
         private string providerID;
         private string chiefComplaint;
-        private string diagnosis;
-        private string medicalHistory;
         private string durableMedicalEquipment;
-        private string medications;
         private string subjective;
         private string objective;
         private string ptGoals;
@@ -31,11 +28,9 @@ namespace PTClinic
         private string evaluation;
         private string constantAttendance;
         private string therapeuticProcedures;
-        private string therapeuticProcedures2;
         private string functionalLimitations;
         private string assessment;
         private string physicalTherapyDiagnosis;
-        private string followUpTreatment;
         private DateTime visitDate;
         protected string feedback;
 
@@ -90,65 +85,11 @@ namespace PTClinic
             }
         }
 
-        // Public variable for Diagnosis
-        public string Diagnosis
-        {
-            get { return diagnosis; }
-            set
-            {
-                diagnosis = value;
-                //if (string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Enter a Diagnosis\n";
-                //}
-                //else
-                //{
-                //    diagnosis = value;
-                //}
-            }
-        }
-
-        // Public variable for Medical History
-        public string MedicalHistory
-        {
-            get { return medicalHistory; }
-            set
-            {
-                medicalHistory = value;
-                //if (string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Enter Medical History\n";
-                //}
-                //else
-                //{
-                //    medicalHistory = value;
-                //}
-            }
-        }
-
         // Public variable for DurableMedicalEquipment
         public string DurableMedicalEquipment
         {
             get { return durableMedicalEquipment; }
             set { durableMedicalEquipment = value; }
-        }
-
-        // Public variable for Medications
-        public string Medications
-        {
-            get { return medications; }
-            set
-            {
-                medications = value;
-                //if (string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Enter Medications\n";
-                //}
-                //else
-                //{
-                //    medications = value;
-                //}
-            }
         }
 
         // Public variable for Subjective
@@ -284,25 +225,6 @@ namespace PTClinic
             }
         }
 
-        // Public variable for Theraputic Procedures Second Portion
-        public string TherapeuticProcedures2
-        {
-            get { return therapeuticProcedures2; }
-            set
-            {
-                therapeuticProcedures2 = value;
-                /*   Commenting out until we find out actual information on what will be in it
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Specify a CPT 97139 Theraputic Procedure\n";
-                }
-                else
-                {
-                    theraputicProcedures2 = value;
-                }*/
-            }
-        }
-
         // Public variable for Functional Limitations
         public string FunctionalLimitations
         {
@@ -346,25 +268,6 @@ namespace PTClinic
             }
         }
 
-        // Public variable for Follow Up Treatment
-        public string FollowUpTreatment
-        {
-            get { return followUpTreatment; }
-            set
-            {
-                followUpTreatment = value;
-
-                //if (string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Enter Follow Up Treatment\n";
-                //}
-                //else
-                //{
-                //    followUpTreatment = value;
-                //}
-            }
-        }
-
         // Public variable for Visit Date
         public DateTime VisitDate
         {
@@ -376,10 +279,7 @@ namespace PTClinic
         public VisitInfo()
         {
             chiefComplaint = "";
-            diagnosis = "";
-            medicalHistory = "";
             durableMedicalEquipment = "";
-            medications = "";
             subjective = "";
             objective = "";
             ptGoals = "";
@@ -388,22 +288,18 @@ namespace PTClinic
             functionalLimitations = "";
             assessment = "";
             physicalTherapyDiagnosis = "";
-            followUpTreatment = ""; // Will need to be fixed if this is not a text box
             feedback = "";
         }
 
         // Overloaded Constructor
-        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string diagnosis, string medicalHistory, string durableMedicalEquipment, string medications, string subjective, string objective, string ptGoals, string treatmentPlan, string dmeNeeds, string evaluation, string constantAttendance, string therapeuticProcedures, string therapeuticProcedures2, string functionalLimitations, string assessment, string physicalTherapyDiagnosis, string followUpTreatment)
+        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string durableMedicalEquipment, string subjective, string objective, string ptGoals, string treatmentPlan, string dmeNeeds, string evaluation, string constantAttendance, string therapeuticProcedures, string functionalLimitations, string assessment, string physicalTherapyDiagnosis)
         {
             feedback = "";
             PatientID = patientID;
             ProviderID = providerID;
             VisitDate = visitDate;
             ChiefComplaint = chiefComplaint;
-            Diagnosis = diagnosis;
-            MedicalHistory = medicalHistory;
             DurableMedicalEquipment = durableMedicalEquipment;
-            Medications = medications;
             Subjective = subjective;
             Objective = objective;
             PTGoals = ptGoals;
@@ -412,11 +308,9 @@ namespace PTClinic
             Evaluation = evaluation;
             ConstantAttendance = constantAttendance;
             TherapeuticProcedures = therapeuticProcedures;
-            TherapeuticProcedures2 = therapeuticProcedures2;
             FunctionalLimitations = functionalLimitations;
             Assessment = assessment;
             PhysicalTherapyDiagnosis = physicalTherapyDiagnosis;
-            FollowUpTreatment = followUpTreatment;
         }
 
         // Adding the first visit to the DB
@@ -426,8 +320,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, diagnosis, medical_history, durable_medical_equipment, medications, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis, followup_treatment)" +
-                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @Diagnosis, @MedicalHistory, @DurableMedicalEquipment, @Medications, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @DMENeeds, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @FunctionalLimitations, @Assessment, @PhysicalTherapyDiagnosis, @FollowUpTreatment);";
+            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, durable_medical_equipment, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, functional_limitations, assessment, pt_diagnosis)" +
+                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @DurableMedicalEquipment, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @DMENeeds, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @FunctionalLimitations, @Assessment, @PhysicalTherapyDiagnosis);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -446,10 +340,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"ProviderID", ProviderID);
             comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
             comm.Parameters.AddWithValue(@"ChiefComplaint", ChiefComplaint);
-            comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
-            comm.Parameters.AddWithValue(@"MedicalHistory", MedicalHistory);
             comm.Parameters.AddWithValue(@"DurableMedicalEquipment", DurableMedicalEquipment);
-            comm.Parameters.AddWithValue(@"Medications", Medications);
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
             comm.Parameters.AddWithValue(@"Objective", Objective);
             comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
@@ -460,11 +351,9 @@ namespace PTClinic
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
-            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
             comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
-            comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
 
 
             try
@@ -538,10 +427,10 @@ namespace PTClinic
             // SQL command to add a record to the Patient_Visit 
 
             string strSQL = "UPDATE Patient_Visit SET provider_id = @ProviderID, visit_date = @VisitDate, chief_complaint = @ChiefComplaint, " +
-                 "diagnosis = @Diagnosis, medical_history = @MedicalHistory, durable_medical_equipment = @DurableMedicalEquipment, medications = @Medications, subjective = @Subjective, " +
+                 "durable_medical_equipment = @DurableMedicalEquipment, subjective = @Subjective, " +
                  "objective = @Objective, pt_goals = @PTGoals, treatment_plan = @TreatmentPlan, dme_needs = @DMENeeds, evaluation = @Evaluation, " +
-                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, functional_limitations = @FunctionalLimitations, " +
-                 "assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis, followup_treatment = @FollowUpTreatment" +
+                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, functional_limitations = @FunctionalLimitations, " +
+                 "assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis" +
                  " WHERE patient_id = @PatientID;";
    
  
@@ -562,10 +451,7 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"ProviderID", ProviderID);
             comm.Parameters.AddWithValue(@"VisitDate", VisitDate).ToString();
             comm.Parameters.AddWithValue(@"ChiefComplaint", ChiefComplaint);
-            comm.Parameters.AddWithValue(@"Diagnosis", Diagnosis);
-            comm.Parameters.AddWithValue(@"MedicalHistory", MedicalHistory);
             comm.Parameters.AddWithValue(@"DurableMedicalEquipment", DurableMedicalEquipment);
-            comm.Parameters.AddWithValue(@"Medications", Medications);
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
             comm.Parameters.AddWithValue(@"Objective", Objective);
             comm.Parameters.AddWithValue(@"PTGoals", PTGoals);
@@ -576,11 +462,9 @@ namespace PTClinic
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
-            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
             comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
-            comm.Parameters.AddWithValue(@"FollowUpTreatment", FollowUpTreatment);
             comm.Parameters.AddWithValue(@"PatientID", PatientID);
 
 

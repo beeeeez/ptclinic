@@ -60,6 +60,26 @@ namespace PTClinic
                 btnAddFollowUp.Text = "Add Visit Info";
             }
 
+
+
+            PatientInfo tempPatient = new PatientInfo();
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = tempPatient.FindOnePatient(connection, patientID))
+                {
+                    while (dataReaderPatient.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+
+                        tbDiagnosis.Text = dataReaderPatient["medicalhistory_diagnosis"].ToString();
+
+                        //MessageBox.Show(PatientID);
+                    }
+                }
+            }
+
             // Create variable for a Patients initial Visit Information
             VisitInfo tempPatientVisit = new VisitInfo();
 
@@ -72,7 +92,6 @@ namespace PTClinic
                     {
                         // Take the appropriate fields from the datareader
                         // and put them in proper labels
-                        tbDiagnosis.Text = dataReaderPatientVisit["diagnosis"].ToString();
                         tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
 
                         var ptDiagnosis = dataReaderPatientVisit["pt_diagnosis"].ToString();

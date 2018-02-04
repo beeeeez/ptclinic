@@ -27,6 +27,7 @@ namespace PTClinic
 
             setButtonIcon();
 
+
             patientID = 0;
             existingPatientID = pID;
 
@@ -135,6 +136,8 @@ namespace PTClinic
                             }
 
                             tbEmail.Text = dataReaderPatient["patient_email"].ToString();
+                            tbPatientMedHistDiagnosis.Text = dataReaderPatient["medicalhistory_diagnosis"].ToString();
+                            tbPatientMedications.Text = dataReaderPatient["medications"].ToString();
 
 
                         }
@@ -350,6 +353,8 @@ namespace PTClinic
 
             newPatient.Email = tbEmail.Text;
             newPatient.Status = "initial";
+            newPatient.MedicalHistoryDiagnosis = tbPatientMedHistDiagnosis.Text;
+            newPatient.Medications = tbPatientMedications.Text;
 
 
             // If statement to check if there are field erros
@@ -377,7 +382,9 @@ namespace PTClinic
                         {
                             lblFeedback.Text = "Patient Info has been updated";
                             panelPatientInfo.Visible = false;
+                           
                             panelCaregiverInfo.Visible = true;
+
 
                             // Clear all fields
                             ClearPatientForm();
@@ -416,6 +423,7 @@ namespace PTClinic
                                         patientID = dr.GetInt32(0);
                                         panelPatientInfo.Visible = false;
                                         panelCaregiverInfo.Visible = true;
+                                     
 
                                         // Clear all fields
                                         ClearPatientForm();
@@ -446,9 +454,9 @@ namespace PTClinic
                         }
                     }
 
-                  
 
-                  
+
+
 
                 }
                 catch (Exception ex)
@@ -528,7 +536,7 @@ namespace PTClinic
                                 {
                                     lblCareFeedback.Text = "1 Patient Record has been updated";
 
-                                    // If caregiver is successfully updated go to patient profile page
+                                    //If caregiver is successfully updated go to patient profile page
                                     bool isNewRecord = true;
 
                                     PatientProfile temp = new PatientProfile(existingPatientID, Admin, Login, Search, this, isNewRecord);
@@ -573,11 +581,11 @@ namespace PTClinic
                             {
 
                                 int CGSuccess = newCaregiver.AddRecord();
-                                
+
                                 if (CGSuccess == 1)
                                 {
                                     lblCareFeedback.Text = "1 Patient Record has been saved";
-
+                              
                                     // If caregiver is successfully updated go to patient profile page
                                     bool isNewRecord = true;
 
@@ -675,11 +683,17 @@ namespace PTClinic
             cbCGPhone2Type.SelectedIndex = 0;
         }
 
+        public void ClearMedDiagnosisForm()
+        {
+            tbPatientMedHistDiagnosis.Clear();
+            tbPatientMedications.Clear();
+        }
+
         public void chkBoxSame_CheckedChanged(Object sender, EventArgs e)
         {
             if (chkBoxSame.Checked == true)
             {
-               // MessageBox.Show("Checkbox checked!");
+                // MessageBox.Show("Checkbox checked!");
 
                 tbCGName.Text = tbECName.Text;
                 tbCGPhone1.Text = tbECPhone.Text;
@@ -688,5 +702,8 @@ namespace PTClinic
 
             }
         }
+
+  
+
     }
 }

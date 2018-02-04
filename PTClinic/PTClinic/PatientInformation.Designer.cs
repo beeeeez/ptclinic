@@ -123,7 +123,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.tbPatientMedications = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -135,7 +134,6 @@
             this.panelPatientInfo.SuspendLayout();
             this.gbMessage.SuspendLayout();
             this.gbInsurance.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -412,11 +410,11 @@
             this.btnAddCaregiver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCaregiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCaregiver.ForeColor = System.Drawing.Color.White;
-            this.btnAddCaregiver.Location = new System.Drawing.Point(863, 538);
+            this.btnAddCaregiver.Location = new System.Drawing.Point(864, 543);
             this.btnAddCaregiver.Name = "btnAddCaregiver";
             this.btnAddCaregiver.Size = new System.Drawing.Size(193, 60);
             this.btnAddCaregiver.TabIndex = 33;
-            this.btnAddCaregiver.Text = "Complete Patient Record";
+            this.btnAddCaregiver.Text = "Continue";
             this.btnAddCaregiver.UseVisualStyleBackColor = false;
             this.btnAddCaregiver.Click += new System.EventHandler(this.btnAddCaregiver_Click);
             // 
@@ -634,7 +632,10 @@
             // panelPatientInfo
             // 
             this.panelPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelPatientInfo.Controls.Add(this.panel2);
+            this.panelPatientInfo.Controls.Add(this.tbPatientMedications);
+            this.panelPatientInfo.Controls.Add(this.label12);
+            this.panelPatientInfo.Controls.Add(this.tbPatientMedHistDiagnosis);
+            this.panelPatientInfo.Controls.Add(this.label11);
             this.panelPatientInfo.Controls.Add(this.lblFeedback);
             this.panelPatientInfo.Controls.Add(this.btnContinueToCaregiver);
             this.panelPatientInfo.Controls.Add(this.tbZip);
@@ -681,7 +682,7 @@
             this.panelPatientInfo.Controls.Add(this.lblFirstName);
             this.panelPatientInfo.Location = new System.Drawing.Point(29, 114);
             this.panelPatientInfo.Name = "panelPatientInfo";
-            this.panelPatientInfo.Size = new System.Drawing.Size(1203, 581);
+            this.panelPatientInfo.Size = new System.Drawing.Size(1203, 623);
             this.panelPatientInfo.TabIndex = 90;
             // 
             // lblFeedback
@@ -701,7 +702,7 @@
             this.btnContinueToCaregiver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinueToCaregiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinueToCaregiver.ForeColor = System.Drawing.Color.White;
-            this.btnContinueToCaregiver.Location = new System.Drawing.Point(886, 509);
+            this.btnContinueToCaregiver.Location = new System.Drawing.Point(914, 550);
             this.btnContinueToCaregiver.Name = "btnContinueToCaregiver";
             this.btnContinueToCaregiver.Size = new System.Drawing.Size(254, 60);
             this.btnContinueToCaregiver.TabIndex = 22;
@@ -722,7 +723,7 @@
             // tbPhone2
             // 
             this.tbPhone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhone2.Location = new System.Drawing.Point(654, 325);
+            this.tbPhone2.Location = new System.Drawing.Point(647, 252);
             this.tbPhone2.Mask = "(999) 000-0000";
             this.tbPhone2.Name = "tbPhone2";
             this.tbPhone2.Size = new System.Drawing.Size(131, 26);
@@ -731,7 +732,7 @@
             // tbPhone1
             // 
             this.tbPhone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhone1.Location = new System.Drawing.Point(654, 253);
+            this.tbPhone1.Location = new System.Drawing.Point(647, 180);
             this.tbPhone1.Mask = "(999) 000-0000";
             this.tbPhone1.Name = "tbPhone1";
             this.tbPhone1.Size = new System.Drawing.Size(131, 26);
@@ -742,7 +743,7 @@
             this.gbMessage.Controls.Add(this.rdbMessageNo);
             this.gbMessage.Controls.Add(this.rdbMessageYes);
             this.gbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMessage.Location = new System.Drawing.Point(944, 359);
+            this.gbMessage.Location = new System.Drawing.Point(937, 286);
             this.gbMessage.Name = "gbMessage";
             this.gbMessage.Size = new System.Drawing.Size(136, 45);
             this.gbMessage.TabIndex = 20;
@@ -851,7 +852,7 @@
             this.cbPhone1Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPhone1Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPhone1Type.FormattingEnabled = true;
-            this.cbPhone1Type.Location = new System.Drawing.Point(959, 247);
+            this.cbPhone1Type.Location = new System.Drawing.Point(952, 174);
             this.cbPhone1Type.Name = "cbPhone1Type";
             this.cbPhone1Type.Size = new System.Drawing.Size(121, 28);
             this.cbPhone1Type.TabIndex = 16;
@@ -862,7 +863,7 @@
             this.cbPhone2Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPhone2Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPhone2Type.FormattingEnabled = true;
-            this.cbPhone2Type.Location = new System.Drawing.Point(959, 323);
+            this.cbPhone2Type.Location = new System.Drawing.Point(952, 250);
             this.cbPhone2Type.Name = "cbPhone2Type";
             this.cbPhone2Type.Size = new System.Drawing.Size(121, 28);
             this.cbPhone2Type.TabIndex = 19;
@@ -870,7 +871,7 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(654, 443);
+            this.tbEmail.Location = new System.Drawing.Point(649, 364);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 26);
             this.tbEmail.TabIndex = 21;
@@ -926,7 +927,7 @@
             // tbOtherInsurance
             // 
             this.tbOtherInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOtherInsurance.Location = new System.Drawing.Point(651, 182);
+            this.tbOtherInsurance.Location = new System.Drawing.Point(914, 114);
             this.tbOtherInsurance.Name = "tbOtherInsurance";
             this.tbOtherInsurance.Size = new System.Drawing.Size(244, 26);
             this.tbOtherInsurance.TabIndex = 13;
@@ -934,7 +935,7 @@
             // tbPhoneExt1
             // 
             this.tbPhoneExt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhoneExt1.Location = new System.Drawing.Point(826, 251);
+            this.tbPhoneExt1.Location = new System.Drawing.Point(819, 178);
             this.tbPhoneExt1.Name = "tbPhoneExt1";
             this.tbPhoneExt1.Size = new System.Drawing.Size(87, 26);
             this.tbPhoneExt1.TabIndex = 15;
@@ -942,7 +943,7 @@
             // tbPhoneExt2
             // 
             this.tbPhoneExt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhoneExt2.Location = new System.Drawing.Point(826, 325);
+            this.tbPhoneExt2.Location = new System.Drawing.Point(819, 252);
             this.tbPhoneExt2.Name = "tbPhoneExt2";
             this.tbPhoneExt2.Size = new System.Drawing.Size(87, 26);
             this.tbPhoneExt2.TabIndex = 18;
@@ -951,7 +952,7 @@
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(650, 372);
+            this.lblMessage.Location = new System.Drawing.Point(643, 299);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(284, 24);
             this.lblMessage.TabIndex = 95;
@@ -961,7 +962,7 @@
             // 
             this.lblPhone2Type.AutoSize = true;
             this.lblPhone2Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone2Type.Location = new System.Drawing.Point(919, 328);
+            this.lblPhone2Type.Location = new System.Drawing.Point(912, 255);
             this.lblPhone2Type.Name = "lblPhone2Type";
             this.lblPhone2Type.Size = new System.Drawing.Size(43, 20);
             this.lblPhone2Type.TabIndex = 94;
@@ -971,7 +972,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(650, 414);
+            this.lblEmail.Location = new System.Drawing.Point(645, 335);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(57, 24);
             this.lblEmail.TabIndex = 93;
@@ -981,7 +982,7 @@
             // 
             this.lblPhone2Ext.AutoSize = true;
             this.lblPhone2Ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone2Ext.Location = new System.Drawing.Point(795, 328);
+            this.lblPhone2Ext.Location = new System.Drawing.Point(788, 255);
             this.lblPhone2Ext.Name = "lblPhone2Ext";
             this.lblPhone2Ext.Size = new System.Drawing.Size(36, 20);
             this.lblPhone2Ext.TabIndex = 92;
@@ -991,7 +992,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(919, 250);
+            this.lblType.Location = new System.Drawing.Point(912, 177);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(43, 20);
             this.lblType.TabIndex = 91;
@@ -1001,7 +1002,7 @@
             // 
             this.lblExtension.AutoSize = true;
             this.lblExtension.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExtension.Location = new System.Drawing.Point(791, 253);
+            this.lblExtension.Location = new System.Drawing.Point(784, 180);
             this.lblExtension.Name = "lblExtension";
             this.lblExtension.Size = new System.Drawing.Size(36, 20);
             this.lblExtension.TabIndex = 90;
@@ -1011,7 +1012,7 @@
             // 
             this.lblTelephone2.AutoSize = true;
             this.lblTelephone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone2.Location = new System.Drawing.Point(650, 298);
+            this.lblTelephone2.Location = new System.Drawing.Point(643, 225);
             this.lblTelephone2.Name = "lblTelephone2";
             this.lblTelephone2.Size = new System.Drawing.Size(118, 24);
             this.lblTelephone2.TabIndex = 89;
@@ -1031,7 +1032,7 @@
             // 
             this.lblTelephone1.AutoSize = true;
             this.lblTelephone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone1.Location = new System.Drawing.Point(650, 226);
+            this.lblTelephone1.Location = new System.Drawing.Point(643, 153);
             this.lblTelephone1.Name = "lblTelephone1";
             this.lblTelephone1.Size = new System.Drawing.Size(118, 24);
             this.lblTelephone1.TabIndex = 87;
@@ -1041,7 +1042,7 @@
             // 
             this.lblOtherInsurance.AutoSize = true;
             this.lblOtherInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOtherInsurance.Location = new System.Drawing.Point(650, 155);
+            this.lblOtherInsurance.Location = new System.Drawing.Point(913, 87);
             this.lblOtherInsurance.Name = "lblOtherInsurance";
             this.lblOtherInsurance.Size = new System.Drawing.Size(57, 24);
             this.lblOtherInsurance.TabIndex = 86;
@@ -1157,68 +1158,51 @@
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.tbPatientMedications);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.tbPatientMedHistDiagnosis);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(164, 17);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(872, 552);
-            this.panel2.TabIndex = 91;
-            // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(486, 405);
+            this.button1.Location = new System.Drawing.Point(286, 84);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 60);
-            this.button1.TabIndex = 80;
-            this.button1.Text = "Save Patient Information";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 91;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tbPatientMedications
             // 
             this.tbPatientMedications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPatientMedications.Location = new System.Drawing.Point(215, 289);
+            this.tbPatientMedications.Location = new System.Drawing.Point(650, 500);
             this.tbPatientMedications.Multiline = true;
             this.tbPatientMedications.Name = "tbPatientMedications";
-            this.tbPatientMedications.Size = new System.Drawing.Size(406, 83);
-            this.tbPatientMedications.TabIndex = 78;
+            this.tbPatientMedications.Size = new System.Drawing.Size(406, 44);
+            this.tbPatientMedications.TabIndex = 112;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(212, 264);
+            this.label12.Location = new System.Drawing.Point(647, 475);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 24);
-            this.label12.TabIndex = 79;
+            this.label12.TabIndex = 113;
             this.label12.Text = "Medications";
             // 
             // tbPatientMedHistDiagnosis
             // 
             this.tbPatientMedHistDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPatientMedHistDiagnosis.Location = new System.Drawing.Point(215, 154);
+            this.tbPatientMedHistDiagnosis.Location = new System.Drawing.Point(649, 431);
             this.tbPatientMedHistDiagnosis.Multiline = true;
             this.tbPatientMedHistDiagnosis.Name = "tbPatientMedHistDiagnosis";
-            this.tbPatientMedHistDiagnosis.Size = new System.Drawing.Size(406, 83);
-            this.tbPatientMedHistDiagnosis.TabIndex = 76;
+            this.tbPatientMedHistDiagnosis.Size = new System.Drawing.Size(406, 38);
+            this.tbPatientMedHistDiagnosis.TabIndex = 110;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(212, 129);
+            this.label11.Location = new System.Drawing.Point(646, 406);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(235, 24);
-            this.label11.TabIndex = 77;
+            this.label11.TabIndex = 111;
             this.label11.Text = "Medical History / Diagnosis";
             // 
             // PatientInformation
@@ -1228,6 +1212,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 749);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelPatientInfo);
             this.Controls.Add(this.panelCaregiverInfo);
             this.Controls.Add(this.lblTodaysDate);
@@ -1246,8 +1231,6 @@
             this.gbMessage.PerformLayout();
             this.gbInsurance.ResumeLayout(false);
             this.gbInsurance.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1348,7 +1331,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkBoxSame;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbPatientMedications;
         private System.Windows.Forms.Label label12;

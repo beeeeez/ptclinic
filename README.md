@@ -7,10 +7,7 @@
 - The second request related to this is to make these 2 fields above appear on the “Patient Profile” screen, under Diagnosis and PT Goals. See the attachment for clarification.
 - On the Emergency Contact and Caregiver name, make the address and information optional. Not everyone has all the info and the agency thinks the Caregiver in this situation is the nurse from APRI, so no need to track all of the info.
 - For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
-- For the “Patient Visit Information” screen, which is the first visit that appears when you create a patient, please call it “PT Evaluation” – we think it is clear this way. Also,
 - Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
-- For the “Provider ID” they want to keep the field, but rename it as “PT of Record”, which is usual in the field.
-- Since we already removed the fields “Diagnose”, and merged it with “Medical history” and moved the “Medications” to the Demographics section, those fields will NOT appear here.
 - The fields listed below will remain the same in the “PT Evaluation” form:
                                                                i.      Chief complaint
                                                              ii.      Subjective
@@ -24,10 +21,6 @@
 ____  97110 Therapeutic Ex                        Units:    1           2          3             4
 ____ 97112 Neuromuscular Re-ed            Units:    1           2          3             4
 The idea is that they could pick each choice and indicate how many “units” of 15 minutes each they did on the patient.
-
-- For “Constant attendance” please remove option CPT 97036.
-- Remove the “Unselected Therapeutic Procedure” field.
-- Remove the “Follow up treatment” field at the bottom.
 - Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - Please make the Evaluation Visit printable.
 - For the Patient Follow Up Visit information:
@@ -57,6 +50,12 @@ Number of Participants identified as candidates for a full PT Evaluation: (allow
 
 ### COMPLETED UPDATES 
 - [x] For the Appointment section, just allow another address possible: 1240 Park Avenue Cranston, RI  
+- [x] For “Constant attendance” please remove option CPT 97036.
+- [x] Remove the “Unselected Therapeutic Procedure” field.
+- [x] Remove the “Follow up treatment” field at the bottom.
+- [x] For the “Provider ID” they want to keep the field, but rename it as “PT of Record”, which is usual in the field.
+- [x] Since we already removed the fields “Diagnose”, and merged it with “Medical history” and moved the “Medications” to the Demographics section, those fields will NOT appear here.
+- [x] For the “Patient Visit Information” screen, which is the first visit that appears when you create a patient, please call it “PT Evaluation” – we think it is clear this way. Also,
 
 
 ### Intial Visit Form

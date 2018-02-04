@@ -7,9 +7,7 @@
 - Please make the Evaluation Visit printable.
 - Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
 - Remove the ‘Unselected Therapeutic Procedure” field.
-- Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable)
-- Make sure that everyone can VIEW everything on the patient (not edit, just view).
 - Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
 Visit type: Group Exercise
 
@@ -39,11 +37,14 @@ Number of Participants identified as candidates for a full PT Evaluation: (allow
 - [x] On the Emergency Contact and Caregiver name, make the address and information optional. Not everyone has all the info and the agency thinks the Caregiver in this situation is the nurse from APRI, so no need to track all of the info.
 - [x] For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
 - [x] For the “Therapeutic Procedures (15 minutes each)” they would like to modify the choices because they could use the same choice more than once, and they also need the number of units. I think in the end we are looking at something like this:
-____  97110 Therapeutic Ex                        Units:    1           2          3             4
-____ 97112 Neuromuscular Re-ed            Units:    1           2          3             4
+ 97110 Therapeutic Ex                        Units:    1           2          3             4
+  97112 Neuromuscular Re-ed            Units:    1           2          3             4
 - [x] Repeat the “Therapeutic Procedures” changes detailed in literal e) above.
 - [x] Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 - [x] Add a “Date of Service” at the beginning of the form. (Sometimes this form is filled out after the visit, so they need the flexibility to data enter a past visit, so the date should allow entering a past date.
+- [x] Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
+- [x] Make sure that everyone can VIEW everything on the patient (not edit, just view).
+
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

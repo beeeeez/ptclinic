@@ -35,6 +35,8 @@ namespace PTClinic
         private Nullable<bool> leaveMessage;
         private string email;
         private string status;
+        private string medicalHistoryDiagnosis;
+        private string medications;
         protected string feedback;
 
         // Creating the public variables that are the front end to the private variables
@@ -409,12 +411,30 @@ namespace PTClinic
                 email = value;
             }
         }
-
+ 
         // Public variable specifically for First Name
         public string Status
         {
             get { return status; }
             set { status = value; }
+        }
+
+        public string MedicalHistoryDiagnosis
+        {
+            get { return medicalHistoryDiagnosis; }
+            set
+            {
+                medicalHistoryDiagnosis = value;
+            }
+        }
+
+        public string Medications
+        {
+            get { return medications; }
+            set
+            {
+                medications = value;
+            }
         }
 
         // Default Constructor
@@ -431,7 +451,7 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email, string status)
+        public PatientInfo(string fName, string mInitial, string lName, string gender, DateTime dob, string address, string address2, string city, string state, string zip, Nullable<bool> hasInsurance, string insurer, string otherInsurer, string phone, string phoneExtension, string phoneType, string phone2, string phone2Extension, string phone2Type, Nullable<bool> leaveMessage, string email, string status, string medicalHistoryDiagnosis, string medications)
         {
             feedback = "";
             Fname = fName;
@@ -456,6 +476,8 @@ namespace PTClinic
             LeaveMessage = leaveMessage;
             Email = email;
             Status = status;
+            MedicalHistoryDiagnosis = medicalHistoryDiagnosis;
+            Medications = medications;
         }
 
         // Adding a record
@@ -505,6 +527,8 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Email", Email);
             comm.Parameters.AddWithValue(@"OtherInsurer", OtherInsurer);
             comm.Parameters.AddWithValue(@"Status", Status); // Sets the patient status to initial visit (for form population from profile)
+            //comm.Parameters.AddWithValue(@"MedHistDiagnosis", MedicalHistoryDiagnosis);
+            //comm.Parameters.AddWithValue(@"Medications", Medications);
 
 
             try
@@ -748,6 +772,50 @@ namespace PTClinic
 
             return success;
         } // End of UpdatePatientStatus
+
+
+        public virtual int UpdatePatientDiagnosisHistory(OleDbConnection conn, int patientID)
+        {
+            string strFeedback = "";
+            int success = 0;
+
+            // SQL command to add a record to the Patients table
+            string strSQL = "UPDATE Patients SET medicalhistory_diagnosis = @MedHistDiagnosis, medications = @Medications WHERE patient_id = @PatientID;";
+
+            // Create the who what and where of the DB
+            string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
+            // Creating the connection string using the oldedb conn variable and equaling it to the information gathered from connectionstring website
+            conn.ConnectionString = strConn;
+
+            // creating database command connection
+            OleDbCommand comm = new OleDbCommand();
+            comm.CommandText = strSQL; // Commander knows what to say
+            comm.Connection = conn;   // Getting the connection
+
+            // Fill in the parameters (has to be created in same sequence as they are used in SQL Statement.)
+            comm.Parameters.AddWithValue(@"MedHistDiagnosis", MedicalHistoryDiagnosis);
+            comm.Parameters.AddWithValue(@"Medications", Medications);
+            comm.Parameters.AddWithValue(@"PatientID", patientID);
+
+            try
+            {
+                // open a connection to the database
+                conn.Open();
+
+                // Giving strFeedback the number of records added
+                //strFeedback = comm.ExecuteNonQuery().ToString() + " Patient Info Updated";
+                success = comm.ExecuteNonQuery();
+
+                // close the database
+                conn.Close();
+            }
+            catch (Exception err)
+            {
+                strFeedback = "ERROR: " + err.Message;
+            }
+
+            return success;
+        } // End of UpdatePatientDiagnosisHistory
 
     } // End of PatientInfo
 }

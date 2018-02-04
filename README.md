@@ -4,16 +4,6 @@
 
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
 - Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
-- The fields listed below will remain the same in the “PT Evaluation” form:
-                                                               i.      Chief complaint
-                                                             ii.      Subjective
-                                                           iii.      Objective
-                                                            iv.      PT goals
-                                                             v.      Treatment Plan
-                                                            vi.      DME Needs
-                                                          vii.      Evaluation CPT
-                                                        viii.      Constant Attendance CPT
-
 - Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - Please make the Evaluation Visit printable.
 - For the Patient Follow Up Visit information:

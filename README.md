@@ -7,6 +7,7 @@
 - The second request related to this is to make these 2 fields above appear on the “Patient Profile” screen, under Diagnosis and PT Goals. See the attachment for clarification.
 - On the Emergency Contact and Caregiver name, make the address and information optional. Not everyone has all the info and the agency thinks the Caregiver in this situation is the nurse from APRI, so no need to track all of the info.
 - For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
+- For the Evaluation Form
 - Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 - The fields listed below will remain the same in the “PT Evaluation” form:
                                                                i.      Chief complaint
@@ -25,7 +26,6 @@ The idea is that they could pick each choice and indicate how many “units” o
 - Please make the Evaluation Visit printable.
 - For the Patient Follow Up Visit information:
 Add a “Date of Service” at the beginning of the form. (Sometimes this form is filled out after the visit, so they need the flexibility to data enter a past visit, so the date should allow entering a past date.
-- For the Student Provider and Provider Name, the date is usually the date they enter the data so that can remain as is.
 - Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
 - Repeat the “Therapeutic Procedures” changes detailed in literal e) above.
 - Remove the ‘Unselected Therapeutic Procedure” field.

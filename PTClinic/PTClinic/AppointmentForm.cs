@@ -82,8 +82,9 @@ namespace PTClinic
         {
 
             cbAppAddress.Items.Insert(0, "Select One");
-            cbAppAddress.Items.Add("60 Stamp Farm Rd, Cranston, RI 02921");
-            cbAppAddress.Items.Add("665 Dyer Ave, Cranston, RI 02920");
+            cbAppAddress.Items.Add("60 Stamp Farm Rd Cranston, RI 02921");
+            cbAppAddress.Items.Add("665 Dyer Ave Cranston, RI 02920");
+            cbAppAddress.Items.Add("1240 Park Avenue Cranston RI 02910");
             cbAppAddress.SelectedIndex = 0;
 
         }
@@ -186,6 +187,13 @@ namespace PTClinic
                             appointmentString.AppendLine("60 Stamp Farm Rd");
                             appointmentString.AppendLine(" Cranston, RI 02921");
                             appointmentString.AppendLine("Phone: (401) 942 - 3445");
+                        }
+                        else if (cbAppAddress.Text.Equals("1240 Park Avenue Cranston RI 02910"))
+                        {
+                            appointmentString.AppendLine("Access Point RI");
+                            appointmentString.AppendLine("1240 Park Avenue");
+                            appointmentString.AppendLine(" Cranston, RI 02910");
+                            appointmentString.AppendLine("Phone: (401) 228 - 3940");
                         }
                         else
                         {

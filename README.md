@@ -4,7 +4,6 @@
 
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
 - Please make the Evaluation Visit printable.
-- Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable)
 - Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
 Visit type: Group Exercise
@@ -44,6 +43,7 @@ Number of Participants identified as candidates for a full PT Evaluation: (allow
 - [x] Make sure that everyone can VIEW everything on the patient (not edit, just view).
 - [x] Remove the ‘Unselected Therapeutic Procedure” field.
 - [x] Allow to SAVE the information (not sure the “is the form complete” is needed…..)
+- [x] Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

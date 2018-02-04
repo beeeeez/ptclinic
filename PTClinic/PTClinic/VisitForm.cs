@@ -88,6 +88,8 @@ namespace PTClinic
                             // and put them in proper labels
 
                             tbProviderID.Text = dataReaderVisit["provider_id"].ToString();
+                            DateTime patientVisitDate = Convert.ToDateTime(dataReaderVisit["visit_date"].ToString());
+                            dtpVisitDate.Value = patientVisitDate;
                             tbChiefComplaint.Text = dataReaderVisit["chief_complaint"].ToString();
                             tbDME.Text = dataReaderVisit["durable_medical_equipment"].ToString();
                             tbSubjective.Text = dataReaderVisit["subjective"].ToString();

@@ -2,6 +2,56 @@
 
 ## Project Todos
 
+- Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
+- Add the fields a) Medical History/Diagnosis, and b) Medications to be entered after the Demographics information. Maybe it would be to add another screen after the Emergency Contact and Caregiver Name info.  The goal is to get someone to enter that info from the agency’s records when they create a new patient record.
+- The second request related to this is to make these 2 fields above appear on the “Patient Profile” screen, under Diagnosis and PT Goals. See the attachment for clarification.
+- On the Emergency Contact and Caregiver name, make the address and information optional. Not everyone has all the info and the agency thinks the Caregiver in this situation is the nurse from APRI, so no need to track all of the info.
+- For the Demographic screen, allow 2 addresses. One address maybe the one at the site the patient is seen, but from time to time the PT will go to the patient’s home, and in that case an address would be needed.
+- For the “Patient Visit Information” screen, which is the first visit that appears when you create a patient, please call it “PT Evaluation” – we think it is clear this way. Also,
+- Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
+- For the “Provider ID” they want to keep the field, but rename it as “PT of Record”, which is usual in the field.
+- Since we already removed the fields “Diagnose”, and merged it with “Medical history” and moved the “Medications” to the Demographics section, those fields will NOT appear here.
+- The fields listed below will remain the same in the “PT Evaluation” form:
+                                                               i.      Chief complaint
+                                                             ii.      Subjective
+                                                           iii.      Objective
+                                                            iv.      PT goals
+                                                             v.      Treatment Plan
+                                                            vi.      DME Needs
+                                                          vii.      Evaluation CPT
+                                                        viii.      Constant Attendance CPT
+- For the “Therapeutic Procedures (15 minutes each)” they would like to modify the choices because they could use the same choice more than once, and they also need the number of units. I think in the end we are looking at something like this:
+____  97110 Therapeutic Ex                        Units:    1           2          3             4
+____ 97112 Neuromuscular Re-ed            Units:    1           2          3             4
+The idea is that they could pick each choice and indicate how many “units” of 15 minutes each they did on the patient.
+
+- For “Constant attendance” please remove option CPT 97036.
+- Remove the “Unselected Therapeutic Procedure” field.
+- Remove the “Follow up treatment” field at the bottom.
+- Allow to SAVE the information (not sure the “is the form complete” is needed…..)
+- Please make the Evaluation Visit printable.
+- For the Patient Follow Up Visit information:
+Add a “Date of Service” at the beginning of the form. (Sometimes this form is filled out after the visit, so they need the flexibility to data enter a past visit, so the date should allow entering a past date.
+- For the Student Provider and Provider Name, the date is usually the date they enter the data so that can remain as is.
+- Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
+- Repeat the “Therapeutic Procedures” changes detailed in literal e) above.
+- Remove the ‘Unselected Therapeutic Procedure” field.
+- Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
+- Once the form is saved, please make it visible by other users (not editable, but just viewable)
+- For the Appointment section, just allow another address possible: 1240 Park Avenue Cranston, RI  
+- Make sure that everyone can VIEW everything on the patient (not edit, just view).
+- Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
+Visit type: Group Exercise
+Date:
+Number of Participants: (2 digit numeric field)
+Participants names (allow to leave blank or to enter first names only or initials)
+Activities conducted: Allow 5 choices to fill out with short text (dance, weights, etc.)
+Group CPT Code:
+Number of Participants identified as candidates for a full PT Evaluation: (allow a number only)
+
+
+
+
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.
 - [x] Adds to the Patient Info table which visit it is

@@ -114,15 +114,16 @@ namespace PTClinic
             get { return relationship; }
             set
             {
+                relationship = value;
 
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter Emergency Contact Relationship\n";
-                }
-                else
-                {
-                    relationship = value;
-                }
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter Emergency Contact Relationship\n";
+                //}
+                //else
+                //{
+                //    relationship = value;
+                //}
 
             }
         }

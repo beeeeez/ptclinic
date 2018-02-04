@@ -5,6 +5,9 @@
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
 - Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - Please make the Evaluation Visit printable.
+- Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
+- Remove the ‘Unselected Therapeutic Procedure” field.
+- Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable)
 - Make sure that everyone can VIEW everything on the patient (not edit, just view).
 - Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
@@ -41,9 +44,6 @@ ____ 97112 Neuromuscular Re-ed            Units:    1           2          3    
 - [x] Repeat the “Therapeutic Procedures” changes detailed in literal e) above.
 - [x] Include a new field to enter “Visit date” at the beginning of the form.  The PTs say that even though the database has an automatic date, it is important to have a “visit date”, and have the ability to do data entry after the visit took place.
 - [x] Add a “Date of Service” at the beginning of the form. (Sometimes this form is filled out after the visit, so they need the flexibility to data enter a past visit, so the date should allow entering a past date.
-- [x] Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
-- [x] Remove the ‘Unselected Therapeutic Procedure” field.
-- [x] Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

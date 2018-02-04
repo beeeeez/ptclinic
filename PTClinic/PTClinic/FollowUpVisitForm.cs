@@ -246,18 +246,27 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
                 {
-                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                    {
-                        AddFollowUpVisit();
-                    }
-                    else
-                    {
-                        UpdateFollowUpVisit();
-                    }
+                    AddFollowUpVisit();
                 }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+
+                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (dResult == DialogResult.OK)
+                //{
+                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                //    {
+                //        AddFollowUpVisit();
+                //    }
+                //    else
+                //    {
+                //        UpdateFollowUpVisit();
+                //    }
+                //}
                 this.Hide();
                 Admin.Show();
             }
@@ -275,18 +284,27 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
                 {
-                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                    {
-                        AddFollowUpVisit();
-                    }
-                    else
-                    {
-                        UpdateFollowUpVisit();
-                    }
+                    AddFollowUpVisit();
                 }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+
+                //DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (dResult == DialogResult.OK)
+                //{
+                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                //    {
+                //        AddFollowUpVisit();
+                //    }
+                //    else
+                //    {
+                //        UpdateFollowUpVisit();
+                //    }
+                //}
                 this.Hide();
                 Login.Show();
             }
@@ -308,19 +326,29 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
-                {
-                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                    {
-                        AddFollowUpVisit();
-                    }
-                    else
-                    {
-                        UpdateFollowUpVisit();
-                    }
+                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (dResult == DialogResult.OK)
+                //{
+                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                //    {
+                //        AddFollowUpVisit();
+                //    }
+                //    else
+                //    {
+                //        UpdateFollowUpVisit();
+                //    }
 
+                //}
+
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                {
+                    AddFollowUpVisit();
                 }
+                else
+                {
+                    UpdateFollowUpVisit();
+                }
+
                 this.Hide();
                 PatientProfile.Show();
             }
@@ -748,17 +776,26 @@ namespace PTClinic
             }
             else
             {
-                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+                //DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (dResult == DialogResult.OK)
+                //{
+                //    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                //    {
+                //        AddFollowUpVisit();
+                //    }
+                //    else
+                //    {
+                //        UpdateFollowUpVisit();
+                //    }
+                //}
+
+                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
                 {
-                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                    {
-                        AddFollowUpVisit();
-                    }
-                    else
-                    {
-                        UpdateFollowUpVisit();
-                    }
+                    AddFollowUpVisit();
+                }
+                else
+                {
+                    UpdateFollowUpVisit();
                 }
                 this.Hide();
                 search.Show();

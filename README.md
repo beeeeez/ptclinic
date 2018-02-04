@@ -38,18 +38,25 @@ Add a “Date of Service” at the beginning of the form. (Sometimes this form i
 - Remove the ‘Unselected Therapeutic Procedure” field.
 - Remove the “Patient Re-assessment next visit?” field and the “Need to complete PSFS” field.
 - Once the form is saved, please make it visible by other users (not editable, but just viewable)
-- For the Appointment section, just allow another address possible: 1240 Park Avenue Cranston, RI  
 - Make sure that everyone can VIEW everything on the patient (not edit, just view).
 - Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
 Visit type: Group Exercise
+
 Date:
+
 Number of Participants: (2 digit numeric field)
+
 Participants names (allow to leave blank or to enter first names only or initials)
+
 Activities conducted: Allow 5 choices to fill out with short text (dance, weights, etc.)
+
 Group CPT Code:
+
 Number of Participants identified as candidates for a full PT Evaluation: (allow a number only)
 
 
+### COMPLETED UPDATES 
+- [x] For the Appointment section, just allow another address possible: 1240 Park Avenue Cranston, RI  
 
 
 ### Intial Visit Form

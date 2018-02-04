@@ -198,42 +198,57 @@ namespace PTClinic
         // Send back to Admin Page
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dResult == DialogResult.OK)
+            if (visitSaved == true)
             {
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                {
-                    AddFollowUpVisit();
-                }
-                else
-                {
-                    UpdateFollowUpVisit();
-                }
-                //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                this.Hide();
+                Admin.Show();
             }
-            this.Hide();
-            Admin.Show();
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to leave this form!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    {
+                        AddFollowUpVisit();
+                    }
+                    else
+                    {
+                        UpdateFollowUpVisit();
+                    }
+                }
+                this.Hide();
+                Admin.Show();
+            }
+   
         }
 
         // Logout Button Click
         // Send back to Login Page
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dResult == DialogResult.OK)
+            if (visitSaved == true)
             {
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
-                {
-                    AddFollowUpVisit();
-                }
-                else
-                {
-                    UpdateFollowUpVisit();
-                }
-                //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
+                this.Hide();
+                Login.Show();
             }
-            this.Hide();
-            Login.Show();
+            else
+            {
+                DialogResult dResult = MessageBox.Show("You are about to Log Out!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dResult == DialogResult.OK)
+                {
+                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    {
+                        AddFollowUpVisit();
+                    }
+                    else
+                    {
+                        UpdateFollowUpVisit();
+                    }
+                }
+                this.Hide();
+                Login.Show();
+            }
         }
 
         // Back to Profile button click
@@ -303,21 +318,26 @@ namespace PTClinic
 
         private void FollowUpVisitForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dResult == DialogResult.OK)
+
+                if (visitSaved == false)
                 {
-                    if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                    DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dResult == DialogResult.OK)
                     {
-                        AddFollowUpVisit();
+                        if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                        {
+                            AddFollowUpVisit();
+                        }
+                        else
+                        {
+                            UpdateFollowUpVisit();
+                        }
                     }
-                    else
-                    {
-                        UpdateFollowUpVisit();
-                    }
-                    //MessageBox.Show("YOU DON SAVED IT ALL! CONGRATS");
                 }
+        
             }
         }
 
@@ -679,7 +699,7 @@ namespace PTClinic
         private void btnBackToSearch_Click(object sender, EventArgs e)
         {
             Search search = new Search(Admin, Login);
-            // If patient goals were updated create new profile form
+           // If visit information was completed + saved 
             if (visitSaved == true)
             {
                 this.Hide();

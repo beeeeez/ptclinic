@@ -43,16 +43,8 @@
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbTherapeuticProcedures2 = new System.Windows.Forms.TextBox();
-            this.lblPSFSNeeded = new System.Windows.Forms.Label();
-            this.lblTheraputicCPT2 = new System.Windows.Forms.Label();
-            this.gbReassessment = new System.Windows.Forms.GroupBox();
-            this.rbReassessmentNo = new System.Windows.Forms.RadioButton();
-            this.rbReassessmentYes = new System.Windows.Forms.RadioButton();
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.tbPlan = new System.Windows.Forms.TextBox();
-            this.lblPSFS = new System.Windows.Forms.Label();
-            this.lblReAssessment = new System.Windows.Forms.Label();
             this.lblPatientPlan = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
             this.lblProviderDate = new System.Windows.Forms.Label();
@@ -65,7 +57,6 @@
             this.lblAssessment = new System.Windows.Forms.Label();
             this.lblTheraputicProcedures = new System.Windows.Forms.Label();
             this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
-            this.lblInsurer = new System.Windows.Forms.Label();
             this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
             this.lblSupervisedModalities = new System.Windows.Forms.Label();
@@ -98,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.gbReassessment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMessage.SuspendLayout();
             this.SuspendLayout();
@@ -274,14 +264,8 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.tbTherapeuticProcedures2);
-            this.panel4.Controls.Add(this.lblPSFSNeeded);
-            this.panel4.Controls.Add(this.lblTheraputicCPT2);
-            this.panel4.Controls.Add(this.gbReassessment);
             this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.tbPlan);
-            this.panel4.Controls.Add(this.lblPSFS);
-            this.panel4.Controls.Add(this.lblReAssessment);
             this.panel4.Controls.Add(this.lblPatientPlan);
             this.panel4.Controls.Add(this.lblPlan);
             this.panel4.Controls.Add(this.lblProviderDate);
@@ -294,69 +278,10 @@
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
-            this.panel4.Controls.Add(this.lblInsurer);
             this.panel4.Location = new System.Drawing.Point(629, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
-            // 
-            // tbTherapeuticProcedures2
-            // 
-            this.tbTherapeuticProcedures2.Location = new System.Drawing.Point(292, 85);
-            this.tbTherapeuticProcedures2.Name = "tbTherapeuticProcedures2";
-            this.tbTherapeuticProcedures2.Size = new System.Drawing.Size(233, 20);
-            this.tbTherapeuticProcedures2.TabIndex = 9;
-            // 
-            // lblPSFSNeeded
-            // 
-            this.lblPSFSNeeded.AutoSize = true;
-            this.lblPSFSNeeded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPSFSNeeded.Location = new System.Drawing.Point(247, 355);
-            this.lblPSFSNeeded.Name = "lblPSFSNeeded";
-            this.lblPSFSNeeded.Size = new System.Drawing.Size(26, 16);
-            this.lblPSFSNeeded.TabIndex = 109;
-            this.lblPSFSNeeded.Text = "No";
-            // 
-            // lblTheraputicCPT2
-            // 
-            this.lblTheraputicCPT2.AutoSize = true;
-            this.lblTheraputicCPT2.Location = new System.Drawing.Point(225, 88);
-            this.lblTheraputicCPT2.Name = "lblTheraputicCPT2";
-            this.lblTheraputicCPT2.Size = new System.Drawing.Size(61, 13);
-            this.lblTheraputicCPT2.TabIndex = 102;
-            this.lblTheraputicCPT2.Text = "CPT 97319";
-            // 
-            // gbReassessment
-            // 
-            this.gbReassessment.Controls.Add(this.rbReassessmentNo);
-            this.gbReassessment.Controls.Add(this.rbReassessmentYes);
-            this.gbReassessment.Location = new System.Drawing.Point(235, 306);
-            this.gbReassessment.Name = "gbReassessment";
-            this.gbReassessment.Size = new System.Drawing.Size(170, 39);
-            this.gbReassessment.TabIndex = 12;
-            this.gbReassessment.TabStop = false;
-            // 
-            // rbReassessmentNo
-            // 
-            this.rbReassessmentNo.AutoSize = true;
-            this.rbReassessmentNo.Location = new System.Drawing.Point(99, 11);
-            this.rbReassessmentNo.Name = "rbReassessmentNo";
-            this.rbReassessmentNo.Size = new System.Drawing.Size(39, 17);
-            this.rbReassessmentNo.TabIndex = 1;
-            this.rbReassessmentNo.TabStop = true;
-            this.rbReassessmentNo.Text = "No";
-            this.rbReassessmentNo.UseVisualStyleBackColor = true;
-            // 
-            // rbReassessmentYes
-            // 
-            this.rbReassessmentYes.AutoSize = true;
-            this.rbReassessmentYes.Location = new System.Drawing.Point(15, 11);
-            this.rbReassessmentYes.Name = "rbReassessmentYes";
-            this.rbReassessmentYes.Size = new System.Drawing.Size(43, 17);
-            this.rbReassessmentYes.TabIndex = 0;
-            this.rbReassessmentYes.TabStop = true;
-            this.rbReassessmentYes.Text = "Yes";
-            this.rbReassessmentYes.UseVisualStyleBackColor = true;
             // 
             // lblTheraputicCPT
             // 
@@ -375,24 +300,6 @@
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPlan.Size = new System.Drawing.Size(387, 53);
             this.tbPlan.TabIndex = 11;
-            // 
-            // lblPSFS
-            // 
-            this.lblPSFS.AutoSize = true;
-            this.lblPSFS.Location = new System.Drawing.Point(53, 357);
-            this.lblPSFS.Name = "lblPSFS";
-            this.lblPSFS.Size = new System.Drawing.Size(177, 13);
-            this.lblPSFS.TabIndex = 107;
-            this.lblPSFS.Text = "Need To Complete PSFS This Visit?";
-            // 
-            // lblReAssessment
-            // 
-            this.lblReAssessment.AutoSize = true;
-            this.lblReAssessment.Location = new System.Drawing.Point(52, 317);
-            this.lblReAssessment.Name = "lblReAssessment";
-            this.lblReAssessment.Size = new System.Drawing.Size(169, 13);
-            this.lblReAssessment.TabIndex = 105;
-            this.lblReAssessment.Text = "Patient Re-Assessment Next Visit?";
             // 
             // lblPatientPlan
             // 
@@ -500,15 +407,6 @@
             this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
             this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 21);
             this.cbTherapeuticProcedures.TabIndex = 8;
-            // 
-            // lblInsurer
-            // 
-            this.lblInsurer.AutoSize = true;
-            this.lblInsurer.Location = new System.Drawing.Point(47, 88);
-            this.lblInsurer.Name = "lblInsurer";
-            this.lblInsurer.Size = new System.Drawing.Size(173, 13);
-            this.lblInsurer.TabIndex = 85;
-            this.lblInsurer.Text = "Unselected Therapeutic Procedure";
             // 
             // cbSupervisedModalities
             // 
@@ -821,8 +719,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.gbReassessment.ResumeLayout(false);
-            this.gbReassessment.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelMessage.ResumeLayout(false);
@@ -878,24 +774,15 @@
         private System.Windows.Forms.Label lblSupervisedCPT;
         private System.Windows.Forms.Label lblTodaysDate;
         private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.GroupBox gbReassessment;
         private System.Windows.Forms.TextBox tbPlan;
-        private System.Windows.Forms.Label lblPSFS;
-        private System.Windows.Forms.Label lblReAssessment;
         private System.Windows.Forms.Label lblPatientPlan;
-        private System.Windows.Forms.RadioButton rbReassessmentNo;
-        private System.Windows.Forms.RadioButton rbReassessmentYes;
         private System.Windows.Forms.Button btnBackToProfile;
-        private System.Windows.Forms.Label lblPSFSNeeded;
         private System.Windows.Forms.Panel panelMessage;
         private System.Windows.Forms.Label lbNewPatient;
         private System.Windows.Forms.CheckBox cbCompleted;
         private System.Windows.Forms.TextBox tbPTDiagnosis;
         private System.Windows.Forms.Label lblPTDiagnosis;
         private System.Windows.Forms.Button btnBackToSearch;
-        private System.Windows.Forms.TextBox tbTherapeuticProcedures2;
-        private System.Windows.Forms.Label lblTheraputicCPT2;
-        private System.Windows.Forms.Label lblInsurer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateOfService;
     }

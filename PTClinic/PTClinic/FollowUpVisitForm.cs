@@ -114,7 +114,7 @@ namespace PTClinic
 
             // Populate form with data, if Patients visit status shows the follow up pending completion
             // Else just populate the three fields with data from the initial form
-            if (PatientVisitStatus.Equals("follow up pending") || PatientVisitStatus.Equals("re-assessment pending"))
+            if (PatientVisitStatus.Equals("follow up pending"))
             {
                 // Create variable for a Patients initial Visit Information
                 FollowUpVisitInfo tempPatientFUVisit = new FollowUpVisitInfo();
@@ -138,7 +138,7 @@ namespace PTClinic
                             tbPlan.Text = dataReaderPatientFUVisit["plan"].ToString();
                             tbStudentProvider.Text = dataReaderPatientFUVisit["student_name"].ToString();
                             tbProviderName.Text = dataReaderPatientFUVisit["provider_name"].ToString();
-                            tbTherapeuticProcedures2.Text = dataReaderPatientFUVisit["therapeutic_procedures2"].ToString();
+                   
 
                             //Drop downs
                             cbTherapeuticProcedures.SelectedItem = dataReaderPatientFUVisit["therapeutic_procedures"].ToString();
@@ -156,18 +156,6 @@ namespace PTClinic
             lblTodaysDate.Text = shortDateStr;
             lblStudentDate.Text = shortDateStr;
             lblProviderDate.Text = shortDateStr;
-
-            // Show PSFS button if they need to fill it out, else show No Label
-
-            if (needPSFS == true)
-            {
-                PSFS = true;
-                lblPSFSNeeded.Text = "Yes";
-            }
-            else
-            {
-                lblPSFSNeeded.Text = "No";
-            }
         }
 
         // Fill SupervisedModalities Function
@@ -249,7 +237,7 @@ namespace PTClinic
             }
             else
             {
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
                 }
@@ -287,7 +275,7 @@ namespace PTClinic
             }
             else
             {
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
                 }
@@ -343,7 +331,7 @@ namespace PTClinic
 
                 //}
 
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
                 }
@@ -364,7 +352,7 @@ namespace PTClinic
 
             if (cbCompleted.Checked == true)
             {
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
                 }
@@ -399,7 +387,7 @@ namespace PTClinic
                     DialogResult dResult = MessageBox.Show("You are about to exit the application!\n\nWould you like to save everything?", "Alert", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dResult == DialogResult.OK)
                     {
-                        if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                        if (patientVisitStatus.Equals("follow up"))
                         {
                             AddFollowUpVisit();
                         }
@@ -420,16 +408,12 @@ namespace PTClinic
             //tbPTGoals.Clear();
             tbSubjective.Clear();
             tbObjective.Clear();
-            tbTherapeuticProcedures2.Clear();
             tbAssessment.Clear();
             tbPlan.Clear();
 
             cbSupervisedModalities.SelectedIndex = 0;
             cbConstantAttendance.SelectedIndex = 0;
             cbTherapeuticProcedures.SelectedIndex = 0;
-
-            rbReassessmentYes.Checked = false;
-            rbReassessmentNo.Checked = false;
 
             tbStudentProvider.Clear();
             tbProviderName.Clear();
@@ -450,22 +434,10 @@ namespace PTClinic
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
 
 
             newVisit.Assessment = tbAssessment.Text;
             newVisit.Plan = tbPlan.Text;
-
-            Nullable<bool> reassessment = null;
-            if (rbReassessmentYes.Checked == true)
-            {
-                reassessment = true;
-            }
-            else if (rbReassessmentNo.Checked == true)
-            {
-                reassessment = false;
-            }
-            newVisit.Reassessment = reassessment;
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -535,25 +507,11 @@ namespace PTClinic
                             /* UPDATE PATIENTS VISIT STATUS HERE -- BASED ON IF THEY COMPLETED THE FORM AND ARE DISCHARGED OR NEED REASSESSMENT */
                             if (cbCompleted.Checked == true)
                             {
-                                if (reassessment == true)
-                                {
-                                    changeVisitType = "re-assessment";
-                                }
-                                else
-                                {
-                                    changeVisitType = "follow up";
-                                }
+                                changeVisitType = "follow up";
                             }
                             else
                             {
-                                if(patientVisitStatus.Equals("re-assessment"))
-                                {
-                                    changeVisitType = "re-assessment pending";
-                                }
-                                else
-                                {
-                                    changeVisitType = "follow up pending";
-                                }
+                                changeVisitType = "follow up pending";
                             }
 
                             try
@@ -621,26 +579,9 @@ namespace PTClinic
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            newVisit.TherapeuticProcedures2 = tbTherapeuticProcedures2.Text;
-
 
             newVisit.Assessment = tbAssessment.Text;
             newVisit.Plan = tbPlan.Text;
-
-            Nullable<bool> reassessment = null;
-            if (rbReassessmentYes.Checked == true)
-            {
-                reassessment = true;
-            }
-            else if (rbReassessmentNo.Checked == true)
-            {
-                reassessment = false;
-            }
-            else
-            {
-                reassessment = false;
-            }
-            newVisit.Reassessment = reassessment;
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -700,25 +641,11 @@ namespace PTClinic
 
                             if (cbCompleted.Checked == true)
                             {
-                                if (reassessment == true)
-                                {
-                                    changeVisitType = "re-assessment";
-                                }
-                                else
-                                {
-                                    changeVisitType = "follow up";
-                                }
+                                changeVisitType = "follow up";
                             }
                             else
                             {
-                                if (patientVisitStatus.Equals("re-assessment") || patientVisitStatus.Equals("re-assessment pending"))
-                                {
-                                    changeVisitType = "re-assessment pending";
-                                }
-                                else
-                                {
-                                    changeVisitType = "follow up pending";
-                                }
+                                changeVisitType = "follow up pending";
                             }
 
                             try
@@ -794,7 +721,7 @@ namespace PTClinic
                 //    }
                 //}
 
-                if (patientVisitStatus.Equals("follow up") || patientVisitStatus.Equals("re-assessment"))
+                if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
                 }

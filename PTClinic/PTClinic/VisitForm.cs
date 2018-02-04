@@ -411,7 +411,7 @@ namespace PTClinic
             newVisit.ProviderID = tbProviderID.Text;
 
             // Get Current Date String (Set as a Short Date Time)
-            string shortDateStr = lblDate.Text;
+            string shortDateStr = dtpVisitDate.Value.ToShortDateString();
             // And convert it back into a Date Time 
             DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
 
@@ -526,7 +526,7 @@ namespace PTClinic
             newVisit.ProviderID = tbProviderID.Text;
 
             // Get Current Date String (Set as a Short Date Time)
-            string shortDateStr = lblDate.Text;
+            string shortDateStr = dtpVisitDate.Value.ToShortDateString();
             // And convert it back into a Date Time 
             DateTime shortDateVisit = Convert.ToDateTime(shortDateStr);
 

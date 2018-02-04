@@ -53,14 +53,15 @@ namespace PTClinic
             get { return address; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an Address\n";
-                }
-                else
-                {
-                    address = value;
-                }
+                address = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an Address\n";
+                //}
+                //else
+                //{
+                //    address = value;
+                //}
             }
         }
 
@@ -70,14 +71,15 @@ namespace PTClinic
             get { return city; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Enter an City\n";
-                }
-                else
-                {
-                    city = value;
-                }
+                city = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Enter an City\n";
+                //}
+                //else
+                //{
+                //    city = value;
+                //}
                
             }
         }
@@ -88,14 +90,15 @@ namespace PTClinic
             get { return state; }
             set
             {
-                if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                {
-                    feedback += "Error: Select a State\n";
-                }
-                else
-                {
-                    state = value;
-                }
+                state = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a State\n";
+                //}
+                //else
+                //{
+                //    state = value;
+                //}
             }
         }
 
@@ -105,14 +108,15 @@ namespace PTClinic
             get { return zip; }
             set
             {
-                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 5))
-                {
-                    feedback += "Error: Enter a Zipcode\n";
-                }
-                else
-                {
-                    zip = value;
-                }
+                zip = value;
+                //if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 5))
+                //{
+                //    feedback += "Error: Enter a Zipcode\n";
+                //}
+                //else
+                //{
+                //    zip = value;
+                //}
             }
         }
 
@@ -122,14 +126,15 @@ namespace PTClinic
             get { return phone; }
             set
             {
-                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
-                {
-                    feedback += "Error: Enter Telephone 1\n";
-                }
-                else
-                {
-                    phone = value;
-                }
+                phone = value;
+                //if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
+                //{
+                //    feedback += "Error: Enter Telephone 1\n";
+                //}
+                //else
+                //{
+                //    phone = value;
+                //}
             }
         }
 
@@ -151,13 +156,21 @@ namespace PTClinic
             {
                 if (value.Equals("Select One"))
                 {
-                    feedback += "Error: Select Telephone 1 Type\n";
+                    phoneType = "";
                 }
                 else
                 {
                     phoneType = value;
                 }
-               
+                //if (value.Equals("Select One"))
+                //{
+                //    feedback += "Error: Select Telephone 1 Type\n";
+                //}
+                //else
+                //{
+                //    phoneType = value;
+                //}
+
             }
         }
 
@@ -187,21 +200,30 @@ namespace PTClinic
             get { return phone2Type; }
             set
             {
-                if (!Validation.IsValidLength(Phone2, 14))
+                if (value.Equals("Select One"))
                 {
-                    if (value.Equals("Select One"))
-                    {
-                        feedback += "Error: Select Telephone 2 Type\n";
-                    }
-                    else
-                    {
-                        phone2Type = value;
-                    }
+                    phone2Type = "";
                 }
                 else
                 {
-                    phone2Type = " ";
+                    phone2Type = value;
                 }
+
+                //if (!Validation.IsValidLength(Phone2, 14))
+                //{
+                //    if (value.Equals("Select One"))
+                //    {
+                //        feedback += "Error: Select Telephone 2 Type\n";
+                //    }
+                //    else
+                //    {
+                //        phone2Type = value;
+                //    }
+                //}
+                //else
+                //{
+                //    phone2Type = " ";
+                //}
 
             }
         }

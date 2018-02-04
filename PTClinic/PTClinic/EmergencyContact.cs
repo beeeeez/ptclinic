@@ -57,14 +57,16 @@ namespace PTClinic
             get { return phone; }
             set
             {
-                if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
-                {
-                    feedback += "Error: Enter Emergency Contact Phone\n";
-                }
-                else
-                {
-                    phone = value;
-                }
+                phone = value;
+
+                //if (string.IsNullOrEmpty(value) || Validation.IsValidLength(value, 14))
+                //{
+                //    feedback += "Error: Enter Emergency Contact Phone\n";
+                //}
+                //else
+                //{
+                //    phone = value;
+                //}
 
             }
         }
@@ -87,12 +89,21 @@ namespace PTClinic
             {
                 if (value.Equals("Select One"))
                 {
-                    feedback += "Error: Select Emergency Contact Phone Type\n";
+                    phoneType = "";
                 }
                 else
                 {
                     phoneType = value;
                 }
+
+                //if (value.Equals("Select One"))
+                //{
+                //    feedback += "Error: Select Emergency Contact Phone Type\n";
+                //}
+                //else
+                //{
+                //    phoneType = value;
+                //}
 
             }
         }

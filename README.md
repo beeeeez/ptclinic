@@ -5,20 +5,7 @@
 - Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
 - Please make the Evaluation Visit printable.
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable)
-- Please create another type of visit as follows (DO THIS LAST BECAUSE I NEED TO VERIFY THIS WITH THE PT PERSON)
-Visit type: Group Exercise
 
-Date:
-
-Number of Participants: (2 digit numeric field)
-
-Participants names (allow to leave blank or to enter first names only or initials)
-
-Activities conducted: Allow 5 choices to fill out with short text (dance, weights, etc.)
-
-Group CPT Code:
-
-Number of Participants identified as candidates for a full PT Evaluation: (allow a number only)
 
 
 ### COMPLETED UPDATES 

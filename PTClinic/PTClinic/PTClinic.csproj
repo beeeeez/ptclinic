@@ -223,6 +223,8 @@
     <Content Include="Resources\ic_print_black_24dp_1x.png" />
     <Content Include="Resources\ic_print_white_24dp_1x.png" />
     <Content Include="Resources\ic_trending_up_black_24dp_1x.png" />
+    <Content Include="Resources\ic_visibility_black_24dp_1x.png" />
+    <Content Include="Resources\ic_visibility_white_24dp_1x.png" />
     <None Include="Resources\AddNewPatient.png" />
     <Content Include="Resources\ic_home_white_24dp_1x.png" />
     <Content Include="Resources\ic_home_white_36dp_1x.png" />

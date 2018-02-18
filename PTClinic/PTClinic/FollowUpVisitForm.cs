@@ -22,6 +22,7 @@ namespace PTClinic
         private Boolean PSFS = false;
         bool visitSaved;
         StringBuilder followupVisitString;
+        StringBuilder ptDiagnosisLists; 
         private string diagnosisStr;
         private string ptGoalStr;
         private string ptDiagnosisStr;
@@ -129,6 +130,7 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                         for (int i = 0; i < diagnosisArray.Length; i++)
                         {
                             sb.AppendLine("- " + diagnosisArray[i]);
+           
                         }
 
                         tbPTDiagnosis.Text = sb.ToString();
@@ -438,7 +440,7 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             followupVisitString.AppendLine("Patient Name: " + lblPatientName.Text);
             followupVisitString.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
             followupVisitString.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
-            followupVisitString.AppendLine("PT Diagnosis: \n" + breakUpString(ptDiagnosisStr));
+            followupVisitString.AppendLine("PT Diagnosis: \n" + ptDiagnosisLists);
 
             newVisit.Subjective = tbSubjective.Text;
 
@@ -567,20 +569,64 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
         private void UpdateFollowUpVisit()
         {
+            //FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
+
+            //newVisit.PatientID = patientID;
+            //newVisit.ProviderID = tbProviderID.Text;
+            //newVisit.PatientName = lblPatientName.Text;
+            //newVisit.Subjective = tbSubjective.Text;
+            //newVisit.Objective = tbObjective.Text;
+
+            //newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+            //newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            //newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+
+            //newVisit.Assessment = tbAssessment.Text;
+            //newVisit.Plan = tbPlan.Text;
+
+
+            followupVisitString = new StringBuilder();
+
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
             newVisit.PatientID = patientID;
+
+            followupVisitString.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
+            followupVisitString.AppendLine("Patient ID: " + patientID);
+
             newVisit.ProviderID = tbProviderID.Text;
+
+            followupVisitString.AppendLine("Provider ID: " + tbProviderID.Text);
+
             newVisit.PatientName = lblPatientName.Text;
+
+            followupVisitString.AppendLine("Patient Name: " + lblPatientName.Text);
+            followupVisitString.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
+            followupVisitString.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
+            followupVisitString.AppendLine("PT Diagnosis: \n" + breakUpString(ptDiagnosisStr));
+
             newVisit.Subjective = tbSubjective.Text;
+
+            followupVisitString.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
+
             newVisit.Objective = tbObjective.Text;
 
+            followupVisitString.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
+
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+
+            followupVisitString.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            followupVisitString.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
+            followupVisitString.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
 
             newVisit.Assessment = tbAssessment.Text;
+            followupVisitString.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
+
             newVisit.Plan = tbPlan.Text;
+            followupVisitString.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -718,11 +764,11 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
                 SF.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString("Follow Up Visit", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawString("Follow Up Visit Overview", font1, Brushes.Black, rect1, SF);
                 e.Graphics.DrawRectangle(Pens.Black, rect1);
             }
 
-             e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
+            e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
 
         }
 

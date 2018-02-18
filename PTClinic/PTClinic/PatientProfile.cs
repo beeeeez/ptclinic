@@ -353,6 +353,7 @@ namespace PTClinic
             btnPatientVisit.Image = Image.FromFile("..\\..\\Resources\\ic_favorite_black_24dp_1x.png");
             btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
             btnPrintPatientInfo.Image = Image.FromFile("..\\..\\Resources\\ic_print_black_24dp_1x.png");
+            btnViewPastVisitInfo.Image = Image.FromFile("..\\..\\Resources\\ic_visibility_black_24dp_1x.png");
         }
 
         // Back to Home Button

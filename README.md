@@ -2,9 +2,12 @@
 
 ## Project Todos
 
-- Please make the font on the forms larger than it is now – we are getting old and need larger font… ☹
-- Please make the Evaluation Visit printable.
-- Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable)
+- Please make the font on the forms larger than it is now – we are getting old and need larger font **Next Up**
+- Please make the Evaluation Visit printable. **WIP - Format issues**
+- Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) **Next Up**
+- **Test the program!**
+- **Clear out DB - Make copy of empty DB to have on standby / future**
+- Think about making a guide to help other people control the program in the future with relation to using the program in another setting without having to have us "set up the DB". Instruct how to add the `PTCLinic.accdb` file. 
 
 
 

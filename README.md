@@ -1,8 +1,6 @@
 # PTClinic
 
 ## Project Todos
-
-- Please make the font on the forms larger than it is now – we are getting old and need larger font **Next Up**
 - Please make the Evaluation Visit printable. **WIP - Format issues**
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) **Next Up**
 - **Test the program!**
@@ -34,6 +32,7 @@
 - [x] Remove the ‘Unselected Therapeutic Procedure” field.
 - [x] Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - [x] Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
+- [x] Please make the font on the forms larger than it is now – we are getting old and need larger font 
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

@@ -475,5 +475,12 @@ namespace PTClinic
             e.Graphics.DrawString(caregiverString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 430));
             e.Graphics.DrawString(emContactString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 650));
         }
+
+        private void btnViewPastVisitInfo_Click(object sender, EventArgs e)
+        {
+            PastVisitSearchForm newVisitSearch = new PastVisitSearchForm(pID, Admin, Login);
+            newVisitSearch.Show();
+            this.Hide();
+        }
     }
 }

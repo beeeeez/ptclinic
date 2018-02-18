@@ -38,10 +38,14 @@
             this.btnBackToProfile = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.panelMessage = new System.Windows.Forms.Panel();
+            this.lbNewPatient = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +54,11 @@
             this.btnViewFollowUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnViewFollowUp.BackColor = System.Drawing.Color.Navy;
             this.btnViewFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewFollowUp.ForeColor = System.Drawing.Color.White;
             this.btnViewFollowUp.Location = new System.Drawing.Point(817, 175);
             this.btnViewFollowUp.Name = "btnViewFollowUp";
-            this.btnViewFollowUp.Size = new System.Drawing.Size(175, 68);
+            this.btnViewFollowUp.Size = new System.Drawing.Size(246, 68);
             this.btnViewFollowUp.TabIndex = 11;
             this.btnViewFollowUp.Text = "View Follow Up ";
             this.btnViewFollowUp.UseVisualStyleBackColor = false;
@@ -64,10 +68,10 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(159, 195);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(235, 25);
+            this.label8.Size = new System.Drawing.Size(214, 25);
             this.label8.TabIndex = 182;
             this.label8.Text = "Past Follow Up Visits";
             // 
@@ -75,6 +79,8 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.lblErrorMessage);
+            this.panel4.Controls.Add(this.panelMessage);
             this.panel4.Controls.Add(this.cbPastFollowupVisits);
             this.panel4.Controls.Add(this.lblPatientId);
             this.panel4.Controls.Add(this.btnViewFollowUp);
@@ -100,10 +106,10 @@
             // 
             this.lblPatientId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPatientId.AutoSize = true;
-            this.lblPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientId.Location = new System.Drawing.Point(159, 99);
             this.lblPatientId.Name = "lblPatientId";
-            this.lblPatientId.Size = new System.Drawing.Size(129, 25);
+            this.lblPatientId.Size = new System.Drawing.Size(117, 25);
             this.lblPatientId.TabIndex = 183;
             this.lblPatientId.Text = "Patient ID: ";
             // 
@@ -169,6 +175,39 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(79, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(300, 29);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "View Past Follow-Up Visits";
+            // 
+            // panelMessage
+            // 
+            this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelMessage.BackColor = System.Drawing.Color.Red;
+            this.panelMessage.Controls.Add(this.lbNewPatient);
+            this.panelMessage.Location = new System.Drawing.Point(487, 83);
+            this.panelMessage.Name = "panelMessage";
+            this.panelMessage.Size = new System.Drawing.Size(317, 41);
+            this.panelMessage.TabIndex = 185;
+            this.panelMessage.Visible = false;
+            // 
+            // lbNewPatient
+            // 
+            this.lbNewPatient.AutoSize = true;
+            this.lbNewPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNewPatient.ForeColor = System.Drawing.Color.White;
+            this.lbNewPatient.Location = new System.Drawing.Point(31, 11);
+            this.lbNewPatient.Name = "lbNewPatient";
+            this.lbNewPatient.Size = new System.Drawing.Size(250, 18);
+            this.lbNewPatient.TabIndex = 113;
+            this.lbNewPatient.Text = "This patient has no follow up records";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -179,16 +218,18 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // label7
+            // lblErrorMessage
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(79, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(312, 29);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "View Past Follow-Up Visists";
+            this.lblErrorMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage.Location = new System.Drawing.Point(801, 274);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(262, 25);
+            this.lblErrorMessage.TabIndex = 186;
+            this.lblErrorMessage.Text = "Please Select A Visit Date";
+            this.lblErrorMessage.Visible = false;
             // 
             // PastVisitSearchForm
             // 
@@ -204,6 +245,8 @@
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelMessage.ResumeLayout(false);
+            this.panelMessage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -221,5 +264,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPatientId;
         private System.Windows.Forms.ComboBox cbPastFollowupVisits;
+        private System.Windows.Forms.Panel panelMessage;
+        private System.Windows.Forms.Label lbNewPatient;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }

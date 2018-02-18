@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,11 +30,63 @@ namespace PTClinic
             this.Login = Login;
 
             string id = patientId.ToString();
-            MessageBox.Show("Patient id is " + id);
-            lblPatientId.Text = "Patient id is " + id;
+            lblPatientId.Text = "Patient ID: " + id;
 
+            LoadComboBox(); // Loads from Access DB
 
         }
+
+        private void LoadComboBox()
+        {
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                try
+                {
+
+                    string strSQL = "SELECT * FROM Patient_FollowUp_Visit WHERE patient_id = @PID ORDER BY visit_date DESC;";
+
+                    connection.Open(); // open connection
+
+                    OleDbCommand comm = new OleDbCommand();
+                    comm.CommandText = strSQL; // Commander knows what to say
+                    comm.Connection = connection; // Heres the connection
+                    comm.Parameters.AddWithValue("@PID", patientId);
+
+                    OleDbDataReader reader = comm.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        cbPastFollowupVisits.Items.Insert(0, "Select Visit Date");
+                        cbPastFollowupVisits.SelectedIndex = 0;
+                        while (reader.Read())
+                        {
+                            if (reader["visit_date"] != DBNull.Value)
+                            {
+                                cbPastFollowupVisits.Items.Add(reader["visit_date"]);
+                            }
+                        
+                        }
+                    }
+                    else
+                    {
+                        cbPastFollowupVisits.Items.Add("No Past Visits");
+                        panelMessage.Visible = true;
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+        }
+
 
         // Setting the Icons for Logout and Home Buttons
         private void setButtonIcon()
@@ -45,7 +98,21 @@ namespace PTClinic
 
         private void btnViewFollowUp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Go to follow up view only form");
+            lblErrorMessage.Visible = false;
+
+            if (cbPastFollowupVisits.Text.Equals("Select Visit Date"))
+            {
+                //MessageBox.Show("Please select a date");
+                lblErrorMessage.Visible = true;
+            }
+            else
+            {
+               // MessageBox.Show("go to form");
+                ViewPastVisitForm viewForm = new ViewPastVisitForm(patientId, cbPastFollowupVisits.Text);
+                viewForm.Show();
+                this.Hide();
+            }
+           
         }
 
         private void btnBackToProfile_Click(object sender, EventArgs e)

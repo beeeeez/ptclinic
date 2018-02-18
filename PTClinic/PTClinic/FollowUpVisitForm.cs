@@ -768,7 +768,7 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                 e.Graphics.DrawRectangle(Pens.Black, rect1);
             }
 
-            e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
+            e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
 
         }
 

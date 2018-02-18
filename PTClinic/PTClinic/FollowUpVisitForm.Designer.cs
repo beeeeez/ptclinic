@@ -46,7 +46,6 @@
             this.lblTheraputicCPT = new System.Windows.Forms.Label();
             this.tbPlan = new System.Windows.Forms.TextBox();
             this.lblPatientPlan = new System.Windows.Forms.Label();
-            this.lblPlan = new System.Windows.Forms.Label();
             this.lblProviderDate = new System.Windows.Forms.Label();
             this.lblStudentDate = new System.Windows.Forms.Label();
             this.tbProviderName = new System.Windows.Forms.TextBox();
@@ -102,7 +101,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1042, 678);
+            this.btnClear.Location = new System.Drawing.Point(1033, 678);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 17;
@@ -117,7 +116,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(790, 678);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(781, 678);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 16;
@@ -240,7 +239,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(6, 79);
+            this.panel3.Location = new System.Drawing.Point(-3, 79);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -271,18 +270,20 @@
             this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.tbPlan);
             this.panel4.Controls.Add(this.lblPatientPlan);
-            this.panel4.Controls.Add(this.lblPlan);
             this.panel4.Controls.Add(this.lblProviderDate);
             this.panel4.Controls.Add(this.lblStudentDate);
             this.panel4.Controls.Add(this.tbProviderName);
             this.panel4.Controls.Add(this.tbStudentProvider);
             this.panel4.Controls.Add(this.tbAssessment);
             this.panel4.Controls.Add(this.lblProviderName);
+            this.panel4.Controls.Add(this.lblConstantCPT);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
-            this.panel4.Location = new System.Drawing.Point(618, 136);
+            this.panel4.Controls.Add(this.cbConstantAttendance);
+            this.panel4.Controls.Add(this.lblConstantAttendance);
+            this.panel4.Location = new System.Drawing.Point(609, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -290,15 +291,17 @@
             // lblTheraputicCPT
             // 
             this.lblTheraputicCPT.AutoSize = true;
-            this.lblTheraputicCPT.Location = new System.Drawing.Point(192, 52);
+            this.lblTheraputicCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(215, 103);
             this.lblTheraputicCPT.Name = "lblTheraputicCPT";
-            this.lblTheraputicCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblTheraputicCPT.Size = new System.Drawing.Size(38, 18);
             this.lblTheraputicCPT.TabIndex = 101;
             this.lblTheraputicCPT.Text = "CPT";
             // 
             // tbPlan
             // 
-            this.tbPlan.Location = new System.Drawing.Point(165, 238);
+            this.tbPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPlan.Location = new System.Drawing.Point(168, 291);
             this.tbPlan.Multiline = true;
             this.tbPlan.Name = "tbPlan";
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -308,57 +311,53 @@
             // lblPatientPlan
             // 
             this.lblPatientPlan.AutoSize = true;
-            this.lblPatientPlan.Location = new System.Drawing.Point(52, 241);
+            this.lblPatientPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientPlan.Location = new System.Drawing.Point(19, 294);
             this.lblPatientPlan.Name = "lblPatientPlan";
-            this.lblPatientPlan.Size = new System.Drawing.Size(93, 13);
+            this.lblPatientPlan.Size = new System.Drawing.Size(129, 18);
             this.lblPatientPlan.TabIndex = 104;
             this.lblPatientPlan.Text = "Plan For Next Visit";
-            // 
-            // lblPlan
-            // 
-            this.lblPlan.AutoSize = true;
-            this.lblPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlan.Location = new System.Drawing.Point(39, 197);
-            this.lblPlan.Name = "lblPlan";
-            this.lblPlan.Size = new System.Drawing.Size(40, 20);
-            this.lblPlan.TabIndex = 103;
-            this.lblPlan.Text = "Plan";
             // 
             // lblProviderDate
             // 
             this.lblProviderDate.AutoSize = true;
-            this.lblProviderDate.Location = new System.Drawing.Point(456, 437);
+            this.lblProviderDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProviderDate.Location = new System.Drawing.Point(452, 425);
             this.lblProviderDate.Name = "lblProviderDate";
-            this.lblProviderDate.Size = new System.Drawing.Size(85, 13);
+            this.lblProviderDate.Size = new System.Drawing.Size(114, 18);
             this.lblProviderDate.TabIndex = 102;
             this.lblProviderDate.Text = "TODAY\'S DATE";
             // 
             // lblStudentDate
             // 
             this.lblStudentDate.AutoSize = true;
-            this.lblStudentDate.Location = new System.Drawing.Point(456, 396);
+            this.lblStudentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentDate.Location = new System.Drawing.Point(452, 384);
             this.lblStudentDate.Name = "lblStudentDate";
-            this.lblStudentDate.Size = new System.Drawing.Size(85, 13);
+            this.lblStudentDate.Size = new System.Drawing.Size(114, 18);
             this.lblStudentDate.TabIndex = 101;
             this.lblStudentDate.Text = "TODAY\'S DATE";
             // 
             // tbProviderName
             // 
-            this.tbProviderName.Location = new System.Drawing.Point(175, 434);
+            this.tbProviderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProviderName.Location = new System.Drawing.Point(171, 422);
             this.tbProviderName.Name = "tbProviderName";
-            this.tbProviderName.Size = new System.Drawing.Size(252, 20);
+            this.tbProviderName.Size = new System.Drawing.Size(252, 24);
             this.tbProviderName.TabIndex = 14;
             // 
             // tbStudentProvider
             // 
-            this.tbStudentProvider.Location = new System.Drawing.Point(175, 396);
+            this.tbStudentProvider.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStudentProvider.Location = new System.Drawing.Point(171, 384);
             this.tbStudentProvider.Name = "tbStudentProvider";
-            this.tbStudentProvider.Size = new System.Drawing.Size(252, 20);
+            this.tbStudentProvider.Size = new System.Drawing.Size(252, 24);
             this.tbStudentProvider.TabIndex = 13;
             // 
             // tbAssessment
             // 
-            this.tbAssessment.Location = new System.Drawing.Point(164, 121);
+            this.tbAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAssessment.Location = new System.Drawing.Point(168, 186);
             this.tbAssessment.Multiline = true;
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -368,36 +367,40 @@
             // lblProviderName
             // 
             this.lblProviderName.AutoSize = true;
-            this.lblProviderName.Location = new System.Drawing.Point(92, 437);
+            this.lblProviderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProviderName.Location = new System.Drawing.Point(40, 425);
             this.lblProviderName.Name = "lblProviderName";
-            this.lblProviderName.Size = new System.Drawing.Size(77, 13);
+            this.lblProviderName.Size = new System.Drawing.Size(107, 18);
             this.lblProviderName.TabIndex = 98;
             this.lblProviderName.Text = "Provider Name";
             // 
             // lblStudentProvider
             // 
             this.lblStudentProvider.AutoSize = true;
-            this.lblStudentProvider.Location = new System.Drawing.Point(83, 399);
+            this.lblStudentProvider.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentProvider.Location = new System.Drawing.Point(30, 384);
             this.lblStudentProvider.Name = "lblStudentProvider";
-            this.lblStudentProvider.Size = new System.Drawing.Size(86, 13);
+            this.lblStudentProvider.Size = new System.Drawing.Size(117, 18);
             this.lblStudentProvider.TabIndex = 95;
             this.lblStudentProvider.Text = "Student Provider";
             // 
             // lblAssessment
             // 
             this.lblAssessment.AutoSize = true;
-            this.lblAssessment.Location = new System.Drawing.Point(81, 124);
+            this.lblAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssessment.Location = new System.Drawing.Point(56, 186);
             this.lblAssessment.Name = "lblAssessment";
-            this.lblAssessment.Size = new System.Drawing.Size(63, 13);
+            this.lblAssessment.Size = new System.Drawing.Size(90, 18);
             this.lblAssessment.TabIndex = 94;
             this.lblAssessment.Text = "Assessment";
             // 
             // lblTheraputicProcedures
             // 
             this.lblTheraputicProcedures.AutoSize = true;
-            this.lblTheraputicProcedures.Location = new System.Drawing.Point(53, 46);
+            this.lblTheraputicProcedures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheraputicProcedures.Location = new System.Drawing.Point(34, 100);
             this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
-            this.lblTheraputicProcedures.Size = new System.Drawing.Size(121, 26);
+            this.lblTheraputicProcedures.Size = new System.Drawing.Size(166, 36);
             this.lblTheraputicProcedures.TabIndex = 94;
             this.lblTheraputicProcedures.Text = "Therapeutic Procedures\r\n(15 minutes each)";
             // 
@@ -406,10 +409,11 @@
             this.cbTherapeuticProcedures.BackColor = System.Drawing.Color.White;
             this.cbTherapeuticProcedures.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTherapeuticProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTherapeuticProcedures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTherapeuticProcedures.FormattingEnabled = true;
-            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(233, 49);
+            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(259, 100);
             this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
-            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 21);
+            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 26);
             this.cbTherapeuticProcedures.TabIndex = 8;
             // 
             // cbSupervisedModalities
@@ -417,10 +421,11 @@
             this.cbSupervisedModalities.BackColor = System.Drawing.Color.White;
             this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSupervisedModalities.FormattingEnabled = true;
-            this.cbSupervisedModalities.Location = new System.Drawing.Point(208, 522);
+            this.cbSupervisedModalities.Location = new System.Drawing.Point(305, 545);
             this.cbSupervisedModalities.Name = "cbSupervisedModalities";
-            this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 21);
+            this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 26);
             this.cbSupervisedModalities.TabIndex = 6;
             // 
             // cbConstantAttendance
@@ -428,69 +433,77 @@
             this.cbConstantAttendance.BackColor = System.Drawing.Color.White;
             this.cbConstantAttendance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConstantAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbConstantAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbConstantAttendance.FormattingEnabled = true;
-            this.cbConstantAttendance.Location = new System.Drawing.Point(208, 564);
+            this.cbConstantAttendance.Location = new System.Drawing.Point(259, 28);
             this.cbConstantAttendance.Name = "cbConstantAttendance";
-            this.cbConstantAttendance.Size = new System.Drawing.Size(256, 21);
+            this.cbConstantAttendance.Size = new System.Drawing.Size(256, 26);
             this.cbConstantAttendance.TabIndex = 7;
             // 
             // lblSupervisedModalities
             // 
             this.lblSupervisedModalities.AutoSize = true;
-            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 522);
+            this.lblSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 542);
             this.lblSupervisedModalities.Name = "lblSupervisedModalities";
-            this.lblSupervisedModalities.Size = new System.Drawing.Size(110, 26);
+            this.lblSupervisedModalities.Size = new System.Drawing.Size(152, 36);
             this.lblSupervisedModalities.TabIndex = 82;
             this.lblSupervisedModalities.Text = "Supervised Modalities\r\nUNTIMED";
             // 
             // lblConstantAttendance
             // 
             this.lblConstantAttendance.AutoSize = true;
-            this.lblConstantAttendance.Location = new System.Drawing.Point(36, 561);
+            this.lblConstantAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConstantAttendance.Location = new System.Drawing.Point(54, 28);
             this.lblConstantAttendance.Name = "lblConstantAttendance";
-            this.lblConstantAttendance.Size = new System.Drawing.Size(107, 26);
+            this.lblConstantAttendance.Size = new System.Drawing.Size(145, 36);
             this.lblConstantAttendance.TabIndex = 91;
             this.lblConstantAttendance.Text = "Constant Attendance\r\n(15 minutes each)";
             // 
             // lblDiagnosis
             // 
             this.lblDiagnosis.AutoSize = true;
-            this.lblDiagnosis.Location = new System.Drawing.Point(90, 120);
+            this.lblDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiagnosis.Location = new System.Drawing.Point(64, 159);
             this.lblDiagnosis.Name = "lblDiagnosis";
-            this.lblDiagnosis.Size = new System.Drawing.Size(53, 13);
+            this.lblDiagnosis.Size = new System.Drawing.Size(74, 18);
             this.lblDiagnosis.TabIndex = 75;
             this.lblDiagnosis.Text = "Diagnosis";
             // 
             // lblObjective
             // 
             this.lblObjective.AutoSize = true;
-            this.lblObjective.Location = new System.Drawing.Point(88, 394);
+            this.lblObjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObjective.Location = new System.Drawing.Point(69, 464);
             this.lblObjective.Name = "lblObjective";
-            this.lblObjective.Size = new System.Drawing.Size(52, 13);
+            this.lblObjective.Size = new System.Drawing.Size(69, 18);
             this.lblObjective.TabIndex = 79;
             this.lblObjective.Text = "Objective";
             // 
             // lblPTGoals
             // 
             this.lblPTGoals.AutoSize = true;
-            this.lblPTGoals.Location = new System.Drawing.Point(92, 185);
+            this.lblPTGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTGoals.Location = new System.Drawing.Point(67, 220);
             this.lblPTGoals.Name = "lblPTGoals";
-            this.lblPTGoals.Size = new System.Drawing.Size(51, 13);
+            this.lblPTGoals.Size = new System.Drawing.Size(71, 18);
             this.lblPTGoals.TabIndex = 80;
             this.lblPTGoals.Text = "PT Goals";
             // 
             // lblSubjective
             // 
             this.lblSubjective.AutoSize = true;
-            this.lblSubjective.Location = new System.Drawing.Point(83, 333);
+            this.lblSubjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjective.Location = new System.Drawing.Point(63, 403);
             this.lblSubjective.Name = "lblSubjective";
-            this.lblSubjective.Size = new System.Drawing.Size(57, 13);
+            this.lblSubjective.Size = new System.Drawing.Size(75, 18);
             this.lblSubjective.TabIndex = 83;
             this.lblSubjective.Text = "Subjective";
             // 
             // tbDiagnosis
             // 
-            this.tbDiagnosis.Location = new System.Drawing.Point(149, 117);
+            this.tbDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiagnosis.Location = new System.Drawing.Point(149, 156);
             this.tbDiagnosis.Multiline = true;
             this.tbDiagnosis.Name = "tbDiagnosis";
             this.tbDiagnosis.ReadOnly = true;
@@ -500,16 +513,18 @@
             // 
             // tbObjective
             // 
-            this.tbObjective.Location = new System.Drawing.Point(146, 391);
+            this.tbObjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbObjective.Location = new System.Drawing.Point(146, 461);
             this.tbObjective.Multiline = true;
             this.tbObjective.Name = "tbObjective";
             this.tbObjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbObjective.Size = new System.Drawing.Size(415, 101);
+            this.tbObjective.Size = new System.Drawing.Size(415, 56);
             this.tbObjective.TabIndex = 5;
             // 
             // tbPTGoals
             // 
-            this.tbPTGoals.Location = new System.Drawing.Point(149, 182);
+            this.tbPTGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPTGoals.Location = new System.Drawing.Point(149, 217);
             this.tbPTGoals.Multiline = true;
             this.tbPTGoals.Name = "tbPTGoals";
             this.tbPTGoals.ReadOnly = true;
@@ -519,7 +534,8 @@
             // 
             // tbSubjective
             // 
-            this.tbSubjective.Location = new System.Drawing.Point(146, 330);
+            this.tbSubjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSubjective.Location = new System.Drawing.Point(146, 400);
             this.tbSubjective.Multiline = true;
             this.tbSubjective.Name = "tbSubjective";
             this.tbSubjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -529,44 +545,49 @@
             // lblProviderID
             // 
             this.lblProviderID.AutoSize = true;
-            this.lblProviderID.Location = new System.Drawing.Point(83, 85);
+            this.lblProviderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProviderID.Location = new System.Drawing.Point(57, 124);
             this.lblProviderID.Name = "lblProviderID";
-            this.lblProviderID.Size = new System.Drawing.Size(60, 13);
+            this.lblProviderID.Size = new System.Drawing.Size(81, 18);
             this.lblProviderID.TabIndex = 85;
             this.lblProviderID.Text = "Provider ID";
             // 
             // tbProviderID
             // 
-            this.tbProviderID.Location = new System.Drawing.Point(149, 82);
+            this.tbProviderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProviderID.Location = new System.Drawing.Point(149, 121);
             this.tbProviderID.Name = "tbProviderID";
             this.tbProviderID.ReadOnly = true;
-            this.tbProviderID.Size = new System.Drawing.Size(139, 20);
+            this.tbProviderID.Size = new System.Drawing.Size(139, 24);
             this.tbProviderID.TabIndex = 0;
             // 
             // lblPtnID
             // 
             this.lblPtnID.AutoSize = true;
-            this.lblPtnID.Location = new System.Drawing.Point(86, 17);
+            this.lblPtnID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtnID.Location = new System.Drawing.Point(64, 56);
             this.lblPtnID.Name = "lblPtnID";
-            this.lblPtnID.Size = new System.Drawing.Size(57, 13);
+            this.lblPtnID.Size = new System.Drawing.Size(75, 18);
             this.lblPtnID.TabIndex = 95;
             this.lblPtnID.Text = "Patient ID:";
             // 
             // lblPID
             // 
             this.lblPID.AutoSize = true;
-            this.lblPID.Location = new System.Drawing.Point(149, 17);
+            this.lblPID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPID.Location = new System.Drawing.Point(150, 56);
             this.lblPID.Name = "lblPID";
-            this.lblPID.Size = new System.Drawing.Size(86, 13);
+            this.lblPID.Size = new System.Drawing.Size(119, 18);
             this.lblPID.TabIndex = 96;
             this.lblPID.Text = "PLACEHOLDER";
             // 
             // lblPN
             // 
             this.lblPN.AutoSize = true;
-            this.lblPN.Location = new System.Drawing.Point(69, 47);
+            this.lblPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPN.Location = new System.Drawing.Point(37, 86);
             this.lblPN.Name = "lblPN";
-            this.lblPN.Size = new System.Drawing.Size(74, 13);
+            this.lblPN.Size = new System.Drawing.Size(101, 18);
             this.lblPN.TabIndex = 97;
             this.lblPN.Text = "Patient Name:";
             // 
@@ -584,7 +605,6 @@
             this.panel2.Controls.Add(this.lblPtnID);
             this.panel2.Controls.Add(this.tbProviderID);
             this.panel2.Controls.Add(this.lblProviderID);
-            this.panel2.Controls.Add(this.lblConstantCPT);
             this.panel2.Controls.Add(this.tbSubjective);
             this.panel2.Controls.Add(this.tbPTGoals);
             this.panel2.Controls.Add(this.lblSupervisedCPT);
@@ -595,73 +615,78 @@
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblDiagnosis);
             this.panel2.Controls.Add(this.lblSupervisedModalities);
-            this.panel2.Controls.Add(this.lblConstantAttendance);
-            this.panel2.Controls.Add(this.cbConstantAttendance);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(6, 135);
+            this.panel2.Location = new System.Drawing.Point(-3, 135);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
             // 
             // dtpDateOfService
             // 
-            this.dtpDateOfService.Location = new System.Drawing.Point(364, 11);
+            this.dtpDateOfService.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOfService.Location = new System.Drawing.Point(149, 17);
             this.dtpDateOfService.Name = "dtpDateOfService";
-            this.dtpDateOfService.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateOfService.Size = new System.Drawing.Size(280, 24);
             this.dtpDateOfService.TabIndex = 132;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(109, 18);
             this.label1.TabIndex = 103;
             this.label1.Text = "Date of Service";
             // 
             // tbPTDiagnosis
             // 
-            this.tbPTDiagnosis.Location = new System.Drawing.Point(149, 248);
+            this.tbPTDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPTDiagnosis.Location = new System.Drawing.Point(149, 283);
             this.tbPTDiagnosis.Multiline = true;
             this.tbPTDiagnosis.Name = "tbPTDiagnosis";
             this.tbPTDiagnosis.ReadOnly = true;
             this.tbPTDiagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbPTDiagnosis.Size = new System.Drawing.Size(415, 62);
+            this.tbPTDiagnosis.Size = new System.Drawing.Size(415, 96);
             this.tbPTDiagnosis.TabIndex = 3;
             // 
             // lblPTDiagnosis
             // 
             this.lblPTDiagnosis.AutoSize = true;
-            this.lblPTDiagnosis.Location = new System.Drawing.Point(73, 251);
+            this.lblPTDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTDiagnosis.Location = new System.Drawing.Point(41, 286);
             this.lblPTDiagnosis.Name = "lblPTDiagnosis";
-            this.lblPTDiagnosis.Size = new System.Drawing.Size(70, 13);
+            this.lblPTDiagnosis.Size = new System.Drawing.Size(97, 18);
             this.lblPTDiagnosis.TabIndex = 102;
             this.lblPTDiagnosis.Text = "PT Diagnosis";
             // 
             // lblPatientName
             // 
             this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Location = new System.Drawing.Point(151, 47);
+            this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientName.Location = new System.Drawing.Point(151, 86);
             this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(86, 13);
+            this.lblPatientName.Size = new System.Drawing.Size(119, 18);
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
             // lblConstantCPT
             // 
             this.lblConstantCPT.AutoSize = true;
-            this.lblConstantCPT.Location = new System.Drawing.Point(167, 567);
+            this.lblConstantCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConstantCPT.Location = new System.Drawing.Point(218, 31);
             this.lblConstantCPT.Name = "lblConstantCPT";
-            this.lblConstantCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblConstantCPT.Size = new System.Drawing.Size(38, 18);
             this.lblConstantCPT.TabIndex = 100;
             this.lblConstantCPT.Text = "CPT";
             // 
             // lblSupervisedCPT
             // 
             this.lblSupervisedCPT.AutoSize = true;
-            this.lblSupervisedCPT.Location = new System.Drawing.Point(167, 525);
+            this.lblSupervisedCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupervisedCPT.Location = new System.Drawing.Point(250, 548);
             this.lblSupervisedCPT.Name = "lblSupervisedCPT";
-            this.lblSupervisedCPT.Size = new System.Drawing.Size(28, 13);
+            this.lblSupervisedCPT.Size = new System.Drawing.Size(38, 18);
             this.lblSupervisedCPT.TabIndex = 99;
             this.lblSupervisedCPT.Text = "CPT";
             // 
@@ -670,7 +695,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(765, 89);
+            this.panelMessage.Location = new System.Drawing.Point(756, 89);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -705,7 +730,7 @@
             this.btnPrintVisitDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintVisitDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintVisitDetails.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVisitDetails.Location = new System.Drawing.Point(765, 677);
+            this.btnPrintVisitDetails.Location = new System.Drawing.Point(756, 677);
             this.btnPrintVisitDetails.Name = "btnPrintVisitDetails";
             this.btnPrintVisitDetails.Size = new System.Drawing.Size(197, 60);
             this.btnPrintVisitDetails.TabIndex = 116;
@@ -815,7 +840,6 @@
         private System.Windows.Forms.Label lblConstantCPT;
         private System.Windows.Forms.Label lblSupervisedCPT;
         private System.Windows.Forms.Label lblTodaysDate;
-        private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.TextBox tbPlan;
         private System.Windows.Forms.Label lblPatientPlan;
         private System.Windows.Forms.Button btnBackToProfile;

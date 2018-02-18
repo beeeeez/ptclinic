@@ -21,6 +21,10 @@ namespace PTClinic
         private string patientVisitStatus;
         private Boolean PSFS = false;
         bool visitSaved;
+        StringBuilder followupVisitString;
+        private string diagnosisStr;
+        private string ptGoalStr;
+        private string ptDiagnosisStr;
 
         public FollowUpVisitForm(string PatientID, string PatientName, string PatientVisitStatus, Boolean needPSFS, Form adminForm, Form Login, Form PatientProfile)
         {
@@ -74,8 +78,8 @@ namespace PTClinic
                         // and put them in proper labels
 
                         tbDiagnosis.Text = dataReaderPatient["medicalhistory_diagnosis"].ToString();
+                        diagnosisStr = dataReaderPatient["medicalhistory_diagnosis"].ToString();
 
-                        //MessageBox.Show(PatientID);
                     }
                 }
             }
@@ -95,6 +99,7 @@ namespace PTClinic
                         tbProviderID.Text = dataReaderPatientVisit["provider_id"].ToString();
 
                         tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+                        ptGoalStr = dataReaderPatientVisit["pt_goals"].ToString();
 
                         var ptDiagnosis = dataReaderPatientVisit["pt_diagnosis"].ToString();
 
@@ -104,12 +109,30 @@ namespace PTClinic
 
                         diagnosisArray = ptDiagnosis.Split(splitChar);
 
+                        /** Create acronym for print ability -- currently to long
+Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion Associated with Connective Tissue Dysfunction
+Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion Associated with Localized Inflammation
+Impaired Joint Mobility, Motor Function, Muscle Performance, and Range of motion Associated with and Reflex Integrity associated with Spinal Disorders
+Impaired Posture
+Primary Prevention/Risk Reduction for Skeletal Demineralization
+Primary Prevention/Risk Reduction for Loss of Balance and Falling
+Impaired Motor Function and Sensory Integrity Associated with Nonprogressive Disorders of the Central Nervous System - Congenital Origin or Acquired in Infancy or Childhood
+Impaired Motor Function and Sensory Integrity Associated with Nonprogressive Disorders of the Central Nervous System - Acquired in Adolescence or Adulthood
+Impaired Motor Function and Sensory Integrity Associated with Progressive Disorders of the Central Nervous System
+Impaired Peripheral Nerve Integrity and Muscle Performance Associated with Peripheral Nerve Injury
+Impaired Motor Function and Sensory Integrity Associated with Acute or Chronic Poly Neuropathies
+Primary Prevention/Risk Reduction for Cardiovascular/Pulmonary Disorders
+Impaired Aerobic Capacity/Endurance Associated with Deconditioning
+Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunction or Failure
+                        **/
+
                         for (int i = 0; i < diagnosisArray.Length; i++)
                         {
                             sb.AppendLine("- " + diagnosisArray[i]);
                         }
 
                         tbPTDiagnosis.Text = sb.ToString();
+                        ptDiagnosisStr = sb.ToString();
                     }
                 }
             } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
@@ -226,6 +249,7 @@ namespace PTClinic
             btnBackHome.Image = Image.FromFile("..\\..\\Resources\\ic_home_white_24dp_1x.png");
             btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
             btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
+            btnPrintVisitDetails.Image = Image.FromFile("..\\..\\Resources\\ic_print_white_24dp_1x.png");
         }
 
         // Home Button Click
@@ -326,10 +350,16 @@ namespace PTClinic
                 if (patientVisitStatus.Equals("follow up"))
                 {
                     AddFollowUpVisit();
+
+                    btnAddFollowUp.Visible = false;
+                    btnPrintVisitDetails.Visible = true;
                 }
                 else if (patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
+      
+                    btnAddFollowUp.Visible = false;
+                    btnPrintVisitDetails.Visible = true;
                 }
 
             }
@@ -375,8 +405,6 @@ namespace PTClinic
         private void clearForm()
         {
             tbProviderID.Clear();
-            //tbDiagnosis.Clear();
-            //tbPTGoals.Clear();
             tbSubjective.Clear();
             tbObjective.Clear();
             tbAssessment.Clear();
@@ -392,23 +420,48 @@ namespace PTClinic
 
         private void AddFollowUpVisit()
         {
+            followupVisitString = new StringBuilder();
+
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
             newVisit.PatientID = patientID;
+
+            followupVisitString.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
+            followupVisitString.AppendLine("Patient ID: " + patientID);
+
             newVisit.ProviderID = tbProviderID.Text;
+
+            followupVisitString.AppendLine("Provider ID: " + tbProviderID.Text);
+
             newVisit.PatientName = lblPatientName.Text;
-            //newVisit.Diagnosis = tbDiagnosis.Text;
-            //newVisit.PTGoals = tbPTGoals.Text;
+
+            followupVisitString.AppendLine("Patient Name: " + lblPatientName.Text);
+            followupVisitString.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
+            followupVisitString.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
+            followupVisitString.AppendLine("PT Diagnosis: \n" + breakUpString(ptDiagnosisStr));
+
             newVisit.Subjective = tbSubjective.Text;
+
+            followupVisitString.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
+
             newVisit.Objective = tbObjective.Text;
 
+            followupVisitString.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
+
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+
+            followupVisitString.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
+            followupVisitString.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-
-
+            followupVisitString.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
+           
             newVisit.Assessment = tbAssessment.Text;
+            followupVisitString.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
+
             newVisit.Plan = tbPlan.Text;
+            followupVisitString.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -420,8 +473,7 @@ namespace PTClinic
 
             newVisit.StudentProviderNameDate = shortStudentDate;
 
-
-
+            
             newVisit.ProviderName = tbProviderName.Text;
 
             /* Provider Signature Date */
@@ -484,7 +536,7 @@ namespace PTClinic
                                     visitSaved = true;
                                     //lblFeedback.Text = "Patient's Visit Information has been saved";
 
-                                    clearForm();
+                                    // clearForm();
                            
                                 }
                                 else
@@ -520,8 +572,6 @@ namespace PTClinic
             newVisit.PatientID = patientID;
             newVisit.ProviderID = tbProviderID.Text;
             newVisit.PatientName = lblPatientName.Text;
-            //newVisit.Diagnosis = tbDiagnosis.Text;
-            //newVisit.PTGoals = tbPTGoals.Text;
             newVisit.Subjective = tbSubjective.Text;
             newVisit.Objective = tbObjective.Text;
 
@@ -605,21 +655,9 @@ namespace PTClinic
                                 {
                                     panelMessage.Visible = true;
                                     visitSaved = true;
-                                    //lblFeedback.Text = "Patient's Visit Information has been saved";
 
                                     clearForm();
-                                    /*
-                                    if (PSFS == true)
-                                    {
-                                        DialogResult dResult = MessageBox.Show("Patient Information Saved.\nPlease complete Patient Goals.", "Alert", MessageBoxButtons.OKCancel);
-                                        if (dResult == DialogResult.OK)
-                                        {
-                                            this.Hide();
-                                            bool fromProfile = true;
-                                            PatientGoalsForm temp = new PatientGoalsForm(patientID, fromProfile, Admin, Login, PatientProfile);
-                                            temp.Show();
-                                        }
-                                    }*/
+                           
                                 }
                                 else
                                 {
@@ -670,5 +708,67 @@ namespace PTClinic
                 search.Show();
             }
         }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            using (Font font1 = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point))
+            {
+
+                Rectangle rect1 = new Rectangle(100, 100, 650, 25);
+                StringFormat SF = new StringFormat();
+                SF.Alignment = StringAlignment.Center;
+                SF.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Follow Up Visit", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawRectangle(Pens.Black, rect1);
+            }
+
+             e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
+
+        }
+
+        private void btnPrintVisitDetails_Click(object sender, EventArgs e)
+        {
+           
+            //printDialog.Document = printDocument;
+            //if (printDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument.Print();
+            //}
+
+
+            // !!! To view print layout uncomment this
+
+            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+
+        }
+
+        public static string breakUpString(string s)
+        {
+            StringBuilder result = new StringBuilder();
+
+            while (s.Length > 70)
+            {
+                if (Char.IsWhiteSpace(s[69]) || Char.IsWhiteSpace(s[70]) ||
+                    s[69] == '-' || s[70] == '-')
+                {
+                    result.AppendLine(s.Substring(0, 70));
+                }
+                else
+                {
+                    result.AppendLine(s.Substring(0, 70) + "-");
+                }
+
+                s = s.Substring(70);
+
+            }
+
+            result.AppendLine(s);
+
+            return result.ToString();
+        }
+
     }
 }

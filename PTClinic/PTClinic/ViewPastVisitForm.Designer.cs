@@ -76,14 +76,16 @@
             this.lblHeaderText = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblVisitInformation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPN
@@ -519,13 +521,14 @@
             this.btnBackToSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToSearch.ForeColor = System.Drawing.Color.White;
-            this.btnBackToSearch.Location = new System.Drawing.Point(796, 20);
+            this.btnBackToSearch.Location = new System.Drawing.Point(577, 20);
             this.btnBackToSearch.Name = "btnBackToSearch";
-            this.btnBackToSearch.Size = new System.Drawing.Size(164, 34);
+            this.btnBackToSearch.Size = new System.Drawing.Size(200, 34);
             this.btnBackToSearch.TabIndex = 21;
-            this.btnBackToSearch.Text = "Back To Search";
+            this.btnBackToSearch.Text = "Back To Visit Search";
             this.btnBackToSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackToSearch.UseVisualStyleBackColor = false;
+            this.btnBackToSearch.Click += new System.EventHandler(this.btnBackToSearch_Click);
             // 
             // btnBackToProfile
             // 
@@ -534,13 +537,14 @@
             this.btnBackToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToProfile.Location = new System.Drawing.Point(612, 20);
+            this.btnBackToProfile.Location = new System.Drawing.Point(799, 20);
             this.btnBackToProfile.Name = "btnBackToProfile";
             this.btnBackToProfile.Size = new System.Drawing.Size(164, 34);
             this.btnBackToProfile.TabIndex = 18;
             this.btnBackToProfile.Text = "Back To Profile";
             this.btnBackToProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackToProfile.UseVisualStyleBackColor = false;
+            this.btnBackToProfile.Click += new System.EventHandler(this.btnBackToProfile_Click);
             // 
             // btnBackHome
             // 
@@ -556,6 +560,7 @@
             this.btnBackHome.Text = "Home";
             this.btnBackHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBackHome.UseVisualStyleBackColor = false;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // btnLogOut
             // 
@@ -571,6 +576,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // lblHeaderText
             // 
@@ -597,21 +603,11 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
             this.panel3.Location = new System.Drawing.Point(50, 79);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 123;
-            // 
-            // lblTodaysDate
-            // 
-            this.lblTodaysDate.AutoSize = true;
-            this.lblTodaysDate.Location = new System.Drawing.Point(553, 37);
-            this.lblTodaysDate.Name = "lblTodaysDate";
-            this.lblTodaysDate.Size = new System.Drawing.Size(85, 13);
-            this.lblTodaysDate.TabIndex = 103;
-            this.lblTodaysDate.Text = "TODAY\'S DATE";
             // 
             // lblVisitInformation
             // 
@@ -648,11 +644,31 @@
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 118;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Location = new System.Drawing.Point(754, 79);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(277, 50);
+            this.panel5.TabIndex = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(75, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 25);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "View Only";
+            // 
             // ViewPastVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 749);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFeedback);
@@ -670,6 +686,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,8 +742,9 @@
         private System.Windows.Forms.Label lblHeaderText;
         private System.Windows.Forms.Label lblFeedback;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblTodaysDate;
         private System.Windows.Forms.Label lblVisitInformation;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
     }
 }

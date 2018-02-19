@@ -15,14 +15,19 @@ namespace PTClinic
     {
         private int patientId;
         private string visitDate;
+        private Form Admin;
+        private Form Login;
 
-        public ViewPastVisitForm(int patientID, string visitDate)
+        public ViewPastVisitForm(int patientID, string visitDate, Form Admin, Form Login)
         {
             InitializeComponent();
             setButtonIcon();
 
             this.patientId = patientID;
             this.visitDate = visitDate;
+            this.Admin = Admin;
+            this.Login = Login;
+
             //MessageBox.Show("Patiend ID = " + patientID + "\n Visit Date: " + visitDate);
         }
 
@@ -79,22 +84,30 @@ namespace PTClinic
 
         private void btnBackToSearch_Click(object sender, EventArgs e)
         {
-            // TODO Add functionality 
+            PastVisitSearchForm visitSearchForm = new PastVisitSearchForm(patientId, Admin, Login);
+            this.Hide();
+            visitSearchForm.Show();
         }
 
         private void btnBackToProfile_Click(object sender, EventArgs e)
         {
-            // TODO Add functionality 
+            Search newSearchForm = new Search(Admin, Login);
+            PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
+            PatientProfile newProfile = new PatientProfile(patientId, Admin, Login, newSearchForm, newPatientForm, false);
+            this.Hide();
+            newProfile.Show();
         }
 
         private void btnBackHome_Click(object sender, EventArgs e)
         {
-            // TODO Add functionality 
+            this.Hide();
+            Admin.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            // TODO Add functionality 
+            this.Hide();
+            Login.Show();
         }
     }
 }

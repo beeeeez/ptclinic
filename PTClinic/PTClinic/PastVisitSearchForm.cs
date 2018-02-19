@@ -108,7 +108,7 @@ namespace PTClinic
             else
             {
                // MessageBox.Show("go to form");
-                ViewPastVisitForm viewForm = new ViewPastVisitForm(patientId, cbPastFollowupVisits.Text);
+                ViewPastVisitForm viewForm = new ViewPastVisitForm(patientId, cbPastFollowupVisits.Text, Admin, Login);
                 viewForm.Show();
                 this.Hide();
             }

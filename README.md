@@ -3,7 +3,6 @@
 ## Project Todos
 - Please make the Evaluation Visit printable. **WIP - Format issues**
 - Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) **WIP**
-  - Add functionality to navigation on `ViewPastVisitForm` 
   - Pull visit data `WHERE patient_id = @ID AND visit_date = @VisitDate` and populate view only fields
 - **Test the program!**
 - **Clear out DB - Make copy of empty DB to have on standby / future**

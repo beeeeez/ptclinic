@@ -24,6 +24,7 @@ namespace PTClinic
             InitializeComponent();
 
             setButtonIcon();
+            btnViewFollowUp.Visible = true;
 
             this.patientId = patientId;
             this.Admin = Admin;
@@ -70,7 +71,9 @@ namespace PTClinic
                     else
                     {
                         cbPastFollowupVisits.Items.Add("No Past Visits");
+                        cbPastFollowupVisits.SelectedIndex = 0;
                         panelMessage.Visible = true;
+                        btnViewFollowUp.Visible = false;
                     }
 
                 }

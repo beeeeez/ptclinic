@@ -29,8 +29,8 @@ namespace PTClinic
             this.Admin = Admin;
             this.Login = Login;
 
+            lblPID.Text = patientId.ToString();
             DBCall();
-
             //MessageBox.Show("Patiend ID = " + patientID + "\n Visit Date: " + visitDate);
         }
 
@@ -121,7 +121,7 @@ namespace PTClinic
                         while (reader.Read())
                         {
                             // SET TEXT FIELDS TO reader["table_field"].toString()
-                            MessageBox.Show("Patient Name = " + reader["patient_name"].ToString());
+                            lblPatientName.Text = reader["patient_name"].ToString();
 
                             // Take the appropriate fields from the datareader
                             // and put them in proper text boxes / selections
@@ -138,9 +138,9 @@ namespace PTClinic
 
 
                             //Drop downs
-                            cbTherapeuticProcedures.SelectedItem = reader["therapeutic_procedures"].ToString();
-                            cbSupervisedModalities.SelectedItem = reader["supervised_modalities"].ToString();
-                            cbConstantAttendance.SelectedItem = reader["constant_attendance"].ToString();
+                            tbTherapeuticProcedures.Text = reader["therapeutic_procedures"].ToString();
+                            tbSupervisedModalities.Text = reader["supervised_modalities"].ToString();
+                            tbConstantAttendance.Text = reader["constant_attendance"].ToString();
                         }
                     }
                 }

@@ -22,11 +22,14 @@ namespace PTClinic
         {
             InitializeComponent();
             setButtonIcon();
+   
 
             this.patientId = patientID;
             this.visitDate = visitDate;
             this.Admin = Admin;
             this.Login = Login;
+
+            DBCall();
 
             //MessageBox.Show("Patiend ID = " + patientID + "\n Visit Date: " + visitDate);
         }
@@ -42,6 +45,60 @@ namespace PTClinic
 
         private void DBCall()
         {
+
+            PatientInfo tempPatient = new PatientInfo();
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatient = tempPatient.FindOnePatient(connection, patientId))
+                {
+                    while (dataReaderPatient.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+
+                        tbDiagnosis.Text = dataReaderPatient["medicalhistory_diagnosis"].ToString();
+
+                    }
+                }
+            }
+
+
+            // Create variable for a Patients initial Visit Information
+            VisitInfo tempPatientVisit = new VisitInfo();
+
+            using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
+            {
+                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                using (var dataReaderPatientVisit = tempPatientVisit.FindOnePatientVisit(connection, patientId))
+                {
+                    while (dataReaderPatientVisit.Read())
+                    {
+                        // Take the appropriate fields from the datareader
+                        // and put them in proper labels
+                        tbProviderID.Text = dataReaderPatientVisit["provider_id"].ToString();
+
+                        tbPTGoals.Text = dataReaderPatientVisit["pt_goals"].ToString();
+                        var ptDiagnosis = dataReaderPatientVisit["pt_diagnosis"].ToString();
+
+                        char[] splitChar = { '+' };
+                        string[] diagnosisArray = null;
+                        StringBuilder sb = new StringBuilder();
+
+                        diagnosisArray = ptDiagnosis.Split(splitChar);
+
+                        for (int i = 0; i < diagnosisArray.Length; i++)
+                        {
+                            sb.AppendLine("- " + diagnosisArray[i]);
+
+                        }
+
+                        tbPTDiagnosis.Text = sb.ToString();
+
+                    }
+                }
+            } 
+
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
                 try
@@ -65,6 +122,25 @@ namespace PTClinic
                         {
                             // SET TEXT FIELDS TO reader["table_field"].toString()
                             MessageBox.Show("Patient Name = " + reader["patient_name"].ToString());
+
+                            // Take the appropriate fields from the datareader
+                            // and put them in proper text boxes / selections
+                            tbProviderID.Text = reader["provider_id"].ToString();
+                            DateTime dos = Convert.ToDateTime(reader["visit_date"].ToString());
+                            dtpDateOfService.Value = dos;
+
+                            tbSubjective.Text = reader["subjective"].ToString();
+                            tbObjective.Text = reader["objective"].ToString();
+                            tbAssessment.Text = reader["assessment"].ToString();
+                            tbPlan.Text = reader["plan"].ToString();
+                            tbStudentProvider.Text = reader["student_name"].ToString();
+                            tbProviderName.Text = reader["provider_name"].ToString();
+
+
+                            //Drop downs
+                            cbTherapeuticProcedures.SelectedItem = reader["therapeutic_procedures"].ToString();
+                            cbSupervisedModalities.SelectedItem = reader["supervised_modalities"].ToString();
+                            cbConstantAttendance.SelectedItem = reader["constant_attendance"].ToString();
                         }
                     }
                 }

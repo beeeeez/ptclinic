@@ -1,16 +1,12 @@
 # PTClinic
 
-## Project Todos
-- Please make the Evaluation Visit printable. **WIP - Format issues**
-- Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) **WIP**
-  - Pull visit data `WHERE patient_id = @ID AND visit_date = @VisitDate` and populate view only fields
-- Update tab index on followup visit form
-- Update tab index on patient demographic
+## Completion Todos
+- Please make the Evaluation Visit printable. **WIP**
 - **Test the program!**
 - **Clear out DB - Make copy of empty DB to have on standby / future**
+
+## Future TODOs
 - Think about making a guide to help other people control the program in the future with relation to using the program in another setting without having to have us "set up the DB". Instruct how to add an empty (new) `PTCLinic.accdb` file. 
-
-
 
 ### COMPLETED UPDATES 
 - [x] For the Appointment section, just allow another address possible: 1240 Park Avenue Cranston, RI  
@@ -36,6 +32,9 @@
 - [x] Allow to SAVE the information (not sure the “is the form complete” is needed…..)
 - [x] Since this will be the second visit, after the Evaluation visit is complete, we’d like to see if we can transfer the “PT of Record” name to this form in the place of the “Provider ID” field.
 - [x] Please make the font on the forms larger than it is now – we are getting old and need larger font 
+- [x] Update tab index on followup visit form
+- [x] Update tab index on patient demographic
+- [x] Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) 
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

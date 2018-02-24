@@ -75,6 +75,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblCaregiverName = new System.Windows.Forms.Label();
             this.panelPatientInfo = new System.Windows.Forms.Panel();
+            this.cbPatientSite = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tbPatientMedications = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tbPatientMedHistDiagnosis = new System.Windows.Forms.TextBox();
@@ -127,8 +129,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.cbPatientSite = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCaregiverInfo.SuspendLayout();
@@ -266,7 +266,7 @@
             this.chkBoxSame.Location = new System.Drawing.Point(168, 326);
             this.chkBoxSame.Name = "chkBoxSame";
             this.chkBoxSame.Size = new System.Drawing.Size(330, 24);
-            this.chkBoxSame.TabIndex = 135;
+            this.chkBoxSame.TabIndex = 32;
             this.chkBoxSame.Text = "Use Emergency Contact for Caregiver";
             this.chkBoxSame.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +286,7 @@
             this.tbECRelationship.Location = new System.Drawing.Point(121, 245);
             this.tbECRelationship.Name = "tbECRelationship";
             this.tbECRelationship.Size = new System.Drawing.Size(431, 26);
-            this.tbECRelationship.TabIndex = 132;
+            this.tbECRelationship.TabIndex = 31;
             // 
             // label9
             // 
@@ -315,7 +315,7 @@
             this.tbECPhone.Mask = "(999) 000-0000";
             this.tbECPhone.Name = "tbECPhone";
             this.tbECPhone.Size = new System.Drawing.Size(121, 26);
-            this.tbECPhone.TabIndex = 124;
+            this.tbECPhone.TabIndex = 28;
             // 
             // tbECName
             // 
@@ -323,7 +323,7 @@
             this.tbECName.Location = new System.Drawing.Point(120, 72);
             this.tbECName.Name = "tbECName";
             this.tbECName.Size = new System.Drawing.Size(431, 26);
-            this.tbECName.TabIndex = 123;
+            this.tbECName.TabIndex = 27;
             // 
             // cbECPhoneType
             // 
@@ -334,7 +334,7 @@
             this.cbECPhoneType.Location = new System.Drawing.Point(430, 158);
             this.cbECPhoneType.Name = "cbECPhoneType";
             this.cbECPhoneType.Size = new System.Drawing.Size(121, 28);
-            this.cbECPhoneType.TabIndex = 126;
+            this.cbECPhoneType.TabIndex = 30;
             // 
             // tbECPhoneExt
             // 
@@ -342,7 +342,7 @@
             this.tbECPhoneExt.Location = new System.Drawing.Point(292, 158);
             this.tbECPhoneExt.Name = "tbECPhoneExt";
             this.tbECPhoneExt.Size = new System.Drawing.Size(87, 26);
-            this.tbECPhoneExt.TabIndex = 125;
+            this.tbECPhoneExt.TabIndex = 29;
             // 
             // label3
             // 
@@ -391,7 +391,7 @@
             this.tbCGZip.Mask = "00000";
             this.tbCGZip.Name = "tbCGZip";
             this.tbCGZip.Size = new System.Drawing.Size(100, 26);
-            this.tbCGZip.TabIndex = 32;
+            this.tbCGZip.TabIndex = 43;
             this.tbCGZip.ValidatingType = typeof(int);
             // 
             // lblCareFeedback
@@ -414,7 +414,7 @@
             this.btnAddCaregiver.Location = new System.Drawing.Point(864, 543);
             this.btnAddCaregiver.Name = "btnAddCaregiver";
             this.btnAddCaregiver.Size = new System.Drawing.Size(193, 60);
-            this.btnAddCaregiver.TabIndex = 33;
+            this.btnAddCaregiver.TabIndex = 44;
             this.btnAddCaregiver.Text = "Continue";
             this.btnAddCaregiver.UseVisualStyleBackColor = false;
             this.btnAddCaregiver.Click += new System.EventHandler(this.btnAddCaregiver_Click);
@@ -426,7 +426,7 @@
             this.tbCGPhone2.Mask = "(999) 000-0000";
             this.tbCGPhone2.Name = "tbCGPhone2";
             this.tbCGPhone2.Size = new System.Drawing.Size(122, 26);
-            this.tbCGPhone2.TabIndex = 26;
+            this.tbCGPhone2.TabIndex = 37;
             // 
             // tbCGPhone1
             // 
@@ -435,7 +435,7 @@
             this.tbCGPhone1.Mask = "(999) 000-0000";
             this.tbCGPhone1.Name = "tbCGPhone1";
             this.tbCGPhone1.Size = new System.Drawing.Size(121, 26);
-            this.tbCGPhone1.TabIndex = 23;
+            this.tbCGPhone1.TabIndex = 34;
             // 
             // tbCGName
             // 
@@ -443,7 +443,7 @@
             this.tbCGName.Location = new System.Drawing.Point(623, 63);
             this.tbCGName.Name = "tbCGName";
             this.tbCGName.Size = new System.Drawing.Size(431, 26);
-            this.tbCGName.TabIndex = 22;
+            this.tbCGName.TabIndex = 33;
             // 
             // cbCGPhone1Type
             // 
@@ -454,7 +454,7 @@
             this.cbCGPhone1Type.Location = new System.Drawing.Point(933, 149);
             this.cbCGPhone1Type.Name = "cbCGPhone1Type";
             this.cbCGPhone1Type.Size = new System.Drawing.Size(121, 28);
-            this.cbCGPhone1Type.TabIndex = 25;
+            this.cbCGPhone1Type.TabIndex = 36;
             // 
             // cbCGPhone2Type
             // 
@@ -465,7 +465,7 @@
             this.cbCGPhone2Type.Location = new System.Drawing.Point(933, 246);
             this.cbCGPhone2Type.Name = "cbCGPhone2Type";
             this.cbCGPhone2Type.Size = new System.Drawing.Size(121, 28);
-            this.cbCGPhone2Type.TabIndex = 28;
+            this.cbCGPhone2Type.TabIndex = 39;
             // 
             // cbCGState
             // 
@@ -476,7 +476,7 @@
             this.cbCGState.Location = new System.Drawing.Point(767, 453);
             this.cbCGState.Name = "cbCGState";
             this.cbCGState.Size = new System.Drawing.Size(164, 28);
-            this.cbCGState.TabIndex = 31;
+            this.cbCGState.TabIndex = 42;
             // 
             // tbCGCity
             // 
@@ -484,7 +484,7 @@
             this.tbCGCity.Location = new System.Drawing.Point(623, 455);
             this.tbCGCity.Name = "tbCGCity";
             this.tbCGCity.Size = new System.Drawing.Size(134, 26);
-            this.tbCGCity.TabIndex = 30;
+            this.tbCGCity.TabIndex = 41;
             // 
             // tbCGAddress
             // 
@@ -492,7 +492,7 @@
             this.tbCGAddress.Location = new System.Drawing.Point(623, 372);
             this.tbCGAddress.Name = "tbCGAddress";
             this.tbCGAddress.Size = new System.Drawing.Size(431, 26);
-            this.tbCGAddress.TabIndex = 29;
+            this.tbCGAddress.TabIndex = 40;
             // 
             // tbCGPhone1Ext
             // 
@@ -500,7 +500,7 @@
             this.tbCGPhone1Ext.Location = new System.Drawing.Point(795, 149);
             this.tbCGPhone1Ext.Name = "tbCGPhone1Ext";
             this.tbCGPhone1Ext.Size = new System.Drawing.Size(87, 26);
-            this.tbCGPhone1Ext.TabIndex = 24;
+            this.tbCGPhone1Ext.TabIndex = 35;
             // 
             // tbCGPhone2Ext
             // 
@@ -508,7 +508,7 @@
             this.tbCGPhone2Ext.Location = new System.Drawing.Point(797, 246);
             this.tbCGPhone2Ext.Name = "tbCGPhone2Ext";
             this.tbCGPhone2Ext.Size = new System.Drawing.Size(87, 26);
-            this.tbCGPhone2Ext.TabIndex = 27;
+            this.tbCGPhone2Ext.TabIndex = 38;
             // 
             // label1
             // 
@@ -688,6 +688,27 @@
             this.panelPatientInfo.Size = new System.Drawing.Size(1203, 623);
             this.panelPatientInfo.TabIndex = 90;
             // 
+            // cbPatientSite
+            // 
+            this.cbPatientSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPatientSite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbPatientSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPatientSite.FormattingEnabled = true;
+            this.cbPatientSite.Location = new System.Drawing.Point(41, 584);
+            this.cbPatientSite.Name = "cbPatientSite";
+            this.cbPatientSite.Size = new System.Drawing.Size(269, 28);
+            this.cbPatientSite.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(39, 558);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(102, 24);
+            this.label13.TabIndex = 115;
+            this.label13.Text = "Patient Site";
+            // 
             // tbPatientMedications
             // 
             this.tbPatientMedications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -695,7 +716,7 @@
             this.tbPatientMedications.Multiline = true;
             this.tbPatientMedications.Name = "tbPatientMedications";
             this.tbPatientMedications.Size = new System.Drawing.Size(406, 44);
-            this.tbPatientMedications.TabIndex = 112;
+            this.tbPatientMedications.TabIndex = 27;
             // 
             // label12
             // 
@@ -714,7 +735,7 @@
             this.tbPatientMedHistDiagnosis.Multiline = true;
             this.tbPatientMedHistDiagnosis.Name = "tbPatientMedHistDiagnosis";
             this.tbPatientMedHistDiagnosis.Size = new System.Drawing.Size(406, 38);
-            this.tbPatientMedHistDiagnosis.TabIndex = 110;
+            this.tbPatientMedHistDiagnosis.TabIndex = 26;
             // 
             // label11
             // 
@@ -746,7 +767,7 @@
             this.btnContinueToCaregiver.Location = new System.Drawing.Point(916, 548);
             this.btnContinueToCaregiver.Name = "btnContinueToCaregiver";
             this.btnContinueToCaregiver.Size = new System.Drawing.Size(254, 60);
-            this.btnContinueToCaregiver.TabIndex = 22;
+            this.btnContinueToCaregiver.TabIndex = 28;
             this.btnContinueToCaregiver.Text = "Continue to Caregiver";
             this.btnContinueToCaregiver.UseVisualStyleBackColor = false;
             this.btnContinueToCaregiver.Click += new System.EventHandler(this.btnContinueToCaregiver_Click);
@@ -768,7 +789,7 @@
             this.tbPhone2.Mask = "(999) 000-0000";
             this.tbPhone2.Name = "tbPhone2";
             this.tbPhone2.Size = new System.Drawing.Size(131, 26);
-            this.tbPhone2.TabIndex = 17;
+            this.tbPhone2.TabIndex = 19;
             // 
             // tbPhone1
             // 
@@ -777,7 +798,7 @@
             this.tbPhone1.Mask = "(999) 000-0000";
             this.tbPhone1.Name = "tbPhone1";
             this.tbPhone1.Size = new System.Drawing.Size(131, 26);
-            this.tbPhone1.TabIndex = 14;
+            this.tbPhone1.TabIndex = 16;
             // 
             // gbMessage
             // 
@@ -787,7 +808,7 @@
             this.gbMessage.Location = new System.Drawing.Point(938, 275);
             this.gbMessage.Name = "gbMessage";
             this.gbMessage.Size = new System.Drawing.Size(136, 45);
-            this.gbMessage.TabIndex = 20;
+            this.gbMessage.TabIndex = 22;
             this.gbMessage.TabStop = false;
             // 
             // rdbMessageNo
@@ -796,7 +817,7 @@
             this.rdbMessageNo.Location = new System.Drawing.Point(82, 13);
             this.rdbMessageNo.Name = "rdbMessageNo";
             this.rdbMessageNo.Size = new System.Drawing.Size(47, 24);
-            this.rdbMessageNo.TabIndex = 1;
+            this.rdbMessageNo.TabIndex = 24;
             this.rdbMessageNo.TabStop = true;
             this.rdbMessageNo.Text = "No";
             this.rdbMessageNo.UseVisualStyleBackColor = true;
@@ -807,7 +828,7 @@
             this.rdbMessageYes.Location = new System.Drawing.Point(14, 13);
             this.rdbMessageYes.Name = "rdbMessageYes";
             this.rdbMessageYes.Size = new System.Drawing.Size(55, 24);
-            this.rdbMessageYes.TabIndex = 0;
+            this.rdbMessageYes.TabIndex = 23;
             this.rdbMessageYes.TabStop = true;
             this.rdbMessageYes.Text = "Yes";
             this.rdbMessageYes.UseVisualStyleBackColor = true;
@@ -829,7 +850,7 @@
             this.rdbInsuranceNo.Location = new System.Drawing.Point(82, 12);
             this.rdbInsuranceNo.Name = "rdbInsuranceNo";
             this.rdbInsuranceNo.Size = new System.Drawing.Size(47, 24);
-            this.rdbInsuranceNo.TabIndex = 1;
+            this.rdbInsuranceNo.TabIndex = 13;
             this.rdbInsuranceNo.TabStop = true;
             this.rdbInsuranceNo.Text = "No";
             this.rdbInsuranceNo.UseVisualStyleBackColor = true;
@@ -840,7 +861,7 @@
             this.rdbInsuranceYes.Location = new System.Drawing.Point(18, 12);
             this.rdbInsuranceYes.Name = "rdbInsuranceYes";
             this.rdbInsuranceYes.Size = new System.Drawing.Size(55, 24);
-            this.rdbInsuranceYes.TabIndex = 11;
+            this.rdbInsuranceYes.TabIndex = 12;
             this.rdbInsuranceYes.TabStop = true;
             this.rdbInsuranceYes.Text = "Yes";
             this.rdbInsuranceYes.UseVisualStyleBackColor = true;
@@ -874,7 +895,7 @@
             this.cbInsurer.Location = new System.Drawing.Point(652, 105);
             this.cbInsurer.Name = "cbInsurer";
             this.cbInsurer.Size = new System.Drawing.Size(244, 28);
-            this.cbInsurer.TabIndex = 12;
+            this.cbInsurer.TabIndex = 14;
             // 
             // cbState
             // 
@@ -896,7 +917,7 @@
             this.cbPhone1Type.Location = new System.Drawing.Point(953, 163);
             this.cbPhone1Type.Name = "cbPhone1Type";
             this.cbPhone1Type.Size = new System.Drawing.Size(121, 28);
-            this.cbPhone1Type.TabIndex = 16;
+            this.cbPhone1Type.TabIndex = 18;
             // 
             // cbPhone2Type
             // 
@@ -907,7 +928,7 @@
             this.cbPhone2Type.Location = new System.Drawing.Point(953, 239);
             this.cbPhone2Type.Name = "cbPhone2Type";
             this.cbPhone2Type.Size = new System.Drawing.Size(121, 28);
-            this.cbPhone2Type.TabIndex = 19;
+            this.cbPhone2Type.TabIndex = 21;
             // 
             // tbEmail
             // 
@@ -915,7 +936,7 @@
             this.tbEmail.Location = new System.Drawing.Point(652, 351);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(237, 26);
-            this.tbEmail.TabIndex = 21;
+            this.tbEmail.TabIndex = 25;
             // 
             // tbCity
             // 
@@ -971,7 +992,7 @@
             this.tbOtherInsurance.Location = new System.Drawing.Point(915, 103);
             this.tbOtherInsurance.Name = "tbOtherInsurance";
             this.tbOtherInsurance.Size = new System.Drawing.Size(244, 26);
-            this.tbOtherInsurance.TabIndex = 13;
+            this.tbOtherInsurance.TabIndex = 15;
             // 
             // tbPhoneExt1
             // 
@@ -979,7 +1000,7 @@
             this.tbPhoneExt1.Location = new System.Drawing.Point(820, 167);
             this.tbPhoneExt1.Name = "tbPhoneExt1";
             this.tbPhoneExt1.Size = new System.Drawing.Size(87, 26);
-            this.tbPhoneExt1.TabIndex = 15;
+            this.tbPhoneExt1.TabIndex = 17;
             // 
             // tbPhoneExt2
             // 
@@ -987,7 +1008,7 @@
             this.tbPhoneExt2.Location = new System.Drawing.Point(820, 241);
             this.tbPhoneExt2.Name = "tbPhoneExt2";
             this.tbPhoneExt2.Size = new System.Drawing.Size(87, 26);
-            this.tbPhoneExt2.TabIndex = 18;
+            this.tbPhoneExt2.TabIndex = 20;
             // 
             // lblMessage
             // 
@@ -1198,27 +1219,6 @@
             this.lblFirstName.Size = new System.Drawing.Size(101, 24);
             this.lblFirstName.TabIndex = 75;
             this.lblFirstName.Text = "First Name";
-            // 
-            // cbPatientSite
-            // 
-            this.cbPatientSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPatientSite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbPatientSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPatientSite.FormattingEnabled = true;
-            this.cbPatientSite.Location = new System.Drawing.Point(41, 584);
-            this.cbPatientSite.Name = "cbPatientSite";
-            this.cbPatientSite.Size = new System.Drawing.Size(269, 28);
-            this.cbPatientSite.TabIndex = 114;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 558);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 24);
-            this.label13.TabIndex = 115;
-            this.label13.Text = "Patient Site";
             // 
             // PatientInformation
             // 

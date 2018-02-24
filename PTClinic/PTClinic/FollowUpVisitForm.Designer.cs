@@ -36,6 +36,7 @@
             this.btnBackToProfile = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHeaderText = new System.Windows.Forms.Label();
             this.lblFeedback = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,14 +52,15 @@
             this.tbStudentProvider = new System.Windows.Forms.TextBox();
             this.tbAssessment = new System.Windows.Forms.TextBox();
             this.lblProviderName = new System.Windows.Forms.Label();
+            this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblStudentProvider = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
             this.lblTheraputicProcedures = new System.Windows.Forms.Label();
             this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
-            this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
             this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
-            this.lblSupervisedModalities = new System.Windows.Forms.Label();
             this.lblConstantAttendance = new System.Windows.Forms.Label();
+            this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
+            this.lblSupervisedModalities = new System.Windows.Forms.Label();
             this.lblDiagnosis = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblPTGoals = new System.Windows.Forms.Label();
@@ -78,7 +80,6 @@
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
-            this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
@@ -87,13 +88,12 @@
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMessage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -101,10 +101,10 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1024, 678);
+            this.btnClear.Location = new System.Drawing.Point(1066, 681);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
-            this.btnClear.TabIndex = 17;
+            this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Clear Form";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -116,10 +116,10 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(772, 678);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(814, 681);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
-            this.btnAddFollowUp.TabIndex = 16;
+            this.btnAddFollowUp.TabIndex = 12;
             this.btnAddFollowUp.Text = "Add Follow Up Info";
             this.btnAddFollowUp.UseVisualStyleBackColor = false;
             this.btnAddFollowUp.Click += new System.EventHandler(this.btnAddFollowUp_Click);
@@ -203,6 +203,15 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblHeaderText
             // 
             this.lblHeaderText.AutoSize = true;
@@ -219,7 +228,7 @@
             this.lblFeedback.AutoSize = true;
             this.lblFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedback.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedback.Location = new System.Drawing.Point(694, 613);
+            this.lblFeedback.Location = new System.Drawing.Point(745, 616);
             this.lblFeedback.Name = "lblFeedback";
             this.lblFeedback.Size = new System.Drawing.Size(0, 20);
             this.lblFeedback.TabIndex = 102;
@@ -230,7 +239,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(-12, 79);
+            this.panel3.Location = new System.Drawing.Point(30, 82);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -274,7 +283,7 @@
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.cbConstantAttendance);
             this.panel4.Controls.Add(this.lblConstantAttendance);
-            this.panel4.Location = new System.Drawing.Point(600, 136);
+            this.panel4.Location = new System.Drawing.Point(642, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -297,7 +306,7 @@
             this.tbPlan.Name = "tbPlan";
             this.tbPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbPlan.Size = new System.Drawing.Size(387, 53);
-            this.tbPlan.TabIndex = 11;
+            this.tbPlan.TabIndex = 8;
             // 
             // lblPatientPlan
             // 
@@ -335,7 +344,7 @@
             this.tbProviderName.Location = new System.Drawing.Point(171, 422);
             this.tbProviderName.Name = "tbProviderName";
             this.tbProviderName.Size = new System.Drawing.Size(252, 24);
-            this.tbProviderName.TabIndex = 14;
+            this.tbProviderName.TabIndex = 10;
             // 
             // tbStudentProvider
             // 
@@ -343,7 +352,7 @@
             this.tbStudentProvider.Location = new System.Drawing.Point(171, 384);
             this.tbStudentProvider.Name = "tbStudentProvider";
             this.tbStudentProvider.Size = new System.Drawing.Size(252, 24);
-            this.tbStudentProvider.TabIndex = 13;
+            this.tbStudentProvider.TabIndex = 9;
             // 
             // tbAssessment
             // 
@@ -353,7 +362,7 @@
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbAssessment.Size = new System.Drawing.Size(387, 63);
-            this.tbAssessment.TabIndex = 10;
+            this.tbAssessment.TabIndex = 7;
             // 
             // lblProviderName
             // 
@@ -364,6 +373,16 @@
             this.lblProviderName.Size = new System.Drawing.Size(107, 18);
             this.lblProviderName.TabIndex = 98;
             this.lblProviderName.Text = "Provider Name";
+            // 
+            // lblConstantCPT
+            // 
+            this.lblConstantCPT.AutoSize = true;
+            this.lblConstantCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConstantCPT.Location = new System.Drawing.Point(218, 31);
+            this.lblConstantCPT.Name = "lblConstantCPT";
+            this.lblConstantCPT.Size = new System.Drawing.Size(38, 18);
+            this.lblConstantCPT.TabIndex = 100;
+            this.lblConstantCPT.Text = "CPT";
             // 
             // lblStudentProvider
             // 
@@ -405,19 +424,7 @@
             this.cbTherapeuticProcedures.Location = new System.Drawing.Point(259, 100);
             this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
             this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 26);
-            this.cbTherapeuticProcedures.TabIndex = 8;
-            // 
-            // cbSupervisedModalities
-            // 
-            this.cbSupervisedModalities.BackColor = System.Drawing.Color.White;
-            this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSupervisedModalities.FormattingEnabled = true;
-            this.cbSupervisedModalities.Location = new System.Drawing.Point(305, 545);
-            this.cbSupervisedModalities.Name = "cbSupervisedModalities";
-            this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 26);
-            this.cbSupervisedModalities.TabIndex = 6;
+            this.cbTherapeuticProcedures.TabIndex = 6;
             // 
             // cbConstantAttendance
             // 
@@ -429,17 +436,7 @@
             this.cbConstantAttendance.Location = new System.Drawing.Point(259, 28);
             this.cbConstantAttendance.Name = "cbConstantAttendance";
             this.cbConstantAttendance.Size = new System.Drawing.Size(256, 26);
-            this.cbConstantAttendance.TabIndex = 7;
-            // 
-            // lblSupervisedModalities
-            // 
-            this.lblSupervisedModalities.AutoSize = true;
-            this.lblSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 542);
-            this.lblSupervisedModalities.Name = "lblSupervisedModalities";
-            this.lblSupervisedModalities.Size = new System.Drawing.Size(152, 36);
-            this.lblSupervisedModalities.TabIndex = 82;
-            this.lblSupervisedModalities.Text = "Supervised Modalities\r\nUNTIMED";
+            this.cbConstantAttendance.TabIndex = 5;
             // 
             // lblConstantAttendance
             // 
@@ -450,6 +447,28 @@
             this.lblConstantAttendance.Size = new System.Drawing.Size(145, 36);
             this.lblConstantAttendance.TabIndex = 91;
             this.lblConstantAttendance.Text = "Constant Attendance\r\n(15 minutes each)";
+            // 
+            // cbSupervisedModalities
+            // 
+            this.cbSupervisedModalities.BackColor = System.Drawing.Color.White;
+            this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSupervisedModalities.FormattingEnabled = true;
+            this.cbSupervisedModalities.Location = new System.Drawing.Point(305, 545);
+            this.cbSupervisedModalities.Name = "cbSupervisedModalities";
+            this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 26);
+            this.cbSupervisedModalities.TabIndex = 4;
+            // 
+            // lblSupervisedModalities
+            // 
+            this.lblSupervisedModalities.AutoSize = true;
+            this.lblSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 542);
+            this.lblSupervisedModalities.Name = "lblSupervisedModalities";
+            this.lblSupervisedModalities.Size = new System.Drawing.Size(152, 36);
+            this.lblSupervisedModalities.TabIndex = 82;
+            this.lblSupervisedModalities.Text = "Supervised Modalities\r\nUNTIMED";
             // 
             // lblDiagnosis
             // 
@@ -510,7 +529,7 @@
             this.tbObjective.Name = "tbObjective";
             this.tbObjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbObjective.Size = new System.Drawing.Size(415, 56);
-            this.tbObjective.TabIndex = 5;
+            this.tbObjective.TabIndex = 3;
             // 
             // tbPTGoals
             // 
@@ -531,7 +550,7 @@
             this.tbSubjective.Name = "tbSubjective";
             this.tbSubjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbSubjective.Size = new System.Drawing.Size(415, 44);
-            this.tbSubjective.TabIndex = 4;
+            this.tbSubjective.TabIndex = 2;
             // 
             // lblProviderID
             // 
@@ -607,7 +626,7 @@
             this.panel2.Controls.Add(this.lblDiagnosis);
             this.panel2.Controls.Add(this.lblSupervisedModalities);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(-12, 135);
+            this.panel2.Location = new System.Drawing.Point(30, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -618,7 +637,7 @@
             this.dtpDateOfService.Location = new System.Drawing.Point(149, 17);
             this.dtpDateOfService.Name = "dtpDateOfService";
             this.dtpDateOfService.Size = new System.Drawing.Size(280, 24);
-            this.dtpDateOfService.TabIndex = 132;
+            this.dtpDateOfService.TabIndex = 1;
             // 
             // label1
             // 
@@ -661,16 +680,6 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
-            // lblConstantCPT
-            // 
-            this.lblConstantCPT.AutoSize = true;
-            this.lblConstantCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConstantCPT.Location = new System.Drawing.Point(218, 31);
-            this.lblConstantCPT.Name = "lblConstantCPT";
-            this.lblConstantCPT.Size = new System.Drawing.Size(38, 18);
-            this.lblConstantCPT.TabIndex = 100;
-            this.lblConstantCPT.Text = "CPT";
-            // 
             // lblSupervisedCPT
             // 
             this.lblSupervisedCPT.AutoSize = true;
@@ -686,7 +695,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(747, 89);
+            this.panelMessage.Location = new System.Drawing.Point(789, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -707,10 +716,10 @@
             // 
             this.cbCompleted.AutoSize = true;
             this.cbCompleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCompleted.Location = new System.Drawing.Point(838, 640);
+            this.cbCompleted.Location = new System.Drawing.Point(889, 643);
             this.cbCompleted.Name = "cbCompleted";
             this.cbCompleted.Size = new System.Drawing.Size(206, 24);
-            this.cbCompleted.TabIndex = 15;
+            this.cbCompleted.TabIndex = 11;
             this.cbCompleted.Text = "Is the form Complete?";
             this.cbCompleted.UseVisualStyleBackColor = true;
             // 
@@ -721,7 +730,7 @@
             this.btnPrintVisitDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintVisitDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintVisitDetails.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVisitDetails.Location = new System.Drawing.Point(747, 677);
+            this.btnPrintVisitDetails.Location = new System.Drawing.Point(789, 680);
             this.btnPrintVisitDetails.Name = "btnPrintVisitDetails";
             this.btnPrintVisitDetails.Size = new System.Drawing.Size(197, 60);
             this.btnPrintVisitDetails.TabIndex = 116;
@@ -750,15 +759,6 @@
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,6 +781,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FollowUpVisitForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -789,7 +790,6 @@
             this.panel2.PerformLayout();
             this.panelMessage.ResumeLayout(false);
             this.panelMessage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

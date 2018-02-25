@@ -1,8 +1,5 @@
 # PTClinic
 
-## Completion Todos
-- **Test the program!**
-
 ## Future TODOs
 - Think about making a guide to help other people control the program in the future with relation to using the program in another setting without having to have us "set up the DB". Instruct how to add an empty (new) `PTCLinic.accdb` file. 
 

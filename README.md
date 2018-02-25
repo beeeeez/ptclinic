@@ -1,7 +1,6 @@
 # PTClinic
 
 ## Completion Todos
-- Please make the Evaluation Visit printable. **WIP**
 - **Test the program!**
 
 ## Future TODOs
@@ -34,6 +33,7 @@
 - [x] Update tab index on followup visit form
 - [x] Update tab index on patient demographic
 - [x] Once the Follow Up form is saved, please make it visible by other users (not editable, but just viewable) 
+- [x] Please make the Evaluation Visit printable.
 
 ### Intial Visit Form
 - [x] Add spacing at bottom of form so you can actually scroll a bit down, and aren't right up on the bottom of the panel.

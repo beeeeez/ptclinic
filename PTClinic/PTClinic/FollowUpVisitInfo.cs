@@ -477,7 +477,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, provider_id, patient_name, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date FROM Patient_FollowUp_Visit WHERE patient_id = @PID;";
+            string strSQL = "SELECT patient_id, provider_id, patient_name, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date FROM Patient_FollowUp_Visit WHERE patient_id = @PID AND followup_visit_id = (SELECT MAX(followup_visit_id) FROM Patient_FollowUp_Visit);";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

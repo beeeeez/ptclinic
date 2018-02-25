@@ -21,7 +21,8 @@ namespace PTClinic
         private string patientVisitStatus;
         private Boolean PSFS = false;
         bool visitSaved;
-        StringBuilder followupVisitString;
+        StringBuilder followupVisitString1; // first print page
+        StringBuilder followupVisitString2; // second print page
         StringBuilder ptDiagnosisLists; 
         private string diagnosisStr;
         private string ptGoalStr;
@@ -107,6 +108,7 @@ namespace PTClinic
                         char[] splitChar = { '+' };
                         string[] diagnosisArray = null;
                         StringBuilder sb = new StringBuilder();
+                        ptDiagnosisLists = new StringBuilder();
 
                         diagnosisArray = ptDiagnosis.Split(splitChar);
 
@@ -130,8 +132,14 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                         for (int i = 0; i < diagnosisArray.Length; i++)
                         {
                             sb.AppendLine("- " + diagnosisArray[i]);
-           
+
+                            StringBuilder oneLine = new StringBuilder();
+                            oneLine.Append("- " + diagnosisArray[i]);
+                            ptDiagnosisLists.AppendLine(breakUpString(oneLine.ToString()));
+
+
                         }
+
 
                         tbPTDiagnosis.Text = sb.ToString();
                         ptDiagnosisStr = sb.ToString();
@@ -252,6 +260,7 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             btnBackToProfile.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
             btnBackToSearch.Image = Image.FromFile("..\\..\\Resources\\ic_arrow_back_white_24dp_1x.png");
             btnPrintVisitDetails.Image = Image.FromFile("..\\..\\Resources\\ic_print_white_24dp_1x.png");
+            btnPrintVisitDetails2.Image = Image.FromFile("..\\..\\Resources\\ic_print_white_24dp_1x.png");
         }
 
         // Home Button Click
@@ -354,14 +363,19 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                     AddFollowUpVisit();
 
                     btnAddFollowUp.Visible = false;
+                    btnClear.Visible = false;
                     btnPrintVisitDetails.Visible = true;
+                    btnPrintVisitDetails2.Visible = true;
                 }
                 else if (patientVisitStatus.Equals("follow up pending"))
                 {
                     UpdateFollowUpVisit();
       
                     btnAddFollowUp.Visible = false;
+                    btnClear.Visible = false;
                     btnPrintVisitDetails.Visible = true;
+                    btnPrintVisitDetails2.Visible = true;
+
                 }
 
             }
@@ -422,48 +436,49 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
         private void AddFollowUpVisit()
         {
-            followupVisitString = new StringBuilder();
+            followupVisitString1 = new StringBuilder();
+            followupVisitString2 = new StringBuilder();
 
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
             newVisit.PatientID = patientID;
 
-            followupVisitString.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
-            followupVisitString.AppendLine("Patient ID: " + patientID);
+            followupVisitString1.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
+            followupVisitString1.AppendLine("Patient ID: " + patientID);
 
             newVisit.ProviderID = tbProviderID.Text;
 
-            followupVisitString.AppendLine("Provider ID: " + tbProviderID.Text);
+            followupVisitString1.AppendLine("Provider ID: " + tbProviderID.Text);
 
             newVisit.PatientName = lblPatientName.Text;
 
-            followupVisitString.AppendLine("Patient Name: " + lblPatientName.Text);
-            followupVisitString.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
-            followupVisitString.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
-            followupVisitString.AppendLine("PT Diagnosis: \n" + ptDiagnosisLists);
+            followupVisitString1.AppendLine("Patient Name: " + lblPatientName.Text);
+            followupVisitString1.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
+            followupVisitString1.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
+            followupVisitString1.AppendLine("PT Diagnosis: \n" + ptDiagnosisLists);
 
             newVisit.Subjective = tbSubjective.Text;
 
-            followupVisitString.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
+            followupVisitString1.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
 
             newVisit.Objective = tbObjective.Text;
 
-            followupVisitString.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
+            followupVisitString1.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
 
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
 
-            followupVisitString.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+            followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
 
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
-            followupVisitString.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
+            followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            followupVisitString.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
+            followupVisitString2.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
            
             newVisit.Assessment = tbAssessment.Text;
-            followupVisitString.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
+            followupVisitString2.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
 
             newVisit.Plan = tbPlan.Text;
-            followupVisitString.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
+            followupVisitString2.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -569,64 +584,49 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
         private void UpdateFollowUpVisit()
         {
-            //FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
-
-            //newVisit.PatientID = patientID;
-            //newVisit.ProviderID = tbProviderID.Text;
-            //newVisit.PatientName = lblPatientName.Text;
-            //newVisit.Subjective = tbSubjective.Text;
-            //newVisit.Objective = tbObjective.Text;
-
-            //newVisit.SupervisedModalities = cbSupervisedModalities.Text;
-            //newVisit.ConstantAttendance = cbConstantAttendance.Text;
-            //newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-
-            //newVisit.Assessment = tbAssessment.Text;
-            //newVisit.Plan = tbPlan.Text;
-
-
-            followupVisitString = new StringBuilder();
+            followupVisitString1 = new StringBuilder();
+            followupVisitString2 = new StringBuilder();
 
             FollowUpVisitInfo newVisit = new FollowUpVisitInfo();
 
             newVisit.PatientID = patientID;
 
-            followupVisitString.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
-            followupVisitString.AppendLine("Patient ID: " + patientID);
+            followupVisitString1.AppendLine("Visit Date: " + dtpDateOfService.Value.ToShortDateString());
+            followupVisitString1.AppendLine("Patient ID: " + patientID);
 
             newVisit.ProviderID = tbProviderID.Text;
 
-            followupVisitString.AppendLine("Provider ID: " + tbProviderID.Text);
+            followupVisitString1.AppendLine("Provider ID: " + tbProviderID.Text);
 
             newVisit.PatientName = lblPatientName.Text;
 
-            followupVisitString.AppendLine("Patient Name: " + lblPatientName.Text);
-            followupVisitString.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
-            followupVisitString.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
-            followupVisitString.AppendLine("PT Diagnosis: \n" + breakUpString(ptDiagnosisStr));
+            followupVisitString1.AppendLine("Patient Name: " + lblPatientName.Text);
+            followupVisitString1.AppendLine("Diagnosis:\n " + breakUpString(diagnosisStr));
+            followupVisitString1.AppendLine("PT Goals: \n" + breakUpString(ptGoalStr));
+            followupVisitString1.AppendLine("PT Diagnosis: \n" + ptDiagnosisLists);
 
             newVisit.Subjective = tbSubjective.Text;
 
-            followupVisitString.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
+            followupVisitString1.AppendLine("Subjective: \n" + breakUpString(tbSubjective.Text) + "\n");
 
             newVisit.Objective = tbObjective.Text;
 
-            followupVisitString.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
+            followupVisitString1.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
 
             newVisit.SupervisedModalities = cbSupervisedModalities.Text;
 
-            followupVisitString.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+            followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
 
             newVisit.ConstantAttendance = cbConstantAttendance.Text;
-            followupVisitString.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
+            followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
-            followupVisitString.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
+            followupVisitString2.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
 
             newVisit.Assessment = tbAssessment.Text;
-            followupVisitString.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
+            followupVisitString2.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
 
             newVisit.Plan = tbPlan.Text;
-            followupVisitString.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
+            followupVisitString2.AppendLine("Plan: \n" + breakUpString(tbPlan.Text));
 
             newVisit.StudentProviderName = tbStudentProvider.Text;
 
@@ -764,11 +764,28 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
                 SF.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString("Follow Up Visit Overview", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawString("Follow Up Visit Overview - Page 1", font1, Brushes.Black, rect1, SF);
                 e.Graphics.DrawRectangle(Pens.Black, rect1);
             }
 
-            e.Graphics.DrawString(followupVisitString.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
+            e.Graphics.DrawString(followupVisitString1.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            using (Font font1 = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point))
+            {
+
+                Rectangle rect1 = new Rectangle(100, 100, 650, 25);
+                StringFormat SF = new StringFormat();
+                SF.Alignment = StringAlignment.Center;
+                SF.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Follow Up Visit Overview - Page 2", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawRectangle(Pens.Black, rect1);
+            }
+
+            e.Graphics.DrawString(followupVisitString2.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(100, 160));
 
         }
 
@@ -816,5 +833,21 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             return result.ToString();
         }
 
+        private void btnPrintVisitDetails2_Click(object sender, EventArgs e)
+        {
+            //printDialog1.Document = printDocument1;
+            //if (printDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument1.Print();
+            //}
+
+
+            // !!! To view print layout uncomment this
+
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
     }
 }

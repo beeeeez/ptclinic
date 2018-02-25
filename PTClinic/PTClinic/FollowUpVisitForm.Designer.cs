@@ -88,6 +88,10 @@
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.btnPrintVisitDetails2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -101,7 +105,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1066, 681);
+            this.btnClear.Location = new System.Drawing.Point(1048, 681);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 13;
@@ -116,7 +120,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(814, 681);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(796, 681);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 12;
@@ -239,7 +243,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(30, 82);
+            this.panel3.Location = new System.Drawing.Point(12, 82);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -283,7 +287,7 @@
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
             this.panel4.Controls.Add(this.cbConstantAttendance);
             this.panel4.Controls.Add(this.lblConstantAttendance);
-            this.panel4.Location = new System.Drawing.Point(642, 139);
+            this.panel4.Location = new System.Drawing.Point(624, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -423,7 +427,7 @@
             this.cbTherapeuticProcedures.FormattingEnabled = true;
             this.cbTherapeuticProcedures.Location = new System.Drawing.Point(259, 100);
             this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
-            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(256, 26);
+            this.cbTherapeuticProcedures.Size = new System.Drawing.Size(333, 26);
             this.cbTherapeuticProcedures.TabIndex = 6;
             // 
             // cbConstantAttendance
@@ -435,7 +439,7 @@
             this.cbConstantAttendance.FormattingEnabled = true;
             this.cbConstantAttendance.Location = new System.Drawing.Point(259, 28);
             this.cbConstantAttendance.Name = "cbConstantAttendance";
-            this.cbConstantAttendance.Size = new System.Drawing.Size(256, 26);
+            this.cbConstantAttendance.Size = new System.Drawing.Size(329, 26);
             this.cbConstantAttendance.TabIndex = 5;
             // 
             // lblConstantAttendance
@@ -626,7 +630,7 @@
             this.panel2.Controls.Add(this.lblDiagnosis);
             this.panel2.Controls.Add(this.lblSupervisedModalities);
             this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(30, 138);
+            this.panel2.Location = new System.Drawing.Point(12, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -695,7 +699,7 @@
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(789, 92);
+            this.panelMessage.Location = new System.Drawing.Point(771, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -730,11 +734,11 @@
             this.btnPrintVisitDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintVisitDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintVisitDetails.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVisitDetails.Location = new System.Drawing.Point(789, 680);
+            this.btnPrintVisitDetails.Location = new System.Drawing.Point(712, 680);
             this.btnPrintVisitDetails.Name = "btnPrintVisitDetails";
             this.btnPrintVisitDetails.Size = new System.Drawing.Size(197, 60);
             this.btnPrintVisitDetails.TabIndex = 116;
-            this.btnPrintVisitDetails.Text = "Print Visit Details";
+            this.btnPrintVisitDetails.Text = "Print Page 1";
             this.btnPrintVisitDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintVisitDetails.UseVisualStyleBackColor = false;
             this.btnPrintVisitDetails.Visible = false;
@@ -759,12 +763,50 @@
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // btnPrintVisitDetails2
+            // 
+            this.btnPrintVisitDetails2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnPrintVisitDetails2.BackColor = System.Drawing.Color.Purple;
+            this.btnPrintVisitDetails2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintVisitDetails2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVisitDetails2.ForeColor = System.Drawing.Color.White;
+            this.btnPrintVisitDetails2.Location = new System.Drawing.Point(983, 680);
+            this.btnPrintVisitDetails2.Name = "btnPrintVisitDetails2";
+            this.btnPrintVisitDetails2.Size = new System.Drawing.Size(197, 60);
+            this.btnPrintVisitDetails2.TabIndex = 117;
+            this.btnPrintVisitDetails2.Text = "Print Page 2";
+            this.btnPrintVisitDetails2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrintVisitDetails2.UseVisualStyleBackColor = false;
+            this.btnPrintVisitDetails2.Visible = false;
+            this.btnPrintVisitDetails2.Click += new System.EventHandler(this.btnPrintVisitDetails2_Click);
+            // 
             // FollowUpVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1282, 733);
+            this.Controls.Add(this.btnPrintVisitDetails2);
             this.Controls.Add(this.btnPrintVisitDetails);
             this.Controls.Add(this.cbCompleted);
             this.Controls.Add(this.panelMessage);
@@ -855,5 +897,9 @@
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.Button btnPrintVisitDetails2;
     }
 }

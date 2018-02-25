@@ -791,20 +791,20 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
         private void btnPrintVisitDetails_Click(object sender, EventArgs e)
         {
-           
-            //printDialog.Document = printDocument;
-            //if (printDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    printDocument.Print();
-            //}
+
+            printDialog.Document = printDocument;
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
 
 
             // !!! To view print layout uncomment this
 
-            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
+            //if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument.Print();
+            //}
 
         }
 
@@ -835,19 +835,19 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
         private void btnPrintVisitDetails2_Click(object sender, EventArgs e)
         {
-            //printDialog1.Document = printDocument1;
-            //if (printDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    printDocument1.Print();
-            //}
+            printDialog1.Document = printDocument1;
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
 
 
             // !!! To view print layout uncomment this
 
-            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
+            //if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument1.Print();
+            //}
         }
     }
 }

@@ -144,6 +144,12 @@
       <DependentUpon>TestDisplayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <Compile Include="ViewInitialVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInitialVisitForm.Designer.cs">
+      <DependentUpon>ViewInitialVisitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewPastVisitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientProfile.resx">
       <DependentUpon>PatientProfile.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestDisplayForm.resx">
       <DependentUpon>TestDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInitialVisitForm.resx">
+      <DependentUpon>ViewInitialVisitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewPastVisitForm.resx">
       <DependentUpon>ViewPastVisitForm.cs</DependentUpon>

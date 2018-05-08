@@ -28,6 +28,7 @@ namespace PTClinic
         private string evaluation;
         private string constantAttendance;
         private string therapeuticProcedures;
+        private string therapeuticProcedures2;
         private string functionalLimitations;
         private string assessment;
         private string physicalTherapyDiagnosis;
@@ -225,6 +226,23 @@ namespace PTClinic
             }
         }
 
+        public string TherapeuticProcedures2
+        {
+            get { return therapeuticProcedures2; }
+            set
+            {
+                therapeuticProcedures2 = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    therapeuticProcedures = value;
+                //}
+            }
+        }
+
         // Public variable for Functional Limitations
         public string FunctionalLimitations
         {
@@ -292,7 +310,7 @@ namespace PTClinic
         }
 
         // Overloaded Constructor
-        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string durableMedicalEquipment, string subjective, string objective, string ptGoals, string treatmentPlan, string dmeNeeds, string evaluation, string constantAttendance, string therapeuticProcedures, string functionalLimitations, string assessment, string physicalTherapyDiagnosis)
+        public VisitInfo(int patientID, string providerID, DateTime visitDate, string chiefComplaint, string durableMedicalEquipment, string subjective, string objective, string ptGoals, string treatmentPlan, string dmeNeeds, string evaluation, string constantAttendance, string therapeuticProcedures, string therapeuticProcedures2, string functionalLimitations, string assessment, string physicalTherapyDiagnosis)
         {
             feedback = "";
             PatientID = patientID;
@@ -308,6 +326,7 @@ namespace PTClinic
             Evaluation = evaluation;
             ConstantAttendance = constantAttendance;
             TherapeuticProcedures = therapeuticProcedures;
+            TherapeuticProcedures2 = therapeuticProcedures2;
             FunctionalLimitations = functionalLimitations;
             Assessment = assessment;
             PhysicalTherapyDiagnosis = physicalTherapyDiagnosis;
@@ -320,8 +339,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, durable_medical_equipment, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, functional_limitations, assessment, pt_diagnosis)" +
-                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @DurableMedicalEquipment, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @DMENeeds, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @FunctionalLimitations, @Assessment, @PhysicalTherapyDiagnosis);";
+            string strSQL = "INSERT INTO Patient_Visit (patient_id, provider_id, visit_date, chief_complaint, durable_medical_equipment, subjective, objective, pt_goals, treatment_plan, dme_needs, evaluation, constant_attendance, therapeutic_procedures, therapeutic_procedures2, functional_limitations, assessment, pt_diagnosis)" +
+                " VALUES (@PatientID, @ProviderID, @VisitDate, @ChiefComplaint, @DurableMedicalEquipment, @Subjective, @Objective, @PTGoals, @TreatmentPlan, @DMENeeds, @Evaluation, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @FunctionalLimitations, @Assessment, @PhysicalTherapyDiagnosis);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -351,6 +370,7 @@ namespace PTClinic
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
             comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);
@@ -429,7 +449,7 @@ namespace PTClinic
             string strSQL = "UPDATE Patient_Visit SET provider_id = @ProviderID, visit_date = @VisitDate, chief_complaint = @ChiefComplaint, " +
                  "durable_medical_equipment = @DurableMedicalEquipment, subjective = @Subjective, " +
                  "objective = @Objective, pt_goals = @PTGoals, treatment_plan = @TreatmentPlan, dme_needs = @DMENeeds, evaluation = @Evaluation, " +
-                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, functional_limitations = @FunctionalLimitations, " +
+                 "constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures,  therapeutic_procedures2 = @TherapeuticProcedures2,  functional_limitations = @FunctionalLimitations, " +
                  "assessment = @Assessment, pt_diagnosis = @PhysicalTherapyDiagnosis" +
                  " WHERE patient_id = @PatientID;";
    
@@ -462,6 +482,7 @@ namespace PTClinic
 
             comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
             comm.Parameters.AddWithValue(@"FunctionalLimitations", FunctionalLimitations);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"PhysicalTherapyDiagnosis", PhysicalTherapyDiagnosis);

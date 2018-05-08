@@ -90,11 +90,30 @@ namespace PTClinic
             // Create variable for PT Goals Class
             PatientGoals ptGoals = new PatientGoals();
 
+          
+
 
             using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
             {
-                // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
-                using (var dataReaderPatient = tempPatient.FindOnePatient(connection, intPID))
+                //Check to see if initial-visit button should be visible
+                using (var dataReaderPatientVisit = tempVisit.FindOnePatientVisit(connection, intPID))
+                {
+                    int count = 0;
+                    while (dataReaderPatientVisit.Read())
+                    {
+                        count++;
+                    }
+                    if (count < 1)
+                    {
+                        viewInitialvisit.Visible = false;
+                    }
+                    else
+                    {
+                        viewInitialvisit.Visible = true;
+                    }
+                }
+                        // Gather info about this patient via the patient ID (intPID) passed from the search and store it in a data reader
+                        using (var dataReaderPatient = tempPatient.FindOnePatient(connection, intPID))
                 {
                     while (dataReaderPatient.Read())
                     {
@@ -481,6 +500,15 @@ namespace PTClinic
             PastVisitSearchForm newVisitSearch = new PastVisitSearchForm(pID, Admin, Login);
             newVisitSearch.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)//always forget to name them
+        {
+
+            ViewInitialVisitForm newVisitSearch = new ViewInitialVisitForm(pID, pName, Admin, Login);
+            newVisitSearch.Show();
+            this.Hide();
+
         }
     }
 }

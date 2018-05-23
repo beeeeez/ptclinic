@@ -505,8 +505,15 @@ namespace PTClinic
         private void button1_Click(object sender, EventArgs e)//always forget to name them
         {
 
-            ViewInitialVisitForm newVisitSearch = new ViewInitialVisitForm(pID, pName, Admin, Login);
+            ViewInitialVisitForm newVisitSearch = new ViewInitialVisitForm(pID, pName, Admin, Login, this);
             newVisitSearch.Show();
+
+        }
+
+        private void appointmentSearch_btn_Click(object sender, EventArgs e)
+        {
+            AppointmentSearch newAppointmentSearch = new AppointmentSearch(pID, pName, Admin, Login, this);
+            newAppointmentSearch.Show();
             this.Hide();
 
         }

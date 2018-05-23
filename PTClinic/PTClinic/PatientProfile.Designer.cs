@@ -33,11 +33,8 @@
             this.btnBackToSearch = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnScheduleAppointment = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lable1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,8 +57,6 @@
             this.btnPatientGoals = new System.Windows.Forms.Button();
             this.btnPatientVisit = new System.Windows.Forms.Button();
             this.btnUpdateInformation = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,7 +76,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panelPTGoalsMessage = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.printPatientInfo = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
@@ -89,16 +83,23 @@
             this.label20 = new System.Windows.Forms.Label();
             this.tbMedications = new System.Windows.Forms.TextBox();
             this.viewInitialvisit = new System.Windows.Forms.Button();
+            this.appointmentSearch_btn = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelMessage.SuspendLayout();
             this.panelPTGoalsMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,15 +164,6 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -187,35 +179,14 @@
             // 
             this.btnScheduleAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnScheduleAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScheduleAppointment.Location = new System.Drawing.Point(0, 156);
+            this.btnScheduleAppointment.Location = new System.Drawing.Point(0, 147);
             this.btnScheduleAppointment.Name = "btnScheduleAppointment";
-            this.btnScheduleAppointment.Size = new System.Drawing.Size(242, 74);
+            this.btnScheduleAppointment.Size = new System.Drawing.Size(242, 38);
             this.btnScheduleAppointment.TabIndex = 76;
             this.btnScheduleAppointment.Text = "Schedule Appointment";
             this.btnScheduleAppointment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScheduleAppointment.UseVisualStyleBackColor = true;
             this.btnScheduleAppointment.Click += new System.EventHandler(this.btnScheduleAppointment_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(65, 126);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(168, 176);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 79;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(236, 169);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(485, 371);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 80;
-            this.pictureBox4.TabStop = false;
             // 
             // lable1
             // 
@@ -387,6 +358,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.appointmentSearch_btn);
             this.panel2.Controls.Add(this.btnViewPastVisitInfo);
             this.panel2.Controls.Add(this.btnPrintPatientInfo);
             this.panel2.Controls.Add(this.btnPatientGoals);
@@ -403,9 +375,9 @@
             // 
             this.btnViewPastVisitInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnViewPastVisitInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPastVisitInfo.Location = new System.Drawing.Point(0, 556);
+            this.btnViewPastVisitInfo.Location = new System.Drawing.Point(0, 411);
             this.btnViewPastVisitInfo.Name = "btnViewPastVisitInfo";
-            this.btnViewPastVisitInfo.Size = new System.Drawing.Size(242, 74);
+            this.btnViewPastVisitInfo.Size = new System.Drawing.Size(242, 36);
             this.btnViewPastVisitInfo.TabIndex = 82;
             this.btnViewPastVisitInfo.Text = "Past Patient Visits";
             this.btnViewPastVisitInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -416,9 +388,9 @@
             // 
             this.btnPrintPatientInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrintPatientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintPatientInfo.Location = new System.Drawing.Point(0, 476);
+            this.btnPrintPatientInfo.Location = new System.Drawing.Point(0, 367);
             this.btnPrintPatientInfo.Name = "btnPrintPatientInfo";
-            this.btnPrintPatientInfo.Size = new System.Drawing.Size(242, 74);
+            this.btnPrintPatientInfo.Size = new System.Drawing.Size(242, 38);
             this.btnPrintPatientInfo.TabIndex = 81;
             this.btnPrintPatientInfo.Text = "Print Information";
             this.btnPrintPatientInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -429,9 +401,9 @@
             // 
             this.btnPatientGoals.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPatientGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientGoals.Location = new System.Drawing.Point(0, 236);
+            this.btnPatientGoals.Location = new System.Drawing.Point(0, 235);
             this.btnPatientGoals.Name = "btnPatientGoals";
-            this.btnPatientGoals.Size = new System.Drawing.Size(242, 74);
+            this.btnPatientGoals.Size = new System.Drawing.Size(242, 38);
             this.btnPatientGoals.TabIndex = 80;
             this.btnPatientGoals.Text = "Patient Goals";
             this.btnPatientGoals.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -442,9 +414,9 @@
             // 
             this.btnPatientVisit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPatientVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientVisit.Location = new System.Drawing.Point(0, 316);
+            this.btnPatientVisit.Location = new System.Drawing.Point(0, 279);
             this.btnPatientVisit.Name = "btnPatientVisit";
-            this.btnPatientVisit.Size = new System.Drawing.Size(242, 74);
+            this.btnPatientVisit.Size = new System.Drawing.Size(242, 38);
             this.btnPatientVisit.TabIndex = 79;
             this.btnPatientVisit.Text = "Patient Visit";
             this.btnPatientVisit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -455,35 +427,14 @@
             // 
             this.btnUpdateInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdateInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 396);
+            this.btnUpdateInformation.Location = new System.Drawing.Point(0, 323);
             this.btnUpdateInformation.Name = "btnUpdateInformation";
-            this.btnUpdateInformation.Size = new System.Drawing.Size(242, 74);
+            this.btnUpdateInformation.Size = new System.Drawing.Size(242, 38);
             this.btnUpdateInformation.TabIndex = 78;
             this.btnUpdateInformation.Text = "Update/View Information";
             this.btnUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateInformation.UseVisualStyleBackColor = true;
             this.btnUpdateInformation.Click += new System.EventHandler(this.btnUpdateInformation_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(49, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(151, 135);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 77;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(741, 169);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(485, 371);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 99;
-            this.pictureBox5.TabStop = false;
             // 
             // label5
             // 
@@ -693,15 +644,6 @@
             this.panelPTGoalsMessage.TabIndex = 115;
             this.panelPTGoalsMessage.Visible = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(48, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.TabIndex = 114;
-            this.pictureBox6.TabStop = false;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -758,14 +700,87 @@
             // 
             this.viewInitialvisit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.viewInitialvisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewInitialvisit.Location = new System.Drawing.Point(572, 116);
+            this.viewInitialvisit.Location = new System.Drawing.Point(592, 116);
             this.viewInitialvisit.Name = "viewInitialvisit";
-            this.viewInitialvisit.Size = new System.Drawing.Size(283, 41);
+            this.viewInitialvisit.Size = new System.Drawing.Size(263, 41);
             this.viewInitialvisit.TabIndex = 83;
             this.viewInitialvisit.Text = "View Patient Initial Visit";
             this.viewInitialvisit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.viewInitialvisit.UseVisualStyleBackColor = true;
             this.viewInitialvisit.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // appointmentSearch_btn
+            // 
+            this.appointmentSearch_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.appointmentSearch_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentSearch_btn.Location = new System.Drawing.Point(0, 191);
+            this.appointmentSearch_btn.Name = "appointmentSearch_btn";
+            this.appointmentSearch_btn.Size = new System.Drawing.Size(242, 38);
+            this.appointmentSearch_btn.TabIndex = 83;
+            this.appointmentSearch_btn.Text = "Appointment Search";
+            this.appointmentSearch_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.appointmentSearch_btn.UseVisualStyleBackColor = true;
+            this.appointmentSearch_btn.Click += new System.EventHandler(this.appointmentSearch_btn_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(48, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.TabIndex = 114;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(741, 169);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(485, 371);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 99;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(49, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(151, 135);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(236, 169);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(485, 371);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 80;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(65, 126);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(168, 176);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 79;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // PatientProfile
             // 
@@ -821,17 +836,17 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelMessage.ResumeLayout(false);
             this.panelMessage.PerformLayout();
             this.panelPTGoalsMessage.ResumeLayout(false);
             this.panelPTGoalsMessage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -899,5 +914,6 @@
         private System.Windows.Forms.TextBox tbMedications;
         private System.Windows.Forms.Button btnViewPastVisitInfo;
         private System.Windows.Forms.Button viewInitialvisit;
+        private System.Windows.Forms.Button appointmentSearch_btn;
     }
 }

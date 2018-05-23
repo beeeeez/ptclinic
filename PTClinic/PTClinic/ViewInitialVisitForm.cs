@@ -17,6 +17,7 @@ namespace PTClinic
         private int patientId;
         private string pName;
         private Form Admin;
+        private Form PP;
         private Form Login;
         private bool editModeOn = false;
         private string printString;
@@ -24,11 +25,11 @@ namespace PTClinic
     new System.Drawing.Printing.PrintDocument();
         PrintPreviewDialog ugh = new PrintPreviewDialog();
         PrintDialog pd = new PrintDialog();
-        public ViewInitialVisitForm(int patientId, string pName, Form Admin, Form Login)
+        public ViewInitialVisitForm(int patientId, string pName, Form Admin, Form Login, Form PP)
         {
             InitializeComponent();
             setButtonIcon();
-          
+            this.PP = PP;
             this.patientId = patientId;
             this.pName = pName;
             this.Admin = Admin;
@@ -219,13 +220,11 @@ namespace PTClinic
             cbTherapeutic2.SelectedIndex = 0;
         }
 
-        private void btnBackToProfile_Click_1(object sender, EventArgs e)//windows forms makes me sad
+        private void btnBackToProfile_Click_1(object sender, EventArgs e)//yeah whoops im dumb i figured out what you meant i think
         {
-            Search newSearchForm = new Search(Admin, Login);
-            PatientInformation newPatientForm = new PatientInformation(0, Admin, Login);
-            PatientProfile newProfile = new PatientProfile(patientId, Admin, Login, newSearchForm, newPatientForm, false);
+           
             this.Hide();
-            newProfile.Show();
+            PP.Show();
         }
 
         private void btnBackHome_Click_1(object sender, EventArgs e)

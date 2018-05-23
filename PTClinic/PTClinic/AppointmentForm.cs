@@ -292,5 +292,49 @@ namespace PTClinic
             PatientProfile.Show();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpAppDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpAppTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbAppType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbAppAddress_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void appointmentSearchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

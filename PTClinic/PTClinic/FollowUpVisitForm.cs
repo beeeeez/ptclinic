@@ -54,8 +54,8 @@ namespace PTClinic
             patientID = Convert.ToInt32(PatientID);
 
             // Fill Drop Downs
-            FillSupervisedModalities();
-            FillConstantAttendance();
+          //  FillSupervisedModalities();
+            //FillConstantAttendance();
             FillTherapeuticProcedures();
 
             if (PatientVisitStatus.Equals("re-assessment") || PatientVisitStatus.Equals("re-assessment pending"))
@@ -177,8 +177,10 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
                             //Drop downs
                             cbTherapeuticProcedures.SelectedItem = dataReaderPatientFUVisit["therapeutic_procedures"].ToString();
-                            cbSupervisedModalities.SelectedItem = dataReaderPatientFUVisit["supervised_modalities"].ToString();
-                            cbConstantAttendance.SelectedItem = dataReaderPatientFUVisit["constant_attendance"].ToString();
+                            cbTherapeuticProcedures2.SelectedItem = dataReaderPatientFUVisit["therapeutic_procedures2"].ToString();
+                            cbTherapeuticProcedures3.SelectedItem = dataReaderPatientFUVisit["therapeutic_procedures3"].ToString();
+                            //      cbSupervisedModalities.SelectedItem = dataReaderPatientFUVisit["supervised_modalities"].ToString();
+                            //      cbConstantAttendance.SelectedItem = dataReaderPatientFUVisit["constant_attendance"].ToString();
                         }
                     }
                 } // End of -- using (var connection = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;"))
@@ -194,6 +196,7 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
         }
 
         // Fill SupervisedModalities Function
+        /*
         public void FillSupervisedModalities()
         {
             // Fills Evaluation list drop down list
@@ -215,12 +218,13 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             cbConstantAttendance.Items.Add("97039 Low Level Laser");
             cbConstantAttendance.SelectedIndex = 0;
         }
+        */
 
         // FillTheraputicProcedures Function
         public void FillTherapeuticProcedures()
         {
             // Fills Theraputic Procedures list drop down list
-            cbTherapeuticProcedures.Items.Insert(0, "Select One"); // Index 0
+            cbTherapeuticProcedures.Items.Insert(0, "None"); // Index 0
             cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 1");
             cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 2");
             cbTherapeuticProcedures.Items.Add("97110 Theraputic Ex Units - 3");
@@ -250,6 +254,68 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
             cbTherapeuticProcedures.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
             cbTherapeuticProcedures.SelectedIndex = 0;
+
+            cbTherapeuticProcedures2.Items.Insert(0, "None"); // Index 0
+            cbTherapeuticProcedures2.Items.Add("97110 Theraputic Ex Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97110 Theraputic Ex Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97110 Theraputic Ex Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97110 Theraputic Ex Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97112 Neuromuscular Re-ed Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97112 Neuromuscular Re-ed Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97112 Neuromuscular Re-ed Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97112 Neuromuscular Re-ed Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97113 Aquatic Therapy w ther ex Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97113 Aquatic Therapy w ther ex Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97113 Aquatic Therapy w ther ex Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97113 Aquatic Therapy w ther ex Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97116 Gait Training (includes stairs) Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97116 Gait Training (includes stairs) Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97116 Gait Training (includes stairs) Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97116 Gait Training (includes stairs) Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97124 Massage Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97124 Massage Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97124 Massage Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97124 Massage Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97140 Manual Therapy one+regions Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97140 Manual Therapy one+regions Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97140 Manual Therapy one+regions Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97140 Manual Therapy one+regions Units - 4");
+            cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 1");
+            cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 2");
+            cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
+            cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
+            cbTherapeuticProcedures2.SelectedIndex = 0;
+
+            cbTherapeuticProcedures3.Items.Insert(0, "None"); // Index 0
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
+            cbTherapeuticProcedures3.SelectedIndex = 0;
         }
 
         // Setting the Icons for Logout and Home Buttons
@@ -426,9 +492,12 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             tbAssessment.Clear();
             tbPlan.Clear();
 
-            cbSupervisedModalities.SelectedIndex = 0;
-            cbConstantAttendance.SelectedIndex = 0;
+            //cbSupervisedModalities.SelectedIndex = 0;
+           // cbConstantAttendance.SelectedIndex = 0;
             cbTherapeuticProcedures.SelectedIndex = 0;
+            cbTherapeuticProcedures2.SelectedIndex = 0;
+            cbTherapeuticProcedures3.SelectedIndex = 0;
+
 
             tbStudentProvider.Clear();
             tbProviderName.Clear();
@@ -465,15 +534,21 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
             followupVisitString1.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
 
-            newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+            //newVisit.SupervisedModalities = cbSupervisedModalities.Text;
 
-            followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+           // followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
 
-            newVisit.ConstantAttendance = cbConstantAttendance.Text;
-            followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
+           // newVisit.ConstantAttendance = cbConstantAttendance.Text;
+           // followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
             followupVisitString2.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
-           
+
+            newVisit.TherapeuticProcedures2 = cbTherapeuticProcedures2.Text;
+            followupVisitString2.AppendLine("Therapeutic Procedures 2- " + cbTherapeuticProcedures2.Text + "\n");
+
+            newVisit.TherapeuticProcedures3 = cbTherapeuticProcedures3.Text;
+            followupVisitString2.AppendLine("Therapeutic Procedures 3- " + cbTherapeuticProcedures3.Text + "\n");
+
             newVisit.Assessment = tbAssessment.Text;
             followupVisitString2.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
 
@@ -613,14 +688,18 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
 
             followupVisitString1.AppendLine("Objective: \n" + breakUpString(tbObjective.Text) + "\n");
 
-            newVisit.SupervisedModalities = cbSupervisedModalities.Text;
+            //newVisit.SupervisedModalities = cbSupervisedModalities.Text;
 
-            followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
+           // followupVisitString2.AppendLine("Supervised Modalities - " + cbSupervisedModalities.Text);
 
-            newVisit.ConstantAttendance = cbConstantAttendance.Text;
-            followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
+            //newVisit.ConstantAttendance = cbConstantAttendance.Text;
+          //  followupVisitString2.AppendLine("Constant Attendance - " + cbConstantAttendance.Text);
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
             followupVisitString2.AppendLine("Therapeutic Procedures - " + cbTherapeuticProcedures.Text + "\n");
+            newVisit.TherapeuticProcedures2 = cbTherapeuticProcedures2.Text;
+            followupVisitString2.AppendLine("Therapeutic Procedures 2 - " + cbTherapeuticProcedures2.Text + "\n");
+            newVisit.TherapeuticProcedures3 = cbTherapeuticProcedures3.Text;
+            followupVisitString2.AppendLine("Therapeutic Procedures 3 - " + cbTherapeuticProcedures3.Text + "\n");
 
             newVisit.Assessment = tbAssessment.Text;
             followupVisitString2.AppendLine("Assessment: \n" + breakUpString(tbAssessment.Text));
@@ -848,6 +927,11 @@ Impaired Aerobic Capacity/Endurance Associated with Cardiovascular Pump Dysfunct
             //{
             //    printDocument1.Print();
             //}
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

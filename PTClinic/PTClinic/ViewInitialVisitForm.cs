@@ -79,6 +79,7 @@ namespace PTClinic
                         tbConstant.Text = dataReaderPatientVisit["constant_attendance"].ToString();
                         tbTherapeutic1.Text = dataReaderPatientVisit["therapeutic_procedures"].ToString();
                         tbTherapeutic2.Text = dataReaderPatientVisit["therapeutic_procedures2"].ToString();
+                        tbTherapeutic3.Text = dataReaderPatientVisit["therapeutic_procedures3"].ToString();
                         tbFunctionalLimitations.Text = dataReaderPatientVisit["functional_limitations"].ToString();
                         tbAssessment.Text = dataReaderPatientVisit["assessment"].ToString();
                         cbEvaluation.SelectedItem = dataReaderPatientVisit["evaluation"].ToString();
@@ -218,6 +219,37 @@ namespace PTClinic
             cbTherapeutic2.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
             cbTherapeutic2.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
             cbTherapeutic2.SelectedIndex = 0;
+
+            cbTherapeutic3.Items.Insert(0, ""); // Index 0
+            cbTherapeutic3.Items.Add("97110 Theraputic Ex Units - 1");
+            cbTherapeutic3.Items.Add("97110 Theraputic Ex Units - 2");
+            cbTherapeutic3.Items.Add("97110 Theraputic Ex Units - 3");
+            cbTherapeutic3.Items.Add("97110 Theraputic Ex Units - 4");
+            cbTherapeutic3.Items.Add("97112 Neuromuscular Re-ed Units - 1");
+            cbTherapeutic3.Items.Add("97112 Neuromuscular Re-ed Units - 2");
+            cbTherapeutic3.Items.Add("97112 Neuromuscular Re-ed Units - 3");
+            cbTherapeutic3.Items.Add("97112 Neuromuscular Re-ed Units - 4");
+            cbTherapeutic3.Items.Add("97113 Aquatic Therapy w ther ex Units - 1");
+            cbTherapeutic3.Items.Add("97113 Aquatic Therapy w ther ex Units - 2");
+            cbTherapeutic3.Items.Add("97113 Aquatic Therapy w ther ex Units - 3");
+            cbTherapeutic3.Items.Add("97113 Aquatic Therapy w ther ex Units - 4");
+            cbTherapeutic3.Items.Add("97116 Gait Training (includes stairs) Units - 1");
+            cbTherapeutic3.Items.Add("97116 Gait Training (includes stairs) Units - 2");
+            cbTherapeutic3.Items.Add("97116 Gait Training (includes stairs) Units - 3");
+            cbTherapeutic3.Items.Add("97116 Gait Training (includes stairs) Units - 4");
+            cbTherapeutic3.Items.Add("97124 Massage Units - 1");
+            cbTherapeutic3.Items.Add("97124 Massage Units - 2");
+            cbTherapeutic3.Items.Add("97124 Massage Units - 3");
+            cbTherapeutic3.Items.Add("97124 Massage Units - 4");
+            cbTherapeutic3.Items.Add("97140 Manual Therapy one+regions Units - 1");
+            cbTherapeutic3.Items.Add("97140 Manual Therapy one+regions Units - 2");
+            cbTherapeutic3.Items.Add("97140 Manual Therapy one+regions Units - 3");
+            cbTherapeutic3.Items.Add("97140 Manual Therapy one+regions Units - 4");
+            cbTherapeutic3.Items.Add("97530 Theraputic Activities 1-1 Units - 1");
+            cbTherapeutic3.Items.Add("97530 Theraputic Activities 1-1 Units - 2");
+            cbTherapeutic3.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
+            cbTherapeutic3.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
+            cbTherapeutic3.SelectedIndex = 0;
         }
 
         private void btnBackToProfile_Click_1(object sender, EventArgs e)//yeah whoops im dumb i figured out what you meant i think
@@ -264,10 +296,12 @@ namespace PTClinic
             tbConstant.Visible = true;
             tbTherapeutic1.Visible = true;
             tbTherapeutic2.Visible = true;
+            tbTherapeutic3.Visible = true;
             tbEvaluation.ReadOnly = true;
             tbConstant.ReadOnly = true;
             tbTherapeutic1.ReadOnly = true;
             tbTherapeutic2.ReadOnly = true;
+            tbTherapeutic3.ReadOnly = true;
             tbFunctionalLimitations.ReadOnly = true;
             tbAssessment.ReadOnly = true;
             tbPTDiagnosis.ReadOnly = true;
@@ -275,6 +309,7 @@ namespace PTClinic
             cbConstantAttendance.Visible = false;
             cbTherapeuticProcedures.Visible = false;
             cbTherapeutic2.Visible = false;
+            cbTherapeutic3.Visible = false;
         }
 
         private void editMode()
@@ -298,10 +333,12 @@ namespace PTClinic
             tbConstant.Visible = false;
             tbTherapeutic1.Visible = false;
             tbTherapeutic2.Visible = false;
+            tbTherapeutic3.Visible = false;
             tbEvaluation.ReadOnly = false;
             tbConstant.ReadOnly = false;
             tbTherapeutic1.ReadOnly = false;
             tbTherapeutic2.ReadOnly = false;
+            tbTherapeutic3.ReadOnly = false;
             tbFunctionalLimitations.ReadOnly = false;
             tbAssessment.ReadOnly = false;
             tbPTDiagnosis.ReadOnly = false;
@@ -348,6 +385,7 @@ namespace PTClinic
             printString += "Constant Attendance: " + tbConstant.Text + "\n";
             printString += "Therapeutic Procedures: "+ tbTherapeutic1.Text + "\n";
             printString += "Therapeutic Procedures: " + tbTherapeutic2.Text + "\n";
+            printString += "Therapeutic Procedures: " + tbTherapeutic3.Text + "\n";
             printString += "Functional Limitations: " + tbFunctionalLimitations.Text + "\n";
             printString += "Assessment: " + tbAssessment.Text + "\n";
             
@@ -423,7 +461,7 @@ namespace PTClinic
 
             Int32.TryParse(lblPID.Text, out tempId);
             var ptDiagnosisResult = string.Join("+", str.ToArray());
-            VisitInfo tempInfo = new VisitInfo(tempId, tbProviderID.Text, temp, tbChiefComplaint.Text, tbDME.Text, tbSubjective.Text, tbObjective.Text, tbPTGoals.Text, tbTreatmentPlan.Text, tbDMENeeds.Text, tbEvaluation.Text, cbConstantAttendance.Text, cbTherapeuticProcedures.Text, cbTherapeutic2.Text, tbFunctionalLimitations.Text, tbAssessment.Text, ptDiagnosisResult);
+            VisitInfo tempInfo = new VisitInfo(tempId, tbProviderID.Text, temp, tbChiefComplaint.Text, tbDME.Text, tbSubjective.Text, tbObjective.Text, tbPTGoals.Text, tbTreatmentPlan.Text, tbDMENeeds.Text, tbEvaluation.Text, cbConstantAttendance.Text, cbTherapeuticProcedures.Text, cbTherapeutic2.Text, cbTherapeutic3.Text, tbFunctionalLimitations.Text, tbAssessment.Text, ptDiagnosisResult);
             int success = tempInfo.UpdateVisit();
             DBCall();
             successLbl.Visible = true;
@@ -441,6 +479,9 @@ namespace PTClinic
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

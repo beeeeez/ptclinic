@@ -19,9 +19,11 @@ namespace PTClinic
         //private string ptGoals;
         private string subjective;
         private string objective;
-        private string supervisedModalities;
-        private string constantAttendance;
+       // private string supervisedModalities;
+       // private string constantAttendance;
         private string therapeuticProcedures;
+        private string therapeuticProcedures2;
+        private string therapeuticProcedures3;
         private string assessment;
         private string plan;
         private Nullable<bool> reassessment;
@@ -149,40 +151,40 @@ namespace PTClinic
         }
 
         // Public variable for Supervised Modalities
-        public string SupervisedModalities
-        {
-            get { return supervisedModalities; }
-            set
-            {
-                supervisedModalities = value;
-                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Select a Supervised Modality\n";
-                //}
-                //else
-                //{
-                //    supervisedModalities = value;
-                //}
-            }
-        }
+        //   public string SupervisedModalities
+        //        {
+        //      get { return supervisedModalities; }
+        //        set
+        //        {
+        //    supervisedModalities = value;
+        //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+        //{
+        //    feedback += "Error: Select a Supervised Modality\n";
+        //}
+        //else
+        //{
+        //    supervisedModalities = value;
+        //}
+        //        }
+        //     }
 
         // Public variable for Constant Attendance
-        public string ConstantAttendance
-        {
-            get { return constantAttendance; }
-            set
-            {
-                constantAttendance = value;
-                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
-                //{
-                //    feedback += "Error: Select a Constant Attendance\n";
-                //}
-                //else
-                //{
-                //    constantAttendance = value;
-                //}
-            }
-        }
+        //  public string ConstantAttendance
+        //   {
+        //       get { return constantAttendance; }
+        //   set
+        //        {
+        //   constantAttendance = value;
+        //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+        //{
+        //    feedback += "Error: Select a Constant Attendance\n";
+        //}
+        //else
+        //{
+        //    constantAttendance = value;
+        //}
+        //     }
+        //  }
 
         // Public variable for Theraputic Procedures
         public string TherapeuticProcedures
@@ -191,6 +193,40 @@ namespace PTClinic
             set
             {
                 therapeuticProcedures = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    therapeuticProcedures = value;
+                //}
+            }
+        }
+
+        public string TherapeuticProcedures2
+        {
+            get { return therapeuticProcedures2; }
+            set
+            {
+                therapeuticProcedures2 = value;
+                //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
+                //{
+                //    feedback += "Error: Select a Theraputic Procedure\n";
+                //}
+                //else
+                //{
+                //    therapeuticProcedures = value;
+                //}
+            }
+        }
+
+        public string TherapeuticProcedures3
+        {
+            get { return therapeuticProcedures3; }
+            set
+            {
+                therapeuticProcedures3 = value;
                 //if (value.Equals("Select One") || string.IsNullOrEmpty(value))
                 //{
                 //    feedback += "Error: Select a Theraputic Procedure\n";
@@ -339,8 +375,8 @@ namespace PTClinic
             int success = 0;
 
             // SQL command to add a record to the Patient_Visit table
-            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
-                " VALUES (@PatientID, @ProviderID, @PatientName, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
+            string strSQL = "INSERT INTO Patient_FollowUp_Visit (patient_id, provider_id, patient_name, subjective, objective, therapeutic_procedures, therapeutic_procedures2, therapeutic_procedures3, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date)" +
+                " VALUES (@PatientID, @ProviderID, @PatientName, @Subjective, @Objective, @TherapeuticProcedures, @TherapeuticProcedures2, @TherapeuticProcedures3, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
 
             // creating database connection 
             OleDbConnection conn = new OleDbConnection();
@@ -363,10 +399,11 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
             comm.Parameters.AddWithValue(@"Objective", Objective);
 
-            comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
-            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+          //  comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
+        //    comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
-
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures3", TherapeuticProcedures3);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"Plan", Plan);
             comm.Parameters.AddWithValue(@"StudentProviderName", StudentProviderName);
@@ -408,7 +445,7 @@ namespace PTClinic
             //    " VALUES (@PatientID, @ProviderID, @PatientName, @Diagnosis, @PTGoals, @Subjective, @Objective, @SupervisedModalities, @ConstantAttendance, @TherapeuticProcedures, @TherapeuticProcedures2, @Assessment, @Plan, @StudentProviderName, @StudentProviderNameDate, @ProviderName, @ProviderNameDate, @VisitDate);";
 
             // SQL command to add a record to the Patients table
-            string strSQL = "UPDATE Patient_FollowUp_Visit SET provider_id = @ProviderID, patient_name = @PatientName, subjective = @Subjective, objective = @Objective, supervised_modalities = @SupervisedModalities, constant_attendance = @ConstantAttendance, therapeutic_procedures = @TherapeuticProcedures, assessment = @Assessment, plan = @Plan, student_name = @StudentProviderName, student_date = @StudentProviderNameDate, provider_name = @ProviderName, provider_date = @ProviderNameDate, visit_date = @VisitDate" +
+            string strSQL = "UPDATE Patient_FollowUp_Visit SET provider_id = @ProviderID, patient_name = @PatientName, subjective = @Subjective, objective = @Objective, therapeutic_procedures = @TherapeuticProcedures, therapeutic_procedures2 = @TherapeuticProcedures2, therapeutic_procedures3 = @TherapeuticProcedures3, assessment = @Assessment, plan = @Plan, student_name = @StudentProviderName, student_date = @StudentProviderNameDate, provider_name = @ProviderName, provider_date = @ProviderNameDate, visit_date = @VisitDate" +
                 " WHERE patient_id = @PatientID AND followup_visit_id = (SELECT MAX(followup_visit_id) FROM Patient_FollowUp_Visit);";
 
             // creating database connection 
@@ -431,10 +468,11 @@ namespace PTClinic
             comm.Parameters.AddWithValue(@"Subjective", Subjective);
             comm.Parameters.AddWithValue(@"Objective", Objective);
 
-            comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
-            comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
+        //    comm.Parameters.AddWithValue(@"SupervisedModalities", SupervisedModalities);
+        //    comm.Parameters.AddWithValue(@"ConstantAttendance", ConstantAttendance);
             comm.Parameters.AddWithValue(@"TherapeuticProcedures", TherapeuticProcedures);
-
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures2", TherapeuticProcedures2);
+            comm.Parameters.AddWithValue(@"TherapeuticProcedures3", TherapeuticProcedures3);
             comm.Parameters.AddWithValue(@"Assessment", Assessment);
             comm.Parameters.AddWithValue(@"Plan", Plan);
             comm.Parameters.AddWithValue(@"StudentProviderName", StudentProviderName);
@@ -477,7 +515,7 @@ namespace PTClinic
             //string strConn = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\PTClinic.accdb; Persist Security Info = False;";
 
             //SQL Command string to pull up one Patients Data
-            string strSQL = "SELECT patient_id, provider_id, patient_name, subjective, objective, supervised_modalities, constant_attendance, therapeutic_procedures, assessment, plan, student_name, student_date, provider_name, provider_date, visit_date FROM Patient_FollowUp_Visit WHERE patient_id = @PID AND followup_visit_id = (SELECT MAX(followup_visit_id) FROM Patient_FollowUp_Visit);";
+            string strSQL = "SELECT * FROM Patient_FollowUp_Visit WHERE patient_id = @PID AND followup_visit_id = (SELECT MAX(followup_visit_id) FROM Patient_FollowUp_Visit);";
 
             // Set the connection string
             //conn.ConnectionString = strConn;

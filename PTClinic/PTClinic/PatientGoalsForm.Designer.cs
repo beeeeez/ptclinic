@@ -103,6 +103,7 @@
             this.lblDBFeedback = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbActivityTwoScore.SuspendLayout();
@@ -176,6 +177,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnBackToProfile);
             this.panel1.Controls.Add(this.btnBackHome);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -1033,6 +1035,22 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(593, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 34);
+            this.button1.TabIndex = 77;
+            this.button1.Text = "Search Past Goals";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PatientGoalsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1151,5 +1169,6 @@
         private System.Windows.Forms.ComboBox cbInterpBy1;
         private System.Windows.Forms.ComboBox cbInterpBy3;
         private System.Windows.Forms.ComboBox cbInterpBy2;
+        private System.Windows.Forms.Button button1;
     }
 }

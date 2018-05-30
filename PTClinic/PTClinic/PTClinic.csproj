@@ -156,6 +156,12 @@
     <Compile Include="ViewInitialVisitForm.Designer.cs">
       <DependentUpon>ViewInitialVisitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewPastGoals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPastGoals.Designer.cs">
+      <DependentUpon>ViewPastGoals.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewPastVisitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewInitialVisitForm.resx">
       <DependentUpon>ViewInitialVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPastGoals.resx">
+      <DependentUpon>ViewPastGoals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewPastVisitForm.resx">
       <DependentUpon>ViewPastVisitForm.cs</DependentUpon>

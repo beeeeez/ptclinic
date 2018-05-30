@@ -17,6 +17,7 @@ namespace PTClinic
         private Form Admin;
         private Form PatientProfile;
         PatientInfo patientName;
+        private string pName;
         private string activityOneScore;
         private string activityTwoScore;
         private string activityThreeScore;
@@ -31,7 +32,7 @@ namespace PTClinic
         
         }
 
-        public PatientGoalsForm(int patientID, bool fromProfile, Form Admin, Form Login, Form PatientProfile)
+        public PatientGoalsForm(int patientID, string pName, bool fromProfile, Form Admin, Form Login, Form PatientProfile)
         {
 
             updatedGoals = false;
@@ -46,7 +47,7 @@ namespace PTClinic
             this.Admin = Admin;
             this.Login = Login;
             this.PatientProfile = PatientProfile;
-
+            this.pName = pName;
             patientName = new PatientInfo();
 
             // If PT Goals form was openedd from Visit hide "Back to profile" button
@@ -368,6 +369,13 @@ namespace PTClinic
 
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)//this goes to the search patient goals page
+        {
+            ViewPastGoals pastGoals = new ViewPastGoals(pID, pName, Admin, Login, PatientProfile, this);
+            pastGoals.Show();
+            this.Hide();
         }
     }
 }

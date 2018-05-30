@@ -52,15 +52,10 @@
             this.tbStudentProvider = new System.Windows.Forms.TextBox();
             this.tbAssessment = new System.Windows.Forms.TextBox();
             this.lblProviderName = new System.Windows.Forms.Label();
-            this.lblConstantCPT = new System.Windows.Forms.Label();
             this.lblStudentProvider = new System.Windows.Forms.Label();
             this.lblAssessment = new System.Windows.Forms.Label();
             this.lblTheraputicProcedures = new System.Windows.Forms.Label();
             this.cbTherapeuticProcedures = new System.Windows.Forms.ComboBox();
-            this.cbConstantAttendance = new System.Windows.Forms.ComboBox();
-            this.lblConstantAttendance = new System.Windows.Forms.Label();
-            this.cbSupervisedModalities = new System.Windows.Forms.ComboBox();
-            this.lblSupervisedModalities = new System.Windows.Forms.Label();
             this.lblDiagnosis = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblPTGoals = new System.Windows.Forms.Label();
@@ -80,7 +75,6 @@
             this.tbPTDiagnosis = new System.Windows.Forms.TextBox();
             this.lblPTDiagnosis = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
-            this.lblSupervisedCPT = new System.Windows.Forms.Label();
             this.panelMessage = new System.Windows.Forms.Panel();
             this.lbNewPatient = new System.Windows.Forms.Label();
             this.cbCompleted = new System.Windows.Forms.CheckBox();
@@ -92,6 +86,12 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.btnPrintVisitDetails2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTheraputicProcedures2 = new System.Windows.Forms.Label();
+            this.cbTherapeuticProcedures2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTheraputicProcedures3 = new System.Windows.Forms.Label();
+            this.cbTherapeuticProcedures3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -105,7 +105,7 @@
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1039, 681);
+            this.btnClear.Location = new System.Drawing.Point(1030, 681);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 60);
             this.btnClear.TabIndex = 13;
@@ -120,7 +120,7 @@
             this.btnAddFollowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFollowUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFollowUp.ForeColor = System.Drawing.Color.White;
-            this.btnAddFollowUp.Location = new System.Drawing.Point(787, 681);
+            this.btnAddFollowUp.Location = new System.Drawing.Point(778, 681);
             this.btnAddFollowUp.Name = "btnAddFollowUp";
             this.btnAddFollowUp.Size = new System.Drawing.Size(197, 60);
             this.btnAddFollowUp.TabIndex = 12;
@@ -243,7 +243,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.lblTodaysDate);
             this.panel3.Controls.Add(this.lblVisitInformation);
-            this.panel3.Location = new System.Drawing.Point(3, 82);
+            this.panel3.Location = new System.Drawing.Point(-6, 82);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(609, 50);
             this.panel3.TabIndex = 99;
@@ -271,6 +271,12 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.lblTheraputicProcedures3);
+            this.panel4.Controls.Add(this.cbTherapeuticProcedures3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.lblTheraputicProcedures2);
+            this.panel4.Controls.Add(this.cbTherapeuticProcedures2);
             this.panel4.Controls.Add(this.lblTheraputicCPT);
             this.panel4.Controls.Add(this.tbPlan);
             this.panel4.Controls.Add(this.lblPatientPlan);
@@ -280,14 +286,11 @@
             this.panel4.Controls.Add(this.tbStudentProvider);
             this.panel4.Controls.Add(this.tbAssessment);
             this.panel4.Controls.Add(this.lblProviderName);
-            this.panel4.Controls.Add(this.lblConstantCPT);
             this.panel4.Controls.Add(this.lblStudentProvider);
             this.panel4.Controls.Add(this.lblAssessment);
             this.panel4.Controls.Add(this.lblTheraputicProcedures);
             this.panel4.Controls.Add(this.cbTherapeuticProcedures);
-            this.panel4.Controls.Add(this.cbConstantAttendance);
-            this.panel4.Controls.Add(this.lblConstantAttendance);
-            this.panel4.Location = new System.Drawing.Point(615, 139);
+            this.panel4.Location = new System.Drawing.Point(606, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 474);
             this.panel4.TabIndex = 1;
@@ -296,7 +299,7 @@
             // 
             this.lblTheraputicCPT.AutoSize = true;
             this.lblTheraputicCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheraputicCPT.Location = new System.Drawing.Point(215, 103);
+            this.lblTheraputicCPT.Location = new System.Drawing.Point(211, 19);
             this.lblTheraputicCPT.Name = "lblTheraputicCPT";
             this.lblTheraputicCPT.Size = new System.Drawing.Size(38, 18);
             this.lblTheraputicCPT.TabIndex = 101;
@@ -378,16 +381,6 @@
             this.lblProviderName.TabIndex = 98;
             this.lblProviderName.Text = "Provider Name";
             // 
-            // lblConstantCPT
-            // 
-            this.lblConstantCPT.AutoSize = true;
-            this.lblConstantCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConstantCPT.Location = new System.Drawing.Point(218, 31);
-            this.lblConstantCPT.Name = "lblConstantCPT";
-            this.lblConstantCPT.Size = new System.Drawing.Size(38, 18);
-            this.lblConstantCPT.TabIndex = 100;
-            this.lblConstantCPT.Text = "CPT";
-            // 
             // lblStudentProvider
             // 
             this.lblStudentProvider.AutoSize = true;
@@ -412,7 +405,7 @@
             // 
             this.lblTheraputicProcedures.AutoSize = true;
             this.lblTheraputicProcedures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheraputicProcedures.Location = new System.Drawing.Point(34, 100);
+            this.lblTheraputicProcedures.Location = new System.Drawing.Point(30, 16);
             this.lblTheraputicProcedures.Name = "lblTheraputicProcedures";
             this.lblTheraputicProcedures.Size = new System.Drawing.Size(166, 36);
             this.lblTheraputicProcedures.TabIndex = 94;
@@ -425,54 +418,10 @@
             this.cbTherapeuticProcedures.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTherapeuticProcedures.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTherapeuticProcedures.FormattingEnabled = true;
-            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(259, 100);
+            this.cbTherapeuticProcedures.Location = new System.Drawing.Point(255, 16);
             this.cbTherapeuticProcedures.Name = "cbTherapeuticProcedures";
             this.cbTherapeuticProcedures.Size = new System.Drawing.Size(333, 26);
             this.cbTherapeuticProcedures.TabIndex = 6;
-            // 
-            // cbConstantAttendance
-            // 
-            this.cbConstantAttendance.BackColor = System.Drawing.Color.White;
-            this.cbConstantAttendance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbConstantAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbConstantAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbConstantAttendance.FormattingEnabled = true;
-            this.cbConstantAttendance.Location = new System.Drawing.Point(259, 28);
-            this.cbConstantAttendance.Name = "cbConstantAttendance";
-            this.cbConstantAttendance.Size = new System.Drawing.Size(329, 26);
-            this.cbConstantAttendance.TabIndex = 5;
-            // 
-            // lblConstantAttendance
-            // 
-            this.lblConstantAttendance.AutoSize = true;
-            this.lblConstantAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConstantAttendance.Location = new System.Drawing.Point(54, 28);
-            this.lblConstantAttendance.Name = "lblConstantAttendance";
-            this.lblConstantAttendance.Size = new System.Drawing.Size(145, 36);
-            this.lblConstantAttendance.TabIndex = 91;
-            this.lblConstantAttendance.Text = "Constant Attendance\r\n(15 minutes each)";
-            // 
-            // cbSupervisedModalities
-            // 
-            this.cbSupervisedModalities.BackColor = System.Drawing.Color.White;
-            this.cbSupervisedModalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSupervisedModalities.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSupervisedModalities.FormattingEnabled = true;
-            this.cbSupervisedModalities.Location = new System.Drawing.Point(305, 545);
-            this.cbSupervisedModalities.Name = "cbSupervisedModalities";
-            this.cbSupervisedModalities.Size = new System.Drawing.Size(256, 26);
-            this.cbSupervisedModalities.TabIndex = 4;
-            // 
-            // lblSupervisedModalities
-            // 
-            this.lblSupervisedModalities.AutoSize = true;
-            this.lblSupervisedModalities.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupervisedModalities.Location = new System.Drawing.Point(33, 542);
-            this.lblSupervisedModalities.Name = "lblSupervisedModalities";
-            this.lblSupervisedModalities.Size = new System.Drawing.Size(152, 36);
-            this.lblSupervisedModalities.TabIndex = 82;
-            this.lblSupervisedModalities.Text = "Supervised Modalities\r\nUNTIMED";
             // 
             // lblDiagnosis
             // 
@@ -621,16 +570,13 @@
             this.panel2.Controls.Add(this.lblProviderID);
             this.panel2.Controls.Add(this.tbSubjective);
             this.panel2.Controls.Add(this.tbPTGoals);
-            this.panel2.Controls.Add(this.lblSupervisedCPT);
             this.panel2.Controls.Add(this.tbObjective);
             this.panel2.Controls.Add(this.tbDiagnosis);
             this.panel2.Controls.Add(this.lblSubjective);
             this.panel2.Controls.Add(this.lblPTGoals);
             this.panel2.Controls.Add(this.lblObjective);
             this.panel2.Controls.Add(this.lblDiagnosis);
-            this.panel2.Controls.Add(this.lblSupervisedModalities);
-            this.panel2.Controls.Add(this.cbSupervisedModalities);
-            this.panel2.Location = new System.Drawing.Point(3, 138);
+            this.panel2.Location = new System.Drawing.Point(-6, 138);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 646);
             this.panel2.TabIndex = 0;
@@ -684,22 +630,12 @@
             this.lblPatientName.TabIndex = 98;
             this.lblPatientName.Text = "PLACEHOLDER";
             // 
-            // lblSupervisedCPT
-            // 
-            this.lblSupervisedCPT.AutoSize = true;
-            this.lblSupervisedCPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupervisedCPT.Location = new System.Drawing.Point(250, 548);
-            this.lblSupervisedCPT.Name = "lblSupervisedCPT";
-            this.lblSupervisedCPT.Size = new System.Drawing.Size(38, 18);
-            this.lblSupervisedCPT.TabIndex = 99;
-            this.lblSupervisedCPT.Text = "CPT";
-            // 
             // panelMessage
             // 
             this.panelMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMessage.Controls.Add(this.lbNewPatient);
-            this.panelMessage.Location = new System.Drawing.Point(762, 92);
+            this.panelMessage.Location = new System.Drawing.Point(753, 92);
             this.panelMessage.Name = "panelMessage";
             this.panelMessage.Size = new System.Drawing.Size(236, 41);
             this.panelMessage.TabIndex = 115;
@@ -734,7 +670,7 @@
             this.btnPrintVisitDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintVisitDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintVisitDetails.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVisitDetails.Location = new System.Drawing.Point(703, 680);
+            this.btnPrintVisitDetails.Location = new System.Drawing.Point(694, 680);
             this.btnPrintVisitDetails.Name = "btnPrintVisitDetails";
             this.btnPrintVisitDetails.Size = new System.Drawing.Size(197, 60);
             this.btnPrintVisitDetails.TabIndex = 116;
@@ -790,7 +726,7 @@
             this.btnPrintVisitDetails2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintVisitDetails2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintVisitDetails2.ForeColor = System.Drawing.Color.White;
-            this.btnPrintVisitDetails2.Location = new System.Drawing.Point(974, 680);
+            this.btnPrintVisitDetails2.Location = new System.Drawing.Point(965, 680);
             this.btnPrintVisitDetails2.Name = "btnPrintVisitDetails2";
             this.btnPrintVisitDetails2.Size = new System.Drawing.Size(197, 60);
             this.btnPrintVisitDetails2.TabIndex = 117;
@@ -799,6 +735,71 @@
             this.btnPrintVisitDetails2.UseVisualStyleBackColor = false;
             this.btnPrintVisitDetails2.Visible = false;
             this.btnPrintVisitDetails2.Click += new System.EventHandler(this.btnPrintVisitDetails2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(211, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 18);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "CPT";
+            // 
+            // lblTheraputicProcedures2
+            // 
+            this.lblTheraputicProcedures2.AutoSize = true;
+            this.lblTheraputicProcedures2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheraputicProcedures2.Location = new System.Drawing.Point(30, 67);
+            this.lblTheraputicProcedures2.Name = "lblTheraputicProcedures2";
+            this.lblTheraputicProcedures2.Size = new System.Drawing.Size(166, 36);
+            this.lblTheraputicProcedures2.TabIndex = 106;
+            this.lblTheraputicProcedures2.Text = "Therapeutic Procedures\r\n(15 minutes each) #2";
+            // 
+            // cbTherapeuticProcedures2
+            // 
+            this.cbTherapeuticProcedures2.BackColor = System.Drawing.Color.White;
+            this.cbTherapeuticProcedures2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTherapeuticProcedures2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTherapeuticProcedures2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTherapeuticProcedures2.FormattingEnabled = true;
+            this.cbTherapeuticProcedures2.Location = new System.Drawing.Point(255, 67);
+            this.cbTherapeuticProcedures2.Name = "cbTherapeuticProcedures2";
+            this.cbTherapeuticProcedures2.Size = new System.Drawing.Size(333, 26);
+            this.cbTherapeuticProcedures2.TabIndex = 105;
+            this.cbTherapeuticProcedures2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(211, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 18);
+            this.label4.TabIndex = 110;
+            this.label4.Text = "CPT";
+            // 
+            // lblTheraputicProcedures3
+            // 
+            this.lblTheraputicProcedures3.AutoSize = true;
+            this.lblTheraputicProcedures3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheraputicProcedures3.Location = new System.Drawing.Point(30, 120);
+            this.lblTheraputicProcedures3.Name = "lblTheraputicProcedures3";
+            this.lblTheraputicProcedures3.Size = new System.Drawing.Size(166, 36);
+            this.lblTheraputicProcedures3.TabIndex = 109;
+            this.lblTheraputicProcedures3.Text = "Therapeutic Procedures\r\n(15 minutes each) #3";
+            // 
+            // cbTherapeuticProcedures3
+            // 
+            this.cbTherapeuticProcedures3.BackColor = System.Drawing.Color.White;
+            this.cbTherapeuticProcedures3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTherapeuticProcedures3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTherapeuticProcedures3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTherapeuticProcedures3.FormattingEnabled = true;
+            this.cbTherapeuticProcedures3.Location = new System.Drawing.Point(255, 120);
+            this.cbTherapeuticProcedures3.Name = "cbTherapeuticProcedures3";
+            this.cbTherapeuticProcedures3.Size = new System.Drawing.Size(333, 26);
+            this.cbTherapeuticProcedures3.TabIndex = 108;
             // 
             // FollowUpVisitForm
             // 
@@ -853,12 +854,8 @@
         private System.Windows.Forms.TextBox tbAssessment;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.Label lblStudentProvider;
-        private System.Windows.Forms.ComboBox cbSupervisedModalities;
         private System.Windows.Forms.Label lblAssessment;
-        private System.Windows.Forms.ComboBox cbConstantAttendance;
-        private System.Windows.Forms.Label lblSupervisedModalities;
         private System.Windows.Forms.ComboBox cbTherapeuticProcedures;
-        private System.Windows.Forms.Label lblConstantAttendance;
         private System.Windows.Forms.Label lblTheraputicProcedures;
         private System.Windows.Forms.Label lblDiagnosis;
         private System.Windows.Forms.Label lblObjective;
@@ -879,8 +876,6 @@
         private System.Windows.Forms.Label lblStudentDate;
         private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Label lblTheraputicCPT;
-        private System.Windows.Forms.Label lblConstantCPT;
-        private System.Windows.Forms.Label lblSupervisedCPT;
         private System.Windows.Forms.Label lblTodaysDate;
         private System.Windows.Forms.TextBox tbPlan;
         private System.Windows.Forms.Label lblPatientPlan;
@@ -901,5 +896,11 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.Button btnPrintVisitDetails2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTheraputicProcedures3;
+        private System.Windows.Forms.ComboBox cbTherapeuticProcedures3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTheraputicProcedures2;
+        private System.Windows.Forms.ComboBox cbTherapeuticProcedures2;
     }
 }

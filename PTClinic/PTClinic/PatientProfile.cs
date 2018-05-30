@@ -430,7 +430,7 @@ namespace PTClinic
         {
             this.Hide();
             bool fromProfile = true;
-            PatientGoalsForm temp = new PatientGoalsForm(pID, fromProfile, Admin, Login, this);
+            PatientGoalsForm temp = new PatientGoalsForm(pID, pName, fromProfile, Admin, Login, this);
             temp.Show();
         }
 

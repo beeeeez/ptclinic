@@ -716,6 +716,9 @@ namespace PTClinic
 
         }
 
+        private void cbInsurer_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -248,6 +248,37 @@ namespace PTClinic
             cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
             cbTherapeuticProcedures2.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
             cbTherapeuticProcedures2.SelectedIndex = 0;
+
+            cbTherapeuticProcedures3.Items.Insert(0, ""); // Index 0
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97110 Theraputic Ex Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97112 Neuromuscular Re-ed Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97113 Aquatic Therapy w ther ex Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97116 Gait Training (includes stairs) Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97124 Massage Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97140 Manual Therapy one+regions Units - 4");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 1");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 2");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 3");
+            cbTherapeuticProcedures3.Items.Add("97530 Theraputic Activities 1-1 Units - 4");
+            cbTherapeuticProcedures3.SelectedIndex = 0;
         }
 
 
@@ -452,6 +483,7 @@ namespace PTClinic
 
             newVisit.TherapeuticProcedures = cbTherapeuticProcedures.Text;
             newVisit.TherapeuticProcedures2 = cbTherapeuticProcedures2.Text;
+            newVisit.TherapeuticProcedures3 = cbTherapeuticProcedures3.Text;
             newVisit.FunctionalLimitations = tbFunctionalLimitations.Text;
             newVisit.Assessment = tbAssessment.Text;
 

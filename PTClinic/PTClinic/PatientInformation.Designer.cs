@@ -896,6 +896,7 @@
             this.cbInsurer.Name = "cbInsurer";
             this.cbInsurer.Size = new System.Drawing.Size(244, 28);
             this.cbInsurer.TabIndex = 14;
+            this.cbInsurer.SelectedIndexChanged += new System.EventHandler(this.cbInsurer_SelectedIndexChanged);
             // 
             // cbState
             // 

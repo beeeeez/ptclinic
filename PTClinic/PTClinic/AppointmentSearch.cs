@@ -163,11 +163,11 @@ namespace PTClinic
 
         private void btnPrintAppCopy_Click(object sender, EventArgs e)
         {
-            printString += lblPatientID.Text + "\n";
-            printString += lblPatientName.Text + "\n";
-            printString += lblAppDate.Text + "\n";
-            printString += lblAppTime.Text + "\n";
-            printString += lblAppType.Text + "\n";
+            printString += "Patient ID: " +  lblPatientID.Text + "\n";
+            printString += "Patient Name: " + lblPatientName.Text + "\n";
+            printString += "Appointment Date: " + lblAppDate.Text + "\n";
+            printString += "Appointment Time: " + lblAppTime.Text + "\n";
+            printString += "Appointment Type: " + lblAppType.Text + "\n";
 
 
             docToPrint.PrintPage += new PrintPageEventHandler(docToPrint_PrintPage);

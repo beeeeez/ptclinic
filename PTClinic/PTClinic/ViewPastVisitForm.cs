@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace PTClinic
 {
@@ -17,6 +18,11 @@ namespace PTClinic
         private string visitDate;
         private Form Admin;
         private Form Login;
+        private string printString;
+        private System.Drawing.Printing.PrintDocument docToPrint =
+  new System.Drawing.Printing.PrintDocument();
+        PrintPreviewDialog ugh = new PrintPreviewDialog();
+        PrintDialog pd = new PrintDialog();
 
         public ViewPastVisitForm(int patientID, string visitDate, Form Admin, Form Login)
         {
@@ -28,7 +34,7 @@ namespace PTClinic
             this.visitDate = visitDate;
             this.Admin = Admin;
             this.Login = Login;
-
+            btnPrint1.Visible = true;
             lblPID.Text = patientId.ToString();
             DBCall();
             //MessageBox.Show("Patiend ID = " + patientID + "\n Visit Date: " + visitDate);
@@ -139,8 +145,10 @@ namespace PTClinic
 
                             //Drop downs
                             tbTherapeuticProcedures.Text = reader["therapeutic_procedures"].ToString();
-                            tbSupervisedModalities.Text = reader["supervised_modalities"].ToString();
-                            tbConstantAttendance.Text = reader["constant_attendance"].ToString();
+                            tbTherapeuticProcedures2.Text = reader["therapeutic_procedures2"].ToString();
+                            tbTherapeuticProcedures3.Text = reader["therapeutic_procedures3"].ToString();
+                            // tbSupervisedModalities.Text = reader["supervised_modalities"].ToString();
+                            //  tbConstantAttendance.Text = reader["constant_attendance"].ToString();
                         }
                     }
                 }
@@ -186,6 +194,82 @@ namespace PTClinic
             Login.Show();
         }
 
+        private void btnPrint1_Click(object sender, EventArgs e)
+        {
+           printString += "Date of Service : " + dtpDateOfService.Text + "\n";
+            printString += "Patient Name : " + lblPatientName.Text + "\n";
+            printString += "Patient ID# : " + lblPID.Text + "\n\n";
+            printString += "Provider ID# : " + tbProviderID.Text + "\n";
+            printString += "Diagnosis : " + tbDiagnosis.Text + "\n";
+            printString += "PT Goals : " + tbPTGoals.Text + "\n\n";
 
+            string[] stringSeparators = new string[] { "-" };
+            string[] ptdShatter = tbPTDiagnosis.Text.Split(stringSeparators, StringSplitOptions.None);
+
+            printString += "PT Diagnosis: \n";
+            foreach (string thing in ptdShatter)
+            {
+
+                string[] stringSeparators2 = new string[] { "," };
+                string[] ptdShatterMore = thing.Split(stringSeparators2, StringSplitOptions.None);
+                foreach (string sausage in ptdShatterMore)
+                {
+                    printString += sausage + "\n";
+                }
+
+            }
+
+            printString += "Subjective : " + tbSubjective.Text + "\n";
+            printString += "Objective : " + tbObjective.Text + "\n";
+            printString += "Therapeutic Procedures 1 : " + tbTherapeuticProcedures.Text + "\n";
+            printString += "Therapeutic Procedures 2 : " + tbTherapeuticProcedures2.Text + "\n";
+            printString += "Therapeutic Procedures 3 : " + tbTherapeuticProcedures3.Text + "\n\n";
+
+
+            
+            printString += "\nAssessment : " + tbAssessment.Text + "\n";
+            printString += "Plan for Next Visit : " + tbPlan.Text + "\n\n";
+            printString += "Student Provider : " + tbStudentProvider.Text + "\n";
+            printString += "Provider Name : " + tbProviderName.Text + "\n";
+
+            docToPrint.PrintPage += new PrintPageEventHandler(docToPrint_PrintPage);
+            pd.Document = docToPrint;
+            ugh.Document = docToPrint;
+
+            if (pd.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            if (ugh.ShowDialog() == DialogResult.OK)
+            {
+
+                docToPrint.Print();
+
+            }
+        }
+
+
+        private void docToPrint_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)//why didnt anybody teach this to me
+        {
+            using (Font font1 = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Point))
+            {
+
+                Rectangle rect1 = new Rectangle(100, 100, 650, 25);
+                StringFormat SF = new StringFormat();
+                SF.Alignment = StringAlignment.Center;
+                SF.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString("Follow-Up Visit Information", font1, Brushes.Black, rect1, SF);
+                e.Graphics.DrawRectangle(Pens.Black, rect1);
+
+            }
+
+            e.Graphics.DrawString(printString, new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new PointF(10, 150));
+
+        }
+
+        private void btnPrint2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
